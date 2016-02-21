@@ -98,7 +98,6 @@ class Ability extends React.Component {
 
         // Ability is morale
         if (this.props.details.abilityType == 'morale') {
-          console.log('SELECTED its a morale');
           // Get current abilityId of morale of this rank
           let userSelectionPropertyName = 'morale' + this.props.moraleRank;
           let currentMoraleRankId = this.props.userSelections[userSelectionPropertyName];
@@ -150,7 +149,14 @@ class Ability extends React.Component {
         else {
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
-            // TODO : This is where the logic for processing optional mastery core abilities will go
+            // Add into masteryAbilities array
+            this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+            // Add to selectedAbilities
+            this.props.setSelectedAbilities(this.props.details.id);
+            // If Mastery points are available then select and decrement total
+            if (Number(this.props.masteryPoints) > 0) {
+              this.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+            }
           }
         }
       // Inactive ability selected
@@ -162,7 +168,6 @@ class Ability extends React.Component {
 
       // Ability is morale
       if (this.props.details.abilityType == 'morale') {
-        console.log('UNSELECTED its a morale');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this morale is a selected morale, then reset
@@ -171,13 +176,16 @@ class Ability extends React.Component {
                                 this.props.userSelections.morale3,
                                 this.props.userSelections.morale4];
         if (selectedMoralesArray.indexOf(this.props.details.id) != -1) {
-          console.log('UNSELECTED its currently selected morale');
           this.props.setUserSelectionMorale(this.props.moraleRank, 0);
+        }
+        // Ability is an optional mastery
+        if (this.state.abilityOptionalStatus) {
+          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
       }
 
       // Ability is a tactic
-      if (this.props.details.abilityType == 'tactic'
+      else if (this.props.details.abilityType == 'tactic'
           || this.props.details.abilityType == 'tomeTactic') {
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
@@ -185,17 +193,23 @@ class Ability extends React.Component {
         if (this.props.userSelections.tactics.indexOf(this.props.details.id) != -1) {
           this.props.setUserSelectionTactic(this.props.details.id);
         }
-      }
+        // Ability is an optional mastery
+        if (this.state.abilityOptionalStatus) {
+          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+        }
 
-      // Ability is an optional mastery
-      if (this.state.abilityOptionalStatus) {
-        console.log('UNSELECTED its an optional mastery');
-        this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
-        //this.setState({ abilitySelected: false });
       // Ability is core
       } else {
-        console.log('UNSELECTED its a core');
-        //this.setState({ abilitySelected: false });
+        // Remove this abilityId from selectedAbilities
+        this.props.setSelectedAbilities(this.props.details.id);
+        // If this ability is in masteryAbilities array, remove it
+        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) != -1) {
+          this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+        }
+        // Ability is an optional mastery
+        if (this.state.abilityOptionalStatus) {
+          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+        }
       }
 
     }

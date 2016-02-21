@@ -3,13 +3,6 @@ import Ability from './Ability';
 
 class PathMeter extends React.Component {
 
-  //When optional ability is clicked (selected/unselected)
-  optionalAblitiyClicked() {
-    //Check is mastery points > 0
-    //Activates the ability icon and decrements mastery total points
-    //does opposite when unclicked
-  }
-
   render() {
     return (
       <div>
@@ -33,7 +26,9 @@ class PathMeter extends React.Component {
               details={this.props.pathOptionalAbilities.lvl6}
               currentLevel={this.props.currentLevel}
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
-              selectedAbilities={this.props.selectedAbilities} />
+              selectedAbilities={this.props.selectedAbilities}
+              setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+              userSelections={this.props.userSelections} />
           </div>
           <div className="level5">
             <Ability pathMeter={this.props.pathMeter}
@@ -54,7 +49,9 @@ class PathMeter extends React.Component {
               details={this.props.pathOptionalAbilities.lvl4}
               currentLevel={this.props.currentLevel}
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
-              selectedAbilities={this.props.selectedAbilities} />
+              selectedAbilities={this.props.selectedAbilities}
+              setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+              userSelections={this.props.userSelections} />
           </div>
           <div className="level3">
             <Ability pathMeter={this.props.pathMeter}
@@ -75,7 +72,9 @@ class PathMeter extends React.Component {
               details={this.props.pathOptionalAbilities.lvl2}
               currentLevel={this.props.currentLevel}
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
-              selectedAbilities={this.props.selectedAbilities} />
+              selectedAbilities={this.props.selectedAbilities}
+              setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+              userSelections={this.props.userSelections} />
           </div>
           <div className="level1">
             <Ability pathMeter={this.props.pathMeter}

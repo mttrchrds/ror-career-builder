@@ -35,7 +35,8 @@ class Mastery extends React.Component {
             setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
             selectedAbilities={this.props.selectedAbilities}
             currentTacticLimit={this.props.currentTacticLimit}
-            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)} />
+            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
+            setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)} />
           <PathMeterButtons masteryPath="a"
             masteryPoints={this.props.masteryPoints}
             pathMeter={this.props.pathAMeter}
@@ -59,7 +60,8 @@ class Mastery extends React.Component {
             setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
             selectedAbilities={this.props.selectedAbilities}
             currentTacticLimit={this.props.currentTacticLimit}
-            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)} />
+            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
+            setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)} />
           <PathMeterButtons masteryPath="b"
             masteryPoints={this.props.masteryPoints}
             pathMeter={this.props.pathBMeter}
@@ -83,7 +85,8 @@ class Mastery extends React.Component {
             setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
             selectedAbilities={this.props.selectedAbilities}
             currentTacticLimit={this.props.currentTacticLimit}
-            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)} />
+            setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
+            setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)} />
           <PathMeterButtons masteryPath="c"
             masteryPoints={this.props.masteryPoints}
             pathMeter={this.props.pathCMeter}

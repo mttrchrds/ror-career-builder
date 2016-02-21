@@ -155,6 +155,21 @@ class Career extends React.Component {
     });
   }
 
+  // Update Mastery ability selection
+  setUserSelectionMasteryAbilities(abilityId) {
+    let abilityIndex = this.state.userSelections.masteryAbilities.indexOf(abilityId);
+    if (abilityIndex == -1) {
+      // If ability isn't in array then add it
+      this.state.userSelections.masteryAbilities.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.userSelections.masteryAbilities.splice(abilityIndex, 1);
+    }
+    this.setState({
+      userSelections: this.state.userSelections
+    });
+  }
+
   // Update tactic selection
   setUserSelectionTactic(abilityId) {
     let abilityIndex = this.state.userSelections.tactics.indexOf(abilityId);
@@ -369,6 +384,7 @@ class Career extends React.Component {
                               selectedAbilities={this.state.selectedAbilities}
                               currentTacticLimit={this.state.currentTacticLimit}
                               setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
+                              setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
                               />
 
                           </div>
