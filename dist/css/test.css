@@ -1,0 +1,119 @@
+.wrapper {
+  padding: 20px;
+}
+#classIcon {
+  width: 28px;
+  height: 28px;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+#breadcrumb {
+  margin-bottom: 1em;
+}
+#xpBar {
+  margin-bottom: 1em;
+}
+#renownBar {
+  margin-bottom: 0;
+}
+
+.ability {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.ability--standard {
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+.ability--morale {
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.ability--morale .ability__image {
+  border-radius: 50%;
+}
+.ability--tactic {
+
+}
+.ability--tomeTactic {
+
+}
+.ability__image {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.ability--inactive .ability__image {
+  opacity: 0.2;
+}
+.ability--standard .ability__image {
+  border-radius: 4px;
+}
+.ability--optional.is-selected {
+  border: 2px solid yellow;
+}
+
+.abilityPopup {
+  width: 400px;
+}
+.abilityPopup p {
+  margin-bottom: 3px;
+  float: none;
+}
+.abilityPopup .split {
+  overflow: hidden;
+}
+.abilityPopup .split.divider {
+  border-bottom: 1px solid white;
+  margin-bottom: 3px;
+}
+.abilityPopup .split.last {
+  margin-bottom: 6px;
+}
+.abilityPopup .split *:first-child {
+  float: left;
+  width: 50%;
+}
+.abilityPopup .split *:last-child {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+.abilityPopup__name {
+  color: #fbbd08;
+}
+.abilityPopup__note {
+  color: #2185d0;
+  margin-bottom: 6px;
+}
+.abilityPopup__type {
+  color: #fbbd08;
+}
+.abilityPopup__description {
+  color: #fbbd08;
+}
+
+.rankContainer {
+  display: flex;
+}
+.rankContainer > div {
+  flex-grow: 1;
+  border-right: 1px solid #dedede;
+  padding-left: 5px;
+}
+.rankContainer > div:last-child {
+  border-right: none;
+}
+
+/* Semantic UI overrides */
+.ui.selection.dropdown {
+  min-width: 0;
+}
+.ui.segment {
+  overflow: hidden;
+}
+.ui.popup {
+  max-width: none;
+}

@@ -1,0 +1,6 @@
+bower_components
+node_modules
+dist/main.js
+images/screenshots
+.DS_Store
+scripts_old

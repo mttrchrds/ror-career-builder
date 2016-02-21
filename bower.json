@@ -1,0 +1,15 @@
+{
+  "name": "war-career",
+  "description": "",
+  "main": "gulpfile.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
