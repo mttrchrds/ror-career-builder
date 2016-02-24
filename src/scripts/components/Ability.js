@@ -75,7 +75,7 @@ class Ability extends React.Component {
       this.setState({
         abilityStatus: false
       });
-      this.updateMasteryPoints(Number(this.props.masteryPoints + 2));
+      this.props.updateMasteryPoints(Number(this.props.masteryPoints + 2));
     }
 
     this.setInitialStatus(nextProps.details.meterRequirement,
@@ -107,7 +107,7 @@ class Ability extends React.Component {
           // I.e. if current is NOT a mastery total (as we can't detect other Ability)
           if (currentMoraleRankId != '0') {
             if (!this.state.abilityOptionalStatus && this.props.moraleRank == '4') {
-              this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+              this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
             }
             this.props.setSelectedAbilities(currentMoraleRankId);
           }
@@ -120,7 +120,7 @@ class Ability extends React.Component {
           if (this.state.abilityOptionalStatus) {
             // If Mastery points are available then select and decrement total
             if (Number(this.props.masteryPoints) > 0) {
-              this.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+              this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
             }
           }
         }
@@ -139,7 +139,7 @@ class Ability extends React.Component {
             if (this.state.abilityOptionalStatus) {
               // If Mastery points are available then select and decrement total
               if (Number(this.props.masteryPoints) > 0) {
-                this.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+                this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
               }
             }
           }
@@ -155,7 +155,7 @@ class Ability extends React.Component {
             this.props.setSelectedAbilities(this.props.details.id);
             // If Mastery points are available then select and decrement total
             if (Number(this.props.masteryPoints) > 0) {
-              this.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+              this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
             }
           }
         }
@@ -180,7 +180,7 @@ class Ability extends React.Component {
         }
         // Ability is an optional mastery
         if (this.state.abilityOptionalStatus) {
-          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+          this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
       }
 
@@ -195,7 +195,7 @@ class Ability extends React.Component {
         }
         // Ability is an optional mastery
         if (this.state.abilityOptionalStatus) {
-          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+          this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
 
       // Ability is core
@@ -208,7 +208,7 @@ class Ability extends React.Component {
         }
         // Ability is an optional mastery
         if (this.state.abilityOptionalStatus) {
-          this.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+          this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
       }
 

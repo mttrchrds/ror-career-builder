@@ -17,7 +17,8 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               moraleRank='4'
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
-              selectedAbilities={this.props.selectedAbilities} />
+              selectedAbilities={this.props.selectedAbilities} 
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level6">
             <Ability pathMeter={this.props.pathMeter}
@@ -28,7 +29,8 @@ class PathMeter extends React.Component {
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
               selectedAbilities={this.props.selectedAbilities}
               setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level5">
             <Ability pathMeter={this.props.pathMeter}
@@ -40,7 +42,8 @@ class PathMeter extends React.Component {
               selectedAbilities={this.props.selectedAbilities}
               currentTacticLimit={this.props.currentTacticLimit}
               setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level4">
             <Ability pathMeter={this.props.pathMeter}
@@ -51,7 +54,8 @@ class PathMeter extends React.Component {
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
               selectedAbilities={this.props.selectedAbilities}
               setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level3">
             <Ability pathMeter={this.props.pathMeter}
@@ -63,7 +67,8 @@ class PathMeter extends React.Component {
               selectedAbilities={this.props.selectedAbilities}
               currentTacticLimit={this.props.currentTacticLimit}
               setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level2">
             <Ability pathMeter={this.props.pathMeter}
@@ -74,7 +79,8 @@ class PathMeter extends React.Component {
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
               selectedAbilities={this.props.selectedAbilities}
               setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
           <div className="level1">
             <Ability pathMeter={this.props.pathMeter}
@@ -86,7 +92,8 @@ class PathMeter extends React.Component {
               selectedAbilities={this.props.selectedAbilities}
               currentTacticLimit={this.props.currentTacticLimit}
               setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-              userSelections={this.props.userSelections} />
+              userSelections={this.props.userSelections}
+              masteryPath={this.props.masteryPath} />
           </div>
         </div>
         <p>Meter level = {this.props.pathMeter}</p>
