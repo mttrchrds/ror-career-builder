@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 
 class Ability extends React.Component {
 
+  /*
+  abilityStatus = enabled/disabled
+  abilitySelected = selected i.e. clicked
+  abilityOptionalStatus = is an optional mastery abilitiy i.e. selected via the path meter
+  */
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +18,7 @@ class Ability extends React.Component {
   }
 
   setInitialStatus(meterRequirement, pathMeter, currentLevel, minrank, selectedAbilities) {
-    // Determine if ability is selected from state of Career i.e. selectedAbilities
+    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
     if (selectedAbilities.indexOf(this.props.details.id) != -1) {
       this.setState({
         abilitySelected: true
@@ -33,7 +38,7 @@ class Ability extends React.Component {
       } else {
         this.setState({
           abilityStatus: false,
-          abilityOptionalStatus: false
+          abilityOptionalStatus: true
         });
       }
     // All other abilities
@@ -64,8 +69,14 @@ class Ability extends React.Component {
       });
   }
 
-  // Render on update
+  // About to update because parent changed
   componentWillReceiveProps(nextProps) {
+    this.setInitialStatus(nextProps.details.meterRequirement,
+      nextProps.pathMeter,
+      nextProps.currentLevel,
+      nextProps.details.minrank,
+      nextProps.selectedAbilities);
+
     // Meter level goes below optional Ability requirement
     // Ability must be deactivated and Mastery points updated
     // e.g. meter level 3, lvl1 path ability selected. Go to level 2, deselect
@@ -73,16 +84,37 @@ class Ability extends React.Component {
     if (this.state.abilitySelected &&
       Number(nextProps.pathMeter) < Number(this.props.details.meterRequirement)) {
       this.setState({
-        abilityStatus: false
+        abilityStatus: false,
+        abilitySelected: false
       });
+      // Remove from selectedAbilities in state
+      this.props.setSelectedAbilities(this.props.details.id);
+      // Remove from user selections in state i.e. this.state.userSelections
+      if (this.props.details.abilityType == 'morale') {
+        // If this morale is a selected morale, then reset
+        let selectedMoralesArray = [this.props.userSelections.morale1,
+                                this.props.userSelections.morale2,
+                                this.props.userSelections.morale3,
+                                this.props.userSelections.morale4];
+        if (selectedMoralesArray.indexOf(this.props.details.id) != -1) {
+          this.props.setUserSelectionMorale(this.props.moraleRank, 0);
+        }
+      }
+      else if (this.props.details.abilityType == 'tactic'
+          || this.props.details.abilityType == 'tomeTactic') {
+        // If this tactic is in tactic array, remove it
+        if (this.props.userSelections.tactics.indexOf(this.props.details.id) != -1) {
+          this.props.setUserSelectionTactic(this.props.details.id);
+        }
+      } else {
+        // If this ability is in masteryAbilities array, remove it
+        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) != -1) {
+          this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+        }
+      }
+      console.log('updating mastery: componentWillReceiveProps', nextProps.pathMeter, this.props.details.meterRequirement);
       this.props.updateMasteryPoints(Number(this.props.masteryPoints + 2));
     }
-
-    this.setInitialStatus(nextProps.details.meterRequirement,
-      nextProps.pathMeter,
-      nextProps.currentLevel,
-      nextProps.details.minrank,
-      nextProps.selectedAbilities);
   }
 
   // TODO : Does this really need to be a function?
@@ -91,14 +123,17 @@ class Ability extends React.Component {
   }
 
   abilityClicked(event) {
-    // Select ability
+    console.log('ABILITY CLICKED');
+    // Select ability i.e. not already selected
     if (this.state.abilitySelected === false) {
+      console.log('ABILITY WAS NOT SELECTED, NOW SELECTING');
       // Active ability selected
       if (this.state.abilityStatus) {
-
+        console.log('ABILITY IS ENABLED');
         // Ability is morale
         if (this.props.details.abilityType == 'morale') {
-          // Get current abilityId of morale of this rank
+          console.log('ABILITY IS A MORALE');
+          // Get current abilityId of morale of this rank e.g. this.state.userSelections.morale4
           let userSelectionPropertyName = 'morale' + this.props.moraleRank;
           let currentMoraleRankId = this.props.userSelections[userSelectionPropertyName];
           // Remove current selected morale (for this rank) from selectedAbilities
@@ -107,6 +142,7 @@ class Ability extends React.Component {
           // I.e. if current is NOT a mastery total (as we can't detect other Ability)
           if (currentMoraleRankId != '0') {
             if (!this.state.abilityOptionalStatus && this.props.moraleRank == '4') {
+              console.log('ABILITY IS CORE MORALE RANK 4');
               this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
             }
             this.props.setSelectedAbilities(currentMoraleRankId);
@@ -118,6 +154,7 @@ class Ability extends React.Component {
 
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
+            console.log('ABILITY IS OPTIONAL MASTERY MORALE');
             // If Mastery points are available then select and decrement total
             if (Number(this.props.masteryPoints) > 0) {
               this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
@@ -128,15 +165,18 @@ class Ability extends React.Component {
         // Ability is a tactic
         else if (this.props.details.abilityType == 'tactic'
             || this.props.details.abilityType == 'tomeTactic') {
+          console.log('ABILITY IS A TACTIC');
           // If tactics array length is less than tactic limit i.e. there is room for another selection
           // Add into tactics array
           // Add to selectedAbilities
           if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
+            console.log('THERE IS SPACE TO ADD A NEW TACTIC');
             this.props.setUserSelectionTactic(this.props.details.id);
             this.props.setSelectedAbilities(this.props.details.id);
 
             // Ability is an optional mastery
             if (this.state.abilityOptionalStatus) {
+              console.log('ABILITY IS OPTIONAL MASTERY TACTIC');
               // If Mastery points are available then select and decrement total
               if (Number(this.props.masteryPoints) > 0) {
                 this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
@@ -147,8 +187,10 @@ class Ability extends React.Component {
 
         // Ability is core
         else {
+          console.log('ABILITY IS CORE');
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
+            console.log('ABILITY IS OPTIONAL CORE');
             // Add into masteryAbilities array
             this.props.setUserSelectionMasteryAbilities(this.props.details.id);
             // Add to selectedAbilities
@@ -165,9 +207,10 @@ class Ability extends React.Component {
       }
     // Unselect ability
     } else {
-
+      console.log('ABILITY WAS SELECTED, NOW UNSELETING');
       // Ability is morale
       if (this.props.details.abilityType == 'morale') {
+        console.log('ABILITY IS MORALE');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this morale is a selected morale, then reset
@@ -176,10 +219,12 @@ class Ability extends React.Component {
                                 this.props.userSelections.morale3,
                                 this.props.userSelections.morale4];
         if (selectedMoralesArray.indexOf(this.props.details.id) != -1) {
+          console.log('ABILITY WAS A SELECTED MORALE');
           this.props.setUserSelectionMorale(this.props.moraleRank, 0);
         }
         // Ability is an optional mastery
         if (this.state.abilityOptionalStatus) {
+          console.log('ABILITY IS OPTIONAL MORALE');
           this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
       }
@@ -187,31 +232,34 @@ class Ability extends React.Component {
       // Ability is a tactic
       else if (this.props.details.abilityType == 'tactic'
           || this.props.details.abilityType == 'tomeTactic') {
+        console.log('ABILITY IS A TACTIC');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this tactic is in tactic array, remove it
         if (this.props.userSelections.tactics.indexOf(this.props.details.id) != -1) {
+          console.log('ABILITY WAS A SELECTED TACTIC');
           this.props.setUserSelectionTactic(this.props.details.id);
         }
         // Ability is an optional mastery
         if (this.state.abilityOptionalStatus) {
+          console.log('ABILITY IS OPTIONAL TACTIC');
           this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
 
       // Ability is core
       } else {
+        console.log('ABILITY IS CORE');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this ability is in masteryAbilities array, remove it
         if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) != -1) {
+          console.log('ABILITY IS OPTIONAL MASTERY CORE');
           this.props.setUserSelectionMasteryAbilities(this.props.details.id);
-        }
-        // Ability is an optional mastery
-        if (this.state.abilityOptionalStatus) {
+          // As ability is in masteryAbilities array we don't need to check abilityOptionalStatus
+          // Ability is an optional mastery
           this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
       }
-
     }
   }
 

@@ -45,10 +45,7 @@ class Career extends React.Component {
         morale3: 0,
         morale4: 0,
         tactics: [],
-        masteryAbilities: [],
-        pathTotal1: 0,
-        pathTotal2: 0,
-        pathTotal3: 0
+        masteryAbilities: []
       },
       selectedAbilities: [],
       currentTacticLimit: 0
@@ -88,21 +85,6 @@ class Career extends React.Component {
       console.log(error);
     });
 
-    // $('#levelSelect, #renownSelect')
-    //   .dropdown()
-    // ;
-    // $('.ui.sidebar').first()
-    //   .sidebar('attach events', '.changeCareer')
-    // ;
-    // $('.changeCareer')
-    //
-    //   .on('click', function(){ console.log('here');})
-    // ;
-    //
-
-
-
-
   }
 
   // Update limit on number of tactic slots
@@ -130,9 +112,6 @@ class Career extends React.Component {
     this.state.userSelections.morale4 = 0;
     this.state.userSelections.tactics = [];
     this.state.userSelections.masteryAbilities = [];
-    this.state.userSelections.pathTotal1 = 0;
-    this.state.userSelections.pathTotal2 = 0;
-    this.state.userSelections.pathTotal3 = 0;
     this.state.selectedAbilities = [];
     this.setState({
       userSelections: this.state.userSelections,
@@ -240,10 +219,12 @@ class Career extends React.Component {
   }
 
   updateMasteryPoints(points) {
+    console.log('DEBUG: updateMasteryPoints', points);
     this.setState({ masteryPoints: points });
   }
 
   updatePathMeter(masteryPath, points) {
+    console.log('DEBUG: updatePathMeter', masteryPath, points);
     switch (masteryPath) {
       case "a":
         this.setState({ pathAMeter: points });
@@ -301,7 +282,7 @@ class Career extends React.Component {
                         <div className="twelve wide column">
                           <div className="ui grid">
                             <div className="row">
-                              <div className="two wide column">
+                              <div className="three wide column">
 
                                 <SelectLevel
                                   updateLevel={this.updateLevel.bind(this)}
@@ -329,31 +310,31 @@ class Career extends React.Component {
                         <div className="seven wide column">
                           <div className="ui segment">
 
-                              <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
-                                setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                                selectedAbilities={this.state.selectedAbilities} />
+                            <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
+                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                              selectedAbilities={this.state.selectedAbilities} />
 
                           </div>
                           <div className="ui segment">
 
-                              <CoreMorales currentLevel={this.state.currentLevel}
-                                morales={this.state.coreMorales}
-                                setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
-                                userSelections={this.state.userSelections}
-                                setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                                selectedAbilities={this.state.selectedAbilities}
-                                updateMasteryPoints={this.updateMasteryPoints.bind(this)}
-                                masteryPoints={this.state.masteryPoints} />
+                            <CoreMorales currentLevel={this.state.currentLevel}
+                              morales={this.state.coreMorales}
+                              setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
+                              userSelections={this.state.userSelections}
+                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                              selectedAbilities={this.state.selectedAbilities}
+                              updateMasteryPoints={this.updateMasteryPoints.bind(this)}
+                              masteryPoints={this.state.masteryPoints} />
 
                           </div>
                           <div className="ui segment">
 
-                              <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
-                                setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                                selectedAbilities={this.state.selectedAbilities}
-                                currentTacticLimit={this.state.currentTacticLimit}
-                                setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
-                                userSelections={this.state.userSelections} />
+                            <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
+                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                              selectedAbilities={this.state.selectedAbilities}
+                              currentTacticLimit={this.state.currentTacticLimit}
+                              setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
+                              userSelections={this.state.userSelections} />
 
                           </div>
                         </div>

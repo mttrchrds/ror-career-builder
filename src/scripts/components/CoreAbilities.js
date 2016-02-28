@@ -17,7 +17,7 @@ class CoreAbilities extends React.Component {
 
     return (
       <div>
-        <h2>Core abilities</h2>
+        <h2 className="ui header subHeader">Core abilities</h2>
         <div className="core-abilities">
           {Object.keys(this.props.abilities).map(this.renderAbility.bind(this))}
         </div>

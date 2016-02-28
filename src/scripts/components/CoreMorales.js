@@ -73,7 +73,7 @@ class CoreMorales extends React.Component {
   render() {
     return (
       <div className="core-morales">
-        <h2>Core Morales</h2>
+        <h2 className="ui header subHeader">Core Morales</h2>
         {this.sortMorales()}
       </div>
     )

@@ -18,7 +18,7 @@ class CoreTactics extends React.Component {
   render() {
     return (
       <div>
-        <h2>Core Tactics</h2>
+        <h2 className="ui header subHeader">Core Tactics</h2>
         <div className="core-tactics">
           {Object.keys(this.props.tactics).map(this.renderAbility.bind(this))}
         </div>

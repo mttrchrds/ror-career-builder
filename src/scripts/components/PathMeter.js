@@ -6,7 +6,7 @@ class PathMeter extends React.Component {
   render() {
     return (
       <div>
-        <div className="optionalAbilities">
+        <div className="path__optional__abilities">
           <div className="level7">
             <Ability pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
@@ -17,7 +17,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               moraleRank='4'
               setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
-              selectedAbilities={this.props.selectedAbilities} 
+              selectedAbilities={this.props.selectedAbilities}
               masteryPath={this.props.masteryPath} />
           </div>
           <div className="level6">
@@ -96,8 +96,6 @@ class PathMeter extends React.Component {
               masteryPath={this.props.masteryPath} />
           </div>
         </div>
-        <p>Meter level = {this.props.pathMeter}</p>
-        <p>Total remaining = {this.props.masteryPoints}</p>
       </div>
     )
   }
