@@ -1,0 +1,211 @@
+.wrapper {
+  padding: 20px;
+}
+#classIcon {
+  width: 28px;
+  height: 28px;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+#breadcrumb {
+  margin-bottom: 1em;
+}
+#xpBar {
+  margin-bottom: 1em;
+}
+#renownBar {
+  margin-bottom: 0;
+}
+
+.ability {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 42px;
+  height: 42px;
+}
+.ability--standard {
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+.ability--morale {
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.ability--morale .ability__image {
+  border-radius: 50%;
+}
+.ability--tactic {
+
+}
+.ability--tomeTactic {
+
+}
+.ability__image {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.ability--inactive .ability__image {
+  opacity: 0.2;
+}
+.ability--standard .ability__image {
+  border-radius: 4px;
+}
+.ability--optional {
+  cursor: pointer;
+}
+.ability--optional.is-selected {
+  border: 2px solid yellow;
+}
+
+/* The following are styles for optional meter abilities */
+.path__optional__abilities .ability--optional.ability--inactive {
+  background-color: #ecb3b3;
+}
+.path__optional__abilities .ability--optional.ability--active {
+ background-color: #90d28b; 
+}
+.path__optional__abilities .ability--optional.ability--active .ability__image {
+  opacity: 0.2;
+}
+.path__optional__abilities .ability--optional.ability--active.is-selected {
+  background-color: transparent;
+}
+.path__optional__abilities .ability--optional.ability--active.is-selected .ability__image {
+  opacity: 1;
+}
+
+.abilityPopup {
+  width: 400px;
+}
+.abilityPopup p {
+  margin-bottom: 3px;
+  float: none;
+}
+.abilityPopup .split {
+  overflow: hidden;
+}
+.abilityPopup .split.divider {
+  border-bottom: 1px solid white;
+  margin-bottom: 3px;
+}
+.abilityPopup .split.last {
+  margin-bottom: 6px;
+}
+.abilityPopup .split *:first-child {
+  float: left;
+  width: 50%;
+}
+.abilityPopup .split *:last-child {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+.abilityPopup__name {
+  color: #fbbd08;
+}
+.abilityPopup__note {
+  color: #2185d0;
+  margin-bottom: 6px;
+}
+.abilityPopup__type {
+  color: #fbbd08;
+}
+.abilityPopup__description {
+  color: #fbbd08;
+}
+
+.rankContainer {
+  display: flex;
+}
+.rankContainer > div {
+  flex-grow: 1;
+  border-right: 1px solid #dedede;
+  padding-left: 5px;
+}
+.rankContainer > div:last-child {
+  border-right: none;
+}
+
+/* !important to override Semantic UI *derp* */
+.masteryPoints {
+  background-color: #d44c2c !important;
+  border-color: #d44c2c !important;
+  color: white !important;
+}
+.path {
+  display: flex;
+  justify-content: space-between;
+}
+.path > div {
+  flex-grow: 1;
+  border-right: 1px solid #dedede;
+  margin-right: 10px;
+}
+.path > div:last-child {
+  border-right: 0;
+  margin-right: 0;
+}
+.path__container {
+  display: flex;
+  justify-content: space-between;
+}
+.path__optional {
+  display: flex;
+  justify-content: space-between;
+}
+.path__core__abilities, .path__optional__abilities {
+  display: flex;
+  flex-direction: column;
+}
+.path__optional__abilities {
+  margin-left: 5px;
+}
+.path__core {
+  display: flex;
+  padding-right: 40px;
+}
+.path__core__title {
+  margin-bottom: 5px;
+}
+.path__core__abilities {
+  
+}
+
+.meter {
+  background-color: #dedede;
+  padding: 2px;
+  border-radius: 4px;
+}
+.meter__level {
+  height: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 2px;
+  border-radius: 4px;
+}
+.meter__level--active {
+  background-color: #db2828;
+}
+/* Increase specificity to override Semantic UI *derp* */
+.path__optional .meter__button {
+  margin-top: 1px;
+  margin-right: 0;
+}
+.path__optional .meter__button--add {
+  margin-right: 1px;
+}
+
+/* Semantic UI overrides */
+.ui.selection.dropdown {
+  min-width: 0;
+}
+.ui.segment {
+  overflow: hidden;
+}
+.ui.popup {
+  max-width: none;
+}
+.ui.header.subHeader {
+  color: #666666;
+}

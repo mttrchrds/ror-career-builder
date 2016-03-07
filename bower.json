@@ -11,5 +11,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bower": "*",
+    "install": "^1.0.4",
+    "jquery": "^2.2.1",
+    "semantic": "^2.1.8"
+  }
 }
