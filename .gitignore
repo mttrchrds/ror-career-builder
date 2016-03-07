@@ -1,6 +1,6 @@
-bower_components
+build/bower_components
 node_modules
-dist/main.js
-images/screenshots
+build/js/app.js
+images-not_used
+json-not_used
 .DS_Store
-scripts_old
