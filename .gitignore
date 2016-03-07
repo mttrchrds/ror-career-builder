@@ -4,3 +4,4 @@ build/js/app.js
 images-not_used
 json-not_used
 .DS_Store
+npm-debug.log

@@ -1,6 +1,17 @@
 const webpack = require('webpack');
 const CONFIG = require('./path.config');
 
+//eslint preloader to add later
+/*
+preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        include: CONFIG.source + CONFIG.sourcePath
+      }
+    ],
+*/
+
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
@@ -14,13 +25,6 @@ module.exports = {
     publicPath: '/js/'
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: CONFIG.source + CONFIG.sourcePath
-      }
-    ],
     loaders: [
       {
         test: /\.js$/,

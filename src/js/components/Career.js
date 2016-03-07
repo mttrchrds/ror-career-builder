@@ -46,21 +46,20 @@ class Career extends React.Component {
         morale3: 0,
         morale4: 0,
         tactics: [],
-        masteryAbilities: []
+        masteryAbilities: [],
       },
       selectedAbilities: [],
-      currentTacticLimit: 0
-    }
+      currentTacticLimit: 0,
+    };
   }
 
   componentDidMount() {
-
     h.getJSON('/json/careers.json', (careers) => {
       if (careers[this.props.params.careerName]) {
-        let career = careers[this.props.params.careerName];
-        let url = `/json/abilities/${career.code}.json`;
+        const career = careers[this.props.params.careerName];
+        const url = `/json/abilities/${career.code}.json`;
         h.getJSON(url, (abilities) => {
-          let imported = h.importJSON(career, abilities);
+          const imported = h.importJSON(career, abilities);
           this.setState({
             careers: careers,
             careerShort: this.props.params.careerName,
@@ -74,15 +73,15 @@ class Career extends React.Component {
             pathBCoreAbilities: imported.pathBCore,
             pathBOptionalAbilities: imported.pathBOpt,
             pathCCoreAbilities: imported.pathCCore,
-            pathCOptionalAbilities: imported.pathCOpt
+            pathCOptionalAbilities: imported.pathCOpt,
           });
         });
       } else {
         this.setState({
-          careers: careers
+          careers: careers,
         });
       }
-    }, function(error) {
+    }, function (error) {
       console.log(error);
     });
 
@@ -91,7 +90,7 @@ class Career extends React.Component {
   // Update limit on number of tactic slots
   setCurrentTacticLimit(level) {
     let currentLimit = 0;
-    if (level == 40) {
+    if (level === 40) {
       currentLimit = 4;
     } else if (level >= 30) {
       currentLimit = 3;
@@ -101,7 +100,7 @@ class Career extends React.Component {
       currentLimit = 1;
     }
     this.setState({
-      currentTacticLimit: currentLimit
+      currentTacticLimit: currentLimit,
     });
   }
 
@@ -116,14 +115,14 @@ class Career extends React.Component {
     this.state.selectedAbilities = [];
     this.setState({
       userSelections: this.state.userSelections,
-      selectedAbilities: this.state.selectedAbilities
+      selectedAbilities: this.state.selectedAbilities,
     });
   }
 
   // Add/remove ability to/from selectedAbilities in state
   setSelectedAbilities(abilityId) {
-    let abilityIndex = this.state.selectedAbilities.indexOf(abilityId);
-    if (abilityIndex == -1) {
+    const abilityIndex = this.state.selectedAbilities.indexOf(abilityId);
+    if (abilityIndex === -1) {
       // If ability isn't in array then add it
       this.state.selectedAbilities.push(abilityId);
     } else {
@@ -131,14 +130,14 @@ class Career extends React.Component {
       this.state.selectedAbilities.splice(abilityIndex, 1);
     }
     this.setState({
-      selectedAbilities: this.state.selectedAbilities
+      selectedAbilities: this.state.selectedAbilities,
     });
   }
 
   // Update Mastery ability selection
   setUserSelectionMasteryAbilities(abilityId) {
-    let abilityIndex = this.state.userSelections.masteryAbilities.indexOf(abilityId);
-    if (abilityIndex == -1) {
+    const abilityIndex = this.state.userSelections.masteryAbilities.indexOf(abilityId);
+    if (abilityIndex === -1) {
       // If ability isn't in array then add it
       this.state.userSelections.masteryAbilities.push(abilityId);
     } else {
@@ -146,14 +145,14 @@ class Career extends React.Component {
       this.state.userSelections.masteryAbilities.splice(abilityIndex, 1);
     }
     this.setState({
-      userSelections: this.state.userSelections
+      userSelections: this.state.userSelections,
     });
   }
 
   // Update tactic selection
   setUserSelectionTactic(abilityId) {
-    let abilityIndex = this.state.userSelections.tactics.indexOf(abilityId);
-    if (abilityIndex == -1) {
+    const abilityIndex = this.state.userSelections.tactics.indexOf(abilityId);
+    if (abilityIndex === -1) {
       // If ability isn't in array then add it
       this.state.userSelections.tactics.push(abilityId);
     } else {
@@ -161,16 +160,16 @@ class Career extends React.Component {
       this.state.userSelections.tactics.splice(abilityIndex, 1);
     }
     this.setState({
-      userSelections: this.state.userSelections
+      userSelections: this.state.userSelections,
     });
   }
 
   // Update morale selection
   setUserSelectionMorale(rank, abilityId) {
-    let moraleName = 'morale' + rank;
+    const moraleName = 'morale' + rank;
     this.state.userSelections[moraleName] = abilityId;
     this.setState({
-      userSelections: this.state.userSelections
+      userSelections: this.state.userSelections,
     });
   }
 
@@ -214,7 +213,7 @@ class Career extends React.Component {
         masteryPoints: points,
         pathAMeter: 0,
         pathBMeter: 0,
-        pathCMeter: 0
+        pathCMeter: 0,
       });
     }
   }
@@ -227,13 +226,13 @@ class Career extends React.Component {
   updatePathMeter(masteryPath, points) {
     console.log('DEBUG: updatePathMeter', masteryPath, points);
     switch (masteryPath) {
-      case "a":
+      case 'a':
         this.setState({ pathAMeter: points });
         break;
-      case "b":
+      case 'b':
         this.setState({ pathBMeter: points });
         break;
-      case "c":
+      case 'c':
         this.setState({ pathCMeter: points });
         break;
     }
@@ -379,14 +378,14 @@ class Career extends React.Component {
             </div>
           </div>
 
-            <button className="ui button blue basic changeCareer">
-              <i className="users icon"></i>
-              Change career
-            </button>
+          <button className="ui button blue basic changeCareer">
+            <i className="users icon"></i>
+            Change career
+          </button>
         </div>
-      )
+      );
     }
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1>;
   }
 }
 
