@@ -38,7 +38,7 @@ class PathMeterButtons extends React.Component {
       if (i <= (meterLevelMax - this.props.pathMeter)) {
         thisClass = 'meter__level';
       }
-      meterLevels.push(<div className={thisClass}></div>);
+      meterLevels.push(<div key={this.props.masteryPath + i} className={thisClass}></div>);
     }
     return meterLevels;
   }
