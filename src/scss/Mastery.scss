@@ -1,0 +1,67 @@
+/* !important to override Semantic UI *derp* */
+.masteryPoints {
+  background-color: #d44c2c !important;
+  border-color: #d44c2c !important;
+  color: white !important;
+}
+.path {
+  display: flex;
+  justify-content: space-between;
+}
+.path > div {
+  flex-grow: 1;
+  border-right: 1px solid #dedede;
+  margin-right: 10px;
+}
+.path > div:last-child {
+  border-right: 0;
+  margin-right: 0;
+}
+.path__container {
+  display: flex;
+  justify-content: space-between;
+}
+.path__optional {
+  display: flex;
+  justify-content: space-between;
+}
+.path__core__abilities, .path__optional__abilities {
+  display: flex;
+  flex-direction: column;
+}
+.path__optional__abilities {
+  margin-left: 5px;
+}
+.path__core {
+  display: flex;
+  padding-right: 40px;
+}
+.path__core__title {
+  margin-bottom: 5px;
+}
+.path__core__abilities {
+  
+}
+
+.meter {
+  background-color: #dedede;
+  padding: 2px;
+  border-radius: 4px;
+}
+.meter__level {
+  height: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 2px;
+  border-radius: 4px;
+}
+.meter__level--active {
+  background-color: #db2828;
+}
+/* Increase specificity to override Semantic UI *derp* */
+.path__optional .meter__button {
+  margin-top: 1px;
+  margin-right: 0;
+}
+.path__optional .meter__button--add {
+  margin-right: 1px;
+}

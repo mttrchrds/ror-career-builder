@@ -1,6 +1,8 @@
 import React from 'react';
 import Ability from './Ability';
 
+require('../../scss/CoreMorales.scss');
+
 class CoreMorales extends React.Component {
 
   renderAbility(key, rank) {

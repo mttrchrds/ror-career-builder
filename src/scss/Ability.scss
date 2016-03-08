@@ -1,0 +1,98 @@
+.ability {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 42px;
+  height: 42px;
+}
+.ability--standard {
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+.ability--morale {
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.ability--morale .ability__image {
+  border-radius: 50%;
+}
+.ability--tactic {
+
+}
+.ability--tomeTactic {
+
+}
+.ability__image {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.ability--inactive .ability__image {
+  opacity: 0.2;
+}
+.ability--standard .ability__image {
+  border-radius: 4px;
+}
+.ability--optional {
+  cursor: pointer;
+}
+.ability--optional.is-selected {
+  border: 2px solid yellow;
+}
+
+/* The following are styles for optional meter abilities */
+.path__optional__abilities .ability--optional.ability--inactive {
+  background-color: #ecb3b3;
+}
+.path__optional__abilities .ability--optional.ability--active {
+ background-color: #90d28b; 
+}
+.path__optional__abilities .ability--optional.ability--active .ability__image {
+  opacity: 0.2;
+}
+.path__optional__abilities .ability--optional.ability--active.is-selected {
+  background-color: transparent;
+}
+.path__optional__abilities .ability--optional.ability--active.is-selected .ability__image {
+  opacity: 1;
+}
+
+.abilityPopup {
+  width: 400px;
+}
+.abilityPopup p {
+  margin-bottom: 3px;
+  float: none;
+}
+.abilityPopup .split {
+  overflow: hidden;
+}
+.abilityPopup .split.divider {
+  border-bottom: 1px solid white;
+  margin-bottom: 3px;
+}
+.abilityPopup .split.last {
+  margin-bottom: 6px;
+}
+.abilityPopup .split *:first-child {
+  float: left;
+  width: 50%;
+}
+.abilityPopup .split *:last-child {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+.abilityPopup__name {
+  color: #fbbd08;
+}
+.abilityPopup__note {
+  color: #2185d0;
+  margin-bottom: 6px;
+}
+.abilityPopup__type {
+  color: #fbbd08;
+}
+.abilityPopup__description {
+  color: #fbbd08;
+}

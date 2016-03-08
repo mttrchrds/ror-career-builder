@@ -3,6 +3,8 @@ import Ability from './Ability';
 import PathMeter from './PathMeter';
 import PathMeterButtons from './PathMeterButtons';
 
+require('../../scss/Mastery.scss');
+
 class Mastery extends React.Component {
 
   renderAbility(obj) {

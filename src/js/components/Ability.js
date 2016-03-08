@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+require('../../scss/Ability.scss');
+
 class Ability extends React.Component {
 
   /*
