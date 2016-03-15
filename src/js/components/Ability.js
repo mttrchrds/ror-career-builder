@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 
 require('../../scss/Ability.scss');
 
@@ -63,12 +64,13 @@ class Ability extends React.Component {
     // Add the popup for each ability
     // Using the selector ".ability" here really slows down performance
     // findDOMNode isn't supposed to work in ES6 classes but seems ok... ¯\_(ツ)_/¯
-    $(ReactDOM.findDOMNode(this))
-      .popup({
-        metadata: {
-          html: 'html'
-        }
-      });
+    // $(ReactDOM.findDOMNode(this))
+    //   .popup({
+    //     on: 'click',
+    //     metadata: {
+    //       html: 'html'
+    //     }
+    //   });
   }
 
   // About to update because parent changed
@@ -265,30 +267,17 @@ class Ability extends React.Component {
     }
   }
 
-  setAbilityClass() {
-    let abilityClass = `ability ability--${this.props.details.abilityType} `;
-
-    // Check for optional abilities i.e. whether they can be selected
-    if (this.props.details.hasOwnProperty('meterRequirement')
-        || this.props.details.abilityType == 'morale'
-        || this.props.details.abilityType == 'tactic'
-        || this.props.details.abilityType == 'tomeTactic') {
-      abilityClass += "ability--optional ";
-    }
-
-    if (this.state.abilitySelected) {
-        abilityClass += "ability--active is-selected";
-    } else {
-      if (this.state.abilityStatus === true) {
-        abilityClass += "ability--active";
-      } else {
-        abilityClass += "ability--inactive";
-      }
-    }
-    return abilityClass;
-  }
-
   render() {
+    let abilityClass = classNames({
+      [`ability ability--${this.props.details.abilityType}`]: true,
+      'ability--optional': this.props.details.hasOwnProperty('meterRequirement')
+                          || this.props.details.abilityType == 'morale'
+                          || this.props.details.abilityType == 'tactic'
+                          || this.props.details.abilityType == 'tomeTactic',
+      'ability--active': this.state.abilityStatus,
+      'ability--inactive': !this.state.abilityStatus,
+      'is-selected': this.state.abilitySelected
+    });
     let imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     let popupNote = '';
     if (this.props.details.note) {
@@ -315,11 +304,10 @@ class Ability extends React.Component {
                       <p class='description'>${this.props.details.description}</p>
                       </div>`;
     return (
-      <div className={this.setAbilityClass()} onClick={this.abilityClicked.bind(this)}
+      <div className={abilityClass} onClick={this.abilityClicked.bind(this)}
         data-variation="inverted"
         data-html={popupInfo}>
-        <img className="ability__image"
-          src={imgSrc} alt={this.props.details.name} />
+        <img className="ability__image" src={imgSrc} alt={this.props.details.name} />
       </div>
     )
   }

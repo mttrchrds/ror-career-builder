@@ -3,9 +3,7 @@ $inactiveColour: #ecb3b3;
 $borderColour: #999;
 
 .ability {
-  float: left;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 1px;
   width: 42px;
   height: 42px;
 }
@@ -42,7 +40,7 @@ $borderColour: #999;
   cursor: pointer;
 }
 .ability--optional.is-selected {
-  border: 2px solid yellow;
+  border: 1px solid orange;
 }
 
 /* The following are styles for optional meter abilities */

@@ -22,30 +22,39 @@ class CoreMorales extends React.Component {
 
   renderMorales(rank1, rank2, rank3, rank4) {
     return (
-      <div className="rankContainer">
-        <div className="rank1">
-          <h3>Rank 1</h3>
-          {rank1.map((obj) => {
-            return (this.renderAbility(obj, 1))
-          })}
+      <div className="coreMorales">
+        <div className="moraleRank moraleRank--1">
+          <h3 className="moraleRank__title">Rank 1</h3>
+          <div className="moraleRank__abilities">
+            {rank1.map((obj) => {
+              return (this.renderAbility(obj, 1))
+            })}
+          </div>
+          
         </div>
-        <div className="rank2">
-          <h3>Rank 2</h3>
-          {rank2.map((obj) => {
-            return (this.renderAbility(obj, 2))
-          })}
+        <div className="moraleRank moraleRank--2">
+          <h3 className="moraleRank__title">Rank 2</h3>
+          <div className="moraleRank__abilities">
+            {rank2.map((obj) => {
+              return (this.renderAbility(obj, 2))
+             })}
+          </div>
         </div>
-        <div className="rank3">
-          <h3>Rank 3</h3>
-          {rank3.map((obj) => {
-            return (this.renderAbility(obj, 3))
-          })}
+        <div className="moraleRank moraleRank--3">
+          <h3 className="moraleRank__title">Rank 3</h3>
+          <div className="moraleRank__abilities">
+            {rank3.map((obj) => {
+              return (this.renderAbility(obj, 3))
+            })}
+          </div>
         </div>
-        <div className="rank4">
-          <h3>Rank 4</h3>
-          {rank4.map((obj) => {
-            return (this.renderAbility(obj, 4))
-          })}
+        <div className="moraleRank moraleRank--4">
+          <h3 className="moraleRank__title">Rank 4</h3>
+          <div className="moraleRank__abilities">
+            {rank4.map((obj) => {
+              return (this.renderAbility(obj, 4))
+            })}
+          </div>
         </div>
       </div>
     )

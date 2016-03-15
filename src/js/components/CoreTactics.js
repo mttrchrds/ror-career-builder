@@ -1,6 +1,8 @@
 import React from 'react';
 import Ability from './Ability';
 
+require('../../scss/CoreTactics.scss');
+
 class CoreTactics extends React.Component {
 
   renderAbility(key) {
@@ -19,7 +21,7 @@ class CoreTactics extends React.Component {
     return (
       <div>
         <h2 className="ui header subHeader">Core Tactics</h2>
-        <div className="core-tactics">
+        <div className="coreTactics">
           {Object.keys(this.props.tactics).map(this.renderAbility.bind(this))}
         </div>
       </div>

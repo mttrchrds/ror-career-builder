@@ -1,11 +1,19 @@
-.rankContainer {
-  display: flex;
+.coreMorales {
+ 	display: flex;
 }
-.rankContainer > div {
-  flex-grow: 1;
-  border-right: 1px solid #dedede;
-  padding-left: 5px;
+.moraleRank {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	border-right: 1px solid #dedede;
+	padding-left: 5px;
 }
-.rankContainer > div:last-child {
-  border-right: none;
+.moraleRank--4 {
+ 	border-right: none;
+}
+.moraleRank__title {
+	flex-grow: 4;
+}
+.moraleRank__abilities {
+	display: flex;
 }
