@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import Popover from './Popover';
 
 require('../../scss/Ability.scss');
 
@@ -10,13 +10,15 @@ class Ability extends React.Component {
   abilityStatus = enabled/disabled
   abilitySelected = selected i.e. clicked
   abilityOptionalStatus = is an optional mastery abilitiy i.e. selected via the path meter
+  abilityHovered = ability is currently in hover state
   */
   constructor(props) {
     super(props);
     this.state = {
       abilityStatus: false,
       abilitySelected: false,
-      abilityOptionalStatus: false
+      abilityOptionalStatus: false,
+      abilityHovered: false,
     };
   }
 
@@ -61,16 +63,6 @@ class Ability extends React.Component {
                           this.props.currentLevel,
                           this.props.details.minrank,
                           this.props.selectedAbilities);
-    // Add the popup for each ability
-    // Using the selector ".ability" here really slows down performance
-    // findDOMNode isn't supposed to work in ES6 classes but seems ok... ¯\_(ツ)_/¯
-    // $(ReactDOM.findDOMNode(this))
-    //   .popup({
-    //     on: 'click',
-    //     metadata: {
-    //       html: 'html'
-    //     }
-    //   });
   }
 
   // About to update because parent changed
@@ -267,6 +259,12 @@ class Ability extends React.Component {
     }
   }
 
+  abilityHovered(status) {
+    this.setState({
+      abilityHovered: status
+    })
+  }
+
   render() {
     let abilityClass = classNames({
       [`ability ability--${this.props.details.abilityType}`]: true,
@@ -276,38 +274,41 @@ class Ability extends React.Component {
                           || this.props.details.abilityType == 'tomeTactic',
       'ability--active': this.state.abilityStatus,
       'ability--inactive': !this.state.abilityStatus,
-      'is-selected': this.state.abilitySelected
+      'is-selected': this.state.abilitySelected,
+      'is-hovered': this.state.abilityHovered
     });
     let imgSrc = `../../images/abilities/${this.props.details.image}.png`;
-    let popupNote = '';
+    // Prepare content for ability Popover
+    let popoverNote = '';
     if (this.props.details.note) {
-      popupNote = `<p class='abilityPopup__note'>${this.props.details.note}</p>`;
+      popoverNote = <p className="abilityContent__note" dangerouslySetInnerHTML={{__html: this.props.details.note}} />;
     }
-    let popupInfo = `<div class='abilityPopup'>
-                      <div class='split'>
-                        <p class='abilityPopup__name'>${this.props.details.name}</p>
-                        <p class='abilityPopup__type'>${this.props.details.type}</p>
+    let popoverContent = <div className="abilityContent">
+                      <div className="split">
+                        <p className="abilityContent__name">{this.props.details.name}</p>
+                        <p className="abilityContent__type">{this.props.details.type}</p>
                       </div>
-                      <div class='split divider'>
-                        <p>${this.props.details.spec}</p>
-                        <p>Level ${this.props.details.minrank}</p>
+                      <div className="split divider">
+                        <p>{this.props.details.spec}</p>
+                        <p>Level {this.props.details.minrank}</p>
                       </div>
-                      <div class='split'>
-                        <p>${this.props.details.cost}</p>
-                        <p>${this.props.details.range}</p>
+                      <div className="split">
+                        <p>{this.props.details.cost}</p>
+                        <p>{this.props.details.range}</p>
                       </div>
-                      <div class='split last'>
-                        <p>${this.props.details.incant}</p>
-                        <p>${this.props.details.cooldown}</p>
+                      <div className="split last">
+                        <p>{this.props.details.incant}</p>
+                        <p>{this.props.details.cooldown}</p>
                       </div>
-                      ${popupNote}
-                      <p class='description'>${this.props.details.description}</p>
-                      </div>`;
+                      {popoverNote}
+                      <p className="abilityContent__description" dangerouslySetInnerHTML={{__html: this.props.details.description}} />
+                      </div>;
     return (
       <div className={abilityClass} onClick={this.abilityClicked.bind(this)}
-        data-variation="inverted"
-        data-html={popupInfo}>
+        onMouseOver={this.abilityHovered.bind(this, true)} 
+        onMouseOut={this.abilityHovered.bind(this, false)} ref="popoverParent" >
         <img className="ability__image" src={imgSrc} alt={this.props.details.name} />
+        <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>
     )
   }

@@ -1,0 +1,82 @@
+$popoverBackgroundColour: #242424;
+$popoverWidth: 350px;
+$popoverSpacing: 15px;
+$popoverArrowSize: 10px;
+
+.popover {
+	box-sizing: border-box;
+	display: none;
+	position: absolute;
+	z-index: 100;
+	width: $popoverWidth;
+	padding: 20px;
+	background-color: $popoverBackgroundColour;
+	color: white;
+	border-radius: 4px;
+	opacity: 0;
+	transition: opacity .2s linear;
+}
+.popover.active {
+	display: block;
+}
+.popover.active.fade {
+	opacity: 1;
+}
+
+/* popover position coordinates
+* .top and .bottom require JS help for 'top'/'bottom' property */
+
+.popover.top,
+.popover.bottom {
+	left: calc(50% - #{$popoverWidth}/2);
+}
+.popover.right {
+	right: calc(-#{$popoverWidth} - #{$popoverSpacing});
+}
+
+.popover.left {
+	top: -50%;
+	left: calc(-#{$popoverWidth} - #{$popoverSpacing});
+}
+
+/* speech "arrow" coordinates */
+.popover:before {
+	content: ' ';
+	position: absolute;
+	width: 0px;
+    height: 0px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.popover.top:before {
+	border-left: $popoverArrowSize solid transparent;
+    border-right: $popoverArrowSize solid transparent;
+    border-top: $popoverArrowSize solid $popoverBackgroundColour;
+	bottom: -$popoverArrowSize;
+	left: calc(50% - #{$popoverArrowSize});
+}
+
+.popover.bottom:before {
+	border-left: $popoverArrowSize solid transparent;
+    border-right: $popoverArrowSize solid transparent;
+    border-bottom: $popoverArrowSize solid $popoverBackgroundColour;
+	top: -$popoverArrowSize;
+	left: calc(50% - #{$popoverArrowSize});
+}
+
+.popover.left:before {
+	border-top: $popoverArrowSize solid transparent;
+    border-bottom: $popoverArrowSize solid transparent;
+    border-left: $popoverArrowSize solid $popoverBackgroundColour;
+	top: calc(50% - #{$popoverArrowSize});
+	right: -$popoverArrowSize;
+}
+
+.popover.right:before {
+	border-top: $popoverArrowSize solid transparent;
+    border-bottom: $popoverArrowSize solid transparent;
+    border-right: $popoverArrowSize solid $popoverBackgroundColour;
+	top: calc(50% - #{$popoverArrowSize});
+	left: -$popoverArrowSize;
+}

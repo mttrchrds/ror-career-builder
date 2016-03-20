@@ -3,9 +3,9 @@ import React from 'react';
 class Sidebar extends React.Component {
 
   componentDidMount() {
-    $('.ui.sidebar').first()
-      .sidebar('attach events', '.changeCareer')
-    ;
+    // $('.ui.sidebar').first()
+    //   .sidebar('attach events', '.changeCareer')
+    // ;
   }
 
   renderCareers(key) {
