@@ -9,20 +9,18 @@ class SelectRenown extends React.Component {
 
   render() {
     return (
-      <div className="ui form">
-        <div className="inline fields">
-          <div className="field">
-            <label>Renown rank</label>
-            <select ref="renown"
+      <div className="l-select">
+        <div className="c-level">
+          <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
+          <select ref="renown"
             onChange={this.changeRenown.bind(this)}
-            className="ui dropdown" id="renownSelect">
-              <option value="10">&lt; 40</option>
-              <option value="40">40+</option>
-              <option value="50">50+</option>
-              <option value="60">60+</option>
-              <option value="70">70+</option>
-            </select>
-          </div>
+            className="c-level__select" id="renownSelect">
+            <option value="10">&lt; 40</option>
+            <option value="40">40+</option>
+            <option value="50">50+</option>
+            <option value="60">60+</option>
+            <option value="70">70+</option>
+          </select>
         </div>
       </div>
     )

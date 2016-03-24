@@ -19,16 +19,14 @@ class SelectLevel extends React.Component {
 
   render() {
     return (
-      <div className="ui form">
-        <div className="inline fields">
-          <div className="field">
-            <label>Level</label>
-            <select ref="level"
+      <div className="l-select">
+        <div className="c-level">
+          <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
+          <select ref="level"
             onChange={this.changeLevel.bind(this)}
-            className="ui dropdown" id="levelSelect">
+            className="c-level__select" id="levelSelect">
             {this.generateLevels()}
-            </select>
-          </div>
+          </select>
         </div>
       </div>
     )

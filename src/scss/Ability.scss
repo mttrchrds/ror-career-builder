@@ -4,8 +4,8 @@ $borderColour: #999;
 
 .ability {
   margin: 1px;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 }
 .ability--standard {
   border-radius: 4px;
@@ -44,31 +44,33 @@ $borderColour: #999;
 }
 
 /* The following are styles for optional meter abilities */
-.path__optional__abilities .ability--optional.ability--inactive {
+.l-path-abilities__wrapper--optional .ability--optional.ability--inactive {
 	background-color: $inactiveColour;
 }
-.path__optional__abilities .ability--optional.ability--inactive.ability--tactic {
+.l-path-abilities__wrapper--optional .ability--optional.ability--inactive.ability--tactic {
 	background: url('/images/optional-tactic-inactive.png') no-repeat 0 0;
 	background-size: cover;
 }
-.path__optional__abilities .ability--optional.ability--active {
+.l-path-abilities__wrapper--optional .ability--optional.ability--active {
 	background-color: $activeColour; 
 }
-.path__optional__abilities .ability--optional.ability--active.ability--tactic {
+.l-path-abilities__wrapper--optional .ability--optional.ability--active.ability--tactic {
 	background: url('/images/optional-tactic-active.png') no-repeat 0 0;
 	background-size: cover;
 }
-.path__optional__abilities .ability--optional.ability--active .ability__image {
+.l-path-abilities__wrapper--optional .ability--optional.ability--active .ability__image {
   opacity: 0.2;
 }
-.path__optional__abilities .ability--optional.ability--active.is-selected {
+.l-path-abilities__wrapper--optional .ability--optional.ability--active.is-selected {
   background-color: transparent;
 }
-.path__optional__abilities .ability--optional.ability--active.is-selected .ability__image {
+.l-path-abilities__wrapper--optional .ability--optional.ability--active.is-selected .ability__image {
   opacity: 1;
 }
 
 .abilityContent p {
+  font-size: 0.8rem;
+  margin-top: 0;
   margin-bottom: 3px;
   float: none;
 }

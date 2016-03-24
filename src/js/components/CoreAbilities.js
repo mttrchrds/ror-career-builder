@@ -18,13 +18,14 @@ class CoreAbilities extends React.Component {
   render() {
 
     return (
-      <div>
-        <h2 className="ui header subHeader">Core abilities</h2>
-        <div className="coreAbilities">
-          {Object.keys(this.props.abilities).map(this.renderAbility.bind(this))}
+      <div className="l-abilities">
+        <div className="l-box">
+          <h2 className="c-ability-title t-secondary t-secondary__title">Core abilities</h2>
+          <div className="l-core-abilities">
+            {Object.keys(this.props.abilities).map(this.renderAbility.bind(this))}
+          </div>
         </div>
       </div>
-
     )
   }
 }

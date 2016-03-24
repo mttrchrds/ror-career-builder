@@ -32,8 +32,10 @@ class BarRenown extends React.Component {
 
   render() {
     return (
-      <div id="renownBar" className="ui tiny purple progress">
-        <div className="bar" style={this.calculateBarWidth()}></div>
+      <div className="l-bar l-bar--final">
+        <div className="c-progress c-progress--small">
+          <div className="c-progress__bar c-progress__bar--purple c-progress__bar--thin" style={this.calculateBarWidth()}></div>
+        </div>
       </div>
     )
   }

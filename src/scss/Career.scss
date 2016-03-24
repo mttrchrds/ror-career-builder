@@ -1,32 +1,161 @@
-.wrapper {
-  padding: 20px;
+html, 
+button, 
+input, 
+select, 
+textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Roboto', sans-serif;
 }
-#classIcon {
-  width: 28px;
-  height: 28px;
-  margin-top: -5px;
-  margin-right: 5px;
+
+.t-primary {
+  color: #444;
 }
-#breadcrumb {
-  margin-bottom: 1em;
+
+.t-primary__title {
+  font-size: 2rem;
 }
-#xpBar {
-  margin-bottom: 1em;
+
+.t-secondary {
+  color: #666;
 }
-#renownBar {
+
+.t-secondary__title {
+  font-size: 1.4rem;
+}
+
+.t-secondary__subtitle {
+  font-size: 1.2rem;
+}
+
+.l-wrapper {
+  margin: 1rem;
+}
+
+.l-box {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border: 1px solid rgba(34,36,38,.15);
+  background-color: #fff;
+}
+
+.l-box--inverse {
+  background-color: #f3f4f5;
+}
+
+.l-breadcrumbs {
+  margin-bottom: 1rem; 
+}
+
+.c-breadcrumb {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+.c-breadcrumb--active {
+  font-weight: bold;
+}
+.c-breadcrumb__divider {
+  display: inline-block;
+  padding: 0 0.3rem;
+}
+
+.l-bar {
+  margin-bottom: 1rem;
+}
+
+.l-bar--final {
+  margin-bottom: 2rem;
+}
+
+.c-progress {
+  position: relative;
+  border-radius: 0.3rem;
+  background-color: rgba(0,0,0,.1);
+}
+
+.c-progress--small {
+  width: 40%;
+}
+
+.c-progress__bar {
+  position: relative;
+  height: 0.8rem;
+  width: 1%;
+  transition: width .3s ease;
+  border-radius: 0.3rem;
+}
+
+.c-progress__bar--thin {
+  height: 0.4rem;
+}
+
+.c-progress__bar--yellow {
+  background-color: #fbbd08;
+}
+
+.c-progress__bar--purple {
+  background-color: #a333c8;
+}
+
+.l-class {
+  margin-bottom: 1rem;
+}
+
+.l-title,
+.l-select {
+  height: 2.5rem;
+}
+
+.c-title {
+  display: inline-block;
+  line-height: 1;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Semantic UI overrides */
-.ui.selection.dropdown {
-  min-width: 0;
+.c-title__icon {
+  position: relative;
+  top: 0.2rem;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
 }
-.ui.segment {
-  
+
+.c-level {
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
-.ui.popup {
-  max-width: none;
+
+.c-level__label {
+  font-size: 1rem;
+  margin-right: 1rem;
 }
-.ui.header.subHeader {
-  color: #666666;
+
+.c-level__select {
+  height: 2rem;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: 0.3rem;
+}
+
+.l-abilities,
+.l-morales {
+  margin-bottom: 1rem;
+}
+
+.l-mastery {
+  margin-left: 1rem;
+}
+
+.c-ability-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.c-button--small {
+  font-size: 70%;
 }

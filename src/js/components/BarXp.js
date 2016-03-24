@@ -13,8 +13,10 @@ class BarXp extends React.Component {
 
   render() {
     return (
-      <div id="xpBar" className="ui small yellow progress">
-        <div className="bar" style={this.calculateBarWidth()}></div>
+      <div className="l-bar">
+          <div className="c-progress">
+              <div className="c-progress__bar c-progress__bar--yellow" style={this.calculateBarWidth()}></div>
+          </div>
       </div>
     )
   }

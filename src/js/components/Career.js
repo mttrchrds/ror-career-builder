@@ -251,133 +251,102 @@ class Career extends React.Component {
       return (
         <div>
           <Sidebar careers={this.state.careers} />
-          <div className="wrapper pusher">
-            <div className="ui equal width grid">
-              <div className="row">
-                <div className="column">
-                  <div className="ui segment secondary">
 
-                    <Breadcrumb career={this.state.career} />
+          <div className="l-wrapper l-box l-box--inverse">
+            
+            <Breadcrumb career={this.state.career} />
 
-                    <div className="ui grid">
-                      <div className="row">
-                        <div className="sixteen wide column">
+            <BarXp currentLevel={this.state.currentLevel} />
 
-                          <BarXp currentLevel={this.state.currentLevel} />
+            <BarRenown currentRenown={this.state.currentRenown} />
 
-                        </div>
-                        <div className="six wide column">
+            <div className="l-class">
+              <div className="pure-g">
+                <div className="pure-u-7-24">
 
-                          <BarRenown currentRenown={this.state.currentRenown} />
+                  <CareerTitle careerShort={this.state.careerShort}
+                    career={this.state.career} />
 
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="four wide column">
+                </div>
+                <div className="pure-u-2-24">
 
-                          <CareerTitle careerShort={this.state.careerShort}
-                            career={this.state.career} />
+                  <SelectLevel
+                    updateLevel={this.updateLevel.bind(this)}
+                    currentLevel={this.state.currentLevel}
+                    masteryPoints={this.state.masteryPoints}
+                    setMasteryPoints={this.setMasteryPoints.bind(this)}
+                    currentRenown={this.state.currentRenown}
+                    setCurrentTacticLimit={this.setCurrentTacticLimit.bind(this)}
+                    resetSelections={this.resetSelections.bind(this)} />
 
-                        </div>
-                        <div className="twelve wide column">
-                          <div className="ui grid">
-                            <div className="row">
-                              <div className="three wide column">
+                </div>
+                <div className="pure-u-15-24">
 
-                                <SelectLevel
-                                  updateLevel={this.updateLevel.bind(this)}
-                                  currentLevel={this.state.currentLevel}
-                                  masteryPoints={this.state.masteryPoints}
-                                  setMasteryPoints={this.setMasteryPoints.bind(this)}
-                                  currentRenown={this.state.currentRenown}
-                                  setCurrentTacticLimit={this.setCurrentTacticLimit.bind(this)}
-                                  resetSelections={this.resetSelections.bind(this)} />
+                  <SelectRenown
+                    currentLevel={this.state.currentLevel}
+                    updateRenown={this.updateRenown.bind(this)}
+                    setMasteryPoints={this.setMasteryPoints.bind(this)} />
 
-                              </div>
-                              <div className="thirteen wide column">
-
-                                <SelectRenown
-                                  currentLevel={this.state.currentLevel}
-                                  updateRenown={this.updateRenown.bind(this)}
-                                  setMasteryPoints={this.setMasteryPoints.bind(this)} />
-
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="seven wide column">
-                          <div className="ui segment">
-
-                            <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
-                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                              selectedAbilities={this.state.selectedAbilities} />
-
-                          </div>
-                          <div className="ui segment">
-
-                            <CoreMorales currentLevel={this.state.currentLevel}
-                              morales={this.state.coreMorales}
-                              setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
-                              userSelections={this.state.userSelections}
-                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                              selectedAbilities={this.state.selectedAbilities}
-                              updateMasteryPoints={this.updateMasteryPoints.bind(this)}
-                              masteryPoints={this.state.masteryPoints} />
-
-                          </div>
-                          <div className="ui segment">
-
-                            <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
-                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                              selectedAbilities={this.state.selectedAbilities}
-                              currentTacticLimit={this.state.currentTacticLimit}
-                              setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
-                              userSelections={this.state.userSelections} />
-
-                          </div>
-                        </div>
-                        <div className="nine wide column">
-                          <div className="ui segment">
-
-                            <Mastery
-                              career={this.state.career}
-                              currentLevel={this.state.currentLevel}
-                              pathACoreAbilities={this.state.pathACoreAbilities}
-                              pathAOptionalAbilities={this.state.pathAOptionalAbilities}
-                              pathBCoreAbilities={this.state.pathBCoreAbilities}
-                              pathBOptionalAbilities={this.state.pathBOptionalAbilities}
-                              pathCCoreAbilities={this.state.pathCCoreAbilities}
-                              pathCOptionalAbilities={this.state.pathCOptionalAbilities}
-                              masteryPoints={this.state.masteryPoints}
-                              pathAPoints={this.state.pathAPoints}
-                              pathBPoints={this.state.pathBPoints}
-                              pathCPoints={this.state.pathCPoints}
-                              pathAMeter={this.state.pathAMeter}
-                              pathBMeter={this.state.pathBMeter}
-                              pathCMeter={this.state.pathCMeter}
-                              updatePathMeter={this.updatePathMeter.bind(this)}
-                              updateMasteryPoints={this.updateMasteryPoints.bind(this)}
-                              setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
-                              userSelections={this.state.userSelections}
-                              setSelectedAbilities={this.setSelectedAbilities.bind(this)}
-                              selectedAbilities={this.state.selectedAbilities}
-                              currentTacticLimit={this.state.currentTacticLimit}
-                              setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
-                              setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
-                              />
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div className="pure-g">
+              <div className="pure-u-10-24">
+
+                <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
+                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  selectedAbilities={this.state.selectedAbilities} />
+
+                <CoreMorales currentLevel={this.state.currentLevel}
+                  morales={this.state.coreMorales}
+                  setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
+                  userSelections={this.state.userSelections}
+                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  selectedAbilities={this.state.selectedAbilities}
+                  updateMasteryPoints={this.updateMasteryPoints.bind(this)}
+                  masteryPoints={this.state.masteryPoints} />
+
+                <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
+                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  selectedAbilities={this.state.selectedAbilities}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
+                  userSelections={this.state.userSelections} />
+
+              </div>
+              <div className="pure-u-14-24">
+
+                <Mastery
+                  career={this.state.career}
+                  currentLevel={this.state.currentLevel}
+                  pathACoreAbilities={this.state.pathACoreAbilities}
+                  pathAOptionalAbilities={this.state.pathAOptionalAbilities}
+                  pathBCoreAbilities={this.state.pathBCoreAbilities}
+                  pathBOptionalAbilities={this.state.pathBOptionalAbilities}
+                  pathCCoreAbilities={this.state.pathCCoreAbilities}
+                  pathCOptionalAbilities={this.state.pathCOptionalAbilities}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAPoints={this.state.pathAPoints}
+                  pathBPoints={this.state.pathBPoints}
+                  pathCPoints={this.state.pathCPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  updatePathMeter={this.updatePathMeter.bind(this)}
+                  updateMasteryPoints={this.updateMasteryPoints.bind(this)}
+                  setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
+                  userSelections={this.state.userSelections}
+                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  selectedAbilities={this.state.selectedAbilities}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
+                  setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
+                  />
+
+              </div>
+            </div>
+          </div>
           <button className="ui button blue basic changeCareer">
             <i className="users icon"></i>
             Change career

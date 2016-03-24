@@ -44,39 +44,39 @@ $popoverArrowSize: 10px;
 	content: ' ';
 	position: absolute;
 	width: 0px;
-    height: 0px;
-    font-size: 0;
-    line-height: 0;
+  height: 0px;
+  font-size: 0;
+  line-height: 0;
 }
 
 .popover.top:before {
 	border-left: $popoverArrowSize solid transparent;
-    border-right: $popoverArrowSize solid transparent;
-    border-top: $popoverArrowSize solid $popoverBackgroundColour;
+  border-right: $popoverArrowSize solid transparent;
+  border-top: $popoverArrowSize solid $popoverBackgroundColour;
 	bottom: -$popoverArrowSize;
 	left: calc(50% - #{$popoverArrowSize});
 }
 
 .popover.bottom:before {
 	border-left: $popoverArrowSize solid transparent;
-    border-right: $popoverArrowSize solid transparent;
-    border-bottom: $popoverArrowSize solid $popoverBackgroundColour;
+  border-right: $popoverArrowSize solid transparent;
+  border-bottom: $popoverArrowSize solid $popoverBackgroundColour;
 	top: -$popoverArrowSize;
 	left: calc(50% - #{$popoverArrowSize});
 }
 
 .popover.left:before {
 	border-top: $popoverArrowSize solid transparent;
-    border-bottom: $popoverArrowSize solid transparent;
-    border-left: $popoverArrowSize solid $popoverBackgroundColour;
+  border-bottom: $popoverArrowSize solid transparent;
+  border-left: $popoverArrowSize solid $popoverBackgroundColour;
 	top: calc(50% - #{$popoverArrowSize});
 	right: -$popoverArrowSize;
 }
 
 .popover.right:before {
 	border-top: $popoverArrowSize solid transparent;
-    border-bottom: $popoverArrowSize solid transparent;
-    border-right: $popoverArrowSize solid $popoverBackgroundColour;
+  border-bottom: $popoverArrowSize solid transparent;
+  border-right: $popoverArrowSize solid $popoverBackgroundColour;
 	top: calc(50% - #{$popoverArrowSize});
 	left: -$popoverArrowSize;
 }

@@ -34,9 +34,9 @@ class PathMeterButtons extends React.Component {
     let meterLevels = [];
     const meterLevelMax = 15
     for (let i = 1; i <= meterLevelMax; i++) {
-      let thisClass = 'meter__level meter__level--active';
+      let thisClass = 'c-meter__level c-meter__level--active';
       if (i <= (meterLevelMax - this.props.pathMeter)) {
-        thisClass = 'meter__level';
+        thisClass = 'c-meter__level';
       }
       meterLevels.push(<div key={this.props.masteryPath + i} className={thisClass}></div>);
     }
@@ -46,17 +46,17 @@ class PathMeterButtons extends React.Component {
   render() {
     return (
         <div>
-          <div className="meter">
+          <div className="c-meter">
             {this.renderMeterLevel()}
           </div>
           <button
-            className="meter__button meter__button--add mini blue ui icon button"
+            className="l-meter__button l-meter__button--add pure-button pure-button-primary c-button--small"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'add')}
-            type="button"><i className="plus icon"></i></button>
+            type="button"><i className="fa fa-plus"></i></button>
           <button
-            className="meter__button meter__button--remove mini blue ui icon button"
+            className="l-meter__button pure-button pure-button-primary c-button--small"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'remove')}
-            type="button"><i className="minus icon"></i></button>
+            type="button"><i className="fa fa-minus"></i></button>
         </div>
     )
   }

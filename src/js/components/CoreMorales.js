@@ -22,35 +22,35 @@ class CoreMorales extends React.Component {
 
   renderMorales(rank1, rank2, rank3, rank4) {
     return (
-      <div className="coreMorales">
-        <div className="moraleRank moraleRank--1">
-          <h3 className="moraleRank__title">Rank 1</h3>
-          <div className="moraleRank__abilities">
+      <div className="l-core-morales">
+        <div className="c-morale c-morale--1">
+          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
+          <div className="c-morale__abilities">
             {rank1.map((obj) => {
               return (this.renderAbility(obj, 1))
             })}
           </div>
           
         </div>
-        <div className="moraleRank moraleRank--2">
-          <h3 className="moraleRank__title">Rank 2</h3>
-          <div className="moraleRank__abilities">
+        <div className="c-morale c-morale--2">
+          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
+          <div className="c-morale__abilities">
             {rank2.map((obj) => {
               return (this.renderAbility(obj, 2))
              })}
           </div>
         </div>
-        <div className="moraleRank moraleRank--3">
-          <h3 className="moraleRank__title">Rank 3</h3>
-          <div className="moraleRank__abilities">
+        <div className="c-morale c-morale--3">
+          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
+          <div className="c-morale__abilities">
             {rank3.map((obj) => {
               return (this.renderAbility(obj, 3))
             })}
           </div>
         </div>
-        <div className="moraleRank moraleRank--4">
-          <h3 className="moraleRank__title">Rank 4</h3>
-          <div className="moraleRank__abilities">
+        <div className="c-morale c-morale--4">
+          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
+          <div className="c-morale__abilities">
             {rank4.map((obj) => {
               return (this.renderAbility(obj, 4))
             })}
@@ -83,9 +83,11 @@ class CoreMorales extends React.Component {
 
   render() {
     return (
-      <div className="core-morales">
-        <h2 className="ui header subHeader">Core Morales</h2>
-        {this.sortMorales()}
+      <div className="l-morales">
+        <div className="l-box">
+          <h2 className="c-ability-title t-secondary t-secondary__title">Core morales</h2>
+          {this.sortMorales()}
+        </div>
       </div>
     )
   }
