@@ -1,3 +1,5 @@
+@import 'vars';
+
 $activeColour: #90d28b;
 $inactiveColour: #ecb3b3;
 $borderColour: #999;
@@ -44,65 +46,57 @@ $borderColour: #999;
 }
 
 /* The following are styles for optional meter abilities */
-.l-path-abilities__wrapper--optional .ability--optional.ability--inactive {
+.ability--mastery.ability--inactive {
 	background-color: $inactiveColour;
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--inactive.ability--tactic {
+.ability--mastery.ability--inactive.ability--tactic {
 	background: url('/images/optional-tactic-inactive.png') no-repeat 0 0;
 	background-size: cover;
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--active {
+.ability--mastery.ability--active {
 	background-color: $activeColour; 
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--active.ability--tactic {
+.ability--mastery.ability--active.ability--tactic {
 	background: url('/images/optional-tactic-active.png') no-repeat 0 0;
 	background-size: cover;
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--active .ability__image {
+.ability--mastery.ability--active .ability__image {
   opacity: 0.2;
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--active.is-selected {
+.ability--mastery.ability--active.is-selected {
   background-color: transparent;
 }
-.l-path-abilities__wrapper--optional .ability--optional.ability--active.is-selected .ability__image {
+.ability--mastery.ability--active.is-selected .ability__image {
   opacity: 1;
 }
 
-.abilityContent p {
-  font-size: 0.8rem;
-  margin-top: 0;
+/* Styling over Ability Popover content */
+.c-ability-pop {
+  &__item {
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    &--right {
+      text-align: right;
+    }
+    &--large {
+      font-size: 1rem; 
+    }
+    &--primary {
+      color: $color-xp;
+    }
+    &--secondary {
+      color: $color-primary; 
+    }
+  }
+  &__divider {
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+  }
+}
+.l-popover-spacing-bottom {
   margin-bottom: 3px;
-  float: none;
-}
-.abilityContent .split {
-  overflow: hidden;
-}
-.abilityContent .split.divider {
-  border-bottom: 1px solid white;
-  margin-bottom: 3px;
-}
-.abilityContent .split.last {
-  margin-bottom: 6px;
-}
-.abilityContent .split >:first-child {
-  float: left;
-  width: 50%;
-}
-.abilityContent .split >:last-child {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-.abilityContent__name {
-  color: #fbbd08;
-}
-.abilityContent__note {
-  color: #2185d0;
-  margin-bottom: 6px;
-}
-.abilityContent__type {
-  color: #fbbd08;
-}
-.abilityContent__description {
-  color: #fbbd08;
+  &--large {
+    margin-bottom: 6px;
+  }
 }

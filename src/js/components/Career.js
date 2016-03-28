@@ -260,7 +260,7 @@ class Career extends React.Component {
 
             <BarRenown currentRenown={this.state.currentRenown} />
 
-            <div className="l-class">
+            <div className="l-spacing-bottom">
               <div className="pure-g">
                 <div className="pure-u-7-24">
 

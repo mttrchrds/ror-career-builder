@@ -1,0 +1,12 @@
+.c-button--primary {
+  color: #fff;
+  @include raised-effect($color-primary-light, $color-primary);
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
+  &:hover, &:active, &:focus {
+    background: linear-gradient($color-primary-lighter, $color-primary);
+  }
+}
+
+.c-button--small {
+  font-size: 70%;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../../scss/SelectLevel.scss');
+
 class SelectRenown extends React.Component {
 
   changeRenown() {

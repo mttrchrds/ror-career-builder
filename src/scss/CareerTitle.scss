@@ -1,0 +1,14 @@
+.c-title {
+  display: inline-block;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  &__icon {
+    position: relative;
+    top: 0.2rem;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 0.5rem;
+  }
+}

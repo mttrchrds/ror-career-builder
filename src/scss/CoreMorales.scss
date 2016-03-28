@@ -1,3 +1,5 @@
+@import 'vars';
+
 .l-core-morales {
  	display: flex;
 }
@@ -5,20 +7,20 @@
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
-	border-right: 1px solid #dedede;
+	border-right: 1px solid $base-border-color;
 	padding-left: 5px;
-}
-.c-morale--1 {
-  padding-left: 0;
-}
-.c-morale--4 {
- 	border-right: none;
-}
-.c-morale__title {
-  margin-top: 0;
-  margin-bottom: 1rem;
-	flex-grow: 4;
-}
-.c-morale__abilities {
-	display: flex;
+  &--1 {
+    padding-left: 0;
+  }
+  &--4 {
+    border-right: none;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    flex-grow: 4;
+  }
+  &__abilities {
+    display: flex;
+  }
 }

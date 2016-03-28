@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../../scss/PathMeterButtons.scss');
+
 class PathMeterButtons extends React.Component {
 
   updateMasteryTotals(masteryPath, meterValue, masteryPoints) {
@@ -50,11 +52,11 @@ class PathMeterButtons extends React.Component {
             {this.renderMeterLevel()}
           </div>
           <button
-            className="l-meter__button l-meter__button--add pure-button pure-button-primary c-button--small"
+            className="pure-button c-button--small c-button--primary l-spacing-right--tiny"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'add')}
             type="button"><i className="fa fa-plus"></i></button>
           <button
-            className="l-meter__button pure-button pure-button-primary c-button--small"
+            className="pure-button c-button--small c-button--primary"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'remove')}
             type="button"><i className="fa fa-minus"></i></button>
         </div>

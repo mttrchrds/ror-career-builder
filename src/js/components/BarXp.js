@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../../scss/BarXp.scss');
+
 class BarXp extends React.Component {
 
   calculateBarWidth() {
@@ -13,9 +15,9 @@ class BarXp extends React.Component {
 
   render() {
     return (
-      <div className="l-bar">
+      <div className="l-spacing-bottom">
           <div className="c-progress">
-              <div className="c-progress__bar c-progress__bar--yellow" style={this.calculateBarWidth()}></div>
+              <div className="c-progress__bar c-progress__bar--xp" style={this.calculateBarWidth()}></div>
           </div>
       </div>
     )

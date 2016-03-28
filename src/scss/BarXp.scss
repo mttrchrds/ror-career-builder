@@ -1,0 +1,27 @@
+@import 'vars';
+@import 'mixins';
+
+.c-progress {
+  position: relative;
+  border-radius: $base-border-radius;
+  background-color: $color-meter-background;
+  &--small {
+    width: 40%;
+  }
+  &__bar {
+    position: relative;
+    height: 0.8rem;
+    width: 1%;
+    transition: width .3s ease;
+    border-radius: $base-border-radius;
+  }
+  &__bar--thin {
+    height: 0.4rem;
+  }
+  &__bar--xp {
+    @include raised-effect($color-xp-light, $color-xp);
+  }
+  &__bar--renown {
+    @include raised-effect($color-renown-light, $color-renown);
+  }
+}

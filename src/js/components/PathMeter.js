@@ -6,7 +6,7 @@ class PathMeter extends React.Component {
   render() {
     return (
       <div>
-        <div className="l-path-abilities__wrapper l-path-abilities__wrapper--optional">
+        <div className="l-column l-spacing-left--small">
           <div className="level7">
             <Ability pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}

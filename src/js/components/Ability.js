@@ -275,34 +275,45 @@ class Ability extends React.Component {
       'ability--active': this.state.abilityStatus,
       'ability--inactive': !this.state.abilityStatus,
       'is-selected': this.state.abilitySelected,
-      'is-hovered': this.state.abilityHovered
+      'is-hovered': this.state.abilityHovered,
+      'ability--mastery': this.state.abilityOptionalStatus,
     });
     let imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     // Prepare content for ability Popover
     let popoverNote = '';
     if (this.props.details.note) {
-      popoverNote = <p className="abilityContent__note" dangerouslySetInnerHTML={{__html: this.props.details.note}} />;
+      popoverNote = <p className="c-ability-pop__item c-ability-pop__item--secondary l-popover-spacing-bottom--large"
+                      dangerouslySetInnerHTML={{__html: this.props.details.note}} 
+                    />;
     }
-    let popoverContent = <div className="abilityContent">
-                      <div className="split">
-                        <p className="abilityContent__name">{this.props.details.name}</p>
-                        <p className="abilityContent__type">{this.props.details.type}</p>
-                      </div>
-                      <div className="split divider">
-                        <p>{this.props.details.spec}</p>
-                        <p>Level {this.props.details.minrank}</p>
-                      </div>
-                      <div className="split">
-                        <p>{this.props.details.cost}</p>
-                        <p>{this.props.details.range}</p>
-                      </div>
-                      <div className="split last">
-                        <p>{this.props.details.incant}</p>
-                        <p>{this.props.details.cooldown}</p>
-                      </div>
-                      {popoverNote}
-                      <p className="abilityContent__description" dangerouslySetInnerHTML={{__html: this.props.details.description}} />
-                      </div>;
+    let popoverContent = (
+      <div className="c-ability-pop">
+        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+          <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary">
+            {this.props.details.name}
+          </p>
+          <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary c-ability-pop__item--right">
+            {this.props.details.type}
+          </p>
+        </div>
+        <div className="l-row l-row--space-between l-popover-spacing-bottom c-ability-pop__divider">
+          <p className="c-ability-pop__item">{this.props.details.spec}</p>
+          <p className="c-ability-pop__item c-ability-pop__item--right">Level {this.props.details.minrank}</p>
+        </div>
+        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+          <p className="c-ability-pop__item">{this.props.details.cost}</p>
+          <p className="c-ability-pop__item c-ability-pop__item--right">{this.props.details.range}</p>
+        </div>
+        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+          <p className="c-ability-pop__item">{this.props.details.incant}</p>
+          <p className="c-ability-pop__item c-ability-pop__item--right">{this.props.details.cooldown}</p>
+        </div>
+        {popoverNote}
+        <p className="c-ability-pop__item c-ability-pop__item--primary"
+          dangerouslySetInnerHTML={{__html: this.props.details.description}}
+        />
+      </div>
+    );
     return (
       <div className={abilityClass} onClick={this.abilityClicked.bind(this)}
         onMouseOver={this.abilityHovered.bind(this, true)} 
