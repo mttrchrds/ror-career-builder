@@ -2,6 +2,7 @@ import React from 'react';
 import Ability from './Ability';
 import PathMeter from './PathMeter';
 import PathMeterButtons from './PathMeterButtons';
+import classNames from 'classnames';
 
 class Mastery extends React.Component {
 
@@ -16,10 +17,15 @@ class Mastery extends React.Component {
   }
 
   render() {
+    let labelClass = classNames({
+      'c-label': true,
+      'l-spacing-left--small': true,
+      'c-label--points': this.props.masteryPoints > 0,
+    });
     return (
       <div className="l-box l-box--no-padding-right l-spacing-left">
         <h2 className="l-page-title">
-          Mastery abilities <span className="red">{this.props.masteryPoints} points</span>
+          Mastery abilities <span className={labelClass}>{this.props.masteryPoints} points</span>
         </h2>
         <div className="pure-g">
           <div className="pure-u-1-3">

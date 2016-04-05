@@ -104,3 +104,17 @@ h4 {
 .l-select {
   height: 2.5rem;
 }
+
+.c-label {
+  position: relative;
+  top: -$label-padding;
+  display: inline-block;
+  color: #fff;
+  font-size: 1rem;
+  padding: $label-padding $label-padding * 2;
+  border-radius: $base-border-radius;
+  background-color: $tertiary-text-color;
+  &--points {
+    background-color: $color-points;
+  }
+}
