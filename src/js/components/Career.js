@@ -262,13 +262,13 @@ class Career extends React.Component {
 
             <div className="l-spacing-bottom">
               <div className="pure-g">
-                <div className="pure-u-7-24">
+                <div className="pure-u-8-24">
 
                   <CareerTitle careerShort={this.state.careerShort}
                     career={this.state.career} />
 
                 </div>
-                <div className="pure-u-2-24">
+                <div className="pure-u-3-24">
 
                   <SelectLevel
                     updateLevel={this.updateLevel.bind(this)}
@@ -280,7 +280,7 @@ class Career extends React.Component {
                     resetSelections={this.resetSelections.bind(this)} />
 
                 </div>
-                <div className="pure-u-15-24">
+                <div className="pure-u-13-24">
 
                   <SelectRenown
                     currentLevel={this.state.currentLevel}
