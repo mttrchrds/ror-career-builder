@@ -21,7 +21,7 @@ $borderColour: #999;
   border-radius: 50%;
 }
 .c-ability--tactic {
-	background: url('/images/tactic-border.png') no-repeat 0 0;
+	background: url('/images/tactic-border.svg') no-repeat 0 0;
 	background-size: cover;
 }
 .c-ability--tomeTactic {
@@ -50,14 +50,14 @@ $borderColour: #999;
 	background-color: $inactiveColour;
 }
 .c-ability--mastery.c-ability--inactive.c-ability--tactic {
-	background: url('/images/optional-tactic-inactive.png') no-repeat 0 0;
+	background: url('/images/optional-tactic-inactive.svg') no-repeat 0 0;
 	background-size: cover;
 }
 .c-ability--mastery.c-ability--active {
 	background-color: $activeColour; 
 }
 .c-ability--mastery.c-ability--active.c-ability--tactic {
-	background: url('/images/optional-tactic-active.png') no-repeat 0 0;
+	background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
 	background-size: cover;
 }
 .c-ability--mastery.c-ability--active .c-ability__image {
