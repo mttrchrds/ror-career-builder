@@ -4,69 +4,69 @@ $activeColour: #90d28b;
 $inactiveColour: #ecb3b3;
 $borderColour: #999;
 
-.ability {
+.c-ability {
   margin: 1px;
   width: 40px;
   height: 40px;
 }
-.ability--standard {
+.c-ability--standard {
   border-radius: 4px;
   border: 1px solid $borderColour;
 }
-.ability--morale {
+.c-ability--morale {
   border-radius: 50%;
   border: 1px solid $borderColour;
 }
-.ability--morale .ability__image {
+.c-ability--morale .c-ability__image {
   border-radius: 50%;
 }
-.ability--tactic {
+.c-ability--tactic {
 	background: url('/images/tactic-border.png') no-repeat 0 0;
 	background-size: cover;
 }
-.ability--tomeTactic {
+.c-ability--tomeTactic {
 
 }
-.ability__image {
+.c-ability__image {
   display: block;
   width: 40px;
   height: 40px;
 }
-.ability--inactive .ability__image {
+.c-ability--inactive .c-ability__image {
   opacity: 0.2;
 }
-.ability--standard .ability__image {
+.c-ability--standard .c-ability__image {
   border-radius: 4px;
 }
-.ability--optional {
+.c-ability--optional {
   cursor: pointer;
 }
-.ability--optional.is-selected {
+.c-ability--optional.is-selected {
   border: 1px solid orange;
 }
 
 /* The following are styles for optional meter abilities */
-.ability--mastery.ability--inactive {
+.c-ability--mastery.c-ability--inactive {
 	background-color: $inactiveColour;
 }
-.ability--mastery.ability--inactive.ability--tactic {
+.c-ability--mastery.c-ability--inactive.c-ability--tactic {
 	background: url('/images/optional-tactic-inactive.png') no-repeat 0 0;
 	background-size: cover;
 }
-.ability--mastery.ability--active {
+.c-ability--mastery.c-ability--active {
 	background-color: $activeColour; 
 }
-.ability--mastery.ability--active.ability--tactic {
+.c-ability--mastery.c-ability--active.c-ability--tactic {
 	background: url('/images/optional-tactic-active.png') no-repeat 0 0;
 	background-size: cover;
 }
-.ability--mastery.ability--active .ability__image {
+.c-ability--mastery.c-ability--active .c-ability__image {
   opacity: 0.2;
 }
-.ability--mastery.ability--active.is-selected {
+.c-ability--mastery.c-ability--active.is-selected {
   background-color: transparent;
 }
-.ability--mastery.ability--active.is-selected .ability__image {
+.c-ability--mastery.c-ability--active.is-selected .c-ability__image {
   opacity: 1;
 }
 

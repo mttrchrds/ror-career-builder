@@ -267,16 +267,16 @@ class Ability extends React.Component {
 
   render() {
     let abilityClass = classNames({
-      [`ability ability--${this.props.details.abilityType}`]: true,
-      'ability--optional': this.props.details.hasOwnProperty('meterRequirement')
+      [`c-ability c-ability--${this.props.details.abilityType}`]: true,
+      'c-ability--optional': this.props.details.hasOwnProperty('meterRequirement')
                           || this.props.details.abilityType == 'morale'
                           || this.props.details.abilityType == 'tactic'
                           || this.props.details.abilityType == 'tomeTactic',
-      'ability--active': this.state.abilityStatus,
-      'ability--inactive': !this.state.abilityStatus,
+      'c-ability--active': this.state.abilityStatus,
+      'c-ability--inactive': !this.state.abilityStatus,
       'is-selected': this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
-      'ability--mastery': this.state.abilityOptionalStatus,
+      'c-ability--mastery': this.state.abilityOptionalStatus,
     });
     let imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     // Prepare content for ability Popover
@@ -318,7 +318,7 @@ class Ability extends React.Component {
       <div className={abilityClass} onClick={this.abilityClicked.bind(this)}
         onMouseOver={this.abilityHovered.bind(this, true)} 
         onMouseOut={this.abilityHovered.bind(this, false)} ref="popoverParent" >
-        <img className="ability__image" src={imgSrc} alt={this.props.details.name} />
+        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
         <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>
     )
