@@ -11,6 +11,7 @@ import BarRenown from './BarRenown';
 import Breadcrumb from './Breadcrumb';
 import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
+import ActionButtons from './ActionButtons';
 
 require('../../scss/Career.scss');
 
@@ -344,13 +345,11 @@ class Career extends React.Component {
                   setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
                   />
 
+                <ActionButtons />
+
               </div>
             </div>
           </div>
-          <button className="ui button blue basic changeCareer">
-            <i className="users icon"></i>
-            Change career
-          </button>
         </div>
       );
     }

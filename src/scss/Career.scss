@@ -61,6 +61,9 @@ h4 {
 
 .l-spacing-right {
   margin-right: $base-spacing;
+  &--small {
+    margin-right: $base-spacing / 2;
+  }
   &--tiny {
     margin-right: 2px;
   }
@@ -90,8 +93,11 @@ h4 {
 .l-row {
   display: flex;
   flex-wrap: wrap;
-  &--space-between {
+  &--justify {
     justify-content: space-between;
+  }
+  &--right {
+    justify-content: flex-end;
   }
 }
 

@@ -1,9 +1,19 @@
-.c-button--primary {
+.c-button {
   color: #fff;
-  @include raised-effect($color-primary-light, $color-primary);
   text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+
+.c-button--primary {
+  @include raised-effect($color-primary-light, $color-primary);
   &:hover, &:active, &:focus {
     background: linear-gradient($color-primary-lighter, $color-primary);
+  }
+}
+
+.c-button--save {
+  @include raised-effect($color-save-light, $color-save);
+  &:hover, &:active, &:focus {
+    background: linear-gradient($color-save-lighter, $color-save);
   }
 }
 

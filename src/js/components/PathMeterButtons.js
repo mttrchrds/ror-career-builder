@@ -52,11 +52,11 @@ class PathMeterButtons extends React.Component {
             {this.renderMeterLevel()}
           </div>
           <button
-            className="pure-button c-button--small c-button--primary l-spacing-right--tiny"
+            className="pure-button c-button c-button--small c-button--primary l-spacing-right--tiny"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'add')}
             type="button"><i className="fa fa-plus"></i></button>
           <button
-            className="pure-button c-button--small c-button--primary"
+            className="pure-button c-button c-button--small c-button--primary"
             onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'remove')}
             type="button"><i className="fa fa-minus"></i></button>
         </div>

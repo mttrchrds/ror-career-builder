@@ -23,7 +23,7 @@ class Mastery extends React.Component {
       'c-label--points': this.props.masteryPoints > 0,
     });
     return (
-      <div className="l-box l-box--no-padding-right l-spacing-left">
+      <div className="l-box l-box--no-padding-right l-spacing-left l-spacing-bottom">
         <h2 className="l-page-title">
           Mastery abilities <span className={labelClass}>{this.props.masteryPoints} points</span>
         </h2>
@@ -31,8 +31,8 @@ class Mastery extends React.Component {
           <div className="pure-u-1-3">
             <div className="l-border-right l-spacing-right">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.a.name}</h3>
-              <div className="l-row l-row--space-between">
-                <div className="l-row l-row--space-between">
+              <div className="l-row l-row--justify">
+                <div className="l-row l-row--justify">
                   <PathMeterButtons masteryPath="a"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathAMeter}
@@ -64,8 +64,8 @@ class Mastery extends React.Component {
           <div className="pure-u-1-3">
             <div className="l-border-right l-spacing-right">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.b.name}</h3>
-              <div className="l-row l-row--space-between">
-                <div className="l-row l-row--space-between">
+              <div className="l-row l-row--justify">
+                <div className="l-row l-row--justify">
                   <PathMeterButtons masteryPath="b"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathBMeter}
@@ -97,8 +97,8 @@ class Mastery extends React.Component {
           <div className="pure-u-1-3">
             <div className="l-spacing-right">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.c.name}</h3>
-              <div className="l-row l-row--space-between">
-                <div className="l-row l-row--space-between">
+              <div className="l-row l-row--justify">
+                <div className="l-row l-row--justify">
                   <PathMeterButtons masteryPath="c"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathCMeter}

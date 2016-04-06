@@ -9,10 +9,10 @@
   border: 1px solid $color-base-border;
   margin-bottom: 4px;
   &__level {
-    height: 20px;
+    height: 18px;
     background-color: $color-meter-background;
     margin-bottom: 2px;
-    border-radius: $border-radius-base;
+    border-radius: $border-radius-meter;
     border: 1px solid $color-meter-background;
     &--active {
       @include raised-effect($color-points-light, $color-points);    

@@ -288,7 +288,7 @@ class Ability extends React.Component {
     }
     let popoverContent = (
       <div className="c-ability-pop">
-        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+        <div className="l-row l-row--justify l-popover-spacing-bottom">
           <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary">
             {this.props.details.name}
           </p>
@@ -296,15 +296,15 @@ class Ability extends React.Component {
             {this.props.details.type}
           </p>
         </div>
-        <div className="l-row l-row--space-between l-popover-spacing-bottom c-ability-pop__divider">
+        <div className="l-row l-row--justify l-popover-spacing-bottom c-ability-pop__divider">
           <p className="c-ability-pop__item">{this.props.details.spec}</p>
           <p className="c-ability-pop__item c-ability-pop__item--right">Level {this.props.details.minrank}</p>
         </div>
-        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+        <div className="l-row l-row--justify l-popover-spacing-bottom">
           <p className="c-ability-pop__item">{this.props.details.cost}</p>
           <p className="c-ability-pop__item c-ability-pop__item--right">{this.props.details.range}</p>
         </div>
-        <div className="l-row l-row--space-between l-popover-spacing-bottom">
+        <div className="l-row l-row--justify l-popover-spacing-bottom">
           <p className="c-ability-pop__item">{this.props.details.incant}</p>
           <p className="c-ability-pop__item c-ability-pop__item--right">{this.props.details.cooldown}</p>
         </div>
