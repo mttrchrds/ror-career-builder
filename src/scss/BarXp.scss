@@ -3,7 +3,7 @@
 
 .c-progress {
   position: relative;
-  border-radius: $base-border-radius;
+  border-radius: $border-radius-base;
   background-color: $color-meter-background;
   &--small {
     width: 40%;
@@ -13,7 +13,7 @@
     height: 0.8rem;
     width: 1%;
     transition: width .3s ease;
-    border-radius: $base-border-radius;
+    border-radius: $border-radius-base;
   }
   &__bar--thin {
     height: 0.4rem;

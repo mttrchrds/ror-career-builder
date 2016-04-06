@@ -1,73 +1,88 @@
 @import 'vars';
 
-$activeColour: #90d28b;
-$inactiveColour: #ecb3b3;
-$borderColour: #999;
-
 .c-ability {
   margin: 1px;
-  width: 40px;
-  height: 40px;
+  width: $ability-width;
+  height: $ability-height;
+}
+.c-ability__image {
+  display: block;
+  width: $ability-width;
+  height: $ability-height;
 }
 .c-ability--standard {
-  border-radius: 4px;
-  border: 1px solid $borderColour;
+  border-radius: $border-radius-ability;
+  border: 1px solid $color-ability-border;
+  .c-ability__image {
+    border-radius: $border-radius-ability;
+  }
 }
 .c-ability--morale {
-  border-radius: 50%;
-  border: 1px solid $borderColour;
-}
-.c-ability--morale .c-ability__image {
-  border-radius: 50%;
+  border-radius: $border-radius-ability-morale;
+  border: 1px solid $color-ability-border;
+  .c-ability__image {
+    border-radius: $border-radius-ability-morale;
+  }
 }
 .c-ability--tactic {
 	background: url('/images/tactic-border.svg') no-repeat 0 0;
 	background-size: cover;
 }
-.c-ability--tomeTactic {
 
-}
-.c-ability__image {
-  display: block;
-  width: 40px;
-  height: 40px;
-}
 .c-ability--inactive .c-ability__image {
-  opacity: 0.2;
+  opacity: $ability-opacity-inactive;
 }
-.c-ability--standard .c-ability__image {
-  border-radius: 4px;
-}
-.c-ability--optional {
+
+.c-ability--optional.c-ability--active {
   cursor: pointer;
 }
-.c-ability--optional.is-selected {
-  border: 1px solid orange;
+
+/* Core morales */
+.c-ability--morale:not(.c-ability--mastery).c-ability--active {
+  background-color: $color-ability-active;
+  .c-ability__image {
+    opacity: $ability-opacity-inactive;
+  }
+  &.is-selected {
+    background-color: transparent;
+   .c-ability__image {
+      opacity: $ability-opacity-active;
+    }
+  }
+}
+
+/* Core tactics */
+.c-ability--tactic:not(.c-ability--mastery).c-ability--active {
+  background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
+  background-size: cover;
+  .c-ability__image {
+    opacity: $ability-opacity-inactive;
+  }
+  &.is-selected {
+    background: transparent;
+   .c-ability__image {
+      opacity: $ability-opacity-active;
+    }
+  }
 }
 
 /* The following are styles for optional meter abilities */
-.c-ability--mastery.c-ability--inactive {
-	background-color: $inactiveColour;
-}
-.c-ability--mastery.c-ability--inactive.c-ability--tactic {
-	background: url('/images/optional-tactic-inactive.svg') no-repeat 0 0;
-	background-size: cover;
-}
 .c-ability--mastery.c-ability--active {
-	background-color: $activeColour; 
+	background-color: $color-ability-active;
+  .c-ability__image {
+    opacity: $ability-opacity-inactive;
+  }
+  &.is-selected {
+    background: transparent;
+    background-color: transparent;
+    .c-ability__image {
+      opacity: $ability-opacity-active;  
+    }
+  }
 }
 .c-ability--mastery.c-ability--active.c-ability--tactic {
 	background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
 	background-size: cover;
-}
-.c-ability--mastery.c-ability--active .c-ability__image {
-  opacity: 0.2;
-}
-.c-ability--mastery.c-ability--active.is-selected {
-  background-color: transparent;
-}
-.c-ability--mastery.c-ability--active.is-selected .c-ability__image {
-  opacity: 1;
 }
 
 /* Styling over Ability Popover content */

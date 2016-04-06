@@ -8,27 +8,27 @@ input,
 select, 
 textarea,
 .pure-g [class *= "pure-u"] {
-  color: $base-text-color;
+  color: $color-base-text;
   font-family: $base-font-family;
 }
 
 h1 {
-  color: $primary-text-color;
+  color: $color-text-primary;
   font-size: $font-size-h1;
 }
 
 h2 {
-  color: $secondary-text-color;
+  color: $color-text-secondary;
   font-size: $font-size-h2;
 }
 
 h3 {
-  color: $tertiary-text-color;
+  color: $color-text-tertiary;
   font-size: $font-size-h3;
 }
 
 h4 {
-  color: $tertiary-text-color;
+  color: $color-text-tertiary;
   font-size: $font-size-h4;
   font-weight: normal;
 }
@@ -47,12 +47,12 @@ h4 {
 
 .l-box {
   padding: $base-spacing;
-  border-radius: $base-border-radius;
-  box-shadow: 0 1px 2px 0 $base-border-color;
-  border: 1px solid $base-border-color;
-  background-color: $base-background-color;
+  border-radius: $border-radius-base;
+  box-shadow: 0 1px 2px 0 $color-base-border;
+  border: 1px solid $color-base-border;
+  background-color: $color-base-background;
   &--inverse {
-    background-color: $base-background-color-inverse;
+    background-color: $color-base-background-inverse;
   }
   &--no-padding-right {
     padding-right: 0;
@@ -84,7 +84,7 @@ h4 {
 }
 
 .l-border-right {
-  border-right: 1px solid $base-border-color;
+  border-right: 1px solid $color-base-border;
 }
 
 .l-row {
@@ -112,8 +112,8 @@ h4 {
   color: #fff;
   font-size: 1rem;
   padding: $label-padding $label-padding * 2;
-  border-radius: $base-border-radius;
-  background-color: $tertiary-text-color;
+  border-radius: $border-radius-base;
+  background-color: $color-text-tertiary;
   &--points {
     background-color: $color-points;
   }
