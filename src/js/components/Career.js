@@ -91,13 +91,13 @@ class Career extends React.Component {
   // Update limit on number of tactic slots
   setCurrentTacticLimit(level) {
     let currentLimit = 0;
-    if (level === 40) {
+    if (Number(level) === 40) {
       currentLimit = 4;
-    } else if (level >= 30) {
+    } else if (Number(level) >= 30) {
       currentLimit = 3;
-    } else if (level >= 20) {
+    } else if (Number(level) >= 20) {
       currentLimit = 2;
-    } else if (level >= 10) {
+    } else if (Number(level) >= 10) {
       currentLimit = 1;
     }
     this.setState({
