@@ -143,18 +143,25 @@ class Ability extends React.Component {
             }
             this.props.setSelectedAbilities(currentMoraleRankId);
           }
-          // Then add this ability to selectedAbilities
-          this.props.setSelectedAbilities(this.props.details.id);
-          // Then add this ability as the selected morale for this rank
-          this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
-
+          
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
             console.log('ABILITY IS OPTIONAL MASTERY MORALE');
             // If Mastery points are available then select and decrement total
             if (Number(this.props.masteryPoints) > 0) {
               this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+              // Add this ability to selectedAbilities
+              this.props.setSelectedAbilities(this.props.details.id);
+              // Then add this ability as the selected morale for this rank
+              this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
             }
+          } else {
+            // Must be Core morale
+            console.log('ABILITY IS CORE MORALE');
+            // Add this ability to selectedAbilities
+            this.props.setSelectedAbilities(this.props.details.id);
+            // Then add this ability as the selected morale for this rank
+            this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
           }
         }
 
@@ -163,19 +170,18 @@ class Ability extends React.Component {
             || this.props.details.abilityType == 'tomeTactic') {
           console.log('ABILITY IS A TACTIC');
           // If tactics array length is less than tactic limit i.e. there is room for another selection
-          // Add into tactics array
-          // Add to selectedAbilities
           if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
             console.log('THERE IS SPACE TO ADD A NEW TACTIC');
-            this.props.setUserSelectionTactic(this.props.details.id);
-            this.props.setSelectedAbilities(this.props.details.id);
-
             // Ability is an optional mastery
             if (this.state.abilityOptionalStatus) {
               console.log('ABILITY IS OPTIONAL MASTERY TACTIC');
               // If Mastery points are available then select and decrement total
               if (Number(this.props.masteryPoints) > 0) {
                 this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+                // Add into tactics array
+                this.props.setUserSelectionTactic(this.props.details.id);
+                // Add to selectedAbilities
+                this.props.setSelectedAbilities(this.props.details.id);
               }
             }
           }
@@ -187,13 +193,13 @@ class Ability extends React.Component {
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
             console.log('ABILITY IS OPTIONAL CORE');
-            // Add into masteryAbilities array
-            this.props.setUserSelectionMasteryAbilities(this.props.details.id);
-            // Add to selectedAbilities
-            this.props.setSelectedAbilities(this.props.details.id);
             // If Mastery points are available then select and decrement total
             if (Number(this.props.masteryPoints) > 0) {
               this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+              // Add into masteryAbilities array
+              this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+              // Add to selectedAbilities
+              this.props.setSelectedAbilities(this.props.details.id);
             }
           }
         }
