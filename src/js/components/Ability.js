@@ -78,6 +78,7 @@ class Ability extends React.Component {
     // e.g. meter level 3, lvl1 path ability selected. Go to level 2, deselect
     // and deactive ability and add point back for meter decrement PLUS deselected ability
     if (this.state.abilitySelected &&
+      Number(nextProps.pathMeter) > 0 &&
       Number(nextProps.pathMeter) < Number(this.props.details.meterRequirement)) {
       this.setState({
         abilityStatus: false,
@@ -183,6 +184,13 @@ class Ability extends React.Component {
                 // Add to selectedAbilities
                 this.props.setSelectedAbilities(this.props.details.id);
               }
+            } else {
+              // Ability is an core tactic
+              console.log('ABILITY IS CORE TACTIC');
+              // Add into tactics array
+              this.props.setUserSelectionTactic(this.props.details.id);
+              // Add to selectedAbilities
+              this.props.setSelectedAbilities(this.props.details.id);
             }
           }
         }

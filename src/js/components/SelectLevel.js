@@ -13,10 +13,10 @@ class SelectLevel extends React.Component {
   }
 
   changeLevel() {
+    this.props.resetSelections();
     this.props.updateLevel(this.refs.level.value);
     this.props.setMasteryPoints(this.refs.level.value, this.props.currentRenown);
     this.props.setCurrentTacticLimit(this.refs.level.value);
-    this.props.resetSelections();
   }
 
   render() {

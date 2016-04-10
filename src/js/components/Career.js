@@ -177,7 +177,7 @@ class Career extends React.Component {
   // Calculate mastery points available based on char level and renown level
   setMasteryPoints(level, renown) {
     if (Number(level) > 10) {
-      let points = level - 10;
+      let points = 0;
       if (Number(level) > 20) {
         points = level - 15;
       } else {
@@ -209,6 +209,7 @@ class Career extends React.Component {
         default:
           break;
       }
+      console.log('DEBUG: setMasteryPoints', level, renown, points);
       // Resetting mastery points when level changes
       this.setState({
         masteryPoints: points,
