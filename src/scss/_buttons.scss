@@ -10,10 +10,17 @@
   }
 }
 
-.c-button--save {
-  @include raised-effect($color-save-light, $color-save);
+.c-button--secondary {
+  @include raised-effect($color-secondary-light, $color-secondary);
   &:hover, &:active, &:focus {
-    background: linear-gradient($color-save-lighter, $color-save);
+    background: linear-gradient($color-secondary-lighter, $color-secondary);
+  }
+}
+
+.c-button--tertiary {
+  @include raised-effect($color-tertiary-light, $color-tertiary);
+  &:hover, &:active, &:focus {
+    background: linear-gradient($color-tertiary-lighter, $color-tertiary);
   }
 }
 
