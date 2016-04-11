@@ -287,7 +287,8 @@ class Career extends React.Component {
                   <SelectRenown
                     currentLevel={this.state.currentLevel}
                     updateRenown={this.updateRenown.bind(this)}
-                    setMasteryPoints={this.setMasteryPoints.bind(this)} />
+                    setMasteryPoints={this.setMasteryPoints.bind(this)}
+                    resetSelections={this.resetSelections.bind(this)} />
 
                 </div>
               </div>

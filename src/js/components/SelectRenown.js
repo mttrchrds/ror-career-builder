@@ -5,6 +5,7 @@ require('../../scss/SelectLevel.scss');
 class SelectRenown extends React.Component {
 
   changeRenown() {
+    this.props.resetSelections();
     this.props.updateRenown(this.refs.renown.value);
     this.props.setMasteryPoints(this.props.currentLevel, this.refs.renown.value);
   }
