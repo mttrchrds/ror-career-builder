@@ -12,6 +12,7 @@ import Breadcrumb from './Breadcrumb';
 import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
 import ActionButtons from './ActionButtons';
+import Modal from './Modal';
 
 require('../../scss/Career.scss');
 
@@ -48,6 +49,11 @@ class Career extends React.Component {
       },
       selectedAbilities: [],
       currentTacticLimit: 0,
+      modal: {
+        visible: false,
+        contentTitle: '',
+        contentBody: '',
+      },
     };
   }
 
@@ -88,6 +94,20 @@ class Career extends React.Component {
       console.log(error);
     });
 
+  }
+
+  updateModalVisibility(status) {
+    this.state.modal.visible = status;
+    this.setState({ 
+      modal: this.state.modal,
+    });
+  }
+
+  updateModalBody(content) {
+    this.state.modal.contentBody = content;
+    this.setState({ 
+      modal: this.state.modal,
+    });
   }
 
   setSavedCareer(query) {
@@ -456,11 +476,19 @@ class Career extends React.Component {
                   selectedAbilities={this.state.selectedAbilities}
                   masteryAbilities={this.state.userSelections.masteryAbilities}
                   tactics={this.state.userSelections.tactics}
+                  updateModalVisibility={this.updateModalVisibility.bind(this)}
+                  updateModalBody={this.updateModalBody.bind(this)}
                 />
 
               </div>
             </div>
           </div>
+
+          <Modal 
+            modal={this.state.modal}
+            updateModalVisibility={this.updateModalVisibility.bind(this)}
+          />
+
         </div>
       );
     }

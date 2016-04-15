@@ -25,11 +25,13 @@ class ActionButtons extends React.Component {
     saveLink += `&selectedAbilities=${this.props.selectedAbilities}`;
     saveLink += `&masteryAbilities=${this.props.masteryAbilities}`;
     saveLink += `&tactics=${this.props.tactics}`;
-    console.log(saveLink);
+    return saveLink;
   }
 
   clickSave() {
-    this.createSaveLink();
+    let modalBody = <a href={this.createSaveLink()}>Your link :)</a>;
+    this.props.updateModalBody(modalBody);
+    this.props.updateModalVisibility(true);
   }
 
   render() {
