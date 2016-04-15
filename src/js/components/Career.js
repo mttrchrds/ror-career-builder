@@ -126,8 +126,6 @@ class Career extends React.Component {
         pathCMeter: Number(query.pathCMeter),
       });
     }
-    //URL to test with:
-    //http://localhost:3000/career/ironbreaker/saved?currentLevel=31&currentRenown=50&currentTacticLimit=3&masteryPoints=5&pathAMeter=5&pathBMeter=5&pathCMeter=0&selectedAbilities=3755,3756,3759,3740,3753,3764,3765,3772&masteryAbilities=3765,3772&morale1=3755&morale2=3756&morale3=3759&tactics=3740,3753,3764
     if (query.selectedAbilities) {
       query.selectedAbilities.split(',').forEach((abilityId) => {
         this.state.selectedAbilities.push(Number(abilityId));
@@ -439,9 +437,26 @@ class Career extends React.Component {
                   currentTacticLimit={this.state.currentTacticLimit}
                   setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
                   setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
-                  />
+                />
 
-                <ActionButtons resetCareer={this.resetCareer.bind(this)} />
+                <ActionButtons 
+                  resetCareer={this.resetCareer.bind(this)}
+                  careerShort={this.state.careerShort}
+                  currentLevel={this.state.currentLevel}
+                  currentRenown={this.state.currentRenown}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  morale1={this.state.userSelections.morale1}
+                  morale2={this.state.userSelections.morale2}
+                  morale3={this.state.userSelections.morale3}
+                  morale4={this.state.userSelections.morale4}
+                  selectedAbilities={this.state.selectedAbilities}
+                  masteryAbilities={this.state.userSelections.masteryAbilities}
+                  tactics={this.state.userSelections.tactics}
+                />
 
               </div>
             </div>
