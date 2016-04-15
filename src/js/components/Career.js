@@ -35,9 +35,6 @@ class Career extends React.Component {
       currentLevel: 1,
       currentRenown: 10,
       masteryPoints: 0,
-      pathAPoints: 0,
-      pathBPoints: 0,
-      pathCPoints: 0,
       pathAMeter: 0,
       pathBMeter: 0,
       pathCMeter: 0,
@@ -82,10 +79,86 @@ class Career extends React.Component {
           careers: careers,
         });
       }
+      // Check if this is a saved Career URL and update State accordingly
+      if (this.props.params.careerSaved == 'saved') {
+        let { query } = this.props.location;
+        this.setSavedCareer(query);
+      }
     }, function (error) {
       console.log(error);
     });
 
+  }
+
+  setSavedCareer(query) {
+    if (query.currentLevel) {
+      this.setState({
+        currentLevel: Number(query.currentLevel),
+      });
+    }
+    if (query.currentRenown) {
+      this.setState({
+        currentRenown: Number(query.currentRenown),
+      });
+    }
+    if (query.currentTacticLimit) {
+      this.setState({
+        currentTacticLimit: Number(query.currentTacticLimit),
+      });
+    }
+    if (query.masteryPoints) {
+      this.setState({
+        masteryPoints: Number(query.masteryPoints),
+      });
+    }
+    if (query.pathAMeter) {
+      this.setState({
+        pathAMeter: Number(query.pathAMeter),
+      });
+    }
+    if (query.pathBMeter) {
+      this.setState({
+        pathBMeter: Number(query.pathBMeter),
+      });
+    }
+    if (query.pathCMeter) {
+      this.setState({
+        pathCMeter: Number(query.pathCMeter),
+      });
+    }
+    //URL to test with:
+    //http://localhost:3000/career/ironbreaker/saved?currentLevel=31&currentRenown=50&currentTacticLimit=3&masteryPoints=5&pathAMeter=5&pathBMeter=5&pathCMeter=0&selectedAbilities=3755,3756,3759,3740,3753,3764,3765,3772&masteryAbilities=3765,3772&morale1=3755&morale2=3756&morale3=3759&tactics=3740,3753,3764
+    if (query.selectedAbilities) {
+      query.selectedAbilities.split(',').forEach((abilityId) => {
+        this.state.selectedAbilities.push(Number(abilityId));
+      });
+    }
+    if (query.masteryAbilities) {
+      query.masteryAbilities.split(',').forEach((abilityId) => {
+        this.state.userSelections.masteryAbilities.push(Number(abilityId));
+      });
+    }
+    if (query.morale1) {
+      this.state.userSelections.morale1 = Number(query.morale1);
+    }
+    if (query.morale2) {
+      this.state.userSelections.morale2 = Number(query.morale2);
+    }
+    if (query.morale3) {
+      this.state.userSelections.morale3 = Number(query.morale3);
+    }
+    if (query.morale4) {
+      this.state.userSelections.morale4 = Number(query.morale4);
+    }
+    if (query.tactics) {
+      query.tactics.split(',').forEach((abilityId) => {
+        this.state.userSelections.tactics.push(Number(abilityId));
+      });
+    }
+    this.setState({
+      userSelections: this.state.userSelections,
+      selectedAbilities: this.state.selectedAbilities,
+    });
   }
 
   // Update limit on number of tactic slots
@@ -102,6 +175,28 @@ class Career extends React.Component {
     }
     this.setState({
       currentTacticLimit: currentLimit,
+    });
+  }
+
+  // Reset career to initial state
+  resetCareer() {
+    this.setState({
+      currentLevel: 1,
+      currentRenown: 10,
+      masteryPoints: 0,
+      pathAMeter: 0,
+      pathBMeter: 0,
+      pathCMeter: 0,
+      userSelections: {
+        morale1: 0,
+        morale2: 0,
+        morale3: 0,
+        morale4: 0,
+        tactics: [],
+        masteryAbilities: [],
+      },
+      selectedAbilities: [],
+      currentTacticLimit: 0,
     });
   }
 
@@ -209,7 +304,6 @@ class Career extends React.Component {
         default:
           break;
       }
-      console.log('DEBUG: setMasteryPoints', level, renown, points);
       // Resetting mastery points when level changes
       this.setState({
         masteryPoints: points,
@@ -221,7 +315,6 @@ class Career extends React.Component {
   }
 
   updateMasteryPoints(points) {
-    console.log('DEBUG: updateMasteryPoints', points);
     this.setState({ masteryPoints: points });
   }
 
@@ -241,11 +334,11 @@ class Career extends React.Component {
   }
 
   updateLevel(level) {
-    this.setState({ currentLevel: level });
+    this.setState({ currentLevel: Number(level) });
   }
 
   updateRenown(renown) {
-    this.setState({ currentRenown: renown });
+    this.setState({ currentRenown: Number(renown) });
   }
 
   render() {
@@ -286,6 +379,7 @@ class Career extends React.Component {
 
                   <SelectRenown
                     currentLevel={this.state.currentLevel}
+                    currentRenown={this.state.currentRenown}
                     updateRenown={this.updateRenown.bind(this)}
                     setMasteryPoints={this.setMasteryPoints.bind(this)}
                     resetSelections={this.resetSelections.bind(this)} />
@@ -347,7 +441,7 @@ class Career extends React.Component {
                   setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
                   />
 
-                <ActionButtons />
+                <ActionButtons resetCareer={this.resetCareer.bind(this)} />
 
               </div>
             </div>

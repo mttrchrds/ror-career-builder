@@ -17,7 +17,8 @@ class SelectRenown extends React.Component {
           <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
           <select ref="renown"
             onChange={this.changeRenown.bind(this)}
-            className="c-level__select" id="renownSelect">
+            className="c-level__select" id="renownSelect"
+            value={this.props.currentRenown}>
             <option value="10">&lt; 40</option>
             <option value="40">40+</option>
             <option value="50">50+</option>

@@ -24,6 +24,7 @@ ReactDOM.render((
 		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
 			<Route path="/career/:careerName" component={Career} />
+      <Route path="/career/:careerName(/:careerSaved)" component={Career} />
 			<Route path="*" component={NotFound} />
 		</Route>
 	</Router>

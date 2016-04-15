@@ -26,7 +26,8 @@ class SelectLevel extends React.Component {
           <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
           <select ref="level"
             onChange={this.changeLevel.bind(this)}
-            className="c-level__select" id="levelSelect">
+            className="c-level__select" id="levelSelect"
+            value={this.props.currentLevel}>
             {this.generateLevels()}
           </select>
         </div>
