@@ -4,6 +4,12 @@ require('../../scss/PathMeterButtons.scss');
 
 class PathMeterButtons extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.changeMasteryPathMeter = this.changeMasteryPathMeter.bind(this);
+  }
+
   updateMasteryTotals(masteryPath, meterValue, masteryPoints) {
     this.props.updatePathMeter(masteryPath, meterValue);
     this.props.updateMasteryPoints(masteryPoints);
@@ -53,11 +59,11 @@ class PathMeterButtons extends React.Component {
           </div>
           <button
             className="pure-button c-button c-button--small c-button--primary l-spacing-right--tiny"
-            onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'add')}
+            onClick={this.changeMasteryPathMeter.bind(null, this.props.masteryPath, 'add')}
             type="button"><i className="fa fa-plus"></i></button>
           <button
             className="pure-button c-button c-button--small c-button--primary"
-            onClick={this.changeMasteryPathMeter.bind(this, this.props.masteryPath, 'remove')}
+            onClick={this.changeMasteryPathMeter.bind(null, this.props.masteryPath, 'remove')}
             type="button"><i className="fa fa-minus"></i></button>
         </div>
     )

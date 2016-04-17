@@ -10,12 +10,12 @@ class CoreMorales extends React.Component {
       <Ability key={this.props.morales[key].id}
         details={this.props.morales[key]}
         currentLevel={this.props.currentLevel}
-        setUserSelectionMorale={this.props.setUserSelectionMorale.bind(this)}
+        setUserSelectionMorale={this.props.setUserSelectionMorale}
         userSelections={this.props.userSelections}
         moraleRank={rank}
-        setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+        setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}
-        updateMasteryPoints={this.props.updateMasteryPoints.bind(this)}
+        updateMasteryPoints={this.props.updateMasteryPoints}
         masteryPoints={this.props.masteryPoints} />
       )
   }

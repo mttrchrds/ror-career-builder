@@ -5,6 +5,8 @@ class Home extends React.Component {
 
   constructor() {
     super();
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.renderCareers = this.renderCareers.bind(this);
     this.state = {
       careers: {},
     };
@@ -28,7 +30,7 @@ class Home extends React.Component {
   render() {
     return (
       <ul>
-        {Object.keys(this.state.careers).map(this.renderCareers.bind(this))}
+        {Object.keys(this.state.careers).map(this.renderCareers)}
       </ul>
     );
   }

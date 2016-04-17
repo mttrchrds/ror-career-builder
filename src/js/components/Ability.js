@@ -14,6 +14,10 @@ class Ability extends React.Component {
   */
   constructor(props) {
     super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.abilityClicked = this.abilityClicked.bind(this);
+    this.abilityHovered = this.abilityHovered.bind(this);
+
     this.state = {
       abilityStatus: false,
       abilitySelected: false,
@@ -329,9 +333,9 @@ class Ability extends React.Component {
       </div>
     );
     return (
-      <div className={abilityClass} onClick={this.abilityClicked.bind(this)}
-        onMouseOver={this.abilityHovered.bind(this, true)} 
-        onMouseOut={this.abilityHovered.bind(this, false)} ref="popoverParent" >
+      <div className={abilityClass} onClick={this.abilityClicked}
+        onMouseOver={this.abilityHovered.bind(null, true)} 
+        onMouseOut={this.abilityHovered.bind(null, false)} ref="popoverParent" >
         <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
         <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>

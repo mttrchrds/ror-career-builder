@@ -20,6 +20,22 @@ class Career extends React.Component {
 
   constructor() {
     super();
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.updateLevel = this.updateLevel.bind(this);
+    this.setMasteryPoints = this.setMasteryPoints.bind(this);
+    this.setCurrentTacticLimit = this.setCurrentTacticLimit.bind(this);
+    this.resetSelections = this.resetSelections.bind(this);
+    this.updateRenown = this.updateRenown.bind(this);
+    this.setSelectedAbilities = this.setSelectedAbilities.bind(this);
+    this.setUserSelectionTactic = this.setUserSelectionTactic.bind(this);
+    this.updatePathMeter = this.updatePathMeter.bind(this);
+    this.setUserSelectionMorale = this.setUserSelectionMorale.bind(this);
+    this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
+    this.setUserSelectionMasteryAbilities = this.setUserSelectionMasteryAbilities.bind(this);
+    this.resetCareer = this.resetCareer.bind(this);
+    this.updateModalVisibility = this.updateModalVisibility.bind(this);
+    this.updateModalContent = this.updateModalContent.bind(this);
+
     this.state = {
       careers: {},
       career: {},
@@ -387,13 +403,13 @@ class Career extends React.Component {
                 <div className="pure-u-3-24">
 
                   <SelectLevel
-                    updateLevel={this.updateLevel.bind(this)}
+                    updateLevel={this.updateLevel}
                     currentLevel={this.state.currentLevel}
                     masteryPoints={this.state.masteryPoints}
-                    setMasteryPoints={this.setMasteryPoints.bind(this)}
+                    setMasteryPoints={this.setMasteryPoints}
                     currentRenown={this.state.currentRenown}
-                    setCurrentTacticLimit={this.setCurrentTacticLimit.bind(this)}
-                    resetSelections={this.resetSelections.bind(this)} />
+                    setCurrentTacticLimit={this.setCurrentTacticLimit}
+                    resetSelections={this.resetSelections} />
 
                 </div>
                 <div className="pure-u-13-24">
@@ -401,9 +417,9 @@ class Career extends React.Component {
                   <SelectRenown
                     currentLevel={this.state.currentLevel}
                     currentRenown={this.state.currentRenown}
-                    updateRenown={this.updateRenown.bind(this)}
-                    setMasteryPoints={this.setMasteryPoints.bind(this)}
-                    resetSelections={this.resetSelections.bind(this)} />
+                    updateRenown={this.updateRenown}
+                    setMasteryPoints={this.setMasteryPoints}
+                    resetSelections={this.resetSelections} />
 
                 </div>
               </div>
@@ -413,23 +429,23 @@ class Career extends React.Component {
               <div className="pure-u-10-24">
 
                 <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
-                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities} />
 
                 <CoreMorales currentLevel={this.state.currentLevel}
                   morales={this.state.coreMorales}
-                  setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
+                  setUserSelectionMorale={this.setUserSelectionMorale}
                   userSelections={this.state.userSelections}
-                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities}
-                  updateMasteryPoints={this.updateMasteryPoints.bind(this)}
+                  updateMasteryPoints={this.updateMasteryPoints}
                   masteryPoints={this.state.masteryPoints} />
 
                 <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
-                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities}
                   currentTacticLimit={this.state.currentTacticLimit}
-                  setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
+                  setUserSelectionTactic={this.setUserSelectionTactic}
                   userSelections={this.state.userSelections} />
 
               </div>
@@ -451,19 +467,19 @@ class Career extends React.Component {
                   pathAMeter={this.state.pathAMeter}
                   pathBMeter={this.state.pathBMeter}
                   pathCMeter={this.state.pathCMeter}
-                  updatePathMeter={this.updatePathMeter.bind(this)}
-                  updateMasteryPoints={this.updateMasteryPoints.bind(this)}
-                  setUserSelectionMorale={this.setUserSelectionMorale.bind(this)}
+                  updatePathMeter={this.updatePathMeter}
+                  updateMasteryPoints={this.updateMasteryPoints}
+                  setUserSelectionMorale={this.setUserSelectionMorale}
                   userSelections={this.state.userSelections}
-                  setSelectedAbilities={this.setSelectedAbilities.bind(this)}
+                  setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities}
                   currentTacticLimit={this.state.currentTacticLimit}
-                  setUserSelectionTactic={this.setUserSelectionTactic.bind(this)}
-                  setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
+                  setUserSelectionTactic={this.setUserSelectionTactic}
+                  setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
                 />
 
                 <ActionButtons
-                  resetCareer={this.resetCareer.bind(this)}
+                  resetCareer={this.resetCareer}
                   careerShort={this.state.careerShort}
                   currentLevel={this.state.currentLevel}
                   currentRenown={this.state.currentRenown}
@@ -479,8 +495,8 @@ class Career extends React.Component {
                   selectedAbilities={this.state.selectedAbilities}
                   masteryAbilities={this.state.userSelections.masteryAbilities}
                   tactics={this.state.userSelections.tactics}
-                  updateModalVisibility={this.updateModalVisibility.bind(this)}
-                  updateModalContent={this.updateModalContent.bind(this)}
+                  updateModalVisibility={this.updateModalVisibility}
+                  updateModalContent={this.updateModalContent}
                   career={this.state.career}
                 />
 
@@ -490,7 +506,7 @@ class Career extends React.Component {
 
           <Modal 
             modal={this.state.modal}
-            updateModalVisibility={this.updateModalVisibility.bind(this)}
+            updateModalVisibility={this.updateModalVisibility}
           />
 
         </div>

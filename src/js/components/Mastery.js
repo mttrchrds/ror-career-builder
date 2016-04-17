@@ -6,12 +6,18 @@ import classNames from 'classnames';
 
 class Mastery extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.renderAbility = this.renderAbility.bind(this);
+  }
+
   renderAbility(obj) {
     return (
       <Ability key={obj.id}
         details={obj}
         currentLevel={this.props.currentLevel}
-        setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+        setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities} />
       )
   }
@@ -36,26 +42,26 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="a"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathAMeter}
-                    updatePathMeter={this.props.updatePathMeter.bind(this)}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)} />
+                    updatePathMeter={this.props.updatePathMeter}
+                    updateMasteryPoints={this.props.updateMasteryPoints} />
                   <PathMeter masteryPoints={this.props.masteryPoints}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)}
+                    updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathAOptionalAbilities}
                     pathMeter={this.props.pathAMeter}
-                    setUserSelectionMorale={this.props.setUserSelectionMorale.bind(this)}
+                    setUserSelectionMorale={this.props.setUserSelectionMorale}
                     userSelections={this.props.userSelections}
-                    setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+                    setSelectedAbilities={this.props.setSelectedAbilities}
                     selectedAbilities={this.props.selectedAbilities}
                     currentTacticLimit={this.props.currentTacticLimit}
-                    setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+                    setUserSelectionTactic={this.props.setUserSelectionTactic}
+                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="a" />
                 </div>
                 <div className="l-spacing-right">
                   <div className="l-column">
                     <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
-                    {this.props.pathACoreAbilities.map(this.renderAbility.bind(this))}
+                    {this.props.pathACoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
               </div>
@@ -69,26 +75,26 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="b"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathBMeter}
-                    updatePathMeter={this.props.updatePathMeter.bind(this)}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)} />
+                    updatePathMeter={this.props.updatePathMeter}
+                    updateMasteryPoints={this.props.updateMasteryPoints} />
                   <PathMeter masteryPoints={this.props.masteryPoints}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)}
+                    updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathBOptionalAbilities}
                     pathMeter={this.props.pathBMeter}
-                    setUserSelectionMorale={this.props.setUserSelectionMorale.bind(this)}
+                    setUserSelectionMorale={this.props.setUserSelectionMorale}
                     userSelections={this.props.userSelections}
-                    setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+                    setSelectedAbilities={this.props.setSelectedAbilities}
                     selectedAbilities={this.props.selectedAbilities}
                     currentTacticLimit={this.props.currentTacticLimit}
-                    setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+                    setUserSelectionTactic={this.props.setUserSelectionTactic}
+                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="b" />
                 </div>
                 <div className="l-spacing-right">
                   <div className="l-column">
                     <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
-                    {this.props.pathBCoreAbilities.map(this.renderAbility.bind(this))}
+                    {this.props.pathBCoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
               </div>
@@ -102,26 +108,26 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="c"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathCMeter}
-                    updatePathMeter={this.props.updatePathMeter.bind(this)}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)} />
+                    updatePathMeter={this.props.updatePathMeter}
+                    updateMasteryPoints={this.props.updateMasteryPoints} />
                   <PathMeter masteryPoints={this.props.masteryPoints}
-                    updateMasteryPoints={this.props.updateMasteryPoints.bind(this)}
+                    updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathCOptionalAbilities}
                     pathMeter={this.props.pathCMeter}
-                    setUserSelectionMorale={this.props.setUserSelectionMorale.bind(this)}
+                    setUserSelectionMorale={this.props.setUserSelectionMorale}
                     userSelections={this.props.userSelections}
-                    setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+                    setSelectedAbilities={this.props.setSelectedAbilities}
                     selectedAbilities={this.props.selectedAbilities}
                     currentTacticLimit={this.props.currentTacticLimit}
-                    setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
-                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities.bind(this)}
+                    setUserSelectionTactic={this.props.setUserSelectionTactic}
+                    setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="c" />
                 </div>
                 <div className="l-spacing-right">
                   <div className="l-column">
                     <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>  
-                    {this.props.pathCCoreAbilities.map(this.renderAbility.bind(this))}
+                    {this.props.pathCCoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
               </div>

@@ -12,6 +12,10 @@ textarea,
   font-family: $base-font-family;
 }
 
+html {
+  font-size: 16px;
+}
+
 h1 {
   color: $color-text-primary;
   font-size: $font-size-h1;
@@ -134,5 +138,6 @@ h4 {
     height: 1.5rem;
     width: calc(100% - #{$base-spacing});
     text-align: center;
+    font-size: 0.9rem;
   }
 }

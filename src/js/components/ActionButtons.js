@@ -4,6 +4,20 @@ require('../../scss/BarXp.scss');
 
 class ActionButtons extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.clickReset = this.clickReset.bind(this);
+    this.clickSave = this.clickSave.bind(this);
+
+    this.state = {
+      abilityStatus: false,
+      abilitySelected: false,
+      abilityOptionalStatus: false,
+      abilityHovered: false,
+    };
+  }
+
   clickReset() {
     this.props.resetCareer();
   }
@@ -63,7 +77,7 @@ class ActionButtons extends React.Component {
   render() {
     return (
       <div className="l-box l-spacing-left l-row l-row--right">
-        <button className="pure-button c-button c-button--tertiary" type="button" onClick={this.clickReset.bind(this)}>
+        <button className="pure-button c-button c-button--tertiary" type="button" onClick={this.clickReset}>
           <i className="fa fa-refresh l-spacing-right--small"></i>
           Reset
         </button>
@@ -71,7 +85,7 @@ class ActionButtons extends React.Component {
           <i className="fa fa-group l-spacing-right--small"></i>
           Change career
         </button>
-        <button className="pure-button l-spacing-left c-button c-button--primary" type="button" onClick={this.clickSave.bind(this)}>
+        <button className="pure-button l-spacing-left c-button c-button--primary" type="button" onClick={this.clickSave}>
           <i className="fa fa-save l-spacing-right--small"></i>
           Save career
         </button>

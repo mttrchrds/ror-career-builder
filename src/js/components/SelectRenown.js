@@ -4,6 +4,12 @@ require('../../scss/SelectLevel.scss');
 
 class SelectRenown extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.changeRenown = this.changeRenown.bind(this);
+  }
+
   changeRenown() {
     this.props.resetSelections();
     this.props.updateRenown(this.refs.renown.value);
@@ -16,7 +22,7 @@ class SelectRenown extends React.Component {
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
           <select ref="renown"
-            onChange={this.changeRenown.bind(this)}
+            onChange={this.changeRenown}
             className="c-level__select" id="renownSelect"
             value={this.props.currentRenown}>
             <option value="10">&lt; 40</option>

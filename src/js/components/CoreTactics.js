@@ -3,14 +3,20 @@ import Ability from './Ability';
 
 class CoreTactics extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.renderAbility = this.renderAbility.bind(this);
+  }
+
   renderAbility(key) {
     return (
       <Ability key={key} details={this.props.tactics[key]}
         currentLevel={this.props.currentLevel}
-        setSelectedAbilities={this.props.setSelectedAbilities.bind(this)}
+        setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}
         currentTacticLimit={this.props.currentTacticLimit}
-        setUserSelectionTactic={this.props.setUserSelectionTactic.bind(this)}
+        setUserSelectionTactic={this.props.setUserSelectionTactic}
         userSelections={this.props.userSelections} />
     )
   }
@@ -21,7 +27,7 @@ class CoreTactics extends React.Component {
         <div className="l-box">
           <h2 className="l-page-title">Core tactics</h2>
           <div className="l-row">
-            {Object.keys(this.props.tactics).map(this.renderAbility.bind(this))}
+            {Object.keys(this.props.tactics).map(this.renderAbility)}
           </div>
         </div>
       </div>

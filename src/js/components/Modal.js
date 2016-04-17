@@ -7,6 +7,8 @@ class Modal extends React.Component {
 
   constructor(props) {
     super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.closeModal = this.closeModal.bind(this);
     this.state = {
       visible: false,
     };
@@ -27,7 +29,7 @@ class Modal extends React.Component {
     });
     return (
       <div className={modalClass}>
-        <div className="c-modal__overlay" onClick={this.closeModal.bind(this)}></div>
+        <div className="c-modal__overlay" onClick={this.closeModal}></div>
         <div className="c-modal__window" onClick={this.clickWindow}>
           <div className="c-modal__title">
             {this.props.modal.contentTitle}
@@ -36,7 +38,7 @@ class Modal extends React.Component {
             {this.props.modal.contentBody}
           </div>
           <div className="c-modal__footer l-row l-row--right">
-            <button className="pure-button c-button c-button--primary" type="button" onClick={this.closeModal.bind(this)}>
+            <button className="pure-button c-button c-button--primary" type="button" onClick={this.closeModal}>
               Close
             </button>
           </div>

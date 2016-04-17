@@ -4,6 +4,12 @@ require('../../scss/SelectLevel.scss');
 
 class SelectLevel extends React.Component {
 
+  constructor(props) {
+    super(props);
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.changeLevel = this.changeLevel.bind(this);
+  }
+
   generateLevels() {
     let start = 1, end = 40, optionList = [];
     for (start; start <= end; start++) {
@@ -25,7 +31,7 @@ class SelectLevel extends React.Component {
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
           <select ref="level"
-            onChange={this.changeLevel.bind(this)}
+            onChange={this.changeLevel}
             className="c-level__select" id="levelSelect"
             value={this.props.currentLevel}>
             {this.generateLevels()}
