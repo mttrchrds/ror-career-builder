@@ -96,6 +96,7 @@ class Career extends React.Component {
 
   }
 
+  // Hide/show modal, param is boolean
   updateModalVisibility(status) {
     this.state.modal.visible = status;
     this.setState({ 
@@ -103,7 +104,9 @@ class Career extends React.Component {
     });
   }
 
-  updateModalBody(content) {
+  // Update contents of modal, param is new copy
+  updateModalContent(title, content) {
+    this.state.modal.contentTitle = title;
     this.state.modal.contentBody = content;
     this.setState({ 
       modal: this.state.modal,
@@ -459,7 +462,7 @@ class Career extends React.Component {
                   setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities.bind(this)}
                 />
 
-                <ActionButtons 
+                <ActionButtons
                   resetCareer={this.resetCareer.bind(this)}
                   careerShort={this.state.careerShort}
                   currentLevel={this.state.currentLevel}
@@ -477,7 +480,8 @@ class Career extends React.Component {
                   masteryAbilities={this.state.userSelections.masteryAbilities}
                   tactics={this.state.userSelections.tactics}
                   updateModalVisibility={this.updateModalVisibility.bind(this)}
-                  updateModalBody={this.updateModalBody.bind(this)}
+                  updateModalContent={this.updateModalContent.bind(this)}
+                  career={this.state.career}
                 />
 
               </div>

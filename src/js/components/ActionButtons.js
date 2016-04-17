@@ -28,9 +28,35 @@ class ActionButtons extends React.Component {
     return saveLink;
   }
 
+  createBBCode(link) {
+    return (
+      `[url=${link}]waronlinebuilder.org - ${this.props.career.name}[/url]`
+    )
+  }
+
+  buildModalTitle() {
+    let url = `/images/icons/${this.props.careerShort}.png`;
+    return (
+      <h2 className="l-page-title l-row">
+        <img src={url} className="c-title__icon c-title__icon--small"></img>
+        {this.props.career.name} career
+      </h2>
+    );
+  }
+
+  buildModalBody() {
+    return (
+      <div>
+        <p>To share this career simply copy and paste the link below:</p>
+        <input type="text" readOnly value={this.createSaveLink()} className="c-input--read-only" />
+        <p>Alternatively, here is some BBCode to paste into your forum post:</p>
+        <input type="text" readOnly value={this.createBBCode(this.createSaveLink())} className="c-input--read-only" />
+      </div>
+    )
+  }
+
   clickSave() {
-    let modalBody = <a href={this.createSaveLink()}>Your link :)</a>;
-    this.props.updateModalBody(modalBody);
+    this.props.updateModalContent(this.buildModalTitle(), this.buildModalBody());
     this.props.updateModalVisibility(true);
   }
 

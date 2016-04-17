@@ -12,7 +12,7 @@ class Modal extends React.Component {
     };
   }
 
-  clickOverlay() {
+  closeModal() {
     this.props.updateModalVisibility(false);
   }
 
@@ -27,9 +27,19 @@ class Modal extends React.Component {
     });
     return (
       <div className={modalClass}>
-        <div className="c-modal__overlay" onClick={this.clickOverlay.bind(this)}></div>
+        <div className="c-modal__overlay" onClick={this.closeModal.bind(this)}></div>
         <div className="c-modal__window" onClick={this.clickWindow}>
-          {this.props.modal.contentBody}
+          <div className="c-modal__title">
+            {this.props.modal.contentTitle}
+          </div>
+          <div className="c-modal__content l-spacing-bottom--large">
+            {this.props.modal.contentBody}
+          </div>
+          <div className="c-modal__footer l-row l-row--right">
+            <button className="pure-button c-button c-button--primary" type="button" onClick={this.closeModal.bind(this)}>
+              Close
+            </button>
+          </div>
         </div>
       </div>
     )
