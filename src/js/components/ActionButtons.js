@@ -62,9 +62,9 @@ class ActionButtons extends React.Component {
     return (
       <div>
         <p>To share this career simply copy and paste the link below:</p>
-        <input type="text" readOnly value={this.createSaveLink()} className="c-input--read-only" />
+        <input type="text" defaultValue={this.createSaveLink()} className="c-input--read-only" />
         <p>Alternatively, here is some BBCode to paste into your forum post:</p>
-        <input type="text" readOnly value={this.createBBCode(this.createSaveLink())} className="c-input--read-only" />
+        <input type="text" defaultValue={this.createBBCode(this.createSaveLink())} className="c-input--read-only" />
       </div>
     )
   }
