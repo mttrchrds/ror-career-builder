@@ -81,10 +81,10 @@ class Career extends React.Component {
         h.getJSON(url, (abilities) => {
           const imported = h.importJSON(career, abilities);
           this.setState({
-            careers: careers,
+            careers,
             careerShort: this.props.params.careerName,
-            career: career,
-            abilities: abilities,
+            career,
+            abilities,
             coreAbilities: imported.coreAbilities,
             coreMorales: imported.coreMorales,
             coreTactics: imported.coreTactics,
@@ -98,34 +98,16 @@ class Career extends React.Component {
         });
       } else {
         this.setState({
-          careers: careers,
+          careers,
         });
       }
       // Check if this is a saved Career URL and update State accordingly
-      if (this.props.params.careerSaved == 'saved') {
-        let { query } = this.props.location;
+      if (this.props.params.careerSaved === 'saved') {
+        const { query } = this.props.location;
         this.setSavedCareer(query);
       }
-    }, function (error) {
-      console.log(error);
-    });
-
-  }
-
-  // Hide/show modal, param is boolean
-  updateModalVisibility(status) {
-    this.state.modal.visible = status;
-    this.setState({ 
-      modal: this.state.modal,
-    });
-  }
-
-  // Update contents of modal, param is new copy
-  updateModalContent(title, content) {
-    this.state.modal.contentTitle = title;
-    this.state.modal.contentBody = content;
-    this.setState({ 
-      modal: this.state.modal,
+    }, (error) => {
+      console.warn(error);
     });
   }
 
@@ -215,43 +197,6 @@ class Career extends React.Component {
     });
   }
 
-  // Reset career to initial state
-  resetCareer() {
-    this.setState({
-      currentLevel: 1,
-      currentRenown: 10,
-      masteryPoints: 0,
-      pathAMeter: 0,
-      pathBMeter: 0,
-      pathCMeter: 0,
-      userSelections: {
-        morale1: 0,
-        morale2: 0,
-        morale3: 0,
-        morale4: 0,
-        tactics: [],
-        masteryAbilities: [],
-      },
-      selectedAbilities: [],
-      currentTacticLimit: 0,
-    });
-  }
-
-  // Reset all current selections
-  resetSelections() {
-    this.state.userSelections.morale1 = 0;
-    this.state.userSelections.morale2 = 0;
-    this.state.userSelections.morale3 = 0;
-    this.state.userSelections.morale4 = 0;
-    this.state.userSelections.tactics = [];
-    this.state.userSelections.masteryAbilities = [];
-    this.state.selectedAbilities = [];
-    this.setState({
-      userSelections: this.state.userSelections,
-      selectedAbilities: this.state.selectedAbilities,
-    });
-  }
-
   // Add/remove ability to/from selectedAbilities in state
   setSelectedAbilities(abilityId) {
     const abilityIndex = this.state.selectedAbilities.indexOf(abilityId);
@@ -299,7 +244,7 @@ class Career extends React.Component {
 
   // Update morale selection
   setUserSelectionMorale(rank, abilityId) {
-    const moraleName = 'morale' + rank;
+    const moraleName = `morale${rank}`;
     this.state.userSelections[moraleName] = abilityId;
     this.setState({
       userSelections: this.state.userSelections,
@@ -351,6 +296,60 @@ class Career extends React.Component {
     }
   }
 
+  // Reset all current selections
+  resetSelections() {
+    this.state.userSelections.morale1 = 0;
+    this.state.userSelections.morale2 = 0;
+    this.state.userSelections.morale3 = 0;
+    this.state.userSelections.morale4 = 0;
+    this.state.userSelections.tactics = [];
+    this.state.userSelections.masteryAbilities = [];
+    this.state.selectedAbilities = [];
+    this.setState({
+      userSelections: this.state.userSelections,
+      selectedAbilities: this.state.selectedAbilities,
+    });
+  }
+
+  // Reset career to initial state
+  resetCareer() {
+    this.setState({
+      currentLevel: 1,
+      currentRenown: 10,
+      masteryPoints: 0,
+      pathAMeter: 0,
+      pathBMeter: 0,
+      pathCMeter: 0,
+      userSelections: {
+        morale1: 0,
+        morale2: 0,
+        morale3: 0,
+        morale4: 0,
+        tactics: [],
+        masteryAbilities: [],
+      },
+      selectedAbilities: [],
+      currentTacticLimit: 0,
+    });
+  }
+
+  // Update contents of modal, param is new copy
+  updateModalContent(title, content) {
+    this.state.modal.contentTitle = title;
+    this.state.modal.contentBody = content;
+    this.setState({ 
+      modal: this.state.modal,
+    });
+  }
+
+  // Hide/show modal, param is boolean
+  updateModalVisibility(status) {
+    this.state.modal.visible = status;
+    this.setState({ 
+      modal: this.state.modal,
+    });
+  }
+
   updateMasteryPoints(points) {
     this.setState({ masteryPoints: points });
   }
@@ -366,6 +365,8 @@ class Career extends React.Component {
         break;
       case 'c':
         this.setState({ pathCMeter: points });
+        break;
+      default :
         break;
     }
   }
@@ -397,7 +398,8 @@ class Career extends React.Component {
                 <div className="pure-u-8-24">
 
                   <CareerTitle careerShort={this.state.careerShort}
-                    career={this.state.career} />
+                    career={this.state.career}
+                  />
 
                 </div>
                 <div className="pure-u-3-24">
@@ -409,7 +411,8 @@ class Career extends React.Component {
                     setMasteryPoints={this.setMasteryPoints}
                     currentRenown={this.state.currentRenown}
                     setCurrentTacticLimit={this.setCurrentTacticLimit}
-                    resetSelections={this.resetSelections} />
+                    resetSelections={this.resetSelections}
+                  />
 
                 </div>
                 <div className="pure-u-13-24">
@@ -419,7 +422,8 @@ class Career extends React.Component {
                     currentRenown={this.state.currentRenown}
                     updateRenown={this.updateRenown}
                     setMasteryPoints={this.setMasteryPoints}
-                    resetSelections={this.resetSelections} />
+                    resetSelections={this.resetSelections}
+                  />
 
                 </div>
               </div>
@@ -430,7 +434,8 @@ class Career extends React.Component {
 
                 <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
                   setSelectedAbilities={this.setSelectedAbilities}
-                  selectedAbilities={this.state.selectedAbilities} />
+                  selectedAbilities={this.state.selectedAbilities}
+                />
 
                 <CoreMorales currentLevel={this.state.currentLevel}
                   morales={this.state.coreMorales}
@@ -439,14 +444,16 @@ class Career extends React.Component {
                   setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities}
                   updateMasteryPoints={this.updateMasteryPoints}
-                  masteryPoints={this.state.masteryPoints} />
+                  masteryPoints={this.state.masteryPoints}
+                />
 
                 <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
                   setSelectedAbilities={this.setSelectedAbilities}
                   selectedAbilities={this.state.selectedAbilities}
                   currentTacticLimit={this.state.currentTacticLimit}
                   setUserSelectionTactic={this.setUserSelectionTactic}
-                  userSelections={this.state.userSelections} />
+                  userSelections={this.state.userSelections}
+                />
 
               </div>
               <div className="pure-u-14-24">
@@ -515,5 +522,10 @@ class Career extends React.Component {
     return <h1>Loading...</h1>;
   }
 }
+
+Career.propTypes = {
+  params: React.PropTypes.object,
+  location: React.PropTypes.object,
+};
 
 export default Career;

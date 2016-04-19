@@ -9,15 +9,12 @@ import Home from './components/Home';
 import Career from './components/Career';
 import NotFound from './components/NotFound';
 
-class App extends React.Component {
-  render() {
-    return (
-		<div>
-			{this.props.children}
-		</div>
-    );
-  }
-}
+const App = (props) =>
+  <div>{props.children}</div>;
+
+App.propTypes = {
+  children: React.PropTypes.node,
+};
 
 ReactDOM.render((
 	<Router history={browserHistory}>

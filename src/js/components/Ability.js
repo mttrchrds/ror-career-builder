@@ -16,7 +16,8 @@ class Ability extends React.Component {
     super(props);
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.abilityClicked = this.abilityClicked.bind(this);
-    this.abilityHovered = this.abilityHovered.bind(this);
+    this.abilityHoverOver = this.abilityHoverOver.bind(this);
+    this.abilityHoverOut = this.abilityHoverOut.bind(this);
 
     this.state = {
       abilityStatus: false,
@@ -24,40 +25,6 @@ class Ability extends React.Component {
       abilityOptionalStatus: false,
       abilityHovered: false,
     };
-  }
-
-  setInitialStatus(meterRequirement, pathMeter, currentLevel, minrank, selectedAbilities) {
-    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
-    if (selectedAbilities.indexOf(this.props.details.id) != -1) {
-      this.setState({
-        abilitySelected: true
-      });
-    } else {
-      this.setState({
-        abilitySelected: false
-      });
-    }
-    // Mastery optional abilities
-    if (Number(meterRequirement) > 0) {
-      if (Number(pathMeter) >= Number(meterRequirement)) {
-        this.setState({
-          abilityStatus: true,
-          abilityOptionalStatus: true
-        });
-      } else {
-        this.setState({
-          abilityStatus: false,
-          abilityOptionalStatus: true
-        });
-      }
-    // All other abilities
-    } else {
-      if (Number(currentLevel) >= Number(minrank)) {
-        this.setState({ abilityStatus: true });
-      } else {
-        this.setState({ abilityStatus: false });
-      }
-    }
   }
 
   // Initial render
@@ -86,30 +53,28 @@ class Ability extends React.Component {
       Number(nextProps.pathMeter) < Number(this.props.details.meterRequirement)) {
       this.setState({
         abilityStatus: false,
-        abilitySelected: false
+        abilitySelected: false,
       });
       // Remove from selectedAbilities in state
       this.props.setSelectedAbilities(this.props.details.id);
       // Remove from user selections in state i.e. this.state.userSelections
-      if (this.props.details.abilityType == 'morale') {
+      if (this.props.details.abilityType === 'morale') {
         // If this morale is a selected morale, then reset
-        let selectedMoralesArray = [this.props.userSelections.morale1,
+        const selectedMoralesArray = [this.props.userSelections.morale1,
                                 this.props.userSelections.morale2,
                                 this.props.userSelections.morale3,
                                 this.props.userSelections.morale4];
-        if (selectedMoralesArray.indexOf(this.props.details.id) != -1) {
+        if (selectedMoralesArray.indexOf(this.props.details.id) !== -1) {
           this.props.setUserSelectionMorale(this.props.moraleRank, 0);
         }
-      }
-      else if (this.props.details.abilityType == 'tactic'
-          || this.props.details.abilityType == 'tomeTactic') {
+      } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
         // If this tactic is in tactic array, remove it
-        if (this.props.userSelections.tactics.indexOf(this.props.details.id) != -1) {
+        if (this.props.userSelections.tactics.indexOf(this.props.details.id) !== -1) {
           this.props.setUserSelectionTactic(this.props.details.id);
         }
       } else {
         // If this ability is in masteryAbilities array, remove it
-        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) != -1) {
+        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) !== -1) {
           this.props.setUserSelectionMasteryAbilities(this.props.details.id);
         }
       }
@@ -118,12 +83,46 @@ class Ability extends React.Component {
     }
   }
 
+  setInitialStatus(meterRequirement, pathMeter, currentLevel, minrank, selectedAbilities) {
+    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
+    if (selectedAbilities.indexOf(this.props.details.id) !== -1) {
+      this.setState({
+        abilitySelected: true,
+      });
+    } else {
+      this.setState({
+        abilitySelected: false,
+      });
+    }
+    // Mastery optional abilities
+    if (Number(meterRequirement) > 0) {
+      if (Number(pathMeter) >= Number(meterRequirement)) {
+        this.setState({
+          abilityStatus: true,
+          abilityOptionalStatus: true,
+        });
+      } else {
+        this.setState({
+          abilityStatus: false,
+          abilityOptionalStatus: true,
+        });
+      }
+    // All other abilities
+    } else {
+      if (Number(currentLevel) >= Number(minrank)) {
+        this.setState({ abilityStatus: true });
+      } else {
+        this.setState({ abilityStatus: false });
+      }
+    }
+  }
+
   // TODO : Does this really need to be a function?
   updateMasteryPoints(masteryPoints) {
     this.props.updateMasteryPoints(masteryPoints);
   }
 
-  abilityClicked(event) {
+  abilityClicked() {
     console.log('ABILITY CLICKED');
     // Select ability i.e. not already selected
     if (this.state.abilitySelected === false) {
@@ -132,17 +131,17 @@ class Ability extends React.Component {
       if (this.state.abilityStatus) {
         console.log('ABILITY IS ENABLED');
         // Ability is morale
-        if (this.props.details.abilityType == 'morale') {
+        if (this.props.details.abilityType === 'morale') {
           console.log('ABILITY IS A MORALE');
           // Get current abilityId of morale of this rank e.g. this.state.userSelections.morale4
-          let userSelectionPropertyName = 'morale' + this.props.moraleRank;
-          let currentMoraleRankId = this.props.userSelections[userSelectionPropertyName];
+          const userSelectionPropertyName = `morale${this.props.moraleRank}`;
+          const currentMoraleRankId = this.props.userSelections[userSelectionPropertyName];
           // Remove current selected morale (for this rank) from selectedAbilities
           // Don't bother if it's not set i.e. zero
           // If this is a Mastery morale rank 4, we need to increment Mastery total too
           // I.e. if current is NOT a mastery total (as we can't detect other Ability)
-          if (currentMoraleRankId != '0') {
-            if (!this.state.abilityOptionalStatus && this.props.moraleRank == '4') {
+          if (currentMoraleRankId !== 0) {
+            if (!this.state.abilityOptionalStatus && this.props.moraleRank === 4) {
               console.log('ABILITY IS CORE MORALE RANK 4');
               this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
             }
@@ -168,11 +167,8 @@ class Ability extends React.Component {
             // Then add this ability as the selected morale for this rank
             this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
           }
-        }
-
-        // Ability is a tactic
-        else if (this.props.details.abilityType == 'tactic'
-            || this.props.details.abilityType == 'tomeTactic') {
+        } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
+          // Ability is a tactic
           console.log('ABILITY IS A TACTIC');
           // If tactics array length is less than tactic limit i.e. there is room for another selection
           if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
@@ -197,10 +193,8 @@ class Ability extends React.Component {
               this.props.setSelectedAbilities(this.props.details.id);
             }
           }
-        }
-
-        // Ability is core
-        else {
+        } else {
+          // Ability is core
           console.log('ABILITY IS CORE');
           // Ability is an optional mastery
           if (this.state.abilityOptionalStatus) {
@@ -215,24 +209,22 @@ class Ability extends React.Component {
             }
           }
         }
-      // Inactive ability selected
-      } else {
-
       }
+      // else {} = Inactive ability selected
     // Unselect ability
     } else {
       console.log('ABILITY WAS SELECTED, NOW UNSELETING');
       // Ability is morale
-      if (this.props.details.abilityType == 'morale') {
+      if (this.props.details.abilityType === 'morale') {
         console.log('ABILITY IS MORALE');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this morale is a selected morale, then reset
-        let selectedMoralesArray = [this.props.userSelections.morale1,
+        const selectedMoralesArray = [this.props.userSelections.morale1,
                                 this.props.userSelections.morale2,
                                 this.props.userSelections.morale3,
                                 this.props.userSelections.morale4];
-        if (selectedMoralesArray.indexOf(this.props.details.id) != -1) {
+        if (selectedMoralesArray.indexOf(this.props.details.id) !== -1) {
           console.log('ABILITY WAS A SELECTED MORALE');
           this.props.setUserSelectionMorale(this.props.moraleRank, 0);
         }
@@ -241,16 +233,13 @@ class Ability extends React.Component {
           console.log('ABILITY IS OPTIONAL MORALE');
           this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
         }
-      }
-
-      // Ability is a tactic
-      else if (this.props.details.abilityType == 'tactic'
-          || this.props.details.abilityType == 'tomeTactic') {
+      } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
+        // Ability is a tactic
         console.log('ABILITY IS A TACTIC');
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this tactic is in tactic array, remove it
-        if (this.props.userSelections.tactics.indexOf(this.props.details.id) != -1) {
+        if (this.props.userSelections.tactics.indexOf(this.props.details.id) !== -1) {
           console.log('ABILITY WAS A SELECTED TACTIC');
           this.props.setUserSelectionTactic(this.props.details.id);
         }
@@ -266,7 +255,7 @@ class Ability extends React.Component {
         // Remove this abilityId from selectedAbilities
         this.props.setSelectedAbilities(this.props.details.id);
         // If this ability is in masteryAbilities array, remove it
-        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) != -1) {
+        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) !== -1) {
           console.log('ABILITY IS OPTIONAL MASTERY CORE');
           this.props.setUserSelectionMasteryAbilities(this.props.details.id);
           // As ability is in masteryAbilities array we don't need to check abilityOptionalStatus
@@ -277,34 +266,42 @@ class Ability extends React.Component {
     }
   }
 
-  abilityHovered(status) {
+  abilityHoverOver() {
     this.setState({
-      abilityHovered: status
-    })
+      abilityHovered: true,
+    });
+  }
+
+  abilityHoverOut() {
+    this.setState({
+      abilityHovered: false,
+    });
   }
 
   render() {
-    let abilityClass = classNames({
+    const abilityClass = classNames({
       [`c-ability c-ability--${this.props.details.abilityType}`]: true,
       'c-ability--optional': this.props.details.hasOwnProperty('meterRequirement')
-                          || this.props.details.abilityType == 'morale'
-                          || this.props.details.abilityType == 'tactic'
-                          || this.props.details.abilityType == 'tomeTactic',
+                          || this.props.details.abilityType === 'morale'
+                          || this.props.details.abilityType === 'tactic'
+                          || this.props.details.abilityType === 'tomeTactic',
       'c-ability--active': this.state.abilityStatus,
       'c-ability--inactive': !this.state.abilityStatus,
       'is-selected': this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
       'c-ability--mastery': this.state.abilityOptionalStatus,
     });
-    let imgSrc = `../../images/abilities/${this.props.details.image}.png`;
+    const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     // Prepare content for ability Popover
     let popoverNote = '';
     if (this.props.details.note) {
-      popoverNote = <p className="c-ability-pop__item c-ability-pop__item--secondary l-popover-spacing-bottom--large"
-                      dangerouslySetInnerHTML={{__html: this.props.details.note}} 
-                    />;
+      popoverNote = (
+        <p className="c-ability-pop__item c-ability-pop__item--secondary l-popover-spacing-bottom--large"
+          dangerouslySetInnerHTML={{ __html: this.props.details.note }} 
+        />
+      );
     }
-    let popoverContent = (
+    const popoverContent = (
       <div className="c-ability-pop">
         <div className="l-row l-row--justify l-popover-spacing-bottom">
           <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary">
@@ -328,19 +325,37 @@ class Ability extends React.Component {
         </div>
         {popoverNote}
         <p className="c-ability-pop__item c-ability-pop__item--primary"
-          dangerouslySetInnerHTML={{__html: this.props.details.description}}
+          dangerouslySetInnerHTML={{ __html: this.props.details.description }}
         />
       </div>
     );
     return (
-      <div className={abilityClass} onClick={this.abilityClicked}
-        onMouseOver={this.abilityHovered.bind(null, true)} 
-        onMouseOut={this.abilityHovered.bind(null, false)} ref="popoverParent" >
+      <div
+        className={abilityClass} onClick={this.abilityClicked}
+        onMouseOver={this.abilityHoverOver} 
+        onMouseOut={this.abilityHoverOut} ref="popoverParent"
+      >
         <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
         <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>
-    )
+    );
   }
 }
+
+Ability.propTypes = {
+  details: React.PropTypes.object,
+  pathMeter: React.PropTypes.string,
+  currentLevel: React.PropTypes.number,
+  selectedAbilities: React.PropTypes.array,
+  setSelectedAbilities: React.PropTypes.func,
+  userSelections: React.PropTypes.object,
+  setUserSelectionMorale: React.PropTypes.func,
+  moraleRank: React.PropTypes.number,
+  setUserSelectionTactic: React.PropTypes.func,
+  setUserSelectionMasteryAbilities: React.PropTypes.func,
+  updateMasteryPoints: React.PropTypes.func,
+  masteryPoints: React.PropTypes.number,
+  currentTacticLimit: React.PropTypes.number,
+};
 
 export default Ability;

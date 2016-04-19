@@ -1,14 +1,13 @@
-let helpers =  {
-  arrayContains: function(array, needle) {
-     for (let i in array) {
-         if (array[i] == needle) return true;
-     }
-     return false;
+const helpers = {
+  arrayContains(array, needle) {
+    for (const i in array) {
+      if (array[i] === needle) return true;
+    }
+    return false;
   },
-  getJSON: function(url, success, error) {
-    'use strict';
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
+  getJSON(url, success, error) {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           success(JSON.parse(xhr.responseText));
@@ -20,9 +19,8 @@ let helpers =  {
     xhr.open('GET', url);
     xhr.send();
   },
-  importJSON: function(career, abilities) {
-
-    var exported = {
+  importJSON(career, abilities) {
+    const exported = {
       coreAbilities: [],
       coreMorales: [],
       coreTactics: [],
@@ -31,23 +29,25 @@ let helpers =  {
       pathBCore: [],
       pathBOpt: {},
       pathCCore: [],
-      pathCOpt: {}
+      pathCOpt: {},
     };
 
     function getAbilityType(ability) {
-      let abilityType = "";
+      let abilityType = '';
       switch (ability.category) {
-        case "Ability":
-          abilityType = "standard";
+        case 'Ability':
+          abilityType = 'standard';
           break;
-        case "Morale":
-          abilityType = "morale";
+        case 'Morale':
+          abilityType = 'morale';
           break;
-        case "CareerTactic":
-          abilityType = "tactic";
+        case 'CareerTactic':
+          abilityType = 'tactic';
           break;
-        case "TomeTactic":
-          abilityType = "tomeTactic";
+        case 'TomeTactic':
+          abilityType = 'tomeTactic';
+          break;
+        default :
           break;
       }
       return abilityType;
@@ -55,23 +55,25 @@ let helpers =  {
 
     Object.keys(abilities).map(
       (ability) => {
-        let abilityType = getAbilityType(abilities[ability]);
+        const abilityType = getAbilityType(abilities[ability]);
         abilities[ability].abilityType = abilityType;
-        if (abilities[ability].minrank == "") abilities[ability].minrank = 1;
-        if (abilities[ability].spec == 'Core Ability') {
+        if (abilities[ability].minrank === '') abilities[ability].minrank = 1;
+        if (abilities[ability].spec === 'Core Ability') {
           switch (abilityType) {
-            case "standard":
+            case 'standard':
               exported.coreAbilities.push(abilities[ability]);
               break;
-            case "morale":
+            case 'morale':
               exported.coreMorales.push(abilities[ability]);
               break;
-            case "tactic":
+            case 'tactic':
               exported.coreTactics.push(abilities[ability]);
+              break;
+            default :
               break;
           }
         } else {
-          //Check and populate Mastery path core and optional abilities
+          // Check and populate Mastery path core and optional abilities
           if (this.arrayContains(career.paths.a.coreAbilities, abilities[ability].id)) {
             exported.pathACore.push(abilities[ability]);
           }
@@ -169,7 +171,7 @@ let helpers =  {
       }
     );
     return exported;
-  }
-}
+  },
+};
 
 export default helpers;
