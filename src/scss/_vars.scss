@@ -38,6 +38,7 @@ $color-points-light: #ff5c69;
 $color-ability-border: #999;
 $color-ability-inactive: #ecb3b3;
 $color-ability-active: #90d28b;
+$color-overlay: rgba(0, 0, 0, 0.6);
 
 $label-padding: 0.2rem;
 
@@ -45,3 +46,5 @@ $ability-width: 40px;
 $ability-height: 40px;
 $ability-opacity-inactive: 0.2;
 $ability-opacity-active: 1;
+
+$global-transition: transform 500ms ease;

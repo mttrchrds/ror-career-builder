@@ -5,11 +5,13 @@
   width: $ability-width;
   height: $ability-height;
 }
+
 .c-ability__image {
   display: block;
   width: $ability-width;
   height: $ability-height;
 }
+
 .c-ability--standard {
   border-radius: $border-radius-ability;
   border: 1px solid $color-ability-border;
@@ -17,6 +19,7 @@
     border-radius: $border-radius-ability;
   }
 }
+
 .c-ability--morale {
   border-radius: $border-radius-ability-morale;
   border: 1px solid $color-ability-border;
@@ -24,6 +27,7 @@
     border-radius: $border-radius-ability-morale;
   }
 }
+
 .c-ability--tactic {
 	background: url('/images/tactic-border.svg') no-repeat 0 0;
 	background-size: cover;

@@ -344,7 +344,7 @@ class Ability extends React.Component {
 
 Ability.propTypes = {
   details: React.PropTypes.object,
-  pathMeter: React.PropTypes.string,
+  pathMeter: React.PropTypes.number,
   currentLevel: React.PropTypes.number,
   selectedAbilities: React.PropTypes.array,
   setSelectedAbilities: React.PropTypes.func,

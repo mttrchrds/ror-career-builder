@@ -9,6 +9,7 @@ class ActionButtons extends React.Component {
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.clickReset = this.clickReset.bind(this);
     this.clickSave = this.clickSave.bind(this);
+    this.clickChangeCareer = this.clickChangeCareer.bind(this);
 
     this.state = {
       abilityStatus: false,
@@ -74,6 +75,10 @@ class ActionButtons extends React.Component {
     this.props.updateModalVisibility(true);
   }
 
+  clickChangeCareer() {
+    this.props.updateSidebarVisibility(true);
+  }
+
   render() {
     return (
       <div className="l-box l-spacing-left l-row l-row--right">
@@ -81,7 +86,7 @@ class ActionButtons extends React.Component {
           <i className="fa fa-refresh l-spacing-right--small"></i>
           Reset
         </button>
-        <button className="pure-button l-spacing-left c-button c-button--secondary" type="button">
+        <button className="pure-button l-spacing-left c-button c-button--secondary" type="button" onClick={this.clickChangeCareer}>
           <i className="fa fa-group l-spacing-right--small"></i>
           Change career
         </button>

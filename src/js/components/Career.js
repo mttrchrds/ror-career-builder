@@ -35,6 +35,7 @@ class Career extends React.Component {
     this.resetCareer = this.resetCareer.bind(this);
     this.updateModalVisibility = this.updateModalVisibility.bind(this);
     this.updateModalContent = this.updateModalContent.bind(this);
+    this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
 
     this.state = {
       careers: {},
@@ -70,6 +71,9 @@ class Career extends React.Component {
         contentTitle: '',
         contentBody: '',
       },
+      sidebar: {
+        visible: false,
+      }
     };
   }
 
@@ -350,6 +354,14 @@ class Career extends React.Component {
     });
   }
 
+  // Hide/show sidebar, param is boolean
+  updateSidebarVisibility(status) {
+    this.state.sidebar.visible = status;
+    this.setState({ 
+      sidebar: this.state.sidebar,
+    });
+  }
+
   updateMasteryPoints(points) {
     this.setState({ masteryPoints: points });
   }
@@ -358,13 +370,13 @@ class Career extends React.Component {
     console.log('DEBUG: updatePathMeter', masteryPath, points);
     switch (masteryPath) {
       case 'a':
-        this.setState({ pathAMeter: points });
+        this.setState({ pathAMeter: Number(points) });
         break;
       case 'b':
-        this.setState({ pathBMeter: points });
+        this.setState({ pathBMeter: Number(points) });
         break;
       case 'c':
-        this.setState({ pathCMeter: points });
+        this.setState({ pathCMeter: Number(points) });
         break;
       default :
         break;
@@ -383,8 +395,6 @@ class Career extends React.Component {
     if (Object.keys(this.state.career).length) {
       return (
         <div>
-          <Sidebar careers={this.state.careers} />
-
           <div className="l-wrapper l-box l-box--inverse">
             
             <Breadcrumb career={this.state.career} />
@@ -505,15 +515,22 @@ class Career extends React.Component {
                   updateModalVisibility={this.updateModalVisibility}
                   updateModalContent={this.updateModalContent}
                   career={this.state.career}
+                  updateSidebarVisibility={this.updateSidebarVisibility}
                 />
 
               </div>
             </div>
           </div>
 
-          <Modal 
+          <Modal
             modal={this.state.modal}
             updateModalVisibility={this.updateModalVisibility}
+          />
+
+          <Sidebar
+            careers={this.state.careers}
+            updateSidebarVisibility={this.updateSidebarVisibility}
+            sidebar={this.state.sidebar}
           />
 
         </div>

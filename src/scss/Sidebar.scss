@@ -1,0 +1,55 @@
+@import 'vars';
+
+$sidebarWidth: 250px;
+$sidebarBackgroundColour: #1c1c1c;
+
+.c-sidebar {
+  
+  &__overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $color-overlay;
+  }
+
+  &__content {
+    transition: $global-transition;
+    position: absolute;
+    top: 0;
+    left: -$sidebarWidth;
+    width: $sidebarWidth;
+    background-color: $sidebarBackgroundColour;
+    height: 100%;
+  }
+
+  &__item {
+    display: block;
+    transition: background .1s ease;
+    color: #dedede;
+    padding: $base-spacing / 2;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-bottom: 1px solid $color-base-border;
+  }
+
+  &--active {
+    .c-sidebar {
+      &__overlay {
+        display: block;
+      }
+      &__content {
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+  
+#app {
+  &.sidebar {
+    transform: translateX($sidebarWidth);
+  }
+}

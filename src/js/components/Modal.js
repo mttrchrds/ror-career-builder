@@ -9,9 +9,6 @@ class Modal extends React.Component {
     super(props);
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.closeModal = this.closeModal.bind(this);
-    this.state = {
-      visible: false,
-    };
   }
 
   closeModal() {

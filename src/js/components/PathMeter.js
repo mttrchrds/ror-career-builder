@@ -4,6 +4,7 @@ import Ability from './Ability';
 class PathMeter extends React.Component {
 
   render() {
+    const moraleRank = 4;
     return (
       <div>
         <div className="l-column l-spacing-left--small">
@@ -15,7 +16,7 @@ class PathMeter extends React.Component {
               currentLevel={this.props.currentLevel}
               setUserSelectionMorale={this.props.setUserSelectionMorale}
               userSelections={this.props.userSelections}
-              moraleRank='4'
+              moraleRank={moraleRank}
               setSelectedAbilities={this.props.setSelectedAbilities}
               selectedAbilities={this.props.selectedAbilities}
               masteryPath={this.props.masteryPath} />
