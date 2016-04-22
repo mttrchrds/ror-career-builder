@@ -1,7 +1,11 @@
 @import 'vars';
 
-$sidebarWidth: 250px;
-$sidebarBackgroundColour: #1c1c1c;
+$width-sidebar: 250px;
+$font-size-sidebar: 0.8rem;
+$color-sidebar-text: #dedede;
+$color-sidebar-border: #505050;
+$color-sidebar-background: #1c1c1c;
+$color-sidebar-Background-hover: #3f3f3f;
 
 .c-sidebar {
   
@@ -17,23 +21,28 @@ $sidebarBackgroundColour: #1c1c1c;
   }
 
   &__content {
-    transition: $global-transition;
+    transition: $base-transition;
     position: absolute;
     top: 0;
-    left: -$sidebarWidth;
-    width: $sidebarWidth;
-    background-color: $sidebarBackgroundColour;
+    left: -$width-sidebar;
+    width: $width-sidebar;
+    background-color: $color-sidebar-background;
     height: 100%;
+    overflow-y: auto;
   }
 
   &__item {
     display: block;
+    line-height: 18px;
     transition: background .1s ease;
-    color: #dedede;
+    color: $color-sidebar-text;
     padding: $base-spacing / 2;
     text-decoration: none;
-    font-size: 0.8rem;
-    border-bottom: 1px solid $color-base-border;
+    font-size: $font-size-sidebar;
+    border-bottom: 1px solid $color-sidebar-border;
+    &:hover {
+      background: $color-sidebar-Background-hover;
+    }
   }
 
   &--active {
@@ -50,6 +59,12 @@ $sidebarBackgroundColour: #1c1c1c;
   
 #app {
   &.sidebar {
-    transform: translateX($sidebarWidth);
+    transform: translateX($width-sidebar);
+  }
+}
+
+body {
+  &.sidebar {
+    overflow-y: hidden;
   }
 }

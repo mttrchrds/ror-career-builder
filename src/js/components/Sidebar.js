@@ -8,7 +8,7 @@ class Sidebar extends React.Component {
   constructor(props) { 
     super(props); 
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.renderCareers = this.renderCareers.bind(this);
+    this.renderCareer = this.renderCareer.bind(this);
     this.clickOverlay = this.clickOverlay.bind(this);
   }
 
@@ -22,11 +22,12 @@ class Sidebar extends React.Component {
     }
   }
 
-  renderCareers(key) {
-    let career = this.props.careers[key];
-    let url = `/career/${key}`;
+  renderCareer(key) {
+    const career = this.props.careers[key];
+    const url = `/career/${key}`;
+    const imgUrl = `/images/icons/${key}.png`;
     return (
-      <a key={key} className="c-sidebar__item" href={url} >{career.name}</a>
+      <a key={key} className="c-sidebar__item" href={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{career.name}</a>
     )
   }
 
@@ -43,7 +44,7 @@ class Sidebar extends React.Component {
       <div className={sidebarClass}>
         <div className="c-sidebar__overlay" onClick={this.clickOverlay}></div>
         <div className="c-sidebar__content">
-          {Object.keys(this.props.careers).map(this.renderCareers)}
+          {Object.keys(this.props.careers).map(this.renderCareer)}
         </div>
       </div>
     )

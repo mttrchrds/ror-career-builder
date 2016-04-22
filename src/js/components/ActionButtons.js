@@ -50,10 +50,10 @@ class ActionButtons extends React.Component {
   }
 
   buildModalTitle() {
-    let url = `/images/icons/${this.props.careerShort}.png`;
+    const url = `/images/icons/${this.props.careerShort}.png`;
     return (
       <h2 className="l-page-title l-row">
-        <img src={url} className="c-title__icon c-title__icon--small"></img>
+        <img src={url} className="c-title__icon c-title__icon--small" />
         {this.props.career.name} career
       </h2>
     );

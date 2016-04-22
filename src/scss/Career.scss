@@ -24,7 +24,7 @@ body {
 
 #app {
   height: 100%;
-  transition: $global-transition;
+  transition: $base-transition;
 }
 
 h1 {
@@ -57,7 +57,7 @@ h4 {
 }
 
 .l-wrapper {
-  margin: $base-spacing;
+  padding: $base-spacing;
 }
 
 .l-box {

@@ -394,8 +394,7 @@ class Career extends React.Component {
   render() {
     if (Object.keys(this.state.career).length) {
       return (
-        <div>
-          <div className="l-wrapper l-box l-box--inverse">
+          <div className="l-box l-box--inverse">
             
             <Breadcrumb career={this.state.career} />
 
@@ -520,20 +519,18 @@ class Career extends React.Component {
 
               </div>
             </div>
+
+            <Modal
+              modal={this.state.modal}
+              updateModalVisibility={this.updateModalVisibility}
+            />
+
+            <Sidebar
+              careers={this.state.careers}
+              updateSidebarVisibility={this.updateSidebarVisibility}
+              sidebar={this.state.sidebar}
+            />
           </div>
-
-          <Modal
-            modal={this.state.modal}
-            updateModalVisibility={this.updateModalVisibility}
-          />
-
-          <Sidebar
-            careers={this.state.careers}
-            updateSidebarVisibility={this.updateSidebarVisibility}
-            sidebar={this.state.sidebar}
-          />
-
-        </div>
       );
     }
     return <h1>Loading...</h1>;
