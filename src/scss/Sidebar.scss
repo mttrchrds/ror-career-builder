@@ -1,7 +1,7 @@
 @import 'vars';
 
 $width-sidebar: 250px;
-$font-size-sidebar: 0.8rem;
+$font-size-sidebar: 1rem;
 $color-sidebar-text: #dedede;
 $color-sidebar-border: #505050;
 $color-sidebar-background: #1c1c1c;
@@ -16,15 +16,15 @@ $color-sidebar-Background-hover: #3f3f3f;
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  background-color: $color-sidebar-background;
 
   &__content {
     width: $width-sidebar;
-    background-color: $color-sidebar-background;
   }
 
   &__item {
     display: block;
-    line-height: 18px;
+    line-height: 2rem;
     transition: background .1s ease;
     color: $color-sidebar-text;
     padding: $base-spacing / 5;
@@ -43,6 +43,10 @@ $color-sidebar-Background-hover: #3f3f3f;
   
 #app {
   &.sidebar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     transform: translateX($width-sidebar);
   }
 }

@@ -1,9 +1,13 @@
 $base-font-family: 'Roboto', sans-serif;
 
-$font-size-h1: 2rem;
-$font-size-h2: 1.4rem;
-$font-size-h3: 1.2rem;
-$font-size-h4: 1rem;
+$base-font-size: 10px;
+
+$font-size-h1: 2.8rem;
+$font-size-h2: 2.2rem;
+$font-size-h3: 1.6rem;
+$font-size-h4: 1.4rem;
+
+$font-size-breadcrumb: 1.2rem;
 
 $base-spacing: 1rem;
 
@@ -40,10 +44,10 @@ $color-ability-inactive: #ecb3b3;
 $color-ability-active: #90d28b;
 $color-overlay: rgba(0, 0, 0, 0.6);
 
-$label-padding: 0.2rem;
+$label-padding: 0.3rem;
 
-$ability-width: 40px;
-$ability-height: 40px;
+$ability-width: 36px;
+$ability-height: 36px;
 $ability-opacity-inactive: 0.2;
 $ability-opacity-active: 1;
 

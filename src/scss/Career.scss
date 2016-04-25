@@ -13,7 +13,7 @@ textarea,
 }
 
 html {
-  font-size: 16px;
+  font-size: $base-font-size;
 }
 
 body {
@@ -43,6 +43,10 @@ h4 {
   color: $color-text-tertiary;
   font-size: $font-size-h4;
   font-weight: normal;
+}
+
+p {
+  font-size: 1.4rem;
 }
 
 .l-page-title {
@@ -89,6 +93,9 @@ h4 {
   &--small {
     margin-bottom: $base-spacing / 2;
   }
+  &--tiny {
+    margin-bottom: $base-spacing / 10;
+  }
 }
 
 .l-spacing-left {
@@ -120,7 +127,7 @@ h4 {
 
 .l-title,
 .l-select {
-  height: 2.5rem;
+  height: 3.2rem;
 }
 
 .c-label {
@@ -128,7 +135,7 @@ h4 {
   top: -$label-padding;
   display: inline-block;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.6rem;
   padding: $label-padding $label-padding * 2;
   border-radius: $border-radius-base;
   background-color: $color-text-tertiary;
@@ -142,10 +149,10 @@ h4 {
     display: block;
     border: 1px solid $color-primary;
     border-radius: $border-radius-base;
-    padding: $base-spacing / 2;
-    height: 1.5rem;
-    width: calc(100% - #{$base-spacing});
+    padding: $base-spacing;
+    height: 2rem;
+    width: calc(100% - #{$base-spacing * 2});
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }

@@ -16,7 +16,7 @@
   border-radius: $border-radius-ability;
   border: 1px solid $color-ability-border;
   .c-ability__image {
-    border-radius: $border-radius-ability;
+    //border-radius: $border-radius-ability;
   }
 }
 
@@ -92,14 +92,14 @@
 /* Styling over Ability Popover content */
 .c-ability-pop {
   &__item {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 0;
     &--right {
       text-align: right;
     }
     &--large {
-      font-size: 1rem; 
+      font-size: 1.4rem; 
     }
     &--primary {
       color: $color-xp;

@@ -7,7 +7,8 @@ class PathMeterButtons extends React.Component {
   constructor(props) {
     super(props);
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.changeMasteryPathMeter = this.changeMasteryPathMeter.bind(this);
+    this.pathMeterAdd = this.pathMeterAdd.bind(this);
+    this.pathMeterRemove = this.pathMeterRemove.bind(this);
   }
 
   updateMasteryTotals(masteryPath, meterValue, masteryPoints) {
@@ -15,26 +16,32 @@ class PathMeterButtons extends React.Component {
     this.props.updateMasteryPoints(masteryPoints);
   }
 
-  changeMasteryPathMeter(masteryPath, pointAction) {
+  pathMeterAdd() {
     
     const pathMeterMax = 15;
     let masteryPoints = this.props.masteryPoints;
     let meterValue = this.props.pathMeter;
-    console.log('DEBUG: change points clicked', pointAction, masteryPoints, meterValue);
-    if (pointAction == "add") {
+    console.log('DEBUG: change points clicked. Add', masteryPoints, meterValue);
       if ((Number(masteryPoints) > 0) && (Number(meterValue) < Number(pathMeterMax))) {
         console.log('DEBUG: increasing meter');
         meterValue++;
         masteryPoints--;
-        this.updateMasteryTotals(masteryPath, meterValue, masteryPoints);
+        this.updateMasteryTotals(this.props.masteryPath, meterValue, masteryPoints);
       }
-    } else {
-      if (Number(meterValue) > 0) {
-        console.log('DEBUG: decreasing meter');
-        meterValue--;
-        masteryPoints++;
-        this.updateMasteryTotals(masteryPath, meterValue, masteryPoints);
-      }
+  }
+
+
+  pathMeterRemove() {
+    
+    const pathMeterMax = 15;
+    let masteryPoints = this.props.masteryPoints;
+    let meterValue = this.props.pathMeter;
+    console.log('DEBUG: change points clicked. Remove', masteryPoints, meterValue);
+    if (Number(meterValue) > 0) {
+      console.log('DEBUG: decreasing meter');
+      meterValue--;
+      masteryPoints++;
+      this.updateMasteryTotals(this.props.masteryPath, meterValue, masteryPoints);
     }
   }
 
@@ -59,11 +66,11 @@ class PathMeterButtons extends React.Component {
           </div>
           <button
             className="pure-button c-button c-button--small c-button--primary l-spacing-right--tiny"
-            onClick={this.changeMasteryPathMeter.bind(null, this.props.masteryPath, 'add')}
+            onClick={this.pathMeterAdd}
             type="button"><i className="fa fa-plus"></i></button>
           <button
             className="pure-button c-button c-button--small c-button--primary"
-            onClick={this.changeMasteryPathMeter.bind(null, this.props.masteryPath, 'remove')}
+            onClick={this.pathMeterRemove}
             type="button"><i className="fa fa-minus"></i></button>
         </div>
     )

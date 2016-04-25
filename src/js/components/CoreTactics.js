@@ -1,5 +1,5 @@
 import React from 'react';
-import Ability from './Ability';
+import AbilityTactic from './AbilityTactic';
 
 class CoreTactics extends React.Component {
 
@@ -11,7 +11,7 @@ class CoreTactics extends React.Component {
 
   renderAbility(key) {
     return (
-      <Ability key={key} details={this.props.tactics[key]}
+      <AbilityTactic key={key} details={this.props.tactics[key]}
         currentLevel={this.props.currentLevel}
         setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}

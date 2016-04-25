@@ -1,3 +1,5 @@
+@import 'vars';
+
 .c-title {
   display: inline-block;
   line-height: 1;
@@ -9,12 +11,13 @@
     display: inline-block;
     width: 28px;
     height: 28px;
-    margin-right: 0.5rem;
+    margin-right: $base-spacing / 2;
     &--small {
       width: 22px;
       height: 22px;
     }
     &--tiny {
+      top: $base-spacing / 2;
       width: 18px;
       height: 18px;
     }

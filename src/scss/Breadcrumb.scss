@@ -1,7 +1,9 @@
+@import 'vars';
+
 .c-breadcrumb {
   display: inline-block;
   margin-bottom: 0;
-  font-size: 0.8rem;
+  font-size: $font-size-breadcrumb;
   &--active {
     font-weight: bold;
   }

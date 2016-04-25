@@ -1,5 +1,5 @@
 import React from 'react';
-import Ability from './Ability';
+import AbilityMorale from './AbilityMorale';
 
 require('../../scss/CoreMorales.scss');
 
@@ -7,7 +7,7 @@ class CoreMorales extends React.Component {
 
   renderAbility(key, rank) {
     return (
-      <Ability key={this.props.morales[key].id}
+      <AbilityMorale key={this.props.morales[key].id}
         details={this.props.morales[key]}
         currentLevel={this.props.currentLevel}
         setUserSelectionMorale={this.props.setUserSelectionMorale}
@@ -16,8 +16,9 @@ class CoreMorales extends React.Component {
         setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}
         updateMasteryPoints={this.props.updateMasteryPoints}
-        masteryPoints={this.props.masteryPoints} />
-      )
+        masteryPoints={this.props.masteryPoints}
+      />
+    )
   }
 
   renderMorales(rank1, rank2, rank3, rank4) {

@@ -1,6 +1,7 @@
 .c-button {
   color: #fff;
   text-shadow: 1px 1px rgba(0,0,0,0.2);
+  font-size: 1.4rem;
 }
 
 .c-button--primary {
@@ -26,4 +27,6 @@
 
 .c-button--small {
   font-size: 70%;
+  width: 2.7rem;
+  height: 2rem;
 }
