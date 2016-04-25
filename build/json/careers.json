@@ -214,28 +214,28 @@
       "b": {
         "name": "Path of Vigilance",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3099,
+          "lvl2": 3100,
+          "lvl3": 3101,
+          "lvl4": 3102,
+          "lvl5": 3103,
+          "lvl6": 3104,
+          "lvl7": 3105
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3148,3047,3052,3059,3058,3056]
       },
       "c": {
         "name": "Path of Glory",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3106,
+          "lvl2": 3107,
+          "lvl3": 3108,
+          "lvl4": 3109,
+          "lvl5": 3110,
+          "lvl6": 3111,
+          "lvl7": 3112
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3050,3062,3066,3063,3049,3048]
       }
     }
   },
@@ -247,43 +247,43 @@
     "class": "Healer",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Grungni",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3868,
+          "lvl2": 3869,
+          "lvl3": 3870,
+          "lvl4": 3871,
+          "lvl5": 3872,
+          "lvl6": 3873,
+          "lvl7": 3874
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3924,3830,3826,3841,3825,3925]
       },
       "b": {
-        "name": "",
+        "name": "Path of Valaya",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3875,
+          "lvl2": 3876,
+          "lvl3": 3877,
+          "lvl4": 3878,
+          "lvl5": 3879,
+          "lvl6": 3880,
+          "lvl7": 3881
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3842,3827,3833,3823,3834]
       },
       "c": {
-        "name": "",
+        "name": "Path of Grimnir",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3882,
+          "lvl2": 3883,
+          "lvl3": 3884,
+          "lvl4": 3885,
+          "lvl5": 3886,
+          "lvl6": 3887,
+          "lvl7": 3888
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3835,3829,3837,3831,3838]
       }
     }
   },
@@ -295,43 +295,43 @@
     "class": "Ranged DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of The Scout",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3971,
+          "lvl2": 3972,
+          "lvl3": 3973,
+          "lvl4": 3974,
+          "lvl5": 3975,
+          "lvl6": 3976,
+          "lvl7": 3977
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3945,3940,3939,4027,3930]
       },
       "b": {
-        "name": "",
+        "name": "Path of Assault",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3978,
+          "lvl2": 3979,
+          "lvl3": 3980,
+          "lvl4": 3981,
+          "lvl5": 3982,
+          "lvl6": 3983,
+          "lvl7": 3984
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3943,4029,3936,3944,3931]
       },
       "c": {
-        "name": "",
+        "name": "Path of The Skirmisher",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 3985,
+          "lvl2": 3986,
+          "lvl3": 3987,
+          "lvl4": 3988,
+          "lvl5": 3989,
+          "lvl6": 3990,
+          "lvl7": 3991
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [3932,3933,3946,3941,3929]
       }
     }
   },
@@ -343,43 +343,43 @@
     "class": "Melee DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of The Trollslayer",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4073,
+          "lvl2": 4074,
+          "lvl3": 4075,
+          "lvl4": 4076,
+          "lvl5": 4077,
+          "lvl6": 4078,
+          "lvl7": 4079
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4035,4031,4033,4036,4047]
       },
       "b": {
-        "name": "",
+        "name": "Path of The Giantslayer",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4080,
+          "lvl2": 4081,
+          "lvl3": 4082,
+          "lvl4": 4083,
+          "lvl5": 4084,
+          "lvl6": 4085,
+          "lvl7": 4086
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4041,4130,4030,4046,4037]
       },
       "c": {
-        "name": "",
+        "name": "Path of The Skavenslayer",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4087,
+          "lvl2": 4088,
+          "lvl3": 4089,
+          "lvl4": 4090,
+          "lvl5": 4091,
+          "lvl6": 4092,
+          "lvl7": 4093
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4034,4048,4045,4032,4044]
       }
     }
   },
@@ -391,43 +391,43 @@
     "class": "Tank",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Khaine",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 2886,
+          "lvl2": 2887,
+          "lvl3": 2888,
+          "lvl4": 2889,
+          "lvl5": 2890,
+          "lvl6": 2891,
+          "lvl7": 2892
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [2861,2840,2848,2847,2841]
       },
       "b": {
-        "name": "",
+        "name": "Path of Vaul",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 2893,
+          "lvl2": 2894,
+          "lvl3": 2895,
+          "lvl4": 2896,
+          "lvl5": 2897,
+          "lvl6": 2898,
+          "lvl7": 2899
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [2844,2860,2845,2843,2855]
       },
       "c": {
-        "name": "",
+        "name": "Path of Hoeth",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 2900,
+          "lvl2": 2901,
+          "lvl3": 2902,
+          "lvl4": 2903,
+          "lvl5": 2904,
+          "lvl6": 2905,
+          "lvl7": 2906
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [2853,2858,2854,2942,2852]
       }
     }
   },
@@ -439,43 +439,43 @@
     "class": "Healer",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Salvation",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4177,
+          "lvl2": 4174,
+          "lvl3": 4175,
+          "lvl4": 4176,
+          "lvl5": 4173,
+          "lvl6": 4178,
+          "lvl7": 4179
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4144,4141,4229,4135,4231]
       },
       "b": {
-        "name": "",
+        "name": "Path of Grace",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4180,
+          "lvl2": 4181,
+          "lvl3": 4182,
+          "lvl4": 4183,
+          "lvl5": 4184,
+          "lvl6": 4185,
+          "lvl7": 4186
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4147,4146,4131,4133,4137]
       },
       "c": {
-        "name": "",
+        "name": "Path of Wrath",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5890,
+          "lvl2": 4188,
+          "lvl3": 4154,
+          "lvl4": 4190,
+          "lvl5": 4191,
+          "lvl6": 4192,
+          "lvl7": 4193
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4138,4140,4143,4134,4232]
       }
     }
   },
@@ -487,43 +487,43 @@
     "class": "Melee DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of The Hunter",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4276,
+          "lvl2": 4277,
+          "lvl3": 4278,
+          "lvl4": 4279,
+          "lvl5": 4280,
+          "lvl6": 4281,
+          "lvl7": 4282
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4245,4249,4239,4333,4235]
       },
       "b": {
-        "name": "",
+        "name": "Path of The Axeman",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4283,
+          "lvl2": 4284,
+          "lvl3": 4285,
+          "lvl4": 4286,
+          "lvl5": 4287,
+          "lvl6": 4288,
+          "lvl7": 4289
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4234,4237,4244,4248,4233]
       },
       "c": {
-        "name": "",
+        "name": "Path of The Guardian",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4290,
+          "lvl2": 4291,
+          "lvl3": 4292,
+          "lvl4": 4293,
+          "lvl5": 4294,
+          "lvl6": 4295,
+          "lvl7": 4296
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4240,4250,4247,4243,4238]
       }
     }
   },
@@ -535,43 +535,43 @@
     "class": "Melee DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Confession",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4379,
+          "lvl2": 4380,
+          "lvl3": 4381,
+          "lvl4": 4382,
+          "lvl5": 4383,
+          "lvl6": 4384,
+          "lvl7": 4385
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4345,4351,4436,4344,4337]
       },
       "b": {
-        "name": "",
+        "name": "Path of Inquisition",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4386,
+          "lvl2": 4387,
+          "lvl3": 4388,
+          "lvl4": 4389,
+          "lvl5": 4390,
+          "lvl6": 4391,
+          "lvl7": 4392
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4349,4336,4346,4339,4342]
       },
       "c": {
-        "name": "",
+        "name": "Path of Judgment",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4393,
+          "lvl2": 4394,
+          "lvl3": 4395,
+          "lvl4": 4396,
+          "lvl5": 4397,
+          "lvl6": 4398,
+          "lvl7": 4399
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4338,4347,4352,4353,4335]
       }
     }
   },
