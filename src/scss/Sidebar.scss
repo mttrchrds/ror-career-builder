@@ -1,7 +1,7 @@
 @import 'vars';
 
 $width-sidebar: 250px;
-$font-size-sidebar: 1rem;
+$font-size-sidebar: 1.2rem;
 $color-sidebar-text: #dedede;
 $color-sidebar-border: #505050;
 $color-sidebar-background: #1c1c1c;
@@ -27,7 +27,7 @@ $color-sidebar-Background-hover: #3f3f3f;
     line-height: 2rem;
     transition: background .1s ease;
     color: $color-sidebar-text;
-    padding: $base-spacing / 5;
+    padding: $base-spacing / 3;
     text-decoration: none;
     font-size: $font-size-sidebar;
     border-bottom: 1px solid $color-sidebar-border;

@@ -15,8 +15,7 @@ class CoreMorales extends React.Component {
         moraleRank={rank}
         setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}
-        updateMasteryPoints={this.props.updateMasteryPoints}
-        masteryPoints={this.props.masteryPoints}
+        incrementMasteryPoints={this.props.incrementMasteryPoints}
       />
     )
   }

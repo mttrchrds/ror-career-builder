@@ -74,7 +74,7 @@ class AbilityMorale extends React.Component {
         if (currentMoraleRankId !== 0) {
           this.props.setSelectedAbilities(currentMoraleRankId);
           if (this.props.moraleRank === 4) {
-            this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+            this.props.incrementMasteryPoints();
           }
         }
         // Add this ability to selectedAbilities
@@ -138,8 +138,7 @@ AbilityMorale.propTypes = {
   userSelections: React.PropTypes.object,
   setUserSelectionMorale: React.PropTypes.func,
   moraleRank: React.PropTypes.number,
-  updateMasteryPoints: React.PropTypes.func,
-  masteryPoints: React.PropTypes.number,
+  incrementMasteryPoints: React.PropTypes.func,
 };
 
 export default AbilityMorale;

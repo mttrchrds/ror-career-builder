@@ -30,7 +30,6 @@ class AbilityMastery extends React.Component {
   componentDidMount() {
     this.setInitialStatus(this.props.details.meterRequirement,
                           this.props.pathMeter,
-                          this.props.currentLevel,
                           this.props.selectedAbilities);
   }
 
@@ -38,7 +37,6 @@ class AbilityMastery extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setInitialStatus(nextProps.details.meterRequirement,
       nextProps.pathMeter,
-      nextProps.currentLevel,
       nextProps.selectedAbilities);
 
     // Meter level goes below optional Ability requirement
@@ -80,7 +78,7 @@ class AbilityMastery extends React.Component {
     }
   }
 
-  setInitialStatus(meterRequirement, pathMeter, currentLevel, selectedAbilities) {
+  setInitialStatus(meterRequirement, pathMeter, selectedAbilities) {
     // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
     if (selectedAbilities.indexOf(this.props.details.id) !== -1) {
       this.setState({
@@ -201,7 +199,6 @@ class AbilityMastery extends React.Component {
 AbilityMastery.propTypes = {
   details: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
-  currentLevel: React.PropTypes.number,
   selectedAbilities: React.PropTypes.array,
   setSelectedAbilities: React.PropTypes.func,
   userSelections: React.PropTypes.object,

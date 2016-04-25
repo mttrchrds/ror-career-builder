@@ -42,8 +42,11 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="a"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathAMeter}
-                    updatePathMeter={this.props.updatePathMeter}
-                    updateMasteryPoints={this.props.updateMasteryPoints} />
+                    incrementPath={this.props.incrementPathA}
+                    decrementPath={this.props.decrementPathA}
+                    incrementMasteryPoints={this.props.incrementMasteryPoints}
+                    decrementMasteryPoints={this.props.decrementMasteryPoints}
+                  />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
@@ -75,8 +78,11 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="b"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathBMeter}
-                    updatePathMeter={this.props.updatePathMeter}
-                    updateMasteryPoints={this.props.updateMasteryPoints} />
+                    incrementPath={this.props.incrementPathB}
+                    decrementPath={this.props.decrementPathB}
+                    incrementMasteryPoints={this.props.incrementMasteryPoints}
+                    decrementMasteryPoints={this.props.decrementMasteryPoints}
+                  />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
@@ -108,8 +114,11 @@ class Mastery extends React.Component {
                   <PathMeterButtons masteryPath="c"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathCMeter}
-                    updatePathMeter={this.props.updatePathMeter}
-                    updateMasteryPoints={this.props.updateMasteryPoints} />
+                    incrementPath={this.props.incrementPathC}
+                    decrementPath={this.props.decrementPathC}
+                    incrementMasteryPoints={this.props.incrementMasteryPoints}
+                    decrementMasteryPoints={this.props.decrementMasteryPoints}
+                  />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}

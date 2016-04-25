@@ -1,6 +1,7 @@
 build/bower_components
 node_modules
 build/js/app.js
+build/js/app.js.map
 images-not_used
 json-not_used
 .DS_Store

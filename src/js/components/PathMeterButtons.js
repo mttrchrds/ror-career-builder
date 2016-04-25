@@ -11,37 +11,26 @@ class PathMeterButtons extends React.Component {
     this.pathMeterRemove = this.pathMeterRemove.bind(this);
   }
 
-  updateMasteryTotals(masteryPath, meterValue, masteryPoints) {
-    this.props.updatePathMeter(masteryPath, meterValue);
-    this.props.updateMasteryPoints(masteryPoints);
-  }
-
   pathMeterAdd() {
     
     const pathMeterMax = 15;
-    let masteryPoints = this.props.masteryPoints;
-    let meterValue = this.props.pathMeter;
-    console.log('DEBUG: change points clicked. Add', masteryPoints, meterValue);
-      if ((Number(masteryPoints) > 0) && (Number(meterValue) < Number(pathMeterMax))) {
-        console.log('DEBUG: increasing meter');
-        meterValue++;
-        masteryPoints--;
-        this.updateMasteryTotals(this.props.masteryPath, meterValue, masteryPoints);
-      }
+    const masteryPoints = this.props.masteryPoints;
+    const meterValue = this.props.pathMeter;
+    if ((Number(masteryPoints) > 0) && (Number(meterValue) < Number(pathMeterMax))) {
+      console.log('DEBUG: increasing meter');
+      this.props.incrementPath();
+      this.props.decrementMasteryPoints();
+    }
   }
 
 
   pathMeterRemove() {
     
-    const pathMeterMax = 15;
-    let masteryPoints = this.props.masteryPoints;
     let meterValue = this.props.pathMeter;
-    console.log('DEBUG: change points clicked. Remove', masteryPoints, meterValue);
     if (Number(meterValue) > 0) {
       console.log('DEBUG: decreasing meter');
-      meterValue--;
-      masteryPoints++;
-      this.updateMasteryTotals(this.props.masteryPath, meterValue, masteryPoints);
+      this.props.decrementPath();
+      this.props.incrementMasteryPoints();
     }
   }
 

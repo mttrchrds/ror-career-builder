@@ -29,7 +29,6 @@ class Career extends React.Component {
     this.updateRenown = this.updateRenown.bind(this);
     this.setSelectedAbilities = this.setSelectedAbilities.bind(this);
     this.setUserSelectionTactic = this.setUserSelectionTactic.bind(this);
-    this.updatePathMeter = this.updatePathMeter.bind(this);
     this.setUserSelectionMorale = this.setUserSelectionMorale.bind(this);
     this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
     this.setUserSelectionMasteryAbilities = this.setUserSelectionMasteryAbilities.bind(this);
@@ -38,6 +37,14 @@ class Career extends React.Component {
     this.updateModalContent = this.updateModalContent.bind(this);
     this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
     this.updateOverlayVisibility = this.updateOverlayVisibility.bind(this);
+    this.incrementMasteryPoints = this.incrementMasteryPoints.bind(this);
+    this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
+    this.incrementPathA = this.incrementPathA.bind(this);
+    this.decrementPathA = this.decrementPathA.bind(this);
+    this.incrementPathB = this.incrementPathB.bind(this);
+    this.decrementPathB = this.decrementPathB.bind(this);
+    this.incrementPathC = this.incrementPathC.bind(this);
+    this.decrementPathC = this.decrementPathC.bind(this);
 
     this.state = {
       careers: {},
@@ -379,21 +386,36 @@ class Career extends React.Component {
     this.setState({ masteryPoints: points });
   }
 
-  updatePathMeter(masteryPath, points) {
-    console.log('DEBUG: updatePathMeter', masteryPath, points);
-    switch (masteryPath) {
-      case 'a':
-        this.setState({ pathAMeter: Number(points) });
-        break;
-      case 'b':
-        this.setState({ pathBMeter: Number(points) });
-        break;
-      case 'c':
-        this.setState({ pathCMeter: Number(points) });
-        break;
-      default :
-        break;
-    }
+  incrementMasteryPoints() {
+    this.setState({ masteryPoints: this.state.masteryPoints + 1 })
+  }
+
+  decrementMasteryPoints() {
+    this.setState({ masteryPoints: this.state.masteryPoints - 1 })
+  }
+
+  incrementPathA() {
+    this.setState({ pathAMeter: this.state.pathAMeter + 1 })
+  }
+
+  decrementPathA() {
+    this.setState({ pathAMeter: this.state.pathAMeter - 1 })
+  }
+
+  incrementPathB() {
+    this.setState({ pathBMeter: this.state.pathBMeter + 1 })
+  }
+
+  decrementPathB() {
+    this.setState({ pathBMeter: this.state.pathBMeter - 1 })
+  }
+
+  incrementPathC() {
+    this.setState({ pathCMeter: this.state.pathCMeter + 1 })
+  }
+
+  decrementPathC() {
+    this.setState({ pathCMeter: this.state.pathCMeter - 1 })
   }
 
   updateLevel(level) {
@@ -429,7 +451,6 @@ class Career extends React.Component {
                 <SelectLevel
                   updateLevel={this.updateLevel}
                   currentLevel={this.state.currentLevel}
-                  masteryPoints={this.state.masteryPoints}
                   setMasteryPoints={this.setMasteryPoints}
                   currentRenown={this.state.currentRenown}
                   setCurrentTacticLimit={this.setCurrentTacticLimit}
@@ -465,11 +486,11 @@ class Career extends React.Component {
                 userSelections={this.state.userSelections}
                 setSelectedAbilities={this.setSelectedAbilities}
                 selectedAbilities={this.state.selectedAbilities}
-                updateMasteryPoints={this.updateMasteryPoints}
-                masteryPoints={this.state.masteryPoints}
+                incrementMasteryPoints={this.incrementMasteryPoints}
               />
 
-              <CoreTactics currentLevel={this.state.currentLevel} tactics={this.state.coreTactics}
+              <CoreTactics currentLevel={this.state.currentLevel}
+                tactics={this.state.coreTactics}
                 setSelectedAbilities={this.setSelectedAbilities}
                 selectedAbilities={this.state.selectedAbilities}
                 currentTacticLimit={this.state.currentTacticLimit}
@@ -490,13 +511,9 @@ class Career extends React.Component {
                 pathCCoreAbilities={this.state.pathCCoreAbilities}
                 pathCOptionalAbilities={this.state.pathCOptionalAbilities}
                 masteryPoints={this.state.masteryPoints}
-                pathAPoints={this.state.pathAPoints}
-                pathBPoints={this.state.pathBPoints}
-                pathCPoints={this.state.pathCPoints}
                 pathAMeter={this.state.pathAMeter}
                 pathBMeter={this.state.pathBMeter}
                 pathCMeter={this.state.pathCMeter}
-                updatePathMeter={this.updatePathMeter}
                 updateMasteryPoints={this.updateMasteryPoints}
                 setUserSelectionMorale={this.setUserSelectionMorale}
                 userSelections={this.state.userSelections}
@@ -505,6 +522,14 @@ class Career extends React.Component {
                 currentTacticLimit={this.state.currentTacticLimit}
                 setUserSelectionTactic={this.setUserSelectionTactic}
                 setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
+                incrementPathA={this.incrementPathA}
+                decrementPathA={this.decrementPathA}
+                incrementPathB={this.incrementPathB}
+                decrementPathB={this.decrementPathB}
+                incrementPathC={this.incrementPathC}
+                decrementPathC={this.decrementPathC}
+                incrementMasteryPoints={this.incrementMasteryPoints}
+                decrementMasteryPoints={this.decrementMasteryPoints}
               />
 
               <ActionButtons
