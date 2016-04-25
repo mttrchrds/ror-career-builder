@@ -72,10 +72,12 @@ class ActionButtons extends React.Component {
 
   clickSave() {
     this.props.updateModalContent(this.buildModalTitle(), this.buildModalBody());
+    this.props.updateOverlayVisibility(true);
     this.props.updateModalVisibility(true);
   }
 
   clickChangeCareer() {
+    this.props.updateOverlayVisibility(true);
     this.props.updateSidebarVisibility(true);
   }
 

@@ -12,11 +12,8 @@ class Modal extends React.Component {
   }
 
   closeModal() {
+    this.props.updateOverlayVisibility(false);
     this.props.updateModalVisibility(false);
-  }
-
-  clickWindow() {
-    console.log('window clicked');
   }
 
   render() {

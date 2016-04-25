@@ -13,6 +13,7 @@ import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
 import ActionButtons from './ActionButtons';
 import Modal from './Modal';
+import Overlay from './Overlay';
 
 require('../../scss/Career.scss');
 
@@ -36,6 +37,7 @@ class Career extends React.Component {
     this.updateModalVisibility = this.updateModalVisibility.bind(this);
     this.updateModalContent = this.updateModalContent.bind(this);
     this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
+    this.updateOverlayVisibility = this.updateOverlayVisibility.bind(this);
 
     this.state = {
       careers: {},
@@ -73,7 +75,10 @@ class Career extends React.Component {
       },
       sidebar: {
         visible: false,
-      }
+      },
+      overlay: {
+        visible: false,
+      },
     };
   }
 
@@ -337,6 +342,14 @@ class Career extends React.Component {
     });
   }
 
+  // Hide/show overlay, param is boolean
+  updateOverlayVisibility(status) {
+    this.state.overlay.visible = status;
+    this.setState({ 
+      overlay: this.state.overlay,
+    });
+  }
+
   // Update contents of modal, param is new copy
   updateModalContent(title, content) {
     this.state.modal.contentTitle = title;
@@ -515,6 +528,7 @@ class Career extends React.Component {
                   updateModalContent={this.updateModalContent}
                   career={this.state.career}
                   updateSidebarVisibility={this.updateSidebarVisibility}
+                  updateOverlayVisibility={this.updateOverlayVisibility}
                 />
 
               </div>
@@ -523,12 +537,21 @@ class Career extends React.Component {
             <Modal
               modal={this.state.modal}
               updateModalVisibility={this.updateModalVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
             />
 
             <Sidebar
               careers={this.state.careers}
               updateSidebarVisibility={this.updateSidebarVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
               sidebar={this.state.sidebar}
+            />
+
+            <Overlay
+              overlay={this.state.overlay}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+              updateSidebarVisibility={this.updateSidebarVisibility}
+              updateModalVisibility={this.updateModalVisibility}
             />
           </div>
       );

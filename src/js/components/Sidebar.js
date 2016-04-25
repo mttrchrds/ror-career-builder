@@ -9,7 +9,11 @@ class Sidebar extends React.Component {
     super(props); 
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.renderCareer = this.renderCareer.bind(this);
-    this.clickOverlay = this.clickOverlay.bind(this);
+  }
+
+  componentDidMount() {
+    const sidebar = document.querySelector('.c-sidebar');
+    document.querySelector('body').appendChild(sidebar.parentNode.removeChild(sidebar));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,10 +35,6 @@ class Sidebar extends React.Component {
     )
   }
 
-  clickOverlay() {
-    this.props.updateSidebarVisibility(false);
-  }
-
   render() {
     const sidebarClass = classNames({
       'c-sidebar': true,
@@ -42,7 +42,6 @@ class Sidebar extends React.Component {
     });
     return (
       <div className={sidebarClass}>
-        <div className="c-sidebar__overlay" onClick={this.clickOverlay}></div>
         <div className="c-sidebar__content">
           {Object.keys(this.props.careers).map(this.renderCareer)}
         </div>
