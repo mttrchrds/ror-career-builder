@@ -583,43 +583,43 @@
     "class": "Tank",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Malice",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 909,
+          "lvl2": 910,
+          "lvl3": 911,
+          "lvl4": 912,
+          "lvl5": 913,
+          "lvl6": 914,
+          "lvl7": 915
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [863,870,876,874,865]
       },
       "b": {
-        "name": "",
+        "name": "Path of Loathing",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 916,
+          "lvl2": 917,
+          "lvl3": 918,
+          "lvl4": 919,
+          "lvl5": 920,
+          "lvl6": 921,
+          "lvl7": 922
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [877,986,866,881,883]
       },
       "c": {
-        "name": "",
+        "name": "Path of Anguish",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 923,
+          "lvl2": 924,
+          "lvl3": 925,
+          "lvl4": 926,
+          "lvl5": 927,
+          "lvl6": 928,
+          "lvl7": 929
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [868,864,884,878,871]
       }
     }
   },
@@ -631,43 +631,43 @@
     "class": "Tank",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Da Brawler",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4484,
+          "lvl2": 4485,
+          "lvl3": 4486,
+          "lvl4": 4487,
+          "lvl5": 4488,
+          "lvl6": 4489,
+          "lvl7": 4490
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4449,4437,4438,4451,4453]
       },
       "b": {
-        "name": "",
+        "name": "Path of Da Toughest",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4491,
+          "lvl2": 4492,
+          "lvl3": 4493,
+          "lvl4": 4494,
+          "lvl5": 4495,
+          "lvl6": 4496,
+          "lvl7": 4497
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4442,4452,4445,4440,4540]
       },
       "c": {
-        "name": "",
+        "name": "Path of Da Boss",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4498,
+          "lvl2": 4499,
+          "lvl3": 4500,
+          "lvl4": 4501,
+          "lvl5": 4502,
+          "lvl6": 4503,
+          "lvl7": 4504
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4459,4441,4456,4444,4458]
       }
     }
   },
@@ -679,43 +679,43 @@
     "class": "Melee DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Da Savage",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4690,
+          "lvl2": 4691,
+          "lvl3": 4692,
+          "lvl4": 4693,
+          "lvl5": 4694,
+          "lvl6": 4695,
+          "lvl7": 4696
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4664,4650,4652,4648,4653]
       },
       "b": {
-        "name": "",
+        "name": "Path of Da Hitta",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4697,
+          "lvl2": 4698,
+          "lvl3": 4699,
+          "lvl4": 4700,
+          "lvl5": 4701,
+          "lvl6": 4702,
+          "lvl7": 4703
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4654,4746,4663,4647,4658]
       },
       "c": {
-        "name": "",
+        "name": "Path of Da Wrecka",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4704,
+          "lvl2": 4705,
+          "lvl3": 4706,
+          "lvl4": 4707,
+          "lvl5": 4708,
+          "lvl6": 4709,
+          "lvl7": 4710
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4662,4651,4649,4661,4665]
       }
     }
   },
