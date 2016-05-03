@@ -727,43 +727,43 @@
     "class": "Tank",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Dread",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4796,
+          "lvl2": 4797,
+          "lvl3": 4798,
+          "lvl4": 4799,
+          "lvl5": 4800,
+          "lvl6": 4801,
+          "lvl7": 4802
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4761,4752,4768,4748,4767,4755]
       },
       "b": {
-        "name": "",
+        "name": "Path of Corruption",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4803,
+          "lvl2": 4804,
+          "lvl3": 4805,
+          "lvl4": 4806,
+          "lvl5": 4807,
+          "lvl6": 4808,
+          "lvl7": 4809
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4762,4853,4756,4750,4764,4770]
       },
       "c": {
-        "name": "",
+        "name": "Path of Discord",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4810,
+          "lvl2": 4811,
+          "lvl3": 4812,
+          "lvl4": 4813,
+          "lvl5": 4814,
+          "lvl6": 4815,
+          "lvl7": 4816
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4771,4749,4751,4753,4759,4763]
       }
     }
   },
@@ -775,43 +775,43 @@
     "Class": "Healer",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Dark Rites",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 4998,
+          "lvl2": 4999,
+          "lvl3": 5000,
+          "lvl4": 5001,
+          "lvl5": 5002,
+          "lvl6": 5003,
+          "lvl7": 5004
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [5053,4960,4969,5056,4966]
       },
       "b": {
-        "name": "",
+        "name": "Path of Torture",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5005,
+          "lvl2": 5006,
+          "lvl3": 4979,
+          "lvl4": 5008,
+          "lvl5": 5009,
+          "lvl6": 5010,
+          "lvl7": 5011
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4959,4963,4965,4968,5054]
       },
       "c": {
-        "name": "",
+        "name": "Path of Sacrifice",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5012,
+          "lvl2": 5013,
+          "lvl3": 5014,
+          "lvl4": 5015,
+          "lvl5": 5016,
+          "lvl6": 5017,
+          "lvl7": 5018
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [4971,4962,4958,4972,4956]
       }
     }
   },
@@ -823,43 +823,43 @@
     "class": "Ranged DPS",
     "paths": {
       "a": {
-        "name": "",
+        "name": "Path of Havoc",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5105,
+          "lvl2": 5106,
+          "lvl3": 5107,
+          "lvl4": 5108,
+          "lvl5": 5109,
+          "lvl6": 5110,
+          "lvl7": 5111
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [5078,5068,5079,5161,5067]
       },
       "b": {
-        "name": "",
+        "name": "Path of Changing",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5112,
+          "lvl2": 5113,
+          "lvl3": 5114,
+          "lvl4": 5115,
+          "lvl5": 5116,
+          "lvl6": 5117,
+          "lvl7": 5118
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [5074,5071,5058,5072,5062]
       },
       "c": {
-        "name": "",
+        "name": "Path of Daemonology",
         "optionalAbilities": {
-          "lvl1": 1,
-          "lvl2": 2,
-          "lvl3": 3,
-          "lvl4": 4,
-          "lvl5": 5,
-          "lvl6": 6,
-          "lvl7": 7
+          "lvl1": 5084,
+          "lvl2": 5120,
+          "lvl3": 5121,
+          "lvl4": 5122,
+          "lvl5": 5123,
+          "lvl6": 5124,
+          "lvl7": 5125
         },
-        "coreAbilities": [3736,3733,3739,3726,3719]
+        "coreAbilities": [5080,5061,5077,5063,5073]
       }
     }
   },
