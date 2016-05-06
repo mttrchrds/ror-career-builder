@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router';
 
 require('../../scss/Sidebar.scss');
 
@@ -31,7 +32,7 @@ class Sidebar extends React.Component {
     const url = `/career/${key}`;
     const imgUrl = `/images/icons/${key}.png`;
     return (
-      <a key={key} className="c-sidebar__item" href={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{career.name}</a>
+      <Link key={key} className="c-sidebar__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{career.name}</Link>
     )
   }
 

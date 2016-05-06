@@ -1,5 +1,6 @@
 import React from 'react';
 import h from '../helpers';
+import { Link } from 'react-router';
 
 class Home extends React.Component {
 
@@ -23,7 +24,7 @@ class Home extends React.Component {
   renderCareers(key) {
     const url = `/career/${key}`;
     return (
-      <li key={key}><a href={url}>{this.state.careers[key].name}</a></li>
+      <li key={key}><Link to={url}>{this.state.careers[key].name}</Link></li>
     );
   }
 

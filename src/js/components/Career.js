@@ -37,6 +37,7 @@ class Career extends React.Component {
     this.updateModalContent = this.updateModalContent.bind(this);
     this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
     this.updateOverlayVisibility = this.updateOverlayVisibility.bind(this);
+    this.hideOverlay = this.hideOverlay.bind(this);
     this.incrementMasteryPoints = this.incrementMasteryPoints.bind(this);
     this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
     this.incrementPathA = this.incrementPathA.bind(this);
@@ -89,7 +90,18 @@ class Career extends React.Component {
     };
   }
 
+  componentWillReceiveProps() {
+    // New career selected, reset selections and load data
+    this.resetCareer();
+    this.loadCareer();
+    this.hideOverlay();
+  }
+
   componentDidMount() {
+    this.loadCareer();
+  }
+
+  loadCareer() {
     h.getJSON('/json/careers.json', (careers) => {
       if (careers[this.props.params.careerName]) {
         const career = careers[this.props.params.careerName];
@@ -357,6 +369,15 @@ class Career extends React.Component {
     });
   }
 
+  hideOverlay() {
+    this.updateModalVisibility(false);
+    this.updateSidebarVisibility(false);
+    this.state.overlay.visible = false;
+    this.setState({ 
+      overlay: this.state.overlay,
+    });
+  }
+
   // Update contents of modal, param is new copy
   updateModalContent(title, content) {
     this.state.modal.contentTitle = title;
@@ -574,9 +595,7 @@ class Career extends React.Component {
 
           <Overlay
             overlay={this.state.overlay}
-            updateOverlayVisibility={this.updateOverlayVisibility}
-            updateSidebarVisibility={this.updateSidebarVisibility}
-            updateModalVisibility={this.updateModalVisibility}
+            hideOverlay={this.hideOverlay}
           />
         </div>
       );

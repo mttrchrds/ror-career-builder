@@ -12,9 +12,7 @@ class Overlay extends React.Component {
   }
 
   clickOverlay() {
-    this.props.updateModalVisibility(false);
-    this.props.updateSidebarVisibility(false);
-    this.props.updateOverlayVisibility(false);
+    this.props.hideOverlay();
   }
 
   render() {
