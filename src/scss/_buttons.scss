@@ -25,6 +25,13 @@
   }
 }
 
+.c-button--negative {
+  @include raised-effect($color-negative-light, $color-negative);
+  &:hover, &:active, &:focus {
+    background: linear-gradient($color-negative-lighter, $color-negative);
+  }
+}
+
 .c-button--small {
   font-size: 70%;
   width: 2.7rem;

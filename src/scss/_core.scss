@@ -118,6 +118,11 @@ p {
   &--right {
     justify-content: flex-end;
   }
+  &--right &__item {
+    &--align-opposite {
+      margin-right: auto;
+    }
+  }
 }
 
 .l-column {

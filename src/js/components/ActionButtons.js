@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router'
 
 require('../../scss/BarXp.scss');
 
@@ -81,10 +82,18 @@ class ActionButtons extends React.Component {
     this.props.updateSidebarVisibility(true);
   }
 
+  clickHome() {
+    browserHistory.push('/');
+  }
+
   render() {
     return (
       <div className="l-box l-spacing-left l-row l-row--right">
-        <button className="pure-button c-button c-button--tertiary" type="button" onClick={this.clickReset}>
+        <button className="pure-button c-button c-button--tertiary l-row__item l-row__item--align-opposite" type="button" onClick={this.clickHome}>
+          <i className="fa fa-home l-spacing-right--small"></i>
+          Home
+        </button>
+        <button className="pure-button c-button c-button--negative" type="button" onClick={this.clickReset}>
           <i className="fa fa-refresh l-spacing-right--small"></i>
           Reset
         </button>
