@@ -12,24 +12,23 @@ class PathMeterButtons extends React.Component {
   }
 
   pathMeterAdd() {
-    
     const pathMeterMax = 15;
     const masteryPoints = this.props.masteryPoints;
     const meterValue = this.props.pathMeter;
+    const masteryPath = this.props.masteryPath;
     if ((Number(masteryPoints) > 0) && (Number(meterValue) < Number(pathMeterMax))) {
       console.log('DEBUG: increasing meter');
-      this.props.incrementPath();
+      this.props.incrementPathMeter(masteryPath);
       this.props.decrementMasteryPoints();
     }
   }
 
-
   pathMeterRemove() {
-    
-    let meterValue = this.props.pathMeter;
+    const meterValue = this.props.pathMeter;
+    const masteryPath = this.props.masteryPath;
     if (Number(meterValue) > 0) {
       console.log('DEBUG: decreasing meter');
-      this.props.decrementPath();
+      this.props.decrementPathMeter(masteryPath);
       this.props.incrementMasteryPoints();
     }
   }

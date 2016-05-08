@@ -15,7 +15,7 @@ import ActionButtons from './ActionButtons';
 import Modal from './Modal';
 import Overlay from './Overlay';
 
-require('../../scss/Career.scss');
+require('../../scss/_core.scss');
 
 class Career extends React.Component {
 
@@ -40,12 +40,8 @@ class Career extends React.Component {
     this.hideOverlay = this.hideOverlay.bind(this);
     this.incrementMasteryPoints = this.incrementMasteryPoints.bind(this);
     this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
-    this.incrementPathA = this.incrementPathA.bind(this);
-    this.decrementPathA = this.decrementPathA.bind(this);
-    this.incrementPathB = this.incrementPathB.bind(this);
-    this.decrementPathB = this.decrementPathB.bind(this);
-    this.incrementPathC = this.incrementPathC.bind(this);
-    this.decrementPathC = this.decrementPathC.bind(this);
+    this.incrementPathMeter = this.incrementPathMeter.bind(this);
+    this.decrementPathMeter = this.decrementPathMeter.bind(this);
 
     this.state = {
       careers: {},
@@ -415,24 +411,30 @@ class Career extends React.Component {
     this.setState({ masteryPoints: this.state.masteryPoints - 1 })
   }
 
-  incrementPathA() {
-    this.setState({ pathAMeter: this.state.pathAMeter + 1 })
+  incrementPathMeter(path) {
+    const pathProperty = this.formatPathMeter(path);
+    // i.e. pathAMeter: this.state.pathAMeter + 1
+    this.setState({ [pathProperty]: this.state[pathProperty] + 1 })
+  }
+
+  decrementPathMeter(path) {
+    const pathProperty = this.formatPathMeter(path);
+    // i.e. pathAMeter: this.state.pathAMeter - 1
+    this.setState({ [pathProperty]: this.state[pathProperty] - 1 })
+  }
+
+  // Formats path letter to path property name e.g 'a' becomes 'pathAMeter'
+  formatPathMeter(path) {
+    const pathFormatted = path.toUpperCase();
+    return `path${pathFormatted}Meter`;
   }
 
   decrementPathA() {
     this.setState({ pathAMeter: this.state.pathAMeter - 1 })
   }
 
-  incrementPathB() {
-    this.setState({ pathBMeter: this.state.pathBMeter + 1 })
-  }
-
   decrementPathB() {
     this.setState({ pathBMeter: this.state.pathBMeter - 1 })
-  }
-
-  incrementPathC() {
-    this.setState({ pathCMeter: this.state.pathCMeter + 1 })
   }
 
   decrementPathC() {
@@ -543,14 +545,10 @@ class Career extends React.Component {
                 currentTacticLimit={this.state.currentTacticLimit}
                 setUserSelectionTactic={this.setUserSelectionTactic}
                 setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
-                incrementPathA={this.incrementPathA}
-                decrementPathA={this.decrementPathA}
-                incrementPathB={this.incrementPathB}
-                decrementPathB={this.decrementPathB}
-                incrementPathC={this.incrementPathC}
-                decrementPathC={this.decrementPathC}
                 incrementMasteryPoints={this.incrementMasteryPoints}
                 decrementMasteryPoints={this.decrementMasteryPoints}
+                incrementPathMeter={this.incrementPathMeter}
+                decrementPathMeter={this.decrementPathMeter}
               />
 
               <ActionButtons

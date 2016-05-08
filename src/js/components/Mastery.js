@@ -39,13 +39,14 @@ class Mastery extends React.Component {
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.a.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">
-                  <PathMeterButtons masteryPath="a"
+                  <PathMeterButtons 
+                    masteryPath="a"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathAMeter}
-                    incrementPath={this.props.incrementPathA}
-                    decrementPath={this.props.decrementPathA}
                     incrementMasteryPoints={this.props.incrementMasteryPoints}
                     decrementMasteryPoints={this.props.decrementMasteryPoints}
+                    incrementPathMeter={this.props.incrementPathMeter}
+                    decrementPathMeter={this.props.decrementPathMeter}
                   />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
@@ -75,13 +76,14 @@ class Mastery extends React.Component {
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.b.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">
-                  <PathMeterButtons masteryPath="b"
+                  <PathMeterButtons 
+                    masteryPath="b"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathBMeter}
-                    incrementPath={this.props.incrementPathB}
-                    decrementPath={this.props.decrementPathB}
                     incrementMasteryPoints={this.props.incrementMasteryPoints}
                     decrementMasteryPoints={this.props.decrementMasteryPoints}
+                    incrementPathMeter={this.props.incrementPathMeter}
+                    decrementPathMeter={this.props.decrementPathMeter}
                   />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
@@ -111,13 +113,14 @@ class Mastery extends React.Component {
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.c.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">
-                  <PathMeterButtons masteryPath="c"
+                  <PathMeterButtons 
+                    masteryPath="c"
                     masteryPoints={this.props.masteryPoints}
                     pathMeter={this.props.pathCMeter}
-                    incrementPath={this.props.incrementPathC}
-                    decrementPath={this.props.decrementPathC}
                     incrementMasteryPoints={this.props.incrementMasteryPoints}
                     decrementMasteryPoints={this.props.decrementMasteryPoints}
+                    incrementPathMeter={this.props.incrementPathMeter}
+                    decrementPathMeter={this.props.decrementPathMeter}
                   />
                   <PathMeter masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
