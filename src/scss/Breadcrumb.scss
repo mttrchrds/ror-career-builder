@@ -11,4 +11,10 @@
     display: inline-block;
     padding: 0 0.3rem;
   }
+  &__link {
+    color: $color-base-text;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

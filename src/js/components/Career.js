@@ -454,7 +454,11 @@ class Career extends React.Component {
       return (
         <div className="l-box l-box--inverse">
           
-          <Breadcrumb career={this.state.career} />
+          <Breadcrumb 
+            career={this.state.career}
+            updateSidebarVisibility={this.updateSidebarVisibility}
+            updateOverlayVisibility={this.updateOverlayVisibility}
+          />
 
           <BarXp currentLevel={this.state.currentLevel} />
 
