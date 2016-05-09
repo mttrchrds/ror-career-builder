@@ -37,7 +37,7 @@ $color-sidebar-Background-hover: #3f3f3f;
   }
 
   &--active {
-    transform: translateX($width-sidebar);
+    transform: translateX(0);
   }
 }
   

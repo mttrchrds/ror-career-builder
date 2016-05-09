@@ -78,6 +78,7 @@ class Career extends React.Component {
         contentBody: '',
       },
       sidebar: {
+        mounted: false,
         visible: false,
       },
       overlay: {
@@ -429,18 +430,6 @@ class Career extends React.Component {
     return `path${pathFormatted}Meter`;
   }
 
-  decrementPathA() {
-    this.setState({ pathAMeter: this.state.pathAMeter - 1 })
-  }
-
-  decrementPathB() {
-    this.setState({ pathBMeter: this.state.pathBMeter - 1 })
-  }
-
-  decrementPathC() {
-    this.setState({ pathCMeter: this.state.pathCMeter - 1 })
-  }
-
   updateLevel(level) {
     this.setState({ currentLevel: Number(level) });
   }
@@ -452,157 +441,163 @@ class Career extends React.Component {
   render() {
     if (Object.keys(this.state.career).length) {
       return (
-        <div className="l-box l-box--inverse">
-          
-          <Breadcrumb 
-            career={this.state.career}
-            updateSidebarVisibility={this.updateSidebarVisibility}
-            updateOverlayVisibility={this.updateOverlayVisibility}
-          />
+        <div className="l-wrapper">
+          <div className="l-box l-box--inverse">
+            
+            <Breadcrumb 
+              career={this.state.career}
+              updateSidebarVisibility={this.updateSidebarVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+            />
 
-          <BarXp currentLevel={this.state.currentLevel} />
+            <BarXp currentLevel={this.state.currentLevel} />
 
-          <BarRenown currentRenown={this.state.currentRenown} />
+            <BarRenown currentRenown={this.state.currentRenown} />
 
-          <div className="l-spacing-bottom--large">
+            <div className="l-spacing-bottom--large">
+              <div className="pure-g">
+                <div className="pure-u-8-24">
+
+                  <CareerTitle careerShort={this.state.careerShort}
+                    career={this.state.career}
+                  />
+
+                </div>
+                <div className="pure-u-3-24">
+
+                  <SelectLevel
+                    updateLevel={this.updateLevel}
+                    currentLevel={this.state.currentLevel}
+                    setMasteryPoints={this.setMasteryPoints}
+                    currentRenown={this.state.currentRenown}
+                    setCurrentTacticLimit={this.setCurrentTacticLimit}
+                    resetSelections={this.resetSelections}
+                  />
+
+                </div>
+                <div className="pure-u-13-24">
+
+                  <SelectRenown
+                    currentLevel={this.state.currentLevel}
+                    currentRenown={this.state.currentRenown}
+                    updateRenown={this.updateRenown}
+                    setMasteryPoints={this.setMasteryPoints}
+                    resetSelections={this.resetSelections}
+                  />
+
+                </div>
+              </div>
+            </div>
+
             <div className="pure-g">
-              <div className="pure-u-8-24">
+              <div className="pure-u-10-24">
 
-                <CareerTitle careerShort={this.state.careerShort}
+                <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
+                  setSelectedAbilities={this.setSelectedAbilities}
+                  selectedAbilities={this.state.selectedAbilities}
+                />
+
+                <CoreMorales currentLevel={this.state.currentLevel}
+                  morales={this.state.coreMorales}
+                  setUserSelectionMorale={this.setUserSelectionMorale}
+                  userSelections={this.state.userSelections}
+                  setSelectedAbilities={this.setSelectedAbilities}
+                  selectedAbilities={this.state.selectedAbilities}
+                  incrementMasteryPoints={this.incrementMasteryPoints}
+                />
+
+                <CoreTactics currentLevel={this.state.currentLevel}
+                  tactics={this.state.coreTactics}
+                  setSelectedAbilities={this.setSelectedAbilities}
+                  selectedAbilities={this.state.selectedAbilities}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  setUserSelectionTactic={this.setUserSelectionTactic}
+                  userSelections={this.state.userSelections}
+                />
+
+              </div>
+              <div className="pure-u-14-24">
+
+                <Mastery
                   career={this.state.career}
-                />
-
-              </div>
-              <div className="pure-u-3-24">
-
-                <SelectLevel
-                  updateLevel={this.updateLevel}
                   currentLevel={this.state.currentLevel}
-                  setMasteryPoints={this.setMasteryPoints}
-                  currentRenown={this.state.currentRenown}
-                  setCurrentTacticLimit={this.setCurrentTacticLimit}
-                  resetSelections={this.resetSelections}
+                  pathACoreAbilities={this.state.pathACoreAbilities}
+                  pathAOptionalAbilities={this.state.pathAOptionalAbilities}
+                  pathBCoreAbilities={this.state.pathBCoreAbilities}
+                  pathBOptionalAbilities={this.state.pathBOptionalAbilities}
+                  pathCCoreAbilities={this.state.pathCCoreAbilities}
+                  pathCOptionalAbilities={this.state.pathCOptionalAbilities}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  updateMasteryPoints={this.updateMasteryPoints}
+                  setUserSelectionMorale={this.setUserSelectionMorale}
+                  userSelections={this.state.userSelections}
+                  setSelectedAbilities={this.setSelectedAbilities}
+                  selectedAbilities={this.state.selectedAbilities}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  setUserSelectionTactic={this.setUserSelectionTactic}
+                  setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
+                  incrementMasteryPoints={this.incrementMasteryPoints}
+                  decrementMasteryPoints={this.decrementMasteryPoints}
+                  incrementPathMeter={this.incrementPathMeter}
+                  decrementPathMeter={this.decrementPathMeter}
                 />
 
-              </div>
-              <div className="pure-u-13-24">
-
-                <SelectRenown
+                <ActionButtons
+                  resetCareer={this.resetCareer}
+                  careerShort={this.state.careerShort}
                   currentLevel={this.state.currentLevel}
                   currentRenown={this.state.currentRenown}
-                  updateRenown={this.updateRenown}
-                  setMasteryPoints={this.setMasteryPoints}
-                  resetSelections={this.resetSelections}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  morale1={this.state.userSelections.morale1}
+                  morale2={this.state.userSelections.morale2}
+                  morale3={this.state.userSelections.morale3}
+                  morale4={this.state.userSelections.morale4}
+                  selectedAbilities={this.state.selectedAbilities}
+                  masteryAbilities={this.state.userSelections.masteryAbilities}
+                  tactics={this.state.userSelections.tactics}
+                  updateModalVisibility={this.updateModalVisibility}
+                  updateModalContent={this.updateModalContent}
+                  career={this.state.career}
+                  updateSidebarVisibility={this.updateSidebarVisibility}
+                  updateOverlayVisibility={this.updateOverlayVisibility}
                 />
 
               </div>
             </div>
+
+            <Modal
+              modal={this.state.modal}
+              updateModalVisibility={this.updateModalVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+            />
+
+            <Sidebar
+              careers={this.state.careers}
+              updateSidebarVisibility={this.updateSidebarVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+              sidebar={this.state.sidebar}
+            />
+
+            <Overlay
+              overlay={this.state.overlay}
+              hideOverlay={this.hideOverlay}
+            />
           </div>
-
-          <div className="pure-g">
-            <div className="pure-u-10-24">
-
-              <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
-                setSelectedAbilities={this.setSelectedAbilities}
-                selectedAbilities={this.state.selectedAbilities}
-              />
-
-              <CoreMorales currentLevel={this.state.currentLevel}
-                morales={this.state.coreMorales}
-                setUserSelectionMorale={this.setUserSelectionMorale}
-                userSelections={this.state.userSelections}
-                setSelectedAbilities={this.setSelectedAbilities}
-                selectedAbilities={this.state.selectedAbilities}
-                incrementMasteryPoints={this.incrementMasteryPoints}
-              />
-
-              <CoreTactics currentLevel={this.state.currentLevel}
-                tactics={this.state.coreTactics}
-                setSelectedAbilities={this.setSelectedAbilities}
-                selectedAbilities={this.state.selectedAbilities}
-                currentTacticLimit={this.state.currentTacticLimit}
-                setUserSelectionTactic={this.setUserSelectionTactic}
-                userSelections={this.state.userSelections}
-              />
-
-            </div>
-            <div className="pure-u-14-24">
-
-              <Mastery
-                career={this.state.career}
-                currentLevel={this.state.currentLevel}
-                pathACoreAbilities={this.state.pathACoreAbilities}
-                pathAOptionalAbilities={this.state.pathAOptionalAbilities}
-                pathBCoreAbilities={this.state.pathBCoreAbilities}
-                pathBOptionalAbilities={this.state.pathBOptionalAbilities}
-                pathCCoreAbilities={this.state.pathCCoreAbilities}
-                pathCOptionalAbilities={this.state.pathCOptionalAbilities}
-                masteryPoints={this.state.masteryPoints}
-                pathAMeter={this.state.pathAMeter}
-                pathBMeter={this.state.pathBMeter}
-                pathCMeter={this.state.pathCMeter}
-                updateMasteryPoints={this.updateMasteryPoints}
-                setUserSelectionMorale={this.setUserSelectionMorale}
-                userSelections={this.state.userSelections}
-                setSelectedAbilities={this.setSelectedAbilities}
-                selectedAbilities={this.state.selectedAbilities}
-                currentTacticLimit={this.state.currentTacticLimit}
-                setUserSelectionTactic={this.setUserSelectionTactic}
-                setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
-                incrementMasteryPoints={this.incrementMasteryPoints}
-                decrementMasteryPoints={this.decrementMasteryPoints}
-                incrementPathMeter={this.incrementPathMeter}
-                decrementPathMeter={this.decrementPathMeter}
-              />
-
-              <ActionButtons
-                resetCareer={this.resetCareer}
-                careerShort={this.state.careerShort}
-                currentLevel={this.state.currentLevel}
-                currentRenown={this.state.currentRenown}
-                currentTacticLimit={this.state.currentTacticLimit}
-                masteryPoints={this.state.masteryPoints}
-                pathAMeter={this.state.pathAMeter}
-                pathBMeter={this.state.pathBMeter}
-                pathCMeter={this.state.pathCMeter}
-                morale1={this.state.userSelections.morale1}
-                morale2={this.state.userSelections.morale2}
-                morale3={this.state.userSelections.morale3}
-                morale4={this.state.userSelections.morale4}
-                selectedAbilities={this.state.selectedAbilities}
-                masteryAbilities={this.state.userSelections.masteryAbilities}
-                tactics={this.state.userSelections.tactics}
-                updateModalVisibility={this.updateModalVisibility}
-                updateModalContent={this.updateModalContent}
-                career={this.state.career}
-                updateSidebarVisibility={this.updateSidebarVisibility}
-                updateOverlayVisibility={this.updateOverlayVisibility}
-              />
-
-            </div>
-          </div>
-
-          <Modal
-            modal={this.state.modal}
-            updateModalVisibility={this.updateModalVisibility}
-            updateOverlayVisibility={this.updateOverlayVisibility}
-          />
-
-          <Sidebar
-            careers={this.state.careers}
-            updateSidebarVisibility={this.updateSidebarVisibility}
-            updateOverlayVisibility={this.updateOverlayVisibility}
-            sidebar={this.state.sidebar}
-          />
-
-          <Overlay
-            overlay={this.state.overlay}
-            hideOverlay={this.hideOverlay}
-          />
         </div>
       );
     }
-    return <h1>Loading...</h1>;
+    return (
+      <div className="l-row l-row--centred">
+        <h1><i className="fa fa-cog fa-spin fa-fw margin-bottom"></i>Loading...</h1>
+      </div>
+    );
   }
 }
 

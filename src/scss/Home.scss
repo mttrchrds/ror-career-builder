@@ -1,0 +1,136 @@
+@import 'vars';
+
+.c-home {
+  
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('/images/home-background.jpg');
+    background-size: cover;
+    z-index: 10;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 20;
+  }
+}
+
+.c-masthead {
+
+  $font-size-masthead-heading: 4.8rem;
+  $font-size-masthead-subheading: 2rem;
+
+  position: relative;
+  height: ($base-spacing * 30);
+  background: url('/images/home-background.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: $base-transition;
+
+  &__overlay {
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  &__heading {
+    font-size: $font-size-masthead-heading;
+    text-align: center;
+    padding-top: ($base-spacing * 5);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    transition: $base-transition;
+  }
+
+  &__subheading {
+    font-size: $font-size-masthead-subheading;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+
+  &__cta {
+    opacity: 1;
+    transition: $base-transition;
+    text-align: center;
+  }
+
+  &__footer {
+    opacity: 0;
+    transition: $base-transition;
+    position: absolute;
+    bottom: $base-spacing;
+    right: $base-spacing;
+    color: $color-text-content-primary;
+    font-size: $font-size-breadcrumb;
+    text-decoration: none;
+  }
+
+  &--active {
+    height: ($base-spacing * 50);
+  }
+
+  &--active &__heading {
+    padding-top: ($base-spacing * 3);
+  }
+
+  &--active &__cta {
+    opacity: 0;
+    margin-top: ($base-spacing * -10);
+  }
+
+  &--active &__footer {
+    opacity: 1;
+  }
+}
+
+.c-career {
+
+  margin-top: 8rem;
+
+  &__item {
+
+    opacity: 0;
+    float: left;
+    width: 50%;
+    transition: $base-transition;
+
+    &--left {
+      margin-left: -10rem;
+    }
+
+    &--right {
+      margin-right: -10rem;
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-h2;
+  }
+
+  &__subheading {
+    font-size: $font-size-h3; 
+  }
+
+  &__list {
+
+    &__item {
+      font-size: $font-size-breadcrumb;
+      color: $color-text-content-primary;
+      text-decoration: none;
+    }
+  }
+
+  &--active &__item {
+    opacity: 1;
+  }
+
+  &--active &__item--left {
+    margin-left: 0;
+  }
+
+  &--active &__item--right {
+    margin-right: 0;
+  }
+}

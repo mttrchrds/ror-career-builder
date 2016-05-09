@@ -12,11 +12,6 @@ class Sidebar extends React.Component {
     this.renderCareer = this.renderCareer.bind(this);
   }
 
-  componentDidMount() {
-    const sidebar = document.querySelector('.c-sidebar');
-    document.querySelector('body').appendChild(sidebar.parentNode.removeChild(sidebar));
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.sidebar.visible) {
       document.querySelector('body').classList.add('sidebar');
