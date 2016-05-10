@@ -1,35 +1,18 @@
 @import 'vars';
 
-.c-home {
-  
-  &__background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('/images/home-background.jpg');
-    background-size: cover;
-    z-index: 10;
-  }
-
-  &__content {
-    position: relative;
-    z-index: 20;
-  }
-}
-
 .c-masthead {
 
   $font-size-masthead-heading: 4.8rem;
   $font-size-masthead-subheading: 2rem;
 
   position: relative;
+  z-index: 10;
   height: ($base-spacing * 30);
   background: url('/images/home-background.jpg') no-repeat;
   background-position: 50% 50%;
   background-size: cover;
   transition: $base-transition;
+  border-bottom: 1px solid $color-text-tertiary;
 
   &__overlay {
     height: 100%;
@@ -68,7 +51,7 @@
   }
 
   &--active {
-    height: ($base-spacing * 50);
+    height: ($base-spacing * 55);
   }
 
   &--active &__heading {
@@ -88,20 +71,24 @@
 .c-career {
 
   margin-top: 8rem;
+  display: flex;
+  justify-content: space-around;
 
   &__item {
 
+    flex-grow: 0;
+    flex-basis: 40%;
     opacity: 0;
-    float: left;
-    width: 50%;
+    padding: ($base-spacing * 2);
     transition: $base-transition;
+    background-color: rgba(0,0,0,0.5);
 
     &--left {
-      margin-left: -10rem;
+      margin-left: ($base-spacing * -90);
     }
 
     &--right {
-      margin-right: -10rem;
+      margin-right: ($base-spacing * -90);
     }
   }
 
@@ -115,10 +102,15 @@
 
   &__list {
 
+    flex-basis: 50%;
+    margin-bottom: ($base-spacing * 2);
+
     &__item {
+      display: block;
       font-size: $font-size-breadcrumb;
       color: $color-text-content-primary;
       text-decoration: none;
+      margin-bottom: ($base-spacing / 4);
     }
   }
 
@@ -132,5 +124,19 @@
 
   &--active &__item--right {
     margin-right: 0;
+  }
+}
+
+.c-list {
+
+  &__heading {
+    font-size: $font-size-h2;
+    margin-bottom: ($base-spacing);
+  }
+
+  &__item {
+    margin-top: 0;
+    margin-bottom: ($base-spacing / 2);
+    padding-left: $base-spacing;
   }
 }

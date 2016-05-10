@@ -8,7 +8,6 @@ input,
 select, 
 textarea,
 .pure-g [class *= "pure-u"] {
-  color: $color-base-text;
   font-family: $base-font-family;
 }
 
@@ -137,6 +136,9 @@ p {
       margin-right: auto;
     }
   }
+  &--wrap {
+    flex-wrap: wrap;
+  }
   &--centred {
     height: 100%;
     justify-content: center;
@@ -156,14 +158,43 @@ p {
 
 .l-page-content {
   height: 100%;
-  background-color: $color-text-primary;
+  background-color: #2d2d2d;
   color: $color-text-content-primary;
 }
 
 .l-page-container {
   width: 950px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-color: #3c3c3c;
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+}
+
+.l-page-copy {
+  position: relative;
+  z-index: 20;
+  font-weight: 300;
+  color: $color-text-content-primary;
+
+  p {
+    margin-top: 0;
+    margin-bottom: ($base-spacing * 1.5);
+  }
+
+  &__link {
+    
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $color-text-content-primary;
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .c-label {
