@@ -73,7 +73,6 @@ class AbilityMastery extends React.Component {
           this.props.setUserSelectionMasteryAbilities(this.props.details.id);
         }
       }
-      console.log('updating mastery: componentWillReceiveProps', nextProps.pathMeter, this.props.details.meterRequirement);
       this.props.updateMasteryPoints(Number(this.props.masteryPoints + 2));
     }
   }
@@ -108,10 +107,6 @@ class AbilityMastery extends React.Component {
       // Active ability selected
       if (this.state.abilityStatus) {
         if (Number(this.props.masteryPoints) > 0) {
-          // Decrement mastery total
-          this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
-          // Add this ability to selectedAbilities
-          this.props.setSelectedAbilities(this.props.details.id);
           // Ability is morale
           if (this.props.details.abilityType === 'morale') {
               // Get current abilityId of morale of this rank e.g. this.state.userSelections.morale4
@@ -121,6 +116,10 @@ class AbilityMastery extends React.Component {
               if (currentMoraleRankId !== 0) {
                 this.props.setSelectedAbilities(currentMoraleRankId);
               }
+              // Decrement mastery total
+              this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+              // Add this ability to selectedAbilities
+              this.props.setSelectedAbilities(this.props.details.id);
               // Add this ability as the selected morale for this rank
               this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
           } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
@@ -128,11 +127,19 @@ class AbilityMastery extends React.Component {
             if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
                 // Add into tactics array
                 this.props.setUserSelectionTactic(this.props.details.id);
+                // Decrement mastery total
+                this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+                // Add this ability to selectedAbilities
+                this.props.setSelectedAbilities(this.props.details.id);
             }
           } else {
             // Ability is core
             // Add into masteryAbilities array
             this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+            // Decrement mastery total
+            this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+            // Add this ability to selectedAbilities
+            this.props.setSelectedAbilities(this.props.details.id);
           }
         }
         
@@ -148,7 +155,7 @@ class AbilityMastery extends React.Component {
         this.props.setUserSelectionTactic(this.props.details.id);
       // Ability is core
       } else {
-          this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+        this.props.setUserSelectionMasteryAbilities(this.props.details.id);
       }
       // Remove from selectedAbilities
       // Increment Mastery Total
