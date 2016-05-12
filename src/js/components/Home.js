@@ -31,7 +31,9 @@ class Home extends React.Component {
     const imgUrl = `/images/icons/${key}.png`;
     if (this.state.careers[key].race == faction) {
       return (
-        <Link className="c-career__list__item" key={key} to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
+        <div>
+          <Link className="c-career__list__item" key={key} to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
+        </div>
       );
     }
   }
@@ -114,7 +116,7 @@ class Home extends React.Component {
             </div>
             <div className="pure-u-2-3">
               <div className="l-page-copy l-spacing-top--large">
-                <p>Warhammer Online: Age of Reckoning is back. 
+                <p>Warhammer Online: Age of Reckoning has returned. 
                 Resurrected by volunteers on a private server, we now have <a className="l-page-copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
                 Inspired by the great work of these developers comes RoR Career Builder.</p>
                 <p>This web app aims to replace and improve upon the great work done by <a className="l-page-copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
