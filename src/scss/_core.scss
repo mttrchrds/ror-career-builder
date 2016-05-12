@@ -61,6 +61,9 @@ p {
   &--compact {
     margin-bottom: $base-spacing; 
   }
+  &--dark {
+    color: $color-base-text;
+  }
 }
 
 .l-wrapper {
@@ -217,9 +220,9 @@ p {
     border: 1px solid $color-primary;
     border-radius: $border-radius-base;
     padding: $base-spacing;
-    height: 2rem;
     width: calc(100% - #{$base-spacing * 2});
     text-align: center;
     font-size: 1.2rem;
+    word-break: break-all;
   }
 }

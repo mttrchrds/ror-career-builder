@@ -11,13 +11,6 @@ class ActionButtons extends React.Component {
     this.clickReset = this.clickReset.bind(this);
     this.clickSave = this.clickSave.bind(this);
     this.clickChangeCareer = this.clickChangeCareer.bind(this);
-
-    this.state = {
-      abilityStatus: false,
-      abilitySelected: false,
-      abilityOptionalStatus: false,
-      abilityHovered: false,
-    };
   }
 
   clickReset() {
@@ -25,7 +18,6 @@ class ActionButtons extends React.Component {
   }
 
   createSaveLink() {
-    //http://localhost:3000/career/ironbreaker/saved?currentLevel=31&currentRenown=50&currentTacticLimit=3&masteryPoints=5&pathAMeter=5&pathBMeter=5&pathCMeter=0&selectedAbilities=3755,3756,3759,3740,3753,3764,3765,3772&masteryAbilities=3765,3772&morale1=3755&morale2=3756&morale3=3759&tactics=3740,3753,3764
     let saveLink = `${window.location.origin}/career/${this.props.careerShort}/saved?`;
     saveLink += `currentLevel=${this.props.currentLevel}`;
     saveLink += `&currentRenown=${this.props.currentRenown}`;
@@ -46,16 +38,16 @@ class ActionButtons extends React.Component {
 
   createBBCode(link) {
     return (
-      `[url=${link}]waronlinebuilder.org - ${this.props.career.name}[/url]`
+      `[url=${link}]RoR.builders - ${this.props.career.name}[/url]`
     )
   }
 
   buildModalTitle() {
     const url = `/images/icons/${this.props.careerShort}.png`;
     return (
-      <h2 className="l-page-title l-row">
+      <h2 className="l-page-title l-page-title--dark l-row">
         <img src={url} className="c-title__icon c-title__icon--small" />
-        {this.props.career.name} career
+        {this.props.career.name}
       </h2>
     );
   }
@@ -63,10 +55,10 @@ class ActionButtons extends React.Component {
   buildModalBody() {
     return (
       <div>
-        <p>To share this career simply copy and paste the link below:</p>
-        <input type="text" defaultValue={this.createSaveLink()} className="c-input--read-only" />
-        <p>Alternatively, here is some BBCode to paste into your forum post:</p>
-        <input type="text" defaultValue={this.createBBCode(this.createSaveLink())} className="c-input--read-only" />
+        <p>To save this career simply copy the link below:</p>
+        <div className="c-input--read-only" contenteditable>{this.createSaveLink()}</div>
+        <p>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
+        <div className="c-input--read-only" contenteditable>{this.createBBCode(this.createSaveLink())}</div>
       </div>
     )
   }
