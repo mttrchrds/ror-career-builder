@@ -11,6 +11,7 @@ class AbilityMastery extends React.Component {
   abilityStatus = enabled/disabled
   abilitySelected = selected i.e. clicked
   abilityHovered = ability is currently in hover state
+  imageBase64 = converted base64 string of ability image
   */
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ class AbilityMastery extends React.Component {
       abilityStatus: false,
       abilitySelected: false,
       abilityHovered: false,
+      imageBase64: '',
     };
   }
 
@@ -31,6 +33,10 @@ class AbilityMastery extends React.Component {
     this.setInitialStatus(this.props.details.meterRequirement,
                           this.props.pathMeter,
                           this.props.selectedAbilities);
+    const imagePath = require(`../../../build/images/abilities/${this.props.details.image}.png`);
+    this.setState({
+      imageBase64: imagePath,
+    });
   }
 
   // About to update because parent changed
@@ -186,7 +192,6 @@ class AbilityMastery extends React.Component {
       'is-hovered': this.state.abilityHovered,
       'c-ability--mastery': true,
     });
-    const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
       <PopoverAbility details={this.props.details} />
     );
@@ -196,7 +201,7 @@ class AbilityMastery extends React.Component {
         onMouseOver={this.abilityHoverOver} 
         onMouseOut={this.abilityHoverOut} ref="popoverParent"
       >
-        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
+        <img className="c-ability__image" src={this.state.imageBase64} alt={this.props.details.name} />
         <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>
     );

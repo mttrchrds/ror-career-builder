@@ -25,6 +25,10 @@ module.exports = {
         test: /\.scss$/, 
         loader: 'style-loader!css-loader!sass-loader!autoprefixer-loader',
         include: CONFIG.source + CONFIG.sourcePathSCSS
+      },
+      { test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=10000',
+        include: CONFIG.build + CONFIG.imagePath
       }
     ]
   },
