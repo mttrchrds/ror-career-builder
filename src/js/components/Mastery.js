@@ -63,8 +63,8 @@ class Mastery extends React.Component {
                     masteryPath="a" />
                 </div>
                 <div className="l-spacing-right">
-                  <div className="l-column">
-                    <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-mastery-core">
                     {this.props.pathACoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
@@ -100,8 +100,8 @@ class Mastery extends React.Component {
                     masteryPath="b" />
                 </div>
                 <div className="l-spacing-right">
-                  <div className="l-column">
-                    <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-mastery-core">
                     {this.props.pathBCoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
@@ -137,8 +137,8 @@ class Mastery extends React.Component {
                     masteryPath="c" />
                 </div>
                 <div className="l-spacing-right">
-                  <div className="l-column">
-                    <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>  
+                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-mastery-core">
                     {this.props.pathCCoreAbilities.map(this.renderAbility)}
                   </div>
                 </div>
