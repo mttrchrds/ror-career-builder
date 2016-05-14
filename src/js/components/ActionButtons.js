@@ -80,23 +80,31 @@ class ActionButtons extends React.Component {
 
   render() {
     return (
-      <div className="l-box l-spacing-left l-row l-row--right">
-        <button className="pure-button c-button c-button--tertiary l-row__item l-row__item--align-opposite" type="button" onClick={this.clickHome}>
-          <i className="fa fa-home l-spacing-right--small"></i>
-          Home
-        </button>
-        <button className="pure-button c-button c-button--negative" type="button" onClick={this.clickReset}>
-          <i className="fa fa-refresh l-spacing-right--small"></i>
-          Reset
-        </button>
-        <button className="pure-button l-spacing-left c-button c-button--secondary" type="button" onClick={this.clickChangeCareer}>
-          <i className="fa fa-group l-spacing-right--small"></i>
-          Change career
-        </button>
-        <button className="pure-button l-spacing-left c-button c-button--primary" type="button" onClick={this.clickSave}>
-          <i className="fa fa-save l-spacing-right--small"></i>
-          Save career
-        </button>
+      <div className="l-box l-spacing-left">
+        <div className="pure-g">
+          <div className="pure-u-1-3">
+            <button className="pure-button c-button c-button--tertiary l-float-left" type="button" onClick={this.clickHome}>
+              <i className="fa fa-home l-spacing-right--small"></i>
+              Home
+            </button>
+          </div>
+          <div className="pure-u-2-3">
+            <div className="l-row l-row--right">
+              <button className="pure-button c-button c-button--negative l-float-right l-spacing-left" type="button" onClick={this.clickReset}>
+                <i className="fa fa-refresh l-spacing-right--small"></i>
+                Reset
+              </button>
+              <button className="pure-button l-spacing-left c-button c-button--secondary l-float-right l-spacing-left" type="button" onClick={this.clickChangeCareer}>
+                <i className="fa fa-group l-spacing-right--small"></i>
+                Change career
+              </button>
+              <button className="pure-button l-spacing-left c-button c-button--primary l-float-right l-spacing-left" type="button" onClick={this.clickSave}>
+                <i className="fa fa-save l-spacing-right--small"></i>
+                Save career
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
