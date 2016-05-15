@@ -201,16 +201,6 @@ p {
   }
 }
 
-/* Required because of Squid Herder's ridiculous amount of Path of Stabbin' abilities (10 ffs!) :*( */
-.l-mastery-core {
-  height: 270px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  align-content: flex-end;
-}
-
 .c-label {
   position: relative;
   top: -$label-padding;

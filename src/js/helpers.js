@@ -25,10 +25,13 @@ const helpers = {
       coreMorales: [],
       coreTactics: [],
       pathACore: [],
+      pathACoreOverflow: [],
       pathAOpt: {},
       pathBCore: [],
+      pathBCoreOverflow: [],
       pathBOpt: {},
       pathCCore: [],
+      pathCCoreOverflow: [],
       pathCOpt: {},
     };
 
@@ -56,6 +59,7 @@ const helpers = {
     Object.keys(abilities).map(
       (ability) => {
         const abilityType = getAbilityType(abilities[ability]);
+        const pathCoreOverflow = 6;
         abilities[ability].abilityType = abilityType;
         if (abilities[ability].minrank === '') abilities[ability].minrank = 1;
         if (abilities[ability].spec === 'Core Ability') {
@@ -75,7 +79,11 @@ const helpers = {
         } else {
           // Check and populate Mastery path core and optional abilities
           if (this.arrayContains(career.paths.a.coreAbilities, abilities[ability].id)) {
-            exported.pathACore.push(abilities[ability]);
+            if (exported.pathACore.length < pathCoreOverflow) {
+              exported.pathACore.push(abilities[ability]);  
+            } else {
+              exported.pathACoreOverflow.push(abilities[ability]);
+            }
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;
@@ -106,7 +114,11 @@ const helpers = {
             exported.pathAOpt.lvl7 = abilities[ability];
           }
           if (this.arrayContains(career.paths.b.coreAbilities, abilities[ability].id)) {
-            exported.pathBCore.push(abilities[ability]);
+            if (exported.pathBCore.length < pathCoreOverflow) {
+              exported.pathBCore.push(abilities[ability]);  
+            } else {
+              exported.pathBCoreOverflow.push(abilities[ability]);
+            }
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;
@@ -137,7 +149,11 @@ const helpers = {
             exported.pathBOpt.lvl7 = abilities[ability];
           }
           if (this.arrayContains(career.paths.c.coreAbilities, abilities[ability].id)) {
-            exported.pathCCore.push(abilities[ability]);
+            if (exported.pathCCore.length < pathCoreOverflow) {
+              exported.pathCCore.push(abilities[ability]);  
+            } else {
+              exported.pathCCoreOverflow.push(abilities[ability]);
+            }
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;

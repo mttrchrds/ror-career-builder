@@ -10,6 +10,7 @@ class Mastery extends React.Component {
     super(props);
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.renderAbility = this.renderAbility.bind(this);
+    this.renderOverflow = this.renderOverflow.bind(this);
   }
 
   renderAbility(obj) {
@@ -20,6 +21,14 @@ class Mastery extends React.Component {
         setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities} />
       )
+  }
+
+  renderOverflow(overflow) {
+    if (overflow.length > 0) {
+      return (
+        <div className="l-col">{overflow.map(this.renderAbility)}</div>
+      );
+    }
   }
 
   render() {
@@ -63,9 +72,10 @@ class Mastery extends React.Component {
                     masteryPath="a" />
                 </div>
                 <div className="l-spacing-right">
-                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-mastery-core">
-                    {this.props.pathACoreAbilities.map(this.renderAbility)}
+                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-row">
+                    <div className="l-col">{this.props.pathACoreAbilities.map(this.renderAbility)}</div>
+                    {this.renderOverflow(this.props.pathACoreOverflow)}
                   </div>
                 </div>
               </div>
@@ -100,9 +110,10 @@ class Mastery extends React.Component {
                     masteryPath="b" />
                 </div>
                 <div className="l-spacing-right">
-                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-mastery-core">
-                    {this.props.pathBCoreAbilities.map(this.renderAbility)}
+                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-row">
+                    <div className="l-col">{this.props.pathBCoreAbilities.map(this.renderAbility)}</div>
+                    {this.renderOverflow(this.props.pathBCoreOverflow)}
                   </div>
                 </div>
               </div>
@@ -137,9 +148,10 @@ class Mastery extends React.Component {
                     masteryPath="c" />
                 </div>
                 <div className="l-spacing-right">
-                  <h4 className="l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-mastery-core">
-                    {this.props.pathCCoreAbilities.map(this.renderAbility)}
+                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
+                  <div className="l-row">
+                    <div className="l-col">{this.props.pathCCoreAbilities.map(this.renderAbility)}</div>
+                    {this.renderOverflow(this.props.pathCCoreOverflow)}
                   </div>
                 </div>
               </div>

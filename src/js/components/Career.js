@@ -114,10 +114,13 @@ class Career extends React.Component {
             coreMorales: imported.coreMorales,
             coreTactics: imported.coreTactics,
             pathACoreAbilities: imported.pathACore,
+            pathACoreOverflow: imported.pathACoreOverflow,
             pathAOptionalAbilities: imported.pathAOpt,
             pathBCoreAbilities: imported.pathBCore,
+            pathBCoreOverflow: imported.pathBCoreOverflow,
             pathBOptionalAbilities: imported.pathBOpt,
             pathCCoreAbilities: imported.pathCCore,
+            pathCCoreOverflow: imported.pathCCoreOverflow,
             pathCOptionalAbilities: imported.pathCOpt,
           });
         });
@@ -522,10 +525,13 @@ class Career extends React.Component {
                   career={this.state.career}
                   currentLevel={this.state.currentLevel}
                   pathACoreAbilities={this.state.pathACoreAbilities}
+                  pathACoreOverflow={this.state.pathACoreOverflow}
                   pathAOptionalAbilities={this.state.pathAOptionalAbilities}
                   pathBCoreAbilities={this.state.pathBCoreAbilities}
+                  pathBCoreOverflow={this.state.pathBCoreOverflow}
                   pathBOptionalAbilities={this.state.pathBOptionalAbilities}
                   pathCCoreAbilities={this.state.pathCCoreAbilities}
+                  pathCCoreOverflow={this.state.pathCCoreOverflow}
                   pathCOptionalAbilities={this.state.pathCOptionalAbilities}
                   masteryPoints={this.state.masteryPoints}
                   pathAMeter={this.state.pathAMeter}
