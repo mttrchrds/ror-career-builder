@@ -22,7 +22,7 @@ class CoreMorales extends React.Component {
 
   renderMorales(rank1, rank2, rank3, rank4) {
     return (
-      <div className="l-row">
+      <div className="l-row l-block--mobile">
         <div className="c-morale c-morale--1">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
           <div className="c-morale__abilities">

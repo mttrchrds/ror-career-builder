@@ -6,7 +6,7 @@ class CareerTitle extends React.Component {
   render() {
     let url = `/images/icons/${this.props.careerShort}.png`;
     return (
-      <div className="l-title">
+      <div className="l-title l-spacing-bottom--large">
         <img src={url} className="c-title__icon"></img>
         <h1 className="c-title">
           {this.props.career.name}

@@ -18,7 +18,7 @@ class SelectRenown extends React.Component {
 
   render() {
     return (
-      <div className="l-select">
+      <div className="l-select l-spacing-bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
           <select ref="renown"

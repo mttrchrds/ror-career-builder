@@ -120,6 +120,16 @@ p {
   &--small {
     margin-left: $base-spacing / 2;
   }
+  &--sm {
+    @media screen and (min-width: $breakpoint-sm) {
+      margin-left: $base-spacing;
+    }
+  }
+  &--md {
+    @media screen and (min-width: $breakpoint-md) {
+      margin-left: $base-spacing;
+    }
+  }
 }
 
 .l-border-right {
@@ -147,6 +157,37 @@ p {
     height: 100%;
     justify-content: center;
     align-items: center;
+  }
+}
+
+.l-block {
+  display: block;
+  &--mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+  }
+}
+
+.l-float-right {
+  float: right;
+}
+
+.l-float-none {
+  float: none;
+  &--mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      float: none;
+    }
+  }
+}
+
+.u-hidden {
+  display: none;
+  &--mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
 }
 

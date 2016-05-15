@@ -5,6 +5,7 @@
   line-height: 1;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: $font-size-h1;
   &__icon {
     position: relative;
     top: 0.2rem;
@@ -21,5 +22,8 @@
       width: 18px;
       height: 18px;
     }
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: $font-size-h2;
   }
 }

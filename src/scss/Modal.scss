@@ -8,7 +8,7 @@
   &__window {
     position: fixed;
     z-index: 10;
-    width: 40%;
+    width: 50%;
     padding: 20px;
     top: 50%;
     left: 50%;
@@ -25,5 +25,15 @@
   }
   &__footer {
 
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    &__window {
+      width: 80%;
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    &__window {
+      width: 40%;
+    }
   }
 }

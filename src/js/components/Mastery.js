@@ -38,7 +38,7 @@ class Mastery extends React.Component {
       'c-label--points': this.props.masteryPoints > 0,
     });
     return (
-      <div className="l-box l-box--no-padding-right l-spacing-left l-spacing-bottom">
+      <div className="l-box l-box--no-padding-right l-spacing-left--md l-spacing-bottom">
         <h2 className="l-page-title">
           Mastery abilities <span className={labelClass}>{this.props.masteryPoints} points</span>
         </h2>

@@ -27,7 +27,7 @@ class SelectLevel extends React.Component {
 
   render() {
     return (
-      <div className="l-select">
+      <div className="l-select l-spacing-bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
           <select ref="level"

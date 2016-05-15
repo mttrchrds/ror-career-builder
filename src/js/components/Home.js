@@ -31,8 +31,8 @@ class Home extends React.Component {
     const imgUrl = `/images/icons/${key}.png`;
     if (this.state.careers[key].race == faction) {
       return (
-        <div>
-          <Link className="c-career__list__item" key={key} to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
+        <div key={key}>
+          <Link className="c-career__list__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
         </div>
       );
     }

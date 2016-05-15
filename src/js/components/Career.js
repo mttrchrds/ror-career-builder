@@ -457,43 +457,41 @@ class Career extends React.Component {
 
             <BarRenown currentRenown={this.state.currentRenown} />
 
-            <div className="l-spacing-bottom--large">
-              <div className="pure-g">
-                <div className="pure-u-8-24">
+            <div className="pure-g">
+              <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-5-12 pure-u-lg-8-24">
 
-                  <CareerTitle careerShort={this.state.careerShort}
-                    career={this.state.career}
-                  />
+                <CareerTitle careerShort={this.state.careerShort}
+                  career={this.state.career}
+                />
 
-                </div>
-                <div className="pure-u-3-24">
+              </div>
+              <div className="pure-u-1-3 pure-u-sm-1-6 pure-u-md-1-6 pure-u-lg-3-24">
 
-                  <SelectLevel
-                    updateLevel={this.updateLevel}
-                    currentLevel={this.state.currentLevel}
-                    setMasteryPoints={this.setMasteryPoints}
-                    currentRenown={this.state.currentRenown}
-                    setCurrentTacticLimit={this.setCurrentTacticLimit}
-                    resetSelections={this.resetSelections}
-                  />
+                <SelectLevel
+                  updateLevel={this.updateLevel}
+                  currentLevel={this.state.currentLevel}
+                  setMasteryPoints={this.setMasteryPoints}
+                  currentRenown={this.state.currentRenown}
+                  setCurrentTacticLimit={this.setCurrentTacticLimit}
+                  resetSelections={this.resetSelections}
+                />
 
-                </div>
-                <div className="pure-u-13-24">
+              </div>
+              <div className="pure-u-2-3 pure-u-sm-1-4 pure-u-md-5-12 pure-u-lg-13-24">
 
-                  <SelectRenown
-                    currentLevel={this.state.currentLevel}
-                    currentRenown={this.state.currentRenown}
-                    updateRenown={this.updateRenown}
-                    setMasteryPoints={this.setMasteryPoints}
-                    resetSelections={this.resetSelections}
-                  />
+                <SelectRenown
+                  currentLevel={this.state.currentLevel}
+                  currentRenown={this.state.currentRenown}
+                  updateRenown={this.updateRenown}
+                  setMasteryPoints={this.setMasteryPoints}
+                  resetSelections={this.resetSelections}
+                />
 
-                </div>
               </div>
             </div>
 
             <div className="pure-g">
-              <div className="pure-u-10-24">
+              <div className="pure-u-1 pure-u-md-10-24">
 
                 <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
                   setSelectedAbilities={this.setSelectedAbilities}
@@ -519,7 +517,7 @@ class Career extends React.Component {
                 />
 
               </div>
-              <div className="pure-u-14-24">
+              <div className="pure-u-1 pure-u-md-14-24">
 
                 <Mastery
                   career={this.state.career}

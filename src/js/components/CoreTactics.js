@@ -23,7 +23,7 @@ class CoreTactics extends React.Component {
 
   render() {
     return (
-      <div className="l-tactics">
+      <div className="l-spacing-bottom">
         <div className="l-box">
           <h2 className="l-page-title">Core tactics</h2>
           <div className="l-row">
