@@ -130,7 +130,7 @@ class Career extends React.Component {
         });
       }
       // Check if this is a saved Career URL and update State accordingly
-      if (this.props.params.careerSaved === 'saved') {
+      if (this.props.params.careerSaved === 's') {
         const { query } = this.props.location;
         this.setSavedCareer(query);
       }
@@ -140,65 +140,65 @@ class Career extends React.Component {
   }
 
   setSavedCareer(query) {
-    if (query.currentLevel) {
+    if (query.l) {
       this.setState({
-        currentLevel: Number(query.currentLevel),
+        currentLevel: Number(query.l),
       });
     }
-    if (query.currentRenown) {
+    if (query.r) {
       this.setState({
-        currentRenown: Number(query.currentRenown),
+        currentRenown: Number(query.r),
       });
     }
-    if (query.currentTacticLimit) {
+    if (query.tl) {
       this.setState({
-        currentTacticLimit: Number(query.currentTacticLimit),
+        currentTacticLimit: Number(query.tl),
       });
     }
-    if (query.masteryPoints) {
+    if (query.mp) {
       this.setState({
-        masteryPoints: Number(query.masteryPoints),
+        masteryPoints: Number(query.mp),
       });
     }
-    if (query.pathAMeter) {
+    if (query.pA) {
       this.setState({
-        pathAMeter: Number(query.pathAMeter),
+        pathAMeter: Number(query.pA),
       });
     }
-    if (query.pathBMeter) {
+    if (query.pB) {
       this.setState({
-        pathBMeter: Number(query.pathBMeter),
+        pathBMeter: Number(query.pB),
       });
     }
-    if (query.pathCMeter) {
+    if (query.pC) {
       this.setState({
-        pathCMeter: Number(query.pathCMeter),
+        pathCMeter: Number(query.pC),
       });
     }
-    if (query.selectedAbilities) {
-      query.selectedAbilities.split(',').forEach((abilityId) => {
+    if (query.sa) {
+      query.sa.split(',').forEach((abilityId) => {
         this.state.selectedAbilities.push(Number(abilityId));
       });
     }
-    if (query.masteryAbilities) {
-      query.masteryAbilities.split(',').forEach((abilityId) => {
+    if (query.ma) {
+      query.ma.split(',').forEach((abilityId) => {
         this.state.userSelections.masteryAbilities.push(Number(abilityId));
       });
     }
-    if (query.morale1) {
-      this.state.userSelections.morale1 = Number(query.morale1);
+    if (query.m1) {
+      this.state.userSelections.morale1 = Number(query.m1);
     }
-    if (query.morale2) {
-      this.state.userSelections.morale2 = Number(query.morale2);
+    if (query.m2) {
+      this.state.userSelections.morale2 = Number(query.m2);
     }
-    if (query.morale3) {
-      this.state.userSelections.morale3 = Number(query.morale3);
+    if (query.m3) {
+      this.state.userSelections.morale3 = Number(query.m3);
     }
-    if (query.morale4) {
-      this.state.userSelections.morale4 = Number(query.morale4);
+    if (query.m4) {
+      this.state.userSelections.morale4 = Number(query.m4);
     }
-    if (query.tactics) {
-      query.tactics.split(',').forEach((abilityId) => {
+    if (query.t) {
+      query.t.split(',').forEach((abilityId) => {
         this.state.userSelections.tactics.push(Number(abilityId));
       });
     }

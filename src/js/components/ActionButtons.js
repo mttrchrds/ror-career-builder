@@ -18,21 +18,21 @@ class ActionButtons extends React.Component {
   }
 
   createSaveLink() {
-    let saveLink = `${window.location.origin}/career/${this.props.careerShort}/saved?`;
-    saveLink += `currentLevel=${this.props.currentLevel}`;
-    saveLink += `&currentRenown=${this.props.currentRenown}`;
-    saveLink += `&currentTacticLimit=${this.props.currentTacticLimit}`;
-    saveLink += `&masteryPoints=${this.props.masteryPoints}`;
-    saveLink += `&pathAMeter=${this.props.pathAMeter}`;
-    saveLink += `&pathBMeter=${this.props.pathBMeter}`;
-    saveLink += `&pathCMeter=${this.props.pathCMeter}`;
-    saveLink += `&morale1=${this.props.morale1}`;
-    saveLink += `&morale2=${this.props.morale2}`;
-    saveLink += `&morale3=${this.props.morale3}`;
-    saveLink += `&morale4=${this.props.morale4}`;
-    saveLink += `&selectedAbilities=${this.props.selectedAbilities}`;
-    saveLink += `&masteryAbilities=${this.props.masteryAbilities}`;
-    saveLink += `&tactics=${this.props.tactics}`;
+    let saveLink = `${window.location.origin}/career/${this.props.careerShort}/s?`;
+    saveLink += `l=${this.props.currentLevel}`;
+    saveLink += `&r=${this.props.currentRenown}`;
+    saveLink += `&tl=${this.props.currentTacticLimit}`;
+    saveLink += `&mp=${this.props.masteryPoints}`;
+    saveLink += `&pA=${this.props.pathAMeter}`;
+    saveLink += `&pB=${this.props.pathBMeter}`;
+    saveLink += `&pC=${this.props.pathCMeter}`;
+    saveLink += `&m1=${this.props.morale1}`;
+    saveLink += `&m2=${this.props.morale2}`;
+    saveLink += `&m3=${this.props.morale3}`;
+    saveLink += `&m4=${this.props.morale4}`;
+    saveLink += `&sa=${this.props.selectedAbilities}`;
+    saveLink += `&ma=${this.props.masteryAbilities}`;
+    saveLink += `&t=${this.props.tactics}`;
     return saveLink;
   }
 
