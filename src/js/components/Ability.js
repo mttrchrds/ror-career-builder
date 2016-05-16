@@ -65,6 +65,7 @@ class Ability extends React.Component {
       'c-ability--inactive': !this.state.abilityStatus,
       'is-hovered': this.state.abilityHovered,
       'c-ability--mastery': false,
+      'c-popover__parent': true
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (

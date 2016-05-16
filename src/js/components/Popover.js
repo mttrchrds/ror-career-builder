@@ -12,18 +12,34 @@ class Popover extends React.Component {
     this.state = {
       popoverSpacing: 5,
       popoverArrowSize: 10,
+      popoverActive: false,
     };
+    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
+    this.clickClose = this.clickClose.bind(this);
   }
 
   componentDidMount() {
+    // TODO: Currently statically adding this to <Ability />, feels dirty
     // Set parent element to position:relative (popover is absolutely positioned relative to this)
-    this.refs.popover.parentNode.style.position = 'relative';
+    //this.refs.popover.parentNode.classList.add = 'c-popover__parent';
+  }
+
+  // Controlling hide/show of Popover in local state now. This is so button can also control it as well as ability hover.
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.activate) {
+      this.state.popoverActive = true;
+    } else {
+      this.state.popoverActive = false;
+    }
+    this.setState({
+      popoverActive: this.state.popoverActive,
+    });
   }
 
   componentDidUpdate() {
     const popover = this.refs.popover;
     // If popover is activated e.g. hover on parent
-    if (this.props.activate) {
+    if (this.state.popoverActive) {
       // Test (and store) each alignment to see if Popover will be off-screen
       this.setAlignment(popover, 'top');
       const offScreenTop = this.offScreenCheck(popover);
@@ -140,15 +156,27 @@ class Popover extends React.Component {
     return alignmentCheck;
   }
 
+  clickClose() {
+    this.state.popoverActive = false;
+    this.setState({
+      popoverActive: this.state.popoverActive,
+    })
+  }
+
   render() {
     const popoverClass = classNames({
       'c-popover': true,
-      'c-popover--active': this.props.activate,
+      'c-popover--active': this.state.popoverActive,
     });
     return (
       <div className={popoverClass} ref="popover">
         <div className="c-popover__arrow"></div>
         {this.props.content}
+        <div className="l-spacing-top c-popover__footer">
+          <button className="pure-button c-button c-button--primary l-float-right" type="button" onClick={this.clickClose}>
+            Close
+          </button>
+        </div>
       </div>
     );
   }

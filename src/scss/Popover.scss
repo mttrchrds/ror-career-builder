@@ -1,3 +1,5 @@
+@import 'vars';
+
 $popoverBackgroundColour: #242424;
 $popoverWidth: 350px;
 /* Following two rules must match corresponding values in Popover.js
@@ -17,11 +19,33 @@ $popoverArrowSize: 10px;
   border-radius: 4px;
   opacity: 0;
   transition: opacity .2s linear;
+  @media screen and (max-width: $breakpoint-mobile) {
+    position: fixed;
+    width: calc(100% - 30px);
+    top: 10px !important;
+    left: 10px !important;
+    bottom: auto !important;
+    right: auto !important;
+  }
 }
 .c-popover--active {
   display: block;
   &.c-popover--fade {
     opacity: 1;
+  }
+}
+
+.c-popover__parent {
+  position: relative;
+  @media screen and (max-width: $breakpoint-mobile) {
+    position: static;
+  }
+}
+
+.c-popover__footer {
+  display: none;
+  @media screen and (max-width: $breakpoint-mobile) {
+    display: block;
   }
 }
 
@@ -47,6 +71,12 @@ $popoverArrowSize: 10px;
   height: 0px;
   font-size: 0;
   line-height: 0;
+  @media screen and (max-width: $breakpoint-mobile) {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
 }
 
 .c-popover--top:before {
@@ -79,4 +109,13 @@ $popoverArrowSize: 10px;
   border-right: $popoverArrowSize solid $popoverBackgroundColour;
   top: calc(50% - #{$popoverArrowSize});
   left: -$popoverArrowSize;
+}
+
+.c-popover:before {
+  @media screen and (max-width: $breakpoint-mobile) {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
 }

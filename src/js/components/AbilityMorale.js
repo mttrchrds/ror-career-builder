@@ -111,6 +111,7 @@ class AbilityMorale extends React.Component {
       'is-selected': this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
       'c-ability--mastery': false,
+      'c-popover__parent': true,
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
