@@ -43,8 +43,8 @@ class Mastery extends React.Component {
           Mastery abilities <span className={labelClass}>{this.props.masteryPoints} points</span>
         </h2>
         <div className="pure-g">
-          <div className="pure-u-1-3">
-            <div className="l-border-right l-spacing-right">
+          <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
+            <div className="l-border-right l-border-right-mobile--none l-border-right-sm l-spacing-right">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.a.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">
@@ -81,8 +81,8 @@ class Mastery extends React.Component {
               </div>
             </div>
           </div>
-          <div className="pure-u-1-3">
-            <div className="l-border-right l-spacing-right">
+          <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
+            <div className="l-border-right-sm l-spacing-right l-spacing-top l-spacing-top-sm--none">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.b.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">
@@ -119,8 +119,8 @@ class Mastery extends React.Component {
               </div>
             </div>
           </div>
-          <div className="pure-u-1-3">
-            <div className="l-spacing-right">
+          <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
+            <div className="l-border-right l-border-right-mobile--none l-border-right-sm--none l-spacing-right l-spacing-top l-spacing-top-sm--none">
               <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.c.name}</h3>
               <div className="l-row l-row--justify">
                 <div className="l-row l-row--justify">

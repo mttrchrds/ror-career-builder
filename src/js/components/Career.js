@@ -465,7 +465,7 @@ class Career extends React.Component {
                 />
 
               </div>
-              <div className="pure-u-1-3 pure-u-sm-1-6 pure-u-md-1-6 pure-u-lg-3-24">
+              <div className="pure-u-1-3 pure-u-mobile-1-2 pure-u-sm-1-6 pure-u-md-1-6 pure-u-lg-3-24">
 
                 <SelectLevel
                   updateLevel={this.updateLevel}
@@ -477,7 +477,7 @@ class Career extends React.Component {
                 />
 
               </div>
-              <div className="pure-u-2-3 pure-u-sm-1-4 pure-u-md-5-12 pure-u-lg-13-24">
+              <div className="pure-u-2-3 pure-u-mobile-1-2 pure-u-sm-1-4 pure-u-md-5-12 pure-u-lg-13-24">
 
                 <SelectRenown
                   currentLevel={this.state.currentLevel}

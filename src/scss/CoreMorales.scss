@@ -26,5 +26,6 @@
   @media screen and (max-width: $breakpoint-mobile) {
     padding-left: 0;
     padding-bottom: $base-spacing;
+    border-right: 0;
   }
 }

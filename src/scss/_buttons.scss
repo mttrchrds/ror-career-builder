@@ -2,6 +2,12 @@
   color: #fff;
   text-shadow: 1px 1px rgba(0,0,0,0.2);
   font-size: 1.4rem;
+  padding-left: ($base-spacing / 2);
+  padding-right: ($base-spacing / 2);
+  @media screen and (min-width: $breakpoint-sm) {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+  }
 }
 
 .c-button--primary {

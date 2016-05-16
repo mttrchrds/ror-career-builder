@@ -7,6 +7,9 @@
   &__label {
     font-size: 1.6rem;
     margin-right: $base-spacing;
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: 1.4rem;
+    }
   }
   &__select {
     height: 2.8rem;

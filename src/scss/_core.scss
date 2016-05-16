@@ -90,6 +90,19 @@ p {
   &--large {
     margin-top: $base-spacing * 2;
   }
+  &-sm {
+    @media screen and (min-width: $breakpoint-sm) {
+      margin-top: $base-spacing;
+      &--none {
+        margin-top: 0;
+      }
+    }
+  }
+  &-mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin-top: $base-spacing;
+    }
+  }
 }
 
 .l-spacing-right {
@@ -134,6 +147,22 @@ p {
 
 .l-border-right {
   border-right: 1px solid $color-base-border;
+  &-sm {
+    @media screen and (min-width: $breakpoint-sm) {
+      border-right: 1px solid $color-base-border;
+      &--none {
+        border-right: 0;
+      }
+    }
+  }
+  &-mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      border-right: 1px solid $color-base-border;
+      &--none {
+        border-right: 0;
+      }
+    }
+  }
 }
 
 .l-row {
