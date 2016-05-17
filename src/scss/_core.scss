@@ -22,7 +22,6 @@ body {
 }
 
 #app {
-  transition: $base-transition;
   height: 100%;
   width: 100%;
 }
@@ -69,6 +68,7 @@ p {
 
 .l-wrapper {
   padding: $base-spacing;
+  transition: $base-transition;
 }
 
 .l-box {

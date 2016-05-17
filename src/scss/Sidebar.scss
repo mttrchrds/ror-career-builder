@@ -37,16 +37,12 @@ $color-sidebar-Background-hover: #3f3f3f;
   }
 
   &--active {
-    transform: translateX(0);
+    transform: translateX($width-sidebar);
   }
 }
   
-#app {
+.l-wrapper {
   &.sidebar {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
     transform: translateX($width-sidebar);
   }
 }

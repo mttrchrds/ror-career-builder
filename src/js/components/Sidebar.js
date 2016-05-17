@@ -15,10 +15,8 @@ class Sidebar extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.sidebar.visible) {
       document.querySelector('body').classList.add('sidebar');
-      document.querySelector('#app').classList.add('sidebar');
     } else {
       document.querySelector('body').classList.remove('sidebar');
-      document.querySelector('#app').classList.remove('sidebar');
     }
   }
 

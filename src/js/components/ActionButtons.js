@@ -87,11 +87,11 @@ class ActionButtons extends React.Component {
         </button>
         <button className="pure-button l-spacing-left c-button c-button--primary l-float-right l-spacing-left" type="button" onClick={this.clickSave}>
           <i className="fa fa-save l-spacing-right--small u-hidden--mobile"></i>
-          Save career
+          Save<span className="u-hidden--mobile"> career</span>
         </button>
-        <button className="pure-button l-spacing-left c-button c-button--secondary l-float-right l-spacing-left u-hidden--mobile" type="button" onClick={this.clickChangeCareer}>
-          <i className="fa fa-group l-spacing-right--small"></i>
-          Change career
+        <button className="pure-button l-spacing-left c-button c-button--secondary l-float-right l-spacing-left" type="button" onClick={this.clickChangeCareer}>
+          <i className="fa fa-group l-spacing-right--small u-hidden--mobile"></i>
+          Change<span className="u-hidden--mobile"> career</span>
         </button>
         <button className="pure-button c-button c-button--negative l-float-right l-spacing-left" type="button" onClick={this.clickReset}>
           <i className="fa fa-refresh l-spacing-right--small u-hidden--mobile"></i>
