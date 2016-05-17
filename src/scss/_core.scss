@@ -113,6 +113,11 @@ p {
   &--tiny {
     margin-right: 2px;
   }
+  &--mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin-right: $base-spacing;
+    }
+  }
 }
 
 .l-spacing-bottom {
@@ -140,6 +145,11 @@ p {
   }
   &--md {
     @media screen and (min-width: $breakpoint-md) {
+      margin-left: $base-spacing;
+    }
+  }
+  &--mobile {
+    @media screen and (max-width: $breakpoint-mobile) {
       margin-left: $base-spacing;
     }
   }
@@ -234,15 +244,22 @@ p {
   height: 100%;
   background-color: #2d2d2d;
   color: $color-text-content-primary;
+  transition: $base-transition;
 }
 
 .l-page-container {
-  width: 950px;
+  width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: #3c3c3c;
   box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+  @media screen and (min-width: $breakpoint-sm) {
+    width: 750px;
+  }
+  @media screen and (min-width: $breakpoint-md) {
+    width: 950px;
+  }
 }
 
 .l-page-copy {
@@ -250,6 +267,10 @@ p {
   z-index: 20;
   font-weight: 300;
   color: $color-text-content-primary;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    z-index: auto;
+  }
 
   p {
     margin-top: 0;

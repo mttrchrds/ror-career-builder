@@ -79,7 +79,6 @@ class Career extends React.Component {
         contentBody: '',
       },
       sidebar: {
-        mounted: false,
         visible: false,
       },
       overlay: {
@@ -588,12 +587,13 @@ class Career extends React.Component {
                 updateOverlayVisibility={this.updateOverlayVisibility}
               />
 
-              <Overlay
-                overlay={this.state.overlay}
-                hideOverlay={this.hideOverlay}
-              />
             </div>
           </div>
+
+          <Overlay
+            overlay={this.state.overlay}
+            hideOverlay={this.hideOverlay}
+          />
 
           <Sidebar
             careers={this.state.careers}
@@ -601,7 +601,7 @@ class Career extends React.Component {
             updateOverlayVisibility={this.updateOverlayVisibility}
             sidebar={this.state.sidebar}
           />
-          
+
         </div>
       );
     }

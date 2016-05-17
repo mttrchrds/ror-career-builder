@@ -3,6 +3,7 @@
 .c-masthead {
 
   $font-size-masthead-heading: 4.8rem;
+  $font-size-masthead-heading-mobile: 4rem;
   $font-size-masthead-subheading: 2rem;
 
   position: relative;
@@ -15,6 +16,10 @@
   transition: $base-transition;
   border-bottom: 1px solid $color-text-tertiary;
 
+  @media screen and (max-width: $breakpoint-mobile) {
+    z-index: auto;
+  }
+
   &__overlay {
     height: 100%;
     background-color: rgba(0,0,0,0.3);
@@ -26,6 +31,9 @@
     padding-top: ($base-spacing * 5);
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     transition: $base-transition;
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: $font-size-masthead-heading-mobile;
+    }
   }
 
   &__subheading {
@@ -38,6 +46,15 @@
     opacity: 1;
     transition: $base-transition;
     text-align: center;
+    &--mobile {
+      display: none;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      display: none;
+      &--mobile {
+        display: block;
+      }
+    }
   }
 
   &__footer {

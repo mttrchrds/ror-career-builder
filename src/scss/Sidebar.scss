@@ -9,6 +9,7 @@ $color-sidebar-Background-hover: #3f3f3f;
 
 .c-sidebar {
 
+  z-index: 10;
   transition: $base-transition;
   position: fixed;
   top: 0;
@@ -42,6 +43,12 @@ $color-sidebar-Background-hover: #3f3f3f;
 }
   
 .l-wrapper {
+  &.sidebar {
+    transform: translateX($width-sidebar);
+  }
+}
+
+.l-page-content {
   &.sidebar {
     transform: translateX($width-sidebar);
   }
