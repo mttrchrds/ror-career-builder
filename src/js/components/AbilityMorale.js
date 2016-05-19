@@ -119,11 +119,11 @@ class AbilityMorale extends React.Component {
     );
     return (
       <div
-        className={abilityClass} onClick={this.abilityClicked}
+        className={abilityClass}
         onMouseOver={this.abilityHoverOver} 
         onMouseOut={this.abilityHoverOut} ref="popoverParent"
       >
-        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
+        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} onClick={this.abilityClicked} />
         <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
       </div>
     );

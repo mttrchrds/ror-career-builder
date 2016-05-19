@@ -21,7 +21,7 @@ $popoverArrowSize: 10px;
   transition: opacity .2s linear;
   @media screen and (max-width: $breakpoint-mobile) {
     position: fixed;
-    width: calc(100% - 30px);
+    width: calc(100% - 20px);
     top: 10px !important;
     left: 10px !important;
     bottom: auto !important;
