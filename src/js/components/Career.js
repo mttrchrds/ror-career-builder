@@ -448,7 +448,7 @@ class Career extends React.Component {
     });
     if (Object.keys(this.state.career).length) {
       return (
-        <div>
+        <div className="l-page">
           <div className={containerClass}>
             <div className="l-box l-box--inverse">
               

@@ -96,7 +96,7 @@ class Home extends React.Component {
       'sidebar': this.state.sidebar.visible,
     });
     return (
-      <div>
+      <div className="l-page">
         <div className={containerClass}>
           <div className="l-page-container">
             <div className={mastheadClass}>
