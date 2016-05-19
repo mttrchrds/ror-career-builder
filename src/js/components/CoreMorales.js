@@ -1,7 +1,7 @@
 import React from 'react';
 import AbilityMorale from './AbilityMorale';
 
-require('../../scss/CoreMorales.scss');
+require('../../scss/components/CoreMorales.scss');
 
 class CoreMorales extends React.Component {
 
@@ -22,7 +22,7 @@ class CoreMorales extends React.Component {
 
   renderMorales(rank1, rank2, rank3, rank4) {
     return (
-      <div className="l-row l-block--mobile">
+      <div className="o-row u-display__block-mobile">
         <div className="c-morale c-morale--1">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
           <div className="c-morale__abilities">
@@ -83,9 +83,9 @@ class CoreMorales extends React.Component {
 
   render() {
     return (
-      <div className="l-spacing-bottom">
-        <div className="l-box">
-          <h2 className="l-page-title">Core morales</h2>
+      <div className="u-margin__bottom">
+        <div className="c-box">
+          <h2 className="c-page-title">Core morales</h2>
           {this.sortMorales()}
         </div>
       </div>

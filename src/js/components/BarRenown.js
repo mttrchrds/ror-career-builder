@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('../../scss/BarXp.scss');
+require('../../scss/components/BarXp.scss');
 
 class BarRenown extends React.Component {
 
@@ -34,7 +34,7 @@ class BarRenown extends React.Component {
 
   render() {
     return (
-      <div className="l-spacing-bottom--large">
+      <div className="u-margin__bottom--large">
         <div className="c-progress c-progress--small">
           <div className="c-progress__bar c-progress__bar--renown c-progress__bar--thin" style={this.calculateBarWidth()}></div>
         </div>

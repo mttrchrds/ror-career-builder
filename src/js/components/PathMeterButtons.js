@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('../../scss/PathMeterButtons.scss');
+require('../../scss/components/PathMeterButtons.scss');
 
 class PathMeterButtons extends React.Component {
 
@@ -53,7 +53,7 @@ class PathMeterButtons extends React.Component {
             {this.renderMeterLevel()}
           </div>
           <button
-            className="pure-button c-button c-button--small c-button--primary l-spacing-right--tiny"
+            className="pure-button c-button c-button--small c-button--primary u-margin__right--tiny"
             onClick={this.pathMeterAdd}
             type="button"><i className="fa fa-plus"></i></button>
           <button

@@ -7,8 +7,8 @@ class PathMeter extends React.Component {
     const moraleRank = 4;
     return (
       <div>
-        <div className="l-column l-spacing-left--small">
-          <div className="l-spacing-bottom--tiny">
+        <div className="o-column u-margin__left--small">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -20,7 +20,7 @@ class PathMeter extends React.Component {
               selectedAbilities={this.props.selectedAbilities}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -31,7 +31,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -43,7 +43,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -54,7 +54,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -66,7 +66,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}
@@ -77,7 +77,7 @@ class PathMeter extends React.Component {
               userSelections={this.props.userSelections}
               masteryPath={this.props.masteryPath} />
           </div>
-          <div className="l-spacing-bottom--tiny">
+          <div className="u-margin__bottom--tiny">
             <AbilityMastery pathMeter={this.props.pathMeter}
               masteryPoints={this.props.masteryPoints}
               updateMasteryPoints={this.props.updateMasteryPoints}

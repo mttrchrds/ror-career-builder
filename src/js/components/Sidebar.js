@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 
-require('../../scss/Sidebar.scss');
+require('../../scss/components/Sidebar.scss');
 
 class Sidebar extends React.Component {
 

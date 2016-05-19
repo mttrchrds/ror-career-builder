@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('../../scss/SelectLevel.scss');
+require('../../scss/components/SelectLevel.scss');
 
 class SelectLevel extends React.Component {
 
@@ -27,7 +27,7 @@ class SelectLevel extends React.Component {
 
   render() {
     return (
-      <div className="l-select l-spacing-bottom--large">
+      <div className="u-title-height u-margin__bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
           <select ref="level"

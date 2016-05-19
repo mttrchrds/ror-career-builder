@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
 
-require('../../scss/Home.scss');
+require('../../scss/components/Home.scss');
 
 class Home extends React.Component {
 
@@ -92,23 +92,23 @@ class Home extends React.Component {
       'c-career--active': this.state.mastheadActive,
     });
     const containerClass = classNames({
-      'l-page-content': true,
+      'c-home__content': true,
       'sidebar': this.state.sidebar.visible,
     });
     return (
-      <div className="l-page">
+      <div className="u-height">
         <div className={containerClass}>
-          <div className="l-page-container">
+          <div className="c-home__container">
             <div className={mastheadClass}>
               <div className="c-masthead__overlay">
-                <div className="c-masthead__heading l-spacing-right--mobile l-spacing-left--mobile">RoR Career Builder</div>
+                <div className="c-masthead__heading u-margin__right-mobile u-margin__left-mobile">RoR Career Builder</div>
                 <div className="c-masthead__subheading">Online Career Builder for Return of Reckoning</div>
-                <div className="c-masthead__cta l-spacing-top--large">
+                <div className="c-masthead__cta u-margin__top--large">
                   <button className="pure-button c-button c-button--primary c-button--large" type="button" onClick={this.clickMasthead}>
                     Select career
                   </button>
                 </div>
-                <div className="c-masthead__cta c-masthead__cta--mobile l-spacing-top--large">
+                <div className="c-masthead__cta c-masthead__cta--mobile u-margin__top--large">
                   <button className="pure-button c-button c-button--primary c-button--large" type="button" onClick={this.clickMastheadMobile}>
                     Select career
                   </button>
@@ -117,36 +117,36 @@ class Home extends React.Component {
                 <div className={careerClass}>
                   
                   <div className="c-career__item c-career__item--left">
-                    <div className="c-career__heading l-spacing-bottom">Order</div>  
-                    <div className="l-row l-row--justify l-row--wrap">
+                    <div className="c-career__heading u-margin__bottom">Order</div>  
+                    <div className="o-row o-row--justify o-row--wrap">
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">Empire</div>
+                        <div className="c-career__subheading u-margin__bottom">Empire</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Empire') })}
                       </div>                    
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">High Elves</div>
+                        <div className="c-career__subheading u-margin__bottom">High Elves</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'High Elf') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">Dwarves</div>
+                        <div className="c-career__subheading u-margin__bottom">Dwarves</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dwarf') })}
                       </div>
                     </div>
 
                   </div>
                   <div className="c-career__item c-career__item--right">
-                    <div className="c-career__heading l-spacing-bottom">Destruction</div>
-                    <div className="l-row l-row--justify l-row--wrap">
+                    <div className="c-career__heading u-margin__bottom">Destruction</div>
+                    <div className="o-row o-row--justify o-row--wrap">
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">Chaos</div>
+                        <div className="c-career__subheading u-margin__bottom">Chaos</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Chaos') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">Dark Elves</div>
+                        <div className="c-career__subheading u-margin__bottom">Dark Elves</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dark Elf') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading l-spacing-bottom">Greenskins</div>
+                        <div className="c-career__subheading u-margin__bottom">Greenskins</div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Greenskin') })}
                       </div>
                     </div>
@@ -156,19 +156,19 @@ class Home extends React.Component {
             </div>
             <div className="pure-g">
               <div className="pure-u-1-3 pure-u-mobile-1">
-                <div className="c-list l-spacing-top--large l-spacing-left">
+                <div className="c-list u-margin__top--large u-margin__left">
                   <div className="c-list__heading">Latest updates</div>
                   <p className="c-list__item">- Currently in beta</p>
                 </div>
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">
-                <div className="l-page-copy l-spacing-bottom--large l-spacing-top--large l-spacing-right--mobile l-spacing-left--mobile">
+                <div className="c-home__copy u-margin__bottom--large u-margin__top--large u-margin__right-mobile u-margin__left-mobile">
                   <p>Warhammer Online: Age of Reckoning has returned. 
-                  Resurrected by volunteers on a private server, we now have <a className="l-page-copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
+                  Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
                   Inspired by the great work of these developers comes RoR Career Builder.</p>
-                  <p>This web app aims to replace and improve upon the great work done by <a className="l-page-copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
+                  <p>This web app aims to replace and improve upon the great work done by <a className="c-home__copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
                   <p>Details of updates will appear on this page.</p>
-                  <p>All code is available on <i className="fa fa-github"></i> <a href="#" className="l-page-copy__link" target="blank">Github</a>. Feel free to fork, contribute, <a href="#" className="l-page-copy__link" target="blank">raise bugs</a> and <a href="#" className="l-page-copy__link" target="blank">make suggestions</a>.</p>
+                  <p>All code is available on <i className="fa fa-github"></i> <a href="#" className="c-home__copy__link" target="blank">Github</a>. Feel free to fork, contribute, <a href="#" className="c-home__copy__link" target="blank">raise bugs</a> and <a href="#" className="c-home__copy__link" target="blank">make suggestions</a>.</p>
                 </div>
               </div>
             </div>

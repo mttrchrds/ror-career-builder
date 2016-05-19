@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-require('../../scss/Overlay.scss');
+require('../../scss/components/Overlay.scss');
 
 class Overlay extends React.Component {
 

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 
-require('../../scss/Ability.scss');
+require('../../scss/components/Ability.scss');
 
 class AbilityMastery extends React.Component {
 

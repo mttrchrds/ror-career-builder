@@ -1,4 +1,4 @@
-@import 'vars';
+@import '../vars';
 
 $width-sidebar: 250px;
 $font-size-sidebar: 1.2rem;
@@ -41,21 +41,10 @@ $color-sidebar-Background-hover: #3f3f3f;
     transform: translateX($width-sidebar);
   }
 }
-  
-.l-wrapper {
+
+.c-home,
+.o-wrapper {
   &.sidebar {
     transform: translateX($width-sidebar);
-  }
-}
-
-.l-page-content {
-  &.sidebar {
-    transform: translateX($width-sidebar);
-  }
-}
-
-body {
-  &.sidebar {
-    overflow-y: hidden;
   }
 }

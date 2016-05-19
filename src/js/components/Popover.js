@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-require('../../scss/Popover.scss');
+require('../../scss/components/Popover.scss');
 
 class Popover extends React.Component {
 
@@ -172,8 +172,8 @@ class Popover extends React.Component {
       <div className={popoverClass} ref="popover">
         <div className="c-popover__arrow"></div>
         {this.props.content}
-        <div className="l-spacing-top c-popover__footer">
-          <button className="pure-button c-button c-button--primary l-float-right" type="button" onClick={this.clickClose}>
+        <div className="u-margin__top c-popover__footer">
+          <button className="pure-button c-button c-button--primary u-float__right" type="button" onClick={this.clickClose}>
             Close
           </button>
         </div>

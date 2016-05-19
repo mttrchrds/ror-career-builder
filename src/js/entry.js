@@ -10,7 +10,7 @@ import Career from './components/Career';
 import NotFound from './components/NotFound';
 
 const App = (props) =>
-  <div className="l-page">{props.children}</div>;
+  <div className="u-height">{props.children}</div>;
 
 App.propTypes = {
   children: React.PropTypes.node,

@@ -16,7 +16,7 @@ import Modal from './Modal';
 import Overlay from './Overlay';
 import classNames from 'classnames';
 
-require('../../scss/_core.scss');
+require('../../scss/components/Career.scss');
 
 class Career extends React.Component {
 
@@ -443,14 +443,14 @@ class Career extends React.Component {
 
   render() {
     const containerClass = classNames({
-      'l-wrapper': true,
+      'o-wrapper': true,
       'sidebar': this.state.sidebar.visible,
     });
     if (Object.keys(this.state.career).length) {
       return (
-        <div className="l-page">
+        <div className="u-height">
           <div className={containerClass}>
-            <div className="l-box l-box--inverse">
+            <div className="c-box c-box--inverse">
               
               <Breadcrumb 
                 career={this.state.career}
@@ -606,7 +606,7 @@ class Career extends React.Component {
       );
     }
     return (
-      <div className="l-row l-row--centred">
+      <div className="o-row o-row--centred">
         <h1><i className="fa fa-cog fa-spin fa-fw margin-bottom"></i>Loading...</h1>
       </div>
     );

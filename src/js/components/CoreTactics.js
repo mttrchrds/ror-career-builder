@@ -23,10 +23,10 @@ class CoreTactics extends React.Component {
 
   render() {
     return (
-      <div className="l-spacing-bottom">
-        <div className="l-box">
-          <h2 className="l-page-title">Core tactics</h2>
-          <div className="l-row">
+      <div className="u-margin__bottom">
+        <div className="c-box">
+          <h2 className="c-page-title">Core tactics</h2>
+          <div className="o-row">
             {Object.keys(this.props.tactics).map(this.renderAbility)}
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-require('../../scss/Modal.scss');
+require('../../scss/components/Modal.scss');
 
 class Modal extends React.Component {
 
@@ -28,10 +28,10 @@ class Modal extends React.Component {
           <div className="c-modal__title">
             {this.props.modal.contentTitle}
           </div>
-          <div className="c-modal__content l-spacing-bottom--large">
+          <div className="c-modal__content u-margin__bottom--large">
             {this.props.modal.contentBody}
           </div>
-          <div className="c-modal__footer l-row l-row--right">
+          <div className="c-modal__footer o-row o-row--right">
             <button className="pure-button c-button c-button--primary" type="button" onClick={this.closeModal}>
               Close
             </button>

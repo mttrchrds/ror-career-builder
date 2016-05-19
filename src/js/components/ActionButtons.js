@@ -1,7 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router'
 
-require('../../scss/BarXp.scss');
+require('../../scss/components/BarXp.scss');
 
 class ActionButtons extends React.Component {
 
@@ -45,7 +45,7 @@ class ActionButtons extends React.Component {
   buildModalTitle() {
     const url = `/images/icons/${this.props.careerShort}.png`;
     return (
-      <h2 className="l-page-title l-page-title--dark l-row">
+      <h2 className="c-page-title c-page-title--dark o-row">
         <img src={url} className="c-title__icon c-title__icon--small" />
         {this.props.career.name}
       </h2>
@@ -80,21 +80,21 @@ class ActionButtons extends React.Component {
 
   render() {
     return (
-      <div className="l-box l-spacing-left--md">
+      <div className="c-box u-margin__left-md">
         <button className="pure-button c-button c-button--tertiary" type="button" onClick={this.clickHome}>
-          <i className="fa fa-home l-spacing-right--small u-hidden--mobile"></i>
+          <i className="fa fa-home u-margin__right--small u-hidden--mobile"></i>
           Home
         </button>
-        <button className="pure-button l-spacing-left c-button c-button--primary l-float-right l-spacing-left" type="button" onClick={this.clickSave}>
-          <i className="fa fa-save l-spacing-right--small u-hidden--mobile"></i>
+        <button className="pure-button c-button c-button--primary u-float__right u-margin__left" type="button" onClick={this.clickSave}>
+          <i className="fa fa-save u-margin__right--small u-hidden--mobile"></i>
           Save<span className="u-hidden--mobile"> career</span>
         </button>
-        <button className="pure-button l-spacing-left c-button c-button--secondary l-float-right l-spacing-left" type="button" onClick={this.clickChangeCareer}>
-          <i className="fa fa-group l-spacing-right--small u-hidden--mobile"></i>
+        <button className="pure-button c-button c-button--secondary u-float__right u-margin__left" type="button" onClick={this.clickChangeCareer}>
+          <i className="fa fa-group u-margin__right--small u-hidden--mobile"></i>
           Change<span className="u-hidden--mobile"> career</span>
         </button>
-        <button className="pure-button c-button c-button--negative l-float-right l-spacing-left" type="button" onClick={this.clickReset}>
-          <i className="fa fa-refresh l-spacing-right--small u-hidden--mobile"></i>
+        <button className="pure-button c-button c-button--negative u-float__right u-margin__left" type="button" onClick={this.clickReset}>
+          <i className="fa fa-refresh u-margin__right--small u-hidden--mobile"></i>
           Reset
         </button>
       </div>

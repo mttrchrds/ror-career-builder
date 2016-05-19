@@ -34,20 +34,20 @@ class Mastery extends React.Component {
   render() {
     let labelClass = classNames({
       'c-label': true,
-      'l-spacing-left--small': true,
+      'u-margin__left--small': true,
       'c-label--points': this.props.masteryPoints > 0,
     });
     return (
-      <div className="l-box l-box--no-padding-right l-spacing-left--md l-spacing-bottom">
-        <h2 className="l-page-title">
+      <div className="c-box c-box--no-padding-right u-margin__left-md u-margin__bottom">
+        <h2 className="c-page-title">
           Mastery abilities <span className={labelClass}>{this.props.masteryPoints} points</span>
         </h2>
         <div className="pure-g">
           <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-            <div className="l-border-right l-border-right-mobile--none l-border-right-sm l-spacing-right">
-              <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.a.name}</h3>
-              <div className="l-row l-row--justify">
-                <div className="l-row l-row--justify">
+            <div className="u-border__right u-border__right-mobile--none u-border__right-sm u-margin__right">
+              <h3 className="c-page-title c-page-title--compact">{this.props.career.paths.a.name}</h3>
+              <div className="o-row o-row--justify">
+                <div className="o-row o-row--justify">
                   <PathMeterButtons 
                     masteryPath="a"
                     masteryPoints={this.props.masteryPoints}
@@ -71,9 +71,9 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="a" />
                 </div>
-                <div className="l-spacing-right">
-                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-row">
+                <div className="u-margin__right">
+                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <div className="o-row">
                     <div className="l-col">{this.props.pathACoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathACoreOverflow)}
                   </div>
@@ -82,10 +82,10 @@ class Mastery extends React.Component {
             </div>
           </div>
           <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-            <div className="l-border-right-sm l-spacing-right l-spacing-top l-spacing-top-sm--none">
-              <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.b.name}</h3>
-              <div className="l-row l-row--justify">
-                <div className="l-row l-row--justify">
+            <div className="u-border__right-sm u-margin__right u-margin__top u-margin__top-sm--none">
+              <h3 className="c-page-title c-page-title--compact">{this.props.career.paths.b.name}</h3>
+              <div className="o-row o-row--justify">
+                <div className="o-row o-row--justify">
                   <PathMeterButtons 
                     masteryPath="b"
                     masteryPoints={this.props.masteryPoints}
@@ -109,9 +109,9 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="b" />
                 </div>
-                <div className="l-spacing-right">
-                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-row">
+                <div className="u-margin__right">
+                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <div className="o-row">
                     <div className="l-col">{this.props.pathBCoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathBCoreOverflow)}
                   </div>
@@ -120,10 +120,10 @@ class Mastery extends React.Component {
             </div>
           </div>
           <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-            <div className="l-border-right l-border-right-mobile--none l-border-right-sm--none l-spacing-right l-spacing-top l-spacing-top-sm--none">
-              <h3 className="l-page-title l-page-title--compact">{this.props.career.paths.c.name}</h3>
-              <div className="l-row l-row--justify">
-                <div className="l-row l-row--justify">
+            <div className="u-border__right u-border__right-mobile--none u-border__right-sm--none u-margin__right u-margin__top u-margin__top-sm--none">
+              <h3 className="c-page-title c-page-title--compact">{this.props.career.paths.c.name}</h3>
+              <div className="o-row o-row--justify">
+                <div className="o-row o-row--justify">
                   <PathMeterButtons 
                     masteryPath="c"
                     masteryPoints={this.props.masteryPoints}
@@ -147,9 +147,9 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="c" />
                 </div>
-                <div className="l-spacing-right">
-                  <h4 className="l-spacing-top l-spacing-bottom--small">Core<br/>abilities</h4>
-                  <div className="l-row">
+                <div className="u-margin__right">
+                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <div className="o-row">
                     <div className="l-col">{this.props.pathCCoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathCCoreOverflow)}
                   </div>

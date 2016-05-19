@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('../../scss/SelectLevel.scss');
+require('../../scss/components/SelectLevel.scss');
 
 class SelectRenown extends React.Component {
 
@@ -18,7 +18,7 @@ class SelectRenown extends React.Component {
 
   render() {
     return (
-      <div className="l-select l-spacing-bottom--large">
+      <div className="u-title-height u-margin__bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
           <select ref="renown"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-require('../../scss/Breadcrumb.scss');
+require('../../scss/components/Breadcrumb.scss');
 
 class Breadcrumb extends React.Component {
 
@@ -19,7 +19,7 @@ class Breadcrumb extends React.Component {
 
   render() {
     return (
-      <div className="l-spacing-bottom--large">
+      <div className="u-margin__bottom--large">
         <span className="c-breadcrumb">
           <Link to="/" className="c-breadcrumb__link">Home</Link>
         </span>
