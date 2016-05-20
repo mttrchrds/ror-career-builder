@@ -44,7 +44,7 @@ class Mastery extends React.Component {
         </h2>
         <div className="pure-g">
           <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-            <div className="u-border__right u-border__right-mobile--none u-border__right-sm u-margin__right">
+            <div className="u-border__right u-border__right-mobile--none u-border__right-sm u-margin__right u-border__bottom-mobile u-padding__bottom-mobile">
               <h3 className="c-page-title c-page-title--compact">{this.props.career.paths.a.name}</h3>
               <div className="o-row o-row--justify">
                 <div className="o-row o-row--justify">
@@ -71,7 +71,7 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="a" />
                 </div>
-                <div className="u-margin__right">
+                <div className="u-margin__right u-margin__right-mobile--large">
                   <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathACoreAbilities.map(this.renderAbility)}</div>
@@ -82,7 +82,7 @@ class Mastery extends React.Component {
             </div>
           </div>
           <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-            <div className="u-border__right-sm u-margin__right u-margin__top u-margin__top-sm--none">
+            <div className="u-border__right-sm u-margin__right u-margin__top u-margin__top-sm--none u-border__bottom-mobile u-padding__bottom-mobile">
               <h3 className="c-page-title c-page-title--compact">{this.props.career.paths.b.name}</h3>
               <div className="o-row o-row--justify">
                 <div className="o-row o-row--justify">
@@ -109,7 +109,7 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="b" />
                 </div>
-                <div className="u-margin__right">
+                <div className="u-margin__right u-margin__right-mobile--large">
                   <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathBCoreAbilities.map(this.renderAbility)}</div>
@@ -147,7 +147,7 @@ class Mastery extends React.Component {
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
                     masteryPath="c" />
                 </div>
-                <div className="u-margin__right">
+                <div className="u-margin__right u-margin__right-mobile--large">
                   <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathCCoreAbilities.map(this.renderAbility)}</div>

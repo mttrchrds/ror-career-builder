@@ -69,7 +69,6 @@ class Ability extends React.Component {
     event.preventDefault();
     this.setOverlay(true);
     this.abilityHoverOver();
-    this.abilityClicked();
   }
 
   setOverlay(status) {
@@ -112,7 +111,6 @@ class Ability extends React.Component {
           onTouchEnd={this.abilityTouchEnd}
           onMouseOver={this.abilityHoverOver} 
           onMouseOut={this.abilityHoverOut}
-          onClick={this.abilityClicked}
         />
         <Popover 
           content={popoverContent} 
@@ -120,7 +118,6 @@ class Ability extends React.Component {
           activate={this.state.abilityHovered}
           abilityOptional={false}
           abilityStatus={this.state.abilityStatus}
-          abilityClicked={this.abilityClicked}
           overlayClicked={this.overlayClicked}
         />
       </div>

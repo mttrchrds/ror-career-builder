@@ -96,14 +96,12 @@ class AbilityTactic extends React.Component {
   }
 
   abilityHoverOver() {
-    console.log('ability hover over');
     this.setState({
       abilityHovered: true,
     });
   }
 
   abilityHoverOut() {
-    console.log('ability hover out');
     this.setState({
       abilityHovered: false,
     });
