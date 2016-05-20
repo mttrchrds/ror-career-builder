@@ -593,6 +593,7 @@ class Career extends React.Component {
           <Overlay
             overlay={this.state.overlay}
             hideOverlay={this.hideOverlay}
+            visible={true}
           />
 
           <Sidebar

@@ -9,8 +9,10 @@
   top: 0;
   left: 0;
   background: $color-overlay;
-
   &--active {
     display: block;
+  }
+  &--invisible {
+    background: $color-overlay-invisible;
   }
 }

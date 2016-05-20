@@ -28,6 +28,7 @@
   $font-size-masthead-heading: 4.8rem;
   $font-size-masthead-heading-mobile: 4rem;
   $font-size-masthead-subheading: 2rem;
+  $font-size-masthead-subheading-mobile: 1.6rem;
 
   position: relative;
   overflow: hidden;
@@ -59,6 +60,9 @@
     font-size: $font-size-masthead-subheading;
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: $font-size-masthead-subheading-mobile;
+    }
   }
   &__cta {
     opacity: 1;

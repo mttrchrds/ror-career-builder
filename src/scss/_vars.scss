@@ -36,6 +36,9 @@ $color-tertiary-lighter: #e6e6e6;
 $color-negative: #ca3c3c;
 $color-negative-light: #d55353;
 $color-negative-lighter: #e47373;
+$color-positive: #3f9c11;
+$color-positive-light: #54b622;
+$color-positive-lighter: #73c64a;
 $color-xp: #fbbd08;
 $color-xp-light: #ffd96c;
 $color-renown: #a333c8;
@@ -47,11 +50,14 @@ $color-ability-border: #999;
 $color-ability-inactive: #ecb3b3;
 $color-ability-active: #90d28b;
 $color-overlay: rgba(0, 0, 0, 0.6);
+$color-overlay-invisible: rgba(0, 0, 0, 0);
 
 $label-padding: 0.3rem;
 
 $ability-width: 36px;
 $ability-height: 36px;
+$ability-width-popover: 50px;
+$ability-height-popover: 50px;
 $ability-opacity-inactive: 0.2;
 $ability-opacity-active: 1;
 

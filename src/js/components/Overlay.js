@@ -19,6 +19,7 @@ class Overlay extends React.Component {
     let overlayClass = classNames({
       'c-overlay': true,
       'c-overlay--active': this.props.overlay.visible,
+      'c-overlay--invisible': !this.props.visible,
     });
     return (
       <div className={overlayClass} onClick={this.clickOverlay} />

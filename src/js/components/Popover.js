@@ -13,9 +13,12 @@ class Popover extends React.Component {
       popoverSpacing: 5,
       popoverArrowSize: 10,
       popoverActive: false,
+      selectionText: 'Deselect',
     };
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.clickClose = this.clickClose.bind(this);
+    this.clickSelection = this.clickSelection.bind(this);
+    this.setSelectionText = this.setSelectionText.bind(this);
   }
 
   componentDidMount() {
@@ -160,7 +163,24 @@ class Popover extends React.Component {
     this.state.popoverActive = false;
     this.setState({
       popoverActive: this.state.popoverActive,
-    })
+    });
+    this.props.overlayClicked();
+  }
+
+  clickSelection() {
+    if (this.props.abilityOptional) {
+      this.props.abilityClicked();
+    }
+  }
+
+  setSelectionText() {
+    if (this.props.abilityOptional) {
+      if (this.props.abilitySelected) {
+        return 'Deselect';
+      } else {
+        return 'Select';
+      }
+    }
   }
 
   render() {
@@ -168,11 +188,20 @@ class Popover extends React.Component {
       'c-popover': true,
       'c-popover--active': this.state.popoverActive,
     });
+    const selectionClass = classNames({
+      'pure-button c-button c-button--primary u-float__right u-margin__left': true,
+      'u-hidden': !this.props.abilityOptional || !this.props.abilityStatus || (!this.props.abilityOperational && !this.props.abilitySelected),
+      'c-button--negative': this.props.abilitySelected,
+      'c-button--positive': !this.props.abilitySelected,
+    });
     return (
       <div className={popoverClass} ref="popover">
         <div className="c-popover__arrow"></div>
         {this.props.content}
-        <div className="u-margin__top c-popover__footer">
+        <div className="u-margin__top--large c-popover__footer">
+          <button className={selectionClass} type="button" onClick={this.clickSelection}>
+            {this.setSelectionText()}
+          </button>
           <button className="pure-button c-button c-button--primary u-float__right" type="button" onClick={this.clickClose}>
             Close
           </button>

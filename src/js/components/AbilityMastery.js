@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
+import Overlay from './Overlay';
 
 require('../../scss/components/Ability.scss');
 
@@ -18,11 +19,20 @@ class AbilityMastery extends React.Component {
     this.abilityClicked = this.abilityClicked.bind(this);
     this.abilityHoverOver = this.abilityHoverOver.bind(this);
     this.abilityHoverOut = this.abilityHoverOut.bind(this);
+    // Passed to Popover for mobile selection button. Determine's whether ability is available for selection
+    this.abilityOperational = this.abilityOperational.bind(this);
+    // Touch event to replace mouseover/out on mobile size
+    this.abilityTouchEnd = this.abilityTouchEnd.bind(this);
+    this.setOverlay = this.setOverlay.bind(this);
+    this.overlayClicked = this.overlayClicked.bind(this);
 
     this.state = {
       abilityStatus: false,
       abilitySelected: false,
       abilityHovered: false,
+      overlay: {
+        visible: false,
+      },
     };
   }
 
@@ -176,6 +186,39 @@ class AbilityMastery extends React.Component {
     });
   }
 
+  abilityOperational() {
+    if (Number(this.props.masteryPoints) > 0) {
+      if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
+        if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
+          return true;
+        }
+      } else {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  abilityTouchEnd(event) {
+    event.preventDefault();
+    this.setOverlay(true);
+    this.abilityHoverOver();
+    this.abilityClicked();
+  }
+
+  setOverlay(status) {
+    this.state.overlay.visible = status;
+    this.setState({ 
+      overlay: this.state.overlay,
+    });
+  }
+
+  overlayClicked() {
+    this.setOverlay(false);
+    this.abilityHoverOut();
+  }
+
   render() {
     const abilityClass = classNames({
       [`c-ability c-ability--${this.props.details.abilityType}`]: true,
@@ -189,16 +232,35 @@ class AbilityMastery extends React.Component {
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
-      <PopoverAbility details={this.props.details} />
+      <PopoverAbility details={this.props.details} imgSrc={imgSrc} />
     );
     return (
-      <div
-        className={abilityClass}
-        onMouseOver={this.abilityHoverOver} 
-        onMouseOut={this.abilityHoverOut} ref="popoverParent"
-      >
-        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} onClick={this.abilityClicked} />
-        <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
+      <div className={abilityClass} ref="popoverParent">
+        <Overlay
+          overlay={this.state.overlay}
+          hideOverlay={this.overlayClicked}
+          visible={false}
+        />
+        <img
+          className="c-ability__image"
+          src={imgSrc}
+          alt={this.props.details.name}
+          onTouchEnd={this.abilityTouchEnd}
+          onMouseOver={this.abilityHoverOver} 
+          onMouseOut={this.abilityHoverOut}
+          onClick={this.abilityClicked}
+        />
+        <Popover 
+          content={popoverContent} 
+          alignment="top" 
+          activate={this.state.abilityHovered}
+          abilityOptional={true}
+          abilityStatus={this.state.abilityStatus}
+          abilityOperational={this.abilityOperational()}
+          abilityClicked={this.abilityClicked}
+          abilitySelected={this.state.abilitySelected}
+          overlayClicked={this.overlayClicked}
+        />
       </div>
     );
   }

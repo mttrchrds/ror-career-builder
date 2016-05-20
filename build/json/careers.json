@@ -772,7 +772,7 @@
     "name": "Disciple of Khaine",
     "faction": "Destruction",
     "race": "Dark Elf",
-    "Class": "Healer",
+    "class": "Healer",
     "paths": {
       "a": {
         "name": "Path of Dark Rites",

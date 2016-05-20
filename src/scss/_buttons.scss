@@ -38,6 +38,13 @@
   }
 }
 
+.c-button--positive {
+  @include raised-effect($color-positive-light, $color-positive);
+  &:hover, &:active, &:focus {
+    background: linear-gradient($color-positive-lighter, $color-positive);
+  }
+}
+
 .c-button--small {
   font-size: 70%;
   width: 2.7rem;
@@ -46,4 +53,8 @@
 
 .c-button--large {
   font-size: 2rem;
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+  }
 }

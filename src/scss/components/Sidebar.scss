@@ -1,6 +1,7 @@
 @import '../vars';
 
 $width-sidebar: 250px;
+$width-sidebar-border: 2px;
 $font-size-sidebar: 1.2rem;
 $color-sidebar-text: #dedede;
 $color-sidebar-border: #505050;
@@ -18,9 +19,10 @@ $color-sidebar-Background-hover: #3f3f3f;
   overflow-x: hidden;
   height: 100%;
   background-color: $color-sidebar-background;
+  border-right: $width-sidebar-border solid $color-ability-border;
 
   &__content {
-    width: $width-sidebar;
+    width: calc(#{$width-sidebar} - #{$width-sidebar-border});
   }
 
   &__item {

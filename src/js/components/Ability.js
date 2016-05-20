@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
+import Overlay from './Overlay';
 
 require('../../scss/components/Ability.scss');
 
@@ -16,10 +17,17 @@ class Ability extends React.Component {
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.abilityHoverOver = this.abilityHoverOver.bind(this);
     this.abilityHoverOut = this.abilityHoverOut.bind(this);
+    // Touch event to replace mouseover/out on mobile size
+    this.abilityTouchEnd = this.abilityTouchEnd.bind(this);
+    this.setOverlay = this.setOverlay.bind(this);
+    this.overlayClicked = this.overlayClicked.bind(this);
 
     this.state = {
       abilityStatus: false,
       abilityHovered: false,
+      overlay: {
+        visible: false,
+      },
     };
   }
 
@@ -57,6 +65,25 @@ class Ability extends React.Component {
     });
   }
 
+  abilityTouchEnd(event) {
+    event.preventDefault();
+    this.setOverlay(true);
+    this.abilityHoverOver();
+    this.abilityClicked();
+  }
+
+  setOverlay(status) {
+    this.state.overlay.visible = status;
+    this.setState({ 
+      overlay: this.state.overlay,
+    });
+  }
+
+  overlayClicked() {
+    this.setOverlay(false);
+    this.abilityHoverOut();
+  }
+
   render() {
     const abilityClass = classNames({
       [`c-ability c-ability--${this.props.details.abilityType}`]: true,
@@ -69,16 +96,33 @@ class Ability extends React.Component {
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
-      <PopoverAbility details={this.props.details} />
+      <PopoverAbility details={this.props.details} imgSrc={imgSrc} />
     );
     return (
-      <div
-        className={abilityClass}
-        onMouseOver={this.abilityHoverOver} 
-        onMouseOut={this.abilityHoverOut} ref="popoverParent"
-      >
-        <img className="c-ability__image" src={imgSrc} alt={this.props.details.name} />
-        <Popover content={popoverContent} alignment="top" activate={this.state.abilityHovered} />
+      <div className={abilityClass} ref="popoverParent">
+        <Overlay
+          overlay={this.state.overlay}
+          hideOverlay={this.overlayClicked}
+          visible={false}
+        />
+        <img
+          className="c-ability__image"
+          src={imgSrc}
+          alt={this.props.details.name}
+          onTouchEnd={this.abilityTouchEnd}
+          onMouseOver={this.abilityHoverOver} 
+          onMouseOut={this.abilityHoverOut}
+          onClick={this.abilityClicked}
+        />
+        <Popover 
+          content={popoverContent} 
+          alignment="top" 
+          activate={this.state.abilityHovered}
+          abilityOptional={false}
+          abilityStatus={this.state.abilityStatus}
+          abilityClicked={this.abilityClicked}
+          overlayClicked={this.overlayClicked}
+        />
       </div>
     );
   }

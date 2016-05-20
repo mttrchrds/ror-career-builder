@@ -165,7 +165,7 @@ class Home extends React.Component {
                 <div className="c-home__copy u-margin__bottom--large u-margin__top--large u-margin__right-mobile u-margin__left-mobile">
                   <p>Warhammer Online: Age of Reckoning has returned. 
                   Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
-                  Inspired by the great work of these developers comes RoR Career Builder.</p>
+                  Inspired by the work of these developers comes RoR Career Builder.</p>
                   <p>This web app aims to replace and improve upon the great work done by <a className="c-home__copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
                   <p>Details of updates will appear on this page.</p>
                   <p>All code is available on <i className="fa fa-github"></i> <a href="#" className="c-home__copy__link" target="blank">Github</a>. Feel free to fork, contribute, <a href="#" className="c-home__copy__link" target="blank">raise bugs</a> and <a href="#" className="c-home__copy__link" target="blank">make suggestions</a>.</p>
@@ -177,6 +177,7 @@ class Home extends React.Component {
         <Overlay
           overlay={this.state.overlay}
           hideOverlay={this.hideOverlay}
+          visible={true}
         />
         <Sidebar
           careers={this.state.careers}
