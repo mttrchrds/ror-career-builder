@@ -12,18 +12,6 @@ class Sidebar extends React.Component {
     this.renderCareer = this.renderCareer.bind(this);
   }
 
-  componentDidMount() {
-    document.querySelector('body').classList.remove('sidebar');
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.sidebar.visible) {
-      document.querySelector('body').classList.add('sidebar');
-    } else {
-      document.querySelector('body').classList.remove('sidebar');
-    }
-  }
-
   renderCareer(key) {
     const career = this.props.careers[key];
     const url = `/career/${key}`;

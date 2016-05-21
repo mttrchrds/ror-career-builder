@@ -15,9 +15,6 @@ html {
 body {
   overflow-x: hidden;
   height: 100%;
-  &.sidebar {
-    overflow-y: hidden;
-  }
 }
 
 #app {

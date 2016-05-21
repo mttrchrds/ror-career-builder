@@ -11,6 +11,14 @@ class Overlay extends React.Component {
     this.clickOverlay = this.clickOverlay.bind(this);
   }
 
+  componentDidUpdate() {
+    if (this.props.overlay.visible) {
+      document.querySelector('body').classList.add('u-overflow__y--hidden');
+    } else {
+      document.querySelector('body').classList.remove('u-overflow__y--hidden');
+    }
+  }
+
   clickOverlay() {
     this.props.hideOverlay();
   }
