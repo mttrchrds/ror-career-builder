@@ -18,7 +18,6 @@ class PathMeterButtons extends React.Component {
     const meterValue = this.props.pathMeter;
     const masteryPath = this.props.masteryPath;
     if ((Number(masteryPoints) > 0) && (Number(meterValue) < Number(pathMeterMax))) {
-      console.log('DEBUG: increasing meter');
       this.props.incrementPathMeter(masteryPath);
       this.props.decrementMasteryPoints();
     }
@@ -28,7 +27,6 @@ class PathMeterButtons extends React.Component {
     const meterValue = this.props.pathMeter;
     const masteryPath = this.props.masteryPath;
     if (Number(meterValue) > 0) {
-      console.log('DEBUG: decreasing meter');
       this.props.decrementPathMeter(masteryPath);
       this.props.incrementMasteryPoints();
     }

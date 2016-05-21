@@ -115,39 +115,49 @@ class Home extends React.Component {
                 </div>
                 <a className="c-masthead__footer" href="#" onClick={this.clickMasthead}>Hide careers</a>
                 <div className={careerClass}>
-                  
                   <div className="c-career__item c-career__item--left">
                     <div className="c-career__heading u-margin__bottom">Order</div>  
-                    <div className="o-row o-row--justify o-row--wrap">
+                    <div className="c-career__container">
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">Empire</div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Empire') })}
-                      </div>                    
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/dwarf.png" className="c-title__icon c-title__icon--smaller" />Dwarves
+                        </div>
+                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dwarf') })}
+                      </div>                
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">High Elves</div>
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/high-elf.png" className="c-title__icon c-title__icon--smaller" />High Elves
+                        </div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'High Elf') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">Dwarves</div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dwarf') })}
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/empire.png" className="c-title__icon c-title__icon--smaller" />Empire
+                        </div>
+                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Empire') })}
                       </div>
                     </div>
-
                   </div>
                   <div className="c-career__item c-career__item--right">
                     <div className="c-career__heading u-margin__bottom">Destruction</div>
-                    <div className="o-row o-row--justify o-row--wrap">
+                    <div className="c-career__container">
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">Chaos</div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Chaos') })}
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/greenskin.png" className="c-title__icon c-title__icon--smaller" />Greenskins
+                        </div>
+                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Greenskin') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">Dark Elves</div>
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/dark-elf.png" className="c-title__icon c-title__icon--smaller" />Dark Elves
+                        </div>
                         {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dark Elf') })}
                       </div>
                       <div className="c-career__list">
-                        <div className="c-career__subheading u-margin__bottom">Greenskins</div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Greenskin') })}
+                        <div className="c-career__subheading u-margin__bottom">
+                          <img src="/images/icons/chaos.png" className="c-title__icon c-title__icon--smaller" />Chaos
+                        </div>
+                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Chaos') })}
                       </div>
                     </div>
                   </div>

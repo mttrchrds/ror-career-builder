@@ -89,7 +89,10 @@
     text-decoration: none;
   }
   &--active {
-    height: ($base-spacing * 55);
+    height: ($base-spacing * 70);
+    @media screen and (min-width: $breakpoint-sm) {
+      height: ($base-spacing * 55);
+    }
   }
   &--active &__heading {
     padding-top: ($base-spacing * 3);
@@ -104,9 +107,23 @@
 }
 
 .c-career {
+
+  $font-size-career-heading: 2.4rem;
+  $font-size-career-subheading: 1.8rem;
+
   margin-top: 8rem;
   display: flex;
   justify-content: space-around;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-direction: row;
+    }
+  }
+
   &__item {
     flex-grow: 0;
     flex-basis: 40%;
@@ -114,6 +131,7 @@
     padding: ($base-spacing * 2);
     transition: $base-transition;
     background-color: rgba(0,0,0,0.5);
+    font-weight: 200;
     &--left {
       margin-left: ($base-spacing * -90);
     }
@@ -122,10 +140,12 @@
     }
   }
   &__heading {
-    font-size: $font-size-h2;
+    font-size: $font-size-career-heading;
+    font-weight: 400;
   }
   &__subheading {
-    font-size: $font-size-h3; 
+    font-size: $font-size-career-subheading;
+    font-weight: 400;
   }
   &__list {
     flex-basis: 50%;

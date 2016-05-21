@@ -26,6 +26,11 @@
       width: 18px;
       height: 18px;
     }
+    &--smaller {
+      top: 0.4rem;
+      width: 20px;
+      height: 20px;
+    }
   }
   @media screen and (max-width: $breakpoint-mobile) {
     font-size: $font-size-h2;
