@@ -281,8 +281,8 @@ class Career extends React.Component {
 
   // Calculate mastery points available based on char level and renown level
   setMasteryPoints(level, renown) {
+    let points = 0;
     if (Number(level) > 10) {
-      let points = 0;
       if (Number(level) > 20) {
         points = level - 15;
       } else {
@@ -314,14 +314,14 @@ class Career extends React.Component {
         default:
           break;
       }
-      // Resetting mastery points when level changes
-      this.setState({
-        masteryPoints: points,
-        pathAMeter: 0,
-        pathBMeter: 0,
-        pathCMeter: 0,
-      });
     }
+    // Resetting mastery points when level changes
+    this.setState({
+      masteryPoints: points,
+      pathAMeter: 0,
+      pathBMeter: 0,
+      pathCMeter: 0,
+    });
   }
 
   // Reset all current selections
@@ -460,7 +460,7 @@ class Career extends React.Component {
 
               <BarXp currentLevel={this.state.currentLevel} />
 
-              <BarRenown currentRenown={this.state.currentRenown} />
+              <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
 
               <div className="pure-g">
                 <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-5-12 pure-u-lg-8-24">

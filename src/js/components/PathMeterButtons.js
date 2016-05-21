@@ -54,7 +54,7 @@ class PathMeterButtons extends React.Component {
     });
     const minusClass = classNames({
       'pure-button c-button c-button--small c-button--primary': true,
-      'pure-button-disabled': Number(this.props.pathMeter < 1),,
+      'pure-button-disabled': Number(this.props.pathMeter < 1),
     });
     return (
       <div>
