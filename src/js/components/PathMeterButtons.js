@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 require('../../scss/components/PathMeterButtons.scss');
 
@@ -47,21 +48,29 @@ class PathMeterButtons extends React.Component {
   }
 
   render() {
+    const plusClass = classNames({
+      'pure-button c-button c-button--small c-button--primary u-margin__right--tiny': true,
+      'pure-button-disabled': Number(this.props.masteryPoints) === 0,
+    });
+    const minusClass = classNames({
+      'pure-button c-button c-button--small c-button--primary': true,
+      'pure-button-disabled': Number(this.props.pathMeter < 1),,
+    });
     return (
-        <div>
-          <div className="c-meter">
-            {this.renderMeterLevel()}
-          </div>
-          <button
-            className="pure-button c-button c-button--small c-button--primary u-margin__right--tiny"
-            onClick={this.pathMeterAdd}
-            type="button"><i className="fa fa-plus"></i></button>
-          <button
-            className="pure-button c-button c-button--small c-button--primary"
-            onClick={this.pathMeterRemove}
-            type="button"><i className="fa fa-minus"></i></button>
+      <div>
+        <div className="c-meter">
+          {this.renderMeterLevel()}
         </div>
-    )
+        <button
+          className={plusClass}
+          onClick={this.pathMeterAdd}
+          type="button"><i className="fa fa-plus"></i></button>
+        <button
+          className={minusClass}
+          onClick={this.pathMeterRemove}
+          type="button"><i className="fa fa-minus"></i></button>
+      </div>
+    );
   }
 
 }
