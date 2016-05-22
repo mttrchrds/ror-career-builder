@@ -95,6 +95,8 @@ class Home extends React.Component {
       'c-home__content': true,
       'sidebar': this.state.sidebar.visible,
     });
+    const githubUrl = 'https://github.com/mattyrichards/ror-career-builder';
+    const githubUrlIssues = `${githubUrl}/issues`;
     return (
       <div className="u-height">
         <div className={containerClass}>
@@ -178,7 +180,8 @@ class Home extends React.Component {
                   Inspired by the work of these developers comes RoR Career Builder.</p>
                   <p>This web app aims to replace and improve upon the great work done by <a className="c-home__copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
                   <p>Details of updates will appear on this page.</p>
-                  <p>All code is available on <i className="fa fa-github"></i> <a href="#" className="c-home__copy__link" target="blank">Github</a>. Feel free to fork, contribute, <a href="#" className="c-home__copy__link" target="blank">raise bugs</a> and <a href="#" className="c-home__copy__link" target="blank">make suggestions</a>.</p>
+                  <p>All code is available on <i className="fa fa-github"></i> <a href={githubUrl} className="c-home__copy__link" target="blank">Github</a>
+                  . Feel free to fork, contribute, <a href={githubUrlIssues} className="c-home__copy__link" target="blank">raise bugs and make suggestions</a>.</p>
                 </div>
               </div>
             </div>
