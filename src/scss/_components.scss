@@ -150,6 +150,7 @@
   &__list {
     flex-basis: 50%;
     margin-bottom: ($base-spacing * 2);
+    flex-grow: 1;
     &__item {
       display: inline-block;
       font-size: $font-size-breadcrumb;
