@@ -1,7 +1,7 @@
 {
-  "name": "warhammer-career-builder",
+  "name": "ror-career-builder",
   "version": "1.0.0",
-  "description": "Career Builder tool for computer game Warhammer Online",
+  "description": "Web app for users of computer game Return of Reckoning to build and save career specs",
   "main": "",
   "scripts": {
     "build": "webpack -p --progress --colors --config build.webpack.config.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattyrichards/warhammer-career-builder.git"
+    "url": "https://github.com/mattyrichards/ror-career-builder.git"
   },
   "keywords": [
     "webpack",
@@ -19,7 +19,12 @@
     "airbnb",
     "eslint",
     "sass",
-    "warhammer"
+    "warhammer",
+    "Return of Reckoning",
+    "ITCSS",
+    "Games Workshop",
+    "PureCSS",
+    "BEM"
   ],
   "author": "Matt Richards",
   "license": "MIT",
