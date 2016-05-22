@@ -172,7 +172,7 @@ class Home extends React.Component {
                 </div>
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">
-                <div className="c-home__copy u-margin__bottom--large u-margin__top--large u-margin__right-mobile u-margin__left-mobile">
+                <div className="c-home__copy u-margin__bottom--large u-margin__top--large u-margin__right u-margin__left-mobile">
                   <p>Warhammer Online: Age of Reckoning has returned. 
                   Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
                   Inspired by the work of these developers comes RoR Career Builder.</p>
