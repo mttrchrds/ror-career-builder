@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-require('../../scss/components/Popover.scss');
+import '../../scss/components/Popover.scss';
 
 class Popover extends React.Component {
 

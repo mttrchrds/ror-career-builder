@@ -15,8 +15,7 @@ import ActionButtons from './ActionButtons';
 import Modal from './Modal';
 import Overlay from './Overlay';
 import classNames from 'classnames';
-
-require('../../scss/components/Career.scss');
+import '../../scss/components/Career.scss';
 
 class Career extends React.Component {
 

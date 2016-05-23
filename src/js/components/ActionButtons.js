@@ -1,7 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router'
-
-require('../../scss/components/BarXp.scss');
+import '../../scss/components/BarXp.scss';
 
 class ActionButtons extends React.Component {
 

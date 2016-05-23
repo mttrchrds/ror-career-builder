@@ -4,8 +4,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router';
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
-
-require('../../scss/components/Home.scss');
+import '../../scss/components/Home.scss';
 
 class Home extends React.Component {
 

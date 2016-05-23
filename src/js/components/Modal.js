@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-require('../../scss/components/Modal.scss');
+import '../../scss/components/Modal.scss';
 
 class Modal extends React.Component {
 

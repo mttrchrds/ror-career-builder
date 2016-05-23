@@ -1,6 +1,5 @@
 import React from 'react';
-
-require('../../scss/components/SelectLevel.scss');
+import '../../scss/components/SelectLevel.scss';
 
 class SelectRenown extends React.Component {
 

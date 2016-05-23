@@ -3,8 +3,7 @@ import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 import Overlay from './Overlay';
-
-require('../../scss/components/Ability.scss');
+import '../../scss/components/Ability.scss';
 
 class AbilityMorale extends React.Component {
 

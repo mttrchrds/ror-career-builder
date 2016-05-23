@@ -1,6 +1,5 @@
 import React from 'react';
-
-require('../../scss/components/BarXp.scss');
+import '../../scss/components/BarXp.scss';
 
 class BarXp extends React.Component {
 

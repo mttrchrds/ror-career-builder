@@ -1,7 +1,6 @@
 import React from 'react';
 import AbilityMorale from './AbilityMorale';
-
-require('../../scss/components/CoreMorales.scss');
+import '../../scss/components/CoreMorales.scss';
 
 class CoreMorales extends React.Component {
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
-require('../../scss/components/Breadcrumb.scss');
+import '../../scss/components/Breadcrumb.scss';
 
 class Breadcrumb extends React.Component {
 

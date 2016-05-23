@@ -1,6 +1,5 @@
 import React from 'react';
-
-require('../../scss/components/CareerTitle.scss');
+import '../../scss/components/CareerTitle.scss';
 
 class CareerTitle extends React.Component {
   render() {

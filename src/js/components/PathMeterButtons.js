@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-require('../../scss/components/PathMeterButtons.scss');
+import '../../scss/components/PathMeterButtons.scss';
 
 class PathMeterButtons extends React.Component {
 
