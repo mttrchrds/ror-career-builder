@@ -16,6 +16,8 @@ import Modal from './Modal';
 import Overlay from './Overlay';
 import classNames from 'classnames';
 import '../../scss/components/Career.scss';
+import 'autotrack';
+import '../../../analytics.js';
 
 class Career extends React.Component {
 
