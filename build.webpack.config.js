@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const CONFIG = require('./path.config');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -23,10 +24,13 @@ module.exports = {
       },
       { 
         test: /\.scss$/, 
-        loader: 'style-loader!css-loader!sass-loader!autoprefixer-loader',
+        loader: 'style-loader!css-loader!sass-loader!postcss-loader',
         include: CONFIG.source + CONFIG.sourcePathSCSS
       }
     ]
+  },
+  postcss: function () {
+    return [autoprefixer];
   },
   devtool: 'cheap-module-source-map',
   plugins: [
