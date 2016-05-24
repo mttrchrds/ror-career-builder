@@ -70,7 +70,6 @@ class AbilityTactic extends React.Component {
   }
 
   abilityClicked() {
-    console.log('ability clicked');
     // Select ability i.e. not already selected
     if (this.state.abilitySelected === false) {
       // Active ability selected
@@ -109,9 +108,8 @@ class AbilityTactic extends React.Component {
   abilityOperational() {
     if ((this.props.userSelections.tactics.length < this.props.currentTacticLimit) && this.state.abilityStatus) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   abilityTouchEnd(event) {
@@ -168,7 +166,7 @@ class AbilityTactic extends React.Component {
           content={popoverContent} 
           alignment="top" 
           activate={this.state.abilityHovered}
-          abilityOptional={true}
+          abilityOptional
           abilityStatus={this.state.abilityStatus}
           abilityOperational={this.abilityOperational()}
           abilityClicked={this.abilityClicked}

@@ -114,9 +114,8 @@ class AbilityMorale extends React.Component {
   abilityOperational() {
     if (this.state.abilityStatus) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   abilityTouchEnd(event) {
@@ -174,7 +173,7 @@ class AbilityMorale extends React.Component {
           content={popoverContent} 
           alignment="top" 
           activate={this.state.abilityHovered}
-          abilityOptional={true}
+          abilityOptional
           abilityStatus={this.state.abilityStatus}
           abilityOperational={this.abilityOperational()}
           abilityClicked={this.abilityClicked}
