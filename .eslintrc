@@ -6,5 +6,6 @@
     "array-callback-return": "off",
     "no-param-reassign": "off",
     "prefer-stateless-function": "off",
+    "react/sort-comp": [0]
   }
 }
