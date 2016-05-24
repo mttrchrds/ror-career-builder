@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
+import { browserHistory } from 'react-router';
 import '../../scss/components/BarXp.scss';
 
 class ActionButtons extends React.Component {
@@ -38,7 +38,7 @@ class ActionButtons extends React.Component {
   createBBCode(link) {
     return (
       `[url=${link}]RoR.builders - ${this.props.career.name}[/url]`
-    )
+    );
   }
 
   buildModalTitle() {
@@ -55,11 +55,11 @@ class ActionButtons extends React.Component {
     return (
       <div>
         <p>To save this career simply copy the link below:</p>
-        <div className="c-input--read-only" contenteditable>{this.createSaveLink()}</div>
+        <div className="c-input--read-only" contentEditable>{this.createSaveLink()}</div>
         <p>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
-        <div className="c-input--read-only" contenteditable>{this.createBBCode(this.createSaveLink())}</div>
+        <div className="c-input--read-only" contentEditable>{this.createBBCode(this.createSaveLink())}</div>
       </div>
-    )
+    );
   }
 
   clickSave() {
@@ -97,8 +97,32 @@ class ActionButtons extends React.Component {
           Reset
         </button>
       </div>
-    )
+    );
   }
 }
+
+ActionButtons.propTypes = {
+  resetCareer: React.PropTypes.func,
+  careerShort: React.PropTypes.string,
+  currentLevel: React.PropTypes.number,
+  currentRenown: React.PropTypes.number,
+  currentTacticLimit: React.PropTypes.number,
+  masteryPoints: React.PropTypes.number,
+  pathAMeter: React.PropTypes.number,
+  pathBMeter: React.PropTypes.number,
+  pathCMeter: React.PropTypes.number,
+  morale1: React.PropTypes.number,
+  morale2: React.PropTypes.number,
+  morale3: React.PropTypes.number,
+  morale4: React.PropTypes.number,
+  selectedAbilities: React.PropTypes.array,
+  masteryAbilities: React.PropTypes.array,
+  tactics: React.PropTypes.array,
+  career: React.PropTypes.object,
+  updateModalContent: React.PropTypes.func,
+  updateOverlayVisibility: React.PropTypes.func,
+  updateModalVisibility: React.PropTypes.func,
+  updateSidebarVisibility: React.PropTypes.func,
+};
 
 export default ActionButtons;
