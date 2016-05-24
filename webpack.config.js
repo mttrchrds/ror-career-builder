@@ -35,7 +35,7 @@ module.exports = {
       },
       { 
         test: /\.scss$/, 
-        loader: 'style-loader!css-loader!sass-loader!postcss-loader',
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
         include: CONFIG.source + CONFIG.sourcePathSCSS
       }
     ]
