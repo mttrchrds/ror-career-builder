@@ -148,9 +148,12 @@
     font-weight: 400;
   }
   &__list {
-    flex-basis: 50%;
+    flex-basis: auto;
     margin-bottom: ($base-spacing * 2);
     flex-grow: 1;
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-basis: 50%;
+    }
     &__item {
       display: inline-block;
       font-size: $font-size-breadcrumb;
