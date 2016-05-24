@@ -23,7 +23,7 @@ class Popover extends React.Component {
   componentDidMount() {
     // TODO: Currently statically adding this to <Ability />, feels dirty
     // Set parent element to position:relative (popover is absolutely positioned relative to this)
-    //this.refs.popover.parentNode.classList.add = 'c-popover__parent';
+    // this.refs.popover.parentNode.classList.add = 'c-popover__parent';
   }
 
   // Controlling hide/show of Popover in local state now. This is so button can also control it as well as ability hover.
@@ -176,10 +176,10 @@ class Popover extends React.Component {
     if (this.props.abilityOptional) {
       if (this.props.abilitySelected) {
         return 'Deselect';
-      } else {
-        return 'Select';
       }
+      return 'Select';
     }
+    return false;
   }
 
   render() {
@@ -214,6 +214,12 @@ Popover.propTypes = {
   content: React.PropTypes.node,
   alignment: React.PropTypes.string,
   activate: React.PropTypes.bool,
+  overlayClicked: React.PropTypes.func,
+  abilityOptional: React.PropTypes.bool,
+  abilityClicked: React.PropTypes.func,
+  abilitySelected: React.PropTypes.bool,
+  abilityStatus: React.PropTypes.bool,
+  abilityOperational: React.PropTypes.bool,
 };
 
 export default Popover;
