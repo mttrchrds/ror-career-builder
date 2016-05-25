@@ -17,8 +17,9 @@ class CoreTactics extends React.Component {
         selectedAbilities={this.props.selectedAbilities}
         currentTacticLimit={this.props.currentTacticLimit}
         setUserSelectionTactic={this.props.setUserSelectionTactic}
-        userSelections={this.props.userSelections} />
-    )
+        userSelections={this.props.userSelections}
+      />
+    );
   }
 
   render() {
@@ -31,9 +32,18 @@ class CoreTactics extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 }
+
+CoreTactics.propTypes = {
+  tactics: React.PropTypes.array,
+  currentLevel: React.PropTypes.number,
+  userSelections: React.PropTypes.object,
+  setSelectedAbilities: React.PropTypes.func,
+  selectedAbilities: React.PropTypes.array,
+  currentTacticLimit: React.PropTypes.number,
+  setUserSelectionTactic: React.PropTypes.func,
+};
 
 export default CoreTactics;

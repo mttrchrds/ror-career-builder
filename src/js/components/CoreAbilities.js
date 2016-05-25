@@ -11,16 +11,17 @@ class CoreAbilities extends React.Component {
 
   renderAbility(key) {
     return (
-      <Ability key={key} details={this.props.abilities[key]}
+      <Ability
+        key={key} details={this.props.abilities[key]}
         currentLevel={this.props.currentLevel}
         setSelectedAbilities={this.props.setSelectedAbilities}
         selectedAbilities={this.props.selectedAbilities}
-        userSelections={this.props.userSelections} />
-      )
+        userSelections={this.props.userSelections}
+      />
+    );
   }
 
   render() {
-
     return (
       <div className="u-margin__bottom">
         <div className="c-box">
@@ -30,8 +31,16 @@ class CoreAbilities extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+CoreAbilities.propTypes = {
+  abilities: React.PropTypes.array,
+  currentLevel: React.PropTypes.number,
+  userSelections: React.PropTypes.object,
+  setSelectedAbilities: React.PropTypes.func,
+  selectedAbilities: React.PropTypes.array,
+};
 
 export default CoreAbilities;
