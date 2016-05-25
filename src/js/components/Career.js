@@ -409,23 +409,23 @@ class Career extends React.Component {
   }
 
   incrementMasteryPoints() {
-    this.setState({ masteryPoints: this.state.masteryPoints + 1 })
+    this.setState({ masteryPoints: this.state.masteryPoints + 1 });
   }
 
   decrementMasteryPoints() {
-    this.setState({ masteryPoints: this.state.masteryPoints - 1 })
+    this.setState({ masteryPoints: this.state.masteryPoints - 1 });
   }
 
   incrementPathMeter(path) {
     const pathProperty = this.formatPathMeter(path);
     // i.e. pathAMeter: this.state.pathAMeter + 1
-    this.setState({ [pathProperty]: this.state[pathProperty] + 1 })
+    this.setState({ [pathProperty]: this.state[pathProperty] + 1 });
   }
 
   decrementPathMeter(path) {
     const pathProperty = this.formatPathMeter(path);
     // i.e. pathAMeter: this.state.pathAMeter - 1
-    this.setState({ [pathProperty]: this.state[pathProperty] - 1 })
+    this.setState({ [pathProperty]: this.state[pathProperty] - 1 });
   }
 
   // Formats path letter to path property name e.g 'a' becomes 'pathAMeter'
@@ -445,7 +445,7 @@ class Career extends React.Component {
   render() {
     const containerClass = classNames({
       'o-wrapper': true,
-      'sidebar': this.state.sidebar.visible,
+      sidebar: this.state.sidebar.visible,
     });
     if (Object.keys(this.state.career).length) {
       return (
@@ -594,7 +594,7 @@ class Career extends React.Component {
           <Overlay
             overlay={this.state.overlay}
             hideOverlay={this.hideOverlay}
-            visible={true}
+            visible
           />
 
           <Sidebar
