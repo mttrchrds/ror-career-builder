@@ -2,7 +2,7 @@
   "extends": "airbnb",
   "rules": {
     "no-trailing-spaces": [0, { "skipBlankLines": true }],
-    "max-len": [2, 150, 2, {"ignoreUrls": true}],
+    "max-len": [2, 200, 2, {"ignoreUrls": true}],
     "array-callback-return": "off",
     "no-param-reassign": "off",
     "react/sort-comp": [0]
