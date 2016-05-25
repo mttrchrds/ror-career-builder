@@ -16,7 +16,7 @@ class CoreMorales extends React.Component {
         selectedAbilities={this.props.selectedAbilities}
         incrementMasteryPoints={this.props.incrementMasteryPoints}
       />
-    )
+    );
   }
 
   renderMorales(rank1, rank2, rank3, rank4) {
@@ -25,56 +25,63 @@ class CoreMorales extends React.Component {
         <div className="c-morale c-morale--1">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
           <div className="c-morale__abilities">
-            {rank1.map((obj) => {
-              return (this.renderAbility(obj, 1))
-            })}
+            {rank1.map(
+              (obj) => this.renderAbility(obj, 1)
+            )}
           </div>
           
         </div>
         <div className="c-morale c-morale--2">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
           <div className="c-morale__abilities">
-            {rank2.map((obj) => {
-              return (this.renderAbility(obj, 2))
-             })}
+            {rank2.map(
+              (obj) => this.renderAbility(obj, 2)
+            )}
           </div>
         </div>
         <div className="c-morale c-morale--3">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
           <div className="c-morale__abilities">
-            {rank3.map((obj) => {
-              return (this.renderAbility(obj, 3))
-            })}
+            {rank3.map(
+              (obj) => this.renderAbility(obj, 3)
+            )}
           </div>
         </div>
         <div className="c-morale c-morale--4">
           <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
           <div className="c-morale__abilities">
-            {rank4.map((obj) => {
-              return (this.renderAbility(obj, 4))
-            })}
+            {rank4.map(
+              (obj) => this.renderAbility(obj, 4)
+            )}
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   sortMorales() {
-    let rank1 = [], rank2 = [], rank3 = [], rank4 =[];
-    for (let morale_key in this.props.morales) {
-      switch (this.props.morales[morale_key].cost) {
-        case "Rank 1 morale":
-          rank1.push(morale_key);
-          break;
-        case "Rank 2 morale":
-          rank2.push(morale_key);
-          break;
-        case "Rank 3 morale":
-          rank3.push(morale_key);
-          break;
-        case "Rank 4 morale":
-          rank4.push(morale_key);
-          break;
+    const rank1 = [];
+    const rank2 = [];
+    const rank3 = [];
+    const rank4 = [];
+    for (const moraleKey in this.props.morales) {
+      if ({}.hasOwnProperty.call(this.props.morales, moraleKey)) {
+        switch (this.props.morales[moraleKey].cost) {
+          case 'Rank 1 morale':
+            rank1.push(moraleKey);
+            break;
+          case 'Rank 2 morale':
+            rank2.push(moraleKey);
+            break;
+          case 'Rank 3 morale':
+            rank3.push(moraleKey);
+            break;
+          case 'Rank 4 morale':
+            rank4.push(moraleKey);
+            break;
+          default :
+            break;
+        }
       }
     }
     return this.renderMorales(rank1, rank2, rank3, rank4);
@@ -88,8 +95,18 @@ class CoreMorales extends React.Component {
           {this.sortMorales()}
         </div>
       </div>
-    )
+    );
   }
 }
+
+CoreMorales.propTypes = {
+  morales: React.PropTypes.array,
+  currentLevel: React.PropTypes.number,
+  setUserSelectionMorale: React.PropTypes.func,
+  userSelections: React.PropTypes.object,
+  setSelectedAbilities: React.PropTypes.func,
+  selectedAbilities: React.PropTypes.array,
+  incrementMasteryPoints: React.PropTypes.func,
+};
 
 export default CoreMorales;
