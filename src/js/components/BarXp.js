@@ -5,10 +5,10 @@ class BarXp extends React.Component {
 
   calculateBarWidth() {
     const maxLevel = 40;
-    let barWidth = Math.round((Number(this.props.currentLevel) / maxLevel) * 100);
-    let barStyle = {
-      width: `${barWidth}%`
-    }
+    const barWidth = Math.round((Number(this.props.currentLevel) / maxLevel) * 100);
+    const barStyle = {
+      width: `${barWidth}%`,
+    };
     return barStyle;
   }
 
@@ -19,8 +19,12 @@ class BarXp extends React.Component {
               <div className="c-progress__bar c-progress__bar--xp" style={this.calculateBarWidth()}></div>
           </div>
       </div>
-    )
+    );
   }
 }
+
+BarXp.propTypes = {
+  currentLevel: React.PropTypes.number,
+};
 
 export default BarXp;
