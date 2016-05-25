@@ -15,12 +15,14 @@ class Mastery extends React.Component {
 
   renderAbility(obj) {
     return (
-      <Ability key={obj.id}
+      <Ability 
+        key={obj.id}
         details={obj}
         currentLevel={this.props.currentLevel}
         setSelectedAbilities={this.props.setSelectedAbilities}
-        selectedAbilities={this.props.selectedAbilities} />
-      )
+        selectedAbilities={this.props.selectedAbilities}
+      />
+    );
   }
 
   renderOverflow(overflow) {
@@ -29,10 +31,11 @@ class Mastery extends React.Component {
         <div className="l-col">{overflow.map(this.renderAbility)}</div>
       );
     }
+    return false;
   }
 
   render() {
-    let labelClass = classNames({
+    const labelClass = classNames({
       'c-label': true,
       'u-margin__left--small': true,
       'c-label--points': this.props.masteryPoints > 0,
@@ -57,7 +60,8 @@ class Mastery extends React.Component {
                     incrementPathMeter={this.props.incrementPathMeter}
                     decrementPathMeter={this.props.decrementPathMeter}
                   />
-                  <PathMeter masteryPoints={this.props.masteryPoints}
+                  <PathMeter 
+                    masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathAOptionalAbilities}
@@ -69,10 +73,13 @@ class Mastery extends React.Component {
                     currentTacticLimit={this.props.currentTacticLimit}
                     setUserSelectionTactic={this.props.setUserSelectionTactic}
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
-                    masteryPath="a" />
+                    masteryPath="a"
+                  />
                 </div>
                 <div className="u-margin__right u-margin__right-mobile--large">
-                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <h4 className="u-margin__top u-margin__bottom--small">
+                    Core<br />abilities
+                  </h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathACoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathACoreOverflow)}
@@ -95,7 +102,8 @@ class Mastery extends React.Component {
                     incrementPathMeter={this.props.incrementPathMeter}
                     decrementPathMeter={this.props.decrementPathMeter}
                   />
-                  <PathMeter masteryPoints={this.props.masteryPoints}
+                  <PathMeter
+                    masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathBOptionalAbilities}
@@ -107,10 +115,13 @@ class Mastery extends React.Component {
                     currentTacticLimit={this.props.currentTacticLimit}
                     setUserSelectionTactic={this.props.setUserSelectionTactic}
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
-                    masteryPath="b" />
+                    masteryPath="b"
+                  />
                 </div>
                 <div className="u-margin__right u-margin__right-mobile--large">
-                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <h4 className="u-margin__top u-margin__bottom--small">
+                    Core<br />abilities
+                  </h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathBCoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathBCoreOverflow)}
@@ -133,7 +144,8 @@ class Mastery extends React.Component {
                     incrementPathMeter={this.props.incrementPathMeter}
                     decrementPathMeter={this.props.decrementPathMeter}
                   />
-                  <PathMeter masteryPoints={this.props.masteryPoints}
+                  <PathMeter 
+                    masteryPoints={this.props.masteryPoints}
                     updateMasteryPoints={this.props.updateMasteryPoints}
                     currentLevel={this.props.currentLevel}
                     pathOptionalAbilities={this.props.pathCOptionalAbilities}
@@ -145,10 +157,13 @@ class Mastery extends React.Component {
                     currentTacticLimit={this.props.currentTacticLimit}
                     setUserSelectionTactic={this.props.setUserSelectionTactic}
                     setUserSelectionMasteryAbilities={this.props.setUserSelectionMasteryAbilities}
-                    masteryPath="c" />
+                    masteryPath="c"
+                  />
                 </div>
                 <div className="u-margin__right u-margin__right-mobile--large">
-                  <h4 className="u-margin__top u-margin__bottom--small">Core<br/>abilities</h4>
+                  <h4 className="u-margin__top u-margin__bottom--small">
+                    Core<br />abilities
+                  </h4>
                   <div className="o-row">
                     <div className="l-col">{this.props.pathCCoreAbilities.map(this.renderAbility)}</div>
                     {this.renderOverflow(this.props.pathCCoreOverflow)}
@@ -159,9 +174,38 @@ class Mastery extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 }
+
+Mastery.propTypes = {
+  incrementPathMeter: React.PropTypes.func,
+  decrementPathMeter: React.PropTypes.func,
+  pathACoreAbilities: React.PropTypes.array,
+  pathBCoreAbilities: React.PropTypes.array,
+  pathCCoreAbilities: React.PropTypes.array,
+  incrementMasteryPoints: React.PropTypes.func,
+  decrementMasteryPoints: React.PropTypes.func,
+  career: React.PropTypes.object,
+  masteryPoints: React.PropTypes.number,
+  updateMasteryPoints: React.PropTypes.func,
+  currentLevel: React.PropTypes.number,
+  pathAOptionalAbilities: React.PropTypes.object,
+  pathBOptionalAbilities: React.PropTypes.object,
+  pathCOptionalAbilities: React.PropTypes.object,
+  pathAMeter: React.PropTypes.number,
+  pathBMeter: React.PropTypes.number,
+  pathCMeter: React.PropTypes.number,
+  setUserSelectionMorale: React.PropTypes.func,
+  userSelections: React.PropTypes.object,
+  setSelectedAbilities: React.PropTypes.func,
+  selectedAbilities: React.PropTypes.array,
+  currentTacticLimit: React.PropTypes.number,
+  setUserSelectionTactic: React.PropTypes.func,
+  setUserSelectionMasteryAbilities: React.PropTypes.func,
+  pathACoreOverflow: React.PropTypes.array,
+  pathBCoreOverflow: React.PropTypes.array,
+  pathCCoreOverflow: React.PropTypes.array,
+};
 
 export default Mastery;
