@@ -27,8 +27,8 @@ class BarRenown extends React.Component {
           break;
       }
     }
-    let barStyle = {
-      width: `${barWidth}%`
+    const barStyle = {
+      width: `${barWidth}%`,
     };
     return barStyle;
   }
@@ -40,8 +40,13 @@ class BarRenown extends React.Component {
           <div className="c-progress__bar c-progress__bar--renown c-progress__bar--thin" style={this.calculateBarWidth()}></div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+BarRenown.propTypes = {
+  currentLevel: React.PropTypes.number,
+  currentRenown: React.PropTypes.number,
+};
 
 export default BarRenown;
