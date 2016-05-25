@@ -32,8 +32,8 @@ class PathMeterButtons extends React.Component {
   }
 
   renderMeterLevel() {
-    let meterLevels = [];
-    const meterLevelMax = 15
+    const meterLevels = [];
+    const meterLevelMax = 15;
     for (let i = 1; i <= meterLevelMax; i++) {
       let thisClass = 'c-meter__level c-meter__level--active';
       if (i <= (meterLevelMax - this.props.pathMeter)) {
@@ -61,15 +61,30 @@ class PathMeterButtons extends React.Component {
         <button
           className={plusClass}
           onClick={this.pathMeterAdd}
-          type="button"><i className="fa fa-plus"></i></button>
+          type="button"
+        >
+          <i className="fa fa-plus"></i>
+        </button>
         <button
           className={minusClass}
           onClick={this.pathMeterRemove}
-          type="button"><i className="fa fa-minus"></i></button>
+          type="button"
+        >
+          <i className="fa fa-minus"></i>
+        </button>
       </div>
     );
   }
-
 }
+
+PathMeterButtons.propTypes = {
+  masteryPoints: React.PropTypes.number,
+  pathMeter: React.PropTypes.number,
+  masteryPath: React.PropTypes.string,
+  incrementPathMeter: React.PropTypes.func,
+  decrementPathMeter: React.PropTypes.func,
+  decrementMasteryPoints: React.PropTypes.func,
+  incrementMasteryPoints: React.PropTypes.func,
+};
 
 export default PathMeterButtons;
