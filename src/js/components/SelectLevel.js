@@ -10,9 +10,11 @@ class SelectLevel extends React.Component {
   }
 
   generateLevels() {
-    let start = 1, end = 40, optionList = [];
+    let start = 1;
+    const end = 40;
+    const optionList = [];
     for (start; start <= end; start++) {
-      optionList.push (<option key={start} value={start}>{start}</option>);
+      optionList.push(<option key={start} value={start}>{start}</option>);
     }
     return optionList;
   }
@@ -29,16 +31,27 @@ class SelectLevel extends React.Component {
       <div className="u-title-height u-margin__bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="levelSelect">Level</label>
-          <select ref="level"
+          <select 
+            ref="level"
             onChange={this.changeLevel}
             className="c-level__select" id="levelSelect"
-            value={this.props.currentLevel}>
+            value={this.props.currentLevel}
+          >
             {this.generateLevels()}
           </select>
         </div>
       </div>
-    )
+    );
   }
 }
+
+SelectLevel.propTypes = {
+  resetSelections: React.PropTypes.func,
+  updateLevel: React.PropTypes.func,
+  setMasteryPoints: React.PropTypes.func,
+  currentRenown: React.PropTypes.number,
+  setCurrentTacticLimit: React.PropTypes.func,
+  currentLevel: React.PropTypes.number,
+};
 
 export default SelectLevel;
