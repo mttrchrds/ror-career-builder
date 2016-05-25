@@ -61,13 +61,14 @@ class Home extends React.Component {
   renderCareers(key, faction) {
     const url = `/career/${key}`;
     const imgUrl = `/images/icons/${key}.png`;
-    if (this.state.careers[key].race == faction) {
+    if (this.state.careers[key].race === faction) {
       return (
         <div key={key}>
           <Link className="c-career__list__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
         </div>
       );
     }
+    return false;
   }
 
   clickMasthead(e) {
@@ -94,7 +95,7 @@ class Home extends React.Component {
     });
     const containerClass = classNames({
       'c-home__content': true,
-      'sidebar': this.state.sidebar.visible,
+      sidebar: this.state.sidebar.visible,
     });
     const githubUrl = 'https://github.com/mattyrichards/ror-career-builder';
     const githubUrlIssues = `${githubUrl}/issues`;
@@ -125,19 +126,25 @@ class Home extends React.Component {
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/dwarf.png" className="c-title__icon c-title__icon--smaller" />Dwarves
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dwarf') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'Dwarf')
+                        )}
                       </div>                
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/high-elf.png" className="c-title__icon c-title__icon--smaller" />High Elves
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'High Elf') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'High Elf')
+                        )}
                       </div>
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/empire.png" className="c-title__icon c-title__icon--smaller" />Empire
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Empire') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'Empire')
+                        )}
                       </div>
                     </div>
                   </div>
@@ -148,19 +155,25 @@ class Home extends React.Component {
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/greenskin.png" className="c-title__icon c-title__icon--smaller" />Greenskins
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Greenskin') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'Greenskin')
+                        )}
                       </div>
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/dark-elf.png" className="c-title__icon c-title__icon--smaller" />Dark Elves
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Dark Elf') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'Dark Elf')
+                        )}
                       </div>
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/chaos.png" className="c-title__icon c-title__icon--smaller" />Chaos
                         </div>
-                        {Object.keys(this.state.careers).map((key) => { return this.renderCareers(key, 'Chaos') })}
+                        {Object.keys(this.state.careers).map(
+                          (key) => this.renderCareers(key, 'Chaos')
+                        )}
                       </div>
                     </div>
                   </div>
@@ -191,7 +204,7 @@ class Home extends React.Component {
         <Overlay
           overlay={this.state.overlay}
           hideOverlay={this.hideOverlay}
-          visible={true}
+          visible
         />
         <Sidebar
           careers={this.state.careers}
