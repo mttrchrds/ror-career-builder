@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
     const imgUrl = `/images/icons/${key}.png`;
     return (
       <Link key={key} className="c-sidebar__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{career.name}</Link>
-    )
+    );
   }
 
   render() {
@@ -31,8 +31,13 @@ class Sidebar extends React.Component {
           {Object.keys(this.props.careers).map(this.renderCareer)}
         </div>
       </div>
-    )
+    );
   }
 }
+
+Sidebar.propTypes = {
+  careers: React.PropTypes.object,
+  sidebar: React.PropTypes.object,
+};
 
 export default Sidebar;

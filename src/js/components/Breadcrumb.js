@@ -33,8 +33,14 @@ class Breadcrumb extends React.Component {
         <span className="c-breadcrumb c-breadcrumb__divider"><i className="fa fa-angle-right"></i></span>
         <span className="c-breadcrumb c-breadcrumb--active">{this.props.career.class}</span>
       </div>
-    )
+    );
   }
 }
+
+Breadcrumb.propTypes = {
+  updateOverlayVisibility: React.PropTypes.func,
+  updateSidebarVisibility: React.PropTypes.func,
+  career: React.PropTypes.object,
+};
 
 export default Breadcrumb;
