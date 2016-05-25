@@ -20,10 +20,12 @@ class SelectRenown extends React.Component {
       <div className="u-title-height u-margin__bottom--large">
         <div className="c-level">
           <label className="c-level__label t-primary" htmlFor="renownSelect">Renown rank</label>
-          <select ref="renown"
+          <select 
+            ref="renown"
             onChange={this.changeRenown}
             className="c-level__select" id="renownSelect"
-            value={this.props.currentRenown}>
+            value={this.props.currentRenown}
+          >
             <option value="10">&lt; 40</option>
             <option value="40">40+</option>
             <option value="50">50+</option>
@@ -32,8 +34,16 @@ class SelectRenown extends React.Component {
           </select>
         </div>
       </div>
-    )
+    );
   }
 }
+
+SelectRenown.propTypes = {
+  resetSelections: React.PropTypes.func,
+  updateRenown: React.PropTypes.func,
+  setMasteryPoints: React.PropTypes.func,
+  currentRenown: React.PropTypes.number,
+  currentLevel: React.PropTypes.number,
+};
 
 export default SelectRenown;
