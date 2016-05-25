@@ -106,14 +106,14 @@ const PathMeter = (props) =>
 
 PathMeter.propTypes = {
   pathMeter: React.PropTypes.number,
-  pathOptionalAbilities: React.PropTypes.obj,
+  pathOptionalAbilities: React.PropTypes.object,
   masteryPoints: React.PropTypes.number,
   updateMasteryPoints: React.PropTypes.func,
   setSelectedAbilities: React.PropTypes.func,
   selectedAbilities: React.PropTypes.array,
   currentTacticLimit: React.PropTypes.number,
   setUserSelectionTactic: React.PropTypes.func,
-  userSelections: React.PropTypes.array,
+  userSelections: React.PropTypes.object,
   masteryPath: React.PropTypes.string,
   setUserSelectionMasteryAbilities: React.PropTypes.func,
   setUserSelectionMorale: React.PropTypes.func,
