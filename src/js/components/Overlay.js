@@ -37,7 +37,7 @@ class Overlay extends React.Component {
 Overlay.propTypes = {
   hideOverlay: React.PropTypes.func,
   overlay: React.PropTypes.object,
-  visible: React.PropTypes.boolean,
+  visible: React.PropTypes.bool,
 };
 
 export default Overlay;
