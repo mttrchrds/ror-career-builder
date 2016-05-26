@@ -1,39 +1,26 @@
 import React from 'react';
 import Ability from './Ability';
 
-class CoreAbilities extends React.Component {
-
-  constructor(props) {
-    super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.renderAbility = this.renderAbility.bind(this);
-  }
-
-  renderAbility(key) {
-    return (
-      <Ability
-        key={key} details={this.props.abilities[key]}
-        currentLevel={this.props.currentLevel}
-        setSelectedAbilities={this.props.setSelectedAbilities}
-        selectedAbilities={this.props.selectedAbilities}
-        userSelections={this.props.userSelections}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <div className="u-margin__bottom">
-        <div className="c-box">
-          <h2 className="c-page-title">Core abilities</h2>
-          <div className="o-row">
-            {Object.keys(this.props.abilities).map(this.renderAbility)}
-          </div>
+const CoreAbilities = (props) => {
+  const renderAbility = (key) =>
+    <Ability
+      key={key} details={props.abilities[key]}
+      currentLevel={props.currentLevel}
+      setSelectedAbilities={props.setSelectedAbilities}
+      selectedAbilities={props.selectedAbilities}
+      userSelections={props.userSelections}
+    />;
+  return (
+    <div className="u-margin__bottom">
+      <div className="c-box">
+        <h2 className="c-page-title">Core abilities</h2>
+        <div className="o-row">
+          {Object.keys(props.abilities).map(renderAbility)}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 CoreAbilities.propTypes = {
   abilities: React.PropTypes.array,
