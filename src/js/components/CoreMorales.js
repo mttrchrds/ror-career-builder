@@ -2,71 +2,62 @@ import React from 'react';
 import AbilityMorale from './AbilityMorale';
 import '../../scss/components/CoreMorales.scss';
 
-class CoreMorales extends React.Component {
-
-  renderAbility(key, rank) {
-    return (
-      <AbilityMorale key={this.props.morales[key].id}
-        details={this.props.morales[key]}
-        currentLevel={this.props.currentLevel}
-        setUserSelectionMorale={this.props.setUserSelectionMorale}
-        userSelections={this.props.userSelections}
-        moraleRank={rank}
-        setSelectedAbilities={this.props.setSelectedAbilities}
-        selectedAbilities={this.props.selectedAbilities}
-        incrementMasteryPoints={this.props.incrementMasteryPoints}
-      />
-    );
-  }
-
-  renderMorales(rank1, rank2, rank3, rank4) {
-    return (
-      <div className="o-row u-display__block-mobile">
-        <div className="c-morale c-morale--1">
-          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
-          <div className="c-morale__abilities">
-            {rank1.map(
-              (obj) => this.renderAbility(obj, 1)
-            )}
-          </div>
-          
+const CoreMorales = (props) => {
+  const renderAbility = (key, rank) => 
+    <AbilityMorale key={props.morales[key].id}
+      details={props.morales[key]}
+      currentLevel={props.currentLevel}
+      setUserSelectionMorale={props.setUserSelectionMorale}
+      userSelections={props.userSelections}
+      moraleRank={rank}
+      setSelectedAbilities={props.setSelectedAbilities}
+      selectedAbilities={props.selectedAbilities}
+      incrementMasteryPoints={props.incrementMasteryPoints}
+    />;
+  const renderMorales = (rank1, rank2, rank3, rank4) =>
+    <div className="o-row u-display__block-mobile">
+      <div className="c-morale c-morale--1">
+        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
+        <div className="c-morale__abilities">
+          {rank1.map(
+            (obj) => renderAbility(obj, 1)
+          )}
         </div>
-        <div className="c-morale c-morale--2">
-          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
-          <div className="c-morale__abilities">
-            {rank2.map(
-              (obj) => this.renderAbility(obj, 2)
-            )}
-          </div>
-        </div>
-        <div className="c-morale c-morale--3">
-          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
-          <div className="c-morale__abilities">
-            {rank3.map(
-              (obj) => this.renderAbility(obj, 3)
-            )}
-          </div>
-        </div>
-        <div className="c-morale c-morale--4">
-          <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
-          <div className="c-morale__abilities">
-            {rank4.map(
-              (obj) => this.renderAbility(obj, 4)
-            )}
-          </div>
+        
+      </div>
+      <div className="c-morale c-morale--2">
+        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
+        <div className="c-morale__abilities">
+          {rank2.map(
+            (obj) => renderAbility(obj, 2)
+          )}
         </div>
       </div>
-    );
-  }
-
-  sortMorales() {
+      <div className="c-morale c-morale--3">
+        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
+        <div className="c-morale__abilities">
+          {rank3.map(
+            (obj) => renderAbility(obj, 3)
+          )}
+        </div>
+      </div>
+      <div className="c-morale c-morale--4">
+        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
+        <div className="c-morale__abilities">
+          {rank4.map(
+            (obj) => renderAbility(obj, 4)
+          )}
+        </div>
+      </div>
+    </div>;
+  const sortMorales = () => {
     const rank1 = [];
     const rank2 = [];
     const rank3 = [];
     const rank4 = [];
-    for (const moraleKey in this.props.morales) {
-      if ({}.hasOwnProperty.call(this.props.morales, moraleKey)) {
-        switch (this.props.morales[moraleKey].cost) {
+    for (const moraleKey in props.morales) {
+      if ({}.hasOwnProperty.call(props.morales, moraleKey)) {
+        switch (props.morales[moraleKey].cost) {
           case 'Rank 1 morale':
             rank1.push(moraleKey);
             break;
@@ -84,20 +75,17 @@ class CoreMorales extends React.Component {
         }
       }
     }
-    return this.renderMorales(rank1, rank2, rank3, rank4);
-  }
-
-  render() {
-    return (
-      <div className="u-margin__bottom">
-        <div className="c-box">
-          <h2 className="c-page-title">Core morales</h2>
-          {this.sortMorales()}
-        </div>
+    return renderMorales(rank1, rank2, rank3, rank4);
+  };
+  return (
+    <div className="u-margin__bottom">
+      <div className="c-box">
+        <h2 className="c-page-title">Core morales</h2>
+        {sortMorales()}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 CoreMorales.propTypes = {
   morales: React.PropTypes.array,
