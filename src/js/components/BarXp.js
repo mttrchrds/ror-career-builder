@@ -1,27 +1,23 @@
 import React from 'react';
 import '../../scss/components/BarXp.scss';
 
-class BarXp extends React.Component {
-
-  calculateBarWidth() {
+const BarXp = (props) => {
+  const calculateBarWidth = () => {
     const maxLevel = 40;
-    const barWidth = Math.round((Number(this.props.currentLevel) / maxLevel) * 100);
+    const barWidth = Math.round((Number(props.currentLevel) / maxLevel) * 100);
     const barStyle = {
       width: `${barWidth}%`,
     };
     return barStyle;
-  }
-
-  render() {
-    return (
-      <div className="u-margin__bottom">
-          <div className="c-progress">
-              <div className="c-progress__bar c-progress__bar--xp" style={this.calculateBarWidth()}></div>
-          </div>
-      </div>
-    );
-  }
-}
+  };
+  return (
+    <div className="u-margin__bottom">
+        <div className="c-progress">
+            <div className="c-progress__bar c-progress__bar--xp" style={calculateBarWidth()}></div>
+        </div>
+    </div>
+  );
+};
 
 BarXp.propTypes = {
   currentLevel: React.PropTypes.number,
