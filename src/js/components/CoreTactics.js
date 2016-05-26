@@ -1,40 +1,29 @@
 import React from 'react';
 import AbilityTactic from './AbilityTactic';
 
-class CoreTactics extends React.Component {
-
-  constructor(props) {
-    super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.renderAbility = this.renderAbility.bind(this);
-  }
-
-  renderAbility(key) {
-    return (
-      <AbilityTactic key={key} details={this.props.tactics[key]}
-        currentLevel={this.props.currentLevel}
-        setSelectedAbilities={this.props.setSelectedAbilities}
-        selectedAbilities={this.props.selectedAbilities}
-        currentTacticLimit={this.props.currentTacticLimit}
-        setUserSelectionTactic={this.props.setUserSelectionTactic}
-        userSelections={this.props.userSelections}
-      />
-    );
-  }
-
-  render() {
-    return (
-      <div className="u-margin__bottom">
-        <div className="c-box">
-          <h2 className="c-page-title">Core tactics</h2>
-          <div className="o-row">
-            {Object.keys(this.props.tactics).map(this.renderAbility)}
-          </div>
+const CoreTactics = (props) => {
+  const renderAbility = (key) => 
+    <AbilityTactic 
+      key={key} 
+      details={props.tactics[key]}
+      currentLevel={props.currentLevel}
+      setSelectedAbilities={props.setSelectedAbilities}
+      selectedAbilities={props.selectedAbilities}
+      currentTacticLimit={props.currentTacticLimit}
+      setUserSelectionTactic={props.setUserSelectionTactic}
+      userSelections={props.userSelections}
+    />;
+  return (
+    <div className="u-margin__bottom">
+      <div className="c-box">
+        <h2 className="c-page-title">Core tactics</h2>
+        <div className="o-row">
+          {Object.keys(props.tactics).map(renderAbility)}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 CoreTactics.propTypes = {
   tactics: React.PropTypes.array,
