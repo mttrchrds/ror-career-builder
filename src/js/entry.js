@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+// For Google Analytics
+import 'autotrack';
+import '../../analytics.js';
 
 /*
   Import Components

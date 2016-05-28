@@ -5,8 +5,6 @@ import { Link } from 'react-router';
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
 import '../../scss/components/Home.scss';
-import 'autotrack';
-import '../../../analytics.js';
 
 class Home extends React.Component {
 

@@ -3,9 +3,10 @@ import AbilityMorale from './AbilityMorale';
 import '../../scss/components/CoreMorales.scss';
 
 const CoreMorales = (props) => {
-  const renderAbility = (key, rank) => 
-    <AbilityMorale key={props.morales[key].id}
-      details={props.morales[key]}
+  const renderAbility = (ability, rank) => 
+    <AbilityMorale 
+      key={ability.id}
+      details={ability}
       currentLevel={props.currentLevel}
       setUserSelectionMorale={props.setUserSelectionMorale}
       userSelections={props.userSelections}
@@ -20,16 +21,15 @@ const CoreMorales = (props) => {
         <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
         <div className="c-morale__abilities">
           {rank1.map(
-            (obj) => renderAbility(obj, 1)
+            (key) => renderAbility(props.abilities[key], 1)
           )}
         </div>
-        
       </div>
       <div className="c-morale c-morale--2">
         <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
         <div className="c-morale__abilities">
           {rank2.map(
-            (obj) => renderAbility(obj, 2)
+            (key) => renderAbility(props.abilities[key], 2)
           )}
         </div>
       </div>
@@ -37,7 +37,7 @@ const CoreMorales = (props) => {
         <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
         <div className="c-morale__abilities">
           {rank3.map(
-            (obj) => renderAbility(obj, 3)
+            (key) => renderAbility(props.abilities[key], 3)
           )}
         </div>
       </div>
@@ -45,7 +45,7 @@ const CoreMorales = (props) => {
         <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
         <div className="c-morale__abilities">
           {rank4.map(
-            (obj) => renderAbility(obj, 4)
+            (key) => renderAbility(props.abilities[key], 4)
           )}
         </div>
       </div>
@@ -57,18 +57,18 @@ const CoreMorales = (props) => {
     const rank4 = [];
     for (const moraleKey in props.morales) {
       if ({}.hasOwnProperty.call(props.morales, moraleKey)) {
-        switch (props.morales[moraleKey].cost) {
+        switch (props.abilities[props.morales[moraleKey]].cost) {
           case 'Rank 1 morale':
-            rank1.push(moraleKey);
+            rank1.push(props.abilities[props.morales[moraleKey]].id);
             break;
           case 'Rank 2 morale':
-            rank2.push(moraleKey);
+            rank2.push(props.abilities[props.morales[moraleKey]].id);
             break;
           case 'Rank 3 morale':
-            rank3.push(moraleKey);
+            rank3.push(props.abilities[props.morales[moraleKey]].id);
             break;
           case 'Rank 4 morale':
-            rank4.push(moraleKey);
+            rank4.push(props.abilities[props.morales[moraleKey]].id);
             break;
           default :
             break;
@@ -89,6 +89,7 @@ const CoreMorales = (props) => {
 
 CoreMorales.propTypes = {
   morales: React.PropTypes.array,
+  abilities: React.PropTypes.object,
   currentLevel: React.PropTypes.number,
   setUserSelectionMorale: React.PropTypes.func,
   userSelections: React.PropTypes.object,

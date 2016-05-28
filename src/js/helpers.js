@@ -21,6 +21,7 @@ const helpers = {
   },
   importJSON(career, abilities) {
     const exported = {
+      abilities: {},
       coreAbilities: [],
       coreMorales: [],
       coreTactics: [],
@@ -65,10 +66,10 @@ const helpers = {
         if (abilities[ability].spec === 'Core Ability') {
           switch (abilityType) {
             case 'standard':
-              exported.coreAbilities.push(abilities[ability]);
+              exported.coreAbilities.push(abilities[ability].id);
               break;
             case 'morale':
-              exported.coreMorales.push(abilities[ability]);
+              exported.coreMorales.push(abilities[ability].id);
               break;
             case 'tactic':
               exported.coreTactics.push(abilities[ability]);
@@ -184,9 +185,23 @@ const helpers = {
             exported.pathCOpt.lvl7 = abilities[ability];
           }
         }
+        // Create new abilities object using abilityId as a key
+        exported.abilities[abilities[ability].id] = abilities[ability];
       }
     );
     return exported;
+  },
+  /* global googleAnalytics ga:true */
+  gaEvent(category, action, label, value) {
+    // Sending to Google Analytics
+    console.log(category, action, label, value);
+    // ga('send', {
+    //   hitType: 'event',
+    //   eventCategory: category,
+    //   eventAction: action,
+    //   eventLabel: label,
+    //   eventValue: value,
+    // });
   },
 };
 

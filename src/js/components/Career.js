@@ -16,8 +16,6 @@ import Modal from './Modal';
 import Overlay from './Overlay';
 import classNames from 'classnames';
 import '../../scss/components/Career.scss';
-import 'autotrack';
-import '../../../analytics.js';
 
 class Career extends React.Component {
 
@@ -44,6 +42,7 @@ class Career extends React.Component {
     this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
+    this.gaCareerSaved = this.gaCareerSaved.bind(this);
 
     this.state = {
       careers: {},
@@ -110,7 +109,7 @@ class Career extends React.Component {
             careers,
             careerShort: this.props.params.careerName,
             career,
-            abilities,
+            abilities: imported.abilities,
             coreAbilities: imported.coreAbilities,
             coreMorales: imported.coreMorales,
             coreTactics: imported.coreTactics,
@@ -499,12 +498,17 @@ class Career extends React.Component {
               <div className="pure-g">
                 <div className="pure-u-1 pure-u-md-10-24">
 
-                  <CoreAbilities currentLevel={this.state.currentLevel} abilities={this.state.coreAbilities}
+                  <CoreAbilities 
+                    currentLevel={this.state.currentLevel} 
+                    coreAbilities={this.state.coreAbilities}
+                    abilities={this.state.abilities}
                     setSelectedAbilities={this.setSelectedAbilities}
                     selectedAbilities={this.state.selectedAbilities}
                   />
 
-                  <CoreMorales currentLevel={this.state.currentLevel}
+                  <CoreMorales 
+                    currentLevel={this.state.currentLevel}
+                    abilities={this.state.abilities}
                     morales={this.state.coreMorales}
                     setUserSelectionMorale={this.setUserSelectionMorale}
                     userSelections={this.state.userSelections}
@@ -577,6 +581,7 @@ class Career extends React.Component {
                     career={this.state.career}
                     updateSidebarVisibility={this.updateSidebarVisibility}
                     updateOverlayVisibility={this.updateOverlayVisibility}
+                    gaCareerSaved={this.gaCareerSaved}
                   />
 
                 </div>
@@ -612,6 +617,41 @@ class Career extends React.Component {
         <h1><i className="fa fa-cog fa-spin fa-fw margin-bottom"></i>Loading...</h1>
       </div>
     );
+  }
+
+  /* 
+  * ---
+  * Google Analytics Events
+  * ---
+  */
+
+  // Create category/value to determine where race was selected from i.e. home, button, breadcrumb
+  // Again, needs to be duplicated on home page
+  gaChangeCareer() {
+    // Change career, breadcrumb/home/footer
+  }
+
+  // Google Analytics event after selecting career
+  // TODO: this method needs to be duplicated on home page I guess
+  gaCareerSelected() {
+    // category, action, label, value
+    // Career selected,  <career name>, ,
+    // Class selected,  <class name>, ,
+    // Race selected,  <race name>, ,
+  }
+
+  // Google Analytics event after saving career
+  gaCareerSaved() {
+    // Other events to send:
+    // category, action, label, value
+    // <career name>, Morale 3,  <morale name>, <morale id> -  Can be core or mastery (for M4)
+    // <career name>, Tactic,  <tactic name>, <ability id> -  Can be core or masteryPoints
+    // <career name>, Mastery ability, <ability name>,  <ability id>  
+    // <career name>, Path A,  <path name>, Points spent in path - Only send if points > 0
+    h.gaEvent('Career saved', this.state.career.name, this.state.career.class, this.state.currentLevel);
+    if (Number(this.state.userSelections.morale1) > 0) {
+      h.gaEvent(this.state.career.name, 'Morale 1', 'morale name', 666);  
+    }    
   }
 }
 

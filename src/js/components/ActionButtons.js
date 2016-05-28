@@ -46,6 +46,7 @@ const ActionButtons = (props) => {
     props.updateModalContent(buildModalTitle(), buildModalBody());
     props.updateOverlayVisibility(true);
     props.updateModalVisibility(true);
+    props.gaCareerSaved();
   };
   const clickChangeCareer = () => {
     props.updateOverlayVisibility(true);
