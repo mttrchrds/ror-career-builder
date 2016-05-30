@@ -517,7 +517,9 @@ class Career extends React.Component {
                     incrementMasteryPoints={this.incrementMasteryPoints}
                   />
 
-                  <CoreTactics currentLevel={this.state.currentLevel}
+                  <CoreTactics
+                    currentLevel={this.state.currentLevel}
+                    abilities={this.state.abilities}
                     tactics={this.state.coreTactics}
                     setSelectedAbilities={this.setSelectedAbilities}
                     selectedAbilities={this.state.selectedAbilities}

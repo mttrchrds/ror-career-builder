@@ -4,8 +4,8 @@ import AbilityTactic from './AbilityTactic';
 const CoreTactics = (props) => {
   const renderAbility = (key) => 
     <AbilityTactic 
-      key={key} 
-      details={props.tactics[key]}
+      key={props.abilities[props.tactics[key]].id} 
+      details={props.abilities[props.tactics[key]]}
       currentLevel={props.currentLevel}
       setSelectedAbilities={props.setSelectedAbilities}
       selectedAbilities={props.selectedAbilities}
@@ -26,6 +26,7 @@ const CoreTactics = (props) => {
 };
 
 CoreTactics.propTypes = {
+  abilities: React.PropTypes.object,
   tactics: React.PropTypes.array,
   currentLevel: React.PropTypes.number,
   userSelections: React.PropTypes.object,

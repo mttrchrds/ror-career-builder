@@ -72,7 +72,7 @@ const helpers = {
               exported.coreMorales.push(abilities[ability].id);
               break;
             case 'tactic':
-              exported.coreTactics.push(abilities[ability]);
+              exported.coreTactics.push(abilities[ability].id);
               break;
             default :
               break;
