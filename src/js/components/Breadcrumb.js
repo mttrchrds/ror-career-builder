@@ -7,6 +7,7 @@ const Breadcrumb = (props) => {
     e.preventDefault();
     props.updateOverlayVisibility(true);
     props.updateSidebarVisibility(true);
+    props.gaChangeCareer('Breadcrumb');
   };
   return (
     <div className="u-margin__bottom--large">
@@ -28,6 +29,7 @@ const Breadcrumb = (props) => {
 };
 
 Breadcrumb.propTypes = {
+  gaChangeCareer: React.PropTypes.func,
   updateOverlayVisibility: React.PropTypes.func,
   updateSidebarVisibility: React.PropTypes.func,
   career: React.PropTypes.object,

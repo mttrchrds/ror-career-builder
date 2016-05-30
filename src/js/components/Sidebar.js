@@ -3,15 +3,28 @@ import classNames from 'classnames';
 import { Link } from 'react-router';
 import '../../scss/components/Sidebar.scss';
 
-const Sidebar = (props) => {
-  const renderCareer = (key) => {
-    const career = props.careers[key];
-    const url = `/career/${key}`;
-    const imgUrl = `/images/icons/${key}.png`;
-    return (
-      <Link key={key} className="c-sidebar__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{career.name}</Link>
-    );
+const SidebarItem = (props) => {
+  const clickItem = () => {
+    props.gaCareerSelected(props.shortName);
   };
+  const url = `/career/${props.shortName}`;
+  const imgUrl = `/images/icons/${props.shortName}.png`;
+  return (
+    <Link className="c-sidebar__item" to={url} onClick={clickItem}>
+      <img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{props.careerName}
+    </Link>
+  );
+};
+
+SidebarItem.propTypes = {
+  careerName: React.PropTypes.string,
+  shortName: React.PropTypes.string,
+  gaCareerSelected: React.PropTypes.func,
+};
+
+const Sidebar = (props) => {
+  const renderItem = (key) =>
+    <SidebarItem key={key} gaCareerSelected={props.gaCareerSelected} shortName={key} careerName={props.careers[key].name} />;
   const sidebarClass = classNames({
     'c-sidebar': true,
     'c-sidebar--active': props.sidebar.visible,
@@ -19,7 +32,7 @@ const Sidebar = (props) => {
   return (
     <div className={sidebarClass}>
       <div className="c-sidebar__content">
-        {Object.keys(props.careers).map(renderCareer)}
+        {Object.keys(props.careers).map(renderItem)}
       </div>
     </div>
   );
@@ -28,6 +41,7 @@ const Sidebar = (props) => {
 Sidebar.propTypes = {
   careers: React.PropTypes.object,
   sidebar: React.PropTypes.object,
+  gaCareerSelected: React.PropTypes.func,
 };
 
 export default Sidebar;

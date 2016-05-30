@@ -1,8 +1,8 @@
 import React from 'react';
 import h from '../helpers';
 import classNames from 'classnames';
-import { Link } from 'react-router';
 import Sidebar from './Sidebar';
+import CareerItem from './CareerItem';
 import Overlay from './Overlay';
 import '../../scss/components/Home.scss';
 
@@ -15,6 +15,7 @@ class Home extends React.Component {
     this.clickMasthead = this.clickMasthead.bind(this);
     this.clickMastheadMobile = this.clickMastheadMobile.bind(this);
     this.hideOverlay = this.hideOverlay.bind(this);
+    this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.state = {
       careers: {},
       mastheadActive: false,
@@ -57,12 +58,10 @@ class Home extends React.Component {
   }
 
   renderCareers(key, faction) {
-    const url = `/career/${key}`;
-    const imgUrl = `/images/icons/${key}.png`;
     if (this.state.careers[key].race === faction) {
       return (
         <div key={key}>
-          <Link className="c-career__list__item" to={url}><img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{this.state.careers[key].name}</Link>
+          <CareerItem gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.state.careers[key].name} />
         </div>
       );
     }
@@ -209,9 +208,23 @@ class Home extends React.Component {
           updateSidebarVisibility={this.updateSidebarVisibility}
           updateOverlayVisibility={this.updateOverlayVisibility}
           sidebar={this.state.sidebar}
+          gaCareerSelected={this.gaCareerSelected}
         />
       </div>
     );
+  }
+
+  /* 
+  * -----------------------
+  * Google Analytics Events
+  * -----------------------
+  */
+
+  // Google Analytics event after selecting career
+  gaCareerSelected(careerKey) {
+    h.gaEvent('Career selected', this.state.careers[careerKey].name);
+    h.gaEvent('Class selected', this.state.careers[careerKey].class);
+    h.gaEvent('Race selected', this.state.careers[careerKey].race);
   }
 }
 

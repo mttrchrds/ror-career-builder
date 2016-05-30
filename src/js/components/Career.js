@@ -43,6 +43,8 @@ class Career extends React.Component {
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
     this.gaCareerSaved = this.gaCareerSaved.bind(this);
+    this.gaCareerSelected = this.gaCareerSelected.bind(this);
+    this.gaChangeCareer = this.gaChangeCareer.bind(this);
 
     this.state = {
       careers: {},
@@ -456,6 +458,7 @@ class Career extends React.Component {
                 career={this.state.career}
                 updateSidebarVisibility={this.updateSidebarVisibility}
                 updateOverlayVisibility={this.updateOverlayVisibility}
+                gaChangeCareer={this.gaChangeCareer}
               />
 
               <BarXp currentLevel={this.state.currentLevel} />
@@ -585,6 +588,7 @@ class Career extends React.Component {
                     updateSidebarVisibility={this.updateSidebarVisibility}
                     updateOverlayVisibility={this.updateOverlayVisibility}
                     gaCareerSaved={this.gaCareerSaved}
+                    gaChangeCareer={this.gaChangeCareer}
                   />
 
                 </div>
@@ -610,6 +614,7 @@ class Career extends React.Component {
             updateSidebarVisibility={this.updateSidebarVisibility}
             updateOverlayVisibility={this.updateOverlayVisibility}
             sidebar={this.state.sidebar}
+            gaCareerSelected={this.gaCareerSelected}
           />
 
         </div>
@@ -623,38 +628,49 @@ class Career extends React.Component {
   }
 
   /* 
-  * ---
+  * -----------------------
   * Google Analytics Events
-  * ---
+  * -----------------------
   */
 
   // Create category/value to determine where race was selected from i.e. home, button, breadcrumb
   // Again, needs to be duplicated on home page
-  gaChangeCareer() {
-    // Change career, breadcrumb/home/footer
+  gaChangeCareer(changeType) {
+    h.gaEvent('Career changed', changeType);
   }
 
   // Google Analytics event after selecting career
-  // TODO: this method needs to be duplicated on home page I guess
-  gaCareerSelected() {
-    // category, action, label, value
-    // Career selected,  <career name>, ,
-    // Class selected,  <class name>, ,
-    // Race selected,  <race name>, ,
+  gaCareerSelected(careerKey) {
+    h.gaEvent('Career selected', this.state.careers[careerKey].name);
+    h.gaEvent('Class selected', this.state.careers[careerKey].class);
+    h.gaEvent('Race selected', this.state.careers[careerKey].race);
   }
 
-  // Google Analytics event after saving career
+  // Google Analytics events after saving career
   gaCareerSaved() {
-    // Other events to send:
-    // category, action, label, value
-    // <career name>, Morale 3,  <morale name>, <morale id> -  Can be core or mastery (for M4)
-    // <career name>, Tactic,  <tactic name>, <ability id> -  Can be core or masteryPoints
-    // <career name>, Mastery ability, <ability name>,  <ability id>  
-    // <career name>, Path A,  <path name>, Points spent in path - Only send if points > 0
     h.gaEvent('Career saved', this.state.career.name, this.state.career.class, this.state.currentLevel);
     if (Number(this.state.userSelections.morale1) > 0) {
-      h.gaEvent(this.state.career.name, 'Morale 1', 'morale name', 666);  
-    }    
+      h.gaEvent(this.state.career.name, 'Morale 1', this.state.abilities[this.state.userSelections.morale1].name, this.state.userSelections.morale1);  
+    }
+    if (Number(this.state.userSelections.morale2) > 0) {
+      h.gaEvent(this.state.career.name, 'Morale 2', this.state.abilities[this.state.userSelections.morale2].name, this.state.userSelections.morale2);  
+    }
+    if (Number(this.state.userSelections.morale3) > 0) {
+      h.gaEvent(this.state.career.name, 'Morale 3', this.state.abilities[this.state.userSelections.morale3].name, this.state.userSelections.morale3);  
+    }
+    if (Number(this.state.userSelections.morale4) > 0) {
+      h.gaEvent(this.state.career.name, 'Morale 4', this.state.abilities[this.state.userSelections.morale4].name, this.state.userSelections.morale4);
+    }
+    if (Number(this.state.userSelections.tactics.length) > 0) {
+      this.state.userSelections.tactics.map(
+        (key) => h.gaEvent(this.state.career.name, 'Tactic', this.state.abilities[key].name, key)
+      );
+    }
+    if (Number(this.state.userSelections.masteryAbilities.length) > 0) {
+      this.state.userSelections.masteryAbilities.map(
+        (key) => h.gaEvent(this.state.career.name, 'Mastery ability', this.state.abilities[key].name, key)
+      );
+    }
   }
 }
 

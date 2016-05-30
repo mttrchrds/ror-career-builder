@@ -51,6 +51,7 @@ const ActionButtons = (props) => {
   const clickChangeCareer = () => {
     props.updateOverlayVisibility(true);
     props.updateSidebarVisibility(true);
+    props.gaChangeCareer('ActionButton');
   };
   const clickHome = () => {
     browserHistory.push('/');
@@ -99,6 +100,8 @@ ActionButtons.propTypes = {
   updateOverlayVisibility: React.PropTypes.func,
   updateModalVisibility: React.PropTypes.func,
   updateSidebarVisibility: React.PropTypes.func,
+  gaChangeCareer: React.PropTypes.func,
+  gaCareerSaved: React.PropTypes.func,
 };
 
 export default ActionButtons;
