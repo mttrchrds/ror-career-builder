@@ -4,8 +4,8 @@ import AbilityTactic from './AbilityTactic';
 const CoreTactics = (props) => {
   const renderAbility = (key) => 
     <AbilityTactic 
-      key={props.abilities[props.tactics[key]].id} 
-      details={props.abilities[props.tactics[key]]}
+      key={props.abilities[key].id} 
+      details={props.abilities[key]}
       currentLevel={props.currentLevel}
       setSelectedAbilities={props.setSelectedAbilities}
       selectedAbilities={props.selectedAbilities}
@@ -18,7 +18,7 @@ const CoreTactics = (props) => {
       <div className="c-box">
         <h2 className="c-page-title">Core tactics</h2>
         <div className="o-row">
-          {Object.keys(props.tactics).map(renderAbility)}
+          {props.tactics.map(renderAbility)}
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl7}
+          details={props.abilities[props.pathOptionalAbilities.lvl7]}
           setUserSelectionMorale={props.setUserSelectionMorale}
           userSelections={props.userSelections}
           moraleRank={moraleRank}
@@ -25,7 +25,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl6}
+          details={props.abilities[props.pathOptionalAbilities.lvl6]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
@@ -38,7 +38,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl5}
+          details={props.abilities[props.pathOptionalAbilities.lvl5]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           currentTacticLimit={props.currentTacticLimit}
@@ -52,7 +52,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl4}
+          details={props.abilities[props.pathOptionalAbilities.lvl4]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
@@ -65,7 +65,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl3}
+          details={props.abilities[props.pathOptionalAbilities.lvl3]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           currentTacticLimit={props.currentTacticLimit}
@@ -79,7 +79,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl2}
+          details={props.abilities[props.pathOptionalAbilities.lvl2]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
@@ -92,7 +92,7 @@ const PathMeter = (props) =>
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
-          details={props.pathOptionalAbilities.lvl1}
+          details={props.abilities[props.pathOptionalAbilities.lvl1]}
           setSelectedAbilities={props.setSelectedAbilities}
           selectedAbilities={props.selectedAbilities}
           currentTacticLimit={props.currentTacticLimit}
@@ -105,6 +105,7 @@ const PathMeter = (props) =>
   </div>;
 
 PathMeter.propTypes = {
+  abilities: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
   pathOptionalAbilities: React.PropTypes.object,
   masteryPoints: React.PropTypes.number,

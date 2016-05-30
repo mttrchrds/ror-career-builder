@@ -5,10 +5,10 @@ import PathMeterButtons from './PathMeterButtons';
 import classNames from 'classnames';
 
 const Mastery = (props) => {
-  const renderAbility = (obj) =>
+  const renderAbility = (key) =>
     <Ability 
-      key={obj.id}
-      details={obj}
+      key={props.abilities[key].id}
+      details={props.abilities[key]}
       currentLevel={props.currentLevel}
       setSelectedAbilities={props.setSelectedAbilities}
       selectedAbilities={props.selectedAbilities}
@@ -60,6 +60,7 @@ const Mastery = (props) => {
                   setUserSelectionTactic={props.setUserSelectionTactic}
                   setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
                   masteryPath="a"
+                  abilities={props.abilities}
                 />
               </div>
               <div className="u-margin__right u-margin__right-mobile--large">
@@ -102,6 +103,7 @@ const Mastery = (props) => {
                   setUserSelectionTactic={props.setUserSelectionTactic}
                   setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
                   masteryPath="b"
+                  abilities={props.abilities}
                 />
               </div>
               <div className="u-margin__right u-margin__right-mobile--large">
@@ -144,6 +146,7 @@ const Mastery = (props) => {
                   setUserSelectionTactic={props.setUserSelectionTactic}
                   setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
                   masteryPath="c"
+                  abilities={props.abilities}
                 />
               </div>
               <div className="u-margin__right u-margin__right-mobile--large">
@@ -191,6 +194,7 @@ Mastery.propTypes = {
   pathACoreOverflow: React.PropTypes.array,
   pathBCoreOverflow: React.PropTypes.array,
   pathCCoreOverflow: React.PropTypes.array,
+  abilities: React.PropTypes.object,
 };
 
 export default Mastery;

@@ -559,6 +559,7 @@ class Career extends React.Component {
                     decrementMasteryPoints={this.decrementMasteryPoints}
                     incrementPathMeter={this.incrementPathMeter}
                     decrementPathMeter={this.decrementPathMeter}
+                    abilities={this.state.abilities}
                   />
 
                   <ActionButtons

@@ -4,8 +4,8 @@ import Ability from './Ability';
 const CoreAbilities = (props) => {
   const renderAbility = (key) =>
     <Ability
-      key={props.abilities[props.coreAbilities[key]].id}
-      details={props.abilities[props.coreAbilities[key]]}
+      key={props.abilities[key].id}
+      details={props.abilities[key]}
       currentLevel={props.currentLevel}
       setSelectedAbilities={props.setSelectedAbilities}
       selectedAbilities={props.selectedAbilities}
@@ -16,7 +16,7 @@ const CoreAbilities = (props) => {
       <div className="c-box">
         <h2 className="c-page-title">Core abilities</h2>
         <div className="o-row">
-          {Object.keys(props.coreAbilities).map(renderAbility)}
+          {props.coreAbilities.map(renderAbility)}
         </div>
       </div>
     </div>

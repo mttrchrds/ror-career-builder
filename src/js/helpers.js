@@ -81,108 +81,108 @@ const helpers = {
           // Check and populate Mastery path core and optional abilities
           if (this.arrayContains(career.paths.a.coreAbilities, abilities[ability].id)) {
             if (exported.pathACore.length < pathCoreOverflow) {
-              exported.pathACore.push(abilities[ability]);  
+              exported.pathACore.push(abilities[ability].id);  
             } else {
-              exported.pathACoreOverflow.push(abilities[ability]);
+              exported.pathACoreOverflow.push(abilities[ability].id);
             }
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;
-            exported.pathAOpt.lvl1 = abilities[ability];
+            exported.pathAOpt.lvl1 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl2) {
             abilities[ability].meterRequirement = 5;
-            exported.pathAOpt.lvl2 = abilities[ability];
+            exported.pathAOpt.lvl2 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl3) {
             abilities[ability].meterRequirement = 7;
-            exported.pathAOpt.lvl3 = abilities[ability];
+            exported.pathAOpt.lvl3 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl4) {
             abilities[ability].meterRequirement = 9;
-            exported.pathAOpt.lvl4 = abilities[ability];
+            exported.pathAOpt.lvl4 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl5) {
             abilities[ability].meterRequirement = 11;
-            exported.pathAOpt.lvl5 = abilities[ability];
+            exported.pathAOpt.lvl5 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl6) {
             abilities[ability].meterRequirement = 13;
-            exported.pathAOpt.lvl6 = abilities[ability];
+            exported.pathAOpt.lvl6 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.a.optionalAbilities.lvl7) {
             abilities[ability].meterRequirement = 15;
-            exported.pathAOpt.lvl7 = abilities[ability];
+            exported.pathAOpt.lvl7 = abilities[ability].id;
           }
           if (this.arrayContains(career.paths.b.coreAbilities, abilities[ability].id)) {
             if (exported.pathBCore.length < pathCoreOverflow) {
-              exported.pathBCore.push(abilities[ability]);  
+              exported.pathBCore.push(abilities[ability].id);  
             } else {
-              exported.pathBCoreOverflow.push(abilities[ability]);
+              exported.pathBCoreOverflow.push(abilities[ability].id);
             }
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;
-            exported.pathBOpt.lvl1 = abilities[ability];
+            exported.pathBOpt.lvl1 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl2) {
             abilities[ability].meterRequirement = 5;
-            exported.pathBOpt.lvl2 = abilities[ability];
+            exported.pathBOpt.lvl2 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl3) {
             abilities[ability].meterRequirement = 7;
-            exported.pathBOpt.lvl3 = abilities[ability];
+            exported.pathBOpt.lvl3 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl4) {
             abilities[ability].meterRequirement = 9;
-            exported.pathBOpt.lvl4 = abilities[ability];
+            exported.pathBOpt.lvl4 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl5) {
             abilities[ability].meterRequirement = 11;
-            exported.pathBOpt.lvl5 = abilities[ability];
+            exported.pathBOpt.lvl5 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl6) {
             abilities[ability].meterRequirement = 13;
-            exported.pathBOpt.lvl6 = abilities[ability];
+            exported.pathBOpt.lvl6 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.b.optionalAbilities.lvl7) {
             abilities[ability].meterRequirement = 15;
-            exported.pathBOpt.lvl7 = abilities[ability];
+            exported.pathBOpt.lvl7 = abilities[ability].id;
           }
           if (this.arrayContains(career.paths.c.coreAbilities, abilities[ability].id)) {
             if (exported.pathCCore.length < pathCoreOverflow) {
-              exported.pathCCore.push(abilities[ability]);  
+              exported.pathCCore.push(abilities[ability].id);  
             } else {
-              exported.pathCCoreOverflow.push(abilities[ability]);
+              exported.pathCCoreOverflow.push(abilities[ability].id);
             }
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl1) {
             abilities[ability].meterRequirement = 3;
-            exported.pathCOpt.lvl1 = abilities[ability];
+            exported.pathCOpt.lvl1 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl2) {
             abilities[ability].meterRequirement = 5;
-            exported.pathCOpt.lvl2 = abilities[ability];
+            exported.pathCOpt.lvl2 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl3) {
             abilities[ability].meterRequirement = 7;
-            exported.pathCOpt.lvl3 = abilities[ability];
+            exported.pathCOpt.lvl3 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl4) {
             abilities[ability].meterRequirement = 9;
-            exported.pathCOpt.lvl4 = abilities[ability];
+            exported.pathCOpt.lvl4 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl5) {
             abilities[ability].meterRequirement = 11;
-            exported.pathCOpt.lvl5 = abilities[ability];
+            exported.pathCOpt.lvl5 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl6) {
             abilities[ability].meterRequirement = 13;
-            exported.pathCOpt.lvl6 = abilities[ability];
+            exported.pathCOpt.lvl6 = abilities[ability].id;
           }
           if (abilities[ability].id === career.paths.c.optionalAbilities.lvl7) {
             abilities[ability].meterRequirement = 15;
-            exported.pathCOpt.lvl7 = abilities[ability];
+            exported.pathCOpt.lvl7 = abilities[ability].id;
           }
         }
         // Create new abilities object using abilityId as a key
