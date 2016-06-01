@@ -425,7 +425,7 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "20.0s cooldown",
-    "note": "Requires Perfect Balance<br>Leads to Normal Balance<br>Requires 13 points in Path of Vaul",
+    "note": "Requires Perfect Balance<br>Leads to Normal Balance<br>Requires 9 points in Path of Vaul",
     "description": "You launch two powerful blows dealing a total of 262 Spirit damage and knocking your opponent down for 3 seconds. Your group members within 100 feet become Unstoppable for 4 seconds, granting immunity to all Stun, Knockdown, Disarm, or Silence effects.",
     "category": "Ability"
   },
@@ -441,7 +441,7 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
-    "note": "Requires Improved Balance<br>Leads to Perfect Balance<br>Requires Shield<br>Requires 9 points in Path of Vaul",
+    "note": "Requires Improved Balance<br>Leads to Perfect Balance<br>Requires Shield<br>Requires 13 points in Path of Vaul",
     "description": "A calculated shield maneuver that inflicts 144 damage and interrupts any spells being cast. Additionally, for the next 20 seconds, your block rate is increased by 5% and your armor will be increased by 618 points.",
     "category": "Ability"
   },

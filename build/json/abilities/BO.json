@@ -329,7 +329,7 @@
     "range": "No range",
     "incant": "20.0s cast",
     "cooldown": "No cooldown",
-    "note": "Requires Shield<br>Requires 9 points in Path of Da Toughest",
+    "note": "Requires Shield<br>Requires 13 points in Path of Da Toughest",
     "description": "Increase Block Chance by 50%. While you are channeling, you can move at 60% movement speed. After you block, the attacker takes 175 damage.",
     "category": "Ability"
   },
@@ -633,7 +633,7 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "20.0s cooldown",
-    "note": "Needs da' Best Plan!!<br>No Plan after dis!<br>Requires 13 points in Path of Da Toughest",
+    "note": "Needs da' Best Plan!!<br>No Plan after dis!<br>Requires 9 points in Path of Da Toughest",
     "description": "Deals 352 damage and knocks target down for 3 seconds.",
     "category": "Ability"
   },
