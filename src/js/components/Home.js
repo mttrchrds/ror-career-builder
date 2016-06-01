@@ -181,7 +181,7 @@ class Home extends React.Component {
               <div className="pure-u-1-3 pure-u-mobile-1">
                 <div className="c-list u-margin__top--large u-margin__left">
                   <div className="c-list__heading">Latest updates</div>
-                  <p className="c-list__item">- Currently in beta</p>
+                  <p className="c-list__item">- 1/6/2016: We are live :)</p>
                 </div>
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">
