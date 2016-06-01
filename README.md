@@ -12,7 +12,7 @@ Other assets utilised are:
 - [Font Awesome](http://fontawesome.io/icons/) for icons
 - [Roboto Google web font](https://www.google.com/fonts/specimen/Roboto)
 
-You can see the the RoR Career Builder in action at: [http://xxx](http://xxx)
+You can see the the RoR Career Builder in action at: [http://ror.builders](http://ror.builders)
 
 ##Instructions
 
