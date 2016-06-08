@@ -40,45 +40,47 @@ class Popover extends React.Component {
 
   componentDidUpdate() {
     const popover = this.refs.popover;
-    // If popover is activated e.g. hover on parent
-    if (this.state.popoverActive) {
-      // Test (and store) each alignment to see if Popover will be off-screen
-      this.setAlignment(popover, 'top');
-      const offScreenTop = this.offScreenCheck(popover);
-      this.setAlignment(popover, 'right');
-      const offScreenRight = this.offScreenCheck(popover);
-      this.setAlignment(popover, 'bottom');
-      const offScreenBottom = this.offScreenCheck(popover);
-      this.setAlignment(popover, 'left');
-      const offScreenLeft = this.offScreenCheck(popover);
+    if (popover) {
+      // If popover is activated e.g. hover on parent
+      if (this.state.popoverActive) {
+        // Test (and store) each alignment to see if Popover will be off-screen
+        this.setAlignment(popover, 'top');
+        const offScreenTop = this.offScreenCheck(popover);
+        this.setAlignment(popover, 'right');
+        const offScreenRight = this.offScreenCheck(popover);
+        this.setAlignment(popover, 'bottom');
+        const offScreenBottom = this.offScreenCheck(popover);
+        this.setAlignment(popover, 'left');
+        const offScreenLeft = this.offScreenCheck(popover);
 
-      // Set intended alignment of Popover from props
-      this.setAlignment(popover, this.props.alignment);
+        // Set intended alignment of Popover from props
+        this.setAlignment(popover, this.props.alignment);
 
-      // If intended alignment is off-screen, try to find an alternative alignment
-      if (this.offScreenCheck(popover)) {
-        if (offScreenTop && offScreenRight && offScreenBottom && offScreenLeft) {
-          // Always offscreen, do nothing
-        } else {
-          // Try top
-          if (!offScreenTop) {
-            this.setAlignment(popover, 'top');
-          } else if (!offScreenRight) {
-            // Try right
-            this.setAlignment(popover, 'right');
-          } else if (!offScreenLeft) {
-            // Try left
-            this.setAlignment(popover, 'left');
-          } else if (!offScreenBottom) {
-            // Try bottom
-            this.setAlignment(popover, 'bottom');
+        // If intended alignment is off-screen, try to find an alternative alignment
+        if (this.offScreenCheck(popover)) {
+          if (offScreenTop && offScreenRight && offScreenBottom && offScreenLeft) {
+            // Always offscreen, do nothing
+          } else {
+            // Try top
+            if (!offScreenTop) {
+              this.setAlignment(popover, 'top');
+            } else if (!offScreenRight) {
+              // Try right
+              this.setAlignment(popover, 'right');
+            } else if (!offScreenLeft) {
+              // Try left
+              this.setAlignment(popover, 'left');
+            } else if (!offScreenBottom) {
+              // Try bottom
+              this.setAlignment(popover, 'bottom');
+            }
           }
         }
+        // Add .fade class at the end to ensure animation happens after display:block
+        popover.classList.add('c-popover--fade');
+      } else {
+        popover.classList.remove('c-popover--fade');
       }
-      // Add .fade class at the end to ensure animation happens after display:block
-      popover.classList.add('c-popover--fade');
-    } else {
-      popover.classList.remove('c-popover--fade');
     }
   }
 

@@ -4,6 +4,7 @@
   display: inline-block;
   margin-bottom: 0;
   font-size: $font-size-breadcrumb;
+  color: $color-text-primary;
   &--active {
     font-weight: bold;
   }
@@ -12,7 +13,7 @@
     padding: 0 0.3rem;
   }
   &__link {
-    color: $color-base-text;
+    color: $color-text-secondary;
     &:hover {
       text-decoration: none;
     }

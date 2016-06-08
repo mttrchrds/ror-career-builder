@@ -15,13 +15,12 @@ const ActionButtons = (props) => {
     saveLink += `&pA=${props.pathAMeter}`;
     saveLink += `&pB=${props.pathBMeter}`;
     saveLink += `&pC=${props.pathCMeter}`;
-    saveLink += `&m1=${props.morale1}`;
-    saveLink += `&m2=${props.morale2}`;
-    saveLink += `&m3=${props.morale3}`;
-    saveLink += `&m4=${props.morale4}`;
-    saveLink += `&sa=${props.selectedAbilities}`;
-    saveLink += `&ma=${props.masteryAbilities}`;
-    saveLink += `&t=${props.tactics}`;
+    saveLink += `&m1=${props.selectedMorale1}`;
+    saveLink += `&m2=${props.selectedMorale2}`;
+    saveLink += `&m3=${props.selectedMorale3}`;
+    saveLink += `&m4=${props.selectedMorale4}`;
+    saveLink += `&ma=${props.selectedMasteries}`;
+    saveLink += `&t=${props.selectedTactics}`;
     return saveLink;
   };
   const createBBCode = (link) => 
@@ -29,7 +28,7 @@ const ActionButtons = (props) => {
   const buildModalTitle = () => {
     const url = `/images/icons/${props.careerShort}.png`;
     return (
-      <h2 className="c-page-title c-page-title--dark o-row">
+      <h2 className="c-page-title c-page-title o-row">
         <img src={url} className="c-title__icon c-title__icon--small" />
         {props.career.name}
       </h2>
@@ -88,13 +87,12 @@ ActionButtons.propTypes = {
   pathAMeter: React.PropTypes.number,
   pathBMeter: React.PropTypes.number,
   pathCMeter: React.PropTypes.number,
-  morale1: React.PropTypes.number,
-  morale2: React.PropTypes.number,
-  morale3: React.PropTypes.number,
-  morale4: React.PropTypes.number,
-  selectedAbilities: React.PropTypes.array,
-  masteryAbilities: React.PropTypes.array,
-  tactics: React.PropTypes.array,
+  selectedMorale1: React.PropTypes.number,
+  selectedMorale2: React.PropTypes.number,
+  selectedMorale3: React.PropTypes.number,
+  selectedMorale4: React.PropTypes.number,
+  selectedMasteries: React.PropTypes.array,
+  selectedTactics: React.PropTypes.array,
   career: React.PropTypes.object,
   updateModalContent: React.PropTypes.func,
   updateOverlayVisibility: React.PropTypes.func,

@@ -4,6 +4,7 @@
   margin: 1px;
   width: $ability-width;
   height: $ability-height;
+  background-color: $color-base-4;
 }
 
 .c-ability__image {
@@ -15,9 +16,6 @@
 .c-ability--standard {
   border-radius: $border-radius-ability;
   border: 1px solid $color-ability-border;
-  .c-ability__image {
-    //border-radius: $border-radius-ability;
-  }
 }
 
 .c-ability--morale {
@@ -29,7 +27,7 @@
 }
 
 .c-ability--tactic {
-	background: url('/images/tactic-border.svg') no-repeat 0 0;
+	background: url('/images/tactic-background.svg') no-repeat 0 0;
 	background-size: cover;
 }
 
@@ -42,13 +40,13 @@
 }
 
 /* Core morales */
+.c-ability--morale:not(.c-ability--mastery) {
+  margin: 1px;
+}
 .c-ability--morale:not(.c-ability--mastery).c-ability--active {
-  background-color: $color-ability-active;
-  .c-ability__image {
-    opacity: $ability-opacity-inactive;
-  }
   &.is-selected {
-    background-color: transparent;
+    border: 2px solid $color-ability-border-selected;
+    margin: 0;
    .c-ability__image {
       opacity: $ability-opacity-active;
     }
@@ -56,14 +54,17 @@
 }
 
 /* Core tactics */
+.c-ability--tactic:not(.c-ability--mastery) {
+  padding: 0;
+  margin: 2px;
+}
 .c-ability--tactic:not(.c-ability--mastery).c-ability--active {
-  background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
-  background-size: cover;
-  .c-ability__image {
-    opacity: $ability-opacity-inactive;
-  }
+  background: transparent;
+  padding: 2px;
+  margin: 0;
   &.is-selected {
-    background: transparent;
+    background: url('/images/tactic-background-selected.svg') no-repeat 0 0;
+    background-size: cover;
    .c-ability__image {
       opacity: $ability-opacity-active;
     }

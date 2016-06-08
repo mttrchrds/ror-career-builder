@@ -7,9 +7,6 @@ const CoreAbilities = (props) => {
       key={props.abilities[key].id}
       details={props.abilities[key]}
       currentLevel={props.currentLevel}
-      setSelectedAbilities={props.setSelectedAbilities}
-      selectedAbilities={props.selectedAbilities}
-      userSelections={props.userSelections}
     />;
   return (
     <div className="u-margin__bottom">

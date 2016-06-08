@@ -7,7 +7,7 @@
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
-	border-right: 1px solid $color-base-border;
+	border-right: 1px solid $color-base-border-light;
 	padding-left: ($base-spacing / 2);
   &--1 {
     padding-left: 0;

@@ -1,8 +1,6 @@
 import React from 'react';
 import AbilityMastery from './AbilityMastery';
 
-const moraleRank = 4;
-
 const PathMeter = (props) =>
   <div>
     <div className="o-column u-margin__left--small">
@@ -12,12 +10,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl7]}
-          setUserSelectionMorale={props.setUserSelectionMorale}
-          userSelections={props.userSelections}
-          moraleRank={moraleRank}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -26,11 +25,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl6]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -39,12 +40,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl5]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          currentTacticLimit={props.currentTacticLimit}
-          setUserSelectionTactic={props.setUserSelectionTactic}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -53,11 +55,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl4]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -66,12 +70,12 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl3]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          currentTacticLimit={props.currentTacticLimit}
-          setUserSelectionTactic={props.setUserSelectionTactic}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -80,11 +84,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl2]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          setUserSelectionMasteryAbilities={props.setUserSelectionMasteryAbilities}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
       <div className="u-margin__bottom--tiny">
@@ -93,12 +99,13 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl1]}
-          setSelectedAbilities={props.setSelectedAbilities}
-          selectedAbilities={props.selectedAbilities}
-          currentTacticLimit={props.currentTacticLimit}
-          setUserSelectionTactic={props.setUserSelectionTactic}
-          userSelections={props.userSelections}
           masteryPath={props.masteryPath}
+          selectedMasteries={props.selectedMasteries}
+          updateSelectedMasteries={props.updateSelectedMasteries}
+          updateSelectedMorale={props.updateSelectedMorale}
+          updateSelectedTactics={props.updateSelectedTactics}
+          updateCoreTactics={props.updateCoreTactics}
+          updateCoreMorales={props.updateCoreMorales}
         />
       </div>
     </div>
@@ -110,14 +117,13 @@ PathMeter.propTypes = {
   pathOptionalAbilities: React.PropTypes.object,
   masteryPoints: React.PropTypes.number,
   updateMasteryPoints: React.PropTypes.func,
-  setSelectedAbilities: React.PropTypes.func,
-  selectedAbilities: React.PropTypes.array,
-  currentTacticLimit: React.PropTypes.number,
-  setUserSelectionTactic: React.PropTypes.func,
-  userSelections: React.PropTypes.object,
   masteryPath: React.PropTypes.string,
-  setUserSelectionMasteryAbilities: React.PropTypes.func,
-  setUserSelectionMorale: React.PropTypes.func,
+  selectedMasteries: React.PropTypes.array,
+  updateSelectedMasteries: React.PropTypes.func,
+  updateSelectedTactics: React.PropTypes.func,
+  updateSelectedMorale: React.PropTypes.func,
+  updateCoreTactics: React.PropTypes.func,
+  updateCoreMorales: React.PropTypes.func,
 };
 
 export default PathMeter;

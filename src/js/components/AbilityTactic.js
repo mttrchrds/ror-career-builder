@@ -40,7 +40,7 @@ class AbilityTactic extends React.Component {
     this.setInitialStatus(
       this.props.currentLevel,
       this.props.details.minrank,
-      this.props.selectedAbilities);
+      this.props.selectedTactics);
   }
 
   // About to update because parent changed
@@ -48,12 +48,12 @@ class AbilityTactic extends React.Component {
     this.setInitialStatus(
       nextProps.currentLevel,
       nextProps.details.minrank,
-      nextProps.selectedAbilities);
+      nextProps.selectedTactics);
   }
 
-  setInitialStatus(currentLevel, minrank, selectedAbilities) {
+  setInitialStatus(currentLevel, minrank, selectedTactics) {
     // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
-    if (selectedAbilities.indexOf(this.props.details.id) !== -1) {
+    if (selectedTactics.indexOf(this.props.details.id) !== -1) {
       this.setState({
         abilitySelected: true,
       });
@@ -75,21 +75,15 @@ class AbilityTactic extends React.Component {
       // Active ability selected
       if (this.state.abilityStatus) {
         // If tactics array length is less than tactic limit i.e. there is room for another selection
-        if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
+        if (this.props.selectedTactics.length < this.props.currentTacticLimit) {
           // Add into tactics array
-          this.props.setUserSelectionTactic(this.props.details.id);
-          // Add to selectedAbilities
-          this.props.setSelectedAbilities(this.props.details.id);
+          this.props.updateSelectedTactics(this.props.details.id);
         }
       }
     // Unselect ability
     } else {
-      // Remove this abilityId from selectedAbilities
-      this.props.setSelectedAbilities(this.props.details.id);
-      // If this tactic is in tactic array, remove it
-      if (this.props.userSelections.tactics.indexOf(this.props.details.id) !== -1) {
-        this.props.setUserSelectionTactic(this.props.details.id);
-      }
+      // Remove this abilityId from selectedTactics
+      this.props.updateSelectedTactics(this.props.details.id);
     }
   }
 
@@ -106,7 +100,7 @@ class AbilityTactic extends React.Component {
   }
 
   abilityOperational() {
-    if ((this.props.userSelections.tactics.length < this.props.currentTacticLimit) && this.state.abilityStatus) {
+    if ((this.props.selectedTactics.length < this.props.currentTacticLimit) && this.state.abilityStatus) {
       return true;
     }
     return false;
@@ -182,12 +176,10 @@ AbilityTactic.propTypes = {
   details: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
   currentLevel: React.PropTypes.number,
-  selectedAbilities: React.PropTypes.array,
-  setSelectedAbilities: React.PropTypes.func,
-  userSelections: React.PropTypes.object,
   moraleRank: React.PropTypes.number,
-  setUserSelectionTactic: React.PropTypes.func,
   currentTacticLimit: React.PropTypes.number,
+  selectedTactics: React.PropTypes.array,
+  updateSelectedTactics: React.PropTypes.func,
 };
 
 export default AbilityTactic;

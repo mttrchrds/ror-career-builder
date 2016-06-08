@@ -6,25 +6,26 @@ $bar-height-small: 0.7rem;
 
 .c-progress {
   position: relative;
-  border-radius: $border-radius-base;
-  background-color: $color-meter-background;
-  &--small {
-    width: 40%;
-  }
+  background-color: $color-inactive;
   &__bar {
     position: relative;
     height: $bar-height;
     width: 1%;
     transition: width .3s ease;
-    border-radius: $border-radius-base;
   }
   &__bar--thin {
     height: $bar-height-small;
   }
-  &__bar--xp {
-    @include raised-effect($color-xp-light, $color-xp);
+  &--xp &__bar {
+    background-color: $color-xp;
   }
-  &__bar--renown {
-    @include raised-effect($color-renown-light, $color-renown);
+  &--renown &__bar {
+    background-color: $color-renown;
+  }
+  &--xp {
+    background-color: $color-xp-dark;
+  }
+  &--renown {
+    background-color: $color-renown-dark;
   }
 }

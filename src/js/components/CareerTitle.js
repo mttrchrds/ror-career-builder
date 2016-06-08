@@ -5,7 +5,7 @@ const CareerTitle = (props) => {
   const url = `/images/icons/${props.careerShort}.png`;
   return (
       <div className="u-title-height u-margin__bottom--large">
-        <img src={url} className="c-title__icon"></img>
+        <img src={url} className="c-title__icon c-title__icon--bordered"></img>
         <h1 className="c-title">
           {props.career.name}
         </h1>

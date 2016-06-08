@@ -15,6 +15,7 @@ html {
 body {
   overflow-x: hidden;
   height: 100%;
+  background-color: $color-base-1;
 }
 
 #app {
@@ -34,12 +35,12 @@ h2 {
 }
 
 h3 {
-  color: $color-text-tertiary;
+  color: $color-text-secondary;
   font-size: $font-size-h3;
 }
 
 h4 {
-  color: $color-text-tertiary;
+  color: $color-text-secondary;
   font-size: $font-size-h4;
   font-weight: normal;
 }

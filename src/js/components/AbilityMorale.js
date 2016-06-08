@@ -40,7 +40,8 @@ class AbilityMorale extends React.Component {
     this.setInitialStatus(
       this.props.currentLevel,
       this.props.details.minrank,
-      this.props.selectedAbilities);
+      this.props[`selectedMorale${this.props.moraleRank}`]
+    );
   }
 
   // About to update because parent changed
@@ -48,12 +49,13 @@ class AbilityMorale extends React.Component {
     this.setInitialStatus(
       nextProps.currentLevel,
       nextProps.details.minrank,
-      nextProps.selectedAbilities);
+      nextProps[`selectedMorale${nextProps.moraleRank}`]
+    );
   }
 
-  setInitialStatus(currentLevel, minrank, selectedAbilities) {
-    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
-    if (selectedAbilities.indexOf(this.props.details.id) !== -1) {
+  setInitialStatus(currentLevel, minrank, selectedMorale) {
+    // Determine if ability is selected
+    if (Number(selectedMorale) === Number(this.props.details.id)) {
       this.setState({
         abilitySelected: true,
       });
@@ -74,28 +76,12 @@ class AbilityMorale extends React.Component {
     if (this.state.abilitySelected === false) {
       // Active ability selected
       if (this.state.abilityStatus) {
-        // Get current abilityId of morale of this rank e.g. this.state.userSelections.morale4
-        const userSelectionPropertyName = `morale${this.props.moraleRank}`;
-        const currentMoraleRankId = this.props.userSelections[userSelectionPropertyName];
-        // Remove current selected morale (for this rank) from selectedAbilities
-        // Don't bother if it's not set i.e. zero
-        // If this is a Mastery morale rank 4, we need to increment Mastery total too
-        if (currentMoraleRankId !== 0) {
-          this.props.setSelectedAbilities(currentMoraleRankId);
-          if (this.props.moraleRank === 4) {
-            this.props.incrementMasteryPoints();
-          }
-        }
-        // Add this ability to selectedAbilities
-        this.props.setSelectedAbilities(this.props.details.id);
-        // Then add this ability as the selected morale for this rank
-        this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
+        this.props.updateSelectedMorale(this.props.moraleRank, this.props.details.id);
       }
     // Unselect ability
     } else {
-      // Remove this abilityId from selectedAbilities
-      this.props.setSelectedAbilities(this.props.details.id);
-      this.props.setUserSelectionMorale(this.props.moraleRank, 0);
+      // Remove this abilityId from selectedMoraleX
+      this.props.updateSelectedMorale(this.props.moraleRank, this.props.details.id);
     }
   }
 
@@ -189,12 +175,12 @@ AbilityMorale.propTypes = {
   details: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
   currentLevel: React.PropTypes.number,
-  selectedAbilities: React.PropTypes.array,
-  setSelectedAbilities: React.PropTypes.func,
-  userSelections: React.PropTypes.object,
-  setUserSelectionMorale: React.PropTypes.func,
   moraleRank: React.PropTypes.number,
-  incrementMasteryPoints: React.PropTypes.func,
+  selectedMorale1: React.PropTypes.number,
+  selectedMorale2: React.PropTypes.number,
+  selectedMorale3: React.PropTypes.number,
+  selectedMorale4: React.PropTypes.number,
+  updateSelectedMorale: React.PropTypes.func,
 };
 
 export default AbilityMorale;

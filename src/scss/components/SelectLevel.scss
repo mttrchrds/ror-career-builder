@@ -5,6 +5,7 @@
   height: 100%;
   align-items: center;
   &__label {
+    color: $color-text-secondary;
     font-size: 1.6rem;
     margin-right: $base-spacing;
     @media screen and (max-width: $breakpoint-mobile) {

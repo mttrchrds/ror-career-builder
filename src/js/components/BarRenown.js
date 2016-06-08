@@ -33,8 +33,8 @@ const BarRenown = (props) => {
   };
   return (
     <div className="u-margin__bottom--large">
-      <div className="c-progress c-progress--small">
-        <div className="c-progress__bar c-progress__bar--renown c-progress__bar--thin" style={calculateBarWidth()}></div>
+      <div className="c-progress c-progress--renown">
+        <div className="c-progress__bar c-progress__bar c-progress__bar--thin" style={calculateBarWidth()}></div>
       </div>
     </div>
   );

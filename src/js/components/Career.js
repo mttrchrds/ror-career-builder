@@ -27,11 +27,7 @@ class Career extends React.Component {
     this.setCurrentTacticLimit = this.setCurrentTacticLimit.bind(this);
     this.resetSelections = this.resetSelections.bind(this);
     this.updateRenown = this.updateRenown.bind(this);
-    this.setSelectedAbilities = this.setSelectedAbilities.bind(this);
-    this.setUserSelectionTactic = this.setUserSelectionTactic.bind(this);
-    this.setUserSelectionMorale = this.setUserSelectionMorale.bind(this);
     this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
-    this.setUserSelectionMasteryAbilities = this.setUserSelectionMasteryAbilities.bind(this);
     this.resetCareer = this.resetCareer.bind(this);
     this.updateModalVisibility = this.updateModalVisibility.bind(this);
     this.updateModalContent = this.updateModalContent.bind(this);
@@ -45,6 +41,11 @@ class Career extends React.Component {
     this.gaCareerSaved = this.gaCareerSaved.bind(this);
     this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.gaChangeCareer = this.gaChangeCareer.bind(this);
+    this.updateSelectedTactics = this.updateSelectedTactics.bind(this);
+    this.updateSelectedMasteries = this.updateSelectedMasteries.bind(this);
+    this.updateSelectedMorale = this.updateSelectedMorale.bind(this);
+    this.updateCoreTactics = this.updateCoreTactics.bind(this);
+    this.updateCoreMorales = this.updateCoreMorales.bind(this);
 
     this.state = {
       careers: {},
@@ -65,15 +66,6 @@ class Career extends React.Component {
       pathAMeter: 0,
       pathBMeter: 0,
       pathCMeter: 0,
-      userSelections: {
-        morale1: 0,
-        morale2: 0,
-        morale3: 0,
-        morale4: 0,
-        tactics: [],
-        masteryAbilities: [],
-      },
-      selectedAbilities: [],
       currentTacticLimit: 0,
       modal: {
         visible: false,
@@ -86,6 +78,12 @@ class Career extends React.Component {
       overlay: {
         visible: false,
       },
+      selectedMasteries: [],
+      selectedTactics: [],
+      selectedMorale1: 0,
+      selectedMorale2: 0,
+      selectedMorale3: 0,
+      selectedMorale4: 0,
     };
   }
 
@@ -125,19 +123,67 @@ class Career extends React.Component {
             pathCCoreOverflow: imported.pathCCoreOverflow,
             pathCOptionalAbilities: imported.pathCOpt,
           });
+          // Check if this is a saved Career URL and update State accordingly
+          if (this.props.params.careerSaved === 's') {
+            const { query } = this.props.location;
+            this.setSavedCareer(query);
+          }
         });
       } else {
         this.setState({
           careers,
         });
       }
-      // Check if this is a saved Career URL and update State accordingly
-      if (this.props.params.careerSaved === 's') {
-        const { query } = this.props.location;
-        this.setSavedCareer(query);
-      }
     }, (error) => {
       console.warn(error);
+    });
+  }
+
+  // Amends this.state.selectedTactics. Optional boolean to remove only
+  updateSelectedTactics(abilityId, addAbility = true) {
+    const abilityIndex = this.state.selectedTactics.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      if (addAbility) {
+        // If ability isn't in array then add it
+        this.state.selectedTactics.push(abilityId);
+      }
+    } else {
+      // remove it from array
+      this.state.selectedTactics.splice(abilityIndex, 1);
+    }
+    this.setState({
+      selectedTactics: this.state.selectedTactics,
+    });
+  }
+
+  updateSelectedMasteries(abilityId) {
+    const abilityIndex = this.state.selectedMasteries.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.selectedMasteries.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.selectedMasteries.splice(abilityIndex, 1);
+    }
+    this.setState({
+      selectedMasteries: this.state.selectedMasteries,
+    });
+  }
+
+  // Amends this.state.selectedMorale. Optional boolean to remove only
+  updateSelectedMorale(rank, tacticId, addAbility = true) {
+    const moraleId = this.state[`selectedMorale${rank}`];
+    if (Number(moraleId) === Number(tacticId)) {
+      // If ability isn't is current morale then reset it
+      this.state[`selectedMorale${rank}`] = 0;
+    } else {
+      // add it as current morale
+      if (addAbility) {
+        this.state[`selectedMorale${rank}`] = tacticId;
+      }
+    }
+    this.setState({
+      [`selectedMorale${rank}`]: this.state[`selectedMorale${rank}`],
     });
   }
 
@@ -177,36 +223,70 @@ class Career extends React.Component {
         pathCMeter: Number(query.pC),
       });
     }
-    if (query.sa) {
-      query.sa.split(',').forEach((abilityId) => {
-        this.state.selectedAbilities.push(Number(abilityId));
-      });
-    }
     if (query.ma) {
       query.ma.split(',').forEach((abilityId) => {
-        this.state.userSelections.masteryAbilities.push(Number(abilityId));
+        this.state.selectedMasteries.push(Number(abilityId));
+        // If mastery tactic or morale activated, it must be added to coreTactics/coreMorales
+        if (this.state.abilities[abilityId].abilityType === 'tactic') {
+          this.updateCoreTactics(Number(abilityId));
+        }
+        if (this.state.abilities[abilityId].abilityType === 'morale') {
+          this.updateCoreMorales(Number(abilityId));
+        }
       });
     }
     if (query.m1) {
-      this.state.userSelections.morale1 = Number(query.m1);
+      this.state.selectedMorale1 = Number(query.m1);
     }
     if (query.m2) {
-      this.state.userSelections.morale2 = Number(query.m2);
+      this.state.selectedMorale2 = Number(query.m2);
     }
     if (query.m3) {
-      this.state.userSelections.morale3 = Number(query.m3);
+      this.state.selectedMorale3 = Number(query.m3);
     }
     if (query.m4) {
-      this.state.userSelections.morale4 = Number(query.m4);
+      this.state.selectedMorale4 = Number(query.m4);
     }
     if (query.t) {
       query.t.split(',').forEach((abilityId) => {
-        this.state.userSelections.tactics.push(Number(abilityId));
+        this.state.selectedTactics.push(Number(abilityId));
       });
     }
     this.setState({
-      userSelections: this.state.userSelections,
-      selectedAbilities: this.state.selectedAbilities,
+      selectedMasteries: this.state.selectedMasteries,
+      selectedTactics: this.state.selectedTactics,
+      selectedMorale1: this.state.selectedMorale1,
+      selectedMorale2: this.state.selectedMorale2,
+      selectedMorale3: this.state.selectedMorale3,
+      selectedMorale4: this.state.selectedMorale4,
+    });
+  }
+
+  updateCoreTactics(abilityId) {
+    const abilityIndex = this.state.coreTactics.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.coreTactics.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.coreTactics.splice(abilityIndex, 1);
+    }
+    this.setState({
+      coreTactics: this.state.coreTactics,
+    });
+  }
+
+  updateCoreMorales(abilityId) {
+    const abilityIndex = this.state.coreMorales.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.coreMorales.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.coreMorales.splice(abilityIndex, 1);
+    }
+    this.setState({
+      coreMorales: this.state.coreMorales,
     });
   }
 
@@ -224,60 +304,6 @@ class Career extends React.Component {
     }
     this.setState({
       currentTacticLimit: currentLimit,
-    });
-  }
-
-  // Add/remove ability to/from selectedAbilities in state
-  setSelectedAbilities(abilityId) {
-    const abilityIndex = this.state.selectedAbilities.indexOf(abilityId);
-    if (abilityIndex === -1) {
-      // If ability isn't in array then add it
-      this.state.selectedAbilities.push(abilityId);
-    } else {
-      // remove it from array
-      this.state.selectedAbilities.splice(abilityIndex, 1);
-    }
-    this.setState({
-      selectedAbilities: this.state.selectedAbilities,
-    });
-  }
-
-  // Update Mastery ability selection
-  setUserSelectionMasteryAbilities(abilityId) {
-    const abilityIndex = this.state.userSelections.masteryAbilities.indexOf(abilityId);
-    if (abilityIndex === -1) {
-      // If ability isn't in array then add it
-      this.state.userSelections.masteryAbilities.push(abilityId);
-    } else {
-      // remove it from array
-      this.state.userSelections.masteryAbilities.splice(abilityIndex, 1);
-    }
-    this.setState({
-      userSelections: this.state.userSelections,
-    });
-  }
-
-  // Update tactic selection
-  setUserSelectionTactic(abilityId) {
-    const abilityIndex = this.state.userSelections.tactics.indexOf(abilityId);
-    if (abilityIndex === -1) {
-      // If ability isn't in array then add it
-      this.state.userSelections.tactics.push(abilityId);
-    } else {
-      // remove it from array
-      this.state.userSelections.tactics.splice(abilityIndex, 1);
-    }
-    this.setState({
-      userSelections: this.state.userSelections,
-    });
-  }
-
-  // Update morale selection
-  setUserSelectionMorale(rank, abilityId) {
-    const moraleName = `morale${rank}`;
-    this.state.userSelections[moraleName] = abilityId;
-    this.setState({
-      userSelections: this.state.userSelections,
     });
   }
 
@@ -328,16 +354,19 @@ class Career extends React.Component {
 
   // Reset all current selections
   resetSelections() {
-    this.state.userSelections.morale1 = 0;
-    this.state.userSelections.morale2 = 0;
-    this.state.userSelections.morale3 = 0;
-    this.state.userSelections.morale4 = 0;
-    this.state.userSelections.tactics = [];
-    this.state.userSelections.masteryAbilities = [];
-    this.state.selectedAbilities = [];
+    this.state.selectedMorale1 = 0;
+    this.state.selectedMorale2 = 0;
+    this.state.selectedMorale3 = 0;
+    this.state.selectedMorale4 = 0;
+    this.state.selectedMasteries = [];
+    this.state.selectedTactics = [];
     this.setState({
-      userSelections: this.state.userSelections,
-      selectedAbilities: this.state.selectedAbilities,
+      selectedMorale1: this.state.selectedMorale1,
+      selectedMorale2: this.state.selectedMorale2,
+      selectedMorale3: this.state.selectedMorale3,
+      selectedMorale4: this.state.selectedMorale4,
+      selectedMasteries: this.state.selectedMasteries,
+      selectedTactics: this.state.selectedTactics,
     });
   }
 
@@ -350,16 +379,13 @@ class Career extends React.Component {
       pathAMeter: 0,
       pathBMeter: 0,
       pathCMeter: 0,
-      userSelections: {
-        morale1: 0,
-        morale2: 0,
-        morale3: 0,
-        morale4: 0,
-        tactics: [],
-        masteryAbilities: [],
-      },
-      selectedAbilities: [],
       currentTacticLimit: 0,
+      selectedTactics: [],
+      selectedMasteries: [],
+      selectedMorale1: 0,
+      selectedMorale2: 0,
+      selectedMorale3: 0,
+      selectedMorale4: 0,
     });
   }
 
@@ -452,155 +478,146 @@ class Career extends React.Component {
       return (
         <div className="u-height">
           <div className={containerClass}>
-            <div className="c-box c-box--inverse">
-              
-              <Breadcrumb 
-                career={this.state.career}
-                updateSidebarVisibility={this.updateSidebarVisibility}
-                updateOverlayVisibility={this.updateOverlayVisibility}
-                gaChangeCareer={this.gaChangeCareer}
-              />
 
-              <BarXp currentLevel={this.state.currentLevel} />
+            <Breadcrumb 
+              career={this.state.career}
+              updateSidebarVisibility={this.updateSidebarVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+              gaChangeCareer={this.gaChangeCareer}
+            />
 
-              <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
+            <BarXp currentLevel={this.state.currentLevel} />
 
-              <div className="pure-g">
-                <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-5-12 pure-u-lg-8-24">
+            <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
 
-                  <CareerTitle careerShort={this.state.careerShort}
-                    career={this.state.career}
-                  />
+            <div className="pure-g">
+              <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-10-24">
 
-                </div>
-                <div className="pure-u-1-3 pure-u-mobile-1-2 pure-u-sm-1-6 pure-u-md-1-6 pure-u-lg-3-24">
+                <CareerTitle careerShort={this.state.careerShort}
+                  career={this.state.career}
+                />
 
-                  <SelectLevel
-                    updateLevel={this.updateLevel}
-                    currentLevel={this.state.currentLevel}
-                    setMasteryPoints={this.setMasteryPoints}
-                    currentRenown={this.state.currentRenown}
-                    setCurrentTacticLimit={this.setCurrentTacticLimit}
-                    resetSelections={this.resetSelections}
-                  />
-
-                </div>
-                <div className="pure-u-2-3 pure-u-mobile-1-2 pure-u-sm-1-4 pure-u-md-5-12 pure-u-lg-13-24">
-
-                  <SelectRenown
-                    currentLevel={this.state.currentLevel}
-                    currentRenown={this.state.currentRenown}
-                    updateRenown={this.updateRenown}
-                    setMasteryPoints={this.setMasteryPoints}
-                    resetSelections={this.resetSelections}
-                  />
-
-                </div>
               </div>
+              <div className="pure-u-1-3 pure-u-mobile-1-2 pure-u-sm-1-6 pure-u-md-1-6">
 
-              <div className="pure-g">
-                <div className="pure-u-1 pure-u-md-10-24">
+                <SelectLevel
+                  updateLevel={this.updateLevel}
+                  currentLevel={this.state.currentLevel}
+                  setMasteryPoints={this.setMasteryPoints}
+                  currentRenown={this.state.currentRenown}
+                  setCurrentTacticLimit={this.setCurrentTacticLimit}
+                  resetSelections={this.resetSelections}
+                />
 
-                  <CoreAbilities 
-                    currentLevel={this.state.currentLevel} 
-                    coreAbilities={this.state.coreAbilities}
-                    abilities={this.state.abilities}
-                    setSelectedAbilities={this.setSelectedAbilities}
-                    selectedAbilities={this.state.selectedAbilities}
-                  />
-
-                  <CoreMorales 
-                    currentLevel={this.state.currentLevel}
-                    abilities={this.state.abilities}
-                    morales={this.state.coreMorales}
-                    setUserSelectionMorale={this.setUserSelectionMorale}
-                    userSelections={this.state.userSelections}
-                    setSelectedAbilities={this.setSelectedAbilities}
-                    selectedAbilities={this.state.selectedAbilities}
-                    incrementMasteryPoints={this.incrementMasteryPoints}
-                  />
-
-                  <CoreTactics
-                    currentLevel={this.state.currentLevel}
-                    abilities={this.state.abilities}
-                    tactics={this.state.coreTactics}
-                    setSelectedAbilities={this.setSelectedAbilities}
-                    selectedAbilities={this.state.selectedAbilities}
-                    currentTacticLimit={this.state.currentTacticLimit}
-                    setUserSelectionTactic={this.setUserSelectionTactic}
-                    userSelections={this.state.userSelections}
-                  />
-
-                </div>
-                <div className="pure-u-1 pure-u-md-14-24">
-
-                  <Mastery
-                    career={this.state.career}
-                    currentLevel={this.state.currentLevel}
-                    pathACoreAbilities={this.state.pathACoreAbilities}
-                    pathACoreOverflow={this.state.pathACoreOverflow}
-                    pathAOptionalAbilities={this.state.pathAOptionalAbilities}
-                    pathBCoreAbilities={this.state.pathBCoreAbilities}
-                    pathBCoreOverflow={this.state.pathBCoreOverflow}
-                    pathBOptionalAbilities={this.state.pathBOptionalAbilities}
-                    pathCCoreAbilities={this.state.pathCCoreAbilities}
-                    pathCCoreOverflow={this.state.pathCCoreOverflow}
-                    pathCOptionalAbilities={this.state.pathCOptionalAbilities}
-                    masteryPoints={this.state.masteryPoints}
-                    pathAMeter={this.state.pathAMeter}
-                    pathBMeter={this.state.pathBMeter}
-                    pathCMeter={this.state.pathCMeter}
-                    updateMasteryPoints={this.updateMasteryPoints}
-                    setUserSelectionMorale={this.setUserSelectionMorale}
-                    userSelections={this.state.userSelections}
-                    setSelectedAbilities={this.setSelectedAbilities}
-                    selectedAbilities={this.state.selectedAbilities}
-                    currentTacticLimit={this.state.currentTacticLimit}
-                    setUserSelectionTactic={this.setUserSelectionTactic}
-                    setUserSelectionMasteryAbilities={this.setUserSelectionMasteryAbilities}
-                    incrementMasteryPoints={this.incrementMasteryPoints}
-                    decrementMasteryPoints={this.decrementMasteryPoints}
-                    incrementPathMeter={this.incrementPathMeter}
-                    decrementPathMeter={this.decrementPathMeter}
-                    abilities={this.state.abilities}
-                  />
-
-                  <ActionButtons
-                    resetCareer={this.resetCareer}
-                    careerShort={this.state.careerShort}
-                    currentLevel={this.state.currentLevel}
-                    currentRenown={this.state.currentRenown}
-                    currentTacticLimit={this.state.currentTacticLimit}
-                    masteryPoints={this.state.masteryPoints}
-                    pathAMeter={this.state.pathAMeter}
-                    pathBMeter={this.state.pathBMeter}
-                    pathCMeter={this.state.pathCMeter}
-                    morale1={this.state.userSelections.morale1}
-                    morale2={this.state.userSelections.morale2}
-                    morale3={this.state.userSelections.morale3}
-                    morale4={this.state.userSelections.morale4}
-                    selectedAbilities={this.state.selectedAbilities}
-                    masteryAbilities={this.state.userSelections.masteryAbilities}
-                    tactics={this.state.userSelections.tactics}
-                    updateModalVisibility={this.updateModalVisibility}
-                    updateModalContent={this.updateModalContent}
-                    career={this.state.career}
-                    updateSidebarVisibility={this.updateSidebarVisibility}
-                    updateOverlayVisibility={this.updateOverlayVisibility}
-                    gaCareerSaved={this.gaCareerSaved}
-                    gaChangeCareer={this.gaChangeCareer}
-                  />
-
-                </div>
               </div>
+              <div className="pure-u-2-3 pure-u-mobile-1-2 pure-u-sm-1-4 pure-u-md-10-24">
 
-              <Modal
-                modal={this.state.modal}
-                updateModalVisibility={this.updateModalVisibility}
-                updateOverlayVisibility={this.updateOverlayVisibility}
-              />
+                <SelectRenown
+                  currentLevel={this.state.currentLevel}
+                  currentRenown={this.state.currentRenown}
+                  updateRenown={this.updateRenown}
+                  setMasteryPoints={this.setMasteryPoints}
+                  resetSelections={this.resetSelections}
+                />
 
+              </div>
             </div>
+
+            <div className="pure-g">
+              <div className="pure-u-1 pure-u-md-10-24">
+
+                <CoreAbilities 
+                  currentLevel={this.state.currentLevel} 
+                  coreAbilities={this.state.coreAbilities}
+                  abilities={this.state.abilities}
+                />
+
+                <CoreMorales 
+                  currentLevel={this.state.currentLevel}
+                  abilities={this.state.abilities}
+                  morales={this.state.coreMorales}
+                  selectedMorale1={this.state.selectedMorale1}
+                  selectedMorale2={this.state.selectedMorale2}
+                  selectedMorale3={this.state.selectedMorale3}
+                  selectedMorale4={this.state.selectedMorale4}
+                  updateSelectedMorale={this.updateSelectedMorale}
+                />
+
+                <CoreTactics
+                  currentLevel={this.state.currentLevel}
+                  abilities={this.state.abilities}
+                  tactics={this.state.coreTactics}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  selectedTactics={this.state.selectedTactics}
+                  updateSelectedTactics={this.updateSelectedTactics}
+                />
+
+              </div>
+              <div className="pure-u-1 pure-u-md-14-24">
+
+                <Mastery
+                  career={this.state.career}
+                  currentLevel={this.state.currentLevel}
+                  pathACoreAbilities={this.state.pathACoreAbilities}
+                  pathACoreOverflow={this.state.pathACoreOverflow}
+                  pathAOptionalAbilities={this.state.pathAOptionalAbilities}
+                  pathBCoreAbilities={this.state.pathBCoreAbilities}
+                  pathBCoreOverflow={this.state.pathBCoreOverflow}
+                  pathBOptionalAbilities={this.state.pathBOptionalAbilities}
+                  pathCCoreAbilities={this.state.pathCCoreAbilities}
+                  pathCCoreOverflow={this.state.pathCCoreOverflow}
+                  pathCOptionalAbilities={this.state.pathCOptionalAbilities}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  updateMasteryPoints={this.updateMasteryPoints}
+                  incrementMasteryPoints={this.incrementMasteryPoints}
+                  decrementMasteryPoints={this.decrementMasteryPoints}
+                  incrementPathMeter={this.incrementPathMeter}
+                  decrementPathMeter={this.decrementPathMeter}
+                  abilities={this.state.abilities}
+                  selectedMasteries={this.state.selectedMasteries}
+                  updateSelectedMasteries={this.updateSelectedMasteries}
+                  updateSelectedTactics={this.updateSelectedTactics}
+                  updateSelectedMorale={this.updateSelectedMorale}
+                  updateCoreTactics={this.updateCoreTactics}
+                  updateCoreMorales={this.updateCoreMorales}
+                />
+
+                <ActionButtons
+                  resetCareer={this.resetCareer}
+                  careerShort={this.state.careerShort}
+                  currentLevel={this.state.currentLevel}
+                  currentRenown={this.state.currentRenown}
+                  currentTacticLimit={this.state.currentTacticLimit}
+                  masteryPoints={this.state.masteryPoints}
+                  pathAMeter={this.state.pathAMeter}
+                  pathBMeter={this.state.pathBMeter}
+                  pathCMeter={this.state.pathCMeter}
+                  selectedMorale1={this.state.selectedMorale1}
+                  selectedMorale2={this.state.selectedMorale2}
+                  selectedMorale3={this.state.selectedMorale3}
+                  selectedMorale4={this.state.selectedMorale4}
+                  selectedMasteries={this.state.selectedMasteries}
+                  selectedTactics={this.state.selectedTactics}
+                  updateModalVisibility={this.updateModalVisibility}
+                  updateModalContent={this.updateModalContent}
+                  career={this.state.career}
+                  updateSidebarVisibility={this.updateSidebarVisibility}
+                  updateOverlayVisibility={this.updateOverlayVisibility}
+                  gaCareerSaved={this.gaCareerSaved}
+                  gaChangeCareer={this.gaChangeCareer}
+                />
+
+              </div>
+            </div>
+
+            <Modal
+              modal={this.state.modal}
+              updateModalVisibility={this.updateModalVisibility}
+              updateOverlayVisibility={this.updateOverlayVisibility}
+            />
           </div>
 
           <Overlay
@@ -649,27 +666,27 @@ class Career extends React.Component {
   // Google Analytics events after saving career
   gaCareerSaved() {
     h.gaEvent('Career saved', this.state.career.name, this.state.career.class, this.state.currentLevel);
-    if (Number(this.state.userSelections.morale1) > 0) {
-      h.gaEvent(this.state.career.name, 'Morale 1', this.state.abilities[this.state.userSelections.morale1].name, this.state.userSelections.morale1);  
+    if (Number(this.state.selectedMorale1) > 0) {
+      h.gaEvent(this.state.career.name, 'Selected Morale 1', this.state.abilities[this.state.selectedMorale1].name, this.state.selectedMorale1);  
     }
-    if (Number(this.state.userSelections.morale2) > 0) {
-      h.gaEvent(this.state.career.name, 'Morale 2', this.state.abilities[this.state.userSelections.morale2].name, this.state.userSelections.morale2);  
+    if (Number(this.state.selectedMorale2) > 0) {
+      h.gaEvent(this.state.career.name, 'Selected Morale 2', this.state.abilities[this.state.selectedMorale2].name, this.state.selectedMorale2);  
     }
-    if (Number(this.state.userSelections.morale3) > 0) {
-      h.gaEvent(this.state.career.name, 'Morale 3', this.state.abilities[this.state.userSelections.morale3].name, this.state.userSelections.morale3);  
+    if (Number(this.state.selectedMorale3) > 0) {
+      h.gaEvent(this.state.career.name, 'Selected Morale 3', this.state.abilities[this.state.selectedMorale3].name, this.state.selectedMorale3);  
     }
-    if (Number(this.state.userSelections.morale4) > 0) {
-      h.gaEvent(this.state.career.name, 'Morale 4', this.state.abilities[this.state.userSelections.morale4].name, this.state.userSelections.morale4);
+    if (Number(this.state.selectedMorale4) > 0) {
+      h.gaEvent(this.state.career.name, 'Selected Morale 4', this.state.abilities[this.state.selectedMorale4].name, this.state.selectedMorale4);
     }
-    if (Number(this.state.userSelections.tactics.length) > 0) {
-      this.state.userSelections.tactics.map(
-        (key) => h.gaEvent(this.state.career.name, 'Tactic', this.state.abilities[key].name, key)
-      );
+    if (Number(this.state.selectedTactics.length) > 0) {
+      for (const abilityId of this.state.selectedTactics) {
+        h.gaEvent(this.state.career.name, 'Selected Tactic', this.state.abilities[abilityId].name, abilityId);
+      }
     }
-    if (Number(this.state.userSelections.masteryAbilities.length) > 0) {
-      this.state.userSelections.masteryAbilities.map(
-        (key) => h.gaEvent(this.state.career.name, 'Mastery ability', this.state.abilities[key].name, key)
-      );
+    if (Number(this.state.selectedMasteries.length) > 0) {
+      for (const abilityId of this.state.selectedMasteries) {
+        h.gaEvent(this.state.career.name, 'Mastery ability', this.state.abilities[abilityId].name, abilityId);
+      }
     }
   }
 }

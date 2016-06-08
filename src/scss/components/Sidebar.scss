@@ -3,10 +3,11 @@
 $width-sidebar: 250px;
 $width-sidebar-border: 2px;
 $font-size-sidebar: 1.2rem;
-$color-sidebar-text: #dedede;
-$color-sidebar-border: #505050;
-$color-sidebar-background: #1c1c1c;
-$color-sidebar-Background-hover: #3f3f3f;
+$color-sidebar-text: $color-base-0;
+$color-sidebar-border: $color-base-3;
+$color-sidebar-background: $color-tertiary-light;
+$color-sidebar-background-hover: $color-tertiary;
+$color-sidebar-hover: $color-base-1;
 
 .c-sidebar {
 
@@ -35,7 +36,8 @@ $color-sidebar-Background-hover: #3f3f3f;
     font-size: $font-size-sidebar;
     border-bottom: 1px solid $color-sidebar-border;
     &:hover {
-      background: $color-sidebar-Background-hover;
+      background: $color-sidebar-background-hover;
+      color: $color-sidebar-hover;
     }
   }
 

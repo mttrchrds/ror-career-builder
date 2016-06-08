@@ -4,19 +4,13 @@
   &--compact {
     margin-bottom: $base-spacing; 
   }
-  &--dark {
-    color: $color-base-text;
-  }
 }
 
 .c-box {
   padding: $base-spacing;
-  border-radius: $border-radius-base;
-  box-shadow: 0 1px 2px 0 $color-base-border;
-  border: 1px solid $color-base-border;
-  background-color: $color-base-background;
+  background-color: $color-base-3;
   &--inverse {
-    background-color: $color-base-background-inverse;
+    background-color: $color-base-2;
   }
   &--no-padding-right {
     padding-right: 0;
@@ -38,7 +32,7 @@
   background-position: 50% 50%;
   background-size: cover;
   transition: $base-transition;
-  border-bottom: 1px solid $color-text-tertiary;
+  border-bottom: 1px solid $color-text-secondary;
   @media screen and (max-width: $breakpoint-mobile) {
     z-index: auto;
   }
@@ -84,7 +78,7 @@
     position: absolute;
     bottom: $base-spacing;
     right: $base-spacing;
-    color: $color-text-content-primary;
+    color: $color-text-secondary;
     font-size: $font-size-breadcrumb;
     text-decoration: none;
   }
@@ -157,7 +151,7 @@
     &__item {
       display: inline-block;
       font-size: $font-size-breadcrumb;
-      color: $color-text-content-primary;
+      color: $color-text-secondary;
       text-decoration: none;
       margin-bottom: ($base-spacing / 4);
       &:hover {
@@ -192,11 +186,11 @@
   position: relative;
   top: -$label-padding;
   display: inline-block;
-  color: #fff;
+  color: $color-text-primary;
   font-size: 1.6rem;
   padding: $label-padding $label-padding * 2;
   border-radius: $border-radius-base;
-  background-color: $color-text-tertiary;
+  background-color: $color-inactive;
   &--points {
     background-color: $color-points;
   }

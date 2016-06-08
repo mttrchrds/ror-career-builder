@@ -12,8 +12,8 @@ const BarXp = (props) => {
   };
   return (
     <div className="u-margin__bottom">
-        <div className="c-progress">
-            <div className="c-progress__bar c-progress__bar--xp" style={calculateBarWidth()}></div>
+        <div className="c-progress c-progress--xp">
+            <div className="c-progress__bar c-progress__bar" style={calculateBarWidth()}></div>
         </div>
     </div>
   );

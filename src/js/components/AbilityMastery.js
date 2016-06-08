@@ -39,14 +39,14 @@ class AbilityMastery extends React.Component {
   componentDidMount() {
     this.setInitialStatus(this.props.details.meterRequirement,
                           this.props.pathMeter,
-                          this.props.selectedAbilities);
+                          this.props.selectedMasteries);
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
     this.setInitialStatus(nextProps.details.meterRequirement,
       nextProps.pathMeter,
-      nextProps.selectedAbilities);
+      nextProps.selectedMasteries);
 
     // Meter level goes below optional Ability requirement
     // Ability must be deactivated and Mastery points updated
@@ -59,36 +59,25 @@ class AbilityMastery extends React.Component {
         abilityStatus: false,
         abilitySelected: false,
       });
-      // Remove from selectedAbilities in state
-      this.props.setSelectedAbilities(this.props.details.id);
-      // Remove from user selections in state i.e. this.state.userSelections
-      if (this.props.details.abilityType === 'morale') {
-        // If this morale is a selected morale, then reset
-        const selectedMoralesArray = [this.props.userSelections.morale1,
-                                this.props.userSelections.morale2,
-                                this.props.userSelections.morale3,
-                                this.props.userSelections.morale4];
-        if (selectedMoralesArray.indexOf(this.props.details.id) !== -1) {
-          this.props.setUserSelectionMorale(this.props.moraleRank, 0);
-        }
-      } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
-        // If this tactic is in tactic array, remove it
-        if (this.props.userSelections.tactics.indexOf(this.props.details.id) !== -1) {
-          this.props.setUserSelectionTactic(this.props.details.id);
-        }
-      } else {
-        // If this ability is in masteryAbilities array, remove it
-        if (this.props.userSelections.masteryAbilities.indexOf(this.props.details.id) !== -1) {
-          this.props.setUserSelectionMasteryAbilities(this.props.details.id);
-        }
-      }
+      // Remove from selectedMasteries in state
+      this.props.updateSelectedMasteries(this.props.details.id);
       this.props.updateMasteryPoints(Number(this.props.masteryPoints + 2));
+      // Remove from morales
+      if (this.props.details.abilityType === 'morale') {
+        this.props.updateSelectedMorale(4, this.props.details.id, false);
+        this.props.updateCoreMorales(this.props.details.id);
+      }
+      // Remove from tactics
+      if (this.props.details.abilityType === 'tactic') {
+        this.props.updateCoreTactics(this.props.details.id);
+        this.props.updateSelectedTactics(this.props.details.id, false);
+      }
     }
   }
 
-  setInitialStatus(meterRequirement, pathMeter, selectedAbilities) {
-    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedAbilities
-    if (selectedAbilities.indexOf(this.props.details.id) !== -1) {
+  setInitialStatus(meterRequirement, pathMeter, selectedMasteries) {
+    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedMasteries
+    if (selectedMasteries.indexOf(this.props.details.id) !== -1) {
       this.setState({
         abilitySelected: true,
       });
@@ -130,12 +119,6 @@ class AbilityMastery extends React.Component {
 
   abilityOperational() {
     if (Number(this.props.masteryPoints) > 0) {
-      if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
-        if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
-          return true;
-        }
-        return false;
-      }
       return true;
     }
     return false;
@@ -154,58 +137,35 @@ class AbilityMastery extends React.Component {
       // Active ability selected
       if (this.state.abilityStatus) {
         if (Number(this.props.masteryPoints) > 0) {
-          // Ability is morale
           if (this.props.details.abilityType === 'morale') {
-            // Get current abilityId of morale of this rank e.g. this.state.userSelections.morale4
-            const currentMoraleRankId = this.props.userSelections.morale4;
-            // Remove current selected morale (for this rank) from selectedAbilities
-            // Don't bother if it's not set i.e. zero
-            if (currentMoraleRankId !== 0) {
-              this.props.setSelectedAbilities(currentMoraleRankId);
-            }
-            // Decrement mastery total
-            this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
-            // Add this ability to selectedAbilities
-            this.props.setSelectedAbilities(this.props.details.id);
-            // Add this ability as the selected morale for this rank
-            this.props.setUserSelectionMorale(this.props.moraleRank, this.props.details.id);
-          } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
-            // If tactics array length is less than tactic limit i.e. there is room for another selection
-            if (this.props.userSelections.tactics.length < this.props.currentTacticLimit) {
-              // Add into tactics array
-              this.props.setUserSelectionTactic(this.props.details.id);
-              // Decrement mastery total
-              this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
-              // Add this ability to selectedAbilities
-              this.props.setSelectedAbilities(this.props.details.id);
-            }
-          } else {
-            // Ability is core
-            // Add into masteryAbilities array
-            this.props.setUserSelectionMasteryAbilities(this.props.details.id);
-            // Decrement mastery total
-            this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
-            // Add this ability to selectedAbilities
-            this.props.setSelectedAbilities(this.props.details.id);
+            // Add only to core morales
+            this.props.updateCoreMorales(this.props.details.id);
           }
+          if (this.props.details.abilityType === 'tactic') {
+            // Add only to core tactics
+            this.props.updateCoreTactics(this.props.details.id);
+          }
+          // Decrement mastery total
+          this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+          // Add this ability to selectedMasteries
+          this.props.updateSelectedMasteries(this.props.details.id);
         }
       }
       // else {} = Inactive ability selected
     // Unselect ability
     } else {
-      // Ability is morale
       if (this.props.details.abilityType === 'morale') {
-        this.props.setUserSelectionMorale(this.props.moraleRank, 0);
-      // Ability is tactic
-      } else if (this.props.details.abilityType === 'tactic' || this.props.details.abilityType === 'tomeTactic') {
-        this.props.setUserSelectionTactic(this.props.details.id);
-      // Ability is core
-      } else {
-        this.props.setUserSelectionMasteryAbilities(this.props.details.id);
+        this.props.updateSelectedMorale(4, this.props.details.id, false);
+        this.props.updateCoreMorales(this.props.details.id);
       }
-      // Remove from selectedAbilities
+      if (this.props.details.abilityType === 'tactic') {
+        // Remove from tactics
+        this.props.updateSelectedTactics(this.props.details.id, false);
+        this.props.updateCoreTactics(this.props.details.id);
+      }
+      // Remove from selectedMasteries
       // Increment Mastery Total
-      this.props.setSelectedAbilities(this.props.details.id);
+      this.props.updateSelectedMasteries(this.props.details.id);
       this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
     }
   }
@@ -265,16 +225,14 @@ class AbilityMastery extends React.Component {
 AbilityMastery.propTypes = {
   details: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
-  selectedAbilities: React.PropTypes.array,
-  setSelectedAbilities: React.PropTypes.func,
-  userSelections: React.PropTypes.object,
-  setUserSelectionMorale: React.PropTypes.func,
-  moraleRank: React.PropTypes.number,
-  setUserSelectionTactic: React.PropTypes.func,
-  setUserSelectionMasteryAbilities: React.PropTypes.func,
   updateMasteryPoints: React.PropTypes.func,
   masteryPoints: React.PropTypes.number,
-  currentTacticLimit: React.PropTypes.number,
+  selectedMasteries: React.PropTypes.array,
+  updateSelectedMasteries: React.PropTypes.func,
+  updateCoreTactics: React.PropTypes.func,
+  updateSelectedTactics: React.PropTypes.func,
+  updateSelectedMorale: React.PropTypes.func,
+  updateCoreMorales: React.PropTypes.func,
 };
 
 export default AbilityMastery;

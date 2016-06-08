@@ -5,15 +5,15 @@ import '../../scss/components/CoreMorales.scss';
 const CoreMorales = (props) => {
   const renderAbility = (ability, rank) => 
     <AbilityMorale 
-      key={ability.id}
+      key={`m${ability.id}`}
       details={ability}
       currentLevel={props.currentLevel}
-      setUserSelectionMorale={props.setUserSelectionMorale}
-      userSelections={props.userSelections}
       moraleRank={rank}
-      setSelectedAbilities={props.setSelectedAbilities}
-      selectedAbilities={props.selectedAbilities}
-      incrementMasteryPoints={props.incrementMasteryPoints}
+      updateSelectedMorale={props.updateSelectedMorale}
+      selectedMorale1={props.selectedMorale1}
+      selectedMorale2={props.selectedMorale2}
+      selectedMorale3={props.selectedMorale3}
+      selectedMorale4={props.selectedMorale4}
     />;
   const renderMorales = (rank1, rank2, rank3, rank4) =>
     <div className="o-row u-display__block-mobile">
@@ -80,7 +80,7 @@ const CoreMorales = (props) => {
   return (
     <div className="u-margin__bottom">
       <div className="c-box">
-        <h2 className="c-page-title">Core morales</h2>
+        <h2 className="c-page-title">Morales</h2>
         {sortMorales()}
       </div>
     </div>
@@ -91,11 +91,11 @@ CoreMorales.propTypes = {
   morales: React.PropTypes.array,
   abilities: React.PropTypes.object,
   currentLevel: React.PropTypes.number,
-  setUserSelectionMorale: React.PropTypes.func,
-  userSelections: React.PropTypes.object,
-  setSelectedAbilities: React.PropTypes.func,
-  selectedAbilities: React.PropTypes.array,
-  incrementMasteryPoints: React.PropTypes.func,
+  selectedMorale1: React.PropTypes.number,
+  selectedMorale2: React.PropTypes.number,
+  selectedMorale3: React.PropTypes.number,
+  selectedMorale4: React.PropTypes.number,
+  updateSelectedMorale: React.PropTypes.func,
 };
 
 export default CoreMorales;

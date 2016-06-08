@@ -108,10 +108,10 @@
 
 .u-border {
   &__right {
-    border-right: 1px solid $color-base-border;
+    border-right: 1px solid $color-base-border-light;
     &-sm {
       @media screen and (min-width: $breakpoint-sm) {
-        border-right: 1px solid $color-base-border;
+        border-right: 1px solid $color-base-border-light;
         &--none {
           border-right: 0;
         }
@@ -119,7 +119,7 @@
     }
     &-mobile {
       @media screen and (max-width: $breakpoint-mobile) {
-        border-right: 1px solid $color-base-border;
+        border-right: 1px solid $color-base-border-light;
         &--none {
           border-right: 0;
         }
@@ -127,10 +127,10 @@
     }
   }
   &__bottom {
-    border-bottom: 1px solid $color-base-border;
+    border-bottom: 1px solid $color-base-border-light;
     &-mobile {
       @media screen and (max-width: $breakpoint-mobile) {
-        border-bottom: 1px solid $color-base-border;
+        border-bottom: 1px solid $color-base-border-light;
       }
     }
   }
