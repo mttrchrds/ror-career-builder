@@ -105,12 +105,12 @@ class Home extends React.Component {
                 <div className="c-masthead__heading u-margin__right-mobile u-margin__left-mobile">RoR Career Builder</div>
                 <div className="c-masthead__subheading">Online Career Builder for Return of Reckoning</div>
                 <div className="c-masthead__cta u-margin__top--large">
-                  <button className="pure-button c-button c-button--primary c-button--large" type="button" onClick={this.clickMasthead}>
+                  <button className="c-button c-button--secondary-inverse c-button--large" type="button" onClick={this.clickMasthead}>
                     Select career
                   </button>
                 </div>
                 <div className="c-masthead__cta c-masthead__cta--mobile u-margin__top--large">
-                  <button className="pure-button c-button c-button--primary c-button--large" type="button" onClick={this.clickMastheadMobile}>
+                  <button className="c-button c-button--secondary-inverse c-button--large" type="button" onClick={this.clickMastheadMobile}>
                     Select career
                   </button>
                 </div>
@@ -181,7 +181,12 @@ class Home extends React.Component {
               <div className="pure-u-1-3 pure-u-mobile-1">
                 <div className="c-list u-margin__top--large u-margin__left">
                   <div className="c-list__heading">Latest updates</div>
-                  <p className="c-list__item">- 1/6/2016: We are live :)</p>
+                  <p className="c-list__item">
+                    <span className="c-list__item__title">- 10/6/2016: </span>
+                    First major update. Mastery abilities can now be activated independent of selection. Interface reskinned.</p>
+                  <p className="c-list__item">
+                    <span className="c-list__item__title">- 1/6/2016: </span>
+                    We are live :)</p>
                 </div>
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">

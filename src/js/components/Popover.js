@@ -190,7 +190,7 @@ class Popover extends React.Component {
       'c-popover--active': this.state.popoverActive,
     });
     const selectionClass = classNames({
-      'pure-button c-button c-button--primary u-float__right u-margin__left': true,
+      'c-button c-button--primary u-float__right u-margin__left': true,
       'u-hidden': !this.props.abilityOptional || !this.props.abilityStatus || (!this.props.abilityOperational && !this.props.abilitySelected),
       'c-button--negative': this.props.abilitySelected,
       'c-button--positive': !this.props.abilitySelected,
@@ -203,7 +203,7 @@ class Popover extends React.Component {
           <button className={selectionClass} type="button" onClick={this.clickSelection}>
             {this.setSelectionText()}
           </button>
-          <button className="pure-button c-button c-button--primary u-float__right" type="button" onClick={this.clickClose}>
+          <button className="c-button c-button--secondary u-float__right" type="button" onClick={this.clickClose}>
             Close
           </button>
         </div>

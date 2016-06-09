@@ -1,9 +1,20 @@
 .c-button {
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
   color: #fff;
-  text-shadow: 1px 1px rgba(0,0,0,0.2);
+  font-weight: 300;
   font-size: 1.4rem;
-  padding-left: ($base-spacing / 2);
+  padding-top: ($base-spacing / 2);
   padding-right: ($base-spacing / 2);
+  padding-bottom: ($base-spacing / 2);
+  padding-left: ($base-spacing / 2);
   @media screen and (min-width: $breakpoint-sm) {
     padding-left: $base-spacing;
     padding-right: $base-spacing;
@@ -11,50 +22,54 @@
 }
 
 .c-button--primary {
-  @include raised-effect($color-primary-light, $color-primary);
+  background-color: $color-primary;
+  border: 1px solid $color-primary-1;
   &:hover, &:active, &:focus {
-    background: linear-gradient($color-primary-lighter, $color-primary);
+    background-color: $color-primary-2;
   }
 }
 
 .c-button--secondary {
-  @include raised-effect($color-secondary-light, $color-secondary);
+  background-color: $color-secondary;
+  border: 1px solid $color-secondary-1;
   &:hover, &:active, &:focus {
-    background: linear-gradient($color-secondary-lighter, $color-secondary);
+    background-color: $color-secondary-2;
   }
 }
 
-.c-button--tertiary {
-  @include raised-effect($color-tertiary-light, $color-tertiary);
+.c-button--secondary-inverse {
+  background-color: $color-secondary-1;
+  border: 1px solid $color-secondary;
   &:hover, &:active, &:focus {
-    background: linear-gradient($color-tertiary-lighter, $color-tertiary);
+    background-color: $color-secondary-2;
   }
 }
 
 .c-button--negative {
-  @include raised-effect($color-negative-light, $color-negative);
+  background-color: $color-negative;
+  border: 1px solid $color-negative-1;
   &:hover, &:active, &:focus {
-    background: linear-gradient($color-negative-lighter, $color-negative);
-  }
-}
-
-.c-button--positive {
-  @include raised-effect($color-positive-light, $color-positive);
-  &:hover, &:active, &:focus {
-    background: linear-gradient($color-positive-lighter, $color-positive);
+    background-color: $color-negative-2;
   }
 }
 
 .c-button--small {
   font-size: 70%;
-  width: 2.7rem;
+  width: 2.8rem;
   height: 2rem;
 }
 
 .c-button--large {
   font-size: 2rem;
+  padding-top: $base-spacing;
+  padding-bottom: $base-spacing;
   @media screen and (max-width: $breakpoint-mobile) {
     padding-left: $base-spacing;
     padding-right: $base-spacing;
   }
+}
+
+.c-button--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }

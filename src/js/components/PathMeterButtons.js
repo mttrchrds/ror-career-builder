@@ -34,12 +34,12 @@ const PathMeterButtons = (props) => {
     return meterLevels;
   };
   const plusClass = classNames({
-    'pure-button c-button c-button--small c-button--primary u-margin__right--tiny': true,
-    'pure-button-disabled': Number(props.masteryPoints) === 0,
+    'c-button c-button--small c-button--secondary u-margin__right--tiny': true,
+    'c-button--disabled': Number(props.masteryPoints) === 0,
   });
   const minusClass = classNames({
-    'pure-button c-button c-button--small c-button--primary': true,
-    'pure-button-disabled': Number(props.pathMeter < 1),
+    'c-button c-button--small c-button--secondary': true,
+    'c-button--disabled': Number(props.pathMeter < 1),
   });
   return (
     <div>

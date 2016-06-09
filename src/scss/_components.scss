@@ -9,9 +9,6 @@
 .c-box {
   padding: $base-spacing;
   background-color: $color-base-3;
-  &--inverse {
-    background-color: $color-base-2;
-  }
   &--no-padding-right {
     padding-right: 0;
   }
@@ -177,8 +174,12 @@
   }
   &__item {
     margin-top: 0;
-    margin-bottom: ($base-spacing / 2);
+    margin-bottom: ($base-spacing);
     padding-left: $base-spacing;
+    font-weight: 300;
+    &__title {
+      font-weight: 400;
+    }
   }
 }
 
@@ -186,21 +187,22 @@
   position: relative;
   top: -$label-padding;
   display: inline-block;
-  color: $color-text-primary;
+  color: $color-base-0;
   font-size: 1.6rem;
   padding: $label-padding $label-padding * 2;
-  border-radius: $border-radius-base;
-  background-color: $color-inactive;
+  background-color: $color-base-5;
   &--points {
     background-color: $color-points;
+    color: $color-text-primary;
   }
 }
 
 .c-input {
   &--read-only {
     display: block;
-    border: 1px solid $color-primary;
-    border-radius: $border-radius-base;
+    border: 1px solid $color-base-5;
+    background-color: $color-base-3;
+    color: $color-base-0;
     padding: $base-spacing;
     width: calc(100% - #{$base-spacing * 2});
     text-align: center;

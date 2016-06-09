@@ -3,11 +3,11 @@
 $width-sidebar: 250px;
 $width-sidebar-border: 2px;
 $font-size-sidebar: 1.2rem;
-$color-sidebar-text: $color-base-0;
-$color-sidebar-border: $color-base-3;
-$color-sidebar-background: $color-tertiary-light;
-$color-sidebar-background-hover: $color-tertiary;
-$color-sidebar-hover: $color-base-1;
+$color-sidebar-text: $color-text-secondary;
+$color-sidebar-border: $color-base-0;
+$color-sidebar-background: $color-base-1;
+$color-sidebar-background-hover: $color-base-2;
+$color-sidebar-hover: $color-text-secondary;
 
 .c-sidebar {
 
@@ -20,7 +20,7 @@ $color-sidebar-hover: $color-base-1;
   overflow-x: hidden;
   height: 100%;
   background-color: $color-sidebar-background;
-  border-right: $width-sidebar-border solid $color-ability-border;
+  border-right: $width-sidebar-border solid $color-base-3;
 
   &__content {
     width: calc(#{$width-sidebar} - #{$width-sidebar-border});

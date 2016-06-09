@@ -13,15 +13,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: $border-radius-base;
-    box-shadow: 1px 1px 5px 0px #333;
+    background-color: $color-base-1;
+    border: 1px solid $color-base-3;
   }
   &__title {
 
   }
   &__content {
-
+    color: $color-text-secondary;
   }
   &__footer {
 

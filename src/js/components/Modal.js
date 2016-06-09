@@ -21,7 +21,7 @@ const Modal = (props) => {
           {props.modal.contentBody}
         </div>
         <div className="c-modal__footer o-row o-row--right">
-          <button className="pure-button c-button c-button--primary" type="button" onClick={closeModal}>
+          <button className="c-button c-button--secondary" type="button" onClick={closeModal}>
             Close
           </button>
         </div>

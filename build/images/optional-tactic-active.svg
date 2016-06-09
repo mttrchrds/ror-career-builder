@@ -5,7 +5,7 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="48px" height="48px" viewBox="0 0.079 48 48" overflow="visible" enable-background="new 0 0.079 48 48"
+	 x="0px" y="0px" width="50px" height="50px" viewBox="0 -0.921 50 50" overflow="visible" enable-background="new 0 -0.921 50 50"
 	 xml:space="preserve">
 <defs>
 </defs>
@@ -103,7 +103,7 @@ XxsxcWcCWJMK5hYa/YOTqg7jp6GtO4JRdyhU89b4jRS8eWMU5Mqlv6pIvs8uLPVz8U+UYiJIxFdh
 UT2/Niy3ZIeUe8Pr/vLEDsPcK/2ciNv/mbJkKr55fBECCLDYoKnJs9iGi58XhxzblKHQrtK3vvny
 6VYyD8n/Ye//S8vX0n/S4qNeYzluM/giBRAgIV7JXY2dhKswsnpTjXowPnirxIe5t0fFZKy0fLWP
 +B2MdjX8JgQgCLd4IZNIdGAbyVJ82BHscIR8sHh2AnKJVPXydRP/BXo7+E0JICBS5iyKEMVGv6kf
-gvLy1Y4vkDzhfwHexpsIkvGoKwAAAABJRU5ErkJggg==" transform="matrix(0.7499 0 0 0.7499 0 0.0791)">
+gvLy1Y4vkDzhfwHexpsIkvGoKwAAAABJRU5ErkJggg==" transform="matrix(0.7499 0 0 0.7499 0 1.0791)">
 </image>
-<polygon fill="#90D28B" stroke="#999999" points="23.997,0.579 44.625,12.704 44.625,35.704 23.997,47.329 4,35.579 4,12.204 "/>
+<polygon fill="#90D28B" stroke="#2E3233" points="24.997,0.579 45.625,12.704 45.625,35.704 24.997,47.329 5,35.579 5,12.204 "/>
 </svg>

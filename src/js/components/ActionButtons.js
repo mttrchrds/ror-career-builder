@@ -57,20 +57,16 @@ const ActionButtons = (props) => {
   };
   return (
     <div className="c-box u-margin__left-md">
-      <button className="pure-button c-button c-button--tertiary" type="button" onClick={clickHome}>
-        <i className="fa fa-home u-margin__right--small u-hidden--mobile"></i>
+      <button className="c-button c-button--secondary" type="button" onClick={clickHome}>
         Home
       </button>
-      <button className="pure-button c-button c-button--primary u-float__right u-margin__left" type="button" onClick={clickSave}>
-        <i className="fa fa-save u-margin__right--small u-hidden--mobile"></i>
+      <button className="c-button c-button--primary u-float__right u-margin__left" type="button" onClick={clickSave}>
         Save<span className="u-hidden--mobile"> career</span>
       </button>
-      <button className="pure-button c-button c-button--secondary u-float__right u-margin__left" type="button" onClick={clickChangeCareer}>
-        <i className="fa fa-group u-margin__right--small u-hidden--mobile"></i>
+      <button className="c-button c-button--secondary u-float__right u-margin__left" type="button" onClick={clickChangeCareer}>
         Change<span className="u-hidden--mobile"> career</span>
       </button>
-      <button className="pure-button c-button c-button--negative u-float__right u-margin__left" type="button" onClick={clickReset}>
-        <i className="fa fa-refresh u-margin__right--small u-hidden--mobile"></i>
+      <button className="c-button c-button--negative u-float__right u-margin__left" type="button" onClick={clickReset}>
         Reset
       </button>
     </div>
