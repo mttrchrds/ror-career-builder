@@ -179,7 +179,7 @@ class Home extends React.Component {
             </div>
             <div className="pure-g">
               <div className="pure-u-1-3 pure-u-mobile-1">
-                <div className="c-list c-box u-margin__top--large u-margin__left u-margin__right">
+                <div className="c-list c-box u-margin__top u-margin__left u-margin__right">
                   <div className="c-list__heading">Latest updates</div>
                   <p className="c-list__item">
                     <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
