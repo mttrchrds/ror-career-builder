@@ -77,12 +77,13 @@
   .c-ability__image {
     opacity: $ability-opacity-inactive;
   }
-  &.is-selected {
-    background: transparent;
-    background-color: transparent;
-    .c-ability__image {
-      opacity: $ability-opacity-active;  
-    }
+}
+.c-ability--mastery.is-selected {
+  background: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  .c-ability__image {
+    opacity: $ability-opacity-active;  
   }
 }
 .c-ability--mastery.c-ability--active.c-ability--tactic {

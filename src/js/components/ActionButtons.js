@@ -6,7 +6,7 @@ const ActionButtons = (props) => {
   const clickReset = () => {
     props.resetCareer();
   };
-  const createSaveLink = () => {
+  const createShareLink = () => {
     let saveLink = `${window.location.origin}/career/${props.careerShort}/s?`;
     saveLink += `l=${props.currentLevel}`;
     saveLink += `&r=${props.currentRenown}`;
@@ -28,24 +28,24 @@ const ActionButtons = (props) => {
   const buildModalTitle = () => {
     const url = `/images/icons/${props.careerShort}.png`;
     return (
-      <h2 className="c-page-title c-page-title o-row">
+      <h2 className="c-title c-title--small c-title--absolute o-row u-margin__bottom--large">
         <img src={url} className="c-title__icon c-title__icon--small" />
-        {props.career.name}
+        Share this {props.career.name} build
       </h2>
     );
   };
   const buildModalBody = () =>
     <div>
-      <p>To save this career simply copy the link below:</p>
-      <div className="c-input--read-only" contentEditable>{createSaveLink()}</div>
+      <p>To share this build simply copy the link below:</p>
+      <div className="c-input--read-only" contentEditable>{createShareLink()}</div>
       <p>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
-      <div className="c-input--read-only" contentEditable>{createBBCode(createSaveLink())}</div>
+      <div className="c-input--read-only" contentEditable>{createBBCode(createShareLink())}</div>
     </div>;
-  const clickSave = () => {
+  const clickShare = () => {
     props.updateModalContent(buildModalTitle(), buildModalBody());
     props.updateOverlayVisibility(true);
     props.updateModalVisibility(true);
-    props.gaCareerSaved();
+    props.gaCareerShared();
   };
   const clickChangeCareer = () => {
     props.updateOverlayVisibility(true);
@@ -60,8 +60,8 @@ const ActionButtons = (props) => {
       <button className="c-button c-button--secondary" type="button" onClick={clickHome}>
         Home
       </button>
-      <button className="c-button c-button--primary u-float__right u-margin__left" type="button" onClick={clickSave}>
-        Save<span className="u-hidden--mobile"> career</span>
+      <button className="c-button c-button--primary u-float__right u-margin__left" type="button" onClick={clickShare}>
+        Share<span className="u-hidden--mobile"> career</span>
       </button>
       <button className="c-button c-button--secondary u-float__right u-margin__left" type="button" onClick={clickChangeCareer}>
         Change<span className="u-hidden--mobile"> career</span>
@@ -95,7 +95,7 @@ ActionButtons.propTypes = {
   updateModalVisibility: React.PropTypes.func,
   updateSidebarVisibility: React.PropTypes.func,
   gaChangeCareer: React.PropTypes.func,
-  gaCareerSaved: React.PropTypes.func,
+  gaCareerShared: React.PropTypes.func,
 };
 
 export default ActionButtons;

@@ -38,7 +38,7 @@ class Career extends React.Component {
     this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
-    this.gaCareerSaved = this.gaCareerSaved.bind(this);
+    this.gaCareerShared = this.gaCareerShared.bind(this);
     this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.gaChangeCareer = this.gaChangeCareer.bind(this);
     this.updateSelectedTactics = this.updateSelectedTactics.bind(this);
@@ -606,7 +606,7 @@ class Career extends React.Component {
                   career={this.state.career}
                   updateSidebarVisibility={this.updateSidebarVisibility}
                   updateOverlayVisibility={this.updateOverlayVisibility}
-                  gaCareerSaved={this.gaCareerSaved}
+                  gaCareerShared={this.gaCareerShared}
                   gaChangeCareer={this.gaChangeCareer}
                 />
 
@@ -664,8 +664,8 @@ class Career extends React.Component {
   }
 
   // Google Analytics events after saving career
-  gaCareerSaved() {
-    h.gaEvent('Career saved', this.state.career.name, this.state.career.class, this.state.currentLevel);
+  gaCareerShared() {
+    h.gaEvent('Career shared', this.state.career.name, this.state.career.class, this.state.currentLevel);
     if (Number(this.state.selectedMorale1) > 0) {
       h.gaEvent(this.state.career.name, 'Selected Morale 1', this.state.abilities[this.state.selectedMorale1].name, this.state.selectedMorale1);  
     }

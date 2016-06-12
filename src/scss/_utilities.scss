@@ -20,6 +20,17 @@
   }
 }
 
+.u-padding { 
+  &__bottom { 
+    padding-bottom: $base-spacing; 
+    &-mobile { 
+      @media screen and (max-width: $breakpoint-mobile) { 
+        padding-bottom: $base-spacing; 
+      } 
+    } 
+  } 
+} 
+
 .u-margin {
   &__top {
     margin-top: $base-spacing;

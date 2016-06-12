@@ -37,6 +37,18 @@
       border-radius: 50%;
     }
   }
+  &--absolute {
+    position: relative;
+    padding-left: 2.7rem;
+  }
+  &--absolute &__icon {
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+  }
+  &--small {
+    font-size: $font-size-h2;
+  }
   @media screen and (max-width: $breakpoint-mobile) {
     font-size: $font-size-h2;
   }

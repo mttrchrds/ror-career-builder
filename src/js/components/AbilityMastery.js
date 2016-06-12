@@ -39,14 +39,16 @@ class AbilityMastery extends React.Component {
   componentDidMount() {
     this.setInitialStatus(this.props.details.meterRequirement,
                           this.props.pathMeter,
-                          this.props.selectedMasteries);
+                          this.props.selectedMasteries,
+                          this.props.masteryPoints);
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
     this.setInitialStatus(nextProps.details.meterRequirement,
       nextProps.pathMeter,
-      nextProps.selectedMasteries);
+      nextProps.selectedMasteries,
+      nextProps.masteryPoints);
 
     // Meter level goes below optional Ability requirement
     // Ability must be deactivated and Mastery points updated
@@ -75,7 +77,7 @@ class AbilityMastery extends React.Component {
     }
   }
 
-  setInitialStatus(meterRequirement, pathMeter, selectedMasteries) {
+  setInitialStatus(meterRequirement, pathMeter, selectedMasteries, masteryPoints) {
     // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedMasteries
     if (selectedMasteries.indexOf(this.props.details.id) !== -1) {
       this.setState({
@@ -87,7 +89,7 @@ class AbilityMastery extends React.Component {
       });
     }
     
-    if (Number(pathMeter) >= Number(meterRequirement)) {
+    if ((Number(pathMeter) >= Number(meterRequirement)) && (Number(masteryPoints) > 0)) {
       this.setState({
         abilityStatus: true,
       });

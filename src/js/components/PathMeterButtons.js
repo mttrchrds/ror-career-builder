@@ -28,6 +28,8 @@ const PathMeterButtons = (props) => {
       let thisClass = 'c-meter__level';
       if (i <= props.pathMeter) {
         thisClass = 'c-meter__level c-meter__level--active';
+      } else if (i <= (Number(props.masteryPoints) + Number(props.pathMeter))) {
+        thisClass = 'c-meter__level c-meter__level--available';
       }
       meterLevels.push(<div key={props.masteryPath + i} className={thisClass}>{i}</div>);
     }
