@@ -190,7 +190,7 @@
   color: $color-base-0;
   font-size: 1.6rem;
   padding: $label-padding $label-padding * 2;
-  background-color: $color-base-5;
+  background-color: $color-base-6;
   &--points {
     background-color: $color-points;
     color: $color-text-primary;
@@ -200,8 +200,8 @@
 .c-input {
   &--read-only {
     display: block;
-    border: 1px solid $color-base-5;
-    background-color: $color-base-3;
+    border: 1px solid $color-base-6;
+    background-color: $color-base-5;
     color: $color-base-0;
     padding: $base-spacing;
     width: calc(100% - #{$base-spacing * 2});

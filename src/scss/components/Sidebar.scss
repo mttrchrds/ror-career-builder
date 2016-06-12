@@ -20,7 +20,7 @@ $color-sidebar-hover: $color-text-secondary;
   overflow-x: hidden;
   height: 100%;
   background-color: $color-sidebar-background;
-  border-right: $width-sidebar-border solid $color-base-3;
+  border-right: $width-sidebar-border solid $color-base-5;
 
   &__content {
     width: calc(#{$width-sidebar} - #{$width-sidebar-border});
