@@ -20,20 +20,12 @@
   }
 }
 
-.u-padding {
-  &__bottom {
-    padding-bottom: $base-spacing;
-    &-mobile {
-      @media screen and (max-width: $breakpoint-mobile) {
-        padding-bottom: $base-spacing;
-      }
-    }
-  }
-}
-
 .u-margin {
   &__top {
     margin-top: $base-spacing;
+    &--large {
+      margin-top: $base-spacing * 2;
+    }
     &-sm {
       @media screen and (min-width: $breakpoint-sm) {
         margin-top: $base-spacing;
@@ -42,8 +34,10 @@
         }
       }
     }
-    &--large {
-      margin-top: $base-spacing * 2;
+    &-mobile {
+      @media screen and (max-width: $breakpoint-mobile) {
+        margin-top: $base-spacing;
+      }
     }
   }
   &__right {

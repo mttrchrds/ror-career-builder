@@ -179,18 +179,27 @@ class Home extends React.Component {
             </div>
             <div className="pure-g">
               <div className="pure-u-1-3 pure-u-mobile-1">
-                <div className="c-list u-margin__top--large u-margin__left">
+                <div className="c-list c-box u-margin__top--large u-margin__left u-margin__right">
                   <div className="c-list__heading">Latest updates</div>
                   <p className="c-list__item">
-                    <span className="c-list__item__title">- 10/6/2016: </span>
-                    First major update. Mastery abilities can now be activated independent of selection. Interface reskinned.</p>
+                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <div className="c-list__item__title">12/6/2016</div>
+                    Mastery Path meters now display individual points.
+                  </p>
                   <p className="c-list__item">
-                    <span className="c-list__item__title">- 1/6/2016: </span>
-                    We are live :)</p>
+                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <div className="c-list__item__title">10/6/2016</div>
+                    First major update. Mastery abilities can now be activated independent of selection. Interface reskinned.
+                  </p>
+                  <p className="c-list__item">
+                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <div className="c-list__item__title">1/6/2016</div>
+                    We are live :)
+                  </p>
                 </div>
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">
-                <div className="c-home__copy u-margin__bottom--large u-margin__top--large u-margin__right u-margin__left-mobile">
+                <div className="c-home__copy u-margin__bottom--large u-margin__top-mobile u-margin__top--large u-margin__right u-margin__left-mobile">
                   <p>Warhammer Online: Age of Reckoning has returned. 
                   Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
                   Inspired by the work of these developers comes RoR Career Builder.</p>

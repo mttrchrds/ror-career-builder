@@ -9,7 +9,6 @@
 .c-home {
   &__content {
     height: 100vh;
-    background-color: $color-base-1;
     color: $color-text-primary;
     transition: $base-transition;
   }
@@ -18,7 +17,7 @@
     min-height: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: $color-base-2;
+    background-color: $color-base-1;
     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
     @media screen and (min-width: $breakpoint-sm) {
       width: 750px;

@@ -32,6 +32,7 @@
   border-bottom: 1px solid $color-text-secondary;
   @media screen and (max-width: $breakpoint-mobile) {
     z-index: auto;
+    height: ($base-spacing * 25);
   }
   &__overlay {
     height: 100%;
@@ -173,12 +174,21 @@
     margin-bottom: ($base-spacing);
   }
   &__item {
+    position: relative;
     margin-top: 0;
     margin-bottom: ($base-spacing);
-    padding-left: $base-spacing;
+    padding-left: ($base-spacing * 1.5);
     font-weight: 300;
+    font-size: 1.2rem;
     &__title {
       font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+    &__icon {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 0.8rem;
     }
   }
 }
