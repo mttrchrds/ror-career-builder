@@ -25,11 +25,11 @@ const PathMeterButtons = (props) => {
     const meterLevels = [];
     const meterLevelMax = 15;
     for (let i = 1; i <= meterLevelMax; i++) {
-      let thisClass = 'c-meter__level c-meter__level--active';
-      if (i <= (meterLevelMax - props.pathMeter)) {
-        thisClass = 'c-meter__level';
+      let thisClass = 'c-meter__level';
+      if (i <= props.pathMeter) {
+        thisClass = 'c-meter__level c-meter__level--active';
       }
-      meterLevels.push(<div key={props.masteryPath + i} className={thisClass}></div>);
+      meterLevels.push(<div key={props.masteryPath + i} className={thisClass}>{i}</div>);
     }
     return meterLevels;
   };

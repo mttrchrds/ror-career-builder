@@ -1,17 +1,34 @@
 @import '../vars';
 @import '../mixins';
 
+$meter-width: 5rem;
+$meter-item-height: 1.6rem;
+$meter-spacing: 0.4rem;
+$meter-item-spacing-bottom: 0.2rem;
+$meter-item-color: rgba(0, 0, 0, 0.4);
+$meter-item-color-active: rgba(255, 255, 255, 0.8);
+$meter-item-font-size: 0.8rem;
+
 .c-meter {
-  width: 5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  width: $meter-width;
   background-color: $color-base-1;
-  padding: 0.4rem;
-  margin-bottom: 0.4rem;
+  padding: $meter-spacing;
+  margin-bottom: $meter-spacing;
   &__level {
-    height: 1.8rem;
+    height: $meter-item-height;
+    line-height: $meter-item-height;
+    border: 1px solid $color-points-dark;
+    text-align: center;
     background-color: $color-points-dark;
-    margin-bottom: 0.2rem;
+    margin-bottom: $meter-item-spacing-bottom;
+    color: $meter-item-color;
+    font-size: $meter-item-font-size;
     &--active {
-      background-color: $color-points; 
+      background-color: $color-points;
+      border: 1px solid $color-points;
+      color: $meter-item-color-active;
     }  
   }
 }
