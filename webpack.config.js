@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const CONFIG = require('./path.config');
+const combineLoaders = require('webpack-combine-loaders');
 const autoprefixer = require('autoprefixer');
+const simpleVars = require('postcss-simple-vars');
+const atImport = require('postcss-import');
 
 module.exports = {
   entry: [
@@ -26,21 +29,42 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: [
-          'react-hot', 
+          'react-hot',
           'babel?presets[]=react,presets[]=es2015'
         ],
         exclude: 'node_modules',
         include: CONFIG.source + CONFIG.sourcePath
       },
-      { 
-        test: /\.scss$/, 
+      {
+        test: /\.scss$/,
         loader: 'style-loader!css-loader!postcss-loader!sass-loader',
         include: CONFIG.source + CONFIG.sourcePathSCSS
+      },
+      {
+        test: /\.css$/,
+        loader: combineLoaders([
+          {
+            loader: 'style-loader',
+            include: CONFIG.source + CONFIG.sourcePathCSS
+          },
+          {
+            loader: 'css-loader',
+            include: CONFIG.source + CONFIG.sourcePathCSS,
+            query: {
+              modules: true,
+              localIdentName: '[name]__[local]__[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            include: CONFIG.source + CONFIG.sourcePathCSS
+          }
+        ])
       }
     ]
   },
   postcss: function () {
-    return [autoprefixer];
+    return [atImport, simpleVars, autoprefixer];
   },
   devtool: 'eval',
   plugins: [

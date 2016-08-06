@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/components/BarXp.scss';
+import styles from '../../css/components/progress.css';
 
 const BarRenown = (props) => {
   const calculateBarWidth = () => {
@@ -33,8 +33,8 @@ const BarRenown = (props) => {
   };
   return (
     <div className="u-margin__bottom--large">
-      <div className="c-progress c-progress--renown">
-        <div className="c-progress__bar c-progress__bar c-progress__bar--thin" style={calculateBarWidth()}></div>
+      <div className={styles.progressRenown}>
+        <div className={styles.barRenown} style={calculateBarWidth()}></div>
       </div>
     </div>
   );
