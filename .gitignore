@@ -4,3 +4,5 @@ build/js/app.js.map
 .DS_Store
 npm-debug.log
 analytics.js
+build/css/styles.css
+build/css/styles.css.map
