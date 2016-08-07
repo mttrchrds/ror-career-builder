@@ -1,0 +1,22 @@
+@import '../variables.css';
+
+.breadcrumb {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: $font-size-1;
+  color: $color-text-primary;
+}
+.breadcrumbDivider {
+  composes: breadcrumb;
+  padding: 0 0.3rem;
+}
+.breadcrumbActive {
+  composes: breadcrumb;
+  font-weight: bold;
+}
+.breadcrumbLink {
+  color: $color-text-secondary;
+  &:hover {
+    text-decoration: none;
+  }
+}

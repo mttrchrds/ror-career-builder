@@ -1,5 +1,13 @@
 
+$font-size-0: 1rem;
+$font-size-1: 1.2rem;
+$font-size-2: 1.4rem;
+$font-size-3: 1.6rem;
+$font-size-4: 2.2rem;
+$font-size-5: 2.8rem;
 
+$color-text-primary: #f3f4f5;
+$color-text-secondary: #dedede;
 $color-xp: #fbbd08;
 $color-xp-dark: #715607;
 $color-renown: #a333c8;
