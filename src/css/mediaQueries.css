@@ -1,0 +1,7 @@
+@custom-media --mq-mobile screen and (max-width: $breakpoint-xs);
+@custom-media --mq-xs screen and (max-width: $breakpoint-xs-max);
+@custom-media --mq-sm screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-sm-max);
+@custom-media --mq-sm-min screen and (min-width: $breakpoint-sm);
+@custom-media --mq-md screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max);
+@custom-media --mq-md-min screen and (min-width: $breakpoint-md);
+@custom-media --mq-lg screen and (min-width: $breakpoint-lg);

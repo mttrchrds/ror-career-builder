@@ -7,7 +7,7 @@ $meter-spacing: 0.4rem;
 $meter-item-spacing-bottom: 0.2rem;
 $meter-item-color: rgba(0, 0, 0, 0.4);
 $meter-item-color-active: rgba(255, 255, 255, 0.8);
-$meter-item-color-available: rgba(255, 255, 255, 0.3);
+$meter-item-color-available: rgba(255, 255, 255, 0.4);
 $meter-item-font-size: 0.8rem;
 $meter-item-border-available: #8E6161;
 
@@ -34,6 +34,7 @@ $meter-item-border-available: #8E6161;
     }
     &--available {
       border: 1px solid $meter-item-border-available;
+      background-color: $meter-item-border-available;
       color: $meter-item-color-available;
     }
   }

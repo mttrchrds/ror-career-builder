@@ -392,7 +392,7 @@ class Career extends React.Component {
   // Hide/show overlay, param is boolean
   updateOverlayVisibility(status) {
     this.state.overlay.visible = status;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -401,7 +401,7 @@ class Career extends React.Component {
     this.updateModalVisibility(false);
     this.updateSidebarVisibility(false);
     this.state.overlay.visible = false;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -410,7 +410,7 @@ class Career extends React.Component {
   updateModalContent(title, content) {
     this.state.modal.contentTitle = title;
     this.state.modal.contentBody = content;
-    this.setState({ 
+    this.setState({
       modal: this.state.modal,
     });
   }
@@ -418,7 +418,7 @@ class Career extends React.Component {
   // Hide/show modal, param is boolean
   updateModalVisibility(status) {
     this.state.modal.visible = status;
-    this.setState({ 
+    this.setState({
       modal: this.state.modal,
     });
   }
@@ -426,7 +426,7 @@ class Career extends React.Component {
   // Hide/show sidebar, param is boolean
   updateSidebarVisibility(status) {
     this.state.sidebar.visible = status;
-    this.setState({ 
+    this.setState({
       sidebar: this.state.sidebar,
     });
   }
@@ -479,7 +479,7 @@ class Career extends React.Component {
         <div className="u-height">
           <div className={containerClass}>
 
-            <Breadcrumb 
+            <Breadcrumb
               career={this.state.career}
               updateSidebarVisibility={this.updateSidebarVisibility}
               updateOverlayVisibility={this.updateOverlayVisibility}
@@ -526,13 +526,13 @@ class Career extends React.Component {
             <div className="pure-g">
               <div className="pure-u-1 pure-u-md-10-24">
 
-                <CoreAbilities 
-                  currentLevel={this.state.currentLevel} 
+                <CoreAbilities
+                  currentLevel={this.state.currentLevel}
                   coreAbilities={this.state.coreAbilities}
                   abilities={this.state.abilities}
                 />
 
-                <CoreMorales 
+                <CoreMorales
                   currentLevel={this.state.currentLevel}
                   abilities={this.state.abilities}
                   morales={this.state.coreMorales}
@@ -644,7 +644,7 @@ class Career extends React.Component {
     );
   }
 
-  /* 
+  /*
   * -----------------------
   * Google Analytics Events
   * -----------------------
@@ -667,13 +667,13 @@ class Career extends React.Component {
   gaCareerShared() {
     h.gaEvent('Career shared', this.state.career.name, this.state.career.class, this.state.currentLevel);
     if (Number(this.state.selectedMorale1) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 1', this.state.abilities[this.state.selectedMorale1].name, this.state.selectedMorale1);  
+      h.gaEvent(this.state.career.name, 'Selected Morale 1', this.state.abilities[this.state.selectedMorale1].name, this.state.selectedMorale1);
     }
     if (Number(this.state.selectedMorale2) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 2', this.state.abilities[this.state.selectedMorale2].name, this.state.selectedMorale2);  
+      h.gaEvent(this.state.career.name, 'Selected Morale 2', this.state.abilities[this.state.selectedMorale2].name, this.state.selectedMorale2);
     }
     if (Number(this.state.selectedMorale3) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 3', this.state.abilities[this.state.selectedMorale3].name, this.state.selectedMorale3);  
+      h.gaEvent(this.state.career.name, 'Selected Morale 3', this.state.abilities[this.state.selectedMorale3].name, this.state.selectedMorale3);
     }
     if (Number(this.state.selectedMorale4) > 0) {
       h.gaEvent(this.state.career.name, 'Selected Morale 4', this.state.abilities[this.state.selectedMorale4].name, this.state.selectedMorale4);

@@ -1,0 +1,52 @@
+@import '../root.css';
+
+.careerTitle {
+  display: inline-block;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: $font-size-5;
+  @media (--mq-mobile) {
+    font-size: $font-size-4;
+  }
+}
+.careerTitleSmall {
+  composes: careerTitle;
+  font-size: $font-size-4;
+}
+
+.careerIcon {
+  position: relative;
+  top: 0.2rem;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: $base-spacing-small;
+  @media (--mq-mobile) {
+    width: 24px;
+    height: 24px;
+  }
+}
+.careerIconSmall {
+  composes: careerIcon;
+  width: 22px;
+  height: 22px;
+}
+.careerIconSmaller {
+  composes: careerIcon;
+  top: 0.4rem;
+  width: 20px;
+  height: 20px;
+}
+.careerIconSmallest {
+  composes: careerIcon;
+  top: 0.5rem;
+  width: 18px;
+  height: 18px;
+}
+.careerIconBordered {
+  composes: careerIcon;
+  top: 0.4rem;
+  border: 2px solid $color-base-5;
+  border-radius: 50%;
+}

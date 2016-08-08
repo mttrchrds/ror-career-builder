@@ -4,6 +4,9 @@ const combineLoaders = require('webpack-combine-loaders');
 const autoprefixer = require('autoprefixer');
 const simpleVars = require('postcss-simple-vars');
 const atImport = require('postcss-import');
+const customMedia = require('postcss-custom-media');
+const calc = require('postcss-calc');
+const nested = require('postcss-nested');
 
 module.exports = {
   entry: [
@@ -64,7 +67,7 @@ module.exports = {
     ]
   },
   postcss: function () {
-    return [atImport, simpleVars, autoprefixer];
+    return [atImport, nested, customMedia, simpleVars, calc({mediaQueries: true}), autoprefixer];
   },
   devtool: 'eval',
   plugins: [

@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../scss/components/CareerTitle.scss';
+import styles from '../../css/components/careerTitle.css';
 
 const CareerTitle = (props) => {
   const url = `/images/icons/${props.careerShort}.png`;
   return (
       <div className="u-title-height u-margin__bottom--large">
-        <img src={url} className="c-title__icon c-title__icon--bordered"></img>
-        <h1 className="c-title">
+        <img src={url} className={styles.careerIconBordered}></img>
+        <h1 className={styles.careerTitle}>
           {props.career.name}
         </h1>
       </div>
