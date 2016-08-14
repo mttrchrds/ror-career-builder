@@ -1,28 +1,28 @@
 @import '../root.css';
 
-.progress {
+.Bar {
   position: relative;
 }
-.progressRenown {
-  composes: progress;
+.BarRenown {
+  composes: Bar;
   background-color: $color-renown-dark;
 }
-.progressXp {
-  composes: progress;
+.BarXp {
+  composes: Bar;
   background-color: $color-xp-dark;
 }
-.bar {
+.BarProgress {
   position: relative;
   height: 1rem;
   width: 1%;
   transition: width .3s ease;
 }
-.barXp {
-  composes: bar;
+.BarProgressXp {
+  composes: BarProgress;
   background-color: $color-xp;
 }
-.barRenown {
-  composes: bar;
+.BarProgressRenown {
+  composes: BarProgress;
   height: 0.7rem;
   background-color: $color-renown;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../css/components/progress.css';
+import styles from '../../css/components/Bar.css';
 
 const BarXp = (props) => {
   const calculateBarWidth = () => {
@@ -12,8 +12,8 @@ const BarXp = (props) => {
   };
   return (
     <div className="u-margin__bottom">
-        <div className={styles.progressXp}>
-            <div className={styles.barXp} style={calculateBarWidth()}></div>
+        <div className={styles.BarXp}>
+            <div className={styles.BarProgressXp} style={calculateBarWidth()}></div>
         </div>
     </div>
   );

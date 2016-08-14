@@ -1,20 +1,20 @@
 @import '../root.css';
 
-.breadcrumb {
+.Breadcrumb {
   display: inline-block;
   margin-bottom: 0;
   font-size: $font-size-1;
   color: $color-text-primary;
 }
-.breadcrumbDivider {
-  composes: breadcrumb;
+.BreadcrumbDivider {
+  composes: Breadcrumb;
   padding: 0 0.3rem;
 }
-.breadcrumbActive {
-  composes: breadcrumb;
+.BreadcrumbActive {
+  composes: Breadcrumb;
   font-weight: bold;
 }
-.breadcrumbLink {
+.BreadcrumbLink {
   color: $color-text-secondary;
   &:hover {
     text-decoration: none;
