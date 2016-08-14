@@ -1,0 +1,25 @@
+@import '../root.css';
+
+.Select {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.SelectLabel {
+  color: $color-text-secondary;
+  font-size: $font-size-3;
+  margin-right: $base-spacing;
+  @media (--mq-mobile) {
+    font-size: $font-size-2;
+  }
+}
+.SelectElement {
+  height: 2.8rem;
+  font-size: $font-size-1;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: $base-spacing-small;
+  padding-right: $base-spacing-small;
+  border: 1px solid $color-base-0;
+  border-radius: 0;
+}
