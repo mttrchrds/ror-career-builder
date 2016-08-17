@@ -1,42 +1,32 @@
 /*
 -- Font sizes
 */
-$font-size-0: 1rem;
-$font-size-1: 1.2rem;
-$font-size-2: 1.4rem;
-$font-size-3: 1.6rem;
-$font-size-4: 2.2rem;
-$font-size-5: 2.8rem;
+@value font-size-0: 1rem;
+@value font-size-1: 1.2rem;
+@value font-size-2: 1.4rem;
+@value font-size-3: 1.6rem;
+@value font-size-4: 2.2rem;
+@value font-size-5: 2.8rem;
 /*
 -- Colours
 */
-$color-base-0: #242728;
-$color-base-1: #2e3233;
-$color-base-2: #393e3f;
-$color-base-3: #444444;
-$color-base-4: #535a5e;
-$color-base-5: #666666;
-$color-base-6: #989898;
-$color-text-primary: #f3f4f5;
-$color-text-secondary: #dedede;
-$color-xp: #fbbd08;
-$color-xp-dark: #715607;
-$color-renown: #a333c8;
-$color-renown-dark: #5D3769;
-/*
--- Breakpoints
-*/
-$breakpoint-xs: 480px;
-$breakpoint-sm: 768px;
-$breakpoint-md: 992px;
-$breakpoint-lg: 1200px;
-$breakpoint-xs-max: calc($breakpoint-sm - 1);
-$breakpoint-sm-max: calc($breakpoint-md - 1);
-$breakpoint-md-max: calc($breakpoint-lg - 1);
+@value color-base-0: #242728;
+@value color-base-1: #2e3233;
+@value color-base-2: #393e3f;
+@value color-base-3: #444444;
+@value color-base-4: #535a5e;
+@value color-base-5: #666666;
+@value color-base-6: #989898;
+@value color-text-primary: #f3f4f5;
+@value color-text-secondary: #dedede;
+@value color-xp: #fbbd08;
+@value color-xp-dark: #715607;
+@value color-renown: #a333c8;
+@value color-renown-dark: #5D3769;
 /*
 -- Spacing
 */
-$base-spacing: 1rem;
-$base-spacing-small: 0.5rem;
-$base-spacing-medium: 2rem;
-$base-spacing-large: 4rem;
+@value base-spacing: 1rem;
+@value base-spacing-small: 0.5rem;
+@value base-spacing-medium: 2rem;
+@value base-spacing-large: 4rem;

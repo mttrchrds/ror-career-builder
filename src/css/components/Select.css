@@ -1,4 +1,5 @@
-@import '../root.css';
+@value font-size-1, font-size-2, font-size-3, color-text-secondary, base-spacing, base-spacing-small, color-base-0 from "../variables.css";
+@value mq-mobile from "../mediaQueries.css";
 
 .Select {
   display: flex;
@@ -6,20 +7,20 @@
   align-items: center;
 }
 .SelectLabel {
-  color: $color-text-secondary;
-  font-size: $font-size-3;
-  margin-right: $base-spacing;
-  @media (--mq-mobile) {
-    font-size: $font-size-2;
+  color: color-text-secondary;
+  font-size: font-size-3;
+  margin-right: base-spacing;
+  @media mq-mobile {
+    font-size: font-size-2;
   }
 }
 .SelectElement {
   height: 2.8rem;
-  font-size: $font-size-1;
+  font-size: font-size-1;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: $base-spacing-small;
-  padding-right: $base-spacing-small;
-  border: 1px solid $color-base-0;
+  padding-left: base-spacing-small;
+  padding-right: base-spacing-small;
+  border: 1px solid color-base-0;
   border-radius: 0;
 }

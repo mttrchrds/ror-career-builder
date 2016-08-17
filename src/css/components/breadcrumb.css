@@ -1,10 +1,10 @@
-@import '../root.css';
+@value font-size-1, color-text-primary, color-text-secondary from "../variables.css";
 
 .Breadcrumb {
   display: inline-block;
   margin-bottom: 0;
-  font-size: $font-size-1;
-  color: $color-text-primary;
+  font-size: font-size-1;
+  color: color-text-primary;
 }
 .BreadcrumbDivider {
   composes: Breadcrumb;
@@ -15,7 +15,7 @@
   font-weight: bold;
 }
 .BreadcrumbLink {
-  color: $color-text-secondary;
+  color: color-text-secondary;
   &:hover {
     text-decoration: none;
   }

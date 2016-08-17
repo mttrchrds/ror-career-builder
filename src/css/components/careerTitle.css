@@ -1,18 +1,19 @@
-@import '../root.css';
+@value font-size-5, font-size-4, base-spacing-small, color-base-5 from "../variables.css";
+@value mq-mobile from "../mediaQueries.css";
 
 .CareerTitle {
   display: inline-block;
   line-height: 1;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: $font-size-5;
-  @media (--mq-mobile) {
-    font-size: $font-size-4;
+  font-size: font-size-5;
+  @media mq-mobile {
+    font-size: font-size-4;
   }
 }
 .CareerTitleSmall {
   composes: CareerTitle;
-  font-size: $font-size-4;
+  font-size: font-size-4;
 }
 
 .CareerTitleIcon {
@@ -21,8 +22,8 @@
   display: inline-block;
   width: 28px;
   height: 28px;
-  margin-right: $base-spacing-small;
-  @media (--mq-mobile) {
+  margin-right: base-spacing-small;
+  @media mq-mobile {
     width: 24px;
     height: 24px;
   }
@@ -47,6 +48,6 @@
 .CareerTitleIconBordered {
   composes: CareerTitleIcon;
   top: 0.4rem;
-  border: 2px solid $color-base-5;
+  border: 2px solid color-base-5;
   border-radius: 50%;
 }

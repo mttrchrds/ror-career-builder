@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const CONFIG = require('./path.config');
 const combineLoaders = require('webpack-combine-loaders');
 const autoprefixer = require('autoprefixer');
-const simpleVars = require('postcss-simple-vars');
 const atImport = require('postcss-import');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const values = require('postcss-modules-values');
 
 module.exports = {
   entry: [
@@ -54,7 +54,7 @@ module.exports = {
     ]
   },
   postcss: function () {
-    return [atImport, simpleVars, autoprefixer];
+    return [atImport, values, autoprefixer];
   },
   devtool: 'cheap-module-source-map',
   plugins: [

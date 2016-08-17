@@ -1,15 +1,15 @@
-@import '../root.css';
+@value color-renown-dark, color-xp-dark, color-xp, color-renown from "../variables.css";
 
 .Bar {
   position: relative;
 }
 .BarRenown {
   composes: Bar;
-  background-color: $color-renown-dark;
+  background-color: color-renown-dark;
 }
 .BarXp {
   composes: Bar;
-  background-color: $color-xp-dark;
+  background-color: color-xp-dark;
 }
 .BarProgress {
   position: relative;
@@ -19,10 +19,10 @@
 }
 .BarProgressXp {
   composes: BarProgress;
-  background-color: $color-xp;
+  background-color: color-xp;
 }
 .BarProgressRenown {
   composes: BarProgress;
   height: 0.7rem;
-  background-color: $color-renown;
+  background-color: color-renown;
 }
