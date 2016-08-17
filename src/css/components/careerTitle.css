@@ -1,5 +1,5 @@
-@value font-size-5, font-size-4, base-spacing-small, color-base-5 from "../variables.css";
-@value mq-mobile from "../mediaQueries.css";
+@value font-size-5, font-size-4, base-spacing-small, color-base-5 from "../values/variables.css";
+@value mq-mobile from "../values/mediaQueries.css";
 
 .CareerTitle {
   display: inline-block;

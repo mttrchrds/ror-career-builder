@@ -1,5 +1,5 @@
-@value font-size-1, font-size-2, font-size-3, color-text-secondary, base-spacing, base-spacing-small, color-base-0 from "../variables.css";
-@value mq-mobile from "../mediaQueries.css";
+@value font-size-1, font-size-2, font-size-3, color-text-secondary, base-spacing, base-spacing-small, color-base-0 from "../values/variables.css";
+@value mq-mobile from "../values/mediaQueries.css";
 
 .Select {
   display: flex;
