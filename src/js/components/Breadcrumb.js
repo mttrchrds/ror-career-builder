@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import CSSBreadcrumb from '../../css/components/Breadcrumb.css';
+import css from '../../css/components/Breadcrumb.css';
 
 const Breadcrumb = (props) => {
   const clickBreadcrumb = (e) => {
@@ -11,19 +11,19 @@ const Breadcrumb = (props) => {
   };
   return (
     <div className="marginBottom--medium">
-      <span className={CSSBreadcrumb.Breadcrumb}>
-        <Link to="/" className={CSSBreadcrumb.BreadcrumbLink}>Home</Link>
+      <span className={css.Breadcrumb}>
+        <Link to="/" className={css.BreadcrumbLink}>Home</Link>
       </span>
-      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={CSSBreadcrumb.Breadcrumb}>
-        <a href="#" onClick={clickBreadcrumb} className={CSSBreadcrumb.BreadcrumbLink}>{props.career.faction}</a>
+      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.Breadcrumb}>
+        <a href="#" onClick={clickBreadcrumb} className={css.BreadcrumbLink}>{props.career.faction}</a>
       </span>
-      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={CSSBreadcrumb.Breadcrumb}>
-        <a href="#" onClick={clickBreadcrumb} className={CSSBreadcrumb.BreadcrumbLink}>{props.career.race}</a>
+      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.Breadcrumb}>
+        <a href="#" onClick={clickBreadcrumb} className={css.BreadcrumbLink}>{props.career.race}</a>
       </span>
-      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={CSSBreadcrumb.BreadcrumbActive}>{props.career.class}</span>
+      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.BreadcrumbActive}>{props.career.class}</span>
     </div>
   );
 };
