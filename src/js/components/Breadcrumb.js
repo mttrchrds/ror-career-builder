@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import styles from '../../css/components/Breadcrumb.css';
+import CSSBreadcrumb from '../../css/components/Breadcrumb.css';
 
 const Breadcrumb = (props) => {
   const clickBreadcrumb = (e) => {
@@ -11,19 +11,19 @@ const Breadcrumb = (props) => {
   };
   return (
     <div className="u-margin__bottom--large">
-      <span className={styles.Breadcrumb}>
-        <Link to="/" className={styles.BreadcrumbLink}>Home</Link>
+      <span className={CSSBreadcrumb.Breadcrumb}>
+        <Link to="/" className={CSSBreadcrumb.BreadcrumbLink}>Home</Link>
       </span>
-      <span className={styles.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={styles.Breadcrumb}>
-        <a href="#" onClick={clickBreadcrumb} className={styles.BreadcrumbLink}>{props.career.faction}</a>
+      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={CSSBreadcrumb.Breadcrumb}>
+        <a href="#" onClick={clickBreadcrumb} className={CSSBreadcrumb.BreadcrumbLink}>{props.career.faction}</a>
       </span>
-      <span className={styles.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={styles.Breadcrumb}>
-        <a href="#" onClick={clickBreadcrumb} className={styles.BreadcrumbLink}>{props.career.race}</a>
+      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={CSSBreadcrumb.Breadcrumb}>
+        <a href="#" onClick={clickBreadcrumb} className={CSSBreadcrumb.BreadcrumbLink}>{props.career.race}</a>
       </span>
-      <span className={styles.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
-      <span className={styles.BreadcrumbActive}>{props.career.class}</span>
+      <span className={CSSBreadcrumb.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={CSSBreadcrumb.BreadcrumbActive}>{props.career.class}</span>
     </div>
   );
 };

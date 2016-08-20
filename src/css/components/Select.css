@@ -1,4 +1,6 @@
-@value font-size-1, font-size-2, font-size-3, color-text-secondary, base-spacing, base-spacing-small, color-base-0 from "../values/variables.css";
+@value font-size-1, font-size-2, font-size-3 from "../values/fontSizes.css";
+@value spacing, spacing-small from "../values/spacing.css";
+@value color-text-secondary, color-base-0 from "../values/colours.css";
 @value mq-mobile from "../values/mediaQueries.css";
 
 .Select {
@@ -9,7 +11,7 @@
 .SelectLabel {
   color: color-text-secondary;
   font-size: font-size-3;
-  margin-right: base-spacing;
+  margin-right: spacing;
   @media mq-mobile {
     font-size: font-size-2;
   }
@@ -19,8 +21,8 @@
   font-size: font-size-1;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: base-spacing-small;
-  padding-right: base-spacing-small;
+  padding-left: spacing-small;
+  padding-right: spacing-small;
   border: 1px solid color-base-0;
   border-radius: 0;
 }

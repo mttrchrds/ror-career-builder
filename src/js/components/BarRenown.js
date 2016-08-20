@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../css/components/Bar.css';
+import CSSBar from '../../css/components/Bar.css';
 
 const BarRenown = (props) => {
   const calculateBarWidth = () => {
@@ -33,8 +33,8 @@ const BarRenown = (props) => {
   };
   return (
     <div className="u-margin__bottom--large">
-      <div className={styles.BarRenown}>
-        <div className={styles.BarProgressRenown} style={calculateBarWidth()}></div>
+      <div className={CSSBar.BarRenown}>
+        <div className={CSSBar.BarProgressRenown} style={calculateBarWidth()}></div>
       </div>
     </div>
   );

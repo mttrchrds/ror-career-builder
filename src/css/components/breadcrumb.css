@@ -1,4 +1,5 @@
-@value font-size-1, color-text-primary, color-text-secondary from "../values/variables.css";
+@value color-text-primary, color-text-secondary from "../values/colours.css";
+@value font-size-1 from "../values/fontSizes.css";
 
 .Breadcrumb {
   display: inline-block;

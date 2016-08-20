@@ -1,4 +1,4 @@
-@value color-renown-dark, color-xp-dark, color-xp, color-renown from "../values/variables.css";
+@value color-renown-dark, color-xp-dark, color-xp, color-renown from "../values/colours.css";
 
 .Bar {
   position: relative;

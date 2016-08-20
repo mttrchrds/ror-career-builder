@@ -1,4 +1,6 @@
-@value font-size-5, font-size-4, base-spacing-small, color-base-5 from "../values/variables.css";
+@value font-size-5, font-size-4 from "../values/fontSizes.css";
+@value spacing-small from "../values/spacing.css";
+@value color-base-5 from "../values/colours.css";
 @value mq-mobile from "../values/mediaQueries.css";
 
 .CareerTitle {
@@ -15,14 +17,13 @@
   composes: CareerTitle;
   font-size: font-size-4;
 }
-
 .CareerTitleIcon {
   position: relative;
   top: 0.2rem;
   display: inline-block;
   width: 28px;
   height: 28px;
-  margin-right: base-spacing-small;
+  margin-right: spacing-small;
   @media mq-mobile {
     width: 24px;
     height: 24px;
