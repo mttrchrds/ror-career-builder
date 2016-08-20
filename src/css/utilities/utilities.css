@@ -1,0 +1,7 @@
+@value height-title from "../values/heights.css";
+
+:global {
+  .heightTitle {
+      height: height-title;
+  }
+}

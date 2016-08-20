@@ -1,0 +1,66 @@
+@value spacing, spacing-extra-small, spacing-small, spacing-medium, spacing-large, spacing-extra-large from "../values/spacing.css";
+@value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "../values/mediaQueries.css";
+
+:global {
+  .marginLeft {
+    margin-left: spacing;
+    &--extra-small {
+      margin-left: spacing-extra-small;
+    }
+    &--small {
+      margin-left: spacing-small;
+    }
+    &--medium {
+      margin-left: spacing-medium;
+    }
+    &--large {
+      margin-left: spacing-large;
+    }
+    &--extra-large {
+      margin-left: spacing-extra-large;
+    }
+    &\@sm-min {
+      @media mq-sm-min {
+        margin-left: spacing;
+      }
+    }
+    &--none {
+      margin-left: 0;
+      &\@mobile {
+        @media mq-mobile {
+          margin-left: 0;
+        }
+      }
+      &\@xs {
+        @media mq-xs {
+          margin-left: 0;
+        }
+      }
+      &\@sm {
+        @media mq-sm {
+          margin-left: 0;
+        }
+      }
+      &\@sm-min {
+        @media mq-sm-min {
+          margin-left: 0;
+        }
+      }
+      &\@md {
+        @media mq-md {
+          margin-left: 0;
+        }
+      }
+      &\@md-min {
+        @media mq-md-min {
+          margin-left: 0;
+        }
+      }
+      &\@lg {
+        @media mq-lg {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

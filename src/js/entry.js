@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 // For Google Analytics
 import 'autotrack';
 import '../../analytics.js';
+import '../css/utilities/entry.css';
 
 /*
   Import Components

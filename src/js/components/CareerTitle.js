@@ -4,7 +4,7 @@ import CSSCareerTitle from '../../css/components/CareerTitle.css';
 const CareerTitle = (props) => {
   const url = `/images/icons/${props.careerShort}.png`;
   return (
-      <div className="u-title-height u-margin__bottom--large">
+      <div className="marginBottom--medium heightTitle">
         <img src={url} className={CSSCareerTitle.CareerTitleIconBordered}></img>
         <h1 className={CSSCareerTitle.CareerTitle}>
           {props.career.name}

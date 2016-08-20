@@ -28,7 +28,7 @@ class SelectLevel extends React.Component {
 
   render() {
     return (
-      <div className="u-title-height u-margin__bottom--large u-margin__left-sm">
+      <div className="heightTitle marginBottom--medium marginLeft@sm-min">
         <div className={CSSSelect.Select}>
           <label className={CSSSelect.SelectLabel} htmlFor="levelSelect">Level</label>
           <select

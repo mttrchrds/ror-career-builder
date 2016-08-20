@@ -11,7 +11,7 @@ const BarXp = (props) => {
     return barStyle;
   };
   return (
-    <div className="u-margin__bottom">
+    <div className="marginBottom">
         <div className={CSSBar.BarXp}>
             <div className={CSSBar.BarProgressXp} style={calculateBarWidth()}></div>
         </div>
