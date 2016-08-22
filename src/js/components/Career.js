@@ -557,14 +557,16 @@ class Career extends React.Component {
                   updateSelectedMorale={this.updateSelectedMorale}
                 />
 
-                <CoreTactics
-                  currentLevel={this.state.currentLevel}
-                  abilities={this.state.abilities}
-                  tactics={this.state.coreTactics}
-                  currentTacticLimit={this.state.currentTacticLimit}
-                  selectedTactics={this.state.selectedTactics}
-                  updateSelectedTactics={this.updateSelectedTactics}
-                />
+                <div className="marginBottom">
+                  <CoreTactics
+                    currentLevel={this.state.currentLevel}
+                    abilities={this.state.abilities}
+                    tactics={this.state.coreTactics}
+                    currentTacticLimit={this.state.currentTacticLimit}
+                    selectedTactics={this.state.selectedTactics}
+                    updateSelectedTactics={this.updateSelectedTactics}
+                  />
+                </div>
 
               </div>
               <div className="pure-u-1 pure-u-md-14-24">
