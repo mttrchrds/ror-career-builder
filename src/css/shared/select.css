@@ -12,7 +12,9 @@
   color: color-text-secondary;
   font-size: font-size-3;
   margin-right: spacing;
-  @media mq-mobile {
+}
+@media mq-mobile {
+  .selectLabel {
     font-size: font-size-2;
   }
 }

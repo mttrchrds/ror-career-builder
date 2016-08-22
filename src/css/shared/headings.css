@@ -23,7 +23,9 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: font-size-5;
-  @media mq-mobile {
+}
+@media mq-mobile {
+  .headingCareer {
     font-size: font-size-4;
   }
 }
