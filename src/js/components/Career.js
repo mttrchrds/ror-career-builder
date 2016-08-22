@@ -546,16 +546,18 @@ class Career extends React.Component {
                   />
                 </div>
 
-                <CoreMorales
-                  currentLevel={this.state.currentLevel}
-                  abilities={this.state.abilities}
-                  morales={this.state.coreMorales}
-                  selectedMorale1={this.state.selectedMorale1}
-                  selectedMorale2={this.state.selectedMorale2}
-                  selectedMorale3={this.state.selectedMorale3}
-                  selectedMorale4={this.state.selectedMorale4}
-                  updateSelectedMorale={this.updateSelectedMorale}
-                />
+                <div className="marginBottom">
+                  <CoreMorales
+                    currentLevel={this.state.currentLevel}
+                    abilities={this.state.abilities}
+                    morales={this.state.coreMorales}
+                    selectedMorale1={this.state.selectedMorale1}
+                    selectedMorale2={this.state.selectedMorale2}
+                    selectedMorale3={this.state.selectedMorale3}
+                    selectedMorale4={this.state.selectedMorale4}
+                    updateSelectedMorale={this.updateSelectedMorale}
+                  />
+                </div>
 
                 <div className="marginBottom">
                   <CoreTactics

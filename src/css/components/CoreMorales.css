@@ -1,0 +1,46 @@
+@value color-base-6 from "../values/colours.css";
+@value spacing-small, spacing from "../values/spacing.css";
+@value mq-mobile from "../values/mediaQueries.css";
+
+.container {
+  composes: box from "../shared/box.css"
+}
+.heading {
+  composes: heading1 from "../shared/headings.css";
+}
+.moraleContainer {
+  composes: row from "../shared/row.css";
+}
+@media mq-mobile {
+  .moraleContainer {
+    display: block;
+  }
+}
+.morale {
+  display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	border-right: 1px solid color-base-6;
+	padding-left: spacing-small;
+}
+@media mq-mobile {
+  .morale {
+    padding-left: 0;
+    padding-bottom: spacing;
+    border-right: 0;
+  }
+}
+.moraleFirst {
+  composes: morale;
+  padding-left: 0;
+}
+.moraleLast {
+  composes: morale;
+  border-right: none;
+}
+.moraleHeading {
+  composes: heading2 from "../shared/headings.css";
+}
+.abilities {
+  composes: row from "../shared/row.css";
+}

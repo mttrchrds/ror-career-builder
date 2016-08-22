@@ -1,10 +1,11 @@
 import React from 'react';
 import AbilityMorale from './AbilityMorale';
 import '../../scss/components/CoreMorales.scss';
+import css from '../../css/components/CoreMorales.css';
 
 const CoreMorales = (props) => {
-  const renderAbility = (ability, rank) => 
-    <AbilityMorale 
+  const renderAbility = (ability, rank) =>
+    <AbilityMorale
       key={`m${ability.id}`}
       details={ability}
       currentLevel={props.currentLevel}
@@ -16,34 +17,34 @@ const CoreMorales = (props) => {
       selectedMorale4={props.selectedMorale4}
     />;
   const renderMorales = (rank1, rank2, rank3, rank4) =>
-    <div className="o-row u-display__block-mobile">
-      <div className="c-morale c-morale--1">
-        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 1</h3>
-        <div className="c-morale__abilities">
+    <div className={css.moraleContainer}>
+      <div className={css.moraleFirst}>
+        <h3 className={css.moraleHeading}>Rank 1</h3>
+        <div className={css.abilities}>
           {rank1.map(
             (key) => renderAbility(props.abilities[key], 1)
           )}
         </div>
       </div>
-      <div className="c-morale c-morale--2">
-        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 2</h3>
-        <div className="c-morale__abilities">
+      <div className={css.morale}>
+        <h3 className={css.moraleHeading}>Rank 2</h3>
+        <div className={css.abilities}>
           {rank2.map(
             (key) => renderAbility(props.abilities[key], 2)
           )}
         </div>
       </div>
-      <div className="c-morale c-morale--3">
-        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 3</h3>
-        <div className="c-morale__abilities">
+      <div className={css.morale}>
+        <h3 className={css.moraleHeading}>Rank 3</h3>
+        <div className={css.abilities}>
           {rank3.map(
             (key) => renderAbility(props.abilities[key], 3)
           )}
         </div>
       </div>
-      <div className="c-morale c-morale--4">
-        <h3 className="c-morale__title t-secondary t-secondary__subtitle">Rank 4</h3>
-        <div className="c-morale__abilities">
+      <div className={css.moraleLast}>
+        <h3 className={css.moraleHeading}>Rank 4</h3>
+        <div className={css.abilities}>
           {rank4.map(
             (key) => renderAbility(props.abilities[key], 4)
           )}
@@ -78,11 +79,9 @@ const CoreMorales = (props) => {
     return renderMorales(rank1, rank2, rank3, rank4);
   };
   return (
-    <div className="u-margin__bottom">
-      <div className="c-box">
-        <h2 className="c-page-title">Morales</h2>
-        {sortMorales()}
-      </div>
+    <div className={css.container}>
+      <h2 className={css.heading}>Morales</h2>
+      {sortMorales()}
     </div>
   );
 };
