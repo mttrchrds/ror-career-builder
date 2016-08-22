@@ -3,32 +3,30 @@
 @value mq-mobile from "../values/mediaQueries.css";
 
 .careerIcon {
-  width: 28px;
-  height: 28px;
+  width: 2.8rem;
+  height: 2.8rem;
   margin-right: spacing-small;
 }
 @media mq-mobile {
   .careerIcon {
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }
 .careerIconSmall {
   composes: careerIcon;
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 .careerIconSmaller {
   composes: careerIcon;
-  top: 0.4rem;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
 }
 .careerIconSmallest {
   composes: careerIcon;
-  top: 0.5rem;
-  width: 18px;
-  height: 18px;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 .careerIconBordered {
   composes: careerIcon;

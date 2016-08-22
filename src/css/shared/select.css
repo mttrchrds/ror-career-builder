@@ -2,6 +2,7 @@
 @value spacing, spacing-small from "../values/spacing.css";
 @value color-text-secondary, color-base-0 from "../values/colours.css";
 @value mq-mobile from "../values/mediaQueries.css";
+@value height-select from "../values/heights.css";
 
 .select {
   display: flex;
@@ -19,7 +20,7 @@
   }
 }
 .selectElement {
-  height: 2.8rem;
+  height: height-select;
   font-size: font-size-1;
   padding-top: 0;
   padding-bottom: 0;
