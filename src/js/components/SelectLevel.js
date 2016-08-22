@@ -1,5 +1,5 @@
 import React from 'react';
-import css from '../../css/components/Select.css';
+import css from '../../css/components/SelectLevel.css';
 
 class SelectLevel extends React.Component {
 
@@ -28,18 +28,16 @@ class SelectLevel extends React.Component {
 
   render() {
     return (
-      <div className="heightTitle marginBottom--medium marginLeft@sm-min">
-        <div className={css.Select}>
-          <label className={css.SelectLabel} htmlFor="levelSelect">Level</label>
-          <select
-            ref="level"
-            onChange={this.changeLevel}
-            className={css.SelectElement} id="levelSelect"
-            value={this.props.currentLevel}
-          >
-            {this.generateLevels()}
-          </select>
-        </div>
+      <div className={css.container}>
+        <label className={css.label} htmlFor="levelSelect">Level</label>
+        <select
+          ref="level"
+          onChange={this.changeLevel}
+          className={css.select} id="levelSelect"
+          value={this.props.currentLevel}
+        >
+          {this.generateLevels()}
+        </select>
       </div>
     );
   }

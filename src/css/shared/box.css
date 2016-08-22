@@ -1,0 +1,7 @@
+@value color-base-3 from "../values/colours.css";
+@value spacing from "../values/spacing.css";
+
+.box {
+  padding: spacing;
+  background-color: color-base-3;
+}

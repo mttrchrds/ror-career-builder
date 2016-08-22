@@ -1,5 +1,5 @@
 import React from 'react';
-import css from '../../css/components/Bar.css';
+import css from '../../css/components/BarXp.css';
 
 const BarXp = (props) => {
   const calculateBarWidth = () => {
@@ -11,10 +11,8 @@ const BarXp = (props) => {
     return barStyle;
   };
   return (
-    <div className="marginBottom">
-        <div className={css.BarXp}>
-            <div className={css.BarProgressXp} style={calculateBarWidth()}></div>
-        </div>
+    <div className={css.bar}>
+        <div className={css.progress} style={calculateBarWidth()}></div>
     </div>
   );
 };

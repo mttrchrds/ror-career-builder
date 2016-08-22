@@ -1,5 +1,6 @@
 import React from 'react';
 import Ability from './Ability';
+import css from '../../css/components/CoreAbilities.css';
 
 const CoreAbilities = (props) => {
   const renderAbility = (key) =>
@@ -9,12 +10,10 @@ const CoreAbilities = (props) => {
       currentLevel={props.currentLevel}
     />;
   return (
-    <div className="u-margin__bottom">
-      <div className="c-box">
-        <h2 className="c-page-title">Core abilities</h2>
-        <div className="o-row">
-          {props.coreAbilities.map(renderAbility)}
-        </div>
+    <div className={css.container}>
+      <h2 className={css.heading}>Core abilities</h2>
+      <div className={css.abilities}>
+        {props.coreAbilities.map(renderAbility)}
       </div>
     </div>
   );

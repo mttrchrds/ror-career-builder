@@ -4,9 +4,9 @@ import css from '../../css/components/CareerTitle.css';
 const CareerTitle = (props) => {
   const url = `/images/icons/${props.careerShort}.png`;
   return (
-      <div className="marginBottom--medium heightTitle">
-        <img src={url} className={css.CareerTitleIconBordered}></img>
-        <h1 className={css.CareerTitle}>
+      <div className={css.container}>
+        <img src={url} className={css.icon}></img>
+        <h1 className={css.title}>
           {props.career.name}
         </h1>
       </div>

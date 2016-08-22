@@ -1,5 +1,5 @@
 import React from 'react';
-import CSSBar from '../../css/components/Bar.css';
+import css from '../../css/components/BarRenown.css';
 
 const BarRenown = (props) => {
   const calculateBarWidth = () => {
@@ -32,10 +32,8 @@ const BarRenown = (props) => {
     return barStyle;
   };
   return (
-    <div className="marginBottom--medium">
-      <div className={CSSBar.BarRenown}>
-        <div className={CSSBar.BarProgressRenown} style={calculateBarWidth()}></div>
-      </div>
+    <div className={css.bar}>
+      <div className={css.progress} style={calculateBarWidth()}></div>
     </div>
   );
 };

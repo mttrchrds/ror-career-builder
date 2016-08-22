@@ -479,46 +479,58 @@ class Career extends React.Component {
         <div className="u-height">
           <div className={containerClass}>
 
-            <Breadcrumb
-              career={this.state.career}
-              updateSidebarVisibility={this.updateSidebarVisibility}
-              updateOverlayVisibility={this.updateOverlayVisibility}
-              gaChangeCareer={this.gaChangeCareer}
-            />
+            <div className="marginBottom--medium">
+              <Breadcrumb
+                career={this.state.career}
+                updateSidebarVisibility={this.updateSidebarVisibility}
+                updateOverlayVisibility={this.updateOverlayVisibility}
+                gaChangeCareer={this.gaChangeCareer}
+              />
+            </div>
 
-            <BarXp currentLevel={this.state.currentLevel} />
+            <div className="marginBottom">
+              <BarXp currentLevel={this.state.currentLevel} />
+            </div>
 
-            <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
+            <div className="marginBottom--medium">
+              <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
+            </div>
 
             <div className="pure-g">
               <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-10-24">
 
-                <CareerTitle careerShort={this.state.careerShort}
-                  career={this.state.career}
-                />
+                <div className="marginBottom--medium heightTitle">
+                  <CareerTitle careerShort={this.state.careerShort}
+                    career={this.state.career}
+                  />
+                </div>
 
               </div>
               <div className="pure-u-1-3 pure-u-mobile-1-2 pure-u-sm-1-6 pure-u-md-1-6">
 
-                <SelectLevel
-                  updateLevel={this.updateLevel}
-                  currentLevel={this.state.currentLevel}
-                  setMasteryPoints={this.setMasteryPoints}
-                  currentRenown={this.state.currentRenown}
-                  setCurrentTacticLimit={this.setCurrentTacticLimit}
-                  resetSelections={this.resetSelections}
-                />
+                <div className="heightTitle marginBottom--medium marginLeft@sm-min">
+                  <SelectLevel
+                    updateLevel={this.updateLevel}
+                    currentLevel={this.state.currentLevel}
+                    setMasteryPoints={this.setMasteryPoints}
+                    currentRenown={this.state.currentRenown}
+                    setCurrentTacticLimit={this.setCurrentTacticLimit}
+                    resetSelections={this.resetSelections}
+                  />
+                </div>
 
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1-2 pure-u-sm-1-4 pure-u-md-10-24">
 
-                <SelectRenown
-                  currentLevel={this.state.currentLevel}
-                  currentRenown={this.state.currentRenown}
-                  updateRenown={this.updateRenown}
-                  setMasteryPoints={this.setMasteryPoints}
-                  resetSelections={this.resetSelections}
-                />
+                <div className="heightTitle marginBottom--medium">
+                  <SelectRenown
+                    currentLevel={this.state.currentLevel}
+                    currentRenown={this.state.currentRenown}
+                    updateRenown={this.updateRenown}
+                    setMasteryPoints={this.setMasteryPoints}
+                    resetSelections={this.resetSelections}
+                  />
+                </div>
 
               </div>
             </div>
@@ -526,11 +538,13 @@ class Career extends React.Component {
             <div className="pure-g">
               <div className="pure-u-1 pure-u-md-10-24">
 
-                <CoreAbilities
-                  currentLevel={this.state.currentLevel}
-                  coreAbilities={this.state.coreAbilities}
-                  abilities={this.state.abilities}
-                />
+                <div className="marginBottom">
+                  <CoreAbilities
+                    currentLevel={this.state.currentLevel}
+                    coreAbilities={this.state.coreAbilities}
+                    abilities={this.state.abilities}
+                  />
+                </div>
 
                 <CoreMorales
                   currentLevel={this.state.currentLevel}

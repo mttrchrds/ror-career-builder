@@ -1,0 +1,33 @@
+@value font-size-3, font-size-4, font-size-5 from "../values/fontSizes.css";
+@value color-text-secondary from "../values/colours.css";
+@value spacing, spacing-medium from "../values/spacing.css";
+@value mq-mobile from "../values/mediaQueries.css";
+
+.heading {
+  color: color-text-secondary;
+  font-weight: bold;
+  margin-top: 0;
+}
+.heading1 {
+  composes: heading;
+  font-size: font-size-4;
+  margin-bottom: spacing-medium;
+}
+.heading2 {
+  composes: heading;
+  font-size: font-size-3;
+  margin-bottom: spacing;
+}
+.headingCareer {
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: font-size-5;
+  @media mq-mobile {
+    font-size: font-size-4;
+  }
+}
+.headingCareerSmall {
+  composes: headingCareer;
+  font-size: font-size-4;
+}

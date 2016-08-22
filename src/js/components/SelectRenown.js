@@ -1,5 +1,5 @@
 import React from 'react';
-import CSSSelect from '../../css/components/Select.css';
+import css from '../../css/components/SelectRenown.css';
 
 class SelectRenown extends React.Component {
 
@@ -17,22 +17,20 @@ class SelectRenown extends React.Component {
 
   render() {
     return (
-      <div className="heightTitle marginBottom--medium">
-        <div className={CSSSelect.Select}>
-          <label className={CSSSelect.SelectLabel} htmlFor="renownSelect">Renown rank</label>
-          <select
-            ref="renown"
-            onChange={this.changeRenown}
-            className={CSSSelect.SelectElement} id="renownSelect"
-            value={this.props.currentRenown}
-          >
-            <option value="10">&lt; 40</option>
-            <option value="40">40+</option>
-            <option value="50">50+</option>
-            <option value="60">60+</option>
-            <option value="70">70+</option>
-          </select>
-        </div>
+      <div className={css.container}>
+        <label className={css.label} htmlFor="renownSelect">Renown rank</label>
+        <select
+          ref="renown"
+          onChange={this.changeRenown}
+          className={css.select} id="renownSelect"
+          value={this.props.currentRenown}
+        >
+          <option value="10">&lt; 40</option>
+          <option value="40">40+</option>
+          <option value="50">50+</option>
+          <option value="60">60+</option>
+          <option value="70">70+</option>
+        </select>
       </div>
     );
   }

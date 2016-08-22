@@ -10,7 +10,7 @@ const Breadcrumb = (props) => {
     props.gaChangeCareer('Breadcrumb');
   };
   return (
-    <div className="marginBottom--medium">
+    <div>
       <span className={css.Breadcrumb}>
         <Link to="/" className={css.BreadcrumbLink}>Home</Link>
       </span>

@@ -3,12 +3,12 @@
 @value color-text-secondary, color-base-0 from "../values/colours.css";
 @value mq-mobile from "../values/mediaQueries.css";
 
-.Select {
+.select {
   display: flex;
   height: 100%;
   align-items: center;
 }
-.SelectLabel {
+.selectLabel {
   color: color-text-secondary;
   font-size: font-size-3;
   margin-right: spacing;
@@ -16,7 +16,7 @@
     font-size: font-size-2;
   }
 }
-.SelectElement {
+.selectElement {
   height: 2.8rem;
   font-size: font-size-1;
   padding-top: 0;

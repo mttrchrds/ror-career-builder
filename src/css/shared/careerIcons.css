@@ -1,0 +1,35 @@
+@value color-base-5 from "../values/colours.css";
+@value spacing-small from "../values/spacing.css";
+@value mq-mobile from "../values/mediaQueries.css";
+
+.careerIcon {
+  width: 28px;
+  height: 28px;
+  margin-right: spacing-small;
+  @media mq-mobile {
+    width: 24px;
+    height: 24px;
+  }
+}
+.careerIconSmall {
+  composes: careerIcon;
+  width: 22px;
+  height: 22px;
+}
+.careerIconSmaller {
+  composes: careerIcon;
+  top: 0.4rem;
+  width: 20px;
+  height: 20px;
+}
+.careerIconSmallest {
+  composes: careerIcon;
+  top: 0.5rem;
+  width: 18px;
+  height: 18px;
+}
+.careerIconBordered {
+  composes: careerIcon;
+  border: 2px solid color-base-5;
+  border-radius: 50%;
+}
