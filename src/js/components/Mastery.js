@@ -3,10 +3,11 @@ import Ability from './Ability';
 import PathMeter from './PathMeter';
 import PathMeterButtons from './PathMeterButtons';
 import classNames from 'classnames';
+import css from '../../css/components/Mastery.css';
 
 const Mastery = (props) => {
   const renderAbility = (key) =>
-    <Ability 
+    <Ability
       key={props.abilities[key].id}
       details={props.abilities[key]}
       currentLevel={props.currentLevel}
@@ -20,22 +21,22 @@ const Mastery = (props) => {
     return false;
   };
   const labelClass = classNames({
-    'c-label': true,
+    [css.label]: true,
     'u-margin__left--small': true,
-    'c-label--points': props.masteryPoints > 0,
+    [css.labelActive]: props.masteryPoints > 0,
   });
   return (
-    <div className="c-box c-box--no-padding-right u-margin__left-md u-margin__bottom">
-      <h2 className="c-page-title">
+    <div className={css.container}>
+      <h2 className={css.heading}>
         Mastery abilities <span className={labelClass}>{props.masteryPoints} points</span>
       </h2>
       <div className="pure-g">
         <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-          <div className="u-border__right u-border__right-mobile--none u-border__right-sm u-margin__right u-border__bottom-mobile u-padding__bottom-mobile">
-            <h3 className="c-page-title c-page-title--compact">{props.career.paths.a.name}</h3>
-            <div className="o-row o-row--justify">
-              <div className="o-row o-row--justify">
-                <PathMeterButtons 
+          <div className="borderRight borderRight--none@mobile borderRight@sm-min marginRight borderBottom@mobile paddingBottom@mobile">
+            <h3 className={css.subHeading}>{props.career.paths.a.name}</h3>
+            <div className="row row--justify">
+              <div className="row row--justify">
+                <PathMeterButtons
                   masteryPath="a"
                   masteryPoints={props.masteryPoints}
                   pathMeter={props.pathAMeter}
@@ -44,7 +45,7 @@ const Mastery = (props) => {
                   incrementPathMeter={props.incrementPathMeter}
                   decrementPathMeter={props.decrementPathMeter}
                 />
-                <PathMeter 
+                <PathMeter
                   masteryPoints={props.masteryPoints}
                   updateMasteryPoints={props.updateMasteryPoints}
                   currentLevel={props.currentLevel}
@@ -60,12 +61,12 @@ const Mastery = (props) => {
                   updateCoreMorales={props.updateCoreMorales}
                 />
               </div>
-              <div className="u-margin__right u-margin__right-mobile--large">
-                <h4 className="u-margin__top u-margin__bottom--small">
+              <div className="marginRight marginRight--large@mobile">
+                <h4 className="marginTop marginBottom--small">
                   Core<br />abilities
                 </h4>
-                <div className="o-row">
-                  <div className="l-col">{props.pathACoreAbilities.map(renderAbility)}</div>
+                <div className="row">
+                  <div className="column">{props.pathACoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathACoreOverflow)}
                 </div>
               </div>
@@ -77,7 +78,7 @@ const Mastery = (props) => {
             <h3 className="c-page-title c-page-title--compact">{props.career.paths.b.name}</h3>
             <div className="o-row o-row--justify">
               <div className="o-row o-row--justify">
-                <PathMeterButtons 
+                <PathMeterButtons
                   masteryPath="b"
                   masteryPoints={props.masteryPoints}
                   pathMeter={props.pathBMeter}
@@ -119,7 +120,7 @@ const Mastery = (props) => {
             <h3 className="c-page-title c-page-title--compact">{props.career.paths.c.name}</h3>
             <div className="o-row o-row--justify">
               <div className="o-row o-row--justify">
-                <PathMeterButtons 
+                <PathMeterButtons
                   masteryPath="c"
                   masteryPoints={props.masteryPoints}
                   pathMeter={props.pathCMeter}
@@ -128,7 +129,7 @@ const Mastery = (props) => {
                   incrementPathMeter={props.incrementPathMeter}
                   decrementPathMeter={props.decrementPathMeter}
                 />
-                <PathMeter 
+                <PathMeter
                   masteryPoints={props.masteryPoints}
                   updateMasteryPoints={props.updateMasteryPoints}
                   currentLevel={props.currentLevel}

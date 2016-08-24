@@ -1,0 +1,62 @@
+@value color-border from "../values/colours.css";
+@value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "../values/mediaQueries.css";
+
+:global {
+  .borderBottom {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: color-border;
+    &\@mobile {
+      @media mq-mobile {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: color-border;
+      }
+    }
+    &\@sm-min {
+      @media mq-sm-min {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: color-border;
+      }
+    }
+    &--none {
+      border-bottom-width: 0;
+      &\@mobile {
+        @media mq-mobile {
+          border-bottom-width: 0;
+        }
+      }
+      &\@xs {
+        @media mq-xs {
+          border-bottom-width: 0;
+        }
+      }
+      &\@sm {
+        @media mq-sm {
+          border-bottom-width: 0;
+        }
+      }
+      &\@sm-min {
+        @media mq-sm-min {
+          border-bottom-width: 0;
+        }
+      }
+      &\@md {
+        @media mq-md {
+          border-bottom-width: 0;
+        }
+      }
+      &\@md-min {
+        @media mq-md-min {
+          border-bottom-width: 0;
+        }
+      }
+      &\@lg {
+        @media mq-lg {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+}

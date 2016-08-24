@@ -5,9 +5,15 @@
 @value color-base-4: #535a5e;
 @value color-base-5: #666666;
 @value color-base-6: #989898;
+
+@value color-border: color-base-5;
+
 @value color-text-primary: #f3f4f5;
 @value color-text-secondary: #dedede;
+
 @value color-xp: #fbbd08;
 @value color-xp-dark: #715607;
 @value color-renown: #a333c8;
 @value color-renown-dark: #5D3769;
+
+@value color-points: #db2828;

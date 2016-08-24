@@ -573,35 +573,37 @@ class Career extends React.Component {
               </div>
               <div className="pure-u-1 pure-u-md-14-24">
 
-                <Mastery
-                  career={this.state.career}
-                  currentLevel={this.state.currentLevel}
-                  pathACoreAbilities={this.state.pathACoreAbilities}
-                  pathACoreOverflow={this.state.pathACoreOverflow}
-                  pathAOptionalAbilities={this.state.pathAOptionalAbilities}
-                  pathBCoreAbilities={this.state.pathBCoreAbilities}
-                  pathBCoreOverflow={this.state.pathBCoreOverflow}
-                  pathBOptionalAbilities={this.state.pathBOptionalAbilities}
-                  pathCCoreAbilities={this.state.pathCCoreAbilities}
-                  pathCCoreOverflow={this.state.pathCCoreOverflow}
-                  pathCOptionalAbilities={this.state.pathCOptionalAbilities}
-                  masteryPoints={this.state.masteryPoints}
-                  pathAMeter={this.state.pathAMeter}
-                  pathBMeter={this.state.pathBMeter}
-                  pathCMeter={this.state.pathCMeter}
-                  updateMasteryPoints={this.updateMasteryPoints}
-                  incrementMasteryPoints={this.incrementMasteryPoints}
-                  decrementMasteryPoints={this.decrementMasteryPoints}
-                  incrementPathMeter={this.incrementPathMeter}
-                  decrementPathMeter={this.decrementPathMeter}
-                  abilities={this.state.abilities}
-                  selectedMasteries={this.state.selectedMasteries}
-                  updateSelectedMasteries={this.updateSelectedMasteries}
-                  updateSelectedTactics={this.updateSelectedTactics}
-                  updateSelectedMorale={this.updateSelectedMorale}
-                  updateCoreTactics={this.updateCoreTactics}
-                  updateCoreMorales={this.updateCoreMorales}
-                />
+                <div className="marginLeft@md-min marginBottom">
+                  <Mastery
+                    career={this.state.career}
+                    currentLevel={this.state.currentLevel}
+                    pathACoreAbilities={this.state.pathACoreAbilities}
+                    pathACoreOverflow={this.state.pathACoreOverflow}
+                    pathAOptionalAbilities={this.state.pathAOptionalAbilities}
+                    pathBCoreAbilities={this.state.pathBCoreAbilities}
+                    pathBCoreOverflow={this.state.pathBCoreOverflow}
+                    pathBOptionalAbilities={this.state.pathBOptionalAbilities}
+                    pathCCoreAbilities={this.state.pathCCoreAbilities}
+                    pathCCoreOverflow={this.state.pathCCoreOverflow}
+                    pathCOptionalAbilities={this.state.pathCOptionalAbilities}
+                    masteryPoints={this.state.masteryPoints}
+                    pathAMeter={this.state.pathAMeter}
+                    pathBMeter={this.state.pathBMeter}
+                    pathCMeter={this.state.pathCMeter}
+                    updateMasteryPoints={this.updateMasteryPoints}
+                    incrementMasteryPoints={this.incrementMasteryPoints}
+                    decrementMasteryPoints={this.decrementMasteryPoints}
+                    incrementPathMeter={this.incrementPathMeter}
+                    decrementPathMeter={this.decrementPathMeter}
+                    abilities={this.state.abilities}
+                    selectedMasteries={this.state.selectedMasteries}
+                    updateSelectedMasteries={this.updateSelectedMasteries}
+                    updateSelectedTactics={this.updateSelectedTactics}
+                    updateSelectedMorale={this.updateSelectedMorale}
+                    updateCoreTactics={this.updateCoreTactics}
+                    updateCoreMorales={this.updateCoreMorales}
+                  />
+                </div>
 
                 <ActionButtons
                   resetCareer={this.resetCareer}

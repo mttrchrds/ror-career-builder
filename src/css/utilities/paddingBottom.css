@@ -2,68 +2,63 @@
 @value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "../values/mediaQueries.css";
 
 :global {
-  .marginLeft {
-    margin-left: spacing;
+  .paddingBottom {
+    padding-bottom: spacing;
     &--extra-small {
-      margin-left: spacing-extra-small;
+      padding-bottom: spacing-extra-small;
     }
     &--small {
-      margin-left: spacing-small;
+      padding-bottom: spacing-small;
     }
     &--medium {
-      margin-left: spacing-medium;
+      padding-bottom: spacing-medium;
     }
     &--large {
-      margin-left: spacing-large;
+      padding-bottom: spacing-large;
     }
     &--extra-large {
-      margin-left: spacing-extra-large;
+      padding-bottom: spacing-extra-large;
     }
-    &\@sm-min {
-      @media mq-sm-min {
-        margin-left: spacing;
-      }
-    }
-    &\@md-min {
-      @media mq-md-min {
-        margin-left: spacing;
+    &\@mobile {
+      @media mq-mobile {
+        padding-bottom: spacing;
       }
     }
     &--none {
-      margin-left: 0;
+      padding-bottom: 0;
       &\@mobile {
         @media mq-mobile {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@xs {
         @media mq-xs {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@sm {
         @media mq-sm {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@sm-min {
         @media mq-sm-min {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@md {
         @media mq-md {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@md-min {
         @media mq-md-min {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
       &\@lg {
         @media mq-lg {
-          margin-left: 0;
+          padding-bottom: 0;
         }
       }
     }

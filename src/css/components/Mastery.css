@@ -1,0 +1,33 @@
+@value color-base-0, color-base-6, color-points, color-text-primary from "../values/colours.css";
+@value font-size-3 from "../values/fontSizes.css";
+@value mq-mobile from "../values/mediaQueries.css";
+@value label-padding: 0.3rem;
+
+.container {
+  composes: box from "../shared/box.css";
+  padding-right: 0;
+}
+.heading {
+  composes: heading1 from "../shared/headings.css";
+}
+.label {
+  position: relative;
+  top: calc(- label-padding);
+  display: inline-block;
+  color: color-base-0;
+  font-size: font-size-3;
+  padding: label-padding calc(label-padding * 2);
+  background-color: color-base-6;
+  &--points {
+    background-color: $color-points;
+    color: $color-text-primary;
+  }
+}
+.labelActive {
+  composes: label;
+  background-color: color-points;
+  color: color-text-primary;
+}
+.subHeading {
+  composes: heading2 from "../shared/headings.css";
+}

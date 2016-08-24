@@ -2,68 +2,73 @@
 @value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "../values/mediaQueries.css";
 
 :global {
-  .marginLeft {
-    margin-left: spacing;
+  .marginRight {
+    margin-right: spacing;
     &--extra-small {
-      margin-left: spacing-extra-small;
+      margin-right: spacing-extra-small;
     }
     &--small {
-      margin-left: spacing-small;
+      margin-right: spacing-small;
     }
     &--medium {
-      margin-left: spacing-medium;
+      margin-right: spacing-medium;
     }
     &--large {
-      margin-left: spacing-large;
+      margin-right: spacing-large;
+      &\@mobile {
+        @media mq-mobile {
+          margin-right: spacing-large;
+        }
+      }
     }
     &--extra-large {
-      margin-left: spacing-extra-large;
+      margin-right: spacing-extra-large;
     }
     &\@sm-min {
       @media mq-sm-min {
-        margin-left: spacing;
+        margin-right: spacing;
       }
     }
     &\@md-min {
       @media mq-md-min {
-        margin-left: spacing;
+        margin-right: spacing;
       }
     }
     &--none {
-      margin-left: 0;
+      margin-right: 0;
       &\@mobile {
         @media mq-mobile {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@xs {
         @media mq-xs {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@sm {
         @media mq-sm {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@sm-min {
         @media mq-sm-min {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@md {
         @media mq-md {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@md-min {
         @media mq-md-min {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
       &\@lg {
         @media mq-lg {
-          margin-left: 0;
+          margin-right: 0;
         }
       }
     }

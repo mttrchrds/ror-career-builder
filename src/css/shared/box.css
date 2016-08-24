@@ -2,6 +2,9 @@
 @value spacing from "../values/spacing.css";
 
 .box {
-  padding: spacing;
+  padding-top: spacing;
+  padding-right: spacing;
+  padding-bottom: spacing;
+  padding-left: spacing;
   background-color: color-base-3;
 }
