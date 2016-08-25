@@ -30,8 +30,8 @@ const Mastery = (props) => {
       <h2 className={css.heading}>
         Mastery abilities <span className={labelClass}>{props.masteryPoints} points</span>
       </h2>
-      <div className="pure-g">
-        <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
+      <div className="grid">
+        <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
           <div className="borderRight borderRight--none@mobile borderRight@sm-min marginRight borderBottom@mobile paddingBottom@mobile">
             <h3 className={css.subHeading}>{props.career.paths.a.name}</h3>
             <div className="row row--justify">
@@ -73,8 +73,8 @@ const Mastery = (props) => {
             </div>
           </div>
         </div>
-        <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-          <div className="borderRight@sm-min marginRight marginTop marginTop--none@sm-min borderBottom@mobile paddingBottom@mobile">
+        <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
+          <div className="borderRight@sm-min marginRight marginTop@mobile borderBottom@mobile paddingBottom@mobile">
             <h3 className={css.subHeading}>{props.career.paths.b.name}</h3>
             <div className="row row--justify">
               <div className="row row--justify">
@@ -115,8 +115,8 @@ const Mastery = (props) => {
             </div>
           </div>
         </div>
-        <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-          <div className="borderRight borderRight--none@mobile border-right--none@sm-min marginRight marginTop marginTop--none@sm-min">
+        <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
+          <div className="borderRight borderRight--none@mobile borderRight--none@sm-min marginRight marginTop marginTop--none@sm-min">
             <h3 className={css.subHeading}>{props.career.paths.c.name}</h3>
             <div className="row row--justify">
               <div className="row row--justify">

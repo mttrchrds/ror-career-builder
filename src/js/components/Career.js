@@ -496,8 +496,8 @@ class Career extends React.Component {
               <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} />
             </div>
 
-            <div className="pure-g">
-              <div className="pure-u-1 pure-u-sm-7-12 pure-u-md-10-24">
+            <div className="grid">
+              <div className="grid-col-1 grid-col-7-12@sm-min grid-col-10-24@md-min">
 
                 <div className="marginBottom--medium heightTitle">
                   <CareerTitle careerShort={this.state.careerShort}
@@ -506,7 +506,7 @@ class Career extends React.Component {
                 </div>
 
               </div>
-              <div className="pure-u-1-3 pure-u-mobile-1-2 pure-u-sm-1-6 pure-u-md-1-6">
+              <div className="grid-col-1-3 grid-col-1-2@mobile grid-col-1-6@sm-min grid-col-1-6@md-min">
 
                 <div className="heightTitle marginBottom--medium marginLeft@sm-min">
                   <SelectLevel
@@ -520,7 +520,7 @@ class Career extends React.Component {
                 </div>
 
               </div>
-              <div className="pure-u-2-3 pure-u-mobile-1-2 pure-u-sm-1-4 pure-u-md-10-24">
+              <div className="grid-col-2-3 grid-col-1-2@mobile grid-col-1-4@sm-min grid-col-10-24@md-min">
 
                 <div className="heightTitle marginBottom--medium">
                   <SelectRenown
@@ -535,8 +535,8 @@ class Career extends React.Component {
               </div>
             </div>
 
-            <div className="pure-g">
-              <div className="pure-u-1 pure-u-md-10-24">
+            <div className="grid">
+              <div className="grid-col-1 grid-col-10-24@md-min">
 
                 <div className="marginBottom">
                   <CoreAbilities
@@ -571,7 +571,7 @@ class Career extends React.Component {
                 </div>
 
               </div>
-              <div className="pure-u-1 pure-u-md-14-24">
+              <div className="grid-col-1 grid-col-14-24@md-min">
 
                 <div className="marginLeft@md-min marginBottom">
                   <Mastery
