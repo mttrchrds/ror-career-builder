@@ -22,7 +22,7 @@ const Mastery = (props) => {
   };
   const labelClass = classNames({
     [css.label]: true,
-    'u-margin__left--small': true,
+    'marginLeft--small': true,
     [css.labelActive]: props.masteryPoints > 0,
   });
   return (
@@ -74,10 +74,10 @@ const Mastery = (props) => {
           </div>
         </div>
         <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-          <div className="u-border__right-sm u-margin__right u-margin__top u-margin__top-sm--none u-border__bottom-mobile u-padding__bottom-mobile">
-            <h3 className="c-page-title c-page-title--compact">{props.career.paths.b.name}</h3>
-            <div className="o-row o-row--justify">
-              <div className="o-row o-row--justify">
+          <div className="borderRight@sm-min marginRight marginTop marginTop--none@sm-min borderBottom@mobile paddingBottom@mobile">
+            <h3 className={css.subHeading}>{props.career.paths.b.name}</h3>
+            <div className="row row--justify">
+              <div className="row row--justify">
                 <PathMeterButtons
                   masteryPath="b"
                   masteryPoints={props.masteryPoints}
@@ -103,12 +103,12 @@ const Mastery = (props) => {
                   updateCoreMorales={props.updateCoreMorales}
                 />
               </div>
-              <div className="u-margin__right u-margin__right-mobile--large">
-                <h4 className="u-margin__top u-margin__bottom--small">
+              <div className="marginRight marginRight--large@mobile">
+                <h4 className="marginTop marginBottom--small">
                   Core<br />abilities
                 </h4>
-                <div className="o-row">
-                  <div className="l-col">{props.pathBCoreAbilities.map(renderAbility)}</div>
+                <div className="row">
+                  <div className="column">{props.pathBCoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathBCoreOverflow)}
                 </div>
               </div>
@@ -116,10 +116,10 @@ const Mastery = (props) => {
           </div>
         </div>
         <div className="pure-u-1-2 pure-u-mobile-1 pure-u-sm-1-3">
-          <div className="u-border__right u-border__right-mobile--none u-border__right-sm--none u-margin__right u-margin__top u-margin__top-sm--none">
-            <h3 className="c-page-title c-page-title--compact">{props.career.paths.c.name}</h3>
-            <div className="o-row o-row--justify">
-              <div className="o-row o-row--justify">
+          <div className="borderRight borderRight--none@mobile border-right--none@sm-min marginRight marginTop marginTop--none@sm-min">
+            <h3 className={css.subHeading}>{props.career.paths.c.name}</h3>
+            <div className="row row--justify">
+              <div className="row row--justify">
                 <PathMeterButtons
                   masteryPath="c"
                   masteryPoints={props.masteryPoints}
@@ -145,12 +145,12 @@ const Mastery = (props) => {
                   updateCoreMorales={props.updateCoreMorales}
                 />
               </div>
-              <div className="u-margin__right u-margin__right-mobile--large">
-                <h4 className="u-margin__top u-margin__bottom--small">
+              <div className="marginRight marginRight--large@mobile">
+                <h4 className="marginTop marginBottom--small">
                   Core<br />abilities
                 </h4>
-                <div className="o-row">
-                  <div className="l-col">{props.pathCCoreAbilities.map(renderAbility)}</div>
+                <div className="row">
+                  <div className="column">{props.pathCCoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathCCoreOverflow)}
                 </div>
               </div>
