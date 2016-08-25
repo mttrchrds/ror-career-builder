@@ -1,6 +1,3 @@
-.container {
-  composes: row from "../shared/row.css";
-}
 .title {
   composes: headingCareer from "../shared/headings.css";
 }

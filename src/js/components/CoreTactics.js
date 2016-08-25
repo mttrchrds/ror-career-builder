@@ -15,7 +15,7 @@ const CoreTactics = (props) => {
   return (
     <div className={css.container}>
       <h2 className={css.heading}>Tactics</h2>
-      <div className={css.abilities}>
+      <div className="row">
         {props.tactics.map(renderAbility)}
       </div>
     </div>

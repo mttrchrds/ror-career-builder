@@ -12,7 +12,7 @@ const CoreAbilities = (props) => {
   return (
     <div className={css.container}>
       <h2 className={css.heading}>Core abilities</h2>
-      <div className={css.abilities}>
+      <div className="row">
         {props.coreAbilities.map(renderAbility)}
       </div>
     </div>

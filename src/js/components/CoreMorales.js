@@ -17,10 +17,10 @@ const CoreMorales = (props) => {
       selectedMorale4={props.selectedMorale4}
     />;
   const renderMorales = (rank1, rank2, rank3, rank4) =>
-    <div className={css.moraleContainer}>
+    <div className="row">
       <div className={css.moraleFirst}>
         <h3 className={css.moraleHeading}>Rank 1</h3>
-        <div className={css.abilities}>
+        <div className="row">
           {rank1.map(
             (key) => renderAbility(props.abilities[key], 1)
           )}
@@ -28,7 +28,7 @@ const CoreMorales = (props) => {
       </div>
       <div className={css.morale}>
         <h3 className={css.moraleHeading}>Rank 2</h3>
-        <div className={css.abilities}>
+        <div className="row">
           {rank2.map(
             (key) => renderAbility(props.abilities[key], 2)
           )}
@@ -36,7 +36,7 @@ const CoreMorales = (props) => {
       </div>
       <div className={css.morale}>
         <h3 className={css.moraleHeading}>Rank 3</h3>
-        <div className={css.abilities}>
+        <div className="row">
           {rank3.map(
             (key) => renderAbility(props.abilities[key], 3)
           )}
@@ -44,7 +44,7 @@ const CoreMorales = (props) => {
       </div>
       <div className={css.moraleLast}>
         <h3 className={css.moraleHeading}>Rank 4</h3>
-        <div className={css.abilities}>
+        <div className="row">
           {rank4.map(
             (key) => renderAbility(props.abilities[key], 4)
           )}
