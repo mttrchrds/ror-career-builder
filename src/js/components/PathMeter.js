@@ -1,10 +1,11 @@
 import React from 'react';
 import AbilityMastery from './AbilityMastery';
+import css from '../../css/components/PathMeter.css';
 
 const PathMeter = (props) =>
   <div>
-    <div className="o-column u-margin__left--small">
-      <div className="u-margin__bottom--tiny">
+    <div className="column marginLeft--small">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
@@ -19,7 +20,7 @@ const PathMeter = (props) =>
           updateCoreMorales={props.updateCoreMorales}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
@@ -34,7 +35,7 @@ const PathMeter = (props) =>
           updateCoreMorales={props.updateCoreMorales}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
@@ -49,8 +50,8 @@ const PathMeter = (props) =>
           updateCoreMorales={props.updateCoreMorales}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
-        <AbilityMastery 
+      <div className={css.ability}>
+        <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
           updateMasteryPoints={props.updateMasteryPoints}
@@ -64,7 +65,7 @@ const PathMeter = (props) =>
           updateCoreMorales={props.updateCoreMorales}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
@@ -78,7 +79,7 @@ const PathMeter = (props) =>
           updateCoreTactics={props.updateCoreTactics}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
@@ -93,7 +94,7 @@ const PathMeter = (props) =>
           updateCoreMorales={props.updateCoreMorales}
         />
       </div>
-      <div className="u-margin__bottom--tiny">
+      <div className={css.ability}>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
