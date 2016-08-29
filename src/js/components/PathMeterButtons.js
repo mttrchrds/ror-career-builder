@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../../scss/components/PathMeterButtons.scss';
+import css from '../../css/components/PathMeterButtons.css';
 
 const PathMeterButtons = (props) => {
   const pathMeterAdd = () => {
@@ -25,27 +25,28 @@ const PathMeterButtons = (props) => {
     const meterLevels = [];
     const meterLevelMax = 15;
     for (let i = 1; i <= meterLevelMax; i++) {
-      let thisClass = 'c-meter__level';
+      let thisClass = css.level;
       if (i <= props.pathMeter) {
-        thisClass = 'c-meter__level c-meter__level--active';
+        thisClass = css.levelActive;
       } else if (i <= (Number(props.masteryPoints) + Number(props.pathMeter))) {
-        thisClass = 'c-meter__level c-meter__level--available';
+        thisClass = css.levelAvailable;
       }
       meterLevels.push(<div key={props.masteryPath + i} className={thisClass}>{i}</div>);
     }
     return meterLevels;
   };
   const plusClass = classNames({
-    'c-button c-button--small c-button--secondary u-margin__right--tiny': true,
-    'c-button--disabled': Number(props.masteryPoints) === 0,
+    [css.button]: true,
+    'marginRight--extra-small': true,
+    [css.buttonDisabled]: Number(props.masteryPoints) === 0,
   });
   const minusClass = classNames({
-    'c-button c-button--small c-button--secondary': true,
-    'c-button--disabled': Number(props.pathMeter < 1),
+    [css.button]: true,
+    [css.buttonDisabled]: Number(props.pathMeter < 1),
   });
   return (
     <div>
-      <div className="c-meter">
+      <div className={css.meter}>
         {renderMeterLevel()}
       </div>
       <button
