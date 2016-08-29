@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import '../../scss/components/BarXp.scss';
+import css from '../../css/components/ActionButtons.css';
 
 const ActionButtons = (props) => {
   const clickReset = () => {
@@ -23,23 +23,25 @@ const ActionButtons = (props) => {
     saveLink += `&t=${props.selectedTactics}`;
     return saveLink;
   };
-  const createBBCode = (link) => 
+  const createBBCode = (link) =>
     `[url=${link}]RoR.builders - ${props.career.name}[/url]`;
   const buildModalTitle = () => {
     const url = `/images/icons/${props.careerShort}.png`;
     return (
-      <h2 className="c-title c-title--small c-title--absolute o-row u-margin__bottom--large">
-        <img src={url} className="c-title__icon c-title__icon--small" />
-        Share this {props.career.name} build
-      </h2>
+      <div className="row row--v-center">
+        <img src={url} className={css.modalTitleIcon} />
+        <h2 className={css.modalTitle}>
+          Share this {props.career.name} build
+        </h2>
+      </div>
     );
   };
   const buildModalBody = () =>
     <div>
-      <p>To share this build simply copy the link below:</p>
-      <div className="c-input--read-only" contentEditable>{createShareLink()}</div>
-      <p>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
-      <div className="c-input--read-only" contentEditable>{createBBCode(createShareLink())}</div>
+      <p className={css.modalCopy}>To share this build simply copy the link below:</p>
+      <div className={css.modalSelectable} contentEditable>{createShareLink()}</div>
+      <p className={css.modalCopy}>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
+      <div className={css.modalSelectable} contentEditable>{createBBCode(createShareLink())}</div>
     </div>;
   const clickShare = () => {
     props.updateModalContent(buildModalTitle(), buildModalBody());
@@ -56,17 +58,17 @@ const ActionButtons = (props) => {
     browserHistory.push('/');
   };
   return (
-    <div className="c-box u-margin__left-md">
-      <button className="c-button c-button--secondary" type="button" onClick={clickHome}>
+    <div className={css.container}>
+      <button className={css.home} type="button" onClick={clickHome}>
         Home
       </button>
-      <button className="c-button c-button--primary u-float__right u-margin__left" type="button" onClick={clickShare}>
-        Share<span className="u-hidden--mobile"> career</span>
+      <button className={css.share} type="button" onClick={clickShare}>
+        Share<span className="hidden@mobile"> career</span>
       </button>
-      <button className="c-button c-button--secondary u-float__right u-margin__left" type="button" onClick={clickChangeCareer}>
-        Change<span className="u-hidden--mobile"> career</span>
+      <button className={css.change} type="button" onClick={clickChangeCareer}>
+        Change<span className="hidden@mobile"> career</span>
       </button>
-      <button className="c-button c-button--negative u-float__right u-margin__left" type="button" onClick={clickReset}>
+      <button className={css.reset} type="button" onClick={clickReset}>
         Reset
       </button>
     </div>

@@ -6,7 +6,7 @@
   composes: box from "../shared/box.css"
 }
 .heading {
-  composes: heading1 from "../shared/headings.css";
+  composes: heading1 from "../shared/heading.css";
 }
 @media mq-mobile {
   .moraleContainer {
@@ -36,5 +36,5 @@
   border-right: none;
 }
 .moraleHeading {
-  composes: heading2 from "../shared/headings.css";
+  composes: heading2 from "../shared/heading.css";
 }

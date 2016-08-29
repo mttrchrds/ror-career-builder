@@ -1,6 +1,6 @@
 .title {
-  composes: headingCareer from "../shared/headings.css";
+  composes: headingCareer from "../shared/heading.css";
 }
 .icon {
-  composes: careerIconBordered from "../shared/careerIcons.css";
+  composes: careerIconBordered from "../shared/careerIcon.css";
 }

@@ -605,30 +605,32 @@ class Career extends React.Component {
                   />
                 </div>
 
-                <ActionButtons
-                  resetCareer={this.resetCareer}
-                  careerShort={this.state.careerShort}
-                  currentLevel={this.state.currentLevel}
-                  currentRenown={this.state.currentRenown}
-                  currentTacticLimit={this.state.currentTacticLimit}
-                  masteryPoints={this.state.masteryPoints}
-                  pathAMeter={this.state.pathAMeter}
-                  pathBMeter={this.state.pathBMeter}
-                  pathCMeter={this.state.pathCMeter}
-                  selectedMorale1={this.state.selectedMorale1}
-                  selectedMorale2={this.state.selectedMorale2}
-                  selectedMorale3={this.state.selectedMorale3}
-                  selectedMorale4={this.state.selectedMorale4}
-                  selectedMasteries={this.state.selectedMasteries}
-                  selectedTactics={this.state.selectedTactics}
-                  updateModalVisibility={this.updateModalVisibility}
-                  updateModalContent={this.updateModalContent}
-                  career={this.state.career}
-                  updateSidebarVisibility={this.updateSidebarVisibility}
-                  updateOverlayVisibility={this.updateOverlayVisibility}
-                  gaCareerShared={this.gaCareerShared}
-                  gaChangeCareer={this.gaChangeCareer}
-                />
+                <div className="marginLeft@md-min">
+                  <ActionButtons
+                    resetCareer={this.resetCareer}
+                    careerShort={this.state.careerShort}
+                    currentLevel={this.state.currentLevel}
+                    currentRenown={this.state.currentRenown}
+                    currentTacticLimit={this.state.currentTacticLimit}
+                    masteryPoints={this.state.masteryPoints}
+                    pathAMeter={this.state.pathAMeter}
+                    pathBMeter={this.state.pathBMeter}
+                    pathCMeter={this.state.pathCMeter}
+                    selectedMorale1={this.state.selectedMorale1}
+                    selectedMorale2={this.state.selectedMorale2}
+                    selectedMorale3={this.state.selectedMorale3}
+                    selectedMorale4={this.state.selectedMorale4}
+                    selectedMasteries={this.state.selectedMasteries}
+                    selectedTactics={this.state.selectedTactics}
+                    updateModalVisibility={this.updateModalVisibility}
+                    updateModalContent={this.updateModalContent}
+                    career={this.state.career}
+                    updateSidebarVisibility={this.updateSidebarVisibility}
+                    updateOverlayVisibility={this.updateOverlayVisibility}
+                    gaCareerShared={this.gaCareerShared}
+                    gaChangeCareer={this.gaChangeCareer}
+                  />
+                </div>
 
               </div>
             </div>

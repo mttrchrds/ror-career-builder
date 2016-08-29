@@ -8,7 +8,7 @@
   padding-right: 0;
 }
 .heading {
-  composes: heading1 from "../shared/headings.css";
+  composes: heading1 from "../shared/heading.css";
 }
 .label {
   position: relative;
@@ -29,5 +29,5 @@
   color: color-text-primary;
 }
 .subHeading {
-  composes: heading2 from "../shared/headings.css";
+  composes: heading2 from "../shared/heading.css";
 }

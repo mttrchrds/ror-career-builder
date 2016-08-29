@@ -11,6 +11,16 @@
 @value color-text-primary: #f3f4f5;
 @value color-text-secondary: #dedede;
 
+@value color-primary: #57805e;
+@value color-primary-1: #5cb85c;
+@value color-primary-2: #599c5c;
+@value color-secondary: #304f68;
+@value color-secondary-1: #337ab7;
+@value color-secondary-2: #31648f;
+@value color-negative: #a03537;
+@value color-negative-1: #d9534f;
+@value color-negative-2: #b15553;
+
 @value color-xp: #fbbd08;
 @value color-xp-dark: #715607;
 @value color-renown: #a333c8;
