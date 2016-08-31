@@ -1,26 +1,15 @@
-@value color-base-1, color-base-5 from "../values/colours.css";
+@value color-base-1 from "../values/colours.css";
 
-@value ability-width: 36px;
-@value ability-height: 36px;
 @value ability-border-radius: 0.3rem;
 
 .ability {
-  margin: 1px;
-  width: ability-width;
-  height: ability-height;
-  background-color: color-base-5;
-}
-.standard {
-  composes: ability;
+  composes: ability from "../shared/ability.css";
   border-radius: ability-border-radius;
-  border: 1px solid color-base-1;
+  border: 0.1rem solid color-base-1;
 }
 .image {
-  display: block;
-  width: ability-width;
-  height: ability-height;
+  composes: image from "../shared/ability.css";
 }
 .imageInactive {
-  composes: image;
-  opacity: 0.2;
+  composes: imageInactive from "../shared/ability.css";
 }

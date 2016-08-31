@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 import Overlay from './Overlay';
-import '../../scss/components/Ability.scss';
+import css from '../../css/components/AbilityTactic.css';
 
 class AbilityTactic extends React.Component {
 
@@ -115,7 +115,7 @@ class AbilityTactic extends React.Component {
 
   setOverlay(status) {
     this.state.overlay.visible = status;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -127,14 +127,14 @@ class AbilityTactic extends React.Component {
 
   render() {
     const abilityClass = classNames({
-      [`c-ability c-ability--${this.props.details.abilityType}`]: true,
-      'c-ability--optional': true,
-      'c-ability--active': this.state.abilityStatus,
-      'c-ability--inactive': !this.state.abilityStatus,
-      'is-selected': this.state.abilitySelected,
+      [css.ability]: true,
+      [css.abilitySelected]: this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
-      'c-ability--mastery': false,
       'c-popover__parent': true,
+    });
+    const abilityImageClass = classNames({
+      [css.image]: this.state.abilityStatus,
+      [css.imageInactive]: !this.state.abilityStatus,
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
@@ -148,17 +148,17 @@ class AbilityTactic extends React.Component {
           visible={false}
         />
         <img
-          className="c-ability__image"
+          className={abilityImageClass}
           src={imgSrc}
           alt={this.props.details.name}
           onTouchEnd={this.abilityTouchEnd}
-          onMouseOver={this.abilityHoverOver} 
+          onMouseOver={this.abilityHoverOver}
           onMouseOut={this.abilityHoverOut}
           onClick={this.abilityClicked}
         />
-        <Popover 
-          content={popoverContent} 
-          alignment="top" 
+        <Popover
+          content={popoverContent}
+          alignment="top"
           activate={this.state.abilityHovered}
           abilityOptional
           abilityStatus={this.state.abilityStatus}

@@ -1,0 +1,23 @@
+@value border-spacing: 0.2rem;
+
+.ability {
+  composes: ability from "../shared/ability.css";
+  background: url('/images/tactic-background.svg') no-repeat 0 0;
+	background-size: cover;
+  cursor: pointer;
+  padding: 0;
+  margin: border-spacing;
+}
+.abilitySelected {
+  composes: ability;
+  margin: 0;
+  padding: border-spacing;
+  background: url('/images/tactic-background-selected.svg') no-repeat 0 0;
+  background-size: cover;
+}
+.image {
+  composes: image from "../shared/ability.css";
+}
+.imageInactive {
+  composes: imageInactive from "../shared/ability.css";
+}

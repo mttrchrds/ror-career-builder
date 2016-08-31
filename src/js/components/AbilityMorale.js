@@ -134,7 +134,6 @@ class AbilityMorale extends React.Component {
     const abilityImageClass = classNames({
       [css.image]: this.state.abilityStatus,
       [css.imageInactive]: !this.state.abilityStatus,
-      [css.imageSelected]: this.state.abilitySelected,
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
