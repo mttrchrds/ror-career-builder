@@ -1,0 +1,25 @@
+@value color-base-1, color-ability-border-selected from "../values/colours.css";
+
+.ability {
+  composes: ability from "./Ability.css";
+  border-radius: 50%;
+  border: 1px solid color-base-1;
+  cursor: pointer;
+}
+.abilitySelected {
+  composes: ability;
+  border: 2px solid color-ability-border-selected;
+  margin: 0;
+}
+.image {
+  composes: image from "./Ability.css";
+  border-radius: 50%;
+}
+.imageInactive {
+  composes: imageInactive from "./Ability.css";
+  border-radius: 50%;
+}
+.imageSelected {
+  composes: image;
+  opacity: 1;
+}

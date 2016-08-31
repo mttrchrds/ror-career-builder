@@ -9,6 +9,11 @@
     }
     &--small {
       margin-right: spacing-small;
+      &\@mobile {
+        @media mq-mobile {
+          margin-right: spacing-small;
+        }
+      }
     }
     &--medium {
       margin-right: spacing-medium;

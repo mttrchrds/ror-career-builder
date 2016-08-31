@@ -1,4 +1,4 @@
-@value color-base-1, color-base-5, color-ability-border-selected, color-ability-inactive, color-ability-active from "../values/colours.css";
+@value color-base-1, color-base-5 from "../values/colours.css";
 
 @value ability-width: 36px;
 @value ability-height: 36px;
