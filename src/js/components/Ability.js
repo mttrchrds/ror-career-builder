@@ -4,6 +4,7 @@ import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 import Overlay from './Overlay';
 import '../../scss/components/Ability.scss';
+import css from '../../css/components/Ability.css';
 
 class Ability extends React.Component {
 
@@ -72,7 +73,7 @@ class Ability extends React.Component {
 
   setOverlay(status) {
     this.state.overlay.visible = status;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -84,13 +85,13 @@ class Ability extends React.Component {
 
   render() {
     const abilityClass = classNames({
-      [`c-ability c-ability--${this.props.details.abilityType}`]: true,
-      'c-ability--optional': false,
-      'c-ability--active': this.state.abilityStatus,
-      'c-ability--inactive': !this.state.abilityStatus,
+      [css.standard]: true,
       'is-hovered': this.state.abilityHovered,
-      'c-ability--mastery': false,
       'c-popover__parent': true,
+    });
+    const abilityImageClass = classNames({
+      [css.image]: this.state.abilityStatus,
+      [css.imageInactive]: !this.state.abilityStatus,
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
@@ -104,16 +105,16 @@ class Ability extends React.Component {
           visible={false}
         />
         <img
-          className="c-ability__image"
+          className={abilityImageClass}
           src={imgSrc}
           alt={this.props.details.name}
           onTouchEnd={this.abilityTouchEnd}
-          onMouseOver={this.abilityHoverOver} 
+          onMouseOver={this.abilityHoverOver}
           onMouseOut={this.abilityHoverOut}
         />
-        <Popover 
-          content={popoverContent} 
-          alignment="top" 
+        <Popover
+          content={popoverContent}
+          alignment="top"
           activate={this.state.abilityHovered}
           abilityOptional={false}
           abilityStatus={this.state.abilityStatus}

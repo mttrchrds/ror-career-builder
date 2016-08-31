@@ -29,3 +29,7 @@
 @value color-points: #db2828;
 @value color-points-light: #ff5c69;
 @value color-points-dark: #5A3B3B;
+
+@value color-ability-border-selected: #5cda36;
+@value color-ability-inactive: #ecb3b3;
+@value color-ability-active: #90d28b;
