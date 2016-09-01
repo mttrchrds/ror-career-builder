@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 import Overlay from './Overlay';
-import '../../scss/components/Ability.scss';
+import css from '../../css/components/AbilityMastery.css';
 
 class AbilityMastery extends React.Component {
 
@@ -88,7 +88,7 @@ class AbilityMastery extends React.Component {
         abilitySelected: false,
       });
     }
-    
+
     if ((Number(pathMeter) >= Number(meterRequirement)) && (Number(masteryPoints) > 0)) {
       this.setState({
         abilityStatus: true,
@@ -102,7 +102,7 @@ class AbilityMastery extends React.Component {
 
   setOverlay(status) {
     this.state.overlay.visible = status;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -179,14 +179,21 @@ class AbilityMastery extends React.Component {
 
   render() {
     const abilityClass = classNames({
-      [`c-ability c-ability--${this.props.details.abilityType}`]: true,
-      'c-ability--optional': true,
-      'c-ability--active': this.state.abilityStatus,
-      'c-ability--inactive': !this.state.abilityStatus,
-      'is-selected': this.state.abilitySelected,
+      [css.abilityStandard]: this.props.details.abilityType === 'standard',
+      [css.abilityMorale]: this.props.details.abilityType === 'morale',
+      [css.abilityTactic]: this.props.details.abilityType === 'tactic',
+      [css.abilityActive]: this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'morale'),
+      [css.abilityActiveTactic]: this.state.abilityStatus && this.props.details.abilityType === 'tactic',
+      [css.abilitySelected]: this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
-      'c-ability--mastery': true,
       'c-popover__parent': true,
+    });
+    const abilityImageClass = classNames({
+      [css.imageActive]: this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'tactic'),
+      [css.imageActiveMorale]: this.state.abilityStatus && this.props.details.abilityType === 'morale',
+      [css.imageInactive]: !this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'tactic'),
+      [css.imageInactiveMorale]: !this.state.abilityStatus && this.props.details.abilityType === 'morale',
+      [css.imageSelected]: this.state.abilitySelected,
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (
@@ -200,17 +207,17 @@ class AbilityMastery extends React.Component {
           visible={false}
         />
         <img
-          className="c-ability__image"
+          className={abilityImageClass}
           src={imgSrc}
           alt={this.props.details.name}
           onTouchEnd={this.abilityTouchEnd}
-          onMouseOver={this.abilityHoverOver} 
+          onMouseOver={this.abilityHoverOver}
           onMouseOut={this.abilityHoverOut}
           onClick={this.abilityClicked}
         />
-        <Popover 
-          content={popoverContent} 
-          alignment="top" 
+        <Popover
+          content={popoverContent}
+          alignment="top"
           activate={this.state.abilityHovered}
           abilityOptional
           abilityStatus={this.state.abilityStatus}

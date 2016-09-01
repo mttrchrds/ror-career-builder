@@ -1,0 +1,64 @@
+@value color-ability-active from "../values/colours.css";
+
+.abilityActive {
+  background-color: color-ability-active;
+}
+.abilityActiveTactic {
+  background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
+	background-size: cover;
+}
+.abilityStandard {
+  composes: ability from "./Ability.css";
+}
+.abilityMorale {
+  composes: ability from "./AbilityMorale.css";
+}
+.abilityTactic {
+  composes: ability from "./AbilityTactic.css";
+}
+.abilitySelected {
+  background: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+.image {
+  composes: image from "../shared/ability.css";
+}
+.imageActive {
+  composes: imageInactive from "../shared/ability.css";
+}
+.imageInactive {
+  composes: imageActive;
+}
+.imageMorale {
+  composes: image from "./AbilityMorale.css";
+}
+.imageActiveMorale {
+  composes: imageInactive from "./AbilityMorale.css";
+}
+.imageInactiveMorale {
+  composes: imageActiveMorale;
+}
+.imageSelected {
+  opacity: 1;
+}
+
+
+/*.c-ability--mastery.c-ability--active {
+	background-color: $color-ability-active;
+  .c-ability__image {
+    opacity: $ability-opacity-inactive;
+  }
+}*/
+.c-ability--mastery.is-selected {
+  background: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  .c-ability__image {
+    opacity: $ability-opacity-active;
+  }
+}
+/*.c-ability--mastery.c-ability--active.c-ability--tactic {
+	background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
+	background-size: cover;
+}*/
