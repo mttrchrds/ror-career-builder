@@ -42,23 +42,3 @@
 .imageSelected {
   opacity: 1;
 }
-
-
-/*.c-ability--mastery.c-ability--active {
-	background-color: $color-ability-active;
-  .c-ability__image {
-    opacity: $ability-opacity-inactive;
-  }
-}*/
-.c-ability--mastery.is-selected {
-  background: transparent;
-  background-color: transparent;
-  cursor: pointer;
-  .c-ability__image {
-    opacity: $ability-opacity-active;
-  }
-}
-/*.c-ability--mastery.c-ability--active.c-ability--tactic {
-	background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
-	background-size: cover;
-}*/
