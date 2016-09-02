@@ -18,13 +18,13 @@
     "babel",
     "airbnb",
     "eslint",
-    "sass",
     "warhammer",
     "Return of Reckoning",
     "ITCSS",
     "Games Workshop",
     "PureCSS",
-    "BEM"
+    "BEM",
+    "CSS Modules"
   ],
   "author": "Matt Richards",
   "license": "MIT",

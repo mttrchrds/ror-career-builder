@@ -1,4 +1,4 @@
-@value height-title from "../values/heights.css";
+@value height-title from "./values/heights.css";
 
 :global {
   .heightTitle {
