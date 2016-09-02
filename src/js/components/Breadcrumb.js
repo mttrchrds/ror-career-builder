@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import IconChevronRight from '../icons/IconChevronRight';
 import css from '../../css/components/Breadcrumb.css';
 
 const Breadcrumb = (props) => {
@@ -14,15 +15,21 @@ const Breadcrumb = (props) => {
       <span className={css.Breadcrumb}>
         <Link to="/" className={css.BreadcrumbLink}>Home</Link>
       </span>
-      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.BreadcrumbDivider}>
+        <IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" />
+      </span>
       <span className={css.Breadcrumb}>
         <a href="#" onClick={clickBreadcrumb} className={css.BreadcrumbLink}>{props.career.faction}</a>
       </span>
-      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.BreadcrumbDivider}>
+        <IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" />
+      </span>
       <span className={css.Breadcrumb}>
         <a href="#" onClick={clickBreadcrumb} className={css.BreadcrumbLink}>{props.career.race}</a>
       </span>
-      <span className={css.BreadcrumbDivider}><i className="fa fa-angle-right"></i></span>
+      <span className={css.BreadcrumbDivider}>
+        <IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" />
+      </span>
       <span className={css.BreadcrumbActive}>{props.career.class}</span>
     </div>
   );
