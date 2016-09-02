@@ -1,5 +1,4 @@
 @value color-base-1, color-points, color-points-dark from "../values/colours.css";
-@value font-size-small from "../values/fontSizes.css";
 @value points-available: #8E6161;
 
 .meter {
@@ -33,8 +32,11 @@
   color: rgba(255, 255, 255, 0.4);
 }
 .button {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   composes: buttonSecondary from "../shared/button.css";
-  font-size: font-size-small;
   width: 2.8rem;
   height: 2rem;
 }

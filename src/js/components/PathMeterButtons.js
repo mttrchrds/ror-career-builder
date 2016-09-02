@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
+import IconPlus from '../icons/IconPlus';
+import IconMinus from '../icons/IconMinus';
 import css from '../../css/components/PathMeterButtons.css';
 
 const PathMeterButtons = (props) => {
@@ -54,14 +56,14 @@ const PathMeterButtons = (props) => {
         onClick={pathMeterAdd}
         type="button"
       >
-        <i className="fa fa-plus"></i>
+        <IconPlus classes="icon--small" name="plus icon" nameSlug="plus-icon" />
       </button>
       <button
         className={minusClass}
         onClick={pathMeterRemove}
         type="button"
       >
-        <i className="fa fa-minus"></i>
+        <IconMinus classes="icon--small" name="minus icon" nameSlug="minus-icon" />
       </button>
     </div>
   );
