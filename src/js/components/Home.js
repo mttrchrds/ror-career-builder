@@ -178,8 +178,8 @@ class Home extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="pure-g">
-              <div className="pure-u-1-3 pure-u-mobile-1">
+            <div className="grid">
+              <div className="grid-col-1-3 grid-col-1@mobile">
                 <div className="c-list c-box u-margin__top u-margin__left u-margin__right">
                   <div className="c-list__heading">Latest updates</div>
                   <div className="c-list__item">
@@ -199,7 +199,7 @@ class Home extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="pure-u-2-3 pure-u-mobile-1">
+              <div className="grid-col-2-3 grid-col-1@mobile">
                 <div className="c-home__copy u-margin__bottom--large u-margin__top-mobile u-margin__top--large u-margin__right u-margin__left-mobile">
                   <p>Warhammer Online: Age of Reckoning has returned.
                   Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>.
