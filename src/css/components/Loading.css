@@ -1,0 +1,17 @@
+@value spacing from "../values/spacing.css";
+@value color-text-primary from "../values/colours.css";
+@value font-size-4 from "../values/fontSizes.css";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin-left: spacing;
+  color: color-text-primary;
+  font-size: font-size-4;
+}
+.image {
+  width: 4rem;
+  height: 4rem;
+}

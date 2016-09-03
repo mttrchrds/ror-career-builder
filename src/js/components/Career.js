@@ -14,8 +14,10 @@ import SelectRenown from './SelectRenown';
 import ActionButtons from './ActionButtons';
 import Modal from './Modal';
 import Overlay from './Overlay';
+import Loading from './Loading';
 import classNames from 'classnames';
 import '../../scss/components/Career.scss';
+import css from '../../css/components/Career.css';
 
 class Career extends React.Component {
 
@@ -474,6 +476,11 @@ class Career extends React.Component {
       'o-wrapper': true,
       sidebar: this.state.sidebar.visible,
     });
+    return (
+      <div className={css.loadingContainer}>
+        <Loading />
+      </div>
+    );
     if (Object.keys(this.state.career).length) {
       return (
         <div className="u-height">
@@ -660,9 +667,7 @@ class Career extends React.Component {
       );
     }
     return (
-      <div className="o-row o-row--centred">
-        <h1><i className="fa fa-cog fa-spin fa-fw margin-bottom"></i>Loading...</h1>
-      </div>
+      <Loading />
     );
   }
 

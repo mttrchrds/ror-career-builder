@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Popover from './Popover';
 import PopoverAbility from './PopoverAbility';
 import Overlay from './Overlay';
-import '../../scss/components/Ability.scss';
 import css from '../../css/components/Ability.css';
 
 class Ability extends React.Component {
