@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Sidebar from './Sidebar';
 import CareerItem from './CareerItem';
 import Overlay from './Overlay';
+import IconChevronRight from '../icons/IconChevronRight';
 import '../../scss/components/Home.scss';
 
 class Home extends React.Component {
@@ -39,7 +40,7 @@ class Home extends React.Component {
   // Hide/show overlay, param is boolean
   updateOverlayVisibility(status) {
     this.state.overlay.visible = status;
-    this.setState({ 
+    this.setState({
       overlay: this.state.overlay,
     });
   }
@@ -52,7 +53,7 @@ class Home extends React.Component {
   // Hide/show sidebar, param is boolean
   updateSidebarVisibility(status) {
     this.state.sidebar.visible = status;
-    this.setState({ 
+    this.setState({
       sidebar: this.state.sidebar,
     });
   }
@@ -117,7 +118,7 @@ class Home extends React.Component {
                 <a className="c-masthead__footer" href="#" onClick={this.clickMasthead}>Hide careers</a>
                 <div className={careerClass}>
                   <div className="c-career__item c-career__item--left">
-                    <div className="c-career__heading u-margin__bottom">Order</div>  
+                    <div className="c-career__heading u-margin__bottom">Order</div>
                     <div className="c-career__container">
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
@@ -126,7 +127,7 @@ class Home extends React.Component {
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Dwarf')
                         )}
-                      </div>                
+                      </div>
                       <div className="c-career__list">
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/high-elf.png" className="c-title__icon c-title__icon--smaller" />High Elves
@@ -182,17 +183,17 @@ class Home extends React.Component {
                 <div className="c-list c-box u-margin__top u-margin__left u-margin__right">
                   <div className="c-list__heading">Latest updates</div>
                   <div className="c-list__item">
-                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
                     <div className="c-list__item__title">12/6/2016</div>
                     A number of UI improvements to Mastery area.
                   </div>
                   <div className="c-list__item">
-                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
                     <div className="c-list__item__title">10/6/2016</div>
                     First major update. Mastery abilities can now be activated independent of selection. Interface reskinned.
                   </div>
                   <div className="c-list__item">
-                    <span className="c-list__item__icon"><i className="fa fa-cog fa-circle-o fa-fw margin-bottom"></i></span>
+                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
                     <div className="c-list__item__title">1/6/2016</div>
                     We are live :)
                   </div>
@@ -200,12 +201,12 @@ class Home extends React.Component {
               </div>
               <div className="pure-u-2-3 pure-u-mobile-1">
                 <div className="c-home__copy u-margin__bottom--large u-margin__top-mobile u-margin__top--large u-margin__right u-margin__left-mobile">
-                  <p>Warhammer Online: Age of Reckoning has returned. 
-                  Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>. 
+                  <p>Warhammer Online: Age of Reckoning has returned.
+                  Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>.
                   Inspired by the work of these developers comes RoR Career Builder.</p>
                   <p>This web app aims to replace and improve upon the great work done by <a className="c-home__copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
                   <p>Details of updates will appear on this page.</p>
-                  <p>All code is available on <i className="fa fa-github"></i> <a href={githubUrl} className="c-home__copy__link" target="blank">Github</a>
+                  <p>All code is available on <a href={githubUrl} className="c-home__copy__link" target="blank">Github</a>
                   . Feel free to fork, contribute, <a href={githubUrlIssues} className="c-home__copy__link" target="blank">raise bugs and make suggestions</a>.</p>
                 </div>
               </div>
@@ -228,7 +229,7 @@ class Home extends React.Component {
     );
   }
 
-  /* 
+  /*
   * -----------------------
   * Google Analytics Events
   * -----------------------

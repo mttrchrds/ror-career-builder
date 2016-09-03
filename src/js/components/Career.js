@@ -476,11 +476,6 @@ class Career extends React.Component {
       'o-wrapper': true,
       sidebar: this.state.sidebar.visible,
     });
-    return (
-      <div className={css.loadingContainer}>
-        <Loading />
-      </div>
-    );
     if (Object.keys(this.state.career).length) {
       return (
         <div className="u-height">
@@ -667,7 +662,9 @@ class Career extends React.Component {
       );
     }
     return (
-      <Loading />
+      <div className={css.loadingContainer}>
+        <Loading />
+      </div>
     );
   }
 
