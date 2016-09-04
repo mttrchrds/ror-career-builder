@@ -179,21 +179,25 @@ class AbilityMastery extends React.Component {
 
   render() {
     const abilityClass = classNames({
-      [css.abilityStandard]: this.props.details.abilityType === 'standard',
-      [css.abilityMorale]: this.props.details.abilityType === 'morale',
-      [css.abilityTactic]: this.props.details.abilityType === 'tactic',
-      [css.abilityActive]: this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'morale'),
-      [css.abilityActiveTactic]: this.state.abilityStatus && this.props.details.abilityType === 'tactic',
-      [css.abilitySelected]: this.state.abilitySelected,
+      [css.abilityStandard]: !this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
+      [css.abilityStandardActive]: this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
+      [css.abilityStandardSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
+      [css.abilityMorale]: !this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'morale'),
+      [css.abilityMoraleActive]: this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'morale'),
+      [css.abilityMoraleSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'morale'),
+      [css.abilityTactic]: !this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
+      [css.abilityTacticActive]: this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
+      [css.abilityTacticSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
       'is-hovered': this.state.abilityHovered,
       'c-popover__parent': true,
     });
     const abilityImageClass = classNames({
-      [css.imageActive]: this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'tactic'),
-      [css.imageActiveMorale]: this.state.abilityStatus && this.props.details.abilityType === 'morale',
-      [css.imageInactive]: !this.state.abilityStatus && (this.props.details.abilityType === 'standard' || this.props.details.abilityType === 'tactic'),
-      [css.imageInactiveMorale]: !this.state.abilityStatus && this.props.details.abilityType === 'morale',
-      [css.imageSelected]: this.state.abilitySelected,
+      [css.imageStandard]: !this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
+      [css.imageStandardSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
+      [css.imageMorale]: !this.state.abilitySelected && (this.props.details.abilityType === 'morale'),
+      [css.imageMoraleSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'morale'),
+      [css.imageTactic]: !this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
+      [css.imageTacticSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
     });
     const imgSrc = `../../images/abilities/${this.props.details.image}.png`;
     const popoverContent = (

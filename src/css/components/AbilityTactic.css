@@ -1,3 +1,5 @@
+@value color-ability-active from "../values/colours.css";
+
 @value border-spacing: 0.2rem;
 
 .ability {
@@ -7,6 +9,16 @@
   cursor: pointer;
   padding: 0;
   margin: border-spacing;
+}
+.abilityMasteryActive {
+  composes: ability;
+  background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
+	background-size: cover;
+}
+.abilityMasterySelected {
+  composes: ability;
+  background: transparent;
+  background-color: transparent;
 }
 .abilitySelected {
   composes: ability;

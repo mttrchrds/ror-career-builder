@@ -1,4 +1,4 @@
-@value color-base-1, color-ability-border-selected from "../values/colours.css";
+@value color-base-1, color-ability-border-selected, color-ability-active from "../values/colours.css";
 
 @value border-radius: 50%;
 
@@ -7,6 +7,15 @@
   border-radius: border-radius;
   border: 0.1rem solid color-base-1;
   cursor: pointer;
+}
+.abilityMasteryActive {
+  composes: ability;
+  background-color: color-ability-active;
+}
+.abilityMasterySelected {
+  composes: ability;
+  background: transparent;
+  background-color: transparent;
 }
 .abilitySelected {
   composes: ability;
