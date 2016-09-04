@@ -1,5 +1,6 @@
 .title {
   composes: headingCareer from "../shared/heading.css";
+  margin-top: 0.3rem;
 }
 .icon {
   composes: careerIconBordered from "../shared/careerIcon.css";
