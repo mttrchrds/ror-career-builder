@@ -54,6 +54,7 @@ module.exports = {
             include: CONFIG.source + CONFIG.sourcePathCSS,
             query: {
               modules: true,
+              importLoaders: 1,
               localIdentName: '[name]__[local]__[hash:base64:5]'
             }
           },
@@ -65,8 +66,8 @@ module.exports = {
       }
     ]
   },
-  postcss: function () {
-    return [atImport, nested, values, calc({mediaQueries: true}), autoprefixer];
+  postcss: function (webpack) {
+    return [atImport({addDependencyTo: webpack}), nested, values, calc({mediaQueries: true}), autoprefixer];
   },
   devtool: 'eval',
   plugins: [
