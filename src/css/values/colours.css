@@ -33,3 +33,5 @@
 @value color-ability-border-selected: #5cda36;
 @value color-ability-inactive: #ecb3b3;
 @value color-ability-active: #90d28b;
+
+@value color-transparent-white: rgba(255, 255, 255, 0.2);

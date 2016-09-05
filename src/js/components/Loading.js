@@ -3,7 +3,7 @@ import css from '../../css/components/Loading.css';
 
 const Loading = () =>
   <div className={css.container}>
-    <img className={css.image} src="/images/gears.svg" alt="loading icon" />
+    <div className={css.icon}></div>
     <span className={css.title}>Loading...</span>
   </div>;
 

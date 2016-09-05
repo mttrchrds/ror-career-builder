@@ -1,5 +1,5 @@
 @value spacing from "../values/spacing.css";
-@value color-text-primary from "../values/colours.css";
+@value color-transparent-white, color-text-primary from "../values/colours.css";
 @value font-size-4 from "../values/fontSizes.css";
 
 .container {
@@ -11,7 +11,17 @@
   color: color-text-primary;
   font-size: font-size-4;
 }
-.image {
-  width: 4rem;
-  height: 4rem;
+.icon {
+  box-sizing: border-box;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.4rem solid color-transparent-white;
+  border-top-color: color-text-primary;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
