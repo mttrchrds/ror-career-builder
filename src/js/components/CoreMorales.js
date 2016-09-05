@@ -1,6 +1,5 @@
 import React from 'react';
 import AbilityMorale from './AbilityMorale';
-import '../../scss/components/CoreMorales.scss';
 import css from '../../css/components/CoreMorales.css';
 
 const CoreMorales = (props) => {
