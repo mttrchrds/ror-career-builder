@@ -1,5 +1,5 @@
 @value color-base-1, color-points, color-points-dark from "../values/colours.css";
-@value points-available: #8E6161;
+@value points-available: #8a4141;
 
 .meter {
   display: flex;
