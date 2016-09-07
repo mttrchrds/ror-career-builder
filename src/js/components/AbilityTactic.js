@@ -130,7 +130,7 @@ class AbilityTactic extends React.Component {
       [css.ability]: true,
       [css.abilitySelected]: this.state.abilitySelected,
       'is-hovered': this.state.abilityHovered,
-      'c-popover__parent': true,
+      popover__parent: true,
     });
     const abilityImageClass = classNames({
       [css.image]: this.state.abilityStatus,

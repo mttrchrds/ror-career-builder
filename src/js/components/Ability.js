@@ -86,7 +86,7 @@ class Ability extends React.Component {
     const abilityClass = classNames({
       [css.ability]: true,
       'is-hovered': this.state.abilityHovered,
-      'c-popover__parent': true,
+      popover__parent: true,
     });
     const abilityImageClass = classNames({
       [css.image]: this.state.abilityStatus,

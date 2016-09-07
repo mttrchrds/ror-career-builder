@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../../scss/components/Popover.scss';
+import css from '../../css/components/Popover.css';
 
 class Popover extends React.Component {
 
   constructor(props) {
     super(props);
     // 'popoverSpacing' is the distance of the Popover from the parent element.
-    // Matches 'popoverSpacing' in Sass. Likewise for 'popoverArrowSize'
+    // Matches 'popoverSpacing' in CSS. Likewise for 'popoverArrowSize'
     this.state = {
       popoverSpacing: 5,
       popoverArrowSize: 10,
@@ -77,16 +77,16 @@ class Popover extends React.Component {
           }
         }
         // Add .fade class at the end to ensure animation happens after display:block
-        popover.classList.add('c-popover--fade');
+        popover.classList.add('popover--fade');
       } else {
-        popover.classList.remove('c-popover--fade');
+        popover.classList.remove('popover--fade');
       }
     }
   }
 
   // Set alignment of Popover
   setAlignment(element, position) {
-    const positionClassName = `c-popover--${position}`;
+    const positionClassName = `popover--${position}`;
     const popoverElement = element;
     this.removeClasses(element);
     popoverElement.classList.add(positionClassName);
@@ -122,10 +122,10 @@ class Popover extends React.Component {
   // Reset alignment classes on Popover
   removeClasses(element) {
     const popoverElement = element;
-    popoverElement.classList.remove('c-popover--top');
-    popoverElement.classList.remove('c-popover--right');
-    popoverElement.classList.remove('c-popover--bottom');
-    popoverElement.classList.remove('c-popover--left');
+    popoverElement.classList.remove('popover--top');
+    popoverElement.classList.remove('popover--right');
+    popoverElement.classList.remove('popover--bottom');
+    popoverElement.classList.remove('popover--left');
   }
 
   // Check if Popover is currently off-screen
@@ -186,24 +186,23 @@ class Popover extends React.Component {
 
   render() {
     const popoverClass = classNames({
-      'c-popover': true,
-      'c-popover--active': this.state.popoverActive,
+      popover: true,
+      'popover--active': this.state.popoverActive,
     });
     const selectionClass = classNames({
-      'c-button c-button--primary u-float__right u-margin__left': true,
-      'u-hidden': !this.props.abilityOptional || !this.props.abilityStatus || (!this.props.abilityOperational && !this.props.abilitySelected),
-      'c-button--negative': this.props.abilitySelected,
-      'c-button--positive': !this.props.abilitySelected,
+      hidden: !this.props.abilityOptional || !this.props.abilityStatus || (!this.props.abilityOperational && !this.props.abilitySelected),
+      [css.actionRemove]: this.props.abilitySelected,
+      [css.actionAdd]: !this.props.abilitySelected,
     });
     return (
       <div className={popoverClass} ref="popover">
-        <div className="c-popover__arrow"></div>
+        <div className="popover__arrow"></div>
         {this.props.content}
-        <div className="u-margin__top--large c-popover__footer">
+        <div className="marginTop--medium popover__footer">
           <button className={selectionClass} type="button" onClick={this.clickSelection}>
             {this.setSelectionText()}
           </button>
-          <button className="c-button c-button--secondary u-float__right" type="button" onClick={this.clickClose}>
+          <button className={css.close} type="button" onClick={this.clickClose}>
             Close
           </button>
         </div>

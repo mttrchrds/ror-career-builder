@@ -189,7 +189,7 @@ class AbilityMastery extends React.Component {
       [css.abilityTacticActive]: this.state.abilityStatus && !this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
       [css.abilityTacticSelected]: this.state.abilitySelected && (this.props.details.abilityType === 'tactic'),
       'is-hovered': this.state.abilityHovered,
-      'c-popover__parent': true,
+      popover__parent: true,
     });
     const abilityImageClass = classNames({
       [css.imageStandard]: !this.state.abilitySelected && (this.props.details.abilityType === 'standard'),
