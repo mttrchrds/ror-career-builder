@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../../scss/components/Modal.scss';
+import css from '../../css/components/Modal.css';
 
 const Modal = (props) => {
   const modalClass = classNames({
-    'c-modal': true,
-    'c-modal--visible': props.modal.visible,
+    [css.modal]: !props.modal.visible,
+    [css.modalVisible]: props.modal.visible,
   });
   const closeModal = () => {
     props.updateOverlayVisibility(false);
@@ -13,15 +13,15 @@ const Modal = (props) => {
   };
   return (
     <div className={modalClass}>
-      <div className="c-modal__window">
-        <div className="c-modal__title">
+      <div className={css.container}>
+        <div>
           {props.modal.contentTitle}
         </div>
-        <div className="c-modal__content u-margin__bottom--large">
+        <div className={css.content}>
           {props.modal.contentBody}
         </div>
-        <div className="c-modal__footer o-row o-row--right">
-          <button className="c-button c-button--secondary" type="button" onClick={closeModal}>
+        <div className={css.footer}>
+          <button className={css.close} type="button" onClick={closeModal}>
             Close
           </button>
         </div>
