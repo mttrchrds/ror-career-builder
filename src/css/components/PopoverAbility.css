@@ -1,0 +1,62 @@
+@value color-base-1, color-text-primary, color-popover-ability-primary, color-popover-ability-secondary from "../values/colours.css";
+@value spacing-small, spacing from "../values/spacing.css";
+@value font-size-1, font-size-2 from "../values/fontSizes.css";
+@value mq-mobile from "../values/mediaQueries.css";
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: spacing-small;
+}
+.rowLarge {
+  composes: row;
+  margin-bottom: spacing;
+}
+.item {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: font-size-1;
+  color: color-text-primary;
+}
+.itemLarge {
+  composes: item;
+  font-size: font-size-2;
+}
+.itemRight {
+  composes: item;
+  text-align: right;
+}
+.itemTitle {
+  composes: itemLarge;
+  color: color-popover-ability-primary;
+}
+.itemTitleRight {
+  composes: itemTitle;
+  text-align: right;
+}
+.note {
+  composes: item;
+  color: color-popover-ability-secondary;
+  margin-bottom: spacing;
+}
+.description {
+  composes: item;
+  color: color-popover-ability-primary;
+}
+.divider {
+  border-bottom: 1px solid color-base-1;
+  margin-bottom: spacing;
+}
+.image {
+  display: none;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.3rem;
+  border: 1px solid color-base-1;
+  margin-bottom: spacing;
+}
+@media mq-mobile {
+  .image {
+    display: block;
+  }
+}

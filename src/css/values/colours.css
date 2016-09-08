@@ -37,3 +37,6 @@
 @value color-transparent-white: rgba(255, 255, 255, 0.2);
 
 @value color-popover-background: #161616;
+
+@value color-popover-ability-primary: color-xp;
+@value color-popover-ability-secondary: #0078e7;

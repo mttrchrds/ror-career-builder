@@ -1,10 +1,11 @@
 import React from 'react';
+import css from '../../css/components/PopoverAbility.css';
 
 const renderNote = (note) => {
   if (note) {
     return (
-      <p className="c-ability-pop__item c-ability-pop__item--secondary u-margin__bottom u-margin__top"
-        dangerouslySetInnerHTML={{ __html: note }} 
+      <p className={css.note}
+        dangerouslySetInnerHTML={{ __html: note }}
       />
     );
   }
@@ -12,30 +13,31 @@ const renderNote = (note) => {
 };
 
 const PopoverAbility = (props) =>
-  <div className="c-ability-pop">
-    <img src={props.imgSrc} className="c-ability-pop__image" />
-    <div className="o-row o-row--justify u-margin__bottom">
-      <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary">
+  <div>
+    <img src={props.imgSrc} className={css.image} />
+    <div className={css.rowLarge}>
+      <p className={css.itemTitle}>
         {props.details.name}
       </p>
-      <p className="c-ability-pop__item c-ability-pop__item--large c-ability-pop__item--primary c-ability-pop__item--right">
+      <p className={css.itemTitleRight}>
         {props.details.type}
       </p>
     </div>
-    <div className="o-row o-row--justify u-margin__bottom--small c-ability-pop__divider">
-      <p className="c-ability-pop__item">{props.details.spec}</p>
-      <p className="c-ability-pop__item c-ability-pop__item--right">Level {props.details.minrank}</p>
+    <div className={css.divider}></div>
+    <div className={css.row}>
+      <p className={css.item}>{props.details.spec}</p>
+      <p className={css.itemRight}>Level {props.details.minrank}</p>
     </div>
-    <div className="o-row o-row--justify u-margin__bottom--small">
-      <p className="c-ability-pop__item">{props.details.cost}</p>
-      <p className="c-ability-pop__item c-ability-pop__item--right">{props.details.range}</p>
+    <div className={css.row}>
+      <p className={css.item}>{props.details.cost}</p>
+      <p className={css.itemRight}>{props.details.range}</p>
     </div>
-    <div className="o-row o-row--justify u-margin__bottom">
-      <p className="c-ability-pop__item">{props.details.incant}</p>
-      <p className="c-ability-pop__item c-ability-pop__item--right">{props.details.cooldown}</p>
+    <div className={css.rowLarge}>
+      <p className={css.item}>{props.details.incant}</p>
+      <p className={css.itemRight}>{props.details.cooldown}</p>
     </div>
     {renderNote(props.details.note)}
-    <p className="c-ability-pop__item c-ability-pop__item--primary"
+    <p className={css.description}
       dangerouslySetInnerHTML={{ __html: props.details.description }}
     />
   </div>;
