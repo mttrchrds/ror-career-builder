@@ -16,7 +16,6 @@ import Modal from './Modal';
 import Overlay from './Overlay';
 import Loading from './Loading';
 import classNames from 'classnames';
-import '../../scss/components/Career.scss';
 import css from '../../css/components/Career.css';
 
 class Career extends React.Component {
