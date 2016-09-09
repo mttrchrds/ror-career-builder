@@ -35,6 +35,8 @@
 @value color-ability-active: #90d28b;
 
 @value color-transparent-white: rgba(255, 255, 255, 0.2);
+@value color-transparent-black: rgba(0, 0, 0, 0.6);
+@value color-transparent: rgba(0, 0, 0, 0);
 
 @value color-popover-background: #161616;
 

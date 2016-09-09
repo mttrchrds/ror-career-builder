@@ -1,0 +1,39 @@
+@value color-transparent-black, color-transparent from "../values/colours.css";
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: color-transparent-black;
+}
+.overlayActive {
+  composes: overlay;
+  display: block;
+}
+.overlayActiveInvisible {
+  composes: overlayActive;
+  background: color-transparent;
+}
+
+
+
+/*.c-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: $color-overlay;
+  &--active {
+    display: block;
+  }
+  &--invisible {
+    background: $color-overlay-invisible;
+  }
+}*/

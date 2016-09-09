@@ -4,4 +4,7 @@
   .heightTitle {
       height: height-title;
   }
+  .overflowYHidden {
+    overflow-y: hidden;
+  }
 }
