@@ -1,6 +1,17 @@
+@value width-sidebar from "../values/widths.css";
+@value spacing from "../values/spacing.css";
+
 .loadingContainer {
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+.wrapper {
+  padding: spacing;
+  transition: all 500ms ease;
+}
+.wrapperSidebar {
+  composes: wrapper;
+  transform: translateX(width-sidebar);
 }

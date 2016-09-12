@@ -1,0 +1,51 @@
+@value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "./values/mediaQueries.css";
+
+:global {
+  .visible\@mobile,
+  .visible\@xs,
+  .visible\@sm,
+  .visible\@sm-min,
+  .visible\@md,
+  .visible\@md-min,
+  .visible\@lg {
+    display: none !important;
+  }
+
+  .visible {
+    &\@mobile {
+      @media mq-mobile {
+        display: block !important;
+      }
+    }
+    &\@xs {
+      @media mq-xs {
+        display: block !important;
+      }
+    }
+    &\@sm {
+      @media mq-sm {
+        display: block !important;
+      }
+    }
+    &\@sm-min {
+      @media mq-sm-min {
+        display: block !important;
+      }
+    }
+    &\@md {
+      @media mq-md {
+        display: block !important;
+      }
+    }
+    &\@md-min {
+      @media mq-md-min {
+        display: block !important;
+      }
+    }
+    &\@lg {
+      @media mq-lg {
+        display: block !important;
+      }
+    }
+  }
+}

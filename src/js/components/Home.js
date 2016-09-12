@@ -6,6 +6,7 @@ import CareerItem from './CareerItem';
 import Overlay from './Overlay';
 import IconChevronRight from '../icons/IconChevronRight';
 import '../../scss/components/Home.scss';
+import css from '../../css/components/Home.css';
 
 class Home extends React.Component {
 
@@ -84,34 +85,44 @@ class Home extends React.Component {
 
   render() {
     const mastheadClass = classNames({
-      'c-masthead': true,
-      'c-masthead--active': this.state.mastheadActive,
+      [css.masthead]: !this.state.mastheadActive,
+      [css.mastheadActive]: this.state.mastheadActive,
+    });
+    const mastheadTitleClass = classNames({
+      [css.mastheadTitle]: !this.state.mastheadActive,
+      [css.mastheadTitleActive]: this.state.mastheadActive,
+    });
+    const mastheadCtaClass = classNames({
+      [css.mastheadCta]: !this.state.mastheadActive,
+      [css.mastheadCtaActive]: this.state.mastheadActive,
+      'hidden@mobile': true,
+    });
+    const mastheadCtaClassMobile = classNames({
+      [css.mastheadCta]: !this.state.mastheadActive,
+      [css.mastheadCtaActive]: this.state.mastheadActive,
+      'visible@mobile': true,
     });
     const careerClass = classNames({
       'c-career': true,
       'c-career--active': this.state.mastheadActive,
     });
-    const containerClass = classNames({
-      'c-home__content': true,
-      sidebar: this.state.sidebar.visible,
-    });
     const githubUrl = 'https://github.com/mattyrichards/ror-career-builder';
     const githubUrlIssues = `${githubUrl}/issues`;
     return (
-      <div className="u-height">
-        <div className={containerClass}>
-          <div className="c-home__container">
+      <div className="heightFull">
+        <div className={css.wrapper}>
+          <div className={css.container}>
             <div className={mastheadClass}>
-              <div className="c-masthead__overlay">
-                <div className="c-masthead__heading u-margin__right-mobile u-margin__left-mobile">RoR Career Builder</div>
-                <div className="c-masthead__subheading">Online Career Builder for Return of Reckoning</div>
-                <div className="c-masthead__cta u-margin__top--large">
-                  <button className="c-button c-button--secondary-inverse c-button--large" type="button" onClick={this.clickMasthead}>
+              <div className={css.mastheadOverlay}>
+                <div className={mastheadTitleClass}>RoR Career Builder</div>
+                <div className={css.mastheadSubtitle}>Online Career Builder for Return of Reckoning</div>
+                <div className={mastheadCtaClass}>
+                  <button className={css.mastheadCtaButton} type="button" onClick={this.clickMasthead}>
                     Select career
                   </button>
                 </div>
-                <div className="c-masthead__cta c-masthead__cta--mobile u-margin__top--large">
-                  <button className="c-button c-button--secondary-inverse c-button--large" type="button" onClick={this.clickMastheadMobile}>
+                <div className={mastheadCtaClassMobile}>
+                  <button className={css.mastheadCtaButton} type="button" onClick={this.clickMastheadMobile}>
                     Select career
                   </button>
                 </div>

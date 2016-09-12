@@ -14,7 +14,7 @@ import Career from './components/Career';
 import NotFound from './components/NotFound';
 
 const App = (props) =>
-  <div className="u-height">{props.children}</div>;
+  <div className="heightFull">{props.children}</div>;
 
 App.propTypes = {
   children: React.PropTypes.node,

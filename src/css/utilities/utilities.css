@@ -2,9 +2,12 @@
 
 :global {
   .heightTitle {
-      height: height-title;
+    height: height-title;
   }
   .overflowYHidden {
     overflow-y: hidden;
+  }
+  .heightFull {
+    height: 100%;
   }
 }

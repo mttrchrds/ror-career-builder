@@ -472,12 +472,12 @@ class Career extends React.Component {
 
   render() {
     const containerClass = classNames({
-      'o-wrapper': true,
-      sidebar: this.state.sidebar.visible,
+      [css.wrapper]: !this.state.sidebar.visible,
+      [css.wrapperSidebar]: this.state.sidebar.visible,
     });
     if (Object.keys(this.state.career).length) {
       return (
-        <div className="u-height">
+        <div className="heightFull">
           <div className={containerClass}>
 
             <div className="marginBottom--medium">

@@ -1,0 +1,189 @@
+@value color-base-1, color-text-primary from "../values/colours.css";
+@value spacing, spacing-medium from "../values/spacing.css";
+@value mq-mobile, mq-sm-min, mq-md-min from "../values/mediaQueries.css";
+
+@value shadow: 2px 2px 8px rgba(0,0,0,0.7);
+
+.wrapper {
+  height: 100vh;
+  transition: all 500ms ease;
+}
+.container {
+  width: 100%;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: color-base-1;
+  box-shadow: 0px 0px 0.5rem 0.2rem rgba(0,0,0,0.3);
+}
+@media mq-sm-min {
+  .container {
+    width: 75rem;
+  }
+}
+@media mq-md-min {
+  .container {
+    width: 95rem;
+  }
+}
+.masthead {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  height: 30rem;
+  background: url('/images/home-background.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: all 500ms ease;
+  border-bottom: 1px solid color-base-1;
+}
+@media mq-mobile {
+  .masthead {
+    z-index: auto;
+    height: 25rem;
+  }
+}
+.mastheadActive {
+  composes: masthead;
+  height: 70rem;
+}
+@media mq-sm-min {
+  .mastheadActive {
+    height: 55rem;
+  }
+}
+.mastheadOverlay {
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+.mastheadTitle {
+  font-size: 4.8rem;
+  text-align: center;
+  padding-top: 5rem;
+  text-shadow: shadow;
+  transition: all 500ms ease;
+  color: color-text-primary;
+}
+@media mq-mobile {
+  .mastheadTitle {
+    font-size: 4rem;
+    margin-right: spacing;
+    margin-left: spacing;
+  }
+}
+.mastheadTitleActive {
+  composes: mastheadTitle;
+  padding-top: 3rem;
+}
+.mastheadSubtitle {
+  color: color-text-primary;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: shadow;
+}
+@media mq-mobile {
+  .mastheadSubtitle {
+    font-size: 1.6rem;
+  }
+}
+.mastheadCta {
+  opacity: 1;
+  transition: all 500ms ease;
+  text-align: center;
+  margin-top: spacing-medium;
+}
+.mastheadCtaActive {
+  composes: mastheadCta;
+  opacity: 0;
+  margin-top: -10rem;
+}
+.mastheadCtaButton {
+  composes: buttonSecondaryInverseLarge from "../shared/button.css";
+}
+
+
+
+
+.c-masthead {
+
+  $font-size-masthead-heading: 4.8rem;
+  $font-size-masthead-heading-mobile: 4rem;
+  $font-size-masthead-subheading: 2rem;
+  $font-size-masthead-subheading-mobile: 1.6rem;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  height: ($base-spacing * 30);
+  background: url('/images/home-background.jpg') no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: $base-transition;
+  border-bottom: 1px solid $color-text-secondary;
+  @media screen and (max-width: $breakpoint-mobile) {
+    z-index: auto;
+    height: ($base-spacing * 25);
+  }
+  &__overlay {
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+  &__heading {
+    font-size: $font-size-masthead-heading;
+    text-align: center;
+    padding-top: ($base-spacing * 5);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    transition: $base-transition;
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: $font-size-masthead-heading-mobile;
+    }
+  }
+  &__subheading {
+    font-size: $font-size-masthead-subheading;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: $font-size-masthead-subheading-mobile;
+    }
+  }
+  &__cta {
+    opacity: 1;
+    transition: $base-transition;
+    text-align: center;
+    &--mobile {
+      display: none;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+      display: none;
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+  &__footer {
+    opacity: 0;
+    transition: $base-transition;
+    position: absolute;
+    bottom: $base-spacing;
+    right: $base-spacing;
+    color: $color-text-secondary;
+    font-size: $font-size-breadcrumb;
+    text-decoration: none;
+  }
+  &--active {
+    height: ($base-spacing * 70);
+    @media screen and (min-width: $breakpoint-sm) {
+      height: ($base-spacing * 55);
+    }
+  }
+  &--active &__heading {
+    padding-top: ($base-spacing * 3);
+  }
+  &--active &__cta {
+    opacity: 0;
+    margin-top: ($base-spacing * -10);
+  }
+  &--active &__footer {
+    opacity: 1;
+  }
+}
