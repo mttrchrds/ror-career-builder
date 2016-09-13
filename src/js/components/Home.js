@@ -102,9 +102,17 @@ class Home extends React.Component {
       [css.mastheadCtaActive]: this.state.mastheadActive,
       'visible@mobile': true,
     });
-    const careerClass = classNames({
-      'c-career': true,
-      'c-career--active': this.state.mastheadActive,
+    const mastheadFooterClass = classNames({
+      [css.mastheadFooter]: !this.state.mastheadActive,
+      [css.mastheadFooterActive]: this.state.mastheadActive,
+    });
+    const careersContainerLeftClass = classNames({
+      [css.careersContainerLeft]: !this.state.mastheadActive,
+      [css.careersContainerLeftActive]: this.state.mastheadActive,
+    });
+    const careersContainerRightClass = classNames({
+      [css.careersContainerRight]: !this.state.mastheadActive,
+      [css.careersContainerRightActive]: this.state.mastheadActive,
     });
     const githubUrl = 'https://github.com/mattyrichards/ror-career-builder';
     const githubUrlIssues = `${githubUrl}/issues`;
@@ -126,12 +134,12 @@ class Home extends React.Component {
                     Select career
                   </button>
                 </div>
-                <a className="c-masthead__footer" href="#" onClick={this.clickMasthead}>Hide careers</a>
-                <div className={careerClass}>
-                  <div className="c-career__item c-career__item--left">
-                    <div className="c-career__heading u-margin__bottom">Order</div>
-                    <div className="c-career__container">
-                      <div className="c-career__list">
+                <a className={mastheadFooterClass} href="#" onClick={this.clickMasthead}>Hide careers</a>
+                <div className={css.careers}>
+                  <div className={careersContainerLeftClass}>
+                    <div className={css.careersTitle}>Order</div>
+                    <div className={css.careersFaction}>
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/dwarf.png" className="c-title__icon c-title__icon--smaller" />Dwarves
                         </div>
@@ -139,7 +147,7 @@ class Home extends React.Component {
                           (key) => this.renderCareers(key, 'Dwarf')
                         )}
                       </div>
-                      <div className="c-career__list">
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/high-elf.png" className="c-title__icon c-title__icon--smaller" />High Elves
                         </div>
@@ -147,7 +155,7 @@ class Home extends React.Component {
                           (key) => this.renderCareers(key, 'High Elf')
                         )}
                       </div>
-                      <div className="c-career__list">
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/empire.png" className="c-title__icon c-title__icon--smaller" />Empire
                         </div>
@@ -157,10 +165,10 @@ class Home extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="c-career__item c-career__item--right">
-                    <div className="c-career__heading u-margin__bottom">Destruction</div>
-                    <div className="c-career__container">
-                      <div className="c-career__list">
+                  <div className={careersContainerRightClass}>
+                    <div className={css.careersTitle}>Destruction</div>
+                    <div className={css.careersFaction}>
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/greenskin.png" className="c-title__icon c-title__icon--smaller" />Greenskins
                         </div>
@@ -168,7 +176,7 @@ class Home extends React.Component {
                           (key) => this.renderCareers(key, 'Greenskin')
                         )}
                       </div>
-                      <div className="c-career__list">
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/dark-elf.png" className="c-title__icon c-title__icon--smaller" />Dark Elves
                         </div>
@@ -176,7 +184,7 @@ class Home extends React.Component {
                           (key) => this.renderCareers(key, 'Dark Elf')
                         )}
                       </div>
-                      <div className="c-career__list">
+                      <div className={css.careersRace}>
                         <div className="c-career__subheading u-margin__bottom">
                           <img src="/images/icons/chaos.png" className="c-title__icon c-title__icon--smaller" />Chaos
                         </div>

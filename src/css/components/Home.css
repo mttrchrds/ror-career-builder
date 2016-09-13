@@ -1,6 +1,7 @@
-@value color-base-1, color-text-primary from "../values/colours.css";
+@value color-base-1, color-text-primary, color-text-secondary from "../values/colours.css";
 @value spacing, spacing-medium from "../values/spacing.css";
 @value mq-mobile, mq-sm-min, mq-md-min from "../values/mediaQueries.css";
+@value font-size-1, font-size-4 from "../values/fontSizes.css";
 
 @value shadow: 2px 2px 8px rgba(0,0,0,0.7);
 
@@ -100,90 +101,151 @@
 .mastheadCtaButton {
   composes: buttonSecondaryInverseLarge from "../shared/button.css";
 }
-
-
-
-
-.c-masthead {
-
-  $font-size-masthead-heading: 4.8rem;
-  $font-size-masthead-heading-mobile: 4rem;
-  $font-size-masthead-subheading: 2rem;
-  $font-size-masthead-subheading-mobile: 1.6rem;
-
-  position: relative;
-  overflow: hidden;
-  z-index: 10;
-  height: ($base-spacing * 30);
-  background: url('/images/home-background.jpg') no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  transition: $base-transition;
-  border-bottom: 1px solid $color-text-secondary;
-  @media screen and (max-width: $breakpoint-mobile) {
-    z-index: auto;
-    height: ($base-spacing * 25);
+.mastheadFooter {
+  opacity: 0;
+  transition: all 500ms ease;
+  position: absolute;
+  bottom: spacing;
+  right: spacing;
+  color: color-text-secondary;
+  font-size: font-size-1;
+  text-decoration: none;
+}
+.mastheadFooterActive {
+  composes: mastheadFooter;
+  opacity: 1;
+}
+.careers {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-around;
+}
+.careersContainer {
+  flex-grow: 0;
+  flex-basis: 40%;
+  opacity: 0;
+  padding: spacing-medium;
+  transition: all 500ms ease;
+  background-color: rgba(0,0,0,0.5);
+  font-weight: 200;
+}
+.careersContainerActive {
+  composes: careersContainer;
+  opacity: 1;
+}
+.careersContainerRight {
+  composes: careersContainer;
+  margin-right: -90rem;
+}
+.careersContainerRightActive {
+  composes: careersContainerActive;
+  composes: careersContainerRight;
+  margin-right: 0;
+}
+.careersContainerLeft {
+  composes: careersContainer;
+  margin-left: -90rem;
+}
+.careersContainerLeftActive {
+  composes: careersContainerActive;
+  composes: careersContainerLeft;
+  margin-left: 0;
+}
+.careersTitle {
+  font-size: font-size-4;
+  font-weight: 400;
+  margin-bottom: spacing;
+  color: color-text-secondary;
+}
+.careersFaction {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media mq-sm-min {
+  .careersFaction {
+    flex-direction: row;
   }
-  &__overlay {
-    height: 100%;
-    background-color: rgba(0,0,0,0.3);
+}
+.careersRace {
+  flex-basis: auto;
+  margin-bottom: spacing-medium;
+  flex-grow: 1;
+}
+@media mq-sm-min {
+  .careersRace {
+    flex-basis: 50%;
+  }
+}
+
+
+
+.c-career {
+
+  $font-size-career-heading: 2.4rem;
+  $font-size-career-subheading: 1.8rem;
+
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-around;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    flex-grow: 0;
+    flex-basis: 40%;
+    opacity: 0;
+    padding: ($base-spacing * 2);
+    transition: $base-transition;
+    background-color: rgba(0,0,0,0.5);
+    font-weight: 200;
+    &--left {
+      margin-left: ($base-spacing * -90);
+    }
+    &--right {
+      margin-right: ($base-spacing * -90);
+    }
   }
   &__heading {
-    font-size: $font-size-masthead-heading;
-    text-align: center;
-    padding-top: ($base-spacing * 5);
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    transition: $base-transition;
-    @media screen and (max-width: $breakpoint-mobile) {
-      font-size: $font-size-masthead-heading-mobile;
-    }
+    font-size: $font-size-career-heading;
+    font-weight: 400;
   }
   &__subheading {
-    font-size: $font-size-masthead-subheading;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    @media screen and (max-width: $breakpoint-mobile) {
-      font-size: $font-size-masthead-subheading-mobile;
-    }
+    font-size: $font-size-career-subheading;
+    font-weight: 400;
   }
-  &__cta {
-    opacity: 1;
-    transition: $base-transition;
-    text-align: center;
-    &--mobile {
-      display: none;
+  &__list {
+    flex-basis: auto;
+    margin-bottom: ($base-spacing * 2);
+    flex-grow: 1;
+    @media screen and (min-width: $breakpoint-sm) {
+      flex-basis: 50%;
     }
-    @media screen and (max-width: $breakpoint-mobile) {
-      display: none;
-      &--mobile {
-        display: block;
+    &__item {
+      display: inline-block;
+      font-size: $font-size-breadcrumb;
+      color: $color-text-secondary;
+      text-decoration: none;
+      margin-bottom: ($base-spacing / 4);
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
-  &__footer {
-    opacity: 0;
-    transition: $base-transition;
-    position: absolute;
-    bottom: $base-spacing;
-    right: $base-spacing;
-    color: $color-text-secondary;
-    font-size: $font-size-breadcrumb;
-    text-decoration: none;
-  }
-  &--active {
-    height: ($base-spacing * 70);
-    @media screen and (min-width: $breakpoint-sm) {
-      height: ($base-spacing * 55);
-    }
-  }
-  &--active &__heading {
-    padding-top: ($base-spacing * 3);
-  }
-  &--active &__cta {
-    opacity: 0;
-    margin-top: ($base-spacing * -10);
-  }
-  &--active &__footer {
+  &--active &__item {
     opacity: 1;
+  }
+  &--active &__item--left {
+    margin-left: 0;
+  }
+  &--active &__item--right {
+    margin-right: 0;
   }
 }
