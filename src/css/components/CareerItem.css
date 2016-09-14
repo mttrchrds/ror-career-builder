@@ -1,0 +1,21 @@
+@value spacing-small, spacing from "../values/spacing.css";
+@value font-size-1 from "../values/fontSizes.css";
+@value color-text-secondary from "../values/colours.css";
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: spacing-small;
+}
+.link {
+  font-size: font-size-1;
+  color: color-text-secondary;
+  text-decoration: none;
+  line-height: 1;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.icon {
+  composes: careerIconSmallest from "../shared/careerIcon.css";
+}

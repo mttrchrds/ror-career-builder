@@ -62,9 +62,7 @@ class Home extends React.Component {
   renderCareers(key, faction) {
     if (this.state.careers[key].race === faction) {
       return (
-        <div key={key}>
-          <CareerItem gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.state.careers[key].name} />
-        </div>
+        <CareerItem key={key} gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.state.careers[key].name} />
       );
     }
     return false;
@@ -140,24 +138,27 @@ class Home extends React.Component {
                     <div className={css.careersTitle}>Order</div>
                     <div className={css.careersFaction}>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/dwarf.png" className="c-title__icon c-title__icon--smaller" />Dwarves
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/dwarf.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>Dwarves</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Dwarf')
                         )}
                       </div>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/high-elf.png" className="c-title__icon c-title__icon--smaller" />High Elves
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/high-elf.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>High Elves</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'High Elf')
                         )}
                       </div>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/empire.png" className="c-title__icon c-title__icon--smaller" />Empire
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/empire.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>Empire</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Empire')
@@ -169,24 +170,27 @@ class Home extends React.Component {
                     <div className={css.careersTitle}>Destruction</div>
                     <div className={css.careersFaction}>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/greenskin.png" className="c-title__icon c-title__icon--smaller" />Greenskins
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/greenskin.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>Greenskins</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Greenskin')
                         )}
                       </div>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/dark-elf.png" className="c-title__icon c-title__icon--smaller" />Dark Elves
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/dark-elf.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>Dark Elves</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Dark Elf')
                         )}
                       </div>
                       <div className={css.careersRace}>
-                        <div className="c-career__subheading u-margin__bottom">
-                          <img src="/images/icons/chaos.png" className="c-title__icon c-title__icon--smaller" />Chaos
+                        <div className="row row--v-center marginBottom">
+                          <img src="/images/icons/chaos.png" className={css.careersRaceIcon} />
+                          <div className={css.careersRaceTitle}>Chaos</div>
                         </div>
                         {Object.keys(this.state.careers).map(
                           (key) => this.renderCareers(key, 'Chaos')

@@ -177,75 +177,10 @@
     flex-basis: 50%;
   }
 }
-
-
-
-.c-career {
-
-  $font-size-career-heading: 2.4rem;
-  $font-size-career-subheading: 1.8rem;
-
-  margin-top: 8rem;
-  display: flex;
-  justify-content: space-around;
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    @media screen and (min-width: $breakpoint-sm) {
-      flex-direction: row;
-    }
-  }
-
-  &__item {
-    flex-grow: 0;
-    flex-basis: 40%;
-    opacity: 0;
-    padding: ($base-spacing * 2);
-    transition: $base-transition;
-    background-color: rgba(0,0,0,0.5);
-    font-weight: 200;
-    &--left {
-      margin-left: ($base-spacing * -90);
-    }
-    &--right {
-      margin-right: ($base-spacing * -90);
-    }
-  }
-  &__heading {
-    font-size: $font-size-career-heading;
-    font-weight: 400;
-  }
-  &__subheading {
-    font-size: $font-size-career-subheading;
-    font-weight: 400;
-  }
-  &__list {
-    flex-basis: auto;
-    margin-bottom: ($base-spacing * 2);
-    flex-grow: 1;
-    @media screen and (min-width: $breakpoint-sm) {
-      flex-basis: 50%;
-    }
-    &__item {
-      display: inline-block;
-      font-size: $font-size-breadcrumb;
-      color: $color-text-secondary;
-      text-decoration: none;
-      margin-bottom: ($base-spacing / 4);
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  &--active &__item {
-    opacity: 1;
-  }
-  &--active &__item--left {
-    margin-left: 0;
-  }
-  &--active &__item--right {
-    margin-right: 0;
-  }
+.careersRaceTitle {
+  composes: heading3 from "../shared/heading.css";
+  font-size: 1.8rem;
+}
+.careersRaceIcon {
+  composes: careerIconSmaller from "../shared/careerIcon.css";
 }

@@ -18,6 +18,11 @@
   font-size: font-size-3;
   margin-bottom: spacing;
 }
+.heading3 {
+  composes: heading;
+  font-weight: 500;
+  margin-bottom: 0;
+}
 .headingCareer {
   line-height: 1;
   margin-top: 0;

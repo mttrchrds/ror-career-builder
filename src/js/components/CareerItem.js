@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import css from '../../css/components/CareerItem.css';
 
 const SidebarItem = (props) => {
   const clickItem = () => {
@@ -8,9 +9,14 @@ const SidebarItem = (props) => {
   const url = `/career/${props.shortName}`;
   const imgUrl = `/images/icons/${props.shortName}.png`;
   return (
-    <Link className="c-career__list__item" to={url} onClick={clickItem}>
-      <img src={imgUrl} className="c-title__icon c-title__icon--tiny" />{props.careerName}
-    </Link>
+    <div className={css.item}>
+      <Link to={url} onClick={clickItem}>
+        <img src={imgUrl} className={css.icon} />
+      </Link>
+      <Link className={css.link} to={url} onClick={clickItem}>
+        {props.careerName}
+      </Link>
+    </div>
   );
 };
 
