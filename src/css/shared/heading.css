@@ -13,15 +13,18 @@
   font-size: font-size-4;
   margin-bottom: spacing-medium;
 }
+.heading1Light {
+  composes: heading1;
+  font-weight: 500;
+}
 .heading2 {
   composes: heading;
   font-size: font-size-3;
   margin-bottom: spacing;
 }
-.heading3 {
-  composes: heading;
+.heading2Light {
+  composes: heading2;
   font-weight: 500;
-  margin-bottom: 0;
 }
 .headingCareer {
   line-height: 1;

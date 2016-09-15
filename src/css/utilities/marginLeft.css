@@ -19,6 +19,11 @@
     &--extra-large {
       margin-left: spacing-extra-large;
     }
+    &\@mobile {
+      @media mq-mobile {
+        margin-left: spacing;
+      }
+    }
     &\@sm-min {
       @media mq-sm-min {
         margin-left: spacing;

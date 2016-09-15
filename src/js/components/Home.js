@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Sidebar from './Sidebar';
 import CareerItem from './CareerItem';
 import Overlay from './Overlay';
-import IconChevronRight from '../icons/IconChevronRight';
+import News from './News';
 import '../../scss/components/Home.scss';
 import css from '../../css/components/Home.css';
 
@@ -203,23 +203,8 @@ class Home extends React.Component {
             </div>
             <div className="grid">
               <div className="grid-col-1-3 grid-col-1@mobile">
-                <div className="c-list c-box u-margin__top u-margin__left u-margin__right">
-                  <div className="c-list__heading">Latest updates</div>
-                  <div className="c-list__item">
-                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
-                    <div className="c-list__item__title">12/6/2016</div>
-                    A number of UI improvements to Mastery area.
-                  </div>
-                  <div className="c-list__item">
-                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
-                    <div className="c-list__item__title">10/6/2016</div>
-                    First major update. Mastery abilities can now be activated independent of selection. Interface reskinned.
-                  </div>
-                  <div className="c-list__item">
-                    <span className="c-list__item__icon"><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
-                    <div className="c-list__item__title">1/6/2016</div>
-                    We are live :)
-                  </div>
+                <div className="marginTop--medium marginTop@mobile marginLeft--medium marginLeft@mobile marginRight--medium marginRight@mobile marginBottom--medium marginBottom--none@mobile">
+                  <News />
                 </div>
               </div>
               <div className="grid-col-2-3 grid-col-1@mobile">

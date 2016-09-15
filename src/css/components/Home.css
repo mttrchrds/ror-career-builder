@@ -60,7 +60,7 @@
 .mastheadTitle {
   font-size: 4.8rem;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 4rem;
   text-shadow: shadow;
   transition: all 500ms ease;
   color: color-text-primary;
@@ -178,8 +178,8 @@
   }
 }
 .careersRaceTitle {
-  composes: heading3 from "../shared/heading.css";
-  font-size: 1.8rem;
+  composes: heading2Light from "../shared/heading.css";
+  margin-bottom: 0;
 }
 .careersRaceIcon {
   composes: careerIconSmaller from "../shared/careerIcon.css";

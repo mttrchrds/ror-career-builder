@@ -1,0 +1,68 @@
+@value spacing, spacing-small from "../values/spacing.css";
+@value color-text-secondary from "../values/colours.css";
+@value font-size-1 from "../values/fontSizes.css";
+@value mq-md-min from "../values/mediaQueries.css";
+
+.container {
+  composes: box from "../shared/box.css";
+}
+.heading {
+  composes: heading1Light from "../shared/heading.css";
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: spacing;
+  color: color-text-secondary;
+  font-size: font-size-1;
+  font-weight: 300;
+  flex-wrap: wrap;
+}
+@media mq-md-min {
+  .item {
+    flex-wrap: nowrap;
+  }
+}
+.itemIcon {
+  padding-right: spacing-small;
+}
+.itemDate {
+  width: 7rem;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+.itemText {
+  width: 100%;
+  margin-top: spacing-small;
+}
+@media mq-md-min {
+  .itemText {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.c-list {
+  &__heading {
+    font-size: $font-size-h2;
+    margin-bottom: ($base-spacing);
+  }
+  &__item {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: ($base-spacing);
+    padding-left: ($base-spacing * 1.5);
+    font-weight: 300;
+    font-size: 1.2rem;
+    &__title {
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+    }
+    &__icon {
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 0.8rem;
+    }
+  }
+}
