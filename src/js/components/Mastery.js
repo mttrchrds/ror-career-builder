@@ -62,9 +62,9 @@ const Mastery = (props) => {
                 />
               </div>
               <div className="marginRight marginRight--large@mobile">
-                <h4 className="marginTop marginBottom--small">
+                <div className={css.subHeadingSmall}>
                   Core<br />abilities
-                </h4>
+                </div>
                 <div className="row">
                   <div className="column">{props.pathACoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathACoreOverflow)}
@@ -104,9 +104,9 @@ const Mastery = (props) => {
                 />
               </div>
               <div className="marginRight marginRight--large@mobile">
-                <h4 className="marginTop marginBottom--small">
+                <div className={css.subHeadingSmall}>
                   Core<br />abilities
-                </h4>
+                </div>
                 <div className="row">
                   <div className="column">{props.pathBCoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathBCoreOverflow)}
@@ -146,9 +146,9 @@ const Mastery = (props) => {
                 />
               </div>
               <div className="marginRight marginRight--large@mobile">
-                <h4 className="marginTop marginBottom--small">
+                <div className={css.subHeadingSmall}>
                   Core<br />abilities
-                </h4>
+                </div>
                 <div className="row">
                   <div className="column">{props.pathCCoreAbilities.map(renderAbility)}</div>
                   {renderOverflow(props.pathCCoreOverflow)}

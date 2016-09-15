@@ -1,5 +1,5 @@
 @value font-size-3, font-size-4, font-size-5 from "../values/fontSizes.css";
-@value color-text-secondary from "../values/colours.css";
+@value color-text-secondary, color-text-primary from "../values/colours.css";
 @value spacing, spacing-medium from "../values/spacing.css";
 @value mq-mobile from "../values/mediaQueries.css";
 
@@ -31,6 +31,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: font-size-5;
+  color: color-text-primary;
 }
 @media mq-mobile {
   .headingCareer {

@@ -38,11 +38,6 @@ module.exports = {
         include: CONFIG.source + CONFIG.sourcePath
       },
       {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
-        include: CONFIG.source + CONFIG.sourcePathSCSS
-      },
-      {
         test: /\.css$/,
         loader: combineLoaders([
           {
