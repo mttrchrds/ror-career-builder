@@ -34,35 +34,12 @@
 .itemText {
   width: 100%;
   margin-top: spacing-small;
+  padding-left: 1.3rem;
 }
 @media mq-md-min {
   .itemText {
     width: auto;
     margin-top: 0;
-  }
-}
-
-.c-list {
-  &__heading {
-    font-size: $font-size-h2;
-    margin-bottom: ($base-spacing);
-  }
-  &__item {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: ($base-spacing);
-    padding-left: ($base-spacing * 1.5);
-    font-weight: 300;
-    font-size: 1.2rem;
-    &__title {
-      font-weight: 400;
-      margin-bottom: 0.2rem;
-    }
-    &__icon {
-      position: absolute;
-      left: 0;
-      top: 2px;
-      font-size: 0.8rem;
-    }
+    padding-left: 0;
   }
 }

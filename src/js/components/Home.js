@@ -5,7 +5,6 @@ import Sidebar from './Sidebar';
 import CareerItem from './CareerItem';
 import Overlay from './Overlay';
 import News from './News';
-import '../../scss/components/Home.scss';
 import css from '../../css/components/Home.css';
 
 class Home extends React.Component {
@@ -112,6 +111,14 @@ class Home extends React.Component {
       [css.careersContainerRight]: !this.state.mastheadActive,
       [css.careersContainerRightActive]: this.state.mastheadActive,
     });
+    const copyClass = classNames({
+      [css.copy]: true,
+      'marginBottom--large': true,
+      'marginTop@mobile': true,
+      'marginTop--medium': true,
+      marginRight: true,
+      'marginLeft@mobile': true,
+    });
     const githubUrl = 'https://github.com/mattyrichards/ror-career-builder';
     const githubUrlIssues = `${githubUrl}/issues`;
     return (
@@ -208,14 +215,14 @@ class Home extends React.Component {
                 </div>
               </div>
               <div className="grid-col-2-3 grid-col-1@mobile">
-                <div className="c-home__copy u-margin__bottom--large u-margin__top-mobile u-margin__top--large u-margin__right u-margin__left-mobile">
-                  <p>Warhammer Online: Age of Reckoning has returned.
-                  Resurrected by volunteers on a private server, we now have <a className="c-home__copy__link" href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>.
+                <div className={copyClass}>
+                  <p className={css.copyText}>Warhammer Online: Age of Reckoning has returned.
+                  Resurrected by volunteers on a private server, we now have <a className={css.copyLink} href="http://www.returnofreckoning.com" target="blank">Return of Reckoning</a>.
                   Inspired by the work of these developers comes RoR Career Builder.</p>
-                  <p>This web app aims to replace and improve upon the great work done by <a className="c-home__copy__link" href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
-                  <p>Details of updates will appear on this page.</p>
-                  <p>All code is available on <a href={githubUrl} className="c-home__copy__link" target="blank">Github</a>
-                  . Feel free to fork, contribute, <a href={githubUrlIssues} className="c-home__copy__link" target="blank">raise bugs and make suggestions</a>.</p>
+                  <p className={css.copyText}>This web app aims to replace and improve upon the great work done by <a className={css.copyLink} href="http://waronlinebuilder.org" target="blank">Warhammer Online Career Builder</a> back in 2013.</p>
+                  <p className={css.copyText}>Details of updates will appear on this page.</p>
+                  <p className={css.copyText}>All code is available on <a href={githubUrl} className={css.copyLink} target="blank">Github</a>
+                  . Feel free to fork, contribute, <a href={githubUrlIssues} className={css.copyLink} target="blank">raise bugs and make suggestions</a>.</p>
                 </div>
               </div>
             </div>
