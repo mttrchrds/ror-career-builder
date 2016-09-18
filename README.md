@@ -21,7 +21,7 @@ You can see the the RoR Career Builder in action at: [http://ror.builders](http:
 ```
 npm install
 ```
-- To run a local dev server, with Hot Module Reloading (HMR), at **http://localhost:3000** run:
+- To run a local dev server, with Hot Module Reloading (HMR), at **http://localhost:8080** run:
 ```
 npm run dev
 ```
