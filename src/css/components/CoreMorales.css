@@ -8,6 +8,9 @@
 .heading {
   composes: heading1 from "../shared/heading.css";
 }
+.moraleContainer {
+  display: flex;
+}
 @media mq-mobile {
   .moraleContainer {
     display: block;

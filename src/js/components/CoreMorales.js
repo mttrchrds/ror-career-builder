@@ -16,7 +16,7 @@ const CoreMorales = (props) => {
       selectedMorale4={props.selectedMorale4}
     />;
   const renderMorales = (rank1, rank2, rank3, rank4) =>
-    <div className="row">
+    <div className={css.moraleContainer}>
       <div className={css.moraleFirst}>
         <h3 className={css.moraleHeading}>Rank 1</h3>
         <div className="row">
