@@ -8,7 +8,7 @@ Alongside the JavaScript source files sit the CSS source files. [CSS Modules](ht
 
 Other assets utilised are:
 
-- [PureCSS](http://purecss.io/) mainly for responsive grid and button styling
+- [PureCSS](http://purecss.io/) for responsive grid
 - [Iconic](https://useiconic.com/open) for icons
 - [Roboto Google web font](https://www.google.com/fonts/specimen/Roboto)
 

@@ -6,11 +6,10 @@ const atImport = require('postcss-import');
 const calc = require('postcss-calc');
 const nested = require('postcss-nested');
 const values = require('postcss-modules-values');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
     CONFIG.source + CONFIG.sourcePath + CONFIG.sourcePathName
   ],
   output: {
@@ -66,6 +65,10 @@ module.exports = {
   },
   devtool: 'eval',
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: CONFIG.build + '/index.html',
+      template: CONFIG.source + CONFIG.sourcePathEJS + 'index.ejs',
+    })
   ]
 };

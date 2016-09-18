@@ -7,14 +7,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const values = require('postcss-modules-values');
 const nested = require('postcss-nested');
 const calc = require('postcss-calc');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
     CONFIG.source + CONFIG.sourcePath + CONFIG.sourcePathName
   ],
   output: {
-    path: CONFIG.build + CONFIG.buildPath,
-    filename: CONFIG.buildPathName,
+    path: CONFIG.build,
+    filename: CONFIG.buildPath + CONFIG.buildPathName,
     contentBase: CONFIG.build
   },
   module: {
@@ -55,14 +56,17 @@ module.exports = {
   },
   devtool: 'cheap-module-source-map',
   plugins: [
-    new ExtractTextPlugin('../css/styles.css',
-    {
-      allChunks: true
-    }),
+    new ExtractTextPlugin('/css/styles.css'),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      filename: CONFIG.build + '/index.html',
+      template: CONFIG.source + CONFIG.sourcePathEJS + 'index.ejs',
     })
   ],
 };
