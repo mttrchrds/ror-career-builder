@@ -9,16 +9,10 @@ import '../css/entry.css';
 /*
   Import Components
 */
+import App from './App';
 import Home from './components/Home';
 import Career from './components/Career';
 import NotFound from './components/NotFound';
-
-const App = (props) =>
-  <div className="heightFull">{props.children}</div>;
-
-App.propTypes = {
-  children: React.PropTypes.node,
-};
 
 ReactDOM.render((
 	<Router history={browserHistory}>

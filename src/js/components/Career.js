@@ -666,52 +666,6 @@ class Career extends React.Component {
       </div>
     );
   }
-
-  /*
-  * -----------------------
-  * Google Analytics Events
-  * -----------------------
-  */
-
-  // Create category/value to determine where race was selected from i.e. home, button, breadcrumb
-  // Again, needs to be duplicated on home page
-  gaChangeCareer(changeType) {
-    h.gaEvent('Career changed', changeType);
-  }
-
-  // Google Analytics event after selecting career
-  gaCareerSelected(careerKey) {
-    h.gaEvent('Career selected', this.state.careers[careerKey].name);
-    h.gaEvent('Class selected', this.state.careers[careerKey].class);
-    h.gaEvent('Race selected', this.state.careers[careerKey].race);
-  }
-
-  // Google Analytics events after saving career
-  gaCareerShared() {
-    h.gaEvent('Career shared', this.state.career.name, this.state.career.class, this.state.currentLevel);
-    if (Number(this.state.selectedMorale1) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 1', this.state.abilities[this.state.selectedMorale1].name, this.state.selectedMorale1);
-    }
-    if (Number(this.state.selectedMorale2) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 2', this.state.abilities[this.state.selectedMorale2].name, this.state.selectedMorale2);
-    }
-    if (Number(this.state.selectedMorale3) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 3', this.state.abilities[this.state.selectedMorale3].name, this.state.selectedMorale3);
-    }
-    if (Number(this.state.selectedMorale4) > 0) {
-      h.gaEvent(this.state.career.name, 'Selected Morale 4', this.state.abilities[this.state.selectedMorale4].name, this.state.selectedMorale4);
-    }
-    if (Number(this.state.selectedTactics.length) > 0) {
-      for (const abilityId of this.state.selectedTactics) {
-        h.gaEvent(this.state.career.name, 'Selected Tactic', this.state.abilities[abilityId].name, abilityId);
-      }
-    }
-    if (Number(this.state.selectedMasteries.length) > 0) {
-      for (const abilityId of this.state.selectedMasteries) {
-        h.gaEvent(this.state.career.name, 'Mastery ability', this.state.abilities[abilityId].name, abilityId);
-      }
-    }
-  }
 }
 
 Career.propTypes = {
