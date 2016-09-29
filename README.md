@@ -28,3 +28,5 @@ npm run dev
 - To create a production ready version of the app (in **/build** directory) run:
 ```
 npm run build
+```
+**Note:** When creating production ready version, remember to populate `analytics.js` with real Google Analytics configuration.
