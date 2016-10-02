@@ -12,13 +12,11 @@ class Home extends React.Component {
   constructor() {
     super();
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.renderCareers = this.renderCareers.bind(this);
     this.clickMasthead = this.clickMasthead.bind(this);
     this.clickMastheadMobile = this.clickMastheadMobile.bind(this);
     this.hideOverlay = this.hideOverlay.bind(this);
     this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.state = {
-      careers: {},
       mastheadActive: false,
       sidebar: {
         visible: false,
@@ -27,14 +25,6 @@ class Home extends React.Component {
         visible: false,
       },
     };
-  }
-
-  componentDidMount() {
-    h.getJSON('/json/careers.json', (result) => {
-      this.setState({
-        careers: result,
-      });
-    });
   }
 
   // Hide/show overlay, param is boolean
@@ -59,9 +49,9 @@ class Home extends React.Component {
   }
 
   renderCareers(key, faction) {
-    if (this.state.careers[key].race === faction) {
+    if (this.props.careers[key].race === faction) {
       return (
-        <CareerItem key={key} gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.state.careers[key].name} />
+        <CareerItem key={key} gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.props.careers[key].name} />
       );
     }
     return false;
@@ -149,7 +139,7 @@ class Home extends React.Component {
                           <img src="/images/icons/dwarf.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>Dwarves</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'Dwarf')
                         )}
                       </div>
@@ -158,7 +148,7 @@ class Home extends React.Component {
                           <img src="/images/icons/high-elf.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>High Elves</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'High Elf')
                         )}
                       </div>
@@ -167,7 +157,7 @@ class Home extends React.Component {
                           <img src="/images/icons/empire.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>Empire</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'Empire')
                         )}
                       </div>
@@ -181,7 +171,7 @@ class Home extends React.Component {
                           <img src="/images/icons/greenskin.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>Greenskins</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'Greenskin')
                         )}
                       </div>
@@ -190,7 +180,7 @@ class Home extends React.Component {
                           <img src="/images/icons/dark-elf.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>Dark Elves</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'Dark Elf')
                         )}
                       </div>
@@ -199,7 +189,7 @@ class Home extends React.Component {
                           <img src="/images/icons/chaos.png" className={css.careersRaceIcon} />
                           <div className={css.careersRaceTitle}>Chaos</div>
                         </div>
-                        {Object.keys(this.state.careers).map(
+                        {Object.keys(this.props.careers).map(
                           (key) => this.renderCareers(key, 'Chaos')
                         )}
                       </div>
@@ -234,7 +224,7 @@ class Home extends React.Component {
           visible
         />
         <Sidebar
-          careers={this.state.careers}
+          careers={this.props.careers}
           updateSidebarVisibility={this.updateSidebarVisibility}
           updateOverlayVisibility={this.updateOverlayVisibility}
           sidebar={this.state.sidebar}
@@ -252,10 +242,14 @@ class Home extends React.Component {
 
   // Google Analytics event after selecting career
   gaCareerSelected(careerKey) {
-    h.gaEvent('Career selected', this.state.careers[careerKey].name);
-    h.gaEvent('Class selected', this.state.careers[careerKey].class);
-    h.gaEvent('Race selected', this.state.careers[careerKey].race);
+    h.gaEvent('Career selected', this.props.careers[careerKey].name);
+    h.gaEvent('Class selected', this.props.careers[careerKey].class);
+    h.gaEvent('Race selected', this.props.careers[careerKey].race);
   }
 }
+
+Home.propTypes = {
+  careers: React.PropTypes.object,
+};
 
 export default Home;

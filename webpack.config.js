@@ -19,13 +19,13 @@ module.exports = {
     publicPath: '/js/'
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        include: CONFIG.source + CONFIG.sourcePath
-      }
-    ],
+    // preLoaders: [
+    //   {
+    //     test: /\.js$/,
+    //     loader: 'eslint-loader',
+    //     include: CONFIG.source + CONFIG.sourcePath
+    //   }
+    // ],
     loaders: [
       {
         test: /\.js$/,

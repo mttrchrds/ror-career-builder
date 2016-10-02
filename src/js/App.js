@@ -1,5 +1,5 @@
 import React from 'react';
-import h from '../helpers';
+import h from './helpers';
 
 class App extends React.Component {
 
@@ -47,7 +47,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    loadCareers();
+    this.loadCareers();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -109,9 +109,17 @@ class App extends React.Component {
     }
   }
 
+  renderChildren(props) {
+    return React.Children.map(props.children, (child) => {
+      return React.cloneElement(child, {
+        careers: this.state.careers,
+      });
+    });
+  }
+
   render() {
     return (
-      <div className="heightFull">{props.children}</div>
+      <div className="heightFull">{this.renderChildren(this.props)}</div>
     );
   }
 }
