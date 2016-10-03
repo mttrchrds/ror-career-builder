@@ -14,8 +14,6 @@ class Home extends React.Component {
     // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.clickMasthead = this.clickMasthead.bind(this);
     this.clickMastheadMobile = this.clickMastheadMobile.bind(this);
-    this.hideOverlay = this.hideOverlay.bind(this);
-    this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.state = {
       mastheadActive: false,
       sidebar: {
@@ -27,31 +25,10 @@ class Home extends React.Component {
     };
   }
 
-  // Hide/show overlay, param is boolean
-  updateOverlayVisibility(status) {
-    this.state.overlay.visible = status;
-    this.setState({
-      overlay: this.state.overlay,
-    });
-  }
-
-  hideOverlay() {
-    this.updateSidebarVisibility(false);
-    this.updateOverlayVisibility(false);
-  }
-
-  // Hide/show sidebar, param is boolean
-  updateSidebarVisibility(status) {
-    this.state.sidebar.visible = status;
-    this.setState({
-      sidebar: this.state.sidebar,
-    });
-  }
-
   renderCareers(key, faction) {
     if (this.props.careers[key].race === faction) {
       return (
-        <CareerItem key={key} gaCareerSelected={this.gaCareerSelected} shortName={key} careerName={this.props.careers[key].name} />
+        <CareerItem key={key} gaCareerSelected={this.props.gaCareerSelected} shortName={key} careerName={this.props.careers[key].name} />
       );
     }
     return false;
@@ -66,8 +43,8 @@ class Home extends React.Component {
 
   clickMastheadMobile(e) {
     e.preventDefault();
-    this.updateSidebarVisibility(true);
-    this.updateOverlayVisibility(true);
+    this.props.updateSidebarVisibility(true);
+    this.props.updateOverlayVisibility(true);
   }
 
   render() {
@@ -219,37 +196,30 @@ class Home extends React.Component {
           </div>
         </div>
         <Overlay
-          overlay={this.state.overlay}
-          hideOverlay={this.hideOverlay}
+          overlay={this.props.overlay}
+          clickOverlay={this.props.clickOverlay}
           visible
         />
         <Sidebar
           careers={this.props.careers}
-          updateSidebarVisibility={this.updateSidebarVisibility}
-          updateOverlayVisibility={this.updateOverlayVisibility}
-          sidebar={this.state.sidebar}
-          gaCareerSelected={this.gaCareerSelected}
+          updateSidebarVisibility={this.props.updateSidebarVisibility}
+          updateOverlayVisibility={this.props.updateOverlayVisibility}
+          sidebar={this.props.sidebar}
+          gaCareerSelected={this.props.gaCareerSelected}
         />
       </div>
     );
-  }
-
-  /*
-  * -----------------------
-  * Google Analytics Events
-  * -----------------------
-  */
-
-  // Google Analytics event after selecting career
-  gaCareerSelected(careerKey) {
-    h.gaEvent('Career selected', this.props.careers[careerKey].name);
-    h.gaEvent('Class selected', this.props.careers[careerKey].class);
-    h.gaEvent('Race selected', this.props.careers[careerKey].race);
   }
 }
 
 Home.propTypes = {
   careers: React.PropTypes.object,
+  updateSidebarVisibility: React.PropTypes.func,
+  updateOverlayVisibility: React.PropTypes.func,
+  sidebar: React.PropTypes.object,
+  gaCareerSelected: React.PropTypes.func,
+  overlay: React.PropTypes.object,
+  clickOverlay: React.PropTypes.func,
 };
 
 export default Home;

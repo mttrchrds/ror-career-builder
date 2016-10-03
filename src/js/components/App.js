@@ -7,6 +7,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.clickOverlay = this.clickOverlay.bind(this);
+    this.updateModalVisibility = this.updateModalVisibility.bind(this);
+    this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
+    this.updateOverlayVisibility = this.updateOverlayVisibility.bind(this);
+    this.gaChangeCareer = this.gaChangeCareer.bind(this);
+    this.gaCareerSelected = this.gaCareerSelected.bind(this);
+    this.gaCareerShared = this.gaCareerShared.bind(this);
+
     this.state = {
       careers: {},
       career: {},
@@ -64,6 +72,39 @@ class App extends React.Component {
     });
   }
 
+  // Hide/show Modal, param is boolean
+  updateModalVisibility(status) {
+    this.state.modal.visible = status;
+    this.setState({
+      modal: this.state.modal,
+    });
+  }
+
+  // Hide/show Sidebar, param is boolean
+  updateSidebarVisibility(status) {
+    this.state.sidebar.visible = status;
+    this.setState({
+      sidebar: this.state.sidebar,
+    });
+  }
+
+  // Hide/show Overlay, param is boolean
+  updateOverlayVisibility(status) {
+    this.state.overlay.visible = status;
+    this.setState({
+      overlay: this.state.overlay,
+    });
+  }
+
+  // Overlay background is clicked
+  clickOverlay() {
+    this.updateModalVisibility(false);
+    this.updateSidebarVisibility(false);
+    this.updateOverlayVisibility(false);
+  }
+
+
+
   /*
   * -----------------------
   * Google Analytics Events
@@ -114,6 +155,16 @@ class App extends React.Component {
     // Common props for all children components
     let childProps = {
       careers: this.state.careers,
+      overlay: this.state.overlay,
+      sidebar: this.state.sidebar,
+      modal: this.state.modal,
+      updateModalVisibility: this.updateModalVisibility,
+      updateSidebarVisibility: this.updateSidebarVisibility,
+      updateOverlayVisibility: this.updateOverlayVisibility,
+      clickOverlay: this.clickOverlay,
+      gaChangeCareer: this.gaChangeCareer,
+      gaCareerSelected: this.gaCareerSelected,
+      gaCareerShared: this.gaCareerShared,
     };
     return React.Children.map(props.children, (child) => {
       // Specific props for components

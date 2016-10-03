@@ -10,8 +10,6 @@ class Overlay extends React.Component {
 
   constructor(props) {
     super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
-    this.clickOverlay = this.clickOverlay.bind(this);
   }
 
   componentDidUpdate() {
@@ -22,10 +20,6 @@ class Overlay extends React.Component {
     }
   }
 
-  clickOverlay() {
-    this.props.hideOverlay();
-  }
-
   render() {
     const overlayClass = classNames({
       [css.overlay]: !this.props.overlay.visible,
@@ -33,13 +27,13 @@ class Overlay extends React.Component {
       [css.overlayActiveInvisible]: this.props.overlay.visible && !this.props.visible,
     });
     return (
-      <div className={overlayClass} onClick={this.clickOverlay} />
+      <div className={overlayClass} onClick={this.props.clickOverlay} />
     );
   }
 }
 
 Overlay.propTypes = {
-  hideOverlay: React.PropTypes.func,
+  clickOverlay: React.PropTypes.func,
   overlay: React.PropTypes.object,
   visible: React.PropTypes.bool,
 };
