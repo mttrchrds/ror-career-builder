@@ -1,5 +1,6 @@
 import React from 'react';
 import h from '../helpers';
+import css from '../../css/components/App.css';
 
 class App extends React.Component {
 
@@ -132,7 +133,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="heightFull">{this.renderChildren(this.props)}</div>
+      <div className={css.container}>{this.renderChildren(this.props)}</div>
     );
   }
 }
