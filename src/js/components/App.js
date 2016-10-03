@@ -103,8 +103,6 @@ class App extends React.Component {
     this.updateOverlayVisibility(false);
   }
 
-
-
   /*
   * -----------------------
   * Google Analytics Events
@@ -169,9 +167,6 @@ class App extends React.Component {
     return React.Children.map(props.children, (child) => {
       // Specific props for components
       switch (child.type.name) {
-        case 'Home':
-          childProps['only-for-home'] = true;
-          break;
         case 'Career':
           childProps['only-for-career'] = true;
           break;
