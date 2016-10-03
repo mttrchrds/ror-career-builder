@@ -1,5 +1,5 @@
 import React from 'react';
-import h from './helpers';
+import h from '../helpers';
 
 class App extends React.Component {
 
@@ -110,10 +110,23 @@ class App extends React.Component {
   }
 
   renderChildren(props) {
+    // Common props for all children components
+    let childProps = {
+      careers: this.state.careers,
+    };
     return React.Children.map(props.children, (child) => {
-      return React.cloneElement(child, {
-        careers: this.state.careers,
-      });
+      // Specific props for components
+      switch (child.type.name) {
+        case 'Home':
+          childProps['only-for-home'] = true;
+          break;
+        case 'Career':
+          childProps['only-for-career'] = true;
+          break;
+        default:
+          break;
+      }
+      return React.cloneElement(child, childProps);
     });
   }
 

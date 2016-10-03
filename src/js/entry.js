@@ -9,7 +9,7 @@ import '../css/entry.css';
 /*
   Import Components
 */
-import App from './App';
+import App from './components/App';
 import Home from './components/Home';
 import Career from './components/Career';
 import NotFound from './components/NotFound';
