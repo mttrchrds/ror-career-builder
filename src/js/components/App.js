@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    // Bind functions early
     this.clickOverlay = this.clickOverlay.bind(this);
     this.updateModalVisibility = this.updateModalVisibility.bind(this);
     this.updateSidebarVisibility = this.updateSidebarVisibility.bind(this);
@@ -14,19 +15,27 @@ class App extends React.Component {
     this.gaChangeCareer = this.gaChangeCareer.bind(this);
     this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.gaCareerShared = this.gaCareerShared.bind(this);
+    this.loadCareer = this.loadCareer.bind(this);
+    this.updateCareerLoading = this.updateCareerLoading.bind(this);
 
+    // Initialise state of app
     this.state = {
       careers: {},
+      careerLoading: true,
       career: {},
+      careerSlug: '',
       abilities: {},
-      coreAbilities: {},
-      coreMorales: {},
-      coreTactics: {},
-      pathACoreAbilities: {},
+      coreAbilities: [],
+      coreMorales: [],
+      coreTactics: [],
+      pathACoreAbilities: [],
+      pathACoreOverflow: [],
       pathAOptionalAbilities: {},
-      pathBCoreAbilities: {},
+      pathBCoreAbilities: [],
+      pathBCoreOverflow: [],
       pathBOptionalAbilities: {},
-      pathCCoreAbilities: {},
+      pathCCoreAbilities: [],
+      pathCCoreOverflow: [],
       pathCOptionalAbilities: {},
       currentLevel: 1,
       currentRenown: 10,
@@ -56,11 +65,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // Load careers into state from json
     this.loadCareers();
-  }
-
-  componentWillReceiveProps(nextProps) {
-
   }
 
   // Load careers into state
@@ -69,6 +75,58 @@ class App extends React.Component {
       this.setState({
         careers: result,
       });
+    }, (error) => {
+      console.warn(error);
+    });
+  }
+
+  // Load career details into state
+  loadCareer(careerName) {
+    // TODO: a more elegant way to display that the career was not found, rather than an endless loading animation
+    this.updateCareerLoading(true);
+    if (this.state.careers[careerName]) {
+      this.state.career = this.state.careers[careerName];
+      this.state.careerSlug = careerName;
+      const pathAbilities = `/json/abilities/${this.state.career.code}.json`;
+      h.getJSON(pathAbilities, (abilities) => {
+        const imported = h.importJSON(this.state.career, abilities);
+        if (Object.keys(imported.abilities).length) {
+          this.setState({
+            careerLoading: false,
+            career: this.state.career,
+            careerSlug: this.state.careerSlug,
+            abilities: imported.abilities,
+            coreAbilities: imported.coreAbilities,
+            coreMorales: imported.coreMorales,
+            coreTactics: imported.coreTactics,
+            pathACoreAbilities: imported.pathACore,
+            pathACoreOverflow: imported.pathACoreOverflow,
+            pathAOptionalAbilities: imported.pathAOpt,
+            pathBCoreAbilities: imported.pathBCore,
+            pathBCoreOverflow: imported.pathBCoreOverflow,
+            pathBOptionalAbilities: imported.pathBOpt,
+            pathCCoreAbilities: imported.pathCCore,
+            pathCCoreOverflow: imported.pathCCoreOverflow,
+            pathCOptionalAbilities: imported.pathCOpt,
+          });
+          // TODO: below for saved careers
+          // Check if this is a saved Career URL and update State accordingly
+          if (this.props.params.careerSaved === 's') {
+            // const { query } = this.props.location;
+            // this.setSavedCareer(query);
+          }
+        }
+      }, (error) => {
+        console.warn(error);
+      });
+    }
+  }
+
+  // Hide/show career loading screen
+  updateCareerLoading(status) {
+    this.state.careerLoading = status;
+    this.setState({
+      careerLoading: this.state.careerLoading,
     });
   }
 
@@ -150,7 +208,7 @@ class App extends React.Component {
   }
 
   renderChildren(props) {
-    // Common props for all children components
+    // Common props for all child components
     let childProps = {
       careers: this.state.careers,
       overlay: this.state.overlay,
@@ -168,7 +226,23 @@ class App extends React.Component {
       // Specific props for components
       switch (child.type.name) {
         case 'Career':
-          childProps['only-for-career'] = true;
+          childProps.loadCareer = this.loadCareer;
+          childProps.careerLoading = this.state.careerLoading;
+          childProps.career = this.state.career;
+          childProps.careerSlug = this.state.careerSlug;
+          childProps.abilities = this.state.abilities;
+          childProps.coreAbilities = this.state.coreAbilities;
+          childProps.coreMorales = this.state.coreMorales;
+          childProps.coreTactics = this.state.coreTactics;
+          childProps.pathACoreAbilities = this.state.pathACoreAbilities;
+          childProps.pathACoreOverflow = this.state.pathACoreOverflow;
+          childProps.pathAOptionalAbilities = this.state.pathAOptionalAbilities;
+          childProps.pathBCoreAbilities = this.state.pathBCoreAbilities;
+          childProps.pathBCoreOverflow = this.state.pathBCoreOverflow;
+          childProps.pathBOptionalAbilities = this.state.pathBOptionalAbilities;
+          childProps.pathCCoreAbilities = this.state.pathCCoreAbilities;
+          childProps.pathCCoreOverflow = this.state.pathCCoreOverflow;
+          childProps.pathCOptionalAbilities = this.state.pathCOptionalAbilities;
           break;
         default:
           break;

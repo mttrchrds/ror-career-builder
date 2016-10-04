@@ -7,7 +7,7 @@ const ActionButtons = (props) => {
     props.resetCareer();
   };
   const createShareLink = () => {
-    let saveLink = `${window.location.origin}/career/${props.careerShort}/s?`;
+    let saveLink = `${window.location.origin}/career/${props.careerSlug}/s?`;
     saveLink += `l=${props.currentLevel}`;
     saveLink += `&r=${props.currentRenown}`;
     saveLink += `&tl=${props.currentTacticLimit}`;
@@ -26,7 +26,7 @@ const ActionButtons = (props) => {
   const createBBCode = (link) =>
     `[url=${link}]RoR.builders - ${props.career.name}[/url]`;
   const buildModalTitle = () => {
-    const url = `/images/icons/${props.careerShort}.png`;
+    const url = `/images/icons/${props.careerSlug}.png`;
     return (
       <div className="row row--v-center">
         <img src={url} className={css.modalTitleIcon} />
@@ -77,7 +77,7 @@ const ActionButtons = (props) => {
 
 ActionButtons.propTypes = {
   resetCareer: React.PropTypes.func,
-  careerShort: React.PropTypes.string,
+  careerSlug: React.PropTypes.string,
   currentLevel: React.PropTypes.number,
   currentRenown: React.PropTypes.number,
   currentTacticLimit: React.PropTypes.number,

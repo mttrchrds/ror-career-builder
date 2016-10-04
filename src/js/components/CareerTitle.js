@@ -2,7 +2,7 @@ import React from 'react';
 import css from '../../css/components/CareerTitle.css';
 
 const CareerTitle = (props) => {
-  const url = `/images/icons/${props.careerShort}.png`;
+  const url = `/images/icons/${props.careerSlug}.png`;
   return (
       <div className="row row--v-center">
         <img src={url} className={css.icon}></img>
@@ -14,7 +14,7 @@ const CareerTitle = (props) => {
 };
 
 CareerTitle.propTypes = {
-  careerShort: React.PropTypes.string,
+  careerSlug: React.PropTypes.string,
   career: React.PropTypes.object,
 };
 
