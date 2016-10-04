@@ -64,6 +64,14 @@ class App extends React.Component {
     };
   }
 
+  // TODO: refactor this from Careers
+  componentWillReceiveProps() {
+    // New career selected, reset selections and load data
+    // this.resetCareer();
+    // this.loadCareer();
+    // this.hideOverlay();
+  }
+
   componentDidMount() {
     // Load careers into state from json
     this.loadCareers();
@@ -256,6 +264,337 @@ class App extends React.Component {
       <div className={css.container}>{this.renderChildren(this.props)}</div>
     );
   }
+
+  // TODO: refactor this from Careers
+  // // Amends this.state.selectedTactics. Optional boolean to remove only
+  // updateSelectedTactics(abilityId, addAbility = true) {
+  //   const abilityIndex = this.state.selectedTactics.indexOf(abilityId);
+  //   if (abilityIndex === -1) {
+  //     if (addAbility) {
+  //       // If ability isn't in array then add it
+  //       this.state.selectedTactics.push(abilityId);
+  //     }
+  //   } else {
+  //     // remove it from array
+  //     this.state.selectedTactics.splice(abilityIndex, 1);
+  //   }
+  //   this.setState({
+  //     selectedTactics: this.state.selectedTactics,
+  //   });
+  // }
+  //
+  // updateSelectedMasteries(abilityId) {
+  //   const abilityIndex = this.state.selectedMasteries.indexOf(abilityId);
+  //   if (abilityIndex === -1) {
+  //     // If ability isn't in array then add it
+  //     this.state.selectedMasteries.push(abilityId);
+  //   } else {
+  //     // remove it from array
+  //     this.state.selectedMasteries.splice(abilityIndex, 1);
+  //   }
+  //   this.setState({
+  //     selectedMasteries: this.state.selectedMasteries,
+  //   });
+  // }
+  //
+  // // Amends this.state.selectedMorale. Optional boolean to remove only
+  // updateSelectedMorale(rank, tacticId, addAbility = true) {
+  //   const moraleId = this.state[`selectedMorale${rank}`];
+  //   if (Number(moraleId) === Number(tacticId)) {
+  //     // If ability isn't is current morale then reset it
+  //     this.state[`selectedMorale${rank}`] = 0;
+  //   } else {
+  //     // add it as current morale
+  //     if (addAbility) {
+  //       this.state[`selectedMorale${rank}`] = tacticId;
+  //     }
+  //   }
+  //   this.setState({
+  //     [`selectedMorale${rank}`]: this.state[`selectedMorale${rank}`],
+  //   });
+  // }
+  //
+  // setSavedCareer(query) {
+  //   if (query.l) {
+  //     this.setState({
+  //       currentLevel: Number(query.l),
+  //     });
+  //   }
+  //   if (query.r) {
+  //     this.setState({
+  //       currentRenown: Number(query.r),
+  //     });
+  //   }
+  //   if (query.tl) {
+  //     this.setState({
+  //       currentTacticLimit: Number(query.tl),
+  //     });
+  //   }
+  //   if (query.mp) {
+  //     this.setState({
+  //       masteryPoints: Number(query.mp),
+  //     });
+  //   }
+  //   if (query.pA) {
+  //     this.setState({
+  //       pathAMeter: Number(query.pA),
+  //     });
+  //   }
+  //   if (query.pB) {
+  //     this.setState({
+  //       pathBMeter: Number(query.pB),
+  //     });
+  //   }
+  //   if (query.pC) {
+  //     this.setState({
+  //       pathCMeter: Number(query.pC),
+  //     });
+  //   }
+  //   if (query.ma) {
+  //     query.ma.split(',').forEach((abilityId) => {
+  //       this.state.selectedMasteries.push(Number(abilityId));
+  //       // If mastery tactic or morale activated, it must be added to coreTactics/coreMorales
+  //       if (this.state.abilities[abilityId].abilityType === 'tactic') {
+  //         this.updateCoreTactics(Number(abilityId));
+  //       }
+  //       if (this.state.abilities[abilityId].abilityType === 'morale') {
+  //         this.updateCoreMorales(Number(abilityId));
+  //       }
+  //     });
+  //   }
+  //   if (query.m1) {
+  //     this.state.selectedMorale1 = Number(query.m1);
+  //   }
+  //   if (query.m2) {
+  //     this.state.selectedMorale2 = Number(query.m2);
+  //   }
+  //   if (query.m3) {
+  //     this.state.selectedMorale3 = Number(query.m3);
+  //   }
+  //   if (query.m4) {
+  //     this.state.selectedMorale4 = Number(query.m4);
+  //   }
+  //   if (query.t) {
+  //     query.t.split(',').forEach((abilityId) => {
+  //       this.state.selectedTactics.push(Number(abilityId));
+  //     });
+  //   }
+  //   this.setState({
+  //     selectedMasteries: this.state.selectedMasteries,
+  //     selectedTactics: this.state.selectedTactics,
+  //     selectedMorale1: this.state.selectedMorale1,
+  //     selectedMorale2: this.state.selectedMorale2,
+  //     selectedMorale3: this.state.selectedMorale3,
+  //     selectedMorale4: this.state.selectedMorale4,
+  //   });
+  // }
+  //
+  // updateCoreTactics(abilityId) {
+  //   const abilityIndex = this.state.coreTactics.indexOf(abilityId);
+  //   if (abilityIndex === -1) {
+  //     // If ability isn't in array then add it
+  //     this.state.coreTactics.push(abilityId);
+  //   } else {
+  //     // remove it from array
+  //     this.state.coreTactics.splice(abilityIndex, 1);
+  //   }
+  //   this.setState({
+  //     coreTactics: this.state.coreTactics,
+  //   });
+  // }
+  //
+  // updateCoreMorales(abilityId) {
+  //   const abilityIndex = this.state.coreMorales.indexOf(abilityId);
+  //   if (abilityIndex === -1) {
+  //     // If ability isn't in array then add it
+  //     this.state.coreMorales.push(abilityId);
+  //   } else {
+  //     // remove it from array
+  //     this.state.coreMorales.splice(abilityIndex, 1);
+  //   }
+  //   this.setState({
+  //     coreMorales: this.state.coreMorales,
+  //   });
+  // }
+  //
+  // // Update limit on number of tactic slots
+  // setCurrentTacticLimit(level) {
+  //   let currentLimit = 0;
+  //   if (Number(level) === 40) {
+  //     currentLimit = 4;
+  //   } else if (Number(level) >= 30) {
+  //     currentLimit = 3;
+  //   } else if (Number(level) >= 20) {
+  //     currentLimit = 2;
+  //   } else if (Number(level) >= 10) {
+  //     currentLimit = 1;
+  //   }
+  //   this.setState({
+  //     currentTacticLimit: currentLimit,
+  //   });
+  // }
+  //
+  // // Calculate mastery points available based on char level and renown level
+  // setMasteryPoints(level, renown) {
+  //   let points = 0;
+  //   if (Number(level) > 10) {
+  //     if (Number(level) > 20) {
+  //       points = level - 15;
+  //     } else {
+  //       if (Number(level) > 18) {
+  //         points = 5;
+  //       } else if (Number(level) > 16) {
+  //         points = 4;
+  //       } else if (Number(level) > 14) {
+  //         points = 3;
+  //       } else if (Number(level) > 12) {
+  //         points = 2;
+  //       } else {
+  //         points = 1;
+  //       }
+  //     }
+  //     switch (Number(renown)) {
+  //       case 40:
+  //         points = points + 1;
+  //         break;
+  //       case 50:
+  //         points = points + 2;
+  //         break;
+  //       case 60:
+  //         points = points + 3;
+  //         break;
+  //       case 70:
+  //         points = points + 4;
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   }
+  //   // Resetting mastery points when level changes
+  //   this.setState({
+  //     masteryPoints: points,
+  //     pathAMeter: 0,
+  //     pathBMeter: 0,
+  //     pathCMeter: 0,
+  //   });
+  // }
+  //
+  // // Reset all current selections
+  // resetSelections() {
+  //   this.state.selectedMorale1 = 0;
+  //   this.state.selectedMorale2 = 0;
+  //   this.state.selectedMorale3 = 0;
+  //   this.state.selectedMorale4 = 0;
+  //   this.state.selectedMasteries = [];
+  //   this.state.selectedTactics = [];
+  //   this.setState({
+  //     selectedMorale1: this.state.selectedMorale1,
+  //     selectedMorale2: this.state.selectedMorale2,
+  //     selectedMorale3: this.state.selectedMorale3,
+  //     selectedMorale4: this.state.selectedMorale4,
+  //     selectedMasteries: this.state.selectedMasteries,
+  //     selectedTactics: this.state.selectedTactics,
+  //   });
+  // }
+  //
+  // // Reset career to initial state
+  // resetCareer() {
+  //   this.setState({
+  //     currentLevel: 1,
+  //     currentRenown: 10,
+  //     masteryPoints: 0,
+  //     pathAMeter: 0,
+  //     pathBMeter: 0,
+  //     pathCMeter: 0,
+  //     currentTacticLimit: 0,
+  //     selectedTactics: [],
+  //     selectedMasteries: [],
+  //     selectedMorale1: 0,
+  //     selectedMorale2: 0,
+  //     selectedMorale3: 0,
+  //     selectedMorale4: 0,
+  //   });
+  // }
+  //
+  // // Hide/show overlay, param is boolean
+  // updateOverlayVisibility(status) {
+  //   this.state.overlay.visible = status;
+  //   this.setState({
+  //     overlay: this.state.overlay,
+  //   });
+  // }
+  //
+  // hideOverlay() {
+  //   this.updateModalVisibility(false);
+  //   this.updateSidebarVisibility(false);
+  //   this.state.overlay.visible = false;
+  //   this.setState({
+  //     overlay: this.state.overlay,
+  //   });
+  // }
+  //
+  // // Update contents of modal, param is new copy
+  // updateModalContent(title, content) {
+  //   this.state.modal.contentTitle = title;
+  //   this.state.modal.contentBody = content;
+  //   this.setState({
+  //     modal: this.state.modal,
+  //   });
+  // }
+  //
+  // // Hide/show modal, param is boolean
+  // updateModalVisibility(status) {
+  //   this.state.modal.visible = status;
+  //   this.setState({
+  //     modal: this.state.modal,
+  //   });
+  // }
+  //
+  // // Hide/show sidebar, param is boolean
+  // updateSidebarVisibility(status) {
+  //   this.state.sidebar.visible = status;
+  //   this.setState({
+  //     sidebar: this.state.sidebar,
+  //   });
+  // }
+  //
+  // updateMasteryPoints(points) {
+  //   this.setState({ masteryPoints: points });
+  // }
+  //
+  // incrementMasteryPoints() {
+  //   this.setState({ masteryPoints: this.state.masteryPoints + 1 });
+  // }
+  //
+  // decrementMasteryPoints() {
+  //   this.setState({ masteryPoints: this.state.masteryPoints - 1 });
+  // }
+  //
+  // incrementPathMeter(path) {
+  //   const pathProperty = this.formatPathMeter(path);
+  //   // i.e. pathAMeter: this.state.pathAMeter + 1
+  //   this.setState({ [pathProperty]: this.state[pathProperty] + 1 });
+  // }
+  //
+  // decrementPathMeter(path) {
+  //   const pathProperty = this.formatPathMeter(path);
+  //   // i.e. pathAMeter: this.state.pathAMeter - 1
+  //   this.setState({ [pathProperty]: this.state[pathProperty] - 1 });
+  // }
+  //
+  // // Formats path letter to path property name e.g 'a' becomes 'pathAMeter'
+  // formatPathMeter(path) {
+  //   const pathFormatted = path.toUpperCase();
+  //   return `path${pathFormatted}Meter`;
+  // }
+  //
+  // updateLevel(level) {
+  //   this.setState({ currentLevel: Number(level) });
+  // }
+  //
+  // updateRenown(renown) {
+  //   this.setState({ currentRenown: Number(renown) });
+  // }
 }
 
 App.propTypes = {
