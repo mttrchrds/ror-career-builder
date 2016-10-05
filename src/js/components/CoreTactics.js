@@ -16,7 +16,7 @@ const CoreTactics = (props) => {
     <div className={css.container}>
       <h2 className={css.heading}>Tactics</h2>
       <div className="row">
-        {props.tactics.map(renderAbility)}
+        {props.coreTactics.map(renderAbility)}
       </div>
     </div>
   );
@@ -24,7 +24,7 @@ const CoreTactics = (props) => {
 
 CoreTactics.propTypes = {
   abilities: React.PropTypes.object,
-  tactics: React.PropTypes.array,
+  coreTactics: React.PropTypes.array,
   currentLevel: React.PropTypes.number,
   currentTacticLimit: React.PropTypes.number,
   selectedTactics: React.PropTypes.array,

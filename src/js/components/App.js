@@ -23,6 +23,7 @@ class App extends React.Component {
     this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
     this.updateCurrentTacticLimit = this.updateCurrentTacticLimit.bind(this);
     this.updateSelectedMorale = this.updateSelectedMorale.bind(this);
+    this.updateSelectedTactics = this.updateSelectedTactics.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -95,7 +96,8 @@ class App extends React.Component {
   }
 
   // Load career details into state
-  loadCareer(careerName) {
+  loadCareer() {
+    const careerName = this.props.params.careerName;
     // TODO: a more elegant way to display that the career was not found, rather than an endless loading animation
     this.updateCareerLoading(true);
     if (this.state.careers[careerName]) {
@@ -297,6 +299,23 @@ class App extends React.Component {
     });
   }
 
+  // Amends this.state.selectedTactics. Optional boolean to remove only
+  updateSelectedTactics(abilityId, addAbility = true) {
+    const abilityIndex = this.state.selectedTactics.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      if (addAbility) {
+        // If ability isn't in array then add it
+        this.state.selectedTactics.push(abilityId);
+      }
+    } else {
+      // remove it from array
+      this.state.selectedTactics.splice(abilityIndex, 1);
+    }
+    this.setState({
+      selectedTactics: this.state.selectedTactics,
+    });
+  }
+
   // Overlay background is clicked
   clickOverlay() {
     this.updateModalVisibility(false);
@@ -398,6 +417,9 @@ class App extends React.Component {
           childProps.selectedMorale3 = this.state.selectedMorale3;
           childProps.selectedMorale4 = this.state.selectedMorale4;
           childProps.updateSelectedMorale = this.updateSelectedMorale;
+          childProps.selectedTactics = this.state.selectedTactics;
+          childProps.currentTacticLimit = this.state.currentTacticLimit;
+          childProps.updateSelectedTactics = this.updateSelectedTactics;
           break;
         default:
           break;

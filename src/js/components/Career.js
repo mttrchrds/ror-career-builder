@@ -25,7 +25,7 @@ class Career extends React.Component {
   }
 
   componentDidMount() {
-    this.props.loadCareer(this.props.params.careerName);
+    this.props.loadCareer();
   }
 
   render() {
@@ -125,14 +125,14 @@ class Career extends React.Component {
               </div>
 
               <div className="marginBottom">
-                {/* <CoreTactics
-                  currentLevel={this.state.currentLevel}
-                  abilities={this.state.abilities}
-                  tactics={this.state.coreTactics}
-                  currentTacticLimit={this.state.currentTacticLimit}
-                  selectedTactics={this.state.selectedTactics}
-                  updateSelectedTactics={this.updateSelectedTactics}
-                /> */}
+                <CoreTactics
+                  currentLevel={this.props.currentLevel}
+                  abilities={this.props.abilities}
+                  coreTactics={this.props.coreTactics}
+                  currentTacticLimit={this.props.currentTacticLimit}
+                  selectedTactics={this.props.selectedTactics}
+                  updateSelectedTactics={this.props.updateSelectedTactics}
+                />
               </div>
 
             </div>
@@ -263,6 +263,9 @@ Career.propTypes = {
   selectedMorale3: React.PropTypes.number,
   selectedMorale4: React.PropTypes.number,
   updateSelectedMorale: React.PropTypes.func,
+  selectedTactics: React.PropTypes.array,
+  currentTacticLimit: React.PropTypes.number,
+  updateSelectedTactics: React.PropTypes.func,
 };
 
 export default Career;
