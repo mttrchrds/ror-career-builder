@@ -23,9 +23,6 @@ CoreAbilities.propTypes = {
   abilities: React.PropTypes.object,
   coreAbilities: React.PropTypes.array,
   currentLevel: React.PropTypes.number,
-  userSelections: React.PropTypes.object,
-  setSelectedAbilities: React.PropTypes.func,
-  selectedAbilities: React.PropTypes.array,
 };
 
 export default CoreAbilities;

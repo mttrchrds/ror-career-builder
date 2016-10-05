@@ -104,11 +104,11 @@ class Career extends React.Component {
             <div className="grid-col-1 grid-col-10-24@md-min">
 
               <div className="marginBottom">
-                {/* <CoreAbilities
-                  currentLevel={this.state.currentLevel}
-                  coreAbilities={this.state.coreAbilities}
-                  abilities={this.state.abilities}
-                /> */}
+                <CoreAbilities
+                  currentLevel={this.props.currentLevel}
+                  coreAbilities={this.props.coreAbilities}
+                  abilities={this.props.abilities}
+                />
               </div>
 
               <div className="marginBottom">

@@ -13,7 +13,6 @@ class Ability extends React.Component {
   */
   constructor(props) {
     super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.abilityHoverOver = this.abilityHoverOver.bind(this);
     this.abilityHoverOut = this.abilityHoverOut.bind(this);
     // Touch event to replace mouseover/out on mobile size
@@ -126,7 +125,6 @@ class Ability extends React.Component {
 
 Ability.propTypes = {
   details: React.PropTypes.object,
-  pathMeter: React.PropTypes.number,
   currentLevel: React.PropTypes.number,
 };
 
