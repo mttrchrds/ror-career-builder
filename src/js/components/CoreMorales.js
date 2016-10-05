@@ -55,20 +55,20 @@ const CoreMorales = (props) => {
     const rank2 = [];
     const rank3 = [];
     const rank4 = [];
-    for (const moraleKey in props.morales) {
-      if ({}.hasOwnProperty.call(props.morales, moraleKey)) {
-        switch (props.abilities[props.morales[moraleKey]].cost) {
+    for (const moraleKey in props.coreMorales) {
+      if ({}.hasOwnProperty.call(props.coreMorales, moraleKey)) {
+        switch (props.abilities[props.coreMorales[moraleKey]].cost) {
           case 'Rank 1 morale':
-            rank1.push(props.abilities[props.morales[moraleKey]].id);
+            rank1.push(props.abilities[props.coreMorales[moraleKey]].id);
             break;
           case 'Rank 2 morale':
-            rank2.push(props.abilities[props.morales[moraleKey]].id);
+            rank2.push(props.abilities[props.coreMorales[moraleKey]].id);
             break;
           case 'Rank 3 morale':
-            rank3.push(props.abilities[props.morales[moraleKey]].id);
+            rank3.push(props.abilities[props.coreMorales[moraleKey]].id);
             break;
           case 'Rank 4 morale':
-            rank4.push(props.abilities[props.morales[moraleKey]].id);
+            rank4.push(props.abilities[props.coreMorales[moraleKey]].id);
             break;
           default :
             break;
@@ -86,7 +86,7 @@ const CoreMorales = (props) => {
 };
 
 CoreMorales.propTypes = {
-  morales: React.PropTypes.array,
+  coreMorales: React.PropTypes.array,
   abilities: React.PropTypes.object,
   currentLevel: React.PropTypes.number,
   selectedMorale1: React.PropTypes.number,

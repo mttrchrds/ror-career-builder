@@ -112,16 +112,16 @@ class Career extends React.Component {
               </div>
 
               <div className="marginBottom">
-                {/* <CoreMorales
-                  currentLevel={this.state.currentLevel}
-                  abilities={this.state.abilities}
-                  morales={this.state.coreMorales}
-                  selectedMorale1={this.state.selectedMorale1}
-                  selectedMorale2={this.state.selectedMorale2}
-                  selectedMorale3={this.state.selectedMorale3}
-                  selectedMorale4={this.state.selectedMorale4}
-                  updateSelectedMorale={this.updateSelectedMorale}
-                /> */}
+                <CoreMorales
+                  currentLevel={this.props.currentLevel}
+                  abilities={this.props.abilities}
+                  coreMorales={this.props.coreMorales}
+                  selectedMorale1={this.props.selectedMorale1}
+                  selectedMorale2={this.props.selectedMorale2}
+                  selectedMorale3={this.props.selectedMorale3}
+                  selectedMorale4={this.props.selectedMorale4}
+                  updateSelectedMorale={this.props.updateSelectedMorale}
+                />
               </div>
 
               <div className="marginBottom">
@@ -258,6 +258,11 @@ Career.propTypes = {
   resetSelections: React.PropTypes.func,
   updateMasteryPoints: React.PropTypes.func,
   updateCurrentTacticLimit: React.PropTypes.func,
+  selectedMorale1: React.PropTypes.number,
+  selectedMorale2: React.PropTypes.number,
+  selectedMorale3: React.PropTypes.number,
+  selectedMorale4: React.PropTypes.number,
+  updateSelectedMorale: React.PropTypes.func,
 };
 
 export default Career;

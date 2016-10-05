@@ -22,6 +22,7 @@ class App extends React.Component {
     this.resetSelections = this.resetSelections.bind(this);
     this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
     this.updateCurrentTacticLimit = this.updateCurrentTacticLimit.bind(this);
+    this.updateSelectedMorale = this.updateSelectedMorale.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -279,6 +280,23 @@ class App extends React.Component {
     });
   }
 
+  // Amends this.state.selectedMoraleX. Optional boolean to remove only
+  updateSelectedMorale(rank, tacticId, addAbility = true) {
+    const moraleId = this.state[`selectedMorale${rank}`];
+    if (Number(moraleId) === Number(tacticId)) {
+      // If ability isn't is current morale then reset it
+      this.state[`selectedMorale${rank}`] = 0;
+    } else {
+      // add it as current morale
+      if (addAbility) {
+        this.state[`selectedMorale${rank}`] = tacticId;
+      }
+    }
+    this.setState({
+      [`selectedMorale${rank}`]: this.state[`selectedMorale${rank}`],
+    });
+  }
+
   // Overlay background is clicked
   clickOverlay() {
     this.updateModalVisibility(false);
@@ -375,6 +393,11 @@ class App extends React.Component {
           childProps.resetSelections = this.resetSelections;
           childProps.updateMasteryPoints = this.updateMasteryPoints;
           childProps.updateCurrentTacticLimit = this.updateCurrentTacticLimit;
+          childProps.selectedMorale1 = this.state.selectedMorale1;
+          childProps.selectedMorale2 = this.state.selectedMorale2;
+          childProps.selectedMorale3 = this.state.selectedMorale3;
+          childProps.selectedMorale4 = this.state.selectedMorale4;
+          childProps.updateSelectedMorale = this.updateSelectedMorale;
           break;
         default:
           break;
