@@ -24,10 +24,6 @@ class Career extends React.Component {
     super();
   }
 
-  componentWillReceiveProps() {
-
-  }
-
   componentDidMount() {
     this.props.loadCareer(this.props.params.careerName);
   }
@@ -58,34 +54,34 @@ class Career extends React.Component {
           </div>
 
           <div className="marginBottom">
-            {/* <BarXp currentLevel={this.state.currentLevel} /> */}
+            <BarXp currentLevel={this.props.currentLevel} />
           </div>
 
           <div className="marginBottom--medium">
-            {/* <BarRenown currentRenown={this.state.currentRenown} currentLevel={this.state.currentLevel} /> */}
+            <BarRenown currentRenown={this.props.currentRenown} currentLevel={this.props.currentLevel} />
           </div>
 
           <div className="grid">
             <div className="grid-col-1 grid-col-7-12@sm-min grid-col-10-24@md-min">
 
               <div className="marginBottom--medium heightTitle">
-                {/* <CareerTitle careerSlug={this.state.careerSlug}
-                  career={this.state.career}
-                /> */}
+                <CareerTitle careerSlug={this.props.careerSlug}
+                  career={this.props.career}
+                />
               </div>
 
             </div>
             <div className="grid-col-1-3 grid-col-1-2@mobile grid-col-1-6@sm-min grid-col-1-6@md-min">
 
               <div className="heightTitle marginBottom--medium marginLeft@sm-min">
-                {/* <SelectLevel
-                  updateLevel={this.updateLevel}
-                  currentLevel={this.state.currentLevel}
-                  setMasteryPoints={this.setMasteryPoints}
-                  currentRenown={this.state.currentRenown}
-                  setCurrentTacticLimit={this.setCurrentTacticLimit}
-                  resetSelections={this.resetSelections}
-                /> */}
+                <SelectLevel
+                  updateLevel={this.props.updateLevel}
+                  currentLevel={this.props.currentLevel}
+                  updateMasteryPoints={this.props.updateMasteryPoints}
+                  currentRenown={this.props.currentRenown}
+                  updateCurrentTacticLimit={this.props.updateCurrentTacticLimit}
+                  resetSelections={this.props.resetSelections}
+                />
               </div>
 
             </div>
@@ -255,6 +251,13 @@ Career.propTypes = {
   pathCCoreAbilities: React.PropTypes.array,
   pathCCoreOverflow: React.PropTypes.array,
   pathCOptionalAbilities: React.PropTypes.object,
+  currentLevel: React.PropTypes.number,
+  currentRenown: React.PropTypes.number,
+  updateLevel: React.PropTypes.func,
+  updateRenown: React.PropTypes.func,
+  resetSelections: React.PropTypes.func,
+  updateMasteryPoints: React.PropTypes.func,
+  updateCurrentTacticLimit: React.PropTypes.func,
 };
 
 export default Career;

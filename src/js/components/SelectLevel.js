@@ -5,7 +5,6 @@ class SelectLevel extends React.Component {
 
   constructor(props) {
     super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.changeLevel = this.changeLevel.bind(this);
   }
 
@@ -22,8 +21,8 @@ class SelectLevel extends React.Component {
   changeLevel() {
     this.props.resetSelections();
     this.props.updateLevel(this.refs.level.value);
-    this.props.setMasteryPoints(this.refs.level.value, this.props.currentRenown);
-    this.props.setCurrentTacticLimit(this.refs.level.value);
+    this.props.updateMasteryPoints();
+    this.props.updateCurrentTacticLimit();
   }
 
   render() {
@@ -46,9 +45,9 @@ class SelectLevel extends React.Component {
 SelectLevel.propTypes = {
   resetSelections: React.PropTypes.func,
   updateLevel: React.PropTypes.func,
-  setMasteryPoints: React.PropTypes.func,
+  updateMasteryPoints: React.PropTypes.func,
   currentRenown: React.PropTypes.number,
-  setCurrentTacticLimit: React.PropTypes.func,
+  updateCurrentTacticLimit: React.PropTypes.func,
   currentLevel: React.PropTypes.number,
 };
 

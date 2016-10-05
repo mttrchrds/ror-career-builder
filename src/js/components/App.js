@@ -17,6 +17,11 @@ class App extends React.Component {
     this.gaCareerShared = this.gaCareerShared.bind(this);
     this.loadCareer = this.loadCareer.bind(this);
     this.updateCareerLoading = this.updateCareerLoading.bind(this);
+    this.updateLevel = this.updateLevel.bind(this);
+    this.updateRenown = this.updateRenown.bind(this);
+    this.resetSelections = this.resetSelections.bind(this);
+    this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
+    this.updateCurrentTacticLimit = this.updateCurrentTacticLimit.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -162,6 +167,118 @@ class App extends React.Component {
     });
   }
 
+  // Set career level
+  updateLevel(level) {
+    this.state.currentLevel = Number(level);
+    this.setState({
+      currentLevel: this.state.currentLevel,
+    });
+  }
+
+  // Set renown level
+  updateRenown(level) {
+    this.state.currentRenown = Number(level);
+    this.setState({
+      currentRenown: this.state.currentRenown,
+    });
+  }
+
+  // Reset all current selections
+  resetSelections() {
+    this.state.selectedMorale1 = 0;
+    this.state.selectedMorale2 = 0;
+    this.state.selectedMorale3 = 0;
+    this.state.selectedMorale4 = 0;
+    this.state.selectedMasteries = [];
+    this.state.selectedTactics = [];
+    this.setState({
+      selectedMorale1: this.state.selectedMorale1,
+      selectedMorale2: this.state.selectedMorale2,
+      selectedMorale3: this.state.selectedMorale3,
+      selectedMorale4: this.state.selectedMorale4,
+      selectedMasteries: this.state.selectedMasteries,
+      selectedTactics: this.state.selectedTactics,
+    });
+  }
+
+  // Calculate mastery points available based on char level and renown level
+  calculateMasteryPoints() {
+    const level = this.state.currentLevel;
+    const renown = this.state.currentRenown;
+    let points = 0;
+    if (level > 10) {
+      if (level > 20) {
+        points = level - 15;
+      } else {
+        if (level > 18) {
+          points = 5;
+        } else if (level > 16) {
+          points = 4;
+        } else if (level > 14) {
+          points = 3;
+        } else if (level > 12) {
+          points = 2;
+        } else {
+          points = 1;
+        }
+      }
+      switch (renown) {
+        case 40:
+          points = points + 1;
+          break;
+        case 50:
+          points = points + 2;
+          break;
+        case 60:
+          points = points + 3;
+          break;
+        case 70:
+          points = points + 4;
+          break;
+        default:
+          break;
+      }
+    }
+    // return mastery points
+    return points;
+  }
+
+  // Set mastery points and reset path values
+  updateMasteryPoints() {
+    this.state.masteryPoints = Number(this.calculateMasteryPoints());
+    this.setState({
+      masteryPoints: this.state.masteryPoints,
+      pathAMeter: 0,
+      pathBMeter: 0,
+      pathCMeter: 0,
+    });
+  }
+
+  // Calculate tactic limit based on char level
+  calculateCurrentTacticLimit() {
+    const level = this.state.currentLevel;
+    let currentLimit = 0;
+    if (level === 40) {
+      currentLimit = 4;
+    } else if (level >= 30) {
+      currentLimit = 3;
+    } else if (level >= 20) {
+      currentLimit = 2;
+    } else if (level >= 10) {
+      currentLimit = 1;
+    }
+    // return limit
+    return currentLimit;
+  }
+
+  // Set tactic selection limit
+  updateCurrentTacticLimit() {
+    this.state.currentTacticLimit = Number(this.calculateCurrentTacticLimit());
+    this.setState({
+      currentTacticLimit: this.state.currentTacticLimit,
+    });
+  }
+
   // Overlay background is clicked
   clickOverlay() {
     this.updateModalVisibility(false);
@@ -251,6 +368,13 @@ class App extends React.Component {
           childProps.pathCCoreAbilities = this.state.pathCCoreAbilities;
           childProps.pathCCoreOverflow = this.state.pathCCoreOverflow;
           childProps.pathCOptionalAbilities = this.state.pathCOptionalAbilities;
+          childProps.currentLevel = this.state.currentLevel;
+          childProps.currentRenown = this.state.currentRenown;
+          childProps.updateLevel = this.updateLevel;
+          childProps.updateRenown = this.updateRenown;
+          childProps.resetSelections = this.resetSelections;
+          childProps.updateMasteryPoints = this.updateMasteryPoints;
+          childProps.updateCurrentTacticLimit = this.updateCurrentTacticLimit;
           break;
         default:
           break;
