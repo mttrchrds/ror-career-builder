@@ -88,13 +88,13 @@ class Career extends React.Component {
             <div className="grid-col-2-3 grid-col-1-2@mobile grid-col-1-4@sm-min grid-col-10-24@md-min">
 
               <div className="heightTitle marginBottom--medium">
-                {/* <SelectRenown
-                  currentLevel={this.state.currentLevel}
-                  currentRenown={this.state.currentRenown}
-                  updateRenown={this.updateRenown}
-                  setMasteryPoints={this.setMasteryPoints}
-                  resetSelections={this.resetSelections}
-                /> */}
+                <SelectRenown
+                  currentLevel={this.props.currentLevel}
+                  currentRenown={this.props.currentRenown}
+                  updateRenown={this.props.updateRenown}
+                  updateMasteryPoints={this.props.updateMasteryPoints}
+                  resetSelections={this.props.resetSelections}
+                />
               </div>
 
             </div>

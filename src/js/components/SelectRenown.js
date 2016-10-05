@@ -5,14 +5,13 @@ class SelectRenown extends React.Component {
 
   constructor(props) {
     super(props);
-    // Bind functions early. More performant. Upgrade to autobind when Babel6 sorts itself out
     this.changeRenown = this.changeRenown.bind(this);
   }
 
   changeRenown() {
     this.props.resetSelections();
     this.props.updateRenown(this.refs.renown.value);
-    this.props.setMasteryPoints(this.props.currentLevel, this.refs.renown.value);
+    this.props.updateMasteryPoints();
   }
 
   render() {
@@ -39,7 +38,7 @@ class SelectRenown extends React.Component {
 SelectRenown.propTypes = {
   resetSelections: React.PropTypes.func,
   updateRenown: React.PropTypes.func,
-  setMasteryPoints: React.PropTypes.func,
+  updateMasteryPoints: React.PropTypes.func,
   currentRenown: React.PropTypes.number,
   currentLevel: React.PropTypes.number,
 };
