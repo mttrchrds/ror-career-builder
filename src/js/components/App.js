@@ -24,6 +24,13 @@ class App extends React.Component {
     this.updateCurrentTacticLimit = this.updateCurrentTacticLimit.bind(this);
     this.updateSelectedMorale = this.updateSelectedMorale.bind(this);
     this.updateSelectedTactics = this.updateSelectedTactics.bind(this);
+    this.incrementMasteryPoints = this.incrementMasteryPoints.bind(this);
+    this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
+    this.updateCoreTactics = this.updateCoreTactics.bind(this);
+    this.updateCoreMorales = this.updateCoreMorales.bind(this);
+    this.incrementPathMeter = this.incrementPathMeter.bind(this);
+    this.decrementPathMeter = this.decrementPathMeter.bind(this);
+    this.updateSelectedMasteries = this.updateSelectedMasteries.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -97,6 +104,9 @@ class App extends React.Component {
 
   // Load career details into state
   loadCareer() {
+    // Reset current state
+    this.resetSelections();
+    this.resetCareer();
     const careerName = this.props.params.careerName;
     // TODO: a more elegant way to display that the career was not found, rather than an endless loading animation
     this.updateCareerLoading(true);
@@ -186,6 +196,25 @@ class App extends React.Component {
     });
   }
 
+  // Reset career values
+  resetCareer() {
+    this.setState({
+      currentLevel: 1,
+      currentRenown: 10,
+      masteryPoints: 0,
+      pathAMeter: 0,
+      pathBMeter: 0,
+      pathCMeter: 0,
+      currentTacticLimit: 0,
+      selectedTactics: [],
+      selectedMasteries: [],
+      selectedMorale1: 0,
+      selectedMorale2: 0,
+      selectedMorale3: 0,
+      selectedMorale4: 0,
+    });
+  }
+
   // Reset all current selections
   resetSelections() {
     this.state.selectedMorale1 = 0;
@@ -257,6 +286,35 @@ class App extends React.Component {
     });
   }
 
+  incrementMasteryPoints() {
+    this.state.masteryPoints = Number(this.state.masteryPoints) + 1;
+    this.setState({
+      masteryPoints: this.state.masteryPoints
+    });
+  }
+
+  decrementMasteryPoints() {
+    this.state.masteryPoints = Number(this.state.masteryPoints) - 1;
+    this.setState({
+      masteryPoints: this.state.masteryPoints
+    });
+  }
+
+  // Amends this.state.selectedMasteries
+  updateSelectedMasteries(abilityId) {
+    const abilityIndex = this.state.selectedMasteries.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.selectedMasteries.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.selectedMasteries.splice(abilityIndex, 1);
+    }
+    this.setState({
+      selectedMasteries: this.state.selectedMasteries,
+    });
+  }
+
   // Calculate tactic limit based on char level
   calculateCurrentTacticLimit() {
     const level = this.state.currentLevel;
@@ -299,6 +357,36 @@ class App extends React.Component {
     });
   }
 
+  // Amends core tactics with selections from mastery
+  updateCoreTactics(abilityId) {
+    const abilityIndex = this.state.coreTactics.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.coreTactics.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.coreTactics.splice(abilityIndex, 1);
+    }
+    this.setState({
+      coreTactics: this.state.coreTactics,
+    });
+  }
+
+  // Amends core morales with selections from mastery
+  updateCoreMorales(abilityId) {
+    const abilityIndex = this.state.coreMorales.indexOf(abilityId);
+    if (abilityIndex === -1) {
+      // If ability isn't in array then add it
+      this.state.coreMorales.push(abilityId);
+    } else {
+      // remove it from array
+      this.state.coreMorales.splice(abilityIndex, 1);
+    }
+    this.setState({
+      coreMorales: this.state.coreMorales,
+    });
+  }
+
   // Amends this.state.selectedTactics. Optional boolean to remove only
   updateSelectedTactics(abilityId, addAbility = true) {
     const abilityIndex = this.state.selectedTactics.indexOf(abilityId);
@@ -313,6 +401,28 @@ class App extends React.Component {
     }
     this.setState({
       selectedTactics: this.state.selectedTactics,
+    });
+  }
+
+  // Formats path letter to path property name e.g 'a' becomes 'pathAMeter'
+  formatPathMeter(path) {
+    const pathFormatted = path.toUpperCase();
+    return `path${pathFormatted}Meter`;
+  }
+
+  incrementPathMeter(path) {
+    const pathProperty = this.formatPathMeter(path);
+    // i.e. pathAMeter: this.state.pathAMeter + 1
+    this.setState({
+      [pathProperty]: this.state[pathProperty] + 1,
+    });
+  }
+
+  decrementPathMeter(path) {
+    const pathProperty = this.formatPathMeter(path);
+    // i.e. pathAMeter: this.state.pathAMeter - 1
+    this.setState({
+      [pathProperty]: this.state[pathProperty] - 1
     });
   }
 
@@ -420,6 +530,18 @@ class App extends React.Component {
           childProps.selectedTactics = this.state.selectedTactics;
           childProps.currentTacticLimit = this.state.currentTacticLimit;
           childProps.updateSelectedTactics = this.updateSelectedTactics;
+          childProps.incrementMasteryPoints = this.incrementMasteryPoints;
+          childProps.decrementMasteryPoints = this.decrementMasteryPoints;
+          childProps.masteryPoints = this.state.masteryPoints;
+          childProps.pathAMeter = this.state.pathAMeter;
+          childProps.pathBMeter = this.state.pathBMeter;
+          childProps.pathCMeter = this.state.pathCMeter;
+          childProps.selectedMasteries = this.state.selectedMasteries;
+          childProps.updateCoreMorales = this.updateCoreMorales;
+          childProps.updateCoreTactics = this.updateCoreTactics;
+          childProps.incrementPathMeter = this.incrementPathMeter;
+          childProps.decrementPathMeter = this.decrementPathMeter;
+          childProps.updateSelectedMasteries = this.updateSelectedMasteries;
           break;
         default:
           break;

@@ -63,7 +63,7 @@ class AbilityMastery extends React.Component {
       });
       // Remove from selectedMasteries in state
       this.props.updateSelectedMasteries(this.props.details.id);
-      this.props.updateMasteryPoints(Number(this.props.masteryPoints + 2));
+      this.props.incrementMasteryPoints();
       // Remove from morales
       if (this.props.details.abilityType === 'morale') {
         this.props.updateSelectedMorale(4, this.props.details.id, false);
@@ -148,7 +148,7 @@ class AbilityMastery extends React.Component {
             this.props.updateCoreTactics(this.props.details.id);
           }
           // Decrement mastery total
-          this.props.updateMasteryPoints(Number(this.props.masteryPoints - 1));
+          this.props.decrementMasteryPoints();
           // Add this ability to selectedMasteries
           this.props.updateSelectedMasteries(this.props.details.id);
         }
@@ -168,7 +168,7 @@ class AbilityMastery extends React.Component {
       // Remove from selectedMasteries
       // Increment Mastery Total
       this.props.updateSelectedMasteries(this.props.details.id);
-      this.props.updateMasteryPoints(Number(this.props.masteryPoints + 1));
+      this.props.incrementMasteryPoints();
     }
   }
 
@@ -238,7 +238,6 @@ class AbilityMastery extends React.Component {
 AbilityMastery.propTypes = {
   details: React.PropTypes.object,
   pathMeter: React.PropTypes.number,
-  updateMasteryPoints: React.PropTypes.func,
   masteryPoints: React.PropTypes.number,
   selectedMasteries: React.PropTypes.array,
   updateSelectedMasteries: React.PropTypes.func,
@@ -246,6 +245,8 @@ AbilityMastery.propTypes = {
   updateSelectedTactics: React.PropTypes.func,
   updateSelectedMorale: React.PropTypes.func,
   updateCoreMorales: React.PropTypes.func,
+  incrementMasteryPoints: React.PropTypes.func,
+  decrementMasteryPoints: React.PropTypes.func,
 };
 
 export default AbilityMastery;

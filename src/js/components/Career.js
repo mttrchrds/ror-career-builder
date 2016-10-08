@@ -139,35 +139,35 @@ class Career extends React.Component {
             <div className="grid-col-1 grid-col-14-24@md-min">
 
               <div className="marginLeft@md-min marginBottom">
-                {/* <Mastery
-                  career={this.state.career}
-                  currentLevel={this.state.currentLevel}
-                  pathACoreAbilities={this.state.pathACoreAbilities}
-                  pathACoreOverflow={this.state.pathACoreOverflow}
-                  pathAOptionalAbilities={this.state.pathAOptionalAbilities}
-                  pathBCoreAbilities={this.state.pathBCoreAbilities}
-                  pathBCoreOverflow={this.state.pathBCoreOverflow}
-                  pathBOptionalAbilities={this.state.pathBOptionalAbilities}
-                  pathCCoreAbilities={this.state.pathCCoreAbilities}
-                  pathCCoreOverflow={this.state.pathCCoreOverflow}
-                  pathCOptionalAbilities={this.state.pathCOptionalAbilities}
-                  masteryPoints={this.state.masteryPoints}
-                  pathAMeter={this.state.pathAMeter}
-                  pathBMeter={this.state.pathBMeter}
-                  pathCMeter={this.state.pathCMeter}
-                  updateMasteryPoints={this.updateMasteryPoints}
-                  incrementMasteryPoints={this.incrementMasteryPoints}
-                  decrementMasteryPoints={this.decrementMasteryPoints}
-                  incrementPathMeter={this.incrementPathMeter}
-                  decrementPathMeter={this.decrementPathMeter}
-                  abilities={this.state.abilities}
-                  selectedMasteries={this.state.selectedMasteries}
-                  updateSelectedMasteries={this.updateSelectedMasteries}
-                  updateSelectedTactics={this.updateSelectedTactics}
-                  updateSelectedMorale={this.updateSelectedMorale}
-                  updateCoreTactics={this.updateCoreTactics}
-                  updateCoreMorales={this.updateCoreMorales}
-                /> */}
+                <Mastery
+                  career={this.props.career}
+                  currentLevel={this.props.currentLevel}
+                  pathACoreAbilities={this.props.pathACoreAbilities}
+                  pathACoreOverflow={this.props.pathACoreOverflow}
+                  pathAOptionalAbilities={this.props.pathAOptionalAbilities}
+                  pathBCoreAbilities={this.props.pathBCoreAbilities}
+                  pathBCoreOverflow={this.props.pathBCoreOverflow}
+                  pathBOptionalAbilities={this.props.pathBOptionalAbilities}
+                  pathCCoreAbilities={this.props.pathCCoreAbilities}
+                  pathCCoreOverflow={this.props.pathCCoreOverflow}
+                  pathCOptionalAbilities={this.props.pathCOptionalAbilities}
+                  masteryPoints={this.props.masteryPoints}
+                  pathAMeter={this.props.pathAMeter}
+                  pathBMeter={this.props.pathBMeter}
+                  pathCMeter={this.props.pathCMeter}
+                  updateMasteryPoints={this.props.updateMasteryPoints}
+                  incrementMasteryPoints={this.props.incrementMasteryPoints}
+                  decrementMasteryPoints={this.props.decrementMasteryPoints}
+                  incrementPathMeter={this.props.incrementPathMeter}
+                  decrementPathMeter={this.props.decrementPathMeter}
+                  abilities={this.props.abilities}
+                  selectedMasteries={this.props.selectedMasteries}
+                  updateSelectedMasteries={this.props.updateSelectedMasteries}
+                  updateSelectedTactics={this.props.updateSelectedTactics}
+                  updateSelectedMorale={this.props.updateSelectedMorale}
+                  updateCoreTactics={this.props.updateCoreTactics}
+                  updateCoreMorales={this.props.updateCoreMorales}
+                />
               </div>
 
               <div className="marginLeft@md-min">
@@ -266,6 +266,18 @@ Career.propTypes = {
   selectedTactics: React.PropTypes.array,
   currentTacticLimit: React.PropTypes.number,
   updateSelectedTactics: React.PropTypes.func,
+  masteryPoints: React.PropTypes.number,
+  pathAMeter: React.PropTypes.number,
+  pathBMeter: React.PropTypes.number,
+  pathCMeter: React.PropTypes.number,
+  incrementMasteryPoints: React.PropTypes.func,
+  decrementMasteryPoints: React.PropTypes.func,
+  selectedMasteries: React.PropTypes.array,
+  updateCoreTactics: React.PropTypes.func,
+  updateCoreMorales: React.PropTypes.func,
+  incrementPathMeter: React.PropTypes.func,
+  decrementPathMeter: React.PropTypes.func,
+  updateSelectedMasteries: React.PropTypes.func,
 };
 
 export default Career;

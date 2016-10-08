@@ -9,7 +9,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl7]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -24,7 +25,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl6]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -39,7 +41,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl5]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -54,7 +57,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl4]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -69,7 +73,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl3]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -83,7 +88,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl2]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -98,7 +104,8 @@ const PathMeter = (props) =>
         <AbilityMastery
           pathMeter={props.pathMeter}
           masteryPoints={props.masteryPoints}
-          updateMasteryPoints={props.updateMasteryPoints}
+          incrementMasteryPoints={props.incrementMasteryPoints}
+          decrementMasteryPoints={props.decrementMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl1]}
           masteryPath={props.masteryPath}
           selectedMasteries={props.selectedMasteries}
@@ -117,7 +124,8 @@ PathMeter.propTypes = {
   pathMeter: React.PropTypes.number,
   pathOptionalAbilities: React.PropTypes.object,
   masteryPoints: React.PropTypes.number,
-  updateMasteryPoints: React.PropTypes.func,
+  incrementMasteryPoints: React.PropTypes.func,
+  decrementMasteryPoints: React.PropTypes.func,
   masteryPath: React.PropTypes.string,
   selectedMasteries: React.PropTypes.array,
   updateSelectedMasteries: React.PropTypes.func,

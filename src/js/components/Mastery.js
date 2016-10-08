@@ -47,7 +47,8 @@ const Mastery = (props) => {
                 />
                 <PathMeter
                   masteryPoints={props.masteryPoints}
-                  updateMasteryPoints={props.updateMasteryPoints}
+                  incrementMasteryPoints={props.incrementMasteryPoints}
+                  decrementMasteryPoints={props.decrementMasteryPoints}
                   currentLevel={props.currentLevel}
                   pathOptionalAbilities={props.pathAOptionalAbilities}
                   pathMeter={props.pathAMeter}
@@ -89,7 +90,8 @@ const Mastery = (props) => {
                 />
                 <PathMeter
                   masteryPoints={props.masteryPoints}
-                  updateMasteryPoints={props.updateMasteryPoints}
+                  incrementMasteryPoints={props.incrementMasteryPoints}
+                  decrementMasteryPoints={props.decrementMasteryPoints}
                   currentLevel={props.currentLevel}
                   pathOptionalAbilities={props.pathBOptionalAbilities}
                   pathMeter={props.pathBMeter}
@@ -131,7 +133,8 @@ const Mastery = (props) => {
                 />
                 <PathMeter
                   masteryPoints={props.masteryPoints}
-                  updateMasteryPoints={props.updateMasteryPoints}
+                  incrementMasteryPoints={props.incrementMasteryPoints}
+                  decrementMasteryPoints={props.decrementMasteryPoints}
                   currentLevel={props.currentLevel}
                   pathOptionalAbilities={props.pathCOptionalAbilities}
                   pathMeter={props.pathCMeter}
