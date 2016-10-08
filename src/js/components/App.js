@@ -20,6 +20,7 @@ class App extends React.Component {
     this.updateLevel = this.updateLevel.bind(this);
     this.updateRenown = this.updateRenown.bind(this);
     this.resetSelections = this.resetSelections.bind(this);
+    this.resetCareer = this.resetCareer.bind(this);
     this.updateMasteryPoints = this.updateMasteryPoints.bind(this);
     this.updateCurrentTacticLimit = this.updateCurrentTacticLimit.bind(this);
     this.updateSelectedMorale = this.updateSelectedMorale.bind(this);
@@ -31,6 +32,8 @@ class App extends React.Component {
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
     this.updateSelectedMasteries = this.updateSelectedMasteries.bind(this);
+    this.updateModalVisibility = this.updateModalVisibility.bind(this);
+    this.updateModalContent = this.updateModalContent.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -433,6 +436,23 @@ class App extends React.Component {
     this.updateOverlayVisibility(false);
   }
 
+  // Update contents of modal
+  updateModalContent(title, content) {
+    this.state.modal.contentTitle = title;
+    this.state.modal.contentBody = content;
+    this.setState({
+      modal: this.state.modal,
+    });
+  }
+
+  // Hide/show modal, param is boolean
+  updateModalVisibility(status) {
+    this.state.modal.visible = status;
+    this.setState({
+      modal: this.state.modal,
+    });
+  }
+
   /*
   * -----------------------
   * Google Analytics Events
@@ -542,6 +562,10 @@ class App extends React.Component {
           childProps.incrementPathMeter = this.incrementPathMeter;
           childProps.decrementPathMeter = this.decrementPathMeter;
           childProps.updateSelectedMasteries = this.updateSelectedMasteries;
+          childProps.resetCareer = this.resetCareer;
+          childProps.updateModalContent = this.updateModalContent;
+          childProps.updateModalVisibility = this.updateModalVisibility;
+          childProps.modal = this.state.modal;
           break;
         default:
           break;

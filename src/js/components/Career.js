@@ -171,40 +171,40 @@ class Career extends React.Component {
               </div>
 
               <div className="marginLeft@md-min">
-                {/* <ActionButtons
-                  resetCareer={this.resetCareer}
-                  careerSlug={this.state.careerSlug}
-                  currentLevel={this.state.currentLevel}
-                  currentRenown={this.state.currentRenown}
-                  currentTacticLimit={this.state.currentTacticLimit}
-                  masteryPoints={this.state.masteryPoints}
-                  pathAMeter={this.state.pathAMeter}
-                  pathBMeter={this.state.pathBMeter}
-                  pathCMeter={this.state.pathCMeter}
-                  selectedMorale1={this.state.selectedMorale1}
-                  selectedMorale2={this.state.selectedMorale2}
-                  selectedMorale3={this.state.selectedMorale3}
-                  selectedMorale4={this.state.selectedMorale4}
-                  selectedMasteries={this.state.selectedMasteries}
-                  selectedTactics={this.state.selectedTactics}
-                  updateModalVisibility={this.updateModalVisibility}
-                  updateModalContent={this.updateModalContent}
-                  career={this.state.career}
-                  updateSidebarVisibility={this.updateSidebarVisibility}
-                  updateOverlayVisibility={this.updateOverlayVisibility}
-                  gaCareerShared={this.gaCareerShared}
-                  gaChangeCareer={this.gaChangeCareer}
-                /> */}
+                <ActionButtons
+                  resetCareer={this.props.resetCareer}
+                  careerSlug={this.props.careerSlug}
+                  currentLevel={this.props.currentLevel}
+                  currentRenown={this.props.currentRenown}
+                  currentTacticLimit={this.props.currentTacticLimit}
+                  masteryPoints={this.props.masteryPoints}
+                  pathAMeter={this.props.pathAMeter}
+                  pathBMeter={this.props.pathBMeter}
+                  pathCMeter={this.props.pathCMeter}
+                  selectedMorale1={this.props.selectedMorale1}
+                  selectedMorale2={this.props.selectedMorale2}
+                  selectedMorale3={this.props.selectedMorale3}
+                  selectedMorale4={this.props.selectedMorale4}
+                  selectedMasteries={this.props.selectedMasteries}
+                  selectedTactics={this.props.selectedTactics}
+                  updateModalVisibility={this.props.updateModalVisibility}
+                  updateModalContent={this.props.updateModalContent}
+                  career={this.props.career}
+                  updateSidebarVisibility={this.props.updateSidebarVisibility}
+                  updateOverlayVisibility={this.props.updateOverlayVisibility}
+                  gaCareerShared={this.props.gaCareerShared}
+                  gaChangeCareer={this.props.gaChangeCareer}
+                />
               </div>
 
             </div>
           </div>
 
-          {/* <Modal
-            modal={this.state.modal}
-            updateModalVisibility={this.updateModalVisibility}
-            updateOverlayVisibility={this.updateOverlayVisibility}
-          /> */}
+          <Modal
+            modal={this.props.modal}
+            updateModalVisibility={this.props.updateModalVisibility}
+            updateOverlayVisibility={this.props.updateOverlayVisibility}
+          />
         </div>
 
         <Overlay
@@ -231,6 +231,7 @@ Career.propTypes = {
   updateOverlayVisibility: React.PropTypes.func,
   sidebar: React.PropTypes.object,
   gaCareerSelected: React.PropTypes.func,
+  gaCareerShared: React.PropTypes.func,
   gaChangeCareer: React.PropTypes.func,
   overlay: React.PropTypes.object,
   clickOverlay: React.PropTypes.func,
@@ -278,6 +279,10 @@ Career.propTypes = {
   incrementPathMeter: React.PropTypes.func,
   decrementPathMeter: React.PropTypes.func,
   updateSelectedMasteries: React.PropTypes.func,
+  resetCareer: React.PropTypes.func,
+  updateModalContent: React.PropTypes.func,
+  updateModalVisibility: React.PropTypes.func,
+  modal: React.PropTypes.object,
 };
 
 export default Career;
