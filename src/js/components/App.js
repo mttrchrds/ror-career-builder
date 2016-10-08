@@ -141,14 +141,90 @@ class App extends React.Component {
           // TODO: below for saved careers
           // Check if this is a saved Career URL and update State accordingly
           if (this.props.params.careerSaved === 's') {
-            // const { query } = this.props.location;
-            // this.setSavedCareer(query);
+            const { query } = this.props.location;
+            this.setSavedCareer(query);
           }
         }
       }, (error) => {
         console.warn(error);
       });
     }
+  }
+
+  // Set state from query params if first path part is /s
+  setSavedCareer(query) {
+    if (query.l) {
+      this.setState({
+        currentLevel: Number(query.l),
+      });
+    }
+    if (query.r) {
+      this.setState({
+        currentRenown: Number(query.r),
+      });
+    }
+    if (query.tl) {
+      this.setState({
+        currentTacticLimit: Number(query.tl),
+      });
+    }
+    if (query.mp) {
+      this.setState({
+        masteryPoints: Number(query.mp),
+      });
+    }
+    if (query.pA) {
+      this.setState({
+        pathAMeter: Number(query.pA),
+      });
+    }
+    if (query.pB) {
+      this.setState({
+        pathBMeter: Number(query.pB),
+      });
+    }
+    if (query.pC) {
+      this.setState({
+        pathCMeter: Number(query.pC),
+      });
+    }
+    if (query.ma) {
+      query.ma.split(',').forEach((abilityId) => {
+        this.state.selectedMasteries.push(Number(abilityId));
+        // If mastery tactic or morale activated, it must be added to coreTactics/coreMorales
+        if (this.state.abilities[abilityId].abilityType === 'tactic') {
+          this.updateCoreTactics(Number(abilityId));
+        }
+        if (this.state.abilities[abilityId].abilityType === 'morale') {
+          this.updateCoreMorales(Number(abilityId));
+        }
+      });
+    }
+    if (query.m1) {
+      this.state.selectedMorale1 = Number(query.m1);
+    }
+    if (query.m2) {
+      this.state.selectedMorale2 = Number(query.m2);
+    }
+    if (query.m3) {
+      this.state.selectedMorale3 = Number(query.m3);
+    }
+    if (query.m4) {
+      this.state.selectedMorale4 = Number(query.m4);
+    }
+    if (query.t) {
+      query.t.split(',').forEach((abilityId) => {
+        this.state.selectedTactics.push(Number(abilityId));
+      });
+    }
+    this.setState({
+      selectedMasteries: this.state.selectedMasteries,
+      selectedTactics: this.state.selectedTactics,
+      selectedMorale1: this.state.selectedMorale1,
+      selectedMorale2: this.state.selectedMorale2,
+      selectedMorale3: this.state.selectedMorale3,
+      selectedMorale4: this.state.selectedMorale4,
+    });
   }
 
   // Hide/show career loading screen
