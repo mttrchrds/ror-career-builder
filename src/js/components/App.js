@@ -106,18 +106,22 @@ class App extends React.Component {
   }
 
   // Load career details into state
-  loadCareer() {
+  loadCareer(careerName) {
     // Reset current state
     this.resetSelections();
     this.resetCareer();
-    const careerName = this.props.params.careerName;
+    //const careerName = this.props.params.careerName;
+    console.log("I am trying to load a career with name = ", careerName);
     // TODO: a more elegant way to display that the career was not found, rather than an endless loading animation
     this.updateCareerLoading(true);
     if (this.state.careers[careerName]) {
+      console.log("career exists in careers object with name = ", careerName);
       this.state.career = this.state.careers[careerName];
       this.state.careerSlug = careerName;
       const pathAbilities = `/json/abilities/${this.state.career.code}.json`;
+      //console.log("path to abilities is: ", pathAbilities);
       h.getJSON(pathAbilities, (abilities) => {
+        //console.log("I gots the json ok");
         const imported = h.importJSON(this.state.career, abilities);
         if (Object.keys(imported.abilities).length) {
           this.setState({
@@ -138,7 +142,10 @@ class App extends React.Component {
             pathCCoreOverflow: imported.pathCCoreOverflow,
             pathCOptionalAbilities: imported.pathCOpt,
           });
-          // TODO: below for saved careers
+          // Reset Sidebar and Overlay
+          this.updateSidebarVisibility(false);
+          this.updateOverlayVisibility(false);
+          console.warn("New career loaded. Career is ", this.state.careerSlug);
           // Check if this is a saved Career URL and update State accordingly
           if (this.props.params.careerSaved === 's') {
             const { query } = this.props.location;

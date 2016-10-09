@@ -20,29 +20,45 @@ import css from '../../css/components/Career.css';
 
 class Career extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.renderContent = this.renderContent.bind(this);
   }
 
   componentDidMount() {
-    this.props.loadCareer();
+    console.warn("Career has mounted");
+    console.log("Loading new career in componentWillReceiveProps.")
+    this.props.loadCareer(this.props.params.careerName);
   }
 
-  render() {
-    const containerClass = classNames({
-      [css.wrapper]: !this.props.sidebar.visible,
-      [css.wrapperSidebar]: this.props.sidebar.visible,
-    });
+  componentWillReceiveProps(nextProps) {
+    console.warn("Career componentWillReceiveProps");
+    // When changing career on the career page
+    if (!nextProps.careerLoading) {
+      if (nextProps.params.careerName !== this.props.careerSlug) {
+        console.log("Loading new career in componentWillReceiveProps.");
+        console.log("nextprops= ", nextProps.params.careerName);
+        console.log("careerSlug= ", this.props.careerSlug);
+        console.log("careerLoading= ", nextProps.careerLoading);
+        this.props.loadCareer(nextProps.params.careerName);
+      }
+    }
+  }
+
+  renderContent() {
+
+
+
     if (this.props.careerLoading) {
       return (
         <div className={css.loadingContainer}>
           <Loading />
         </div>
       );
-    }
-    return (
-      <div className="heightFull">
-        <div className={containerClass}>
+    } else {
+      return (
+        <div>
 
           <div className="marginBottom--medium">
             <Breadcrumb
@@ -205,6 +221,50 @@ class Career extends React.Component {
             updateModalVisibility={this.props.updateModalVisibility}
             updateOverlayVisibility={this.props.updateOverlayVisibility}
           />
+        </div>
+      );
+    }
+  }
+
+  render() {
+    const containerClass = classNames({
+      [css.wrapper]: !this.props.sidebar.visible,
+      [css.wrapperSidebar]: this.props.sidebar.visible,
+    });
+    if (this.props.careerLoading) {
+      return (
+        <div className="heightFull">
+
+          <div className={containerClass}>
+
+            {this.renderContent()}
+
+          </div>
+
+          <Overlay
+            overlay={this.props.overlay}
+            clickOverlay={this.props.clickOverlay}
+            visible
+          />
+
+          <Sidebar
+            careers={this.props.careers}
+            updateSidebarVisibility={this.props.updateSidebarVisibility}
+            updateOverlayVisibility={this.props.updateOverlayVisibility}
+            sidebar={this.props.sidebar}
+            gaCareerSelected={this.props.gaCareerSelected}
+          />
+
+        </div>
+      );
+    }
+    return (
+      <div className="heightFull">
+
+        <div className={containerClass}>
+
+          {this.renderContent()}
+
         </div>
 
         <Overlay

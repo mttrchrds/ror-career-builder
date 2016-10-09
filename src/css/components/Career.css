@@ -8,8 +8,9 @@
   align-items: center;
 }
 .wrapper {
+  height: 100%;
   padding: spacing;
-  transition: all 500ms ease;
+  transition: transform 500ms ease;
 }
 .wrapperSidebar {
   composes: wrapper;

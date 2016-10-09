@@ -54,12 +54,17 @@ module.exports = {
   postcss: function () {
     return [atImport, nested, values, calc({mediaQueries: true}), autoprefixer];
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   plugins: [
     new ExtractTextPlugin('/css/styles.css'),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
       }
     }),
     new HtmlWebpackPlugin({
