@@ -1,8 +1,6 @@
 import React from 'react';
 import h from '../helpers';
 import classNames from 'classnames';
-import Sidebar from './Sidebar';
-import Overlay from './Overlay';
 import Masthead from './Masthead';
 import News from './News';
 import css from '../../css/components/Home.css';
@@ -54,18 +52,6 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <Overlay
-          overlay={this.props.overlay}
-          clickOverlay={this.props.clickOverlay}
-          visible
-        />
-        <Sidebar
-          careers={this.props.careers}
-          updateSidebarVisibility={this.props.updateSidebarVisibility}
-          updateOverlayVisibility={this.props.updateOverlayVisibility}
-          sidebar={this.props.sidebar}
-          gaCareerSelected={this.props.gaCareerSelected}
-        />
       </div>
     );
   }
@@ -75,9 +61,7 @@ Home.propTypes = {
   careers: React.PropTypes.object,
   updateSidebarVisibility: React.PropTypes.func,
   updateOverlayVisibility: React.PropTypes.func,
-  sidebar: React.PropTypes.object,
   gaCareerSelected: React.PropTypes.func,
-  overlay: React.PropTypes.object,
   clickOverlay: React.PropTypes.func,
 };
 

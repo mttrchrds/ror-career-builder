@@ -1,6 +1,8 @@
 import React from 'react';
 import h from '../helpers';
 import css from '../../css/components/App.css';
+import Overlay from './Overlay';
+import Sidebar from './Sidebar';
 
 class App extends React.Component {
 
@@ -82,7 +84,15 @@ class App extends React.Component {
   }
 
   // TODO: refactor this from Careers
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    console.warn("App componentWillReceiveProps");
+    console.log("props", this.props);
+    console.log("nextProps", nextProps);
+    console.log("state", this.state);
+    if (this.state.careerSlug === '' && nextProps.params.careerName !== '') {
+      this.loadCareer(nextProps.params.careerName);
+    }
+
     // New career selected, reset selections and load data
     // this.resetCareer();
     // this.loadCareer();
@@ -90,8 +100,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.warn("App componentDidMount");
+    console.log("props", this.props);
+    console.log("state", this.state);
+
+
     // Load careers into state from json
     this.loadCareers();
+  }
+
+  componentWillMount() {
+    console.warn("App componentWillMount");
+    console.log("props", this.props);
+    console.log("state", this.state);
   }
 
   // Load careers into state
@@ -658,8 +679,24 @@ class App extends React.Component {
   }
 
   render() {
+    console.warn("App render");
+    console.log(this.state);
     return (
-      <div className={css.container}>{this.renderChildren(this.props)}</div>
+      <div className={css.container}>
+        <div>{this.renderChildren(this.props)}</div>
+        <Overlay
+          overlay={this.state.overlay}
+          clickOverlay={this.clickOverlay}
+          visible
+        />
+        <Sidebar
+          careers={this.state.careers}
+          updateSidebarVisibility={this.updateSidebarVisibility}
+          updateOverlayVisibility={this.updateOverlayVisibility}
+          sidebar={this.state.sidebar}
+          gaCareerSelected={this.gaCareerSelected}
+        />
+      </div>
     );
   }
 
