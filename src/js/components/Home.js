@@ -61,8 +61,8 @@ Home.propTypes = {
   careers: React.PropTypes.object,
   updateSidebarVisibility: React.PropTypes.func,
   updateOverlayVisibility: React.PropTypes.func,
-  gaCareerSelected: React.PropTypes.func,
-  clickOverlay: React.PropTypes.func,
+  gaChangeCareer: React.PropTypes.func,
+  gaCareerShared: React.PropTypes.func,
 };
 
 export default Home;
