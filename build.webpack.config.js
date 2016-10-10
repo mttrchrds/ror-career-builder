@@ -54,7 +54,7 @@ module.exports = {
   postcss: function () {
     return [atImport, nested, values, calc({mediaQueries: true}), autoprefixer];
   },
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   plugins: [
     new ExtractTextPlugin('/css/styles.css'),
     new webpack.DefinePlugin({
