@@ -484,11 +484,12 @@ class Career extends React.Component {
       return (
 
         <div className={css.loadingContainer}>
-          <Loading />
+          <Loading sidebar={this.props.sidebar} />
         </div>
 
       );
     } else {
+      
       return (
 
         <CareerRender

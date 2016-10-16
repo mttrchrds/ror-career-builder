@@ -69,14 +69,6 @@ class App extends React.Component {
     });
   }
 
-  // Overlay background is clicked
-  clickOverlay() {
-    // TODO: Reenable this when Modal has been relocated into App
-    this.updateModalVisibility(false);
-    this.updateSidebarVisibility(false);
-    this.updateOverlayVisibility(false);
-  }
-
   // Hide/show Sidebar, param is boolean
   updateSidebarVisibility(status) {
     this.state.sidebar.visible = status;
@@ -108,6 +100,13 @@ class App extends React.Component {
     this.setState({
       modal: this.state.modal,
     });
+  }
+
+  // Overlay background is clicked
+  clickOverlay() {
+    this.updateModalVisibility(false);
+    this.updateSidebarVisibility(false);
+    this.updateOverlayVisibility(false);
   }
 
   /*
