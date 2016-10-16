@@ -6,7 +6,10 @@
 @import 'utilities/marginRight.css';
 @import 'utilities/marginBottom.css';
 @import 'utilities/marginLeft.css';
+@import 'utilities/paddingTop.css';
+@import 'utilities/paddingRight.css';
 @import 'utilities/paddingBottom.css';
+@import 'utilities/paddingLeft.css';
 @import 'utilities/borderRight.css';
 @import 'utilities/borderBottom.css';
 @import 'utilities/row.css';

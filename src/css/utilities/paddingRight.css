@@ -1,0 +1,66 @@
+@value spacing, spacing-extra-small, spacing-small, spacing-medium, spacing-large, spacing-extra-large from "./values/spacing.css";
+@value mq-mobile, mq-xs, mq-sm, mq-sm-min, mq-md, mq-md-min, mq-lg from "./values/mediaQueries.css";
+
+:global {
+  .paddingRight {
+    padding-right: spacing;
+    &--extra-small {
+      padding-right: spacing-extra-small;
+    }
+    &--small {
+      padding-right: spacing-small;
+    }
+    &--medium {
+      padding-right: spacing-medium;
+    }
+    &--large {
+      padding-right: spacing-large;
+    }
+    &--extra-large {
+      padding-right: spacing-extra-large;
+    }
+    &\@mobile {
+      @media mq-mobile {
+        padding-right: spacing;
+      }
+    }
+    &--none {
+      padding-right: 0;
+      &\@mobile {
+        @media mq-mobile {
+          padding-right: 0;
+        }
+      }
+      &\@xs {
+        @media mq-xs {
+          padding-right: 0;
+        }
+      }
+      &\@sm {
+        @media mq-sm {
+          padding-right: 0;
+        }
+      }
+      &\@sm-min {
+        @media mq-sm-min {
+          padding-right: 0;
+        }
+      }
+      &\@md {
+        @media mq-md {
+          padding-right: 0;
+        }
+      }
+      &\@md-min {
+        @media mq-md-min {
+          padding-right: 0;
+        }
+      }
+      &\@lg {
+        @media mq-lg {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
