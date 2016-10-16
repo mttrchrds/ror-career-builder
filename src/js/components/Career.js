@@ -62,13 +62,7 @@ class Career extends React.Component {
     };
   }
 
-  componentWillMount() {
-    console.warn("Career componentWillMount");
-  }
-
   componentDidMount() {
-    console.warn("Career componentDidMount");
-    console.log("props:", this.props);
     // Load initial career data when component mounts
     // this.props.careers will be empty when coming to career URL directly initially, so we need to check
     if (Object.keys(this.props.careers).length > 0) {
@@ -83,9 +77,6 @@ class Career extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.warn("Career componentWillReceiveProps");
-    console.log("props", this.props);
-    console.log("nextProps", nextProps);
     // If loading career page URL directly we will have to load career as this.props.careers won't be populated until this event
     // Or
     // If new career selected from Sidebar load new career data
@@ -102,7 +93,6 @@ class Career extends React.Component {
 
   // Load career details into state
   loadCareer(careerName, career) {
-    console.log("I am trying to load a career with name = ", careerName);
     // Reset current state
     this.resetSelections();
     this.resetCareer();
@@ -135,7 +125,6 @@ class Career extends React.Component {
         // Reset Sidebar and Overlay
         this.props.updateSidebarVisibility(false);
         this.props.updateOverlayVisibility(false);
-        console.warn("New career loaded. Career is ", this.state.careerSlug);
         // Check if this is a saved Career URL and update State accordingly
         if (this.props.params.careerSaved === 's') {
           const { query } = this.props.location;
@@ -489,7 +478,7 @@ class Career extends React.Component {
 
       );
     } else {
-      
+
       return (
 
         <CareerRender
@@ -549,7 +538,6 @@ class Career extends React.Component {
   }
 
   render() {
-    console.warn("Career render");
     const containerClass = classNames({
       [css.wrapper]: !this.props.sidebar.visible,
       [css.wrapperSidebar]: this.props.sidebar.visible,

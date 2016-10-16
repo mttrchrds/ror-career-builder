@@ -37,25 +37,9 @@ class App extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.warn("App componentWillReceiveProps");
-    console.log("props", this.props);
-    console.log("nextProps", nextProps);
-  }
-
   componentDidMount() {
-    console.warn("App componentDidMount");
-    console.log("props", this.props);
-    console.log("state", this.state);
-
     // Load careers into state from json
     this.loadCareers();
-  }
-
-  componentWillMount() {
-    console.warn("App componentWillMount");
-    console.log("props", this.props);
-    console.log("state", this.state);
   }
 
   // Load careers into state
@@ -146,8 +130,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.warn("App render");
-    console.log(this.state);
     return (
       <div className={css.container}>
         <div className={css.container}>{this.renderChildren(this.props)}</div>
