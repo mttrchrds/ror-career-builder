@@ -16,7 +16,7 @@ class CareerRender extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="paddingTop paddingRight paddingLeft paddingBottom">
         <div className="marginBottom--medium">
           <Breadcrumb
             career={this.props.career}
