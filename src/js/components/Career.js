@@ -540,7 +540,6 @@ class Career extends React.Component {
           updateModalContent={this.props.updateModalContent}
           updateCoreTactics={this.updateCoreTactics}
           updateCoreMorales={this.updateCoreMorales}
-          gaCareerShared={this.props.gaCareerShared}
           gaChangeCareer={this.props.gaChangeCareer}
         />
 
@@ -569,7 +568,6 @@ Career.propTypes = {
   updateOverlayVisibility: React.PropTypes.func,
   gaChangeCareer: React.PropTypes.func,
   gaCareerSelected: React.PropTypes.func,
-  gaCareerShared: React.PropTypes.func,
   clickOverlay: React.PropTypes.func,
   updateModalVisibility: React.PropTypes.func,
   updateModalContent: React.PropTypes.func,

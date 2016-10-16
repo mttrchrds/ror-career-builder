@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import css from '../../css/components/ActionButtons.css';
+import h from '../helpers';
 
 const ActionButtons = (props) => {
   const clickReset = () => {
@@ -43,11 +44,35 @@ const ActionButtons = (props) => {
       <p className={css.modalCopy}>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
       <div className={css.modalSelectable} contentEditable>{createBBCode(createShareLink())}</div>
     </div>;
+  const gaShare = () => {
+    if (Number(props.selectedMorale1) > 0) {
+      h.gaEvent(props.career.name, 'Selected Morale 1', props.abilities[props.selectedMorale1].name, props.selectedMorale1);
+    }
+    if (Number(props.selectedMorale2) > 0) {
+      h.gaEvent(props.career.name, 'Selected Morale 2', props.abilities[props.selectedMorale2].name, props.selectedMorale2);
+    }
+    if (Number(props.selectedMorale3) > 0) {
+      h.gaEvent(props.career.name, 'Selected Morale 3', props.abilities[props.selectedMorale3].name, props.selectedMorale3);
+    }
+    if (Number(props.selectedMorale4) > 0) {
+      h.gaEvent(props.career.name, 'Selected Morale 4', props.abilities[props.selectedMorale4].name, props.selectedMorale4);
+    }
+    if (Number(props.selectedTactics.length) > 0) {
+      for (const abilityId of props.selectedTactics) {
+        h.gaEvent(props.career.name, 'Selected Tactic', props.abilities[abilityId].name, abilityId);
+      }
+    }
+    if (Number(props.selectedMasteries.length) > 0) {
+      for (const abilityId of props.selectedMasteries) {
+        h.gaEvent(props.career.name, 'Mastery ability', props.abilities[abilityId].name, abilityId);
+      }
+    }
+  };
   const clickShare = () => {
     props.updateModalContent(buildModalTitle(), buildModalBody());
     props.updateOverlayVisibility(true);
     props.updateModalVisibility(true);
-    props.gaCareerShared();
+    gaShare();
   };
   const clickChangeCareer = () => {
     props.updateOverlayVisibility(true);
@@ -76,6 +101,7 @@ const ActionButtons = (props) => {
 };
 
 ActionButtons.propTypes = {
+  abilities: React.PropTypes.object,
   resetCareer: React.PropTypes.func,
   careerSlug: React.PropTypes.string,
   currentLevel: React.PropTypes.number,
@@ -97,7 +123,6 @@ ActionButtons.propTypes = {
   updateModalVisibility: React.PropTypes.func,
   updateSidebarVisibility: React.PropTypes.func,
   gaChangeCareer: React.PropTypes.func,
-  gaCareerShared: React.PropTypes.func,
 };
 
 export default ActionButtons;

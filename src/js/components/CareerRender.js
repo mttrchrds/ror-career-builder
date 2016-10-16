@@ -143,6 +143,7 @@ class CareerRender extends React.Component {
 
             <div className="marginLeft@md-min">
               <ActionButtons
+                abilities={this.props.abilities}
                 resetCareer={this.props.resetCareer}
                 careerSlug={this.props.careerSlug}
                 currentLevel={this.props.currentLevel}
@@ -163,7 +164,6 @@ class CareerRender extends React.Component {
                 career={this.props.career}
                 updateSidebarVisibility={this.props.updateSidebarVisibility}
                 updateOverlayVisibility={this.props.updateOverlayVisibility}
-                gaCareerShared={this.props.gaCareerShared}
                 gaChangeCareer={this.props.gaChangeCareer}
               />
             </div>
