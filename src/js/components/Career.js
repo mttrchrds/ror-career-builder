@@ -78,70 +78,81 @@ class Career extends React.Component {
     console.warn("Career componentDidMount");
     console.log("props:", this.props);
     // Load initial career data when component mounts
-    this.loadCareer(this.props.params.careerName);
+    // this.props.careers will be empty when coming to career URL directly initially, so we need to check
+    if (Object.keys(this.props.careers).length > 0) {
+      // Check if it's a valid career name
+      if (this.props.careers.hasOwnProperty(this.props.params.careerName)) {
+          this.loadCareer(this.props.params.careerName, this.props.careers[this.props.params.careerName]);
+      } else {
+        // TODO redirect to not found page on else here
+        console.warn("CAREER DOES NOT EXIST!")
+      }
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     console.warn("Career componentWillReceiveProps");
     console.log("props", this.props);
     console.log("nextProps", nextProps);
+    // If loading career page URL directly we will have to load career as this.props.careers won't be populated until this event
+    // Or
     // If new career selected from Sidebar load new career data
-    if (this.props.params.careerName != nextProps.params.careerName) {
-      this.loadCareer(nextProps.params.careerName);
+    if ((Object.keys(this.state.career).length === 0) || (this.props.params.careerName != nextProps.params.careerName)) {
+      // Check if it's a valid career name
+      if (nextProps.careers.hasOwnProperty(nextProps.params.careerName)) {
+          this.loadCareer(nextProps.params.careerName, nextProps.careers[nextProps.params.careerName]);
+      } else {
+          // TODO redirect to not found page on else here
+          console.warn("CAREER DOES NOT EXIST!")
+      }
     }
   }
 
   // Load career details into state
-  loadCareer(careerName) {
+  loadCareer(careerName, career) {
+    console.log("I am trying to load a career with name = ", careerName);
     // Reset current state
     this.resetSelections();
     this.resetCareer();
-    //const careerName = this.props.params.careerName;
-    console.log("I am trying to load a career with name = ", careerName);
-    // TODO: a more elegant way to display that the career was not found, rather than an endless loading animation
+    // Set loading animation
     this.updateCareerLoading(true);
-    if (this.props.careers[careerName]) {
-      console.log("career exists in careers object with name = ", careerName);
-      this.state.career = this.props.careers[careerName];
-      this.state.careerSlug = careerName;
-      const pathAbilities = `/json/abilities/${this.state.career.code}.json`;
-      //console.log("path to abilities is: ", pathAbilities);
-      h.getJSON(pathAbilities, (abilities) => {
-        //console.log("I gots the json ok");
-        const imported = h.importJSON(this.state.career, abilities);
-        if (Object.keys(imported.abilities).length) {
-          this.setState({
-            careerLoading: false,
-            career: this.state.career,
-            careerSlug: this.state.careerSlug,
-            abilities: imported.abilities,
-            coreAbilities: imported.coreAbilities,
-            coreMorales: imported.coreMorales,
-            coreTactics: imported.coreTactics,
-            pathACoreAbilities: imported.pathACore,
-            pathACoreOverflow: imported.pathACoreOverflow,
-            pathAOptionalAbilities: imported.pathAOpt,
-            pathBCoreAbilities: imported.pathBCore,
-            pathBCoreOverflow: imported.pathBCoreOverflow,
-            pathBOptionalAbilities: imported.pathBOpt,
-            pathCCoreAbilities: imported.pathCCore,
-            pathCCoreOverflow: imported.pathCCoreOverflow,
-            pathCOptionalAbilities: imported.pathCOpt,
-          });
-          // Reset Sidebar and Overlay
-          this.props.updateSidebarVisibility(false);
-          this.props.updateOverlayVisibility(false);
-          console.warn("New career loaded. Career is ", this.state.careerSlug);
-          // Check if this is a saved Career URL and update State accordingly
-          if (this.props.params.careerSaved === 's') {
-            const { query } = this.props.location;
-            this.setSavedCareer(query);
-          }
+    this.state.career = career;
+    this.state.careerSlug = careerName;
+    const pathAbilities = `/json/abilities/${this.state.career.code}.json`;
+    h.getJSON(pathAbilities, (abilities) => {
+      const imported = h.importJSON(this.state.career, abilities);
+      if (Object.keys(imported.abilities).length) {
+        this.setState({
+          careerLoading: false,
+          career: this.state.career,
+          careerSlug: this.state.careerSlug,
+          abilities: imported.abilities,
+          coreAbilities: imported.coreAbilities,
+          coreMorales: imported.coreMorales,
+          coreTactics: imported.coreTactics,
+          pathACoreAbilities: imported.pathACore,
+          pathACoreOverflow: imported.pathACoreOverflow,
+          pathAOptionalAbilities: imported.pathAOpt,
+          pathBCoreAbilities: imported.pathBCore,
+          pathBCoreOverflow: imported.pathBCoreOverflow,
+          pathBOptionalAbilities: imported.pathBOpt,
+          pathCCoreAbilities: imported.pathCCore,
+          pathCCoreOverflow: imported.pathCCoreOverflow,
+          pathCOptionalAbilities: imported.pathCOpt,
+        });
+        // Reset Sidebar and Overlay
+        this.props.updateSidebarVisibility(false);
+        this.props.updateOverlayVisibility(false);
+        console.warn("New career loaded. Career is ", this.state.careerSlug);
+        // Check if this is a saved Career URL and update State accordingly
+        if (this.props.params.careerSaved === 's') {
+          const { query } = this.props.location;
+          this.setSavedCareer(query);
         }
-      }, (error) => {
-        console.warn(error);
-      });
-    }
+      }
+    }, (error) => {
+      console.warn(error);
+    });
   }
 
   // Set state from query params if first path part is /s
