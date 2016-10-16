@@ -3,6 +3,7 @@ import h from '../helpers';
 import css from '../../css/components/App.css';
 import Overlay from './Overlay';
 import Sidebar from './Sidebar';
+import Modal from './Modal';
 
 class App extends React.Component {
 
@@ -17,6 +18,8 @@ class App extends React.Component {
     this.gaCareerSelected = this.gaCareerSelected.bind(this);
     this.gaCareerShared = this.gaCareerShared.bind(this);
     this.loadCareers = this.loadCareers.bind(this);
+    this.updateModalVisibility = this.updateModalVisibility.bind(this);
+    this.updateModalContent = this.updateModalContent.bind(this);
 
     // Initialise state of app
     this.state = {
@@ -26,6 +29,11 @@ class App extends React.Component {
       },
       overlay: {
         visible: false,
+      },
+      modal: {
+        visible: false,
+        contentTitle: '',
+        contentBody: '',
       },
     };
   }
@@ -86,6 +94,23 @@ class App extends React.Component {
     });
   }
 
+  // Hide/show Modal, param is boolean
+  updateModalVisibility(status) {
+    this.state.modal.visible = status;
+    this.setState({
+      modal: this.state.modal,
+    });
+  }
+
+  // Update contents of modal
+  updateModalContent(title, content) {
+    this.state.modal.contentTitle = title;
+    this.state.modal.contentBody = content;
+    this.setState({
+      modal: this.state.modal,
+    });
+  }
+
   /*
   * -----------------------
   * Google Analytics Events
@@ -143,6 +168,8 @@ class App extends React.Component {
       gaChangeCareer: this.gaChangeCareer,
       gaCareerSelected: this.gaCareerSelected,
       gaCareerShared: this.gaCareerShared,
+      updateModalVisibility: this.updateModalVisibility,
+      updateModalContent: this.updateModalContent,
     };
     return React.Children.map(props.children, (child) => {
       return React.cloneElement(child, childProps);
@@ -166,6 +193,11 @@ class App extends React.Component {
           updateOverlayVisibility={this.updateOverlayVisibility}
           sidebar={this.state.sidebar}
           gaCareerSelected={this.gaCareerSelected}
+        />
+        <Modal
+          modal={this.state.modal}
+          updateModalVisibility={this.updateModalVisibility}
+          updateOverlayVisibility={this.updateOverlayVisibility}
         />
       </div>
     );

@@ -10,7 +10,6 @@ class Career extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateModalVisibility = this.updateModalVisibility.bind(this);
     this.loadCareer = this.loadCareer.bind(this);
     this.updateCareerLoading = this.updateCareerLoading.bind(this);
     this.updateLevel = this.updateLevel.bind(this);
@@ -28,8 +27,6 @@ class Career extends React.Component {
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
     this.updateSelectedMasteries = this.updateSelectedMasteries.bind(this);
-    this.updateModalVisibility = this.updateModalVisibility.bind(this);
-    this.updateModalContent = this.updateModalContent.bind(this);
     this.renderContent = this.renderContent.bind(this);
 
     this.state = {
@@ -56,11 +53,6 @@ class Career extends React.Component {
       pathBMeter: 0,
       pathCMeter: 0,
       currentTacticLimit: 0,
-      modal: {
-        visible: false,
-        contentTitle: '',
-        contentBody: '',
-      },
       selectedMasteries: [],
       selectedTactics: [],
       selectedMorale1: 0,
@@ -239,13 +231,7 @@ class Career extends React.Component {
     });
   }
 
-  // Hide/show Modal, param is boolean
-  updateModalVisibility(status) {
-    this.state.modal.visible = status;
-    this.setState({
-      modal: this.state.modal,
-    });
-  }
+
 
   // Set career level
   updateLevel(level) {
@@ -493,23 +479,6 @@ class Career extends React.Component {
     });
   }
 
-  // Update contents of modal
-  updateModalContent(title, content) {
-    this.state.modal.contentTitle = title;
-    this.state.modal.contentBody = content;
-    this.setState({
-      modal: this.state.modal,
-    });
-  }
-
-  // Hide/show modal, param is boolean
-  updateModalVisibility(status) {
-    this.state.modal.visible = status;
-    this.setState({
-      modal: this.state.modal,
-    });
-  }
-
   renderContent() {
     if (this.state.careerLoading) {
       return (
@@ -567,8 +536,10 @@ class Career extends React.Component {
           selectedMasteries={this.state.selectedMasteries}
           updateSelectedMasteries={this.updateSelectedMasteries}
           resetCareer={this.resetCareer}
-          updateModalVisibility={this.updateModalVisibility}
-          updateModalContent={this.updateModalContent}
+          updateModalVisibility={this.props.updateModalVisibility}
+          updateModalContent={this.props.updateModalContent}
+          updateCoreTactics={this.updateCoreTactics}
+          updateCoreMorales={this.updateCoreMorales}
           gaCareerShared={this.props.gaCareerShared}
           gaChangeCareer={this.props.gaChangeCareer}
         />
@@ -600,6 +571,8 @@ Career.propTypes = {
   gaCareerSelected: React.PropTypes.func,
   gaCareerShared: React.PropTypes.func,
   clickOverlay: React.PropTypes.func,
+  updateModalVisibility: React.PropTypes.func,
+  updateModalContent: React.PropTypes.func,
 };
 
 export default Career;

@@ -10,7 +10,6 @@ import Breadcrumb from './Breadcrumb';
 import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
 import ActionButtons from './ActionButtons';
-import Modal from './Modal';
 
 class CareerRender extends React.Component {
 
