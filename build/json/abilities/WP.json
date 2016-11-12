@@ -330,7 +330,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Purify will also cleanse your entire group. It will not cleanse more than 1 effect per target.",
+    "description": "If Purify is used on an ally, it will additionally remove an effect from each of your groupmates. This will neither affect you nor trigger when Purify is used on yourself. Purify will remove only one effect per target",
     "category": "CareerTactic"
   },
 
@@ -442,7 +442,7 @@
     "incant": "Insta-Cast",
     "cooldown": "1m cooldown",
     "note": "",
-    "description": "You call upon the power of Sigmar, dealing 300 damage every second to all enemies in a 10 feet area around you for the next 4 seconds. Sigmar returns all the damage done to your enemies to you as health.",
+    "description": "You call upon the power of Sigmar, dealing 300 damage every second to all enemies in a 30 feet area around you for the next 4 seconds. Sigmar returns all the damage done to your enemies to you as health.",
     "category": "Morale"
   },
 
@@ -874,7 +874,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Builds 30 Righteous Fury<br>Requires 13 points in Path of Wrath",
-    "description": "Deals 127 damage to the target, or 277 damage if they are below 50% hit points.",
+    "description": "Deals 127 damage to the target, If the target is below 50% hit points, instead inflicts 350 damage and will always critically hit.",
     "category": "Ability"
   },
 
