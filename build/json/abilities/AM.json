@@ -650,7 +650,7 @@
     "incant": "2.0s cast",
     "cooldown": "5.0s cooldown",
     "note": "Tranquility reduces cast time. <br>Builds Force<br>Requires 13 points in Path of Vaul",
-    "description": "A wash of power leeches the breath from your target and up to four other enemies within 20 feet of them, dealing 251 Spirit damage to each. Their stolen breath will heal your defensive target for 150% of the inflicted damage.",
+    "description": "A wash of power leeches the breath from your target and up to four other enemies within 30 feet of them, dealing 251 Spirit damage to each. Their stolen breath will heal your group for 150% of the inflicted damage.",
     "category": "Ability"
   },
 
@@ -922,7 +922,7 @@
     "incant": "1.0s cast",
     "cooldown": "No cooldown",
     "note": "Force reduces cast time.<br>Builds Tranquility",
-    "description": "Your target regains 258 health immediately, then continues to gain another 315 health over 5 seconds.",
+    "description": "Your target regains 258 health immediately, then continues to gain another 315 health over 5 seconds. This ability will continue to build up even if you move.",
     "category": "Ability"
   },
 
@@ -1066,7 +1066,7 @@
     "incant": "Insta-Cast",
     "cooldown": "1m cooldown",
     "note": "",
-    "description": "Infuses protective magic into an ally for 30 seconds, allowing them to recover from near fatal wounds.If the allies health is reduced below 20%, this effect will immediately dispel itself to restore 711 health if they are still alive. A player may only be affected by a single Magical Infusion at a time.",
+    "description": "Infuses protective magic into an ally for 30 seconds, allowing them to recover from near fatal wounds.  Increases the value of healing effects on the target by 25% while active. If the allies health is reduced below 20%, this effect will immediately dispel itself to restore 711 health if they are still alive. A player may only be affected by a single Magical Infusion at a time.",
     "category": "Ability"
   },
 
