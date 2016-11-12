@@ -232,7 +232,7 @@
     "cost": "Costs 30 AP",
     "range": "150ft range",
     "incant": "3.0s cast",
-    "cooldown": "10.0s cooldown",
+    "cooldown": "5.0s cooldown",
     "note": "",
     "description": "An un-defendable bolt of far traveling force that inflicts 633 Elemental damage.",
     "category": "Ability"
@@ -474,7 +474,7 @@
     "incant": "Insta-Cast",
     "cooldown": "15.0s cooldown",
     "note": "",
-    "description": "You call fourth a small daemon which will persist in an area for 1 minute. The daemon will explode when an enemy gets too close dealing 243 damage to all enemies within 30 feet and staggering them for 3 seconds, preventing all actions until they take damage.",
+    "description": "You call fourth a small daemon which will persist in an area for 1 minute. The daemon will explode when an enemy gets too close dealing 243 damage to all enemies within 30 feet and staggering them for 5 seconds, preventing all actions until they take damage.",
     "category": "Ability"
   },
 
@@ -1386,7 +1386,7 @@
     "incant": "2.0s cast",
     "cooldown": "5.0s cooldown",
     "note": "",
-    "description": "Summons a daemonic minion who specializes in long range Elemental based attacks. This minion is confined to its summoning circle and cannot move. The daemonic minion gains 100% of your Intelligence from item bonuses and 50% of your Wounds from item bonuses. While you are within 25 feet of the turret you will be steadily empowered by its unholy energy, increasing your damage by 4% every 2 seconds to a maximum of 20%.",
+    "description": "Summons a daemonic minion who specializes in long range Elemental based attacks. This minion is confined to its summoning circle and cannot move. The daemonic minion gains 100% of your Intelligence from item bonuses and 50% of your Wounds from item bonuses. While you are within 25 feet of the turret you will be steadily empowered by its unholy energy, increasing your damage by 5% every 2 seconds to a maximum of 40%.",
     "category": "Ability"
   },
 
