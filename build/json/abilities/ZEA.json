@@ -458,7 +458,7 @@
     "incant": "1.0s cast",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Restores 258 health to an ally, and then restores an additional 315 health over 5 seconds.",
+    "description": "Your target regains 258 health immediately, and then restores an additional 315 health over 5 seconds. This ability will continue to build up even if you move.",
     "category": "Ability"
   },
 
@@ -1562,7 +1562,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Rituals will now pulse 150 Corporeal damage to all targets within 10 feet every 3 seconds based on Mastery level of the Ritual.",
+    "description": "Rituals will now pulse 150 Corporeal damage to all targets within 30 feet every 3 seconds based on Mastery level of the Ritual.",
     "category": "CareerTactic"
   },
 
