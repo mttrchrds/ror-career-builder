@@ -730,7 +730,7 @@
     "incant": "2.0s cast",
     "cooldown": "5.0s cooldown",
     "note": "Gork's Waaagh! reduces cast time. <br>Requires 13 points in Path of Da Green",
-    "description": "A surge of Waaaagh explodes from your target and damages up to 4 enemies within 20 feet of them, dealing 277 Elemental damage to each, and bestowing 150% of it upon your defensive target.",
+    "description": "A surge of Waaaagh explodes from your target and damages up to 4 enemies within 30 feet of them, dealing 277 Elemental damage to each, and bestowing 150% of it upon your group.",
     "category": "Ability"
   },
 
@@ -858,7 +858,7 @@
     "incant": "1.0s cast",
     "cooldown": "No cooldown",
     "note": "Mork's Waaagh! reduces cast time. ",
-    "description": "Your target regains 258 health immediately then continues to gain another 315 health over 5 seconds.",
+    "description": "Your target regains 258 health immediately then continues to gain another 315 health over 5 seconds. This ability will continue to build up even if you move.",
     "category": "Ability"
   },
 
@@ -1274,7 +1274,7 @@
     "incant": "Insta-Cast",
     "cooldown": "1m cooldown",
     "note": "",
-    "description": "An ally is charged with Waaagh for 30 seconds, allowing them to recover from near fatal wounds. If the allies health is reduced below 20%, this effect will immediately dispel itself to restore 711 health if they are still alive. A player may only be affected by a single Shrug it Off at a time.",
+    "description": "An ally is charged with Waaagh for 30 seconds, allowing them to recover from near fatal wounds. Increases the value of healing effects on the target by 25% while active. If the allies health is reduced below 20%, this effect will immediately dispel itself to restore 711 health if they are still alive. A player may only be affected by a single Shrug it Off at a time.",
     "category": "Ability"
   },
 
