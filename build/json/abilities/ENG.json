@@ -1066,7 +1066,7 @@
     "incant": "Insta-Cast",
     "cooldown": "15.0s cooldown",
     "note": "",
-    "description": "You fling out a land mine which arms itself immediately and persists for up to 1 minutes. The mine will detonate when an enemy gets too close, dealing 243 damage to all enemies within 30 feet and staggering them for up to 3 seconds, preventing all actions unless they are damaged.",
+    "description": "You fling out a land mine which arms itself immediately and persists for up to 1 minute. The mine will detonate when an enemy gets too close, dealing 243 damage to all enemies within 30 feet and staggering them for up to 5 seconds, preventing all actions unless they are damaged.",
     "category": "Ability"
   },
 
@@ -1169,7 +1169,7 @@
   {
     "image": "04657",
     "id": 3665,
-    "name": "Phosphorous Shells",
+    "name": "Phosphorous Rounds",
     "type": "Hex",
     "spec": "Path of The Rifleman",
     "minrank": "",
@@ -1400,7 +1400,7 @@
     "cost": "Costs 35 AP",
     "range": "150ft range",
     "incant": "3.0s cast",
-    "cooldown": "10.0s cooldown",
+    "cooldown": "5.0s cooldown",
     "note": "",
     "description": "A slow but powerful gun shot which deals 538 damage to your enemy and can not be defended against.",
     "category": "Ability"
