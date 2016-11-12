@@ -554,7 +554,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Flame Arrow and Festering Arrow will now bypass all of your victim's resistances.",
+    "description": "Flame Arrow and Festering Arrow will now bypass 50% of your victim's resistances.",
     "category": "CareerTactic"
   },
 
@@ -970,7 +970,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Any time you critically hit with a ranged attack, the chance to critically hit will be increased by 15% for 10 seconds for group members within 100 feet, but this will not affect you.",
+    "description": "Any time you critically hit with a ranged attack, the chance to critically hit will be increased by 8% for 10 seconds for group members within 100 feet, but this will not affect you.",
     "category": "CareerTactic"
   },
 
