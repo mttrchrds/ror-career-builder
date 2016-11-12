@@ -906,7 +906,7 @@
     "incant": "2.0s cast",
     "cooldown": "5.0s cooldown",
     "note": "",
-    "description": "You construct a turret with a self-aiming gun which will fire at distant enemies. The turret gains 75% of your Ballistic Skill and Weapon Skill from item bonuses and 50% of your Wounds from item bonuses. While you are within 25 feet of the turret you will scavenge extra parts from the turret to create improvised upgrades for your weapons, increasing your damage by 4% every 2 seconds to a maximum of 20%.",
+    "description": "You construct a turret with a self-aiming gun which will fire at distant enemies. The turret gains 75% of your Ballistic Skill and Weapon Skill from item bonuses and 50% of your Wounds from item bonuses. While you are within 25 feet of the turret you will scavenge extra parts from the turret to create improvised upgrades for your weapons, increasing your damage and range by 5% and your turret's range by 2.5% every 2 seconds to a maximum of 40%.",
     "category": "Ability"
   },
 
