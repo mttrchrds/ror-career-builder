@@ -1176,9 +1176,9 @@
     "cost": "Costs 30 AP",
     "range": "65ft range",
     "incant": "Insta-Cast",
-    "cooldown": "No cooldown",
-    "note": "You cannot perform this action while rooted<br>You cannot perform this action while stunned<br>Requires 5 points in Path of The Hunter",
-    "description": "You pounce forwards, leaping towards your target and causing 159 damage when you land.",
+    "cooldown": "10.0s cooldown",
+    "note": "You cannot use this ability while airborne<br>You cannot perform this action while rooted<br>You cannot perform this action while stunned<br>Requires 5 points in Path of The Hunter",
+    "description": "You pounce forwards, leaping towards your target. When you land, you will inflict 159 damage, and your movement speed will be increased by 35% for 3 seconds.",
     "category": "Ability"
   },
 
