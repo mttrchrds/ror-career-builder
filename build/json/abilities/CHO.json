@@ -1146,7 +1146,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Your auras now restore 5 action points per second for each of your active auras.",
+    "description": "Increases your Action Point regenration by 15.",
     "category": "CareerTactic"
   },
 
