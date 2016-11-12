@@ -714,7 +714,7 @@
     "incant": "3.0s cast",
     "cooldown": "13.0s cooldown",
     "note": "Builds 15 Combustion<br>Has a chance to cause an Explosion!<br>Requires 13 points in Path of Incineration",
-    "description": "You assault your target with a constant stream of fireballs, striking them up to 3 times over 3 seconds. Each blast deals 333 Elemental damage to your target, and 167 Elemental damage to all other enemies within 10 feet of them. This effect will end if you break your concentration or run out of action points.",
+    "description": "You assault your target with a constant stream of fireballs, striking them up to 3 times over 3 seconds. Each blast deals 333 Elemental damage to your target, and 167 Elemental damage to all other enemies within 20 feet of them. This effect will end if you break your concentration or run out of action points.",
     "category": "Ability"
   },
 
