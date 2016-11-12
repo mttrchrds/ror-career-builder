@@ -538,7 +538,7 @@
     "incant": "Insta-Cast",
     "cooldown": "20.0s cooldown",
     "note": "Requires 25 Soul Essence per second<br>Requires 9 points in Path of Sacrifice",
-    "description": "You surround yourself or an ally with a devouring aura for up to 5 seconds. Each second, your ally will deal 101 damage to up to 4 enemies within 10 feet of them, and become healed for 50% of all the damage done. You will lose 25 Soul Essence each second, and this effect will end if you run out of Soul Essence to power it with.",
+    "description": "You surround yourself or an ally with a devouring aura for up to 5 seconds. Each second, your ally will deal 101 damage to up to 4 enemies within 30 feet of them, and become healed for 50% of all the damage done. You will lose 25 Soul Essence each second, and this effect will end if you run out of Soul Essence to power it with.",
     "category": "Ability"
   },
 
@@ -618,7 +618,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Patch Wounds will now remove one Ailment or Hex for the entire group.",
+    "description": "If Patch Wounds is used on an ally, it will additionally remove an effect from each of your groupmates. This will neither affect you nor trigger when Patch Wounds is used on yourself. Patch Wounds will remove only one effect per target.",
     "category": "CareerTactic"
   },
 
@@ -1562,7 +1562,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Builds 30 Soul Essence<br>Requires 13 points in Path of Torture",
-    "description": "A merciless attack which deals 127 damage to your enemy, or 277 damage if they are below 50% hit points.",
+    "description": "A merciless attack which deals 127 damage to the target. If the target is below 50% hit points, instead inflicts 277 damage and will always critically hit.",
     "category": "Ability"
   }
 ]
