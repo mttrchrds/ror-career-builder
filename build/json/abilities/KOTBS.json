@@ -154,7 +154,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Battle Commands will restore 5 action points every second for each of your active Battle Commands.",
+    "description": "Increases your Action Point regeneration by 15",
     "category": "CareerTactic"
   },
 
@@ -474,7 +474,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "When you block, all members of your group within 100 feet except you will gain a 10% chance to critically hit for 10 seconds.",
+    "description": "When you block, all members of your group within 100 feet except you will gain a 5% chance to critically hit for 10 seconds.",
     "category": "CareerTactic"
   },
 
@@ -554,7 +554,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Press The Attack! will now make it 10% more likely that enemies in the area will be critically hit.",
+    "description": "While you are wielding a greatsword, Press The Attack! will now make it 10% more likely that enemies in the area will be critically hit.",
     "category": "CareerTactic"
   },
 
