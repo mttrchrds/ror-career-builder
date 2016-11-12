@@ -1194,7 +1194,7 @@
     "incant": "1.0s cast",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Restores 267 health, then continues to restore 330 health over 5 seconds.",
+    "description": "Restores 267 health, then continues to restore 330 health over 5 seconds. This ability will continue to build up even if you move.",
     "category": "Ability"
   },
 
