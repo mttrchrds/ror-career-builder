@@ -232,7 +232,7 @@
     "cost": "Costs 30 AP",
     "range": "150ft range",
     "incant": "3.0s cast",
-    "cooldown": "5.0s cooldown",
+    "cooldown": "10.0s cooldown",
     "note": "",
     "description": "An un-defendable bolt of far traveling force that inflicts 633 Elemental damage.",
     "category": "Ability"
@@ -1352,7 +1352,7 @@
     "cost": "Costs 55 AP",
     "range": "No range",
     "incant": "2.0s cast",
-    "cooldown": "5.0s cooldown",
+    "cooldown": "2.0s cooldown",
     "note": "",
     "description": "Summons a daemonic minion who specializes in short range Spiritual and Elemental area of effect attacks. This minion is confined to its summoning circle and cannot move. The daemonic minion gains 50% of your Intelligence from item bonuses and 100% of your Wounds from item bonuses. While you are within 25 feet of the turret you will be steadily empowered by its unholy energy, increasing your damage by 4% every 2 seconds to a maximum of 20%.",
     "category": "Ability"
