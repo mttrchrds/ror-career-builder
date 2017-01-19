@@ -599,11 +599,11 @@
         "name": "Path of Loathing",
         "optionalAbilities": {
           "lvl1": 916,
-          "lvl2": 917,
-          "lvl3": 918,
-          "lvl4": 919,
-          "lvl5": 920,
-          "lvl6": 921,
+          "lvl2": 919,
+          "lvl3": 920,
+          "lvl4": 921,
+          "lvl5": 918,
+          "lvl6": 917,
           "lvl7": 922
         },
         "coreAbilities": [877,986,866,881,883]
