@@ -8,9 +8,9 @@
     "cost": "Costs 25 AP",
     "range": "5ft range",
     "incant": "Insta-Cast",
-    "cooldown": "20.0s cooldown",
+    "cooldown": "10.0s cooldown",
     "note": "Builds 25 Righteous Fury<br>Requires 9 points in Path of Wrath",
-    "description": "You call on Sigmar to Cripple your enemy for 10 seconds, causing all healing effects used on them to become 25% less effective.",
+    "description": "You call on Sigmar to Cripple your enemy for 10 seconds, causing all healing effects used on them to become 50% less effective.",
     "category": "Ability"
   },
 
@@ -873,8 +873,8 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
-    "note": "Builds 30 Righteous Fury<br>Requires 13 points in Path of Wrath",
-    "description": "Deals 127 damage to the target, If the target is below 50% hit points, instead inflicts 350 damage and will always critically hit.",
+    "note": "Builds 30 Righteous Fury<br>Requires 13 points in Path of Wrath<br>Requires a Greatweapon",
+    "description": "Deals 127 damage to the target, If the target is below 50% hit points, instead inflicts 350 damage and will always critically hit. Successful hit grants Accelerated Intimation, a blessing which cuts cast times in half.",
     "category": "Ability"
   },
 
@@ -1144,7 +1144,7 @@
     "cost": "No AP Cost",
     "range": "No range",
     "incant": "Insta-Cast",
-    "cooldown": "10.0s cooldown",
+    "cooldown": "1.0s cooldown",
     "note": "Only one Prayer may be active at a time.",
     "description": "Any time one of your groupmates within 100 feet hits an enemy, there is a 20% chance they will deal an additional 150 Spirit damage.",
     "category": "Ability"
