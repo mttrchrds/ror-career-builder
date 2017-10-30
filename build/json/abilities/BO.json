@@ -1194,7 +1194,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Leads to da' Gud Plan!<br>Requires 9 points in Path of Da Boss",
-    "description": "Deals 127 damage. Activates protective shield that absorbs up to 400 over 5 seconds for groupmates within 80ft.",
+    "description": "Deals 127 damage. Activates protective shield that absorbs up to 400 over 5 seconds for group mates within 80ft.",
     "category": "Ability"
   },
 
