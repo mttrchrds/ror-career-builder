@@ -1242,7 +1242,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Leads to Improved Balance<br>Requires 9 points in Path of Hoeth",
-    "description": "You call upon the magic in your blade to form a barrier to protect you, absorbing up to 550 damage for up to 5 seconds.",
+    "description": "You call upon the magic in your blade to form a barrier to protect you, absorbing up to 550 damage for up to 5 seconds on groupmates within 50ft.",
     "category": "Ability"
   },
 
