@@ -984,7 +984,7 @@
     "cost": "Costs 45 AP",
     "range": "150ft range",
     "incant": "2.0s cast",
-    "cooldown": "1m cooldown",
+    "cooldown": "30.0s cooldown",
     "note": "",
     "description": "Buffs you or a friendly player with a pulsing area of effect that deals 256 Elemental damage every 3 seconds to all enemies within to 30 feet for 15 seconds.",
     "category": "Ability"
@@ -1096,7 +1096,7 @@
     "cost": "Costs 30 AP",
     "range": "100ft range",
     "incant": "Insta-Cast",
-    "cooldown": "30.0s cooldown",
+    "cooldown": "20.0s cooldown",
     "note": "",
     "description": "Deals 1162 Elemental damage over 24 seconds and heals your defensive target for the amount of damage dealt.",
     "category": "Ability"
@@ -1226,7 +1226,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Critical attacks place a debuff on your target that reduces all incoming healing by 50% for 5 seconds.",
+    "description": "Critical attacks place a debuff on your target that reduces all incoming healing by 50% for 10 seconds.",
     "category": "CareerTactic"
   },
 
