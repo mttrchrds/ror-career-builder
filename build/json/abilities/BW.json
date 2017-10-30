@@ -744,7 +744,7 @@
     "cost": "Costs 30 AP",
     "range": "No range",
     "incant": "Insta-Cast",
-    "cooldown": "No cooldown",
+    "cooldown": "45.0s cooldown",
     "note": "",
     "description": "All groupmates within 100 feet are Enchanted with a protective shield of flickering flames for 1 hour, giving them a 25% chance to deal 125 Elemental damage back against the attacker when they are struck by a melee attack.",
     "category": "Ability"
@@ -760,7 +760,7 @@
     "cost": "Costs 30 AP",
     "range": "No range",
     "incant": "Insta-Cast",
-    "cooldown": "No cooldown",
+    "cooldown": "45.0s cooldown",
     "note": "",
     "description": "An Enchantment which infuses your groupmates within 100 feet of you with the spirit of fire for 1 hour, giving them a 25% chance to deal an additional 150 Elemental damage any time they attack a target.",
     "category": "Ability"
