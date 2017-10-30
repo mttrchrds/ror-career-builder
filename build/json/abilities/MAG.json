@@ -233,7 +233,7 @@
     "range": "150ft range",
     "incant": "3.0s cast",
     "cooldown": "10.0s cooldown",
-    "note": "",
+    "note": "Requires 9 points in Path of Havoc",
     "description": "An un-defendable bolt of far traveling force that inflicts 633 Elemental damage.",
     "category": "Ability"
   },
@@ -1465,7 +1465,7 @@
     "range": "80ft range",
     "incant": "6.0s cast",
     "cooldown": "16.0s cooldown",
-    "note": "",
+    "note": "Requires 13 points in Path of Havoc",
     "description": "Creates a great column of wind and flame that deals 243 Elemental damage every 2 seconds and medium snare to all targets within 20 feet of the area for 6 seconds. This spell requires a high amount of concentration and you will be set back by .5 seconds whenever hit.",
     "category": "Ability"
   },
