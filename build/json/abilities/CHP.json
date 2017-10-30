@@ -341,12 +341,12 @@
     "type": "Enchantment",
     "spec": "Path of Da' Wrecka",
     "minrank": "",
-    "cost": "Costs 45 AP",
+    "cost": "Costs 25 AP",
     "range": "No range",
     "incant": "Insta-Cast",
-    "cooldown": "2m cooldown",
+    "cooldown": "60.0s cooldown",
     "note": "",
-    "description": "Group members within 100 feet are inspired by the way you shrug off the blows, for the next 20 seconds any ability used by your groupmates will cool down 5 seconds faster.",
+    "description": "Group members within 100 feet are inspired by the way you shrug off the blows, for the next 10 seconds any ability used by your groupmates will cool down 5 seconds faster.",
     "category": "Ability"
   },
 
@@ -1306,7 +1306,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Increases the chance to critically hit with Path of Da' Big Hitta abilities by 15%, but decreases your ability to defend critical hits by 10%.",
+    "description": "Increases the chance to critically hit with Path of Da' Big Hitta abilities by 15%.",
     "category": "CareerTactic"
   },
 
