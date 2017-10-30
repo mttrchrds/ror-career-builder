@@ -650,7 +650,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Acid Bomb and Fragmentation Grenade gain a 50% increase to the size of their areas of effect.",
+    "description": "Acid Bomb, Phosphorous Shells and Fragmentation Grenade gain a 50% increase to the size of their areas of effect.",
     "category": "CareerTactic"
   },
 
@@ -1169,7 +1169,7 @@
   {
     "image": "04657",
     "id": 3665,
-    "name": "Phosphorous Rounds",
+    "name": "Phosphorous Shells",
     "type": "Hex",
     "spec": "Path of The Rifleman",
     "minrank": "",
@@ -1178,7 +1178,7 @@
     "incant": "1.0s cast",
     "cooldown": "10.0s cooldown",
     "note": "",
-    "description": "You blast your enemy with powerful and unstable phosphorous ammo, dealing 83 Corporeal damage to them. The victim and all enemies within 20 feet of them will also suffer 385 Corporeal damage over 15 seconds as the shells burst into flame.",
+    "description": "You blast your enemy with powerful and unstable phosphorous ammo, dealing 83 Corporeal damage to them. The victim and all enemies within 20 feet of them will also suffer 385 Corporeal damage over 10 seconds as the shells burst into flame.",
     "category": "Ability"
   },
 
