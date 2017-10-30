@@ -314,7 +314,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Increases critical chance for all Path Of Havoc spells by 15%.",
+    "description": "Increases critical chance for all Path Of Havoc spells by 15%. Reduces cooldown of Tzeentch's Firestorm by 10s.",
     "category": "CareerTactic"
   },
 
@@ -1466,7 +1466,7 @@
     "incant": "6.0s cast",
     "cooldown": "16.0s cooldown",
     "note": "",
-    "description": "Creates a great column of wind and flame that deals 243 Elemental damage every 2 seconds to all targets within 20 feet of the area for 6 seconds. This spell requires a high amount of concentration and you will be set back by .5 seconds whenever hit.",
+    "description": "Creates a great column of wind and flame that deals 243 Elemental damage every 2 seconds and medium snare to all targets within 20 feet of the area for 6 seconds. This spell requires a high amount of concentration and you will be set back by .5 seconds whenever hit.",
     "category": "Ability"
   },
 
