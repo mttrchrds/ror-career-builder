@@ -394,7 +394,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Any time you critically hit an enemy, they will deal only 75% damage for 10 seconds.",
+    "description": "Any time you critically hit an enemy, they will deal only 90% damage for 10 seconds.",
     "category": "CareerTactic"
   },
 
@@ -890,7 +890,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Reduces Repel's cooldown time by 50% and increases the length of the knockback.",
+    "description": "Reduces Repel's cooldown time by 50% (when you are wielding a Greatweapon) and increases the length of the knockback.",
     "category": "CareerTactic"
   },
 
