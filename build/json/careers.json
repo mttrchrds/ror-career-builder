@@ -586,9 +586,9 @@
         "name": "Path of Malice",
         "optionalAbilities": {
           "lvl1": 909,
-          "lvl2": 910,
+          "lvl2": 912,
           "lvl3": 911,
-          "lvl4": 912,
+          "lvl4": 910,
           "lvl5": 913,
           "lvl6": 914,
           "lvl7": 915
@@ -598,12 +598,12 @@
       "b": {
         "name": "Path of Loathing",
         "optionalAbilities": {
-          "lvl1": 916,
-          "lvl2": 919,
-          "lvl3": 920,
+          "lvl1": 920,
+          "lvl2": 917,
+          "lvl3": 916,
           "lvl4": 921,
           "lvl5": 918,
-          "lvl6": 917,
+          "lvl6": 919,
           "lvl7": 922
         },
         "coreAbilities": [877,986,866,881,883]

@@ -241,7 +241,7 @@
   {
     "image": "11031",
     "id": 910,
-    "name": "Blade of Ruin",
+    "name": "Get Down!",
     "type": "Damaging",
     "spec": "Path of Malice",
     "minrank": "",
@@ -249,8 +249,8 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
-    "note": "Costs 15 Hatred<br>Requires Block or Parry<br>Requires 5 points in Path of Malice",
-    "description": "A retaliatory strike that that slowly cuts through your foe for 915 damage over 10 seconds.",
+    "note": "Requires 9 points in Path of Malice",
+    "description": "Description required.",
     "category": "Ability"
   },
 
@@ -762,7 +762,7 @@
     "incant": "Insta-Cast",
     "cooldown": "30.0s cooldown",
     "note": "",
-    "description": "For up to 10 seconds your superior training allows you to easily Parry the next 4 attacks made against you. Any defense made in this time will restore Action Points to everyone in your group within 100 feet of you based on your Hatred. <br> With 30 Hate: Restores 5 AP. <br> With 60 Hate: Restores 10 AP.<br> With 90 Hate: Restores 15 AP",
+    "description": "For up to 10 seconds your superior training allows you and your Dark Protector (if within 50ft) to easily Parry or Disrupt the next 4 attacks made against you. Any defense made in this time will restore Action Points to everyone in your group within 100 feet of you based on your Hatred. <br> With 30 Hate: Restores 5 AP. <br> With 60 Hate: Restores 10 AP.<br> With 90 Hate: Restores 15 AP",
     "category": "Ability"
   },
 
@@ -809,7 +809,7 @@
     "range": "5ft range",
     "incant": "3.0s cast",
     "cooldown": "8.0s cooldown",
-    "note": "",
+    "note": "Requires 5 points in Path of Malice",
     "description": "A flurry of blows that inflicts 283 damage every half second for 3 seconds. Any of these hits that critical will restore 10 Hate.",
     "category": "Ability"
   },
@@ -825,7 +825,7 @@
     "range": "5ft range",
     "incant": "Insta-Cast",
     "cooldown": "20.0s cooldown",
-    "note": "",
+    "note": "Cooldown reduced by 50% if using a Great Weapon",
     "description": "An overwhelming blow that deals 423 damage and will knockback your target based on your Hate.<br> With 30 Hate: Medium Knockback. <br> With 60 Hate: Long Knockback.<br> With 90 Hate: Very Long Knockback.",
     "category": "Ability"
   },
@@ -986,7 +986,7 @@
     "incant": "Insta-Cast",
     "cooldown": "20.0s cooldown",
     "note": "",
-    "description": "Your intense fury allows you to shrug off the greatest of hits. For 10 seconds your Armor is increased by 618 and you will become less likely to be Critically hit depending on your Hatred. <br> With 30 Hate: 15% less likely to be Critically hit. <br> With 60 Hate: 30% less likely to be Critically hit.<br> With 90 Hate: 45% less likely to be Critically hit.",
+    "description": "Your intense fury allows you and your Dark Protector (if within 50ft) to shrug off the greatest of hits. For 10 seconds your Armor is increased by 618 and you will become less likely to be Critically hit depending on your Hatred. <br> With 30 Hate: 15% less likely to be Critically hit. <br> With 60 Hate: 30% less likely to be Critically hit.<br> With 90 Hate: 45% less likely to be Critically hit.",
     "category": "Ability"
   },
 
@@ -1480,7 +1480,7 @@
     "cost": "Costs 20 AP/sec",
     "range": "No range",
     "incant": "10.0s cast",
-    "cooldown": "30.0s cooldown",
+    "cooldown": "10.0s cooldown",
     "note": "Requires Shield<br>Requires 5 points in Path of Loathing",
     "description": "You ready your blade and defiantly raise your shield to increase your Block rate by 50% for up to 10 seconds. Any time you block during this time you will lash out at your attacker for 126 damage and gain 5 Hatred.",
     "category": "Ability"
@@ -1690,7 +1690,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Costs 15 Hatred",
-    "description": "Your overwhelming hate shields you from up to 625 damage over 10 seconds.",
+    "description": "Your overwhelming hate shields you and your Dark Protector from up to 625 damage over 10 seconds.",
     "category": "Ability"
   },
 
