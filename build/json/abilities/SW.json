@@ -122,7 +122,7 @@
     "incant": "Insta-Cast",
     "cooldown": "5.0s cooldown",
     "note": "Grants Assault Stance",
-    "description": "A close-combat stance which increases your Strength and Weapon Skill by 120, and increases your Armor by the same amount that you receive from items.<br><br>While in Assault Stance; your Ballistic Skill from items will also count towards your Strength, your Ranged Power from items will also count towards your Melee Power, and your Ranged Critical chance from items will also count towards your Melee Critical chance.<br><br>You may only use a single Stance at a time.",
+    "description": "A close-combat stance which increases your Strength and Weapon Skill by 120, and increases your Armor by the same amount that you receive from items.<br><br>While in Assault Stance; your Ballistic Skill from items will also count towards your Strength, your Ranged Power from items will also count towards your Melee Power, and your Ranged Critical chance from items will also count towards your Melee Critical chance.<br><br>Melee attacks have a 25% chance to increase Autoattack speed by 25% for 5s.<br><br>Grants 10% Parry but reduces Dodge by -10%.<br><br>You may only use a single Stance at a time.",
     "category": "Ability"
   },
 
@@ -137,7 +137,7 @@
     "range": "No range",
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
-    "note": "Requires Skirmish Stance<br>Requires 13 points in Path of The Skirmisher",
+    "note": "Requires Skirmish Stance<br>Requires 5 points in Path of The Skirmisher",
     "description": "Deals 278 damage to all enemies in an arc in front of you, up to 40 feet away.",
     "category": "Ability"
   },
@@ -617,7 +617,7 @@
     "range": "65ft range",
     "incant": "1.0s cast",
     "cooldown": "20.0s cooldown",
-    "note": "Requires Skirmish Stance",
+    "note": "Requires Skirmish Stance<br>Requires 13 points in Path of The Skirmisher",
     "description": "A Crippling shot that deals 216 damage and reduces your target's Initiative by 50 for 20 seconds. This ability will continue to build up even if you move. 3 Second knockdown.",
     "category": "Ability"
   },
@@ -682,7 +682,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Requires Scout Stance<br>Requires 13 points in Path of The Scout",
-    "description": "Deals 1198 damage if your target is below 20% hit points, or 586 damage otherwise.",
+    "description": "Deals 1198 damage if your target is below 30% hit points, or 586 damage otherwise.",
     "category": "Ability"
   },
 
@@ -729,7 +729,7 @@
     "range": "65ft range",
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
-    "note": "Requires Skirmish Stance<br>Target must be facing away from you<br>Requires 9 points in Path of The Skirmisher",
+    "note": "Requires Skirmish Stance<br>Target must be facing away from you",
     "description": "Deals 636 damage to your target. This ability will continue to build up even if you move. Only usable from behind the target. The critical chance of the ability is increased by the percentage of life lost on the enemy target.",
     "category": "Ability"
   },
@@ -1034,7 +1034,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Reduces the action point costs of all abilities within the Path Of Assault by 35%.",
+    "description": "Opportunistic Strike, Grim Slash, Exploit weakness, Counterstrike, Brutal assault, Sweeping Slash will do 50% extra critical damage. Draw Blood and Swift Strikes have a 25% increased chance to critically hit.",
     "category": "CareerTactic"
   },
 
@@ -1050,7 +1050,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Eagle's Eye now builds up 1 seconds faster, but the cost is increased by 20 Action Points.",
+    "description": "Eagle's Eye now builds up 1 seconds faster, but the cost is increased by 13 Action Points.",
     "category": "CareerTactic"
   },
 
@@ -1289,7 +1289,7 @@
     "range": "65ft range",
     "incant": "Insta-Cast",
     "cooldown": "No cooldown",
-    "note": "Target must be Ailing<br>Requires 5 points in Path of The Skirmisher",
+    "note": "Target must be Ailing<br>Requires 9 points in Path of The Skirmisher",
     "description": "An Ailment which deals 498 damage to your target over 9 seconds and causes all healing effects used on them to become 50% weaker. Only usable on a target that is already Ailing.",
     "category": "Ability"
   },
@@ -1466,7 +1466,7 @@
     "incant": "3.0s cast",
     "cooldown": "13.0s cooldown",
     "note": "",
-    "description": "You unleash a punishing series of attacks on your enemy for up to 3 seconds, striking them twice per second and dealing 79 damage per hit. If the target is building up an ability, then your strikes will deal 142 damage instead. This ability will end if you break your concentration or run out of action points.",
+    "description": "You unleash a punishing series of attacks on your enemy for up to 3 seconds, striking them twice per second and dealing 79 damage per hit. If the target is building up an ability, then your strikes will deal 142 damage instead. This ability will end if you break your concentration or run out of action points. Grants movement speed boost for duration.",
     "category": "Ability"
   },
 

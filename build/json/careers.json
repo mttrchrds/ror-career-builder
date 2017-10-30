@@ -324,14 +324,14 @@
         "name": "Path of The Skirmisher",
         "optionalAbilities": {
           "lvl1": 3985,
-          "lvl2": 3986,
+          "lvl2": 3990,
           "lvl3": 3987,
-          "lvl4": 3988,
+          "lvl4": 3986,
           "lvl5": 3989,
-          "lvl6": 3990,
+          "lvl6": 3941,
           "lvl7": 3991
         },
-        "coreAbilities": [3932,3933,3946,3941,3929]
+        "coreAbilities": [3932,3933,3946,3988,3929]
       }
     }
   },
