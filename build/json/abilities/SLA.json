@@ -250,7 +250,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Increases your chance to critically hit with Path Of the Giantslayer abilities by 15%, but increases chance that you'll be critically hit by 10%",
+    "description": "Increases your chance to critically hit with Path Of the Giantslayer abilities by 15%.",
     "category": "CareerTactic"
   },
 
