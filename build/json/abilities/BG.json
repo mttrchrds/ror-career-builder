@@ -245,12 +245,12 @@
     "type": "Damaging",
     "spec": "Path of Malice",
     "minrank": "",
-    "cost": "No AP Cost",
-    "range": "5ft range",
+    "cost": "Costs 20 AP",
+    "range": "No range",
     "incant": "Insta-Cast",
-    "cooldown": "10.0s cooldown",
+    "cooldown": "20.0s cooldown",
     "note": "Requires 9 points in Path of Malice",
-    "description": "Description required.",
+    "description": "Hits your target with a 3 second knockdown. Also damages up to 8 opponents within 30 feet.",
     "category": "Ability"
   },
 
