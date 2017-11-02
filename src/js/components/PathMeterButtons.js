@@ -5,6 +5,11 @@ import IconMinus from '../icons/IconMinus';
 import css from '../../css/components/PathMeterButtons.css';
 
 const PathMeterButtons = (props) => {
+  const pathMeterSet = (amount) => {
+    let masteryDifference = Number(props.pathMeter) - Number(amount);
+    props.setPathMeter(props.masteryPath, amount);
+    props.setMasteryPoints(masteryDifference);
+  };
   const pathMeterAdd = () => {
     const pathMeterMax = 15;
     const masteryPoints = props.masteryPoints;
@@ -28,12 +33,19 @@ const PathMeterButtons = (props) => {
     const meterLevelMax = 15;
     for (let i = 1; i <= meterLevelMax; i++) {
       let thisClass = css.level;
+      let thisClickHandler = false;
       if (i <= props.pathMeter) {
         thisClass = css.levelActive;
+        thisClickHandler = () => {
+          pathMeterSet(i);
+        };
       } else if (i <= (Number(props.masteryPoints) + Number(props.pathMeter))) {
         thisClass = css.levelAvailable;
+        thisClickHandler = () => {
+          pathMeterSet(i);
+        };
       }
-      meterLevels.push(<div key={props.masteryPath + i} className={thisClass}>{i}</div>);
+      meterLevels.push(<div key={props.masteryPath + i} className={thisClass} onClick={thisClickHandler}>{i}</div>);
     }
     return meterLevels;
   };
@@ -77,6 +89,8 @@ PathMeterButtons.propTypes = {
   decrementPathMeter: React.PropTypes.func,
   decrementMasteryPoints: React.PropTypes.func,
   incrementMasteryPoints: React.PropTypes.func,
+  setMasteryPoints: React.PropTypes.func,
+  setPathMeter: React.PropTypes.func,
 };
 
 export default PathMeterButtons;

@@ -11,8 +11,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl7]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -27,8 +29,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl6]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -43,8 +47,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl5]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -59,8 +65,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl4]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -75,8 +83,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl3]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -90,8 +100,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl2]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}
@@ -106,8 +118,10 @@ const PathMeter = (props) =>
           masteryPoints={props.masteryPoints}
           incrementMasteryPoints={props.incrementMasteryPoints}
           decrementMasteryPoints={props.decrementMasteryPoints}
+          setMasteryPoints={props.setMasteryPoints}
           details={props.abilities[props.pathOptionalAbilities.lvl1]}
           masteryPath={props.masteryPath}
+          setPathMeter={props.setPathMeter}
           selectedMasteries={props.selectedMasteries}
           updateSelectedMasteries={props.updateSelectedMasteries}
           updateSelectedMorale={props.updateSelectedMorale}

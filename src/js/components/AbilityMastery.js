@@ -89,7 +89,7 @@ class AbilityMastery extends React.Component {
       });
     }
 
-    if ((Number(pathMeter) >= Number(meterRequirement)) && (Number(masteryPoints) > 0)) {
+    if (((Number(masteryPoints) >= Number(meterRequirement)) || (Number(pathMeter) >= Number(meterRequirement))) && (Number(masteryPoints) > 0)) {  
       this.setState({
         abilityStatus: true,
       });
@@ -139,6 +139,8 @@ class AbilityMastery extends React.Component {
       // Active ability selected
       if (this.state.abilityStatus) {
         if (Number(this.props.masteryPoints) > 0) {
+          // Add this ability to selectedMasteries
+          this.props.updateSelectedMasteries(this.props.details.id);
           if (this.props.details.abilityType === 'morale') {
             // Add only to core morales
             this.props.updateCoreMorales(this.props.details.id);
@@ -147,10 +149,18 @@ class AbilityMastery extends React.Component {
             // Add only to core tactics
             this.props.updateCoreTactics(this.props.details.id);
           }
-          // Decrement mastery total
-          this.props.decrementMasteryPoints();
-          // Add this ability to selectedMasteries
-          this.props.updateSelectedMasteries(this.props.details.id);
+          // If the path meter is below requirement for this ability, bring path meter up to the requirement
+          if (Number(this.props.pathMeter) < Number(this.props.details.meterRequirement)) {
+            // Calculate how many points are required to bring the path meter up to the minimum requirement
+            let masteryDifference = Number(this.props.pathMeter) - Number(this.props.details.meterRequirement);
+            // Remove one more point for the current selection
+            masteryDifference--;
+            this.props.setPathMeter(this.props.masteryPath, this.props.details.meterRequirement);
+            this.props.setMasteryPoints(masteryDifference);
+          } else {
+            // Otherwise decrement mastery total as normal
+            this.props.decrementMasteryPoints();
+          }
         }
       }
       // else {} = Inactive ability selected

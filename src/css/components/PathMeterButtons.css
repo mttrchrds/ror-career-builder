@@ -24,12 +24,14 @@
   background-color: color-points;
   border: 1px solid color-points;
   color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 }
 .levelAvailable {
   composes: level;
   border: 1px solid points-available;
   background-color: points-available;
   color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
 }
 .button {
   float: left;

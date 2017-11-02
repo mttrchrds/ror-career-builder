@@ -22,10 +22,12 @@ class Career extends React.Component {
     this.updateSelectedTactics = this.updateSelectedTactics.bind(this);
     this.incrementMasteryPoints = this.incrementMasteryPoints.bind(this);
     this.decrementMasteryPoints = this.decrementMasteryPoints.bind(this);
+    this.setMasteryPoints = this.setMasteryPoints.bind(this);
     this.updateCoreTactics = this.updateCoreTactics.bind(this);
     this.updateCoreMorales = this.updateCoreMorales.bind(this);
     this.incrementPathMeter = this.incrementPathMeter.bind(this);
     this.decrementPathMeter = this.decrementPathMeter.bind(this);
+    this.setPathMeter = this.setPathMeter.bind(this);
     this.updateSelectedMasteries = this.updateSelectedMasteries.bind(this);
     this.renderContent = this.renderContent.bind(this);
 
@@ -342,6 +344,13 @@ class Career extends React.Component {
     });
   }
 
+  setMasteryPoints(points) {
+    this.state.masteryPoints = Number(this.state.masteryPoints) + (Number(points));
+    this.setState({
+      masteryPoints: this.state.masteryPoints
+    });
+  }
+
   // Amends this.state.selectedMasteries
   updateSelectedMasteries(abilityId) {
     const abilityIndex = this.state.selectedMasteries.indexOf(abilityId);
@@ -468,6 +477,13 @@ class Career extends React.Component {
     });
   }
 
+  setPathMeter(path, level) {
+    const pathProperty = this.formatPathMeter(path);
+    this.setState({
+      [pathProperty]: level
+    });
+  }
+
   renderContent() {
     if (this.state.careerLoading) {
       return (
@@ -521,8 +537,10 @@ class Career extends React.Component {
           pathCMeter={this.state.pathCMeter}
           incrementMasteryPoints={this.incrementMasteryPoints}
           decrementMasteryPoints={this.decrementMasteryPoints}
+          setMasteryPoints={this.setMasteryPoints}
           incrementPathMeter={this.incrementPathMeter}
           decrementPathMeter={this.decrementPathMeter}
+          setPathMeter={this.setPathMeter}
           selectedMasteries={this.state.selectedMasteries}
           updateSelectedMasteries={this.updateSelectedMasteries}
           resetCareer={this.resetCareer}

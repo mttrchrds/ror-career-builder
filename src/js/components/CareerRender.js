@@ -129,8 +129,10 @@ class CareerRender extends React.Component {
                 pathCMeter={this.props.pathCMeter}
                 incrementMasteryPoints={this.props.incrementMasteryPoints}
                 decrementMasteryPoints={this.props.decrementMasteryPoints}
+                setMasteryPoints={this.props.setMasteryPoints}
                 incrementPathMeter={this.props.incrementPathMeter}
                 decrementPathMeter={this.props.decrementPathMeter}
+                setPathMeter={this.props.setPathMeter}
                 abilities={this.props.abilities}
                 selectedMasteries={this.props.selectedMasteries}
                 updateSelectedMasteries={this.props.updateSelectedMasteries}
