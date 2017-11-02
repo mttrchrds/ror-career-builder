@@ -89,7 +89,7 @@ class AbilityMastery extends React.Component {
       });
     }
 
-    if (((Number(masteryPoints) >= Number(meterRequirement)) || (Number(pathMeter) >= Number(meterRequirement))) && (Number(masteryPoints) > 0)) {  
+    if (((Number(masteryPoints) > Number(meterRequirement)) || (Number(pathMeter) >= Number(meterRequirement))) && (Number(masteryPoints) > 0)) {  
       this.setState({
         abilityStatus: true,
       });
