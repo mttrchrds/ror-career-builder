@@ -78,6 +78,7 @@ class AbilityMastery extends React.Component {
   }
 
   setInitialStatus(meterRequirement, pathMeter, selectedMasteries, masteryPoints) {
+
     // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedMasteries
     if (selectedMasteries.indexOf(this.props.details.id) !== -1) {
       this.setState({
@@ -89,7 +90,21 @@ class AbilityMastery extends React.Component {
       });
     }
 
-    if (((Number(masteryPoints) > Number(meterRequirement)) || (Number(pathMeter) >= Number(meterRequirement))) && (Number(masteryPoints) > 0)) {  
+    let pathRequirement = Number(meterRequirement) + 1;
+    let pointsRequirement = 0;
+
+    if (Number(pathRequirement) > Number(pathMeter)) {
+      pointsRequirement = pathRequirement - Number(pathMeter);
+    } else {
+      pointsRequirement = 1;
+    }
+    
+    console.log('pathRequirement', pathRequirement);
+    console.log('pathMeter', pathMeter);
+    console.log('pointsRequirement', pointsRequirement);
+    console.log('masteryPoints', masteryPoints);
+
+    if (Number(masteryPoints) >= Number(pointsRequirement)) {  
       this.setState({
         abilityStatus: true,
       });
