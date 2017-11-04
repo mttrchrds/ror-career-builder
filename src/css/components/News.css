@@ -35,6 +35,12 @@
   width: 100%;
   margin-top: spacing-small;
   padding-left: 1.3rem;
+  a {
+    color: color-text-secondary;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 @media mq-md-min {
   .itemText {

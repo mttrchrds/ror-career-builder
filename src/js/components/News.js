@@ -7,6 +7,21 @@ const News = () =>
     <div className={css.heading}>Latest updates</div>
     <div className={css.item}>
       <span className={css.itemIcon}><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
+      <div className={css.itemDate}>4/11/2017</div>
+      <span className={css.itemText}>Updates careers inline with <a href="https://www.returnofreckoning.com/forum/viewtopic.php?f=42&t=23732" target="blank">latest patch</a>.</span>
+    </div>
+    <div className={css.item}>
+      <span className={css.itemIcon}><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
+      <div className={css.itemDate}>4/11/2017</div>
+      <span className={css.itemText}>A couple of UI improvements: Sidebar menu is now ordered in a sane manner, Mastery tree and abilities are now clickable.</span>
+    </div>
+    <div className={css.item}>
+      <span className={css.itemIcon}><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
+      <div className={css.itemDate}>30/10/2017</div>
+      <span className={css.itemText}>Major update of skills and abilities of all careers.</span>
+    </div>
+    <div className={css.item}>
+      <span className={css.itemIcon}><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
       <div className={css.itemDate}>12/6/2016</div>
       <span className={css.itemText}>A number of UI improvements to Mastery area.</span>
     </div>
