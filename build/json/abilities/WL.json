@@ -1002,7 +1002,7 @@
     "incant": "Insta-Cast",
     "cooldown": "30.0s cooldown",
     "note": "Requires an active pet<br>Requires 13 points in Path of The Guardian",
-    "description": "At your command, your War Lion goes berserk with a killing frenzy! All root, snare, and stun effects are removed from your pet, and it becomes immune to them for the next 10 seconds. During this time, your pet will deal an additional 159 damage every time it strikes an enemy.<br>Damage can only trigger once every 2 seconds.",
+    "description": "At your command, your War Lion goes berserk with a killing frenzy! All root, snare, and stun effects are removed from your pet, and it becomes immune to them for the next 10 seconds. During this time, your pet will deal an additional 159 damage every time it strikes an enemy.<br>Damage can only trigger once every second.",
     "category": "Ability"
   },
 
@@ -1402,7 +1402,7 @@
     "incant": "Passive",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "Your War Lion now causes 75% less hatred in hostile monsters.",
+    "description": "Increases your War Lion's Strength and Toughness and causes 75% less hatred in hostile monsters.",
     "category": "CareerTactic"
   },
 
@@ -1530,7 +1530,7 @@
     "incant": "Insta-Cast",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "You train your pet to fight ferociously, increasing its Strength and Weapon Skill by your Strength and Weapon Skill gained from items and increasing your Toughness by 50.<br><br>Your War Lion will gain the ability to strike its enemies with a powerful mauling attack, the ability to attack its target repeatedly, and the ability to deal damage over time.",
+    "description": "You train your pet to fight ferociously, increasing its Strength by your Wounds gained from items and Weapon Skill from your Toughness gained from items and increasing your Toughness by 50.<br><br>Your War Lion will gain the ability to strike its enemies with a powerful mauling attack, the ability to attack its target repeatedly, and the ability to deal damage over time.",
     "category": "Ability"
   },
 
@@ -1546,7 +1546,7 @@
     "incant": "Insta-Cast",
     "cooldown": "No cooldown",
     "note": "",
-    "description": "You train your pet to behave menacingly, increasing its Toughness and Wounds by your Toughness and Wounds gained from items and increasing your chance to critically hit by 5% as long as you are at your target's sides or back.<br><br>Your War Lion will gain the ability to threaten its enemies, the ability to reduce a foe's armor, and the ability to snare its enemies.",
+    "description": "You train your pet to behave menacingly, increasing its Toughness and Wounds by 50% of your Strength gained from items and increasing your chance to critically hit by 5% as long as you are at your target's sides or back.<br><br>Your War Lion will gain the ability to threaten its enemies, the ability to reduce a foe's armor, and the ability to snare its enemies.",
     "category": "Ability"
   },
 

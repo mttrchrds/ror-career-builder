@@ -488,6 +488,9 @@
     "paths": {
       "a": {
         "name": "Path of The Hunter",
+        "popover": {
+          "secondary": "Points in Path of the Hunter grants Strength and Weaponskill to your Lion."
+        },
         "optionalAbilities": {
           "lvl1": 4276,
           "lvl2": 4277,
@@ -501,6 +504,10 @@
       },
       "b": {
         "name": "Path of The Axeman",
+        "popover": {
+          "primary": "A mastery path focused on your pet distracting enemies while you deal damage",
+          "secondary": "Points in Path of the Axeman grants Toughness and Initiative to your Lion."
+        },
         "optionalAbilities": {
           "lvl1": 4283,
           "lvl2": 4284,
@@ -514,12 +521,16 @@
       },
       "c": {
         "name": "Path of The Guardian",
+        "popover": {
+          "primary": "A mastery path focused on assisting and supporting your pet while he deals damage",
+          "secondary": "Points in the Guardian Tree grants Wounds, Toughness, Weaponskill, Strength and Initiative to you Lion."
+        },
         "optionalAbilities": {
-          "lvl1": 4290,
+          "lvl1": 4292,
           "lvl2": 4291,
-          "lvl3": 4292,
+          "lvl3": 4294,
           "lvl4": 4293,
-          "lvl5": 4294,
+          "lvl5": 4290,
           "lvl6": 4295,
           "lvl7": 4296
         },

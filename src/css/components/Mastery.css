@@ -32,6 +32,8 @@
 }
 .subHeading {
   composes: heading2 from "../shared/heading.css";
+  display: flex;
+  align-items: center;
 }
 .subHeadingSmall {
   composes: heading2Light from "../shared/heading.css";

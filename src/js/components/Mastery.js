@@ -2,6 +2,7 @@ import React from 'react';
 import Ability from './Ability';
 import PathMeter from './PathMeter';
 import PathMeterButtons from './PathMeterButtons';
+import PathInfo from './PathInfo';
 import classNames from 'classnames';
 import css from '../../css/components/Mastery.css';
 
@@ -20,6 +21,13 @@ const Mastery = (props) => {
     }
     return false;
   };
+  const renderPathPopover = (pathName) => {
+    if (props.career.paths[pathName].popover) {
+      return (
+        <PathInfo careerPath={props.career.paths[pathName]} />
+      );
+    }
+  };
   const labelClass = classNames({
     [css.label]: true,
     'marginLeft--small': true,
@@ -33,7 +41,10 @@ const Mastery = (props) => {
       <div className="grid">
         <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
           <div className="borderRight borderRight--none@mobile borderRight@sm-min marginRight borderBottom@mobile paddingBottom@mobile">
-            <h3 className={css.subHeading}>{props.career.paths.a.name}</h3>
+            <h3 className={css.subHeading}>
+              {props.career.paths.a.name}
+              {renderPathPopover('a')}
+            </h3>
             <div className="row row--justify">
               <div className="row row--justify">
                 <PathMeterButtons
@@ -80,7 +91,10 @@ const Mastery = (props) => {
         </div>
         <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
           <div className="borderRight@sm-min marginRight marginTop@mobile borderBottom@mobile paddingBottom@mobile">
-            <h3 className={css.subHeading}>{props.career.paths.b.name}</h3>
+            <h3 className={css.subHeading}>
+              {props.career.paths.b.name}
+              {renderPathPopover('b')}
+            </h3>
             <div className="row row--justify">
               <div className="row row--justify">
                 <PathMeterButtons
@@ -127,7 +141,10 @@ const Mastery = (props) => {
         </div>
         <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
           <div className="borderRight borderRight--none@mobile borderRight--none@sm-min marginRight marginTop marginTop--none@sm-min">
-            <h3 className={css.subHeading}>{props.career.paths.c.name}</h3>
+            <h3 className={css.subHeading}>
+              {props.career.paths.c.name}
+              {renderPathPopover('c')}
+            </h3>
             <div className="row row--justify">
               <div className="row row--justify">
                 <PathMeterButtons
