@@ -98,11 +98,6 @@ class AbilityMastery extends React.Component {
     } else {
       pointsRequirement = 1;
     }
-    
-    console.log('pathRequirement', pathRequirement);
-    console.log('pathMeter', pathMeter);
-    console.log('pointsRequirement', pointsRequirement);
-    console.log('masteryPoints', masteryPoints);
 
     if (Number(masteryPoints) >= Number(pointsRequirement)) {  
       this.setState({
