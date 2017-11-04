@@ -506,7 +506,7 @@
     "incant": "Insta-Cast",
     "cooldown": "10.0s cooldown",
     "note": "Execution - Requires Accusations<br>Requires Pistol<br>Costs 20% fewer action points per Accusation spent<br>Requires 13 points in Path of Confession",
-    "description": "A pistol shot that deals damage to your target and all other enemies near them.<br>  1 Accusation: 148 damage, 30 feet radius.<br>  2 Accusations: 189 damage, 35 feet radius.<br>  3 Accusations: 231 damage, 40 feet radius.<br>  4 Accusations: 273 damage, 43.3 feet radius.<br>  5 Accusations: 314 damage, 48.3 feet radius.",
+    "description": "A pistol shot that deals damage to your target and all other enemies near them. Knocks down primary target for 3 seconds.<br>  1 Accusation: 148 damage, 30 feet radius.<br>  2 Accusations: 189 damage, 35 feet radius.<br>  3 Accusations: 231 damage, 40 feet radius.<br>  4 Accusations: 273 damage, 43.3 feet radius.<br>  5 Accusations: 314 damage, 48.3 feet radius.",
     "category": "Ability"
   },
 
