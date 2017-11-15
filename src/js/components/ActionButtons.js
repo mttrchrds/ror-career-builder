@@ -1,5 +1,4 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
 import css from '../../css/components/ActionButtons.css';
 import h from '../helpers';
 
@@ -80,7 +79,7 @@ const ActionButtons = (props) => {
     props.gaChangeCareer('ActionButton');
   };
   const clickHome = () => {
-    browserHistory.push('/');
+    this.props.history.push('/');
   };
   return (
     <div className={css.container}>
