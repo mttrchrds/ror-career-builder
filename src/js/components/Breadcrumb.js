@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import IconChevronRight from '../icons/IconChevronRight';
 import css from '../../css/components/Breadcrumb.css';
 
