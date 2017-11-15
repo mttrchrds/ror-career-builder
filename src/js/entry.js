@@ -15,7 +15,7 @@ import reducers from "./reducers";
   Import Components
 */
 import App from './components/App';
-import Home from './components/Home';
+import Home from './containers/Home';
 import Career from './components/Career';
 import NotFound from './components/NotFound';
 

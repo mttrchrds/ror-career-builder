@@ -1,14 +1,20 @@
 import React from 'react';
+import { connect } from "react-redux";
 import h from '../helpers';
 import classNames from 'classnames';
 import Masthead from './Masthead';
-import News from './News';
+import News from '../components/News';
 import css from '../../css/components/Home.css';
+import { fetchCareers } from '../actions/actionCareers';
 
 class Home extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchCareers();
   }
 
   render() {
@@ -26,12 +32,7 @@ class Home extends React.Component {
       <div className="heightFull">
         <div className={css.wrapper}>
           <div className={css.container}>
-            <Masthead
-              careers={this.props.careers}
-              gaCareerSelected={this.props.gaCareerSelected}
-              updateSidebarVisibility={this.props.updateSidebarVisibility}
-              updateOverlayVisibility={this.props.updateOverlayVisibility}
-            />
+            <Masthead />
             <div className="grid">
               <div className="grid-col-1-3 grid-col-1@mobile">
                 <div className="marginTop--medium marginTop@mobile marginLeft--medium marginLeft@mobile marginRight--medium marginRight@mobile marginBottom--medium marginBottom--none@mobile">
@@ -57,11 +58,4 @@ class Home extends React.Component {
   }
 }
 
-Home.propTypes = {
-  careers: React.PropTypes.object,
-  updateSidebarVisibility: React.PropTypes.func,
-  updateOverlayVisibility: React.PropTypes.func,
-  gaCareerSelected: React.PropTypes.func,
-};
-
-export default Home;
+export default connect(null, { fetchCareers })(Home);
