@@ -17,8 +17,4 @@ const BarXp = (props) => {
   );
 };
 
-BarXp.propTypes = {
-  currentLevel: React.PropTypes.number,
-};
-
 export default BarXp;

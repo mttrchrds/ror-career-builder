@@ -13,9 +13,4 @@ const CareerTitle = (props) => {
     );
 };
 
-CareerTitle.propTypes = {
-  careerSlug: React.PropTypes.string,
-  career: React.PropTypes.object,
-};
-
 export default CareerTitle;

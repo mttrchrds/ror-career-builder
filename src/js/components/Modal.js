@@ -30,10 +30,4 @@ const Modal = (props) => {
   );
 };
 
-Modal.propTypes = {
-  updateOverlayVisibility: React.PropTypes.func,
-  updateModalVisibility: React.PropTypes.func,
-  modal: React.PropTypes.object,
-};
-
 export default Modal;

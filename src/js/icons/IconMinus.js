@@ -14,10 +14,4 @@ const IconMinus = (props) => {
   );
 };
 
-IconMinus.propTypes = {
-  classes: React.PropTypes.string,
-  name: React.PropTypes.string,
-  nameSlug: React.PropTypes.string,
-};
-
 export default IconMinus;

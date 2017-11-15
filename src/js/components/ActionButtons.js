@@ -100,29 +100,4 @@ const ActionButtons = (props) => {
   );
 };
 
-ActionButtons.propTypes = {
-  abilities: React.PropTypes.object,
-  resetCareer: React.PropTypes.func,
-  careerSlug: React.PropTypes.string,
-  currentLevel: React.PropTypes.number,
-  currentRenown: React.PropTypes.number,
-  currentTacticLimit: React.PropTypes.number,
-  masteryPoints: React.PropTypes.number,
-  pathAMeter: React.PropTypes.number,
-  pathBMeter: React.PropTypes.number,
-  pathCMeter: React.PropTypes.number,
-  selectedMorale1: React.PropTypes.number,
-  selectedMorale2: React.PropTypes.number,
-  selectedMorale3: React.PropTypes.number,
-  selectedMorale4: React.PropTypes.number,
-  selectedMasteries: React.PropTypes.array,
-  selectedTactics: React.PropTypes.array,
-  career: React.PropTypes.object,
-  updateModalContent: React.PropTypes.func,
-  updateOverlayVisibility: React.PropTypes.func,
-  updateModalVisibility: React.PropTypes.func,
-  updateSidebarVisibility: React.PropTypes.func,
-  gaChangeCareer: React.PropTypes.func,
-};
-
 export default ActionButtons;

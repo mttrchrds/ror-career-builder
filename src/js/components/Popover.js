@@ -211,16 +211,4 @@ class Popover extends React.Component {
   }
 }
 
-Popover.propTypes = {
-  content: React.PropTypes.node,
-  alignment: React.PropTypes.string,
-  activate: React.PropTypes.bool,
-  overlayClicked: React.PropTypes.func,
-  abilityOptional: React.PropTypes.bool,
-  abilityClicked: React.PropTypes.func,
-  abilitySelected: React.PropTypes.bool,
-  abilityStatus: React.PropTypes.bool,
-  abilityOperational: React.PropTypes.bool,
-};
-
 export default Popover;

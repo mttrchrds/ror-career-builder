@@ -133,20 +133,4 @@ const PathMeter = (props) =>
     </div>
   </div>;
 
-PathMeter.propTypes = {
-  abilities: React.PropTypes.object,
-  pathMeter: React.PropTypes.number,
-  pathOptionalAbilities: React.PropTypes.object,
-  masteryPoints: React.PropTypes.number,
-  incrementMasteryPoints: React.PropTypes.func,
-  decrementMasteryPoints: React.PropTypes.func,
-  masteryPath: React.PropTypes.string,
-  selectedMasteries: React.PropTypes.array,
-  updateSelectedMasteries: React.PropTypes.func,
-  updateSelectedTactics: React.PropTypes.func,
-  updateSelectedMorale: React.PropTypes.func,
-  updateCoreTactics: React.PropTypes.func,
-  updateCoreMorales: React.PropTypes.func,
-};
-
 export default PathMeter;

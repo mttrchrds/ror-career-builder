@@ -38,9 +38,4 @@ const BarRenown = (props) => {
   );
 };
 
-BarRenown.propTypes = {
-  currentLevel: React.PropTypes.number,
-  currentRenown: React.PropTypes.number,
-};
-
 export default BarRenown;

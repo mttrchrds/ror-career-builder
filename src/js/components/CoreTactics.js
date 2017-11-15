@@ -22,13 +22,4 @@ const CoreTactics = (props) => {
   );
 };
 
-CoreTactics.propTypes = {
-  abilities: React.PropTypes.object,
-  coreTactics: React.PropTypes.array,
-  currentLevel: React.PropTypes.number,
-  currentTacticLimit: React.PropTypes.number,
-  selectedTactics: React.PropTypes.array,
-  updateSelectedTactics: React.PropTypes.func,
-};
-
 export default CoreTactics;

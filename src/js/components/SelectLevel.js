@@ -42,13 +42,4 @@ class SelectLevel extends React.Component {
   }
 }
 
-SelectLevel.propTypes = {
-  resetSelections: React.PropTypes.func,
-  updateLevel: React.PropTypes.func,
-  updateMasteryPoints: React.PropTypes.func,
-  currentRenown: React.PropTypes.number,
-  updateCurrentTacticLimit: React.PropTypes.func,
-  currentLevel: React.PropTypes.number,
-};
-
 export default SelectLevel;

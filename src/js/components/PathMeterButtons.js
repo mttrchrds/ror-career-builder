@@ -81,16 +81,4 @@ const PathMeterButtons = (props) => {
   );
 };
 
-PathMeterButtons.propTypes = {
-  masteryPoints: React.PropTypes.number,
-  pathMeter: React.PropTypes.number,
-  masteryPath: React.PropTypes.string,
-  incrementPathMeter: React.PropTypes.func,
-  decrementPathMeter: React.PropTypes.func,
-  decrementMasteryPoints: React.PropTypes.func,
-  incrementMasteryPoints: React.PropTypes.func,
-  setMasteryPoints: React.PropTypes.func,
-  setPathMeter: React.PropTypes.func,
-};
-
 export default PathMeterButtons;

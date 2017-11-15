@@ -35,11 +35,4 @@ const Breadcrumb = (props) => {
   );
 };
 
-Breadcrumb.propTypes = {
-  gaChangeCareer: React.PropTypes.func,
-  updateOverlayVisibility: React.PropTypes.func,
-  updateSidebarVisibility: React.PropTypes.func,
-  career: React.PropTypes.object,
-};
-
 export default Breadcrumb;

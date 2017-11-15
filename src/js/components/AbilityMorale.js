@@ -171,16 +171,4 @@ class AbilityMorale extends React.Component {
   }
 }
 
-AbilityMorale.propTypes = {
-  details: React.PropTypes.object,
-  pathMeter: React.PropTypes.number,
-  currentLevel: React.PropTypes.number,
-  moraleRank: React.PropTypes.number,
-  selectedMorale1: React.PropTypes.number,
-  selectedMorale2: React.PropTypes.number,
-  selectedMorale3: React.PropTypes.number,
-  selectedMorale4: React.PropTypes.number,
-  updateSelectedMorale: React.PropTypes.func,
-};
-
 export default AbilityMorale;

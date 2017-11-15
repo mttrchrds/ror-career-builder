@@ -35,12 +35,4 @@ class SelectRenown extends React.Component {
   }
 }
 
-SelectRenown.propTypes = {
-  resetSelections: React.PropTypes.func,
-  updateRenown: React.PropTypes.func,
-  updateMasteryPoints: React.PropTypes.func,
-  currentRenown: React.PropTypes.number,
-  currentLevel: React.PropTypes.number,
-};
-
 export default SelectRenown;

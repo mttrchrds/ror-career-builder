@@ -85,15 +85,4 @@ const CoreMorales = (props) => {
   );
 };
 
-CoreMorales.propTypes = {
-  coreMorales: React.PropTypes.array,
-  abilities: React.PropTypes.object,
-  currentLevel: React.PropTypes.number,
-  selectedMorale1: React.PropTypes.number,
-  selectedMorale2: React.PropTypes.number,
-  selectedMorale3: React.PropTypes.number,
-  selectedMorale4: React.PropTypes.number,
-  updateSelectedMorale: React.PropTypes.func,
-};
-
 export default CoreMorales;

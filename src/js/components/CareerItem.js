@@ -20,10 +20,4 @@ const SidebarItem = (props) => {
   );
 };
 
-SidebarItem.propTypes = {
-  careerName: React.PropTypes.string,
-  shortName: React.PropTypes.string,
-  gaCareerSelected: React.PropTypes.func,
-};
-
 export default SidebarItem;

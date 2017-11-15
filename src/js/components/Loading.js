@@ -15,8 +15,4 @@ const Loading = (props) => {
   );
 };
 
-Loading.propTypes = {
-  sidebar: React.PropTypes.object,
-}
-
 export default Loading;

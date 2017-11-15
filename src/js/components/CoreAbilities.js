@@ -19,10 +19,4 @@ const CoreAbilities = (props) => {
   );
 };
 
-CoreAbilities.propTypes = {
-  abilities: React.PropTypes.object,
-  coreAbilities: React.PropTypes.array,
-  currentLevel: React.PropTypes.number,
-};
-
 export default CoreAbilities;

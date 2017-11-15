@@ -194,34 +194,4 @@ const Mastery = (props) => {
   );
 };
 
-Mastery.propTypes = {
-  incrementPathMeter: React.PropTypes.func,
-  decrementPathMeter: React.PropTypes.func,
-  pathACoreAbilities: React.PropTypes.array,
-  pathBCoreAbilities: React.PropTypes.array,
-  pathCCoreAbilities: React.PropTypes.array,
-  incrementMasteryPoints: React.PropTypes.func,
-  decrementMasteryPoints: React.PropTypes.func,
-  career: React.PropTypes.object,
-  masteryPoints: React.PropTypes.number,
-  updateMasteryPoints: React.PropTypes.func,
-  currentLevel: React.PropTypes.number,
-  pathAOptionalAbilities: React.PropTypes.object,
-  pathBOptionalAbilities: React.PropTypes.object,
-  pathCOptionalAbilities: React.PropTypes.object,
-  pathAMeter: React.PropTypes.number,
-  pathBMeter: React.PropTypes.number,
-  pathCMeter: React.PropTypes.number,
-  pathACoreOverflow: React.PropTypes.array,
-  pathBCoreOverflow: React.PropTypes.array,
-  pathCCoreOverflow: React.PropTypes.array,
-  abilities: React.PropTypes.object,
-  selectedMasteries: React.PropTypes.array,
-  updateSelectedMasteries: React.PropTypes.func,
-  updateSelectedTactics: React.PropTypes.func,
-  updateSelectedMorale: React.PropTypes.func,
-  updateCoreTactics: React.PropTypes.func,
-  updateCoreMorales: React.PropTypes.func,
-};
-
 export default Mastery;

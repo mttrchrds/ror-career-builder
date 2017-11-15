@@ -123,9 +123,4 @@ class Ability extends React.Component {
   }
 }
 
-Ability.propTypes = {
-  details: React.PropTypes.object,
-  currentLevel: React.PropTypes.number,
-};
-
 export default Ability;

@@ -42,9 +42,4 @@ const PopoverAbility = (props) =>
     />
   </div>;
 
-PopoverAbility.propTypes = {
-  imgSrc: React.PropTypes.string,
-  details: React.PropTypes.object,
-};
-
 export default PopoverAbility;
