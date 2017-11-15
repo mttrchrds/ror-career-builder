@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import promise from "redux-promise";
 // For Google Analytics
 import 'autotrack';
 import '../../analytics.js';
 import '../css/entry.css';
+
+import reducers from "./reducers";
 
 /*
   Import Components
@@ -14,13 +19,17 @@ import Home from './components/Home';
 import Career from './components/Career';
 import NotFound from './components/NotFound';
 
-ReactDOM.render((
-	<Router history={browserHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home} />
-			<Route path="/career/:careerName" component={Career} />
-      <Route path="/career/:careerName(/:careerSaved)" component={Career} />
-			<Route path="*" component={NotFound} />
-		</Route>
-	</Router>
-), document.querySelector('#app'));
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+ReactDOM.render(
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<Router>
+			<Switch>
+				<Route path="/career/:careerName" component={Career} />
+				<Route path="/career/:careerName(/:careerSaved)" component={Career} />
+				<Route path="/" component={Home} />
+				<Route component={NotFound} />
+			</Switch>
+		</Router>
+	</Provider>, 
+	document.querySelector('#app'));
