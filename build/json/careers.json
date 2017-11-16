@@ -2,6 +2,7 @@
   "bright-wizard": {
     "code": "BW",
     "name": "Bright Wizard",
+    "slug": "bright-wizard",
     "faction": "Order",
     "race": "Empire",
     "class": "Ranged DPS",
@@ -50,6 +51,7 @@
   "knight-of-the-blazing-sun": {
     "code": "KOTBS",
     "name": "Knight of the Blazing Sun",
+    "slug": "knight-of-the-blazing-sun",
     "faction": "Order",
     "race": "Empire",
     "class": "Tank",
@@ -98,6 +100,7 @@
   "warrior-priest": {
     "code": "WP",
     "name": "Warrior Priest",
+    "slug": "warrior-priest",
     "faction": "Order",
     "race": "Empire",
     "class": "Healer",
@@ -146,6 +149,7 @@
   "witch-hunter": {
     "code": "WH",
     "name": "Witch Hunter",
+    "slug": "witch-hunter",
     "faction": "Order",
     "race": "Empire",
     "class": "Melee DPS",
@@ -194,6 +198,7 @@
   "engineer": {
     "code": "ENG",
     "name": "Engineer",
+    "slug": "engineer",
     "faction": "Order",
     "race": "Dwarf",
     "class": "Ranged DPS",
@@ -242,6 +247,7 @@
   "ironbreaker": {
     "code": "IB",
     "name": "Ironbreaker",
+    "slug": "ironbreaker",
     "faction": "Order",
     "race": "Dwarf",
     "class": "Tank",
@@ -290,6 +296,7 @@
   "rune-priest": {
     "code": "RP",
     "name": "Runepriest",
+    "slug": "rune-priest",
     "faction": "Order",
     "race": "Dwarf",
     "class": "Healer",
@@ -338,6 +345,7 @@
   "slayer": {
     "code": "SLA",
     "name": "Slayer",
+    "slug": "slayer",
     "faction": "Order",
     "race": "Dwarf",
     "class": "Melee DPS",
@@ -386,6 +394,7 @@
   "archmage": {
     "code": "AM",
     "name": "Archmage",
+    "slug": "archmage",
     "faction": "Order",
     "race": "High Elf",
     "class": "Healer",
@@ -434,6 +443,7 @@
   "shadow-warrior": {
     "code": "SW",
     "name": "Shadow Warrior",
+    "slug": "shadow-warrior",
     "faction": "Order",
     "race": "High Elf",
     "class": "Ranged DPS",
@@ -482,6 +492,7 @@
   "sword-master": {
     "code": "SM",
     "name": "Sword Master",
+    "slug": "sword-master",
     "faction": "Order",
     "race": "High Elf",
     "class": "Tank",
@@ -530,6 +541,7 @@
   "white-lion": {
     "code": "WL",
     "name": "White Lion",
+    "slug": "white-lion",
     "faction": "Order",
     "race": "High Elf",
     "class": "Melee DPS",
@@ -589,6 +601,7 @@
   "chosen": {
     "code": "CHO",
     "name": "Chosen",
+    "slug": "chosen",
     "faction": "Destruction",
     "race": "Chaos",
     "class": "Tank",
@@ -637,6 +650,7 @@
   "magus": {
     "code": "MAG",
     "name": "Magus",
+    "slug": "magus",
     "faction": "Destruction",
     "race": "Chaos",
     "class": "Ranged DPS",
@@ -685,6 +699,7 @@
   "marauder": {
     "code": "MAR",
     "name": "Marauder",
+    "slug": "marauder",
     "faction": "Destruction",
     "race": "Chaos",
     "class": "Melee DPS",
@@ -733,6 +748,7 @@
   "zealot": {
     "code": "ZEA",
     "name": "Zealot",
+    "slug": "zealot",
     "faction": "Destruction",
     "race": "Chaos",
     "class": "Healer",
@@ -781,6 +797,7 @@
   "black-orc": {
     "code": "BO",
     "name": "Black Orc",
+    "slug": "black-orc",
     "faction": "Destruction",
     "race": "Greenskin",
     "class": "Tank",
@@ -829,6 +846,7 @@
   "choppa": {
     "code": "CHP",
     "name": "Choppa",
+    "slug": "choppa",
     "faction": "Destruction",
     "race": "Greenskin",
     "class": "Melee DPS",
@@ -877,6 +895,7 @@
   "shaman": {
     "code": "SHA",
     "name": "Shaman",
+    "slug": "shaman",
     "faction": "Destruction",
     "race": "Greenskin",
     "class": "Healer",
@@ -925,6 +944,7 @@
   "squig-herder": {
     "code": "SH",
     "name": "Squig Herder",
+    "slug": "squig-herder",
     "faction": "Destruction",
     "race": "Greenskin",
     "class": "Ranged DPS",
@@ -973,6 +993,7 @@
   "black-guard": {
     "code": "BG",
     "name": "Black Guard",
+    "slug": "black-guard",
     "faction": "Destruction",
     "race": "Dark Elf",
     "class": "Tank",
@@ -1021,6 +1042,7 @@
   "disciple-of-khaine": {
     "code": "DOK",
     "name": "Disciple of Khaine",
+    "slug": "disciple-of-khaine",
     "faction": "Destruction",
     "race": "Dark Elf",
     "class": "Healer",
@@ -1069,6 +1091,7 @@
   "sorcerer": {
     "code": "SOR",
     "name": "Sorcerer",
+    "slug": "sorcerer",
     "faction": "Destruction",
     "race": "Dark Elf",
     "class": "Ranged DPS",
@@ -1117,6 +1140,7 @@
   "witch-elf": {
     "code": "WE",
     "name": "Witch Elf",
+    "slug": "witch-elf",
     "faction": "Destruction",
     "race": "Dark Elf",
     "class": "Melee DPS",
