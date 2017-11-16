@@ -20,7 +20,9 @@ class Masthead extends React.Component {
   renderCareers(key, faction) {
     if (this.props.careers[key].race === faction) {
       return (
-        <CareerItem key={key} gaCareerSelected={this.props.gaCareerSelected} shortName={key} careerName={this.props.careers[key].name} />
+        <div className={css.careersItem}>
+          <CareerItem key={key} career={this.props.careers[key]} />
+        </div>
       );
     }
     return false;

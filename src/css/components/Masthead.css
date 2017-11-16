@@ -1,5 +1,5 @@
 @value color-base-1, color-text-primary, color-text-secondary from "../values/colours.css";
-@value spacing, spacing-medium from "../values/spacing.css";
+@value spacing, spacing-medium, spacing-small from "../values/spacing.css";
 @value mq-mobile, mq-sm-min from "../values/mediaQueries.css";
 @value font-size-1, font-size-4 from "../values/fontSizes.css";
 
@@ -134,6 +134,9 @@
   font-weight: 400;
   margin-bottom: spacing;
   color: color-text-secondary;
+}
+.careersItem {
+  margin-bottom: spacing-small;
 }
 .careersFaction {
   display: flex;
