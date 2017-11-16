@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import classNames from 'classnames';
 import CareerItem from '../components/CareerItem';
 import css from '../../css/components/Masthead.css';
+import { toggleSidebar } from '../actions/actionSidebar';
+import { toggleOverlayShow } from '../actions/actionOverlayShow';
 
-class Masthead extends React.Component {
+class Masthead extends Component {
 
   constructor(props) {
     super(props);
@@ -37,8 +39,8 @@ class Masthead extends React.Component {
 
   clickMastheadMobile(e) {
     e.preventDefault();
-    this.props.updateSidebarVisibility(true);
-    this.props.updateOverlayVisibility(true);
+    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleSidebar(!this.props.sidebar);
   }
 
   render() {
@@ -160,10 +162,12 @@ class Masthead extends React.Component {
   }
 }
 
-function mapStateToProps({ careers }) {
+function mapStateToProps({ careers, sidebar, overlayShow }) {
   return {
-    careers
+    careers,
+    sidebar,
+    overlayShow
   };
 }
 
-export default connect(mapStateToProps, null)(Masthead);
+export default connect(mapStateToProps, { toggleSidebar, toggleOverlayShow })(Masthead);

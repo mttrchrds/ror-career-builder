@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux";
-import h from '../helpers';
 import classNames from 'classnames';
-import Masthead from './Masthead';
-import News from '../components/News';
 import css from '../../css/components/Home.css';
+
 import { fetchCareers } from '../actions/actionCareers';
+
+import Masthead from './Masthead';
+import Sidebar from './Sidebar';
+import Overlay from './Overlay';
+import News from '../components/News';
 
 class Home extends React.Component {
 
@@ -53,6 +56,8 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
+        <Overlay overlayVisible={true} />
+        <Sidebar />
       </div>
     );
   }
