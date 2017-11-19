@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Big Shootin'",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [5576,5479,5495,5472,5490,5491,5477,5492,5489,5480]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 5550,

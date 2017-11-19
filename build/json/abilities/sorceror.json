@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Agony",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [5372,5386,5375,5383,5380]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "23400",
       "id": 5434,

@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Carnage",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [5596,5591,5579,5597,5582]
     }
   },
-  "abilityData": [
+  "abilities": [
   {
     "image": "22736",
     "id": 5653,

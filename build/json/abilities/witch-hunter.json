@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Confession",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [4338,4347,4352,4353,4335]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "08051",
       "id": 4335,

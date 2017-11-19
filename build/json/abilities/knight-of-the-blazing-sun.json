@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Conquest",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [3050,3062,3066,3063,3049,3048]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 3122,

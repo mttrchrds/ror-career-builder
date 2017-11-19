@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Vengeance",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [3736,3733,3739,3726,3719]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 3794,

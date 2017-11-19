@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of The Scout",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [3932,3933,3946,3988,3929]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "13324",
       "id": 3930,

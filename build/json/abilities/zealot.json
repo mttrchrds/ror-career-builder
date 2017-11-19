@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Alchemy",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [5687,5689,5693,5696,5695]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 5756,

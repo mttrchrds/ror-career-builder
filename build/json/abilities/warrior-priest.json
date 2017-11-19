@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Salvation",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [4138,4140,4143,4134,4232]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "08040",
       "id": 4190,

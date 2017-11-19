@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Da Brawler",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [4459,4441,4456,4444,4458]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 4514,

@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Grungni",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [3835,3829,3837,3831,3838]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 3898,

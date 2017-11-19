@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Khaine",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [2853,2858,2854,2942,2852]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22704",
       "id": 2869,

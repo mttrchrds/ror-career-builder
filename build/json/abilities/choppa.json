@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Da Savage",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [4662,4651,4649,4661,4665]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 4720,

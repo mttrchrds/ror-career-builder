@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Isha",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [3419,3414,3427,3429,3413]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 3484,

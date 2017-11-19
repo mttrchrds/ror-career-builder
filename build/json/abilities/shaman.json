@@ -1,5 +1,5 @@
 {
-  "abilityStructure": {
+  "mastery": {
     "a": {
       "name": "Path of Mork",
       "optionalAbilities": {
@@ -40,7 +40,7 @@
       "coreAbilities": [5286,5284,5270,5271,5276]
     }
   },
-  "abilityData": [
+  "abilities": [
     {
       "image": "22736",
       "id": 5341,
