@@ -1,4 +1,47 @@
-[{
+{
+  "abilityStructure": {
+    "a": {
+      "name": "Path of Carnage",
+      "optionalAbilities": {
+        "lvl1": 5623,
+        "lvl2": 5624,
+        "lvl3": 5625,
+        "lvl4": 5626,
+        "lvl5": 5627,
+        "lvl6": 5628,
+        "lvl7": 5629
+      },
+      "coreAbilities": [5588,5679,5590,5589,5581]
+    },
+    "b": {
+      "name": "Path of Suffering",
+      "optionalAbilities": {
+        "lvl1": 5630,
+        "lvl2": 5631,
+        "lvl3": 5632,
+        "lvl4": 5633,
+        "lvl5": 5634,
+        "lvl6": 5635,
+        "lvl7": 5636
+      },
+      "coreAbilities": [5595,5586,5583,5580,5593]
+    },
+    "c": {
+      "name": "Path of Treachery",
+      "optionalAbilities": {
+        "lvl1": 5637,
+        "lvl2": 5638,
+        "lvl3": 5639,
+        "lvl4": 5640,
+        "lvl5": 5641,
+        "lvl6": 5642,
+        "lvl7": 5643
+      },
+      "coreAbilities": [5596,5591,5579,5597,5582]
+    }
+  },
+  "abilityData": [
+  {
     "image": "22736",
     "id": 5653,
     "name": "Aethyric Insight",
@@ -1566,3 +1609,4 @@
     "category": "Ability"
   }
 ]
+}
