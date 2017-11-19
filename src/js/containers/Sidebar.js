@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import css from '../../css/components/Sidebar.css';
-import CareerItem from '../components/CareerItem';
+import CareerItem from './CareerItem';
 
 class Sidebar extends Component {
 
@@ -15,8 +15,8 @@ class Sidebar extends Component {
       Object.keys(this.props.careers).map(
         (key) =>  {
           return (
-            <div className={css.item}>
-              <CareerItem key={key} career={this.props.careers[key]} />
+            <div className={css.item} key={key}>
+              <CareerItem career={this.props.careers[key]} />
             </div>
           );
         }

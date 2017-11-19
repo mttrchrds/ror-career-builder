@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import classNames from 'classnames';
-import CareerItem from '../components/CareerItem';
 import css from '../../css/components/Masthead.css';
+
+import CareerItem from '../components/CareerItem';
+
 import { toggleSidebar } from '../actions/actionSidebar';
 import { toggleOverlayShow } from '../actions/actionOverlayShow';
 
@@ -22,8 +24,8 @@ class Masthead extends Component {
   renderCareers(key, faction) {
     if (this.props.careers[key].race === faction) {
       return (
-        <div className={css.careersItem}>
-          <CareerItem key={key} career={this.props.careers[key]} />
+        <div className={css.careersItem} key={key}>
+          <CareerItem career={this.props.careers[key]} />
         </div>
       );
     }

@@ -16,7 +16,7 @@ import reducers from "./reducers";
 */
 import App from './components/App';
 import Home from './containers/Home';
-import Career from './components/Career';
+import Career from './containers/Career';
 import NotFound from './components/NotFound';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -25,8 +25,8 @@ ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<Router>
 			<Switch>
-				<Route path="/career/:careerName" component={Career} />
-				<Route path="/career/:careerName(/:careerSaved)" component={Career} />
+				<Route path="/career/:slug" component={Career} />
+				<Route path="/career/:slug(/:careerSaved)" component={Career} />
 				<Route path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>
