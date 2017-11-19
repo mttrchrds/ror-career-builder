@@ -1,1189 +1,170 @@
 {
   "bright-wizard": {
-    "code": "BW",
     "name": "Bright Wizard",
     "slug": "bright-wizard",
     "faction": "Order",
     "race": "Empire",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Incineration",
-        "optionalAbilities": {
-          "lvl1": 3554,
-          "lvl2": 3555,
-          "lvl3": 3556,
-          "lvl4": 3557,
-          "lvl5": 3558,
-          "lvl6": 3559,
-          "lvl7": 3560
-        },
-        "coreAbilities": [3512,3520,3516,3611,3525]
-      },
-      "b": {
-        "name": "Path of Immolation",
-        "optionalAbilities": {
-          "lvl1": 3561,
-          "lvl2": 3562,
-          "lvl3": 3563,
-          "lvl4": 3564,
-          "lvl5": 3565,
-          "lvl6": 3566,
-          "lvl7": 3567
-        },
-        "coreAbilities": [3528,3610,3524,3522,3517]
-      },
-      "c": {
-        "name": "Path of Conflagaration",
-        "optionalAbilities": {
-          "lvl1": 3568,
-          "lvl2": 3569,
-          "lvl3": 3570,
-          "lvl4": 3571,
-          "lvl5": 3572,
-          "lvl6": 3573,
-          "lvl7": 3574
-        },
-        "coreAbilities": [3515,3526,3523,3518,3529]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "knight-of-the-blazing-sun": {
-    "code": "KOTBS",
     "name": "Knight of the Blazing Sun",
     "slug": "knight-of-the-blazing-sun",
     "faction": "Order",
     "race": "Empire",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Conquest",
-        "optionalAbilities": {
-          "lvl1": 3092,
-          "lvl2": 3093,
-          "lvl3": 3094,
-          "lvl4": 3095,
-          "lvl5": 3096,
-          "lvl6": 3097,
-          "lvl7": 3098
-        },
-        "coreAbilities": [3060,3045,3046,3053,3067,3064]
-      },
-      "b": {
-        "name": "Path of Vigilance",
-        "optionalAbilities": {
-          "lvl1": 3099,
-          "lvl2": 3100,
-          "lvl3": 3101,
-          "lvl4": 3102,
-          "lvl5": 3103,
-          "lvl6": 3104,
-          "lvl7": 3105
-        },
-        "coreAbilities": [3148,3047,3052,3059,3058,3056]
-      },
-      "c": {
-        "name": "Path of Glory",
-        "optionalAbilities": {
-          "lvl1": 3106,
-          "lvl2": 3107,
-          "lvl3": 3108,
-          "lvl4": 3109,
-          "lvl5": 3110,
-          "lvl6": 3111,
-          "lvl7": 3112
-        },
-        "coreAbilities": [3050,3062,3066,3063,3049,3048]
-      }
-    }
+    "class": "Tank"
   },
   "warrior-priest": {
-    "code": "WP",
     "name": "Warrior Priest",
     "slug": "warrior-priest",
     "faction": "Order",
     "race": "Empire",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Salvation",
-        "optionalAbilities": {
-          "lvl1": 4177,
-          "lvl2": 4174,
-          "lvl3": 4175,
-          "lvl4": 4176,
-          "lvl5": 4173,
-          "lvl6": 4178,
-          "lvl7": 4179
-        },
-        "coreAbilities": [4144,4141,4229,4135,4231]
-      },
-      "b": {
-        "name": "Path of Grace",
-        "optionalAbilities": {
-          "lvl1": 4180,
-          "lvl2": 4181,
-          "lvl3": 4182,
-          "lvl4": 4183,
-          "lvl5": 4184,
-          "lvl6": 4185,
-          "lvl7": 4186
-        },
-        "coreAbilities": [4147,4146,4131,4133,4137]
-      },
-      "c": {
-        "name": "Path of Wrath",
-        "optionalAbilities": {
-          "lvl1": 5890,
-          "lvl2": 4188,
-          "lvl3": 4154,
-          "lvl4": 4190,
-          "lvl5": 4191,
-          "lvl6": 4192,
-          "lvl7": 4193
-        },
-        "coreAbilities": [4138,4140,4143,4134,4232]
-      }
-    }
+    "class": "Healer"
   },
   "witch-hunter": {
-    "code": "WH",
     "name": "Witch Hunter",
     "slug": "witch-hunter",
     "faction": "Order",
     "race": "Empire",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Confession",
-        "optionalAbilities": {
-          "lvl1": 4379,
-          "lvl2": 4380,
-          "lvl3": 4381,
-          "lvl4": 4382,
-          "lvl5": 4383,
-          "lvl6": 4384,
-          "lvl7": 4385
-        },
-        "coreAbilities": [4345,4351,4436,4344,4337]
-      },
-      "b": {
-        "name": "Path of Inquisition",
-        "optionalAbilities": {
-          "lvl1": 4386,
-          "lvl2": 4387,
-          "lvl3": 4388,
-          "lvl4": 4389,
-          "lvl5": 4390,
-          "lvl6": 4391,
-          "lvl7": 4392
-        },
-        "coreAbilities": [4349,4336,4346,4339,4342]
-      },
-      "c": {
-        "name": "Path of Judgment",
-        "optionalAbilities": {
-          "lvl1": 4393,
-          "lvl2": 4394,
-          "lvl3": 4395,
-          "lvl4": 4396,
-          "lvl5": 4397,
-          "lvl6": 4398,
-          "lvl7": 4399
-        },
-        "coreAbilities": [4338,4347,4352,4353,4335]
-      }
-    }
+    "class": "Melee DPS"
   },
   "engineer": {
-    "code": "ENG",
     "name": "Engineer",
     "slug": "engineer",
     "faction": "Order",
     "race": "Dwarf",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of The Rifleman",
-        "optionalAbilities": {
-          "lvl1": 3660,
-          "lvl2": 3661,
-          "lvl3": 3662,
-          "lvl4": 3663,
-          "lvl5": 3664,
-          "lvl6": 3665,
-          "lvl7": 3666
-        },
-        "coreAbilities": [3633,3622,3623,3716,3635]
-      },
-      "b": {
-        "name": "Path of The Grenadier",
-        "optionalAbilities": {
-          "lvl1": 3667,
-          "lvl2": 3668,
-          "lvl3": 3669,
-          "lvl4": 3670,
-          "lvl5": 3671,
-          "lvl6": 3672,
-          "lvl7": 3673
-        },
-        "coreAbilities": [3627,3626,3613,3629,3617]
-      },
-      "c": {
-        "name": "Path of The Tinkerer",
-        "optionalAbilities": {
-          "lvl1": 3639,
-          "lvl2": 3675,
-          "lvl3": 3676,
-          "lvl4": 3677,
-          "lvl5": 3678,
-          "lvl6": 3679,
-          "lvl7": 3680
-        },
-        "coreAbilities": [3634,3628,3616,3632,3618]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "ironbreaker": {
-    "code": "IB",
     "name": "Ironbreaker",
     "slug": "ironbreaker",
     "faction": "Order",
     "race": "Dwarf",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Vengeance",
-        "optionalAbilities": {
-          "lvl1": 3764,
-          "lvl2": 3765,
-          "lvl3": 3766,
-          "lvl4": 3767,
-          "lvl5": 3768,
-          "lvl6": 3769,
-          "lvl7": 3770
-        },
-        "coreAbilities": [3729,3732,3738,3721,3720]
-      },
-      "b": {
-        "name": "Path of Stone",
-        "optionalAbilities": {
-          "lvl1": 3771,
-          "lvl2": 3772,
-          "lvl3": 3773,
-          "lvl4": 3774,
-          "lvl5": 3775,
-          "lvl6": 3776,
-          "lvl7": 3777
-        },
-        "coreAbilities": [3718,3725,3723,3822,3731]
-      },
-      "c": {
-        "name": "Path of Brotherhood",
-        "optionalAbilities": {
-          "lvl1": 3778,
-          "lvl2": 3779,
-          "lvl3": 3780,
-          "lvl4": 3781,
-          "lvl5": 3782,
-          "lvl6": 3783,
-          "lvl7": 3784
-        },
-        "coreAbilities": [3736,3733,3739,3726,3719]
-      }
-    }
+    "class": "Tank"
   },
   "rune-priest": {
-    "code": "RP",
     "name": "Runepriest",
     "slug": "rune-priest",
     "faction": "Order",
     "race": "Dwarf",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Grungni",
-        "optionalAbilities": {
-          "lvl1": 3868,
-          "lvl2": 3869,
-          "lvl3": 3870,
-          "lvl4": 3871,
-          "lvl5": 3872,
-          "lvl6": 3873,
-          "lvl7": 3874
-        },
-        "coreAbilities": [3924,3830,3826,3841,3825,3925]
-      },
-      "b": {
-        "name": "Path of Valaya",
-        "optionalAbilities": {
-          "lvl1": 3875,
-          "lvl2": 3876,
-          "lvl3": 3877,
-          "lvl4": 3878,
-          "lvl5": 3879,
-          "lvl6": 3880,
-          "lvl7": 3881
-        },
-        "coreAbilities": [3842,3827,3833,3823,3834]
-      },
-      "c": {
-        "name": "Path of Grimnir",
-        "optionalAbilities": {
-          "lvl1": 3882,
-          "lvl2": 3883,
-          "lvl3": 3884,
-          "lvl4": 3885,
-          "lvl5": 3886,
-          "lvl6": 3887,
-          "lvl7": 3888
-        },
-        "coreAbilities": [3835,3829,3837,3831,3838]
-      }
-    }
+    "class": "Healer"
   },
   "slayer": {
-    "code": "SLA",
     "name": "Slayer",
     "slug": "slayer",
     "faction": "Order",
     "race": "Dwarf",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of The Trollslayer",
-        "optionalAbilities": {
-          "lvl1": 4073,
-          "lvl2": 4074,
-          "lvl3": 4075,
-          "lvl4": 4076,
-          "lvl5": 4077,
-          "lvl6": 4078,
-          "lvl7": 4079
-        },
-        "coreAbilities": [4035,4031,4033,4036,4047]
-      },
-      "b": {
-        "name": "Path of The Giantslayer",
-        "optionalAbilities": {
-          "lvl1": 4080,
-          "lvl2": 4081,
-          "lvl3": 4082,
-          "lvl4": 4083,
-          "lvl5": 4084,
-          "lvl6": 4085,
-          "lvl7": 4086
-        },
-        "coreAbilities": [4041,4130,4030,4046,4037]
-      },
-      "c": {
-        "name": "Path of The Skavenslayer",
-        "optionalAbilities": {
-          "lvl1": 4087,
-          "lvl2": 4088,
-          "lvl3": 4089,
-          "lvl4": 4090,
-          "lvl5": 4091,
-          "lvl6": 4092,
-          "lvl7": 4093
-        },
-        "coreAbilities": [4034,4048,4045,4032,4044]
-      }
-    }
+    "class": "Melee DPS"
   },
   "archmage": {
-    "code": "AM",
     "name": "Archmage",
     "slug": "archmage",
     "faction": "Order",
     "race": "High Elf",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Isha",
-        "optionalAbilities": {
-          "lvl1": 3454,
-          "lvl2": 3455,
-          "lvl3": 3456,
-          "lvl4": 3457,
-          "lvl5": 3458,
-          "lvl6": 3459,
-          "lvl7": 3460
-        },
-        "coreAbilities": [3416,3509,3423,3418,3425]
-      },
-      "b": {
-        "name": "Path of Asuryan",
-        "optionalAbilities": {
-          "lvl1": 3461,
-          "lvl2": 3462,
-          "lvl3": 3463,
-          "lvl4": 3464,
-          "lvl5": 3465,
-          "lvl6": 3466,
-          "lvl7": 3467
-        },
-        "coreAbilities": [3415,3510,3421,3411,3428]
-      },
-      "c": {
-        "name": "Path of Vaul",
-        "optionalAbilities": {
-          "lvl1": 3468,
-          "lvl2": 3469,
-          "lvl3": 3470,
-          "lvl4": 3471,
-          "lvl5": 3472,
-          "lvl6": 3473,
-          "lvl7": 3474
-        },
-        "coreAbilities": [3419,3414,3427,3429,3413]
-      }
-    }
+    "class": "Healer"
   },
   "shadow-warrior": {
-    "code": "SW",
     "name": "Shadow Warrior",
     "slug": "shadow-warrior",
     "faction": "Order",
     "race": "High Elf",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of The Scout",
-        "optionalAbilities": {
-          "lvl1": 3971,
-          "lvl2": 3972,
-          "lvl3": 3973,
-          "lvl4": 3974,
-          "lvl5": 3975,
-          "lvl6": 3976,
-          "lvl7": 3977
-        },
-        "coreAbilities": [3945,3940,3939,4027,3930]
-      },
-      "b": {
-        "name": "Path of Assault",
-        "optionalAbilities": {
-          "lvl1": 3978,
-          "lvl2": 3979,
-          "lvl3": 3980,
-          "lvl4": 3981,
-          "lvl5": 3982,
-          "lvl6": 3983,
-          "lvl7": 3984
-        },
-        "coreAbilities": [3943,4029,3936,3944,3931]
-      },
-      "c": {
-        "name": "Path of The Skirmisher",
-        "optionalAbilities": {
-          "lvl1": 3985,
-          "lvl2": 3990,
-          "lvl3": 3987,
-          "lvl4": 3986,
-          "lvl5": 3989,
-          "lvl6": 3941,
-          "lvl7": 3991
-        },
-        "coreAbilities": [3932,3933,3946,3988,3929]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "sword-master": {
-    "code": "SM",
     "name": "Sword Master",
     "slug": "sword-master",
     "faction": "Order",
     "race": "High Elf",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Khaine",
-        "optionalAbilities": {
-          "lvl1": 2886,
-          "lvl2": 2887,
-          "lvl3": 2888,
-          "lvl4": 2889,
-          "lvl5": 2890,
-          "lvl6": 2891,
-          "lvl7": 2892
-        },
-        "coreAbilities": [2861,2840,2848,2847,2841]
-      },
-      "b": {
-        "name": "Path of Vaul",
-        "optionalAbilities": {
-          "lvl1": 2893,
-          "lvl2": 2894,
-          "lvl3": 2895,
-          "lvl4": 2898,
-          "lvl5": 2897,
-          "lvl6": 2896,
-          "lvl7": 2899
-        },
-        "coreAbilities": [2844,2860,2845,2843,2855]
-      },
-      "c": {
-        "name": "Path of Hoeth",
-        "optionalAbilities": {
-          "lvl1": 2900,
-          "lvl2": 2901,
-          "lvl3": 2902,
-          "lvl4": 2903,
-          "lvl5": 2904,
-          "lvl6": 2905,
-          "lvl7": 2906
-        },
-        "coreAbilities": [2853,2858,2854,2942,2852]
-      }
-    }
+    "class": "Tank"
   },
   "white-lion": {
-    "code": "WL",
     "name": "White Lion",
     "slug": "white-lion",
     "faction": "Order",
     "race": "High Elf",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of The Hunter",
-        "popover": {
-          "secondary": "Points in Path of the Hunter grants Strength and Weaponskill to your Lion."
-        },
-        "optionalAbilities": {
-          "lvl1": 4276,
-          "lvl2": 4277,
-          "lvl3": 4278,
-          "lvl4": 4279,
-          "lvl5": 4280,
-          "lvl6": 4281,
-          "lvl7": 4282
-        },
-        "coreAbilities": [4245,4249,4239,4333,4235]
-      },
-      "b": {
-        "name": "Path of The Axeman",
-        "popover": {
-          "primary": "A mastery path focused on your pet distracting enemies while you deal damage",
-          "secondary": "Points in Path of the Axeman grants Toughness and Initiative to your Lion."
-        },
-        "optionalAbilities": {
-          "lvl1": 4283,
-          "lvl2": 4284,
-          "lvl3": 4285,
-          "lvl4": 4286,
-          "lvl5": 4287,
-          "lvl6": 4288,
-          "lvl7": 4289
-        },
-        "coreAbilities": [4234,4237,4244,4248,4233]
-      },
-      "c": {
-        "name": "Path of The Guardian",
-        "popover": {
-          "primary": "A mastery path focused on assisting and supporting your pet while he deals damage",
-          "secondary": "Points in the Guardian Tree grants Wounds, Toughness, Weaponskill, Strength and Initiative to you Lion."
-        },
-        "optionalAbilities": {
-          "lvl1": 4292,
-          "lvl2": 4291,
-          "lvl3": 4294,
-          "lvl4": 4293,
-          "lvl5": 4290,
-          "lvl6": 4295,
-          "lvl7": 4296
-        },
-        "coreAbilities": [4240,4250,4247,4243,4238]
-      }
-    }
+    "class": "Melee DPS"
   },
   "chosen": {
-    "code": "CHO",
     "name": "Chosen",
     "slug": "chosen",
     "faction": "Destruction",
     "race": "Chaos",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Dread",
-        "optionalAbilities": {
-          "lvl1": 4796,
-          "lvl2": 4797,
-          "lvl3": 4798,
-          "lvl4": 4799,
-          "lvl5": 4800,
-          "lvl6": 4801,
-          "lvl7": 4802
-        },
-        "coreAbilities": [4761,4752,4768,4748,4767,4755]
-      },
-      "b": {
-        "name": "Path of Corruption",
-        "optionalAbilities": {
-          "lvl1": 4803,
-          "lvl2": 4804,
-          "lvl3": 4805,
-          "lvl4": 4806,
-          "lvl5": 4807,
-          "lvl6": 4808,
-          "lvl7": 4809
-        },
-        "coreAbilities": [4762,4853,4756,4750,4764,4770]
-      },
-      "c": {
-        "name": "Path of Discord",
-        "optionalAbilities": {
-          "lvl1": 4810,
-          "lvl2": 4811,
-          "lvl3": 4812,
-          "lvl4": 4813,
-          "lvl5": 4814,
-          "lvl6": 4815,
-          "lvl7": 4816
-        },
-        "coreAbilities": [4771,4749,4751,4753,4759,4763]
-      }
-    }
+    "class": "Tank"
   },
   "magus": {
-    "code": "MAG",
     "name": "Magus",
     "slug": "magus",
     "faction": "Destruction",
     "race": "Chaos",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Havoc",
-        "optionalAbilities": {
-          "lvl1": 5105,
-          "lvl2": 5106,
-          "lvl3": 5107,
-          "lvl4": 5108,
-          "lvl5": 5109,
-          "lvl6": 5110,
-          "lvl7": 5111
-        },
-        "coreAbilities": [5078,5068,5079,5161,5067]
-      },
-      "b": {
-        "name": "Path of Changing",
-        "optionalAbilities": {
-          "lvl1": 5112,
-          "lvl2": 5113,
-          "lvl3": 5114,
-          "lvl4": 5115,
-          "lvl5": 5116,
-          "lvl6": 5117,
-          "lvl7": 5118
-        },
-        "coreAbilities": [5074,5071,5058,5072,5062]
-      },
-      "c": {
-        "name": "Path of Daemonology",
-        "optionalAbilities": {
-          "lvl1": 5084,
-          "lvl2": 5120,
-          "lvl3": 5121,
-          "lvl4": 5122,
-          "lvl5": 5123,
-          "lvl6": 5124,
-          "lvl7": 5125
-        },
-        "coreAbilities": [5080,5061,5077,5063,5073]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "marauder": {
-    "code": "MAR",
     "name": "Marauder",
     "slug": "marauder",
     "faction": "Destruction",
     "race": "Chaos",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Savagery",
-        "optionalAbilities": {
-          "lvl1": 5208,
-          "lvl2": 5209,
-          "lvl3": 5210,
-          "lvl4": 5211,
-          "lvl5": 5212,
-          "lvl6": 5213,
-          "lvl7": 5214
-        },
-        "coreAbilities": [5172,5175,5163,5181,5166]
-      },
-      "b": {
-        "name": "Path of Brutality",
-        "optionalAbilities": {
-          "lvl1": 5215,
-          "lvl2": 5216,
-          "lvl3": 5217,
-          "lvl4": 5218,
-          "lvl5": 5219,
-          "lvl6": 5220,
-          "lvl7": 5221
-        },
-        "coreAbilities": [5176,5180,5167,5164,5168]
-      },
-      "c": {
-        "name": "Path of Monstrosity",
-        "optionalAbilities": {
-          "lvl1": 5222,
-          "lvl2": 5223,
-          "lvl3": 5224,
-          "lvl4": 5225,
-          "lvl5": 5226,
-          "lvl6": 5227,
-          "lvl7": 5228
-        },
-        "coreAbilities": [5182,5171,5264,5179,5170]
-      }
-    }
+    "class": "Melee DPS"
   },
   "zealot": {
-    "code": "ZEA",
     "name": "Zealot",
     "slug": "zealot",
     "faction": "Destruction",
     "race": "Chaos",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Alchemy",
-        "optionalAbilities": {
-          "lvl1": 5726,
-          "lvl2": 5727,
-          "lvl3": 5728,
-          "lvl4": 5729,
-          "lvl5": 5730,
-          "lvl6": 5731,
-          "lvl7": 5732
-        },
-        "coreAbilities": [5684,5782,5683,5784,5688,5699]
-      },
-      "b": {
-        "name": "Path of Witchcraft",
-        "optionalAbilities": {
-          "lvl1": 5733,
-          "lvl2": 5734,
-          "lvl3": 5735,
-          "lvl4": 5736,
-          "lvl5": 5737,
-          "lvl6": 5738,
-          "lvl7": 5739
-        },
-        "coreAbilities": [5681,5685,5700,5692,5690]
-      },
-      "c": {
-        "name": "Path of Dark Rites",
-        "optionalAbilities": {
-          "lvl1": 5740,
-          "lvl2": 5741,
-          "lvl3": 5742,
-          "lvl4": 5743,
-          "lvl5": 5744,
-          "lvl6": 5745,
-          "lvl7": 5746
-        },
-        "coreAbilities": [5687,5689,5693,5696,5695]
-      }
-    }
+    "class": "Healer"
   },
   "black-orc": {
-    "code": "BO",
     "name": "Black Orc",
     "slug": "black-orc",
     "faction": "Destruction",
     "race": "Greenskin",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Da Brawler",
-        "optionalAbilities": {
-          "lvl1": 4484,
-          "lvl2": 4485,
-          "lvl3": 4486,
-          "lvl4": 4487,
-          "lvl5": 4488,
-          "lvl6": 4489,
-          "lvl7": 4490
-        },
-        "coreAbilities": [4449,4437,4438,4451,4453]
-      },
-      "b": {
-        "name": "Path of Da Toughest",
-        "optionalAbilities": {
-          "lvl1": 4491,
-          "lvl2": 4492,
-          "lvl3": 4493,
-          "lvl4": 4494,
-          "lvl5": 4495,
-          "lvl6": 4496,
-          "lvl7": 4497
-        },
-        "coreAbilities": [4442,4452,4445,4440,4540]
-      },
-      "c": {
-        "name": "Path of Da Boss",
-        "optionalAbilities": {
-          "lvl1": 4498,
-          "lvl2": 4499,
-          "lvl3": 4500,
-          "lvl4": 4501,
-          "lvl5": 4502,
-          "lvl6": 4503,
-          "lvl7": 4504
-        },
-        "coreAbilities": [4459,4441,4456,4444,4458]
-      }
-    }
+    "class": "Tank"
   },
   "choppa": {
-    "code": "CHP",
     "name": "Choppa",
     "slug": "choppa",
     "faction": "Destruction",
     "race": "Greenskin",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Da Savage",
-        "optionalAbilities": {
-          "lvl1": 4690,
-          "lvl2": 4691,
-          "lvl3": 4692,
-          "lvl4": 4693,
-          "lvl5": 4694,
-          "lvl6": 4695,
-          "lvl7": 4696
-        },
-        "coreAbilities": [4664,4650,4652,4648,4653]
-      },
-      "b": {
-        "name": "Path of Da Hitta",
-        "optionalAbilities": {
-          "lvl1": 4697,
-          "lvl2": 4698,
-          "lvl3": 4699,
-          "lvl4": 4700,
-          "lvl5": 4701,
-          "lvl6": 4702,
-          "lvl7": 4703
-        },
-        "coreAbilities": [4654,4746,4663,4647,4658]
-      },
-      "c": {
-        "name": "Path of Da Wrecka",
-        "optionalAbilities": {
-          "lvl1": 4704,
-          "lvl2": 4705,
-          "lvl3": 4706,
-          "lvl4": 4707,
-          "lvl5": 4708,
-          "lvl6": 4709,
-          "lvl7": 4710
-        },
-        "coreAbilities": [4662,4651,4649,4661,4665]
-      }
-    }
+    "class": "Melee DPS"
   },
   "shaman": {
-    "code": "SHA",
     "name": "Shaman",
     "slug": "shaman",
     "faction": "Destruction",
     "race": "Greenskin",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Mork",
-        "optionalAbilities": {
-          "lvl1": 5311,
-          "lvl2": 5312,
-          "lvl3": 5313,
-          "lvl4": 5314,
-          "lvl5": 5315,
-          "lvl6": 5316,
-          "lvl7": 5317
-        },
-        "coreAbilities": [5273,5280,5367,5282,5275]
-      },
-      "b": {
-        "name": "Path of Gork",
-        "optionalAbilities": {
-          "lvl1": 5318,
-          "lvl2": 5319,
-          "lvl3": 5320,
-          "lvl4": 5321,
-          "lvl5": 5322,
-          "lvl6": 5323,
-          "lvl7": 5324
-        },
-        "coreAbilities": [5268,5278,5272,5368,5285]
-      },
-      "c": {
-        "name": "Path of Da Green",
-        "optionalAbilities": {
-          "lvl1": 5325,
-          "lvl2": 5326,
-          "lvl3": 5327,
-          "lvl4": 5328,
-          "lvl5": 5329,
-          "lvl6": 5330,
-          "lvl7": 5331
-        },
-        "coreAbilities": [5286,5284,5270,5271,5276]
-      }
-    }
+    "class": "Healer"
   },
   "squig-herder": {
-    "code": "SH",
     "name": "Squig Herder",
     "slug": "squig-herder",
     "faction": "Destruction",
     "race": "Greenskin",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Big Shootin'",
-        "optionalAbilities": {
-          "lvl1": 5520,
-          "lvl2": 5521,
-          "lvl3": 5522,
-          "lvl4": 5523,
-          "lvl5": 5524,
-          "lvl6": 5525,
-          "lvl7": 5526
-        },
-        "coreAbilities": [5471,5577,5486,5485,5493]
-      },
-      "b": {
-        "name": "Path of Quick Shootin'",
-        "optionalAbilities": {
-          "lvl1": 5534,
-          "lvl2": 5535,
-          "lvl3": 5536,
-          "lvl4": 5537,
-          "lvl5": 5538,
-          "lvl6": 5539,
-          "lvl7": 5540
-        },
-        "coreAbilities": [5470,5473,5494,5474,5487]
-      },
-      "c": {
-        "name": "Path of Stabbin'",
-        "optionalAbilities": {
-          "lvl1": 5527,
-          "lvl2": 5528,
-          "lvl3": 5529,
-          "lvl4": 5530,
-          "lvl5": 5531,
-          "lvl6": 5532,
-          "lvl7": 5533
-        },
-        "coreAbilities": [5576,5479,5495,5472,5490,5491,5477,5492,5489,5480]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "black-guard": {
-    "code": "BG",
     "name": "Black Guard",
     "slug": "black-guard",
     "faction": "Destruction",
     "race": "Dark Elf",
-    "class": "Tank",
-    "paths": {
-      "a": {
-        "name": "Path of Malice",
-        "optionalAbilities": {
-          "lvl1": 909,
-          "lvl2": 912,
-          "lvl3": 911,
-          "lvl4": 910,
-          "lvl5": 913,
-          "lvl6": 914,
-          "lvl7": 915
-        },
-        "coreAbilities": [863,870,876,874,865]
-      },
-      "b": {
-        "name": "Path of Loathing",
-        "optionalAbilities": {
-          "lvl1": 920,
-          "lvl2": 917,
-          "lvl3": 916,
-          "lvl4": 921,
-          "lvl5": 918,
-          "lvl6": 919,
-          "lvl7": 922
-        },
-        "coreAbilities": [877,986,866,881,883]
-      },
-      "c": {
-        "name": "Path of Anguish",
-        "optionalAbilities": {
-          "lvl1": 923,
-          "lvl2": 924,
-          "lvl3": 925,
-          "lvl4": 926,
-          "lvl5": 927,
-          "lvl6": 928,
-          "lvl7": 929
-        },
-        "coreAbilities": [868,864,884,878,871]
-      }
-    }
+    "class": "Tank"
   },
   "disciple-of-khaine": {
-    "code": "DOK",
     "name": "Disciple of Khaine",
     "slug": "disciple-of-khaine",
     "faction": "Destruction",
     "race": "Dark Elf",
-    "class": "Healer",
-    "paths": {
-      "a": {
-        "name": "Path of Dark Rites",
-        "optionalAbilities": {
-          "lvl1": 4998,
-          "lvl2": 4999,
-          "lvl3": 5000,
-          "lvl4": 5001,
-          "lvl5": 5002,
-          "lvl6": 5003,
-          "lvl7": 5004
-        },
-        "coreAbilities": [5053,4960,4969,5056,4966]
-      },
-      "b": {
-        "name": "Path of Torture",
-        "optionalAbilities": {
-          "lvl1": 5005,
-          "lvl2": 5006,
-          "lvl3": 4974,
-          "lvl4": 5008,
-          "lvl5": 5009,
-          "lvl6": 5010,
-          "lvl7": 5011
-        },
-        "coreAbilities": [4959,4963,4965,4968,5054]
-      },
-      "c": {
-        "name": "Path of Sacrifice",
-        "optionalAbilities": {
-          "lvl1": 5012,
-          "lvl2": 5013,
-          "lvl3": 5014,
-          "lvl4": 5015,
-          "lvl5": 5016,
-          "lvl6": 5017,
-          "lvl7": 5018
-        },
-        "coreAbilities": [4971,4962,4958,4972,4956]
-      }
-    }
+    "class": "Healer"
   },
   "sorcerer": {
-    "code": "SOR",
     "name": "Sorcerer",
     "slug": "sorcerer",
     "faction": "Destruction",
     "race": "Dark Elf",
-    "class": "Ranged DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Agony",
-        "optionalAbilities": {
-          "lvl1": 5411,
-          "lvl2": 5412,
-          "lvl3": 5413,
-          "lvl4": 5414,
-          "lvl5": 5415,
-          "lvl6": 5416,
-          "lvl7": 5417
-        },
-        "coreAbilities": [5369,5373,5382,5466,5377]
-      },
-      "b": {
-        "name": "Path of Calamity",
-        "optionalAbilities": {
-          "lvl1": 5418,
-          "lvl2": 5419,
-          "lvl3": 5420,
-          "lvl4": 5421,
-          "lvl5": 5422,
-          "lvl6": 5423,
-          "lvl7": 5424
-        },
-        "coreAbilities": [5374,5385,5379,5381,5467]
-      },
-      "c": {
-        "name": "Path of Destruction",
-        "optionalAbilities": {
-          "lvl1": 5425,
-          "lvl2": 5426,
-          "lvl3": 5427,
-          "lvl4": 5428,
-          "lvl5": 5429,
-          "lvl6": 5430,
-          "lvl7": 5431
-        },
-        "coreAbilities": [5372,5386,5375,5383,5380]
-      }
-    }
+    "class": "Ranged DPS"
   },
   "witch-elf": {
-    "code": "WE",
     "name": "Witch Elf",
     "slug": "witch-elf",
     "faction": "Destruction",
     "race": "Dark Elf",
-    "class": "Melee DPS",
-    "paths": {
-      "a": {
-        "name": "Path of Carnage",
-        "optionalAbilities": {
-          "lvl1": 5623,
-          "lvl2": 5624,
-          "lvl3": 5625,
-          "lvl4": 5626,
-          "lvl5": 5627,
-          "lvl6": 5628,
-          "lvl7": 5629
-        },
-        "coreAbilities": [5588,5679,5590,5589,5581]
-      },
-      "b": {
-        "name": "Path of Suffering",
-        "optionalAbilities": {
-          "lvl1": 5630,
-          "lvl2": 5631,
-          "lvl3": 5632,
-          "lvl4": 5633,
-          "lvl5": 5634,
-          "lvl6": 5635,
-          "lvl7": 5636
-        },
-        "coreAbilities": [5595,5586,5583,5580,5593]
-      },
-      "c": {
-        "name": "Path of Treachery",
-        "optionalAbilities": {
-          "lvl1": 5637,
-          "lvl2": 5638,
-          "lvl3": 5639,
-          "lvl4": 5640,
-          "lvl5": 5641,
-          "lvl6": 5642,
-          "lvl7": 5643
-        },
-        "coreAbilities": [5596,5591,5579,5597,5582]
-      }
-    }
+    "class": "Melee DPS"
   }
 }
