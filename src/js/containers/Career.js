@@ -58,6 +58,8 @@ class Career extends Component {
     });
 
     // TODO: add this to logic after abilities have been imported in Reducer || (!this.props.abilities || this.props.abilities.length == 0)
+    // TODO: also have a check in here that abilities match the slug name somehow. Probably the reason why "Loading..." not appearing
+    // TODO: maybe we could reset the abilities prop to [] when changing career and the above check would still work...?
     let hasCareerLoaded = (this.props.careers && Object.keys(this.props.careers).length > 0) && this.props.slug;
 
     // Display loading component if the corresponding JSON hasn't yet loaded
