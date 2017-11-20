@@ -12,6 +12,7 @@ import Overlay from './Overlay';
 import Breadcrumb from './Breadcrumb';
 import Loading from './Loading';
 import BarXp from './BarXp';
+import BarRenown from './BarRenown';
 
 class Career extends Component {
 
@@ -48,7 +49,7 @@ class Career extends Component {
   }
 
   componentDidMount() {
-
+    // Load career data on initial load
     const { slug } = this.props.match.params;
     this.loadCareerData(slug);
   }
@@ -74,6 +75,9 @@ class Career extends Component {
         </div>
         <div className="marginBottom">
           <BarXp />
+        </div>
+        <div className="marginBottom--medium">
+          <BarRenown />
         </div>
       </div>
     );
