@@ -13,6 +13,7 @@ import Breadcrumb from './Breadcrumb';
 import Loading from './Loading';
 import BarXp from './BarXp';
 import BarRenown from './BarRenown';
+import CareerTitle from './CareerTitle';
 
 class Career extends Component {
 
@@ -78,6 +79,23 @@ class Career extends Component {
         </div>
         <div className="marginBottom--medium">
           <BarRenown />
+        </div>
+        <div className="grid">
+          <div className="grid-col-1 grid-col-7-12@sm-min grid-col-10-24@md-min">
+            <div className="marginBottom--medium heightTitle">
+              <CareerTitle />
+            </div>
+            </div>
+          <div className="grid-col-1-3 grid-col-1-2@mobile grid-col-1-6@sm-min grid-col-1-6@md-min">
+            <div className="heightTitle marginBottom--medium marginLeft@sm-min">
+              
+            </div>
+          </div>
+          <div className="grid-col-2-3 grid-col-1-2@mobile grid-col-1-4@sm-min grid-col-10-24@md-min">
+            <div className="heightTitle marginBottom--medium">
+              
+            </div>
+          </div>
         </div>
       </div>
     );
