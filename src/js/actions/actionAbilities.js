@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 export const FETCH_ABILITIES = "fetch_abilities";
+export const RESET_ABILITIES = "reset_abilities";
 
 const JSON_ROOT = '/json/';
 
@@ -14,3 +15,11 @@ export function fetchAbilities(slug) {
     payload: request
   };
 }
+
+export function resetAbilities() {
+  
+    return {
+      type: RESET_ABILITIES,
+      payload: []
+    };
+  }

@@ -1,11 +1,12 @@
-import { FETCH_ABILITIES } from "../actions/actionAbilities";
+import { FETCH_ABILITIES, RESET_ABILITIES } from "../actions/actionAbilities";
 
 export default function(state = [], action) {
   switch (action.type) {
     case FETCH_ABILITIES:
-      //return action.payload.data;
       console.log(action.payload.data);
-      return state;
+      return action.payload.data.abilities;
+    case RESET_ABILITIES:
+      return action.payload;
     default:
       return state;
   }
