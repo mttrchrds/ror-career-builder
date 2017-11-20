@@ -11,6 +11,7 @@ import Sidebar from './Sidebar';
 import Overlay from './Overlay';
 import Breadcrumb from './Breadcrumb';
 import Loading from './Loading';
+import BarXp from './BarXp';
 
 class Career extends Component {
 
@@ -70,6 +71,9 @@ class Career extends Component {
       <div className="paddingTop paddingRight paddingLeft paddingBottom">
         <div className="marginBottom--medium">
           <Breadcrumb />
+        </div>
+        <div className="marginBottom">
+          <BarXp />
         </div>
       </div>
     );
