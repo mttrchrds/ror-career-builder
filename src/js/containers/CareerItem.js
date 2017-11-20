@@ -6,6 +6,8 @@ import { gaCareerSelected } from '../helpers/googleAnalytics';
 
 import { toggleOverlayShow } from '../actions/actionOverlayShow';
 import { toggleSidebar } from '../actions/actionSidebar';
+import { resetLevel } from '../actions/actionLevel';
+import { resetRenown } from '../actions/actionRenown';
 
 class CareerItem extends Component {
   
@@ -20,6 +22,9 @@ class CareerItem extends Component {
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
     this.props.toggleOverlayShow(false);
+    // Reset career selections
+    this.props.resetLevel();
+    this.props.resetRenown();
   }
 
   render() {
@@ -46,4 +51,4 @@ function mapStateToProps({ sidebar, overlayShow }) {
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar })(CareerItem);
+export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, resetRenown, resetLevel })(CareerItem);
