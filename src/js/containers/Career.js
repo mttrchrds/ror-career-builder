@@ -52,6 +52,29 @@ class Career extends Component {
     this.loadCareerData(slug);
   }
 
+  renderContent() {
+
+    let hasCareerLoaded = (this.props.careers && Object.keys(this.props.careers).length > 0) 
+                          && this.props.slug
+                          && (this.props.abilities && this.props.abilities.length > 0);
+
+    if (!hasCareerLoaded) {
+      return (
+        <div className={css.loadingContainer}>
+          <Loading />
+        </div>
+      );
+    }
+
+    return (
+      <div className="paddingTop paddingRight paddingLeft paddingBottom">
+        <div className="marginBottom--medium">
+          <Breadcrumb />
+        </div>
+      </div>
+    );
+  }
+
   render() {
 
     const containerClass = classNames({
@@ -59,31 +82,10 @@ class Career extends Component {
       [css.wrapperSidebar]: this.props.sidebar,
     });
 
-    let hasCareerLoaded = (this.props.careers && Object.keys(this.props.careers).length > 0) 
-                          && this.props.slug
-                          && (this.props.abilities && this.props.abilities.length > 0);
-
-    // Display loading component if the relevant JSON hasn't yet loaded
-    if (!hasCareerLoaded) {
-      return (
-        <div className={containerClass}>
-          <div className={css.loadingContainer}>
-            <Loading />
-          </div>
-          <Overlay overlayVisible={true} />
-          <Sidebar />
-        </div>
-      );
-    }
-
     return (
-      <div>
+      <div className="heightFull">
         <div className={containerClass}>
-          <div className="paddingTop paddingRight paddingLeft paddingBottom">
-            <div className="marginBottom--medium">
-              <Breadcrumb />
-            </div>
-          </div>
+          {this.renderContent()}
         </div>
         <Overlay overlayVisible={true} />
         <Sidebar />
