@@ -25,8 +25,6 @@ class Breadcrumb extends Component {
 
   render() {
 
-    console.log('props in Breadcrumb', this.props);
-
     const career = this.props.careers[this.props.slug];
 
     return (
