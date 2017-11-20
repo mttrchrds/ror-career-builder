@@ -14,6 +14,7 @@ import Loading from './Loading';
 import BarXp from './BarXp';
 import BarRenown from './BarRenown';
 import CareerTitle from './CareerTitle';
+import SelectLevel from './SelectLevel';
 
 class Career extends Component {
 
@@ -88,7 +89,7 @@ class Career extends Component {
             </div>
           <div className="grid-col-1-3 grid-col-1-2@mobile grid-col-1-6@sm-min grid-col-1-6@md-min">
             <div className="heightTitle marginBottom--medium marginLeft@sm-min">
-              
+              <SelectLevel />
             </div>
           </div>
           <div className="grid-col-2-3 grid-col-1-2@mobile grid-col-1-4@sm-min grid-col-10-24@md-min">
