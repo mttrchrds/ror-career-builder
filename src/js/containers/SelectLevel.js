@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import css from '../../css/components/SelectLevel.css';
 
 import { setLevel } from '../actions/actionLevel';
+import { calculateTacticLimit } from '../actions/actionTacticLimit';
 
 class SelectLevel extends Component {
 
@@ -31,7 +32,9 @@ class SelectLevel extends Component {
     // selectedMasteries: this.state.selectedMasteries,
     // selectedTactics: this.state.selectedTactics,
     // this.props.resetSelections();
+    
     this.props.setLevel(this.refs.level.value);
+    this.props.calculateTacticLimit(this.refs.level.value);
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
@@ -61,4 +64,4 @@ function mapStateToProps({ level }) {
   };
 }
 
-export default connect(mapStateToProps, { setLevel })(SelectLevel);
+export default connect(mapStateToProps, { setLevel, calculateTacticLimit })(SelectLevel);

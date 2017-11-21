@@ -8,6 +8,7 @@ import { toggleOverlayShow } from '../actions/actionOverlayShow';
 import { toggleSidebar } from '../actions/actionSidebar';
 import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
+import { resetTacticLimit } from '../actions/actionTacticLimit';
 
 class CareerItem extends Component {
   
@@ -25,6 +26,7 @@ class CareerItem extends Component {
     // Reset career selections
     this.props.resetLevel();
     this.props.resetRenown();
+    this.props.resetTacticLimit();
   }
 
   render() {
@@ -51,4 +53,4 @@ function mapStateToProps({ sidebar, overlayShow }) {
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, resetRenown, resetLevel })(CareerItem);
+export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, resetRenown, resetLevel, resetTacticLimit })(CareerItem);

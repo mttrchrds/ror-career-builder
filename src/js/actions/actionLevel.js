@@ -11,7 +11,7 @@ export function setLevel(level) {
 
 export function resetLevel() {
   
-    return {
-      type: RESET_LEVEL
-    };
-  }
+  return {
+    type: RESET_LEVEL
+  };
+}
