@@ -14,11 +14,12 @@ class CareerItem extends Component {
   
   constructor(props) {
     super(props);
-
     this.clickItem = this.clickItem.bind(this);
   }
 
   clickItem() {
+
+    // Send event to Google Analytics
     gaCareerSelected(this.props.career.name, this.props.career.class, this.props.career.race);
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
@@ -53,4 +54,11 @@ function mapStateToProps({ sidebar, overlayShow }) {
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, resetRenown, resetLevel, resetTacticLimit })(CareerItem);
+export default connect(mapStateToProps,
+  { toggleOverlayShow, 
+    toggleSidebar, 
+    resetRenown,
+    resetLevel, 
+    resetTacticLimit 
+  }
+)(CareerItem);

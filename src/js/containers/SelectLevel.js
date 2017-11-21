@@ -32,13 +32,12 @@ class SelectLevel extends Component {
     // selectedMasteries: this.state.selectedMasteries,
     // selectedTactics: this.state.selectedTactics,
     // this.props.resetSelections();
-    
+
     this.props.setLevel(this.refs.level.value);
     this.props.calculateTacticLimit(this.refs.level.value);
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
-    //this.props.updateCurrentTacticLimit();
   }
 
   render() {
