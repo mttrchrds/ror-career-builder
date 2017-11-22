@@ -9,6 +9,7 @@ import { toggleSidebar } from '../actions/actionSidebar';
 import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
 import { resetTacticLimit } from '../actions/actionTacticLimit';
+import { resetPoints } from '../actions/actionPoints';
 
 class CareerItem extends Component {
   
@@ -18,16 +19,16 @@ class CareerItem extends Component {
   }
 
   clickItem() {
-
     // Send event to Google Analytics
     gaCareerSelected(this.props.career.name, this.props.career.class, this.props.career.race);
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
     this.props.toggleOverlayShow(false);
-    // Reset career selections
+    // Reset career selections/attributes
     this.props.resetLevel();
     this.props.resetRenown();
     this.props.resetTacticLimit();
+    this.props.resetPoints();
   }
 
   render() {
@@ -59,6 +60,7 @@ export default connect(mapStateToProps,
     toggleSidebar, 
     resetRenown,
     resetLevel, 
-    resetTacticLimit 
+    resetTacticLimit,
+    resetPoints
   }
 )(CareerItem);
