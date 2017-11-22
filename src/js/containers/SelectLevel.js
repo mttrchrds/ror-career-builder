@@ -4,6 +4,7 @@ import css from '../../css/components/SelectLevel.css';
 
 import { setLevel } from '../actions/actionLevel';
 import { calculateTacticLimit } from '../actions/actionTacticLimit';
+import { calculatePoints } from '../actions/actionPoints';
 
 class SelectLevel extends Component {
 
@@ -35,6 +36,7 @@ class SelectLevel extends Component {
 
     this.props.setLevel(this.refs.level.value);
     this.props.calculateTacticLimit(this.refs.level.value);
+    this.props.calculatePoints(this.refs.level.value, this.props.renown);
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
@@ -57,10 +59,11 @@ class SelectLevel extends Component {
   }
 }
 
-function mapStateToProps({ level }) {
+function mapStateToProps({ level, renown }) {
   return {
-    level
+    level,
+    renown
   };
 }
 
-export default connect(mapStateToProps, { setLevel, calculateTacticLimit })(SelectLevel);
+export default connect(mapStateToProps, { setLevel, calculateTacticLimit, calculatePoints })(SelectLevel);

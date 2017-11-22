@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import css from '../../css/components/SelectRenown.css';
 
 import { setRenown } from '../actions/actionRenown';
+import { calculatePoints } from '../actions/actionPoints';
 
 class SelectRenown extends Component {
 
@@ -22,6 +23,7 @@ class SelectRenown extends Component {
     // selectedTactics: this.state.selectedTactics,
     // this.props.resetSelections();
     this.props.setRenown(this.refs.renown.value);
+    this.props.calculatePoints(this.props.level, this.refs.renown.value);
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
@@ -48,10 +50,11 @@ class SelectRenown extends Component {
   }
 }
 
-function mapStateToProps({ renown }) {
+function mapStateToProps({ level, renown }) {
   return {
+    level,
     renown
   };
 }
 
-export default connect(mapStateToProps, { setRenown })(SelectRenown);
+export default connect(mapStateToProps, { setRenown, calculatePoints })(SelectRenown);
