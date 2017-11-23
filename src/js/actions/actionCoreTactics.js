@@ -4,6 +4,6 @@ export function addCoreTactic(ability) {
 
   return {
     type: ADD_CORE_TACTIC,
-    payload: ability
+    payload: ability.id
   };
 }

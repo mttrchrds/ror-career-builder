@@ -4,6 +4,6 @@ export function addCoreMorale(ability) {
 
   return {
     type: ADD_CORE_MORALE,
-    payload: ability
+    payload: ability.id
   };
 }

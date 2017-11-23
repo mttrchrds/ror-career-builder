@@ -4,6 +4,6 @@ export function addCoreAbility(ability) {
 
   return {
     type: ADD_CORE_ABILITY,
-    payload: ability
+    payload: ability.id
   };
 }
