@@ -8,6 +8,7 @@ import ReducerLevel from './reducerLevel';
 import ReducerRenown from './reducerRenown';
 import ReducerTacticLimit from './reducerTacticLimit';
 import ReducerPoints from './reducerPoints';
+import reducerCoreAbilities from './reducerCoreAbilities';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   level: ReducerLevel,
   renown: ReducerRenown,
   tacticLimit: ReducerTacticLimit,
-  points: ReducerPoints
+  points: ReducerPoints,
+  coreAbilities: reducerCoreAbilities
 });
 
 export default rootReducer;
