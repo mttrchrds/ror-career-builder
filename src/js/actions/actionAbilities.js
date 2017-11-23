@@ -18,8 +18,8 @@ export function fetchAbilities(slug) {
 
 export function resetAbilities() {
   
-    return {
-      type: RESET_ABILITIES,
-      payload: []
-    };
-  }
+  return {
+    type: RESET_ABILITIES,
+    payload: []
+  };
+}
