@@ -8,6 +8,8 @@ import { fetchAbilities, resetAbilities } from '../actions/actionAbilities';
 import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
 import { addCoreAbility } from '../actions/actionCoreAbilities';
+import { addCoreTactic } from '../actions/actionCoreTactics';
+import { addCoreMorale } from '../actions/actionCoreMorales';
 
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
@@ -51,12 +53,12 @@ class Career extends Component {
           case 'standard':
             this.props.addCoreAbility(ability);
             break;
-          // case 'morale':
-          //   exported.coreMorales.push(abilities[ability].id);
-          //   break;
-          // case 'tactic':
-          //   exported.coreTactics.push(abilities[ability].id);
-          //   break;
+          case 'morale':
+            this.props.addCoreMorale(ability);
+            break;
+          case 'tactic':
+            this.props.addCoreTactic(ability);
+            break;
           default :
             break;
         }
@@ -318,6 +320,8 @@ export default connect(
     resetAbilities, 
     fetchCareers, 
     setSlug,
-    addCoreAbility
+    addCoreAbility,
+    addCoreTactic,
+    addCoreMorale
   }
 )(Career);
