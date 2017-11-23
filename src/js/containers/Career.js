@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import css from '../../css/components/Career.css';
 import { getAbilityType } from '../helpers/abilities';
 
-import { fetchAbilities, resetAbilities } from '../actions/actionAbilities';
+import { fetchAbilities, resetAbilities, updateAbilities } from '../actions/actionAbilities';
 import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
 import { addCoreAbility } from '../actions/actionCoreAbilities';
@@ -28,22 +28,8 @@ class Career extends Component {
   }
 
   organiseAbilities(abilities) {
-
-    // coreAbilities: [],
-    // coreTactics: [],
-    // coreMorales: [],
-    // coreAbilitiesPathA: [],
-    // coreAbilitiesPathAOverflow: [],
-    // coreAbilitiesPathB: [],
-    // coreAbilitiesPathBOverflow: [],
-    // coreAbilitiesPathC: [],
-    // coreAbilitiesPathCOverflow: [],
-    // optionalAbiltiesPathA: [],
-    // optionalAbiltiesPathB: [],
-    // optionalAbiltiesPathC: [],
-
-    const pathCoreOverflow = 6;
-
+    
+    // Extract the core abilities from the raw data (abilities.data)
     for (let i = 0; i < abilities.data.length; i++) {
       let ability = abilities.data[i];
       let abilityType = ability.abilityType;
@@ -62,142 +48,12 @@ class Career extends Component {
           default :
             break;
         }
-      }
+      } 
     }
 
-    // Object.keys(abilities).map(
-    //   (ability) => {
-    //     const abilityType = getAbilityType(abilities[ability]);
-    //     const pathCoreOverflow = 6;
-    //     abilities[ability].abilityType = abilityType;
-    //     if (abilities[ability].minrank === '') abilities[ability].minrank = 1;
-    //     if (abilities[ability].spec === 'Core Ability') {
-    //       switch (abilityType) {
-    //         case 'standard':
-    //           exported.coreAbilities.push(abilities[ability].id);
-    //           break;
-    //         case 'morale':
-    //           exported.coreMorales.push(abilities[ability].id);
-    //           break;
-    //         case 'tactic':
-    //           exported.coreTactics.push(abilities[ability].id);
-    //           break;
-    //         default :
-    //           break;
-    //       }
-    //     } else {
-    //       // Check and populate Mastery path core and optional abilities
-    //       if (this.arrayContains(career.paths.a.coreAbilities, abilities[ability].id)) {
-    //         if (exported.pathACore.length < pathCoreOverflow) {
-    //           exported.pathACore.push(abilities[ability].id);  
-    //         } else {
-    //           exported.pathACoreOverflow.push(abilities[ability].id);
-    //         }
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl1) {
-    //         abilities[ability].meterRequirement = 3;
-    //         exported.pathAOpt.lvl1 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl2) {
-    //         abilities[ability].meterRequirement = 5;
-    //         exported.pathAOpt.lvl2 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl3) {
-    //         abilities[ability].meterRequirement = 7;
-    //         exported.pathAOpt.lvl3 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl4) {
-    //         abilities[ability].meterRequirement = 9;
-    //         exported.pathAOpt.lvl4 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl5) {
-    //         abilities[ability].meterRequirement = 11;
-    //         exported.pathAOpt.lvl5 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl6) {
-    //         abilities[ability].meterRequirement = 13;
-    //         exported.pathAOpt.lvl6 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.a.optionalAbilities.lvl7) {
-    //         abilities[ability].meterRequirement = 15;
-    //         exported.pathAOpt.lvl7 = abilities[ability].id;
-    //       }
-    //       if (this.arrayContains(career.paths.b.coreAbilities, abilities[ability].id)) {
-    //         if (exported.pathBCore.length < pathCoreOverflow) {
-    //           exported.pathBCore.push(abilities[ability].id);  
-    //         } else {
-    //           exported.pathBCoreOverflow.push(abilities[ability].id);
-    //         }
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl1) {
-    //         abilities[ability].meterRequirement = 3;
-    //         exported.pathBOpt.lvl1 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl2) {
-    //         abilities[ability].meterRequirement = 5;
-    //         exported.pathBOpt.lvl2 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl3) {
-    //         abilities[ability].meterRequirement = 7;
-    //         exported.pathBOpt.lvl3 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl4) {
-    //         abilities[ability].meterRequirement = 9;
-    //         exported.pathBOpt.lvl4 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl5) {
-    //         abilities[ability].meterRequirement = 11;
-    //         exported.pathBOpt.lvl5 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl6) {
-    //         abilities[ability].meterRequirement = 13;
-    //         exported.pathBOpt.lvl6 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.b.optionalAbilities.lvl7) {
-    //         abilities[ability].meterRequirement = 15;
-    //         exported.pathBOpt.lvl7 = abilities[ability].id;
-    //       }
-    //       if (this.arrayContains(career.paths.c.coreAbilities, abilities[ability].id)) {
-    //         if (exported.pathCCore.length < pathCoreOverflow) {
-    //           exported.pathCCore.push(abilities[ability].id);  
-    //         } else {
-    //           exported.pathCCoreOverflow.push(abilities[ability].id);
-    //         }
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl1) {
-    //         abilities[ability].meterRequirement = 3;
-    //         exported.pathCOpt.lvl1 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl2) {
-    //         abilities[ability].meterRequirement = 5;
-    //         exported.pathCOpt.lvl2 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl3) {
-    //         abilities[ability].meterRequirement = 7;
-    //         exported.pathCOpt.lvl3 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl4) {
-    //         abilities[ability].meterRequirement = 9;
-    //         exported.pathCOpt.lvl4 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl5) {
-    //         abilities[ability].meterRequirement = 11;
-    //         exported.pathCOpt.lvl5 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl6) {
-    //         abilities[ability].meterRequirement = 13;
-    //         exported.pathCOpt.lvl6 = abilities[ability].id;
-    //       }
-    //       if (abilities[ability].id === career.paths.c.optionalAbilities.lvl7) {
-    //         abilities[ability].meterRequirement = 15;
-    //         exported.pathCOpt.lvl7 = abilities[ability].id;
-    //       }
-    //     }
-    //     // Create new abilities object using abilityId as a key
-    //     exported.abilities[abilities[ability].id] = abilities[ability];
-    //   }
-    // );
-    // return exported;
+    // Update abilities.data so it's an object with indexes
+    // Will make it easy query with the mastery mappings in ability.mastery
+    this.props.updateAbilities(abilities);
   }
 
   loadCareerData(slug) {
@@ -229,6 +85,8 @@ class Career extends Component {
 
     // Detects when abilities have been updated then calls function to populate ability types
     if (Object.keys(this.props.abilities).length == 0 && Object.keys(nextProps.abilities).length > 0) {
+      
+      // Transform the abilities data and extract core abilities
       this.organiseAbilities(nextProps.abilities);
     }
   }
@@ -322,6 +180,7 @@ export default connect(
     setSlug,
     addCoreAbility,
     addCoreTactic,
-    addCoreMorale
+    addCoreMorale,
+    updateAbilities
   }
 )(Career);
