@@ -15,9 +15,6 @@ import rootReducer from "./reducers";
 
 //  Import Components
 import App from './components/App';
-import Home from './containers/Home';
-import Career from './containers/Career';
-import NotFound from './components/NotFound';
 
 // Create store, apply middlewares etc
 const store = createStore(
@@ -27,15 +24,22 @@ const store = createStore(
 	)
 );
 
-ReactDOM.render(
-	<Provider store={store}>
-		<Router>
-			<Switch>
-				<Route path="/career/:slug" component={Career} />
-				<Route path="/career/:slug(/:careerSaved)" component={Career} />
-				<Route path="/" component={Home} />
-				<Route component={NotFound} />
-			</Switch>
-		</Router>
-	</Provider>, 
-	document.querySelector('#app'));
+// Create a function which will render a component to our DOM
+const render = (Component) => {
+	ReactDOM.render(
+		<Provider store={store}>
+			<Component />
+		</Provider>, 
+		document.querySelector('#app')
+	);
+};
+
+// Render the application
+render(App);
+
+// React HOT/HMR
+if (module.hot) {
+  module.hot.accept('./components/App', () => { 
+		render(App);
+	})
+}
