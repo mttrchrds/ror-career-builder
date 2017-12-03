@@ -58,6 +58,7 @@ module.exports = {
   },
   devtool: 'eval',
   devServer: {
+    historyApiFallback: true,
     // Where to serve content from
     contentBase: config.pathOutput,
     // Hot yes please

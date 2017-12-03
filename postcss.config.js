@@ -1,10 +1,11 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-modules-values': {},
-    'postcss-nested': {},
     'postcss-calc': {
       mediaQueries: true
-    }
+    },
+    'postcss-modules-values': {},
+    'postcss-nested': {},
+    'cssnano': {}
   }
 }

@@ -67,6 +67,9 @@ module.exports = {
       filename: config.filenameHTML
     }),
     // Create a separate CSS file in the appropriate folder
-    new extractTextPlugin(config.pathCSSRelative + config.filenameCSS)
+    new extractTextPlugin({
+      filename: config.pathCSSRelative + config.filenameCSS,
+      ignoreOrder: true
+    })
   ]
 };
