@@ -1,9 +1,7 @@
 node_modules
-public/js/app.js
-public/js/app.js.map
+public/js
 .DS_Store
 npm-debug.log
 analytics.js
-public/css/styles.css
-public/css/styles.css.map
+public/css
 public/index.html
