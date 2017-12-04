@@ -32,7 +32,6 @@ class Career extends Component {
     // Extract the core abilities from the raw data (abilities.data)
     for (let i = 0; i < abilities.data.length; i++) {
       let ability = abilities.data[i];
-      let abilityType = ability.abilityType;
       ability.abilityType = getAbilityType(ability.category);
       if (ability.spec === 'Core Ability') {
         switch (ability.abilityType) {
