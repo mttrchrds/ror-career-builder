@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Web app for users of computer game Return of Reckoning to build and save career specs",
   "main": "",
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
     "prod": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --progress --colors"
+    "dev": "webpack-dev-server --config webpack.dev.js --progress --colors",
+    "postinstall": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
