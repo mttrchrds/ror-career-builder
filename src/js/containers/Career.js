@@ -20,6 +20,7 @@ import BarRenown from './BarRenown';
 import CareerTitle from './CareerTitle';
 import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
+import CoreAbilities from './CoreAbilities';
 
 class Career extends Component {
 
@@ -136,6 +137,34 @@ class Career extends Component {
             <div className="heightTitle marginBottom--medium">
               <SelectRenown />
             </div>
+          </div>
+        </div>
+        <div className="grid">
+          <div className="grid-col-1 grid-col-10-24@md-min">
+
+            <div className="marginBottom">
+              <CoreAbilities />
+            </div>
+
+            <div className="marginBottom">
+              
+            </div>
+
+            <div className="marginBottom">
+              
+            </div>
+
+          </div>
+          <div className="grid-col-1 grid-col-14-24@md-min">
+
+            <div className="marginLeft@md-min marginBottom">
+              
+            </div>
+
+            <div className="marginLeft@md-min">
+              
+            </div>
+
           </div>
         </div>
       </div>
