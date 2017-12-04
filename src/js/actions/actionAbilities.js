@@ -30,7 +30,7 @@ export function updateAbilities(abilities) {
   abilities.data = _.mapKeys(abilities.data, "id");
   
   return {
-    type: RESET_ABILITIES,
+    type: UPDATE_ABILITIES,
     payload: abilities
   };
 }
