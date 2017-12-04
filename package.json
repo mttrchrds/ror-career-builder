@@ -26,6 +26,7 @@
   "author": "Matt Richards",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "7.2.1",
     "autotrack": "0.6.5",
     "axios": "0.17.1",
     "babel-core": "6.26.0",
