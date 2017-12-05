@@ -17,28 +17,28 @@ const PopoverAbility = (props) =>
     <img src={props.imgSrc} className={css.image} />
     <div className={css.rowLarge}>
       <p className={css.itemTitle}>
-        {props.details.name}
+        {props.data.name}
       </p>
       <p className={css.itemTitleRight}>
-        {props.details.type}
+        {props.data.type}
       </p>
     </div>
     <div className={css.divider}></div>
     <div className={css.row}>
-      <p className={css.item}>{props.details.spec}</p>
-      <p className={css.itemRight}>Level {props.details.minrank}</p>
+      <p className={css.item}>{props.data.spec}</p>
+      <p className={css.itemRight}>Level {props.data.minrank}</p>
     </div>
     <div className={css.row}>
-      <p className={css.item}>{props.details.cost}</p>
-      <p className={css.itemRight}>{props.details.range}</p>
+      <p className={css.item}>{props.data.cost}</p>
+      <p className={css.itemRight}>{props.data.range}</p>
     </div>
     <div className={css.rowLarge}>
-      <p className={css.item}>{props.details.incant}</p>
-      <p className={css.itemRight}>{props.details.cooldown}</p>
+      <p className={css.item}>{props.data.incant}</p>
+      <p className={css.itemRight}>{props.data.cooldown}</p>
     </div>
-    {renderNote(props.details.note)}
+    {renderNote(props.data.note)}
     <p className={css.description}
-      dangerouslySetInnerHTML={{ __html: props.details.description }}
+      dangerouslySetInnerHTML={{ __html: props.data.description }}
     />
   </div>;
 

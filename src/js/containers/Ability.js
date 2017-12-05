@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import css from '../../css/components/Ability.css';
 import classNames from 'classnames';
 
+import Popover from '../components/Popover';
+import PopoverAbility from '../components/PopoverAbility';
 
 class Ability extends Component {
 
@@ -12,6 +14,8 @@ class Ability extends Component {
       status: false,
       hovered: false
     };
+    this.hoverOut = this.hoverOut.bind(this);
+    this.hoverOver = this.hoverOver.bind(this);
   }
 
   setInitialStatus(currentLevel, minrank) {
@@ -20,6 +24,18 @@ class Ability extends Component {
     } else {
       this.setState({ status: false });
     }
+  }
+
+  hoverOver() {
+    this.setState({
+      hovered: true,
+    });
+  }
+
+  hoverOut() {
+    this.setState({
+      hovered: false,
+    });
   }
 
   // Initial render
@@ -47,12 +63,24 @@ class Ability extends Component {
       [css.imageInactive]: !this.state.status,
     });
     const imgSrc = `../../images/abilities/${this.props.data.image}.png`;
+    const popoverContent = (
+      <PopoverAbility data={this.props.data} imgSrc={imgSrc} />
+    );
     return (
       <div className={abilityClass} ref="popoverParent">
         <img
           className={abilityImageClass}
           src={imgSrc}
           alt={this.props.data.name}
+          onMouseOver={this.hoverOver}
+          onMouseOut={this.hoverOut}
+        />
+        <Popover
+          content={popoverContent}
+          alignment="top"
+          activate={this.state.hovered}
+          abilityOptional={false}
+          status={this.state.status}
         />
       </div>
     );
