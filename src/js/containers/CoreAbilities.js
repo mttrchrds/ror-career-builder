@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/CoreAbilities.css';
 
+import Ability from './Ability';
+
 
 class CoreAbilities extends Component {
 
@@ -12,7 +14,7 @@ class CoreAbilities extends Component {
 
   renderAbility(abilityId) {
     return (
-      <div key={abilityId}>{this.props.abilities.data[abilityId].name}</div>
+      <Ability key={abilityId} data={this.props.abilitiesObject[abilityId]} />
     )
   }
 
@@ -28,9 +30,9 @@ class CoreAbilities extends Component {
   }
 }
 
-function mapStateToProps({ coreAbilities, abilities }) {
+function mapStateToProps({ coreAbilities, abilitiesObject }) {
   return {
-    abilities,
+    abilitiesObject,
     coreAbilities
   };
 }
