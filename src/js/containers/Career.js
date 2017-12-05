@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import css from '../../css/components/Career.css';
 import { getAbilityType } from '../helpers/abilities';
 
-import { fetchAbilities, resetAbilities, updateAbilities } from '../actions/actionAbilities';
+import { fetchAbilities, resetAbilities } from '../actions/actionAbilities';
+import { setAbilitiesObject, resetAbilitiesObject } from '../actions/actionAbilitiesObject';
 import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
 import { addCoreAbility } from '../actions/actionCoreAbilities';
@@ -51,9 +52,10 @@ class Career extends Component {
       } 
     }
 
-    // Update abilities.data so it's an object with indexes
-    // Will make it easy query with the mastery mappings in ability.mastery
-    this.props.updateAbilities(abilities);
+    // Create new AbilitiesObject property in state
+    // This is an indexed object of all abilities
+    // Will make it easy to query an ability when we have only the ability id
+    this.props.setAbilitiesObject(abilities.data);
   }
 
   loadCareerData(slug) {
@@ -75,6 +77,7 @@ class Career extends Component {
         
         // Reset abilities array to force the loading animation and organise new abilities
         this.props.resetAbilities();
+        this.props.resetAbilitiesObject();
         this.loadCareerData(nextProps.match.params.slug);
 
       } else {
@@ -101,7 +104,8 @@ class Career extends Component {
 
     let hasCareerLoaded = (Object.keys(this.props.careers).length > 0
                           && this.props.slug
-                          && Object.keys(this.props.abilities).length > 0);
+                          && Object.keys(this.props.abilities).length > 0)
+                          && Object.keys(this.props.abilitiesObject).length > 0;
 
     if (!hasCareerLoaded) {
       return (
@@ -190,9 +194,10 @@ class Career extends Component {
   }
 }
 
-function mapStateToProps({ sidebar, abilities, careers, slug }) {
+function mapStateToProps({ sidebar, abilities, abilitiesObject, careers, slug }) {
   return {
     abilities,
+    abilitiesObject,
     careers,
     sidebar,
     slug
@@ -204,11 +209,12 @@ export default connect(
   { 
     fetchAbilities, 
     resetAbilities, 
+    setAbilitiesObject,
+    resetAbilitiesObject,
     fetchCareers, 
     setSlug,
     addCoreAbility,
     addCoreTactic,
-    addCoreMorale,
-    updateAbilities
+    addCoreMorale
   }
 )(Career);

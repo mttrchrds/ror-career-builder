@@ -11,10 +11,12 @@ import ReducerPoints from './reducerPoints';
 import reducerCoreAbilities from './reducerCoreAbilities';
 import reducerCoreMorales from './reducerCoreMorales';
 import reducerCoreTactics from './reducerCoreTactics';
+import reducerAbilitiesObject from './reducerAbilitiesObject';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
   abilities: ReducerAbilities,
+  abilitiesObject: reducerAbilitiesObject,
   sidebar: ReducerSidebar,
   overlayShow: ReducerOverlayShow,
   slug: ReducerSlug,
