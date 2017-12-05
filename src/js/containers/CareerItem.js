@@ -10,6 +10,11 @@ import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
 import { resetTacticLimit } from '../actions/actionTacticLimit';
 import { resetPoints } from '../actions/actionPoints';
+import { resetCoreAbilities } from '../actions/actionCoreAbilities';
+import { resetCoreMorales } from '../actions/actionCoreMorales';
+import { resetCoreTactics } from '../actions/actionCoreTactics';
+import { resetAbilities } from '../actions/actionAbilities';
+import { resetAbilitiesObject } from '../actions/actionAbilitiesObject';
 
 class CareerItem extends Component {
   
@@ -24,11 +29,16 @@ class CareerItem extends Component {
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
     this.props.toggleOverlayShow(false);
-    // Reset career selections/attributes
+    // Reset career selections/attributes/abilities
     this.props.resetLevel();
     this.props.resetRenown();
     this.props.resetTacticLimit();
     this.props.resetPoints();
+    this.props.resetCoreAbilities();
+    this.props.resetCoreMorales();
+    this.props.resetCoreTactics();
+    this.props.resetAbilities();
+    this.props.resetAbilitiesObject();
   }
 
   render() {
@@ -61,6 +71,11 @@ export default connect(mapStateToProps,
     resetRenown,
     resetLevel, 
     resetTacticLimit,
-    resetPoints
+    resetPoints,
+    resetCoreAbilities,
+    resetCoreMorales,
+    resetCoreTactics,
+    resetAbilities,
+    resetAbilitiesObject
   }
 )(CareerItem);
