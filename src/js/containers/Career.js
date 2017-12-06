@@ -102,10 +102,14 @@ class Career extends Component {
 
   renderContent() {
 
+    // Check that all the relative state properties are populated before rendering the Career UI
     let hasCareerLoaded = (Object.keys(this.props.careers).length > 0
                           && this.props.slug
                           && Object.keys(this.props.abilities).length > 0)
-                          && Object.keys(this.props.abilitiesObject).length > 0;
+                          && Object.keys(this.props.abilitiesObject).length > 0
+                          && this.props.coreAbilities.length > 0
+                          && this.props.coreMorales.length > 0
+                          && this.props.coreTactics.length > 0;
 
     if (!hasCareerLoaded) {
       return (
@@ -194,13 +198,16 @@ class Career extends Component {
   }
 }
 
-function mapStateToProps({ sidebar, abilities, abilitiesObject, careers, slug }) {
+function mapStateToProps({ sidebar, abilities, abilitiesObject, careers, slug, coreAbilities, coreMorales, coreTactics }) {
   return {
     abilities,
     abilitiesObject,
     careers,
     sidebar,
-    slug
+    slug,
+    coreAbilities,
+    coreMorales,
+    coreTactics
   };
 }
 
