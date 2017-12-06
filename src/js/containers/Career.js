@@ -32,6 +32,7 @@ class Career extends Component {
   organiseAbilities(abilities) {
     
     // Extract the core abilities from the raw data (abilities.data)
+    // Each of the three set of abilities are an array of ability ids (coreAbilities, coreMorales and coreTactics)
     for (let i = 0; i < abilities.data.length; i++) {
       let ability = abilities.data[i];
       ability.abilityType = getAbilityType(ability.category);
@@ -76,8 +77,11 @@ class Career extends Component {
       if (this.props.careers.hasOwnProperty(nextProps.match.params.slug)) {
         
         // Reset abilities array to force the loading animation and organise new abilities
+        // TODO investigate whether we need to reset here, as I think we're doing it in CareerItem...
         this.props.resetAbilities();
         this.props.resetAbilitiesObject();
+
+        // Load new career/ability data from new career class
         this.loadCareerData(nextProps.match.params.slug);
 
       } else {
@@ -88,8 +92,8 @@ class Career extends Component {
 
     // Detects when abilities have been updated then calls function to populate ability types
     if (Object.keys(this.props.abilities).length == 0 && Object.keys(nextProps.abilities).length > 0) {
-      
       // Transform the abilities data and extract core abilities
+      // i.e. populate coreAbilities, coreMorales, coreTactics and abilitiesObject
       this.organiseAbilities(nextProps.abilities);
     }
   }
