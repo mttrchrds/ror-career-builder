@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import css from '../../css/components/Career.css';
 import { getAbilityType } from '../helpers/abilities';
 
-import { fetchAbilities, resetAbilities } from '../actions/actionAbilities';
-import { setAbilitiesObject, resetAbilitiesObject } from '../actions/actionAbilitiesObject';
+import { fetchAbilities } from '../actions/actionAbilities';
+import { setAbilitiesObject } from '../actions/actionAbilitiesObject';
 import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
 import { addCoreAbility } from '../actions/actionCoreAbilities';
@@ -96,11 +96,6 @@ class Career extends Component {
     if (this.props.match.params && (this.props.match.params.slug != nextProps.match.params.slug)) {
       // Check if it's a valid career name
       if (this.props.careers.hasOwnProperty(nextProps.match.params.slug)) {
-        
-        // Reset abilities array to force the loading animation and organise new abilities
-        // TODO investigate whether we need to reset here, as I think we're doing it in CareerItem...
-        this.props.resetAbilities();
-        this.props.resetAbilitiesObject();
 
         // Load new career/ability data from new career class
         this.loadCareerData(nextProps.match.params.slug);
@@ -259,10 +254,8 @@ function mapStateToProps(
 export default connect(
   mapStateToProps, 
   { 
-    fetchAbilities, 
-    resetAbilities, 
+    fetchAbilities,
     setAbilitiesObject,
-    resetAbilitiesObject,
     fetchCareers, 
     setSlug,
     addCoreAbility,
