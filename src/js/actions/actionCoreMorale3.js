@@ -1,5 +1,5 @@
 export const ADD_CORE_MORALE_3 = "add_core_morale_3";
-export const RESET_CORE_MORALE_3 = "rest_core_morale_3";
+export const RESET_CORE_MORALE_3 = "reset_core_morale_3";
 
 export function addCoreMorale3(ability) {
 
