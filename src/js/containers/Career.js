@@ -10,7 +10,10 @@ import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
 import { addCoreAbility } from '../actions/actionCoreAbilities';
 import { addCoreTactic } from '../actions/actionCoreTactics';
-import { addCoreMorale } from '../actions/actionCoreMorales';
+import { addCoreMorale1 } from '../actions/actionCoreMorale1';
+import { addCoreMorale2 } from '../actions/actionCoreMorale2';
+import { addCoreMorale3 } from '../actions/actionCoreMorale3';
+import { addCoreMorale4 } from '../actions/actionCoreMorale4';
 
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
@@ -32,7 +35,7 @@ class Career extends Component {
   organiseAbilities(abilities) {
     
     // Extract the core abilities from the raw data (abilities.data)
-    // Each of the three set of abilities are an array of ability ids (coreAbilities, coreMorales and coreTactics)
+    // Each of the three set of abilities are an array of ability ids (coreAbilities, coreMorales (1-4) and coreTactics)
     for (let i = 0; i < abilities.data.length; i++) {
       let ability = abilities.data[i];
       ability.abilityType = getAbilityType(ability.category);
@@ -42,7 +45,22 @@ class Career extends Component {
             this.props.addCoreAbility(ability);
             break;
           case 'morale':
-            this.props.addCoreMorale(ability);
+            switch (ability.cost) {
+              case 'Rank 1 morale':
+                this.props.addCoreMorale1(ability);
+                break;
+              case 'Rank 2 morale':
+                this.props.addCoreMorale2(ability);
+                break;
+              case 'Rank 3 morale':
+                this.props.addCoreMorale3(ability);
+                break;
+              case 'Rank 4 morale':
+                this.props.addCoreMorale4(ability);
+                break;
+              default :
+                break;
+            }
             break;
           case 'tactic':
             this.props.addCoreTactic(ability);
@@ -50,7 +68,7 @@ class Career extends Component {
           default :
             break;
         }
-      } 
+      }
     }
 
     // Create new AbilitiesObject property in state
@@ -112,7 +130,10 @@ class Career extends Component {
                           && Object.keys(this.props.abilities).length > 0)
                           && Object.keys(this.props.abilitiesObject).length > 0
                           && this.props.coreAbilities.length > 0
-                          && this.props.coreMorales.length > 0
+                          && this.props.coreMorale1.length > 0
+                          && this.props.coreMorale2.length > 0
+                          && this.props.coreMorale3.length > 0
+                          && this.props.coreMorale4.length > 0
                           && this.props.coreTactics.length > 0;
 
     if (!hasCareerLoaded) {
@@ -202,16 +223,33 @@ class Career extends Component {
   }
 }
 
-function mapStateToProps({ sidebar, abilities, abilitiesObject, careers, slug, coreAbilities, coreMorales, coreTactics }) {
+function mapStateToProps(
+  {
+    sidebar, 
+    abilities, 
+    abilitiesObject, 
+    careers, 
+    slug, 
+    coreAbilities, 
+    coreMorale1,
+    coreMorale2,
+    coreMorale3,
+    coreMorale4,
+    coreTactics 
+  }
+){ 
   return {
-    abilities,
-    abilitiesObject,
-    careers,
-    sidebar,
-    slug,
-    coreAbilities,
-    coreMorales,
-    coreTactics
+    sidebar, 
+    abilities, 
+    abilitiesObject, 
+    careers, 
+    slug, 
+    coreAbilities, 
+    coreMorale1,
+    coreMorale2,
+    coreMorale3,
+    coreMorale4,
+    coreTactics 
   };
 }
 
@@ -226,6 +264,9 @@ export default connect(
     setSlug,
     addCoreAbility,
     addCoreTactic,
-    addCoreMorale
+    addCoreMorale1,
+    addCoreMorale2,
+    addCoreMorale3,
+    addCoreMorale4
   }
 )(Career);

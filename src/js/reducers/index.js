@@ -9,7 +9,10 @@ import ReducerRenown from './reducerRenown';
 import ReducerTacticLimit from './reducerTacticLimit';
 import ReducerPoints from './reducerPoints';
 import reducerCoreAbilities from './reducerCoreAbilities';
-import reducerCoreMorales from './reducerCoreMorales';
+import reducerCoreMorale1 from './reducerCoreMorale1';
+import reducerCoreMorale2 from './reducerCoreMorale2';
+import reducerCoreMorale3 from './reducerCoreMorale3';
+import reducerCoreMorale4 from './reducerCoreMorale4';
 import reducerCoreTactics from './reducerCoreTactics';
 import reducerAbilitiesObject from './reducerAbilitiesObject';
 
@@ -26,7 +29,10 @@ const rootReducer = combineReducers({
   points: ReducerPoints,
   coreAbilities: reducerCoreAbilities,
   coreTactics: reducerCoreTactics,
-  coreMorales: reducerCoreMorales
+  coreMorale1: reducerCoreMorale1,
+  coreMorale2: reducerCoreMorale2,
+  coreMorale3: reducerCoreMorale3,
+  coreMorale4: reducerCoreMorale4
 });
 
 export default rootReducer;

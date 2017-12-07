@@ -11,7 +11,10 @@ import { resetRenown } from '../actions/actionRenown';
 import { resetTacticLimit } from '../actions/actionTacticLimit';
 import { resetPoints } from '../actions/actionPoints';
 import { resetCoreAbilities } from '../actions/actionCoreAbilities';
-import { resetCoreMorales } from '../actions/actionCoreMorales';
+import { resetCoreMorale1 } from '../actions/actionCoreMorale1';
+import { resetCoreMorale2 } from '../actions/actionCoreMorale2';
+import { resetCoreMorale3 } from '../actions/actionCoreMorale3';
+import { resetCoreMorale4 } from '../actions/actionCoreMorale4';
 import { resetCoreTactics } from '../actions/actionCoreTactics';
 import { resetAbilities } from '../actions/actionAbilities';
 import { resetAbilitiesObject } from '../actions/actionAbilitiesObject';
@@ -35,7 +38,10 @@ class CareerItem extends Component {
     this.props.resetTacticLimit();
     this.props.resetPoints();
     this.props.resetCoreAbilities();
-    this.props.resetCoreMorales();
+    this.props.resetCoreMorale1();
+    this.props.resetCoreMorale2();
+    this.props.resetCoreMorale3();
+    this.props.resetCoreMorale4();
     this.props.resetCoreTactics();
     this.props.resetAbilities();
     this.props.resetAbilitiesObject();
@@ -73,7 +79,10 @@ export default connect(mapStateToProps,
     resetTacticLimit,
     resetPoints,
     resetCoreAbilities,
-    resetCoreMorales,
+    resetCoreMorale1,
+    resetCoreMorale2,
+    resetCoreMorale3,
+    resetCoreMorale4,
     resetCoreTactics,
     resetAbilities,
     resetAbilitiesObject
