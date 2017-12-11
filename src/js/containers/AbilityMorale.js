@@ -6,6 +6,11 @@ import classNames from 'classnames';
 import Popover from '../components/Popover';
 import PopoverAbility from '../components/PopoverAbility';
 
+import { selectMorale1, resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
+import { selectMorale2, resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
+import { selectMorale3, resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
+import { selectMorale4, resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
+
 class AbilityMorale extends Component {
 
   constructor(props) {
@@ -17,13 +22,46 @@ class AbilityMorale extends Component {
     };
     this.hoverOut = this.hoverOut.bind(this);
     this.hoverOver = this.hoverOver.bind(this);
+    this.selectMorale = this.selectMorale.bind(this);
   }
 
-  setInitialStatus(currentLevel, minrank) {
+  setInitialStatus(currentLevel, minrank, selectedMorale1, selectedMorale2, selectedMorale3, selectedMorale4) {
     if (Number(currentLevel) >= Number(minrank)) {
       this.setState({ status: true });
     } else {
       this.setState({ status: false });
+    }
+    switch (this.props.rank) {
+      case '1':
+        if (selectedMorale1 == this.props.data.id) {
+          this.setState({ selected: true });
+        } else {
+          this.setState({ selected: false });
+        }
+        break;
+      case '2':
+        if (selectedMorale2 == this.props.data.id) {
+          this.setState({ selected: true });
+        } else {
+          this.setState({ selected: false });
+        }
+        break;
+      case '3':
+        if (selectedMorale3 == this.props.data.id) {
+          this.setState({ selected: true });
+        } else {
+          this.setState({ selected: false });
+        }
+        break;
+      case '4':
+        if (selectedMorale4 == this.props.data.id) {
+          this.setState({ selected: true });
+        } else {
+          this.setState({ selected: false });
+        }
+        break;
+      default :
+        break;
     }
   }
 
@@ -39,18 +77,63 @@ class AbilityMorale extends Component {
     });
   }
 
+  selectMorale() {
+    if (this.state.status) {
+      switch (this.props.rank) {
+        case '1':
+          if (this.state.selected) {
+            this.props.resetSelectedMorale1();
+          } else {
+            this.props.selectMorale1(this.props.data.id);
+          }
+          break;
+        case '2':
+          if (this.state.selected) {
+            this.props.resetSelectedMorale2();
+          } else {
+            this.props.selectMorale2(this.props.data.id);
+          }
+          break;
+        case '3':
+          if (this.state.selected) {
+            this.props.resetSelectedMorale3();
+          } else {
+            this.props.selectMorale3(this.props.data.id);
+          }
+          break;
+        case '4':
+          if (this.state.selected) {
+            this.props.resetSelectedMorale4();
+          } else {
+            this.props.selectMorale4(this.props.data.id);
+          }
+          break;
+        default :
+          break;
+      }
+    }
+  }
+
   // Initial render
   componentDidMount() {
     this.setInitialStatus(
       this.props.level,
-      this.props.data.minrank);
+      this.props.data.minrank,
+      this.props.selectedMorale1,
+      this.props.selectedMorale2,
+      this.props.selectedMorale3,
+      this.props.selectedMorale4);
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
     this.setInitialStatus(
       nextProps.level,
-      nextProps.data.minrank);
+      nextProps.data.minrank,
+      nextProps.selectedMorale1,
+      nextProps.selectedMorale2,
+      nextProps.selectedMorale3,
+      nextProps.selectedMorale4);
   }
 
   render() {
@@ -77,6 +160,7 @@ class AbilityMorale extends Component {
           alt={this.props.data.name}
           onMouseOver={this.hoverOver}
           onMouseOut={this.hoverOut}
+          onClick={this.selectMorale}
         />
         <Popover
           content={popoverContent}
@@ -90,10 +174,23 @@ class AbilityMorale extends Component {
   }
 }
 
-function mapStateToProps({ level }) {
+function mapStateToProps({ level, selectedMorale1, selectedMorale2, selectedMorale3, selectedMorale4 }) {
   return {
-    level
+    level,
+    selectedMorale1,
+    selectedMorale2,
+    selectedMorale3,
+    selectedMorale4
   };
 }
 
-export default connect(mapStateToProps, null)(AbilityMorale);
+export default connect(mapStateToProps, {
+  selectMorale1,
+  resetSelectedMorale1,
+  selectMorale2,
+  resetSelectedMorale2,
+  selectMorale3,
+  resetSelectedMorale3,
+  selectMorale4,
+  resetSelectedMorale4
+})(AbilityMorale);

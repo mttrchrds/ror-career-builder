@@ -19,7 +19,7 @@ class CoreMorales extends Component {
           <h3 className={css.moraleHeading}>Rank 1</h3>
           <div className="row">
             {this.props.coreMorale1.map(
-              (key) => <AbilityMorale key={key} data={this.props.abilitiesObject[key]} />
+              (key) => <AbilityMorale key={key} rank="1" data={this.props.abilitiesObject[key]} />
             )}
           </div>
         </div>
@@ -27,7 +27,7 @@ class CoreMorales extends Component {
           <h3 className={css.moraleHeading}>Rank 2</h3>
           <div className="row">
             {this.props.coreMorale2.map(
-              (key) => <AbilityMorale key={key} data={this.props.abilitiesObject[key]} />
+              (key) => <AbilityMorale key={key} rank="2" data={this.props.abilitiesObject[key]} />
             )}
           </div>
         </div>
@@ -35,7 +35,7 @@ class CoreMorales extends Component {
           <h3 className={css.moraleHeading}>Rank 3</h3>
           <div className="row">
             {this.props.coreMorale3.map(
-              (key) => <AbilityMorale key={key} data={this.props.abilitiesObject[key]} />
+              (key) => <AbilityMorale key={key} rank="3" data={this.props.abilitiesObject[key]} />
             )}
           </div>
         </div>
@@ -43,7 +43,7 @@ class CoreMorales extends Component {
           <h3 className={css.moraleHeading}>Rank 4</h3>
           <div className="row">
             {this.props.coreMorale4.map(
-              (key) => <AbilityMorale key={key} data={this.props.abilitiesObject[key]} />
+              (key) => <AbilityMorale key={key} rank="4" data={this.props.abilitiesObject[key]} />
             )}
           </div>
         </div>
