@@ -4,6 +4,11 @@ import css from '../../css/components/SelectRenown.css';
 
 import { setRenown } from '../actions/actionRenown';
 import { calculatePoints } from '../actions/actionPoints';
+import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
+import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
+import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
+import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
+import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 
 class SelectRenown extends Component {
 
@@ -14,14 +19,13 @@ class SelectRenown extends Component {
 
   changeRenown() {
 
-    // TODO reset selections when have action creators
-    // selectedMorale1: this.state.selectedMorale1,
-    // selectedMorale2: this.state.selectedMorale2,
-    // selectedMorale3: this.state.selectedMorale3,
-    // selectedMorale4: this.state.selectedMorale4,
-    // selectedMasteries: this.state.selectedMasteries,
-    // selectedTactics: this.state.selectedTactics,
-    // this.props.resetSelections();
+    // Reset selections
+    this.props.resetSelectedMorale1();
+    this.props.resetSelectedMorale2();
+    this.props.resetSelectedMorale3();
+    this.props.resetSelectedMorale4();
+    this.props.resetSelectedTactics();
+
     this.props.setRenown(this.refs.renown.value);
     this.props.calculatePoints(this.props.level, this.refs.renown.value);
     
@@ -57,4 +61,12 @@ function mapStateToProps({ level, renown }) {
   };
 }
 
-export default connect(mapStateToProps, { setRenown, calculatePoints })(SelectRenown);
+export default connect(mapStateToProps, { 
+  setRenown,
+  calculatePoints,
+  resetSelectedMorale1,
+  resetSelectedMorale2,
+  resetSelectedMorale3,
+  resetSelectedMorale4,
+  resetSelectedTactics
+})(SelectRenown);

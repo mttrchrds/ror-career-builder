@@ -5,6 +5,11 @@ import css from '../../css/components/SelectLevel.css';
 import { setLevel } from '../actions/actionLevel';
 import { calculateTacticLimit } from '../actions/actionTacticLimit';
 import { calculatePoints } from '../actions/actionPoints';
+import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
+import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
+import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
+import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
+import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 
 class SelectLevel extends Component {
 
@@ -25,14 +30,12 @@ class SelectLevel extends Component {
 
   changeLevel() {
 
-    // TODO reset selections when have action creators
-    // selectedMorale1: this.state.selectedMorale1,
-    // selectedMorale2: this.state.selectedMorale2,
-    // selectedMorale3: this.state.selectedMorale3,
-    // selectedMorale4: this.state.selectedMorale4,
-    // selectedMasteries: this.state.selectedMasteries,
-    // selectedTactics: this.state.selectedTactics,
-    // this.props.resetSelections();
+    // Reset selections
+    this.props.resetSelectedMorale1();
+    this.props.resetSelectedMorale2();
+    this.props.resetSelectedMorale3();
+    this.props.resetSelectedMorale4();
+    this.props.resetSelectedTactics();
 
     this.props.setLevel(this.refs.level.value);
     this.props.calculateTacticLimit(this.refs.level.value);
@@ -66,4 +69,13 @@ function mapStateToProps({ level, renown }) {
   };
 }
 
-export default connect(mapStateToProps, { setLevel, calculateTacticLimit, calculatePoints })(SelectLevel);
+export default connect(mapStateToProps, { 
+  setLevel, 
+  calculateTacticLimit, 
+  calculatePoints, 
+  resetSelectedMorale1,
+  resetSelectedMorale2,
+  resetSelectedMorale3,
+  resetSelectedMorale4,
+  resetSelectedTactics
+})(SelectLevel);

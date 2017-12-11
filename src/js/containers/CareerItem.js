@@ -22,6 +22,7 @@ import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
 import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
 import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
 import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
+import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 
 class CareerItem extends Component {
   
@@ -53,6 +54,7 @@ class CareerItem extends Component {
     this.props.resetSelectedMorale2();
     this.props.resetSelectedMorale3();
     this.props.resetSelectedMorale4();
+    this.props.resetSelectedTactics();
   }
 
   render() {
@@ -97,6 +99,7 @@ export default connect(mapStateToProps,
     resetSelectedMorale1,
     resetSelectedMorale2,
     resetSelectedMorale3,
-    resetSelectedMorale4
+    resetSelectedMorale4,
+    resetSelectedTactics
   }
 )(CareerItem);
