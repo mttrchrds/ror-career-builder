@@ -26,6 +26,7 @@ import SelectLevel from './SelectLevel';
 import SelectRenown from './SelectRenown';
 import CoreAbilities from './CoreAbilities';
 import CoreMorales from './CoreMorales';
+import CoreTactics from './CoreTactics';
 
 class Career extends Component {
 
@@ -185,7 +186,7 @@ class Career extends Component {
             </div>
 
             <div className="marginBottom">
-              
+              <CoreTactics />
             </div>
 
           </div>

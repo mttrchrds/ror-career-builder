@@ -19,6 +19,7 @@ import reducerSelectedMorale1 from './reducerSelectedMorale1';
 import reducerSelectedMorale2 from './reducerSelectedMorale2';
 import reducerSelectedMorale3 from './reducerSelectedMorale3';
 import reducerSelectedMorale4 from './reducerSelectedMorale4';
+import reducerSelectedTactics from './reducerSelectedTactics';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
@@ -40,7 +41,8 @@ const rootReducer = combineReducers({
   selectedMorale1: reducerSelectedMorale1,
   selectedMorale2: reducerSelectedMorale2,
   selectedMorale3: reducerSelectedMorale3,
-  selectedMorale4: reducerSelectedMorale4
+  selectedMorale4: reducerSelectedMorale4,
+  selectedTactics: reducerSelectedTactics
 });
 
 export default rootReducer;
