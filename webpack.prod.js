@@ -6,6 +6,8 @@ const config = require('./config');
 
 module.exports = {
   entry: [
+    // Required for using functions such as .findIndex in the client
+    'babel-polyfill',
     config.pathSource + config.pathJSAbsolute + config.filenameEntry
   ],
   output: {

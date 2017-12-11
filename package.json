@@ -64,5 +64,8 @@
     "uglifyjs-webpack-plugin": "1.1.1",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
   }
 }

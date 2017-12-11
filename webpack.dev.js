@@ -4,6 +4,8 @@ const config = require('./config');
 
 module.exports = {
   entry: [
+    // Required for using functions such as .findIndex in the client
+    'babel-polyfill',
     // Required for HOT reloading in React
     'react-hot-loader/patch',
     // Configure dev server address/port
