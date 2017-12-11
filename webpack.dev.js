@@ -76,7 +76,8 @@ module.exports = {
     // We want to write our own index.html file from a Handlebars template
     new htmlWebpackPlugin({
       template: config.pathSource + config.pathSourceTemplate + config.filenameTemplate,
-      filename: config.filenameHTML
+      filename: config.filenameHTML,
+      inject: false
     })
   ]
 };
