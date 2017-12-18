@@ -27,7 +27,7 @@ class SelectRenown extends Component {
     this.props.resetSelectedTactics();
 
     this.props.setRenown(this.refs.renown.value);
-    this.props.calculatePoints(this.props.level, this.refs.renown.value);
+    this.props.calculatePoints(this.props.level, Number(this.refs.renown.value));
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
