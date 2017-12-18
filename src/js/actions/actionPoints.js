@@ -52,11 +52,11 @@ export function setPoints(points) {
 
 export function calculatePoints(level, renown) {
   
-    return {
-      type: CALCULATE_POINTS,
-      payload: calculateMasteryPoints(level, renown)
-    };
-  }
+  return {
+    type: CALCULATE_POINTS,
+    payload: calculateMasteryPoints(level, renown)
+  };
+}
 
 export function resetPoints() {
   
