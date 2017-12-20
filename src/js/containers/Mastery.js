@@ -11,6 +11,7 @@ class Mastery extends Component {
     super(props);
     this.renderPathPopover = this.renderPathPopover.bind(this);
     this.renderAbility = this.renderAbility.bind(this);
+    this.renderCoreAbilities = this.renderCoreAbilities.bind(this);
   }
 
   renderPathPopover(pathName) {
@@ -26,6 +27,24 @@ class Mastery extends Component {
     return (
       <Ability key={abilityId} data={this.props.abilitiesObject[abilityId]} />
     )
+  }
+
+  renderCoreAbilities(path) {
+    const coreAbilities = this.props.abilities.mastery[path].coreAbilities;
+    if (coreAbilities.length > 6) {
+      const coreAbilities1 = [...coreAbilities.slice(0, 6)];
+      const coreAbilities2 = [...coreAbilities.slice(6)];
+      return (
+        [
+          <div key="core1" className="column">{coreAbilities1.map(this.renderAbility)}</div>,
+          <div key="core2" className="l-col">{coreAbilities2.map(this.renderAbility)}</div>
+        ]
+      );
+    } else {
+      return (
+        <div className="column">{coreAbilities.map(this.renderAbility)}</div>
+      );
+    }
   }
 
   render() {
@@ -58,7 +77,7 @@ class Mastery extends Component {
                     Core<br />abilities
                   </div>
                   <div className="row">
-                    <div className="column">{this.props.abilities.mastery.a.coreAbilities.map(this.renderAbility)}</div>
+                    {this.renderCoreAbilities('a')}
                   </div>
                 </div>
               </div>
@@ -80,7 +99,7 @@ class Mastery extends Component {
                     Core<br />abilities
                   </div>
                   <div className="row">
-                    <div className="column">{this.props.abilities.mastery.b.coreAbilities.map(this.renderAbility)}</div>
+                    {this.renderCoreAbilities('b')}
                   </div>
                 </div>
               </div>
@@ -102,7 +121,7 @@ class Mastery extends Component {
                     Core<br />abilities
                   </div>
                   <div className="row">
-                    <div className="column">{this.props.abilities.mastery.c.coreAbilities.map(this.renderAbility)}</div>
+                    {this.renderCoreAbilities('c')}
                   </div>
                 </div>
               </div>
