@@ -31,6 +31,7 @@ class Mastery extends Component {
 
   renderCoreAbilities(path) {
     const coreAbilities = this.props.abilities.mastery[path].coreAbilities;
+    // Split core abilities into two columns if there are 6 or more abilities (currently only Squig Herder)
     if (coreAbilities.length > 6) {
       const coreAbilities1 = [...coreAbilities.slice(0, 6)];
       const coreAbilities2 = [...coreAbilities.slice(6)];
