@@ -10,6 +10,7 @@ import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
 import { resetTacticLimit } from '../actions/actionTacticLimit';
 import { resetPoints } from '../actions/actionPoints';
+import { resetCurrentPoints } from '../actions/actionCurrentPoints';
 import { resetCoreAbilities } from '../actions/actionCoreAbilities';
 import { resetCoreMorale1 } from '../actions/actionCoreMorale1';
 import { resetCoreMorale2 } from '../actions/actionCoreMorale2';
@@ -42,6 +43,7 @@ class CareerItem extends Component {
     this.props.resetRenown();
     this.props.resetTacticLimit();
     this.props.resetPoints();
+    this.props.resetCurrentPoints();
     this.props.resetCoreAbilities();
     this.props.resetCoreMorale1();
     this.props.resetCoreMorale2();

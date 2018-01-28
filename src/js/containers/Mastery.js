@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import css from '../../css/components/Mastery.css';
 
 import Ability from './Ability';
+import PathMeterContainer from './PathMeterContainer';
 
 class Mastery extends Component {
 
@@ -53,13 +54,13 @@ class Mastery extends Component {
     const labelClass = classNames({
       [css.label]: true,
       'marginLeft--small': true,
-      [css.labelActive]: this.props.points > 0,
+      [css.labelActive]: this.props.currentPoints > 0,
     });
 
     return (
       <div className={css.container}>
         <h2 className={css.heading}>
-          Mastery abilities <span className={labelClass}>{this.props.points} points</span>
+          Mastery abilities <span className={labelClass}>{this.props.currentPoints} points</span>
         </h2>
         <div className="grid">
           <div className="grid-col-1-2 grid-col-1@mobile grid-col-1-3@sm-min">
@@ -70,6 +71,7 @@ class Mastery extends Component {
               </h3>
               <div className="row row--justify">
                 <div className="row row--justify">
+                  <PathMeterContainer path="a" />
                   {/* <PathMeterButtons />
                   <PathMeter /> */}
                 </div>
@@ -92,6 +94,7 @@ class Mastery extends Component {
               </h3>
               <div className="row row--justify">
                 <div className="row row--justify">
+                  <PathMeterContainer path="b" />
                   {/* <PathMeterButtons />
                   <PathMeter /> */}
                 </div>
@@ -114,6 +117,7 @@ class Mastery extends Component {
               </h3>
               <div className="row row--justify">
                 <div className="row row--justify">
+                  <PathMeterContainer path="c" />
                   {/* <PathMeterButtons />
                   <PathMeter /> */}
                 </div>
@@ -134,9 +138,10 @@ class Mastery extends Component {
   }
 }
 
-function mapStateToProps({ points, abilities, abilitiesObject }) {
+function mapStateToProps({ points, currentPoints, abilities, abilitiesObject }) {
   return {
     points,
+    currentPoints,
     abilities,
     abilitiesObject
   };

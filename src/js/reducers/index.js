@@ -8,23 +8,27 @@ import ReducerLevel from './reducerLevel';
 import ReducerRenown from './reducerRenown';
 import ReducerTacticLimit from './reducerTacticLimit';
 import ReducerPoints from './reducerPoints';
-import reducerCoreAbilities from './reducerCoreAbilities';
-import reducerCoreMorale1 from './reducerCoreMorale1';
-import reducerCoreMorale2 from './reducerCoreMorale2';
-import reducerCoreMorale3 from './reducerCoreMorale3';
-import reducerCoreMorale4 from './reducerCoreMorale4';
-import reducerCoreTactics from './reducerCoreTactics';
-import reducerAbilitiesObject from './reducerAbilitiesObject';
-import reducerSelectedMorale1 from './reducerSelectedMorale1';
-import reducerSelectedMorale2 from './reducerSelectedMorale2';
-import reducerSelectedMorale3 from './reducerSelectedMorale3';
-import reducerSelectedMorale4 from './reducerSelectedMorale4';
-import reducerSelectedTactics from './reducerSelectedTactics';
+import ReducerCurrentPoints from './reducerCurrentPoints';
+import ReducerCoreAbilities from './reducerCoreAbilities';
+import ReducerCoreMorale1 from './reducerCoreMorale1';
+import ReducerCoreMorale2 from './reducerCoreMorale2';
+import ReducerCoreMorale3 from './reducerCoreMorale3';
+import ReducerCoreMorale4 from './reducerCoreMorale4';
+import ReducerCoreTactics from './reducerCoreTactics';
+import ReducerAbilitiesObject from './reducerAbilitiesObject';
+import ReducerSelectedMorale1 from './reducerSelectedMorale1';
+import ReducerSelectedMorale2 from './reducerSelectedMorale2';
+import ReducerSelectedMorale3 from './reducerSelectedMorale3';
+import ReducerSelectedMorale4 from './reducerSelectedMorale4';
+import ReducerSelectedTactics from './reducerSelectedTactics';
+import ReducerPathMeterA from './reducerPathMeterA';
+import ReducerPathMeterB from './reducerPathMeterB';
+import ReducerPathMeterC from './reducerPathMeterC';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
   abilities: ReducerAbilities,
-  abilitiesObject: reducerAbilitiesObject,
+  abilitiesObject: ReducerAbilitiesObject,
   sidebar: ReducerSidebar,
   overlayShow: ReducerOverlayShow,
   slug: ReducerSlug,
@@ -32,17 +36,21 @@ const rootReducer = combineReducers({
   renown: ReducerRenown,
   tacticLimit: ReducerTacticLimit,
   points: ReducerPoints,
-  coreAbilities: reducerCoreAbilities,
-  coreTactics: reducerCoreTactics,
-  coreMorale1: reducerCoreMorale1,
-  coreMorale2: reducerCoreMorale2,
-  coreMorale3: reducerCoreMorale3,
-  coreMorale4: reducerCoreMorale4,
-  selectedMorale1: reducerSelectedMorale1,
-  selectedMorale2: reducerSelectedMorale2,
-  selectedMorale3: reducerSelectedMorale3,
-  selectedMorale4: reducerSelectedMorale4,
-  selectedTactics: reducerSelectedTactics
+  currentPoints: ReducerCurrentPoints,
+  coreAbilities: ReducerCoreAbilities,
+  coreTactics: ReducerCoreTactics,
+  coreMorale1: ReducerCoreMorale1,
+  coreMorale2: ReducerCoreMorale2,
+  coreMorale3: ReducerCoreMorale3,
+  coreMorale4: ReducerCoreMorale4,
+  selectedMorale1: ReducerSelectedMorale1,
+  selectedMorale2: ReducerSelectedMorale2,
+  selectedMorale3: ReducerSelectedMorale3,
+  selectedMorale4: ReducerSelectedMorale4,
+  selectedTactics: ReducerSelectedTactics,
+  pathMeterA: ReducerPathMeterA,
+  pathMeterB: ReducerPathMeterB,
+  pathMeterC: ReducerPathMeterC
 });
 
 export default rootReducer;

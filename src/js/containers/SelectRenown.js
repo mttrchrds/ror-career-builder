@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/SelectRenown.css';
+import { calculateMasteryPoints } from '../helpers/points';
 
 import { setRenown } from '../actions/actionRenown';
-import { calculatePoints } from '../actions/actionPoints';
+import { setPoints } from '../actions/actionPoints';
+import { setCurrentPoints } from '../actions/actionCurrentPoints';
 import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
 import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
 import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
 import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
 import { resetSelectedTactics } from '../actions/actionSelectedTactics';
+import { resetPathMeterA } from '../actions/actionPathMeterA';
+import { resetPathMeterB } from '../actions/actionPathMeterB';
+import { resetPathMeterC } from '../actions/actionPathMeterC';
 
 class SelectRenown extends Component {
 
@@ -25,9 +30,13 @@ class SelectRenown extends Component {
     this.props.resetSelectedMorale3();
     this.props.resetSelectedMorale4();
     this.props.resetSelectedTactics();
+    this.props.resetPathMeterA();
+    this.props.resetPathMeterB();
+    this.props.resetPathMeterC();
 
     this.props.setRenown(this.refs.renown.value);
-    this.props.calculatePoints(this.props.level, Number(this.refs.renown.value));
+    this.props.setPoints(calculateMasteryPoints(this.props.level, Number(this.refs.renown.value)));
+    this.props.setCurrentPoints(calculateMasteryPoints(this.props.level, Number(this.refs.renown.value)));
     
     // TODO address the functions below
     //this.props.updateMasteryPoints();
@@ -63,10 +72,14 @@ function mapStateToProps({ level, renown }) {
 
 export default connect(mapStateToProps, { 
   setRenown,
-  calculatePoints,
+  setPoints,
+  setCurrentPoints,
   resetSelectedMorale1,
   resetSelectedMorale2,
   resetSelectedMorale3,
   resetSelectedMorale4,
-  resetSelectedTactics
+  resetSelectedTactics,
+  resetPathMeterA,
+  resetPathMeterB,
+  resetPathMeterC
 })(SelectRenown);

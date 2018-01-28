@@ -1,12 +1,12 @@
-import { RESET_POINTS, SET_POINTS } from "../actions/actionPoints";
+import { RESET_CURRENT_POINTS, SET_CURRENT_POINTS } from "../actions/actionCurrentPoints";
 
 const initialPoints = 0;
 
 export default function(state = initialPoints, action) {
   switch (action.type) {
-    case SET_POINTS:
+    case SET_CURRENT_POINTS:
       return action.payload;
-    case RESET_POINTS:
+    case RESET_CURRENT_POINTS:
       return initialPoints;
     default:
       return state;
