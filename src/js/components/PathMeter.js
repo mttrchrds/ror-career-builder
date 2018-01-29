@@ -5,8 +5,7 @@ import css from '../../css/components/PathMeter.css';
 const PathMeter = (props) => {
   const renderMeterLevel = () => {
     const meterLevels = [];
-    const meterLevelMax = 15;
-    for (let i = 1; i <= meterLevelMax; i++) {
+    for (let i = 1; i <= props.meterMax; i++) {
       let thisClass = css.level;
       let thisClickHandler = false;
       thisClickHandler = (e) => {
