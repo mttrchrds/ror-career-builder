@@ -5,6 +5,7 @@ import css from '../../css/components/PathMeter.css';
 
 import PathMeter from '../components/PathMeter';
 import PathButtons from '../components/PathButtons';
+import PathMeterAbilities from './PathMeterAbilities';
 import { setPathMeterA } from '../actions/actionPathMeterA';
 import { setPathMeterB } from '../actions/actionPathMeterB';
 import { setPathMeterC } from '../actions/actionPathMeterC';
@@ -90,18 +91,21 @@ class PathButtonsContainer extends Component {
     }
     const meterMax = 15;
     return (
-      <div>
-        <PathMeter 
-          points={this.props.currentPoints} 
-          pathPoints={pathPoints}
-          setPoints={this.setPoints}
-          meterMax={meterMax} />
-        <PathButtons
-          points={this.props.currentPoints} 
-          pathPoints={pathPoints}
-          addPoint={this.addPoint}
-          removePoint={this.removePoint}
-          meterMax={meterMax} />
+      <div className="row row--justify">
+        <div>
+          <PathMeter 
+            points={this.props.currentPoints} 
+            pathPoints={pathPoints}
+            setPoints={this.setPoints}
+            meterMax={meterMax} />
+          <PathButtons
+            points={this.props.currentPoints} 
+            pathPoints={pathPoints}
+            addPoint={this.addPoint}
+            removePoint={this.removePoint}
+            meterMax={meterMax} />
+        </div>
+        <PathMeterAbilities path={this.props.path} />
       </div>
     );
   }
