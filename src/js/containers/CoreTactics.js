@@ -4,7 +4,6 @@ import css from '../../css/components/CoreAbilities.css';
 
 import AbilityTactic from './AbilityTactic';
 
-
 class CoreTactics extends Component {
 
   constructor(props) {
