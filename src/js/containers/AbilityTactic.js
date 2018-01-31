@@ -8,7 +8,7 @@ import PopoverAbility from '../components/PopoverAbility';
 
 import { selectTactic, deselectTactic } from '../actions/actionSelectedTactics';
 
-class AbilityMorale extends Component {
+class AbilityTactic extends Component {
 
   constructor(props) {
     super(props);
@@ -125,4 +125,4 @@ function mapStateToProps({ level, selectedTactics, tacticLimit }) {
 export default connect(mapStateToProps, {
   selectTactic,
   deselectTactic
-})(AbilityMorale);
+})(AbilityTactic);
