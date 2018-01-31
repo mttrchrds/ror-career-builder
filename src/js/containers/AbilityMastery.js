@@ -28,11 +28,7 @@ class AbilityMastery extends Component {
   }
 
   setInitialStatus(currentLevel, minrank) {
-    if (Number(currentLevel) >= Number(minrank)) {
-      this.setState({ status: true });
-    } else {
-      this.setState({ status: false });
-    }
+    
   }
 
   hoverOver() {
@@ -53,16 +49,12 @@ class AbilityMastery extends Component {
 
   // Initial render
   componentDidMount() {
-    this.setInitialStatus(
-      this.props.level,
-      this.props.data.minrank);
+    
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
-    this.setInitialStatus(
-      nextProps.level,
-      nextProps.data.minrank);
+    
   }
 
   render() {
