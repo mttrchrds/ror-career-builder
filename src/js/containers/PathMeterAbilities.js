@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/PathMeterAbilities.css';
 
-import Ability from './Ability';
+import AbilityMastery from './AbilityMastery';
 
 
 class PathMeterAbilities extends Component {
@@ -14,10 +14,12 @@ class PathMeterAbilities extends Component {
 
   renderAbility(level) {
     const levelProp = `lvl${level}`;
+    const abilityKey = `oa${this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]}`;
+    const abilityData = this.props.abilitiesObject[this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]];
     return (
-      <div className={css.ability}>
-        <Ability
-          data={this.props.abilitiesObject[this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]]}
+      <div className={css.ability} key={abilityKey}>
+        <AbilityMastery
+          data={abilityData}
         />
       </div>
     )
