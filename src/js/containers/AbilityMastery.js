@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/AbilityMastery.css';
 import cssTactic from '../../css/components/AbilityTactic.css';
+import cssMorale from '../../css/components/AbilityMorale.css';
 import classNames from 'classnames';
 
 import Popover from '../components/Popover';
@@ -69,9 +70,9 @@ class AbilityMastery extends Component {
       [css.abilityStandard]: !this.state.status && !this.state.selected && (this.props.data.abilityType === 'standard'),
       [css.abilityStandardActive]: this.state.status && !this.state.selected && (this.props.data.abilityType === 'standard'),
       [css.abilityStandardSelected]: this.state.selected && (this.props.data.abilityType === 'standard'),
-      [css.abilityMorale]: !this.state.status && !this.state.selected && (this.props.data.abilityType === 'morale'),
-      [css.abilityMoraleActive]: this.state.status && !this.state.selected && (this.props.data.abilityType === 'morale'),
-      [css.abilityMoraleSelected]: this.state.selected && (this.props.data.abilityType === 'morale'),
+      [cssMorale.ability]: !this.state.status && !this.state.selected && (this.props.data.abilityType === 'morale'),
+      [cssMorale.abilityMasteryActive]: this.state.status && !this.state.selected && (this.props.data.abilityType === 'morale'),
+      [cssMorale.abilityMasterySelected]: this.state.selected && (this.props.data.abilityType === 'morale'),
       [cssTactic.ability]: !this.state.status && !this.state.selected && (this.props.data.abilityType === 'tactic'),
       [cssTactic.abilityMasteryActive]: this.state.status && !this.state.selected && (this.props.data.abilityType === 'tactic'),
       [cssTactic.abilityMasteryActive]: this.state.selected && (this.props.data.abilityType === 'tactic'),
@@ -81,10 +82,10 @@ class AbilityMastery extends Component {
     const abilityImageClass = classNames({
       [css.imageStandard]: !this.state.selected && (this.props.data.abilityType === 'standard'),
       [css.imageStandardSelected]: this.state.selected && (this.props.data.abilityType === 'standard'),
-      [css.imageMorale]: !this.state.selected && (this.props.data.abilityType === 'morale'),
-      [css.imageMoraleSelected]: this.state.selected && (this.props.data.abilityType === 'morale'),
-      [css.imageTactic]: !this.state.selected && (this.props.data.abilityType === 'tactic'),
-      [css.imageTacticSelected]: this.state.selected && (this.props.data.abilityType === 'tactic'),
+      [cssMorale.imageInactive]: !this.state.selected && (this.props.data.abilityType === 'morale'),
+      [cssMorale.image]: this.state.selected && (this.props.data.abilityType === 'morale'),
+      [cssTactic.imageInactive]: !this.state.selected && (this.props.data.abilityType === 'tactic'),
+      [cssTactic.image]: this.state.selected && (this.props.data.abilityType === 'tactic'),
     });
 
     // const abilityClass = classNames({
