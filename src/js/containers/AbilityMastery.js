@@ -8,6 +8,10 @@ import classNames from 'classnames';
 import Popover from '../components/Popover';
 import PopoverAbility from '../components/PopoverAbility';
 
+import { selectMasteryAbility, deselectMasteryAbility } from '../actions/actionMasteryAbilities';
+import { selectMasteryMorale, deselectMasteryMorale } from '../actions/actionMasteryMorales';
+import { selectMasteryTactic, deselectMasteryTactic } from '../actions/actionMasteryTactics';
+
 class AbilityMastery extends Component {
 
   /*
@@ -80,15 +84,6 @@ class AbilityMastery extends Component {
       [cssTactic.image]: this.state.selected && (this.props.data.abilityType === 'tactic'),
     });
 
-    // const abilityClass = classNames({
-    //   [css.ability]: true,
-    //   'is-hovered': this.state.hovered,
-    //   popover__parent: true,
-    // });
-    // const abilityImageClass = classNames({
-    //   [css.image]: this.state.status,
-    //   [css.imageInactive]: !this.state.status,
-    // });
     const imgSrc = `../../images/abilities/${this.props.data.image}.png`;
     const popoverContent = (
       <PopoverAbility data={this.props.data} imgSrc={imgSrc} />
@@ -120,4 +115,11 @@ function mapStateToProps({ level }) {
   };
 }
 
-export default connect(mapStateToProps, null)(AbilityMastery);
+export default connect(mapStateToProps, {
+  selectMasteryAbility,
+  deselectMasteryAbility,
+  selectMasteryMorale,
+  deselectMasteryMorale,
+  selectMasteryTactic,
+  deselectMasteryTactic
+})(AbilityMastery);
