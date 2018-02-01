@@ -29,10 +29,55 @@ class AbilityMastery extends Component {
     this.hoverOut = this.hoverOut.bind(this);
     this.hoverOver = this.hoverOver.bind(this);
     this.clicked = this.clicked.bind(this);
+    this.setInitialStatus = this.setInitialStatus.bind(this);
   }
 
-  setInitialStatus(currentLevel, minrank) {
-    
+  getPathPoints(path, pathA, pathB, pathC) {
+    switch (path) {
+      case 'a':
+        return pathA;
+        break;
+      case 'b':
+        return pathB;
+        break;
+      case 'c':
+        return pathC;
+        break;
+    }
+  }
+
+  //setInitialStatus(meterRequirement, pathMeter, selectedMasteries, masteryPoints) {
+  setInitialStatus(data, pathMeter, masteryAbilities, currentPoints) {
+
+    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedMasteries
+    if (selectedMasteries.indexOf(this.props.details.id) !== -1) {
+      this.setState({
+        abilitySelected: true,
+      });
+    } else {
+      this.setState({
+        abilitySelected: false,
+      });
+    }
+
+    let pathRequirement = Number(meterRequirement) + 1;
+    let pointsRequirement = 0;
+
+    if (Number(pathRequirement) > Number(pathMeter)) {
+      pointsRequirement = pathRequirement - Number(pathMeter);
+    } else {
+      pointsRequirement = 1;
+    }
+
+    if (Number(masteryPoints) >= Number(pointsRequirement)) {  
+      this.setState({
+        abilityStatus: true,
+      });
+    } else {
+      this.setState({
+        abilityStatus: false,
+      });
+    }
   }
 
   hoverOver() {
@@ -109,9 +154,28 @@ class AbilityMastery extends Component {
   }
 }
 
-function mapStateToProps({ level }) {
+function mapStateToProps(
+  { 
+    level, 
+    masteryAbilities, 
+    masteryTactics, 
+    masteryMorales, 
+    currentPoints,
+    pathMeterA,
+    pathMeterB,
+    pathMeterC
+  }
+) 
+  {
   return {
-    level
+    level,
+    masteryAbilities,
+    masteryTactics,
+    masteryTactics,
+    currentPoints,
+    pathMeterA,
+    pathMeterB,
+    pathMeterC
   };
 }
 

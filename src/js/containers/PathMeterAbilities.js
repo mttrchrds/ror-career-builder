@@ -20,6 +20,7 @@ class PathMeterAbilities extends Component {
       <div className={css.ability} key={abilityKey}>
         <AbilityMastery
           data={abilityData}
+          path={this.props.path}
         />
       </div>
     )
