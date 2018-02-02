@@ -29,54 +29,138 @@ class AbilityMastery extends Component {
     this.hoverOut = this.hoverOut.bind(this);
     this.hoverOver = this.hoverOver.bind(this);
     this.clicked = this.clicked.bind(this);
-    this.setInitialStatus = this.setInitialStatus.bind(this);
+    this.processAbility = this.processAbility.bind(this);
   }
 
-  getPathPoints(path, pathA, pathB, pathC) {
-    switch (path) {
+  processAbility (props) {
+
+    // console.log('level', props.masteryLevel);
+    console.log('data', props.data);
+    // console.log('pathMeterA', props.pathMeterA);
+    // console.log('pathMeterB', props.pathMeterB);
+    // console.log('pathMeterC', props.pathMeterC);
+    // console.log('path', props.path);
+    // console.log('masteryAbilities', props.masteryAbilities);
+    // console.log('masteryTactics', props.masteryTactics);
+    // console.log('masteryMorales', props.masteryMorales);
+    // console.log('currentPoints', props.currentPoints);
+
+    let abilities = [];
+    let pathMeter = '';
+
+    switch (props.path) {
       case 'a':
-        return pathA;
+        pathMeter = props.pathMeterA;
         break;
       case 'b':
-        return pathB;
+        pathMeter = props.pathMeterB;
         break;
       case 'c':
-        return pathC;
+        pathMeter = props.pathMeterC;
         break;
     }
-  }
 
-  //setInitialStatus(meterRequirement, pathMeter, selectedMasteries, masteryPoints) {
-  setInitialStatus(data, pathMeter, masteryAbilities, currentPoints) {
+    switch (props.data.abilityType) {
+      case 'standard':
+        abilities = props.masteryAbilities;
+        break;
+      case 'morale':
+        abilities = props.masteryMorales;
+        break;
+      case 'tactic':
+        abilities = props.masteryTactics;
+        break;
+    }
 
-    // Determine if ability is selected (i.e. highlighted) from state of Career i.e. this.state.selectedMasteries
-    if (selectedMasteries.indexOf(this.props.details.id) !== -1) {
+    // Determine if ability is selected (i.e. highlighted)
+    if (abilities.indexOf(props.data.id) !== -1) {
       this.setState({
-        abilitySelected: true,
+        selected: true,
       });
     } else {
       this.setState({
-        abilitySelected: false,
+        selected: false,
       });
     }
 
-    let pathRequirement = Number(meterRequirement) + 1;
-    let pointsRequirement = 0;
-
-    if (Number(pathRequirement) > Number(pathMeter)) {
-      pointsRequirement = pathRequirement - Number(pathMeter);
-    } else {
-      pointsRequirement = 1;
-    }
-
-    if (Number(masteryPoints) >= Number(pointsRequirement)) {  
-      this.setState({
-        abilityStatus: true,
-      });
-    } else {
-      this.setState({
-        abilityStatus: false,
-      });
+    switch (props.masteryLevel) {
+      case 1:
+        if (Number(props.currentPoints) >= 4) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 2:
+        if (Number(props.currentPoints) >= 6) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 3:
+        if (Number(props.currentPoints) >= 8) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 4:
+        if (Number(props.currentPoints) >= 10) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 5:
+        if (Number(props.currentPoints) >= 12) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 6:
+        if (Number(props.currentPoints) >= 14) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
+      case 7:
+        if (Number(props.currentPoints) >= 16) {  
+          this.setState({
+            status: true,
+          });
+        } else {
+          this.setState({
+            status: false,
+          });
+        }
+        break;
     }
   }
 
@@ -98,12 +182,12 @@ class AbilityMastery extends Component {
 
   // Initial render
   componentDidMount() {
-    
+    this.processAbility(this.props);
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
-    
+    this.processAbility(nextProps);
   }
 
   render() {
@@ -116,7 +200,7 @@ class AbilityMastery extends Component {
       [cssMorale.abilityMasterySelected]: this.state.selected && (this.props.data.abilityType === 'morale'),
       [cssTactic.ability]: !this.state.status && !this.state.selected && (this.props.data.abilityType === 'tactic'),
       [cssTactic.abilityMasteryActive]: this.state.status && !this.state.selected && (this.props.data.abilityType === 'tactic'),
-      [cssTactic.abilityMasteryActive]: this.state.selected && (this.props.data.abilityType === 'tactic'),
+      [cssTactic.abilityMasterySelected]: this.state.selected && (this.props.data.abilityType === 'tactic'),
       'is-hovered': this.state.hovered,
       popover__parent: true,
     });
@@ -156,7 +240,6 @@ class AbilityMastery extends Component {
 
 function mapStateToProps(
   { 
-    level, 
     masteryAbilities, 
     masteryTactics, 
     masteryMorales, 
@@ -168,10 +251,9 @@ function mapStateToProps(
 ) 
   {
   return {
-    level,
     masteryAbilities,
     masteryTactics,
-    masteryTactics,
+    masteryMorales,
     currentPoints,
     pathMeterA,
     pathMeterB,
