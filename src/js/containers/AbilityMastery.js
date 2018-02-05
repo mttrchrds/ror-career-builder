@@ -83,84 +83,51 @@ class AbilityMastery extends Component {
       });
     }
 
+    let meterRequirement = 0;
+
     switch (props.masteryLevel) {
       case 1:
-        if (Number(props.currentPoints) >= 4) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 3;
         break;
       case 2:
-        if (Number(props.currentPoints) >= 6) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 5;
         break;
       case 3:
-        if (Number(props.currentPoints) >= 8) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 7;
         break;
       case 4:
-        if (Number(props.currentPoints) >= 10) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 9;
         break;
       case 5:
-        if (Number(props.currentPoints) >= 12) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 11;
         break;
       case 6:
-        if (Number(props.currentPoints) >= 14) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 13;
         break;
       case 7:
-        if (Number(props.currentPoints) >= 16) {  
-          this.setState({
-            status: true,
-          });
-        } else {
-          this.setState({
-            status: false,
-          });
-        }
+        meterRequirement = 15;
         break;
+    }
+
+    let pathRequirement = Number(meterRequirement) + 1; 
+    let pointsRequirement = 0; 
+ 
+    if (Number(pathRequirement) > Number(pathMeter)) { 
+      pointsRequirement = pathRequirement - Number(pathMeter); 
+    } else { 
+      pointsRequirement = 1; 
+    }
+
+    console.log('pointsRequirement', pointsRequirement);
+ 
+    if (Number(props.currentPoints) >= Number(pointsRequirement)) {   
+      this.setState({ 
+        status: true
+      }); 
+    } else { 
+      this.setState({ 
+        status: false
+      });
     }
   }
 
