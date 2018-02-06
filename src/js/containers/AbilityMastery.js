@@ -15,6 +15,7 @@ import { setPathMeterA } from '../actions/actionPathMeterA';
 import { setPathMeterB } from '../actions/actionPathMeterB';
 import { setPathMeterC } from '../actions/actionPathMeterC';
 import { setCurrentPoints } from '../actions/actionCurrentPoints';
+import { deselectTactic } from '../actions/actionSelectedTactics';
 
 class AbilityMastery extends Component {
 
@@ -37,17 +38,6 @@ class AbilityMastery extends Component {
   }
 
   processAbility(props) {
-
-    // console.log('level', props.masteryLevel);
-    // console.log('data', props.data);
-    // console.log('pathMeterA', props.pathMeterA);
-    // console.log('pathMeterB', props.pathMeterB);
-    // console.log('pathMeterC', props.pathMeterC);
-    // console.log('path', props.path);
-    // console.log('masteryAbilities', props.masteryAbilities);
-    // console.log('masteryTactics', props.masteryTactics);
-    // console.log('masteryMorales', props.masteryMorales);
-    // console.log('currentPoints', props.currentPoints);
 
     // Create single variable for current ability's group
     let abilities = [];
@@ -81,14 +71,6 @@ class AbilityMastery extends Component {
       pointsRequirement = pathRequirement - Number(props.pathMeter); 
     } else { 
       pointsRequirement = 1; 
-    }
-
-    //Ether Dance- SM
-    if (props.data.id == 2891) {
-      console.log('PROPS', props);
-      console.log('pathRequirement', pathRequirement);
-      console.log('this.state.pathMeter', props.pathMeter);
-      console.log('DEBUG', props.data.name, pointsRequirement, props.currentPoints);
     }
  
     if (Number(props.currentPoints) >= Number(pointsRequirement)) {   
@@ -163,7 +145,7 @@ class AbilityMastery extends Component {
       // else {} = Inactive ability selected
     // Unselect ability
     } else {
-      // Remove this ability to relevant mastery array
+      // Remove this ability from relevant mastery array
       switch (this.props.data.abilityType) {
         case 'standard':
           this.props.removeMasteryAbility(this.props.masteryAbilities, this.props.data.id);
@@ -173,6 +155,10 @@ class AbilityMastery extends Component {
           break;
         case 'tactic':
           this.props.removeMasteryTactic(this.props.masteryTactics, this.props.data.id);
+          // remove from selected tactics if it's there
+          if (this.props.selectedTactics.indexOf(this.props.data.id) !== -1) {
+            this.props.deselectTactic(this.props.selectedTactics, this.props.data.id);
+          }
           break;
       }
       // Increment mastery total as normal
@@ -251,7 +237,8 @@ function mapStateToProps(
     currentPoints,
     pathMeterA,
     pathMeterB,
-    pathMeterC
+    pathMeterC,
+    selectedTactics
   }
 ) 
   {
@@ -262,7 +249,8 @@ function mapStateToProps(
     currentPoints,
     pathMeterA,
     pathMeterB,
-    pathMeterC
+    pathMeterC,
+    selectedTactics
   };
 }
 
@@ -276,5 +264,6 @@ export default connect(mapStateToProps, {
   setPathMeterA,
   setPathMeterB,
   setPathMeterC,
-  setCurrentPoints
+  setCurrentPoints,
+  deselectTactic
 })(AbilityMastery);
