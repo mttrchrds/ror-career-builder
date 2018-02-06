@@ -59,7 +59,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'eval',
+  devtool: 'cheap-module-source-map',
   devServer: {
     historyApiFallback: true,
     // Where to serve content from
