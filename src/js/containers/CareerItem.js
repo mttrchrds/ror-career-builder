@@ -24,6 +24,9 @@ import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
 import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
 import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
 import { resetSelectedTactics } from '../actions/actionSelectedTactics';
+import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
+import { resetMasteryMorales } from '../actions/actionMasteryMorales';
+import { resetMasteryTactics } from '../actions/actionMasteryTactics';
 
 class CareerItem extends Component {
   
@@ -57,6 +60,9 @@ class CareerItem extends Component {
     this.props.resetSelectedMorale3();
     this.props.resetSelectedMorale4();
     this.props.resetSelectedTactics();
+    this.props.resetMasteryAbilities();
+    this.props.resetMasteryMorales();
+    this.props.resetMasteryTactics();
   }
 
   render() {
@@ -102,6 +108,9 @@ export default connect(mapStateToProps,
     resetSelectedMorale2,
     resetSelectedMorale3,
     resetSelectedMorale4,
-    resetSelectedTactics
+    resetSelectedTactics,
+    resetMasteryAbilities,
+    resetMasteryMorales,
+    resetMasteryTactics
   }
 )(CareerItem);

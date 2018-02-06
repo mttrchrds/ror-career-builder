@@ -15,6 +15,9 @@ import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 import { resetPathMeterA } from '../actions/actionPathMeterA';
 import { resetPathMeterB } from '../actions/actionPathMeterB';
 import { resetPathMeterC } from '../actions/actionPathMeterC';
+import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
+import { resetMasteryMorales } from '../actions/actionMasteryMorales';
+import { resetMasteryTactics } from '../actions/actionMasteryTactics';
 
 class SelectLevel extends Component {
 
@@ -44,7 +47,9 @@ class SelectLevel extends Component {
     this.props.resetPathMeterA();
     this.props.resetPathMeterB();
     this.props.resetPathMeterC();
-
+    this.props.resetMasteryAbilities();
+    this.props.resetMasteryMorales();
+    this.props.resetMasteryTactics();
     this.props.setLevel(this.refs.level.value);
     this.props.calculateTacticLimit(this.refs.level.value);
     this.props.setPoints(calculateMasteryPoints(this.refs.level.value, this.props.renown));
@@ -90,5 +95,8 @@ export default connect(mapStateToProps, {
   resetSelectedTactics,
   resetPathMeterA,
   resetPathMeterB,
-  resetPathMeterC
+  resetPathMeterC,
+  resetMasteryAbilities,
+  resetMasteryMorales,
+  resetMasteryTactics
 })(SelectLevel);

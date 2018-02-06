@@ -14,6 +14,9 @@ import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 import { resetPathMeterA } from '../actions/actionPathMeterA';
 import { resetPathMeterB } from '../actions/actionPathMeterB';
 import { resetPathMeterC } from '../actions/actionPathMeterC';
+import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
+import { resetMasteryMorales } from '../actions/actionMasteryMorales';
+import { resetMasteryTactics } from '../actions/actionMasteryTactics';
 
 class SelectRenown extends Component {
 
@@ -33,7 +36,9 @@ class SelectRenown extends Component {
     this.props.resetPathMeterA();
     this.props.resetPathMeterB();
     this.props.resetPathMeterC();
-
+    this.props.resetMasteryAbilities();
+    this.props.resetMasteryMorales();
+    this.props.resetMasteryTactics();
     this.props.setRenown(this.refs.renown.value);
     this.props.setPoints(calculateMasteryPoints(this.props.level, Number(this.refs.renown.value)));
     this.props.setCurrentPoints(calculateMasteryPoints(this.props.level, Number(this.refs.renown.value)));
@@ -81,5 +86,8 @@ export default connect(mapStateToProps, {
   resetSelectedTactics,
   resetPathMeterA,
   resetPathMeterB,
-  resetPathMeterC
+  resetPathMeterC,
+  resetMasteryAbilities,
+  resetMasteryMorales,
+  resetMasteryTactics
 })(SelectRenown);
