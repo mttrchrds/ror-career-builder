@@ -11,6 +11,10 @@ import PopoverAbility from '../components/PopoverAbility';
 import { addMasteryAbility, removeMasteryAbility } from '../actions/actionMasteryAbilities';
 import { addMasteryMorale, removeMasteryMorale } from '../actions/actionMasteryMorales';
 import { addMasteryTactic, removeMasteryTactic } from '../actions/actionMasteryTactics';
+import { setPathMeterA } from '../actions/actionPathMeterA';
+import { setPathMeterB } from '../actions/actionPathMeterB';
+import { setPathMeterC } from '../actions/actionPathMeterC';
+import { setCurrentPoints } from '../actions/actionCurrentPoints';
 
 class AbilityMastery extends Component {
 
@@ -18,13 +22,16 @@ class AbilityMastery extends Component {
   status = enabled/disabled
   hovered = selected i.e. clicked
   selected = ability is currently in hover state
+  pathMeter = points in current path. Equivalent to this.props.pathMeterA/B/C
+  meterRequirement = how many points are required to activate this ability
   */
   constructor(props) {
     super(props);
     this.state = {
       status: false,
       hovered: false,
-      selected: false
+      selected: false,
+      meterRequirement: 0
     };
     this.hoverOut = this.hoverOut.bind(this);
     this.hoverOver = this.hoverOver.bind(this);
@@ -32,10 +39,10 @@ class AbilityMastery extends Component {
     this.processAbility = this.processAbility.bind(this);
   }
 
-  processAbility (props) {
+  processAbility(props) {
 
     // console.log('level', props.masteryLevel);
-    console.log('data', props.data);
+    // console.log('data', props.data);
     // console.log('pathMeterA', props.pathMeterA);
     // console.log('pathMeterB', props.pathMeterB);
     // console.log('pathMeterC', props.pathMeterC);
@@ -45,9 +52,8 @@ class AbilityMastery extends Component {
     // console.log('masteryMorales', props.masteryMorales);
     // console.log('currentPoints', props.currentPoints);
 
-    let abilities = [];
-    let pathMeter = '';
-
+    // Set pathMeter
+    let pathMeter = 0;
     switch (props.path) {
       case 'a':
         pathMeter = props.pathMeterA;
@@ -60,6 +66,8 @@ class AbilityMastery extends Component {
         break;
     }
 
+    // Create single variable for current ability's group
+    let abilities = [];
     switch (props.data.abilityType) {
       case 'standard':
         abilities = props.masteryAbilities;
@@ -83,33 +91,7 @@ class AbilityMastery extends Component {
       });
     }
 
-    let meterRequirement = 0;
-
-    switch (props.masteryLevel) {
-      case 1:
-        meterRequirement = 3;
-        break;
-      case 2:
-        meterRequirement = 5;
-        break;
-      case 3:
-        meterRequirement = 7;
-        break;
-      case 4:
-        meterRequirement = 9;
-        break;
-      case 5:
-        meterRequirement = 11;
-        break;
-      case 6:
-        meterRequirement = 13;
-        break;
-      case 7:
-        meterRequirement = 15;
-        break;
-    }
-
-    let pathRequirement = Number(meterRequirement) + 1; 
+    let pathRequirement = Number(this.state.meterRequirement) + 1; 
     let pointsRequirement = 0; 
  
     if (Number(pathRequirement) > Number(pathMeter)) { 
@@ -118,7 +100,13 @@ class AbilityMastery extends Component {
       pointsRequirement = 1; 
     }
 
-    console.log('pointsRequirement', pointsRequirement);
+    //Ether Dance- SM
+    if (props.data.id == 2891) {
+      console.log('PROPS', props);
+      console.log('pathRequirement', pathRequirement);
+      console.log('this.state.pathMeter', pathMeter);
+      console.log('DEBUG', props.data.name, pointsRequirement, props.currentPoints);
+    }
  
     if (Number(props.currentPoints) >= Number(pointsRequirement)) {   
       this.setState({ 
@@ -144,17 +132,134 @@ class AbilityMastery extends Component {
   }
 
   clicked() {
-    console.log('clicked');
+    // Select ability i.e. not already selected
+    if (this.state.selected === false) {
+      // Active ability selected
+      if (this.state.status) {
+        // Set pathMeter
+        let pathMeter = 0;
+        switch (this.props.path) {
+          case 'a':
+            pathMeter = this.props.pathMeterA;
+            break;
+          case 'b':
+            pathMeter = this.props.pathMeterB;
+            break;
+          case 'c':
+            pathMeter = this.props.pathMeterC;
+            break;
+        }
+        if (Number(this.props.currentPoints) > 0) {
+          // Add this ability to relevant mastery array
+          switch (this.props.data.abilityType) {
+            case 'standard':
+              this.props.addMasteryAbility(this.props.masteryAbilities, this.props.data.id);
+              break;
+            case 'morale':
+              this.props.addMasteryMorale(this.props.masteryMorales, this.props.data.id);
+              break;
+            case 'tactic':
+              this.props.addMasteryTactic(this.props.masteryTactics, this.props.data.id);
+              break;
+          }
+          // If the path meter is below requirement for this ability, bring path meter up to the requirement
+          if (Number(pathMeter) < Number(this.state.meterRequirement)) {
+            // Calculate how many points are required to bring the path meter up to the minimum requirement
+            let masteryDifference = Number(pathMeter) - Number(this.state.meterRequirement);
+            // Remove one more point for the current selection
+            masteryDifference--;
+            // Re-calculate new current points total
+            masteryDifference = Number(this.props.currentPoints) + (Number(masteryDifference));
+            // Set current points
+            this.props.setCurrentPoints(masteryDifference);
+            // Set path points depending on which path
+            switch (this.props.path) {
+              case 'a':
+                this.props.setPathMeterA(this.state.meterRequirement);
+                break;
+              case 'b':
+                this.props.setPathMeterB(this.state.meterRequirement);
+                break;
+              case 'c':
+                this.props.setPathMeterC(this.state.meterRequirement);
+                break;
+            }
+          } else {
+            // Otherwise decrement mastery total as normal
+            this.props.setCurrentPoints(this.props.currentPoints - 1);
+          }
+        }
+      }
+      // else {} = Inactive ability selected
+    // Unselect ability
+    } else {
+      // Remove this ability to relevant mastery array
+      switch (this.props.data.abilityType) {
+        case 'standard':
+          this.props.removeMasteryAbility(this.props.masteryAbilities, this.props.data.id);
+          break;
+        case 'morale':
+          this.props.removeMasteryMorale(this.props.masteryMorales, this.props.data.id);
+          break;
+        case 'tactic':
+          this.props.removeMasteryTactic(this.props.masteryTactics, this.props.data.id);
+          break;
+      }
+      // Increment mastery total as normal
+      this.props.setCurrentPoints(this.props.currentPoints + 1);
+    }
   }
 
   // Initial render
   componentDidMount() {
+    console.log('componentDidMount');
+    // Set meterRequirement value into local state (as it's used in other functions)
+    switch (this.props.masteryLevel) {
+      case 1:
+        this.setState({
+          meterRequirement: 3
+        });
+        break;
+      case 2:
+        this.setState({
+          meterRequirement: 5
+        });
+        break;
+      case 3:
+        this.setState({
+          meterRequirement: 7
+        });
+        break;
+      case 4:
+        this.setState({
+          meterRequirement: 9
+        });
+        break;
+      case 5:
+        this.setState({
+          meterRequirement: 11
+        });
+        break;
+      case 6:
+        this.setState({
+          meterRequirement: 13
+        });
+        break;
+      case 7:
+        this.setState({
+          meterRequirement: 15
+        });
+        break;
+    }
     this.processAbility(this.props);
   }
 
   // About to update because parent changed
   componentWillReceiveProps(nextProps) {
-    this.processAbility(nextProps);
+    console.log('componentWillReceiveProps');
+    if (this.props != nextProps) {
+      this.processAbility(nextProps);
+    }
   }
 
   render() {
@@ -192,6 +297,7 @@ class AbilityMastery extends Component {
           alt={this.props.data.name}
           onMouseOver={this.hoverOver}
           onMouseOut={this.hoverOut}
+          onClick={this.clicked}
         />
         <Popover
           content={popoverContent}
@@ -234,5 +340,9 @@ export default connect(mapStateToProps, {
   addMasteryMorale,
   removeMasteryMorale,
   addMasteryTactic,
-  removeMasteryTactic
+  removeMasteryTactic,
+  setPathMeterA,
+  setPathMeterB,
+  setPathMeterC,
+  setCurrentPoints
 })(AbilityMastery);
