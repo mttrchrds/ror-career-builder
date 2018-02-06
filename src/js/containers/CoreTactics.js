@@ -17,22 +17,34 @@ class CoreTactics extends Component {
     )
   }
 
+  renderTactics() {
+    // Combine core and mastery tactics
+    let combinedTactics = [];
+    if (this.props.masteryTactics.length > 0) {
+      combinedTactics = [...this.props.coreTactics, ...this.props.masteryTactics];
+    } else {
+      combinedTactics = this.props.coreTactics;
+    }
+    return combinedTactics.map(this.renderTactic);
+  }
+
   render() {
     return (
       <div className={css.container}>
         <h2 className={css.heading}>Tactics</h2>
         <div className="row">
-          {this.props.coreTactics.map(this.renderTactic)}
+          {this.renderTactics()}
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps({ coreTactics, abilitiesObject }) {
+function mapStateToProps({ coreTactics, abilitiesObject, masteryTactics }) {
   return {
     abilitiesObject,
-    coreTactics
+    coreTactics,
+    masteryTactics
   };
 }
 
