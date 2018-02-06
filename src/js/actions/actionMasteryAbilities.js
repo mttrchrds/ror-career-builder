@@ -1,11 +1,11 @@
-export const SELECT_MASTERY_ABILITY = "select_mastery_ability";
-export const DESELECT_MASTERY_ABILITY = "deselect_mastery_ability";
+export const ADD_MASTERY_ABILITY = "add_mastery_ability";
+export const REMOVE_MASTERY_ABILITY = "remove_mastery_ability";
 export const RESET_MASTERY_ABILITIES = "reset_mastery_abilities";
 
-export function selectMasteryAbility(abilitiesArray, abilityId) {
+export function addMasteryAbility(abilitiesArray, abilityId) {
 
   return {
-    type: SELECT_MASTERY_ABILITY,
+    type: ADD_MASTERY_ABILITY,
     payload: {
       abilitiesArray,
       abilityId 
@@ -13,10 +13,10 @@ export function selectMasteryAbility(abilitiesArray, abilityId) {
   };
 }
 
-export function deselectMasteryAbility(abilitiesArray, abilityId) {
+export function removeMasteryAbility(abilitiesArray, abilityId) {
   
   return {
-    type: DESELECT_MASTERY_ABILITY,
+    type: REMOVE_MASTERY_ABILITY,
     payload: {
       abilitiesArray,
       'abilityIndex': abilitiesArray.indexOf(abilityId)

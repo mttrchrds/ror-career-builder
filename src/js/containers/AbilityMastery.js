@@ -8,9 +8,9 @@ import classNames from 'classnames';
 import Popover from '../components/Popover';
 import PopoverAbility from '../components/PopoverAbility';
 
-import { selectMasteryAbility, deselectMasteryAbility } from '../actions/actionMasteryAbilities';
-import { selectMasteryMorale, deselectMasteryMorale } from '../actions/actionMasteryMorales';
-import { selectMasteryTactic, deselectMasteryTactic } from '../actions/actionMasteryTactics';
+import { addMasteryAbility, removeMasteryAbility } from '../actions/actionMasteryAbilities';
+import { addMasteryMorale, removeMasteryMorale } from '../actions/actionMasteryMorales';
+import { addMasteryTactic, removeMasteryTactic } from '../actions/actionMasteryTactics';
 
 class AbilityMastery extends Component {
 
@@ -229,10 +229,10 @@ function mapStateToProps(
 }
 
 export default connect(mapStateToProps, {
-  selectMasteryAbility,
-  deselectMasteryAbility,
-  selectMasteryMorale,
-  deselectMasteryMorale,
-  selectMasteryTactic,
-  deselectMasteryTactic
+  addMasteryAbility,
+  removeMasteryAbility,
+  addMasteryMorale,
+  removeMasteryMorale,
+  addMasteryTactic,
+  removeMasteryTactic
 })(AbilityMastery);
