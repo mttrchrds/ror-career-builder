@@ -26,15 +26,15 @@ class PathButtonsContainer extends Component {
     switch (this.props.path) {
       case 'a':
         this.props.setPathMeterA(pathPoints);
-        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterB + this.props.pathMeterC));
+        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterB + this.props.pathMeterC + this.props.masteryAbilities.length + this.props.masteryMorales.length + this.props.masteryTactics.length));
         break;
       case 'b':
         this.props.setPathMeterB(pathPoints);
-        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterA + this.props.pathMeterC));
+        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterA + this.props.pathMeterC  + this.props.masteryAbilities.length + this.props.masteryMorales.length + this.props.masteryTactics.length));
         break;
       case 'c':
         this.props.setPathMeterC(pathPoints);
-        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterA + this.props.pathMeterB));
+        this.props.setCurrentPoints(this.props.points - (pathPoints + this.props.pathMeterA + this.props.pathMeterB  + this.props.masteryAbilities.length + this.props.masteryMorales.length + this.props.masteryTactics.length));
         break;
     }
   }
@@ -111,13 +111,16 @@ class PathButtonsContainer extends Component {
   }
 }
 
-function mapStateToProps({ points, currentPoints, pathMeterA, pathMeterB, pathMeterC }) {
+function mapStateToProps({ points, currentPoints, pathMeterA, pathMeterB, pathMeterC, masteryAbilities, masteryMorales, masteryTactics }) {
   return {
     points,
     currentPoints,
     pathMeterA,
     pathMeterB,
-    pathMeterC
+    pathMeterC,
+    masteryAbilities,
+    masteryMorales,
+    masteryTactics
   };
 }
 

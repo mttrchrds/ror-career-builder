@@ -12,28 +12,61 @@ class PathMeterAbilities extends Component {
     this.renderAbility = this.renderAbility.bind(this);
   }
 
-  renderAbility(level) {
-    const levelProp = `lvl${level}`;
+  renderAbility(obj) {
+    const meterRequirement = obj.requirement;
+    const levelProp = `lvl${obj.level}`;
+    const pathMeter = this.props[`pathMeter${this.props.path.toUpperCase()}`];
     const abilityKey = `oa${this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]}`;
     const abilityData = this.props.abilitiesObject[this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]];
     return (
       <div className={css.ability} key={abilityKey}>
         <AbilityMastery
-          masteryLevel={level}
+          masteryLevel={obj.level}
           data={abilityData}
           path={this.props.path}
+          pathMeter={pathMeter}
+          meterRequirement={meterRequirement}
         />
       </div>
     )
   }
 
   render() {
-    const abilitiesLevels = [7,6,5,4,3,2,1];
+    const abilities = [
+      {
+        level: 7,
+        requirement: 15
+      },
+      {
+        level: 6,
+        requirement: 13
+      },
+      {
+        level: 5,
+        requirement: 11
+      },
+      {
+        level: 4,
+        requirement: 9
+      },
+      {
+        level: 3,
+        requirement: 7
+      },
+      {
+        level: 2,
+        requirement: 5
+      },
+      {
+        level: 1,
+        requirement: 3
+      }
+    ]
     return (
       <div>
         <div className="column marginLeft--small">
           {
-            abilitiesLevels.map(i => this.renderAbility(i))
+            abilities.map(i => this.renderAbility(i))
           }
         </div>
       </div>
@@ -41,10 +74,13 @@ class PathMeterAbilities extends Component {
   }
 }
 
-function mapStateToProps({ abilitiesObject, abilities }) {
+function mapStateToProps({ abilitiesObject, abilities, pathMeterA, pathMeterB, pathMeterC }) {
   return {
     abilitiesObject,
-    abilities
+    abilities,
+    pathMeterA,
+    pathMeterB,
+    pathMeterC
   };
 }
 
