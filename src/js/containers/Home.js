@@ -4,6 +4,27 @@ import classNames from 'classnames';
 import css from '../../css/components/Home.css';
 
 import { fetchCareers } from '../actions/actionCareers';
+import { resetLevel } from '../actions/actionLevel';
+import { resetRenown } from '../actions/actionRenown';
+import { resetTacticLimit } from '../actions/actionTacticLimit';
+import { resetPoints } from '../actions/actionPoints';
+import { resetCurrentPoints } from '../actions/actionCurrentPoints';
+import { resetCoreAbilities } from '../actions/actionCoreAbilities';
+import { resetCoreMorale1 } from '../actions/actionCoreMorale1';
+import { resetCoreMorale2 } from '../actions/actionCoreMorale2';
+import { resetCoreMorale3 } from '../actions/actionCoreMorale3';
+import { resetCoreMorale4 } from '../actions/actionCoreMorale4';
+import { resetCoreTactics } from '../actions/actionCoreTactics';
+import { resetAbilities } from '../actions/actionAbilities';
+import { resetAbilitiesObject } from '../actions/actionAbilitiesObject';
+import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
+import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
+import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
+import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
+import { resetSelectedTactics } from '../actions/actionSelectedTactics';
+import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
+import { resetMasteryMorales } from '../actions/actionMasteryMorales';
+import { resetMasteryTactics } from '../actions/actionMasteryTactics';
 
 import Masthead from './Masthead';
 import Sidebar from './Sidebar';
@@ -18,6 +39,29 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.fetchCareers();
+
+    // Reset career selections/attributes/abilities
+    this.props.resetLevel();
+    this.props.resetRenown();
+    this.props.resetTacticLimit();
+    this.props.resetPoints();
+    this.props.resetCurrentPoints();
+    this.props.resetCoreAbilities();
+    this.props.resetCoreMorale1();
+    this.props.resetCoreMorale2();
+    this.props.resetCoreMorale3();
+    this.props.resetCoreMorale4();
+    this.props.resetCoreTactics();
+    this.props.resetAbilities();
+    this.props.resetAbilitiesObject();
+    this.props.resetSelectedMorale1();
+    this.props.resetSelectedMorale2();
+    this.props.resetSelectedMorale3();
+    this.props.resetSelectedMorale4();
+    this.props.resetSelectedTactics();
+    this.props.resetMasteryAbilities();
+    this.props.resetMasteryMorales();
+    this.props.resetMasteryTactics();
   }
 
   render() {
@@ -63,4 +107,27 @@ class Home extends React.Component {
   }
 }
 
-export default connect(null, { fetchCareers })(Home);
+export default connect(null, { 
+  fetchCareers,
+  resetRenown,
+  resetLevel, 
+  resetTacticLimit,
+  resetPoints,
+  resetCurrentPoints,
+  resetCoreAbilities,
+  resetCoreMorale1,
+  resetCoreMorale2,
+  resetCoreMorale3,
+  resetCoreMorale4,
+  resetCoreTactics,
+  resetAbilities,
+  resetAbilitiesObject,
+  resetSelectedMorale1,
+  resetSelectedMorale2,
+  resetSelectedMorale3,
+  resetSelectedMorale4,
+  resetSelectedTactics,
+  resetMasteryAbilities,
+  resetMasteryMorales,
+  resetMasteryTactics
+})(Home);
