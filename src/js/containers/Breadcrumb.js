@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import css from '../../css/components/Breadcrumb.css';
+import { gaChangeCareer } from '../helpers/googleAnalytics';
 
 import IconChevronRight from '../icons/IconChevronRight';
 
@@ -12,15 +13,14 @@ class Breadcrumb extends Component {
 
   constructor(props) {
     super(props);
-
     this.clickBreadcrumb = this.clickBreadcrumb.bind(this);
   }
 
   clickBreadcrumb(e) {
-
     e.preventDefault();
     this.props.toggleOverlayShow(!this.props.overlayShow);
     this.props.toggleSidebar(!this.props.sidebar);
+    gaChangeCareer('Breadcrumb');
   }
 
   render() {
