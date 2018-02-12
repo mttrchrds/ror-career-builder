@@ -28,6 +28,7 @@ import CoreAbilities from './CoreAbilities';
 import CoreMorales from './CoreMorales';
 import CoreTactics from './CoreTactics';
 import Mastery from './Mastery';
+import ActionButtons from './ActionButtons';
 
 class Career extends Component {
 
@@ -190,10 +191,10 @@ class Career extends Component {
 
             <div className="marginLeft@md-min marginBottom">
               <Mastery />
-            </div>>
+            </div>
 
             <div className="marginLeft@md-min">
-              
+              <ActionButtons />
             </div>
 
           </div>
