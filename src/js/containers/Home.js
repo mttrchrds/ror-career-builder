@@ -25,6 +25,9 @@ import { resetSelectedTactics } from '../actions/actionSelectedTactics';
 import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
 import { resetMasteryMorales } from '../actions/actionMasteryMorales';
 import { resetMasteryTactics } from '../actions/actionMasteryTactics';
+import { resetPathMeterA } from '../actions/actionPathMeterA';
+import { resetPathMeterB } from '../actions/actionPathMeterB';
+import { resetPathMeterC } from '../actions/actionPathMeterC';
 
 import Masthead from './Masthead';
 import Sidebar from './Sidebar';
@@ -62,6 +65,9 @@ class Home extends React.Component {
     this.props.resetMasteryAbilities();
     this.props.resetMasteryMorales();
     this.props.resetMasteryTactics();
+    this.props.resetPathMeterA();
+    this.props.resetPathMeterB();
+    this.props.resetPathMeterC();
   }
 
   render() {
@@ -129,5 +135,8 @@ export default connect(null, {
   resetSelectedTactics,
   resetMasteryAbilities,
   resetMasteryMorales,
-  resetMasteryTactics
+  resetMasteryTactics,
+  resetPathMeterA,
+  resetPathMeterB,
+  resetPathMeterC
 })(Home);
