@@ -16,6 +16,7 @@ import { setPathMeterB } from '../actions/actionPathMeterB';
 import { setPathMeterC } from '../actions/actionPathMeterC';
 import { setCurrentPoints } from '../actions/actionCurrentPoints';
 import { deselectTactic } from '../actions/actionSelectedTactics';
+import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
 
 class AbilityMastery extends Component {
 
@@ -152,6 +153,10 @@ class AbilityMastery extends Component {
           break;
         case 'morale':
           this.props.removeMasteryMorale(this.props.masteryMorales, this.props.data.id);
+          // remove from selected morale 4
+          if (this.props.selectedMorale4 == this.props.data.id) {
+            this.props.resetSelectedMorale4();
+          }
           break;
         case 'tactic':
           this.props.removeMasteryTactic(this.props.masteryTactics, this.props.data.id);
@@ -194,6 +199,10 @@ class AbilityMastery extends Component {
             break;
           case 'morale':
             nextProps.removeMasteryMorale(nextProps.masteryMorales, nextProps.data.id);
+            // remove from selected morales if it's there
+            if (nextProps.selectedMorale4 == nextProps.data.id) {
+              nextProps.resetSelectedMorale4(nextProps.selectedMorales, nextProps.data.id);
+            }
             break;
           case 'tactic':
             nextProps.removeMasteryTactic(nextProps.masteryTactics, nextProps.data.id);
@@ -267,7 +276,8 @@ function mapStateToProps(
     pathMeterA,
     pathMeterB,
     pathMeterC,
-    selectedTactics
+    selectedTactics,
+    selectedMorale4
   }
 ) 
   {
@@ -279,7 +289,8 @@ function mapStateToProps(
     pathMeterA,
     pathMeterB,
     pathMeterC,
-    selectedTactics
+    selectedTactics,
+    selectedMorale4
   };
 }
 
@@ -294,5 +305,6 @@ export default connect(mapStateToProps, {
   setPathMeterB,
   setPathMeterC,
   setCurrentPoints,
-  deselectTactic
+  deselectTactic,
+  resetSelectedMorale4
 })(AbilityMastery);

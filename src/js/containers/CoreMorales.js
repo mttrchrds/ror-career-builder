@@ -10,6 +10,24 @@ class CoreMorales extends Component {
   constructor(props) {
     super(props);
     this.renderMorales = this.renderMorales.bind(this);
+    this.renderMorale = this.renderMorale.bind(this);
+  }
+
+  renderMorale(abilityId) {
+    return (
+      <AbilityMorale key={abilityId} rank="4" data={this.props.abilitiesObject[abilityId]} />
+    )
+  }
+
+  renderMorale4() {
+    // Combine core and mastery tactics
+    let combinedMorales = [];
+    if (this.props.masteryMorales.length > 0) {
+      combinedMorales = [...this.props.coreMorale4, ...this.props.masteryMorales];
+    } else {
+      combinedMorales = this.props.coreMorale4;
+    }
+    return combinedMorales.map(this.renderMorale);
   }
 
   renderMorales() {
@@ -42,9 +60,7 @@ class CoreMorales extends Component {
         <div className={css.moraleLast}>
           <h3 className={css.moraleHeading}>Rank 4</h3>
           <div className="row">
-            {this.props.coreMorale4.map(
-              (key) => <AbilityMorale key={key} rank="4" data={this.props.abilitiesObject[key]} />
-            )}
+            {this.renderMorale4()}
           </div>
         </div>
       </div>
@@ -61,13 +77,14 @@ class CoreMorales extends Component {
   }
 }
 
-function mapStateToProps({ coreMorale1, coreMorale2, coreMorale3, coreMorale4, abilitiesObject }) {
+function mapStateToProps({ coreMorale1, coreMorale2, coreMorale3, coreMorale4, abilitiesObject, masteryMorales }) {
   return {
     abilitiesObject,
     coreMorale1,
     coreMorale2,
     coreMorale3,
-    coreMorale4
+    coreMorale4,
+    masteryMorales
   };
 }
 
