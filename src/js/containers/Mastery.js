@@ -72,8 +72,6 @@ class Mastery extends Component {
               <div className="row row--justify">
                 <div className="row row--justify">
                   <PathMeterContainer path="a" />
-                  {/* <PathMeterButtons />
-                  <PathMeter /> */}
                 </div>
                 <div className="marginRight marginRight--large@mobile">
                   <div className={css.subHeadingSmall}>
@@ -95,8 +93,6 @@ class Mastery extends Component {
               <div className="row row--justify">
                 <div className="row row--justify">
                   <PathMeterContainer path="b" />
-                  {/* <PathMeterButtons />
-                  <PathMeter /> */}
                 </div>
                 <div className="marginRight marginRight--large@mobile">
                   <div className={css.subHeadingSmall}>
@@ -118,8 +114,6 @@ class Mastery extends Component {
               <div className="row row--justify">
                 <div className="row row--justify">
                   <PathMeterContainer path="c" />
-                  {/* <PathMeterButtons />
-                  <PathMeter /> */}
                 </div>
                 <div className="marginRight marginRight--large@mobile">
                   <div className={css.subHeadingSmall}>
