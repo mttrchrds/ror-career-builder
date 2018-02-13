@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/ActionButtons.css';
-import { gaChangeCareer } from '../helpers/googleAnalytics';
+import { gaEvent, gaChangeCareer } from '../helpers/googleAnalytics';
 
 import { toggleOverlayShow } from '../actions/actionOverlayShow';
 import { toggleSidebar } from '../actions/actionSidebar';
@@ -37,7 +37,53 @@ class ActionButtons extends Component {
   }
 
   clickShare() {
-    console.log('share clicked');
+    //this.props.updateModalContent(buildModalTitle(), buildModalBody());
+    this.props.toggleOverlayShow(!this.props.overlayShow);
+    //this.props.updateModalVisibility(true);
+    const careerName = this.props.careers[this.props.slug].name;
+    console.log('NAME', careerName);
+    // Send GA events
+    if (this.props.selectedMorale1) {
+      gaEvent(careerName, 'Selected Morale 1', this.props.abilitiesObject[this.props.selectedMorale1].name, this.props.selectedMorale1);
+    }
+    if (this.props.selectedMorale2) {
+      gaEvent(careerName, 'Selected Morale 2', this.props.abilitiesObject[this.props.selectedMorale2].name, this.props.selectedMorale2);
+    }
+    if (this.props.selectedMorale3) {
+      gaEvent(careerName, 'Selected Morale 3', this.props.abilitiesObject[this.props.selectedMorale3].name, this.props.selectedMorale3);
+    }
+    if (this.props.selectedMorale4) {
+      gaEvent(careerName, 'Selected Morale 4', this.props.abilitiesObject[this.props.selectedMorale4].name, this.props.selectedMorale4);
+    }
+    if (Number(this.props.selectedTactics.length) > 0) {
+      for (const abilityId of this.props.selectedTactics) {
+        gaEvent(careerName, 'Selected Tactic', this.props.abilitiesObject[abilityId].name, abilityId);
+      }
+    }
+    // Combine all selected masteries into single array before sending
+    let combinedMasteries = [];
+    if (this.props.masteryAbilities.length > 0) {
+      combinedMasteries = this.props.masteryAbilities;
+    }
+    if (this.props.masteryMorales.length > 0) {
+      if (combinedMasteries.length > 0) {
+        combinedMasteries = [...combinedMasteries, ...this.props.masteryMorales];
+      } else {
+        combinedMasteries = this.props.masteryMorales;
+      }
+    }
+    if (this.props.masteryTactics.length > 0) {
+      if (combinedMasteries.length > 0) {
+        combinedMasteries = [...combinedMasteries, ...this.props.masteryTactics];
+      } else {
+        combinedMasteries = this.props.masteryTactics;
+      }
+    }
+    if (Number(combinedMasteries.length) > 0) {
+      for (const abilityId of combinedMasteries) {
+        gaEvent(careerName, 'Mastery ability', this.props.abilitiesObject[abilityId].name, abilityId);
+      }
+    }
   }
 
   clickChangeCareer(e) {
@@ -88,10 +134,35 @@ class ActionButtons extends Component {
   }
 }
 
-function mapStateToProps({ overlayShow, sidebar }) {
+function mapStateToProps({ 
+  overlayShow, 
+  sidebar,
+  careers,
+  slug,
+  selectedMorale1,
+  selectedMorale2,
+  selectedMorale3,
+  selectedMorale4,
+  selectedTactics,
+  abilitiesObject,
+  masteryAbilities,
+  masteryTactics,
+  masteryMorales
+}) {
   return {
     overlayShow,
-    sidebar
+    sidebar,
+    careers,
+    slug,
+    selectedMorale1,
+    selectedMorale2,
+    selectedMorale3,
+    selectedMorale4,
+    selectedTactics,
+    abilitiesObject,
+    masteryAbilities,
+    masteryTactics,
+    masteryMorales
   };
 }
 
