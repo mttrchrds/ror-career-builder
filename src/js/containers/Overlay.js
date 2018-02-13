@@ -27,7 +27,9 @@ class Overlay extends Component {
 
   clickOverlay() {
     this.props.toggleOverlayShow(!this.props.overlayShow);
-    this.props.toggleSidebar(!this.props.sidebar);
+    if (this.props.sidebar) {
+      this.props.toggleSidebar(!this.props.sidebar);
+    }
   }
 
   render() {
