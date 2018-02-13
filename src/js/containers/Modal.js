@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import css from '../../css/components/Modal.css';
 
 import { closeModal } from '../actions/actionModal';
+import { toggleOverlay } from '../actions/actionOverlay';
 
 class Modal extends Component {
 
@@ -12,13 +13,10 @@ class Modal extends Component {
     this.clickClose = this.clickClose.bind(this);
   }
 
-  componentDidUpdate() {
-    
-  }
-
   clickClose(e) {
     e.preventDefault();
     this.props.closeModal();
+    this.props.toggleOverlay(false);
   }
 
   render() {
@@ -49,4 +47,4 @@ function mapStateToProps({ modal }) {
   };
 }
 
-export default connect(mapStateToProps, { closeModal })(Modal);
+export default connect(mapStateToProps, { closeModal, toggleOverlay })(Modal);
