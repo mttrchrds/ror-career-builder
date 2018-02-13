@@ -6,7 +6,7 @@ import { gaChangeCareer } from '../helpers/googleAnalytics';
 
 import IconChevronRight from '../icons/IconChevronRight';
 
-import { toggleOverlayShow } from '../actions/actionOverlayShow';
+import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
 
 class Breadcrumb extends Component {
@@ -18,7 +18,7 @@ class Breadcrumb extends Component {
 
   clickBreadcrumb(e) {
     e.preventDefault();
-    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleOverlay(!this.props.overlay);
     this.props.toggleSidebar(!this.props.sidebar);
     gaChangeCareer('Breadcrumb');
   }
@@ -53,13 +53,13 @@ class Breadcrumb extends Component {
   }
 }
 
-function mapStateToProps({ careers, sidebar, overlayShow, slug }) {
+function mapStateToProps({ careers, sidebar, overlay, slug }) {
   return {
     careers,
     sidebar,
-    overlayShow,
+    overlay,
     slug
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar })(Breadcrumb);
+export default connect(mapStateToProps, { toggleOverlay, toggleSidebar })(Breadcrumb);

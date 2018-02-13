@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import ReducerCareers from './reducerCareers';
 import ReducerSidebar from './reducerSidebar';
-import ReducerOverlayShow from './reducerOverlayShow';
+import ReducerOverlay from './reducerOverlay';
 import ReducerAbilities from './reducerAbilities';
 import ReducerSlug from './reducerSlug';
 import ReducerLevel from './reducerLevel';
@@ -34,7 +34,7 @@ const rootReducer = combineReducers({
   abilities: ReducerAbilities,
   abilitiesObject: ReducerAbilitiesObject,
   sidebar: ReducerSidebar,
-  overlayShow: ReducerOverlayShow,
+  overlay: ReducerOverlay,
   slug: ReducerSlug,
   level: ReducerLevel,
   renown: ReducerRenown,

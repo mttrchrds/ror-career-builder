@@ -4,7 +4,7 @@ import css from '../../css/components/ActionButtons.css';
 import { gaEvent, gaChangeCareer } from '../helpers/googleAnalytics';
 import { MODAL_SHARE } from '../helpers/modalTypes';
 
-import { toggleOverlayShow } from '../actions/actionOverlayShow';
+import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
 import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
@@ -41,7 +41,7 @@ class ActionButtons extends Component {
   clickShare() {
     // Set share modal content
     //this.props.updateModalContent(buildModalTitle(), buildModalBody());
-    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleOverlay(!this.props.overlay);
     // Open share modal
     this.props.openModal(MODAL_SHARE);
     const careerName = this.props.careers[this.props.slug].name;
@@ -91,7 +91,7 @@ class ActionButtons extends Component {
 
   clickChangeCareer(e) {
     e.preventDefault();
-    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleOverlay(!this.props.overlay);
     this.props.toggleSidebar(!this.props.sidebar);
     gaChangeCareer('ActionButton');
   }
@@ -138,7 +138,7 @@ class ActionButtons extends Component {
 }
 
 function mapStateToProps({ 
-  overlayShow, 
+  overlay,
   sidebar,
   careers,
   slug,
@@ -153,7 +153,7 @@ function mapStateToProps({
   masteryMorales
 }) {
   return {
-    overlayShow,
+    overlay,
     sidebar,
     careers,
     slug,
@@ -171,7 +171,7 @@ function mapStateToProps({
 
 export default connect(mapStateToProps,
   {
-    toggleOverlayShow,
+    toggleOverlay,
     toggleSidebar,
     resetRenown,
     resetLevel, 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import css from '../../css/components/Overlay.css';
 
-import { toggleOverlayShow } from '../actions/actionOverlayShow';
+import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
 import { closeModal } from '../actions/actionModal';
 
@@ -20,7 +20,7 @@ class Overlay extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.overlayShow) {
+    if (this.props.overlay) {
       document.querySelector('body').classList.add('overflowYHidden');
     } else {
       document.querySelector('body').classList.remove('overflowYHidden');
@@ -28,7 +28,7 @@ class Overlay extends Component {
   }
 
   clickOverlay() {
-    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleOverlay(!this.props.overlay);
     // Also close sidebar if it's open
     if (this.props.sidebar) {
       this.props.toggleSidebar(!this.props.sidebar);
@@ -41,9 +41,9 @@ class Overlay extends Component {
 
   render() {
     const overlayClass = classNames({
-      [css.overlay]: !this.props.overlayShow,
-      [css.overlayActive]: this.props.overlayShow && this.props.overlayVisible,
-      [css.overlayActiveInvisible]: this.props.overlayShow && !this.props.overlayVisible,
+      [css.overlay]: !this.props.overlay,
+      [css.overlayActive]: this.props.overlay && this.props.overlayVisible,
+      [css.overlayActiveInvisible]: this.props.overlay && !this.props.overlayVisible,
     });
     return (
       <div className={overlayClass} onClick={this.clickOverlay} />
@@ -51,12 +51,12 @@ class Overlay extends Component {
   }
 }
 
-function mapStateToProps({ overlayShow, sidebar, modal }) {
+function mapStateToProps({ overlay, sidebar, modal }) {
   return {
     modal,
     sidebar,
-    overlayShow
+    overlay
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, closeModal })(Overlay);
+export default connect(mapStateToProps, { toggleOverlay, toggleSidebar, closeModal })(Overlay);

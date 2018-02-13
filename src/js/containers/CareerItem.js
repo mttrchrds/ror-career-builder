@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import css from '../../css/components/CareerItem.css';
 import { gaCareerSelected } from '../helpers/googleAnalytics';
 
-import { toggleOverlayShow } from '../actions/actionOverlayShow';
+import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
 import { resetLevel } from '../actions/actionLevel';
 import { resetRenown } from '../actions/actionRenown';
@@ -43,7 +43,7 @@ class CareerItem extends Component {
     gaCareerSelected(this.props.career.name, this.props.career.class, this.props.career.race);
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
-    this.props.toggleOverlayShow(false);
+    this.props.toggleOverlay(false);
     // Reset career selections/attributes/abilities
     this.props.resetLevel();
     this.props.resetRenown();
@@ -96,7 +96,7 @@ function mapStateToProps({ sidebar, overlayShow }) {
 }
 
 export default connect(mapStateToProps,
-  { toggleOverlayShow, 
+  { toggleOverlay, 
     toggleSidebar, 
     resetRenown,
     resetLevel, 

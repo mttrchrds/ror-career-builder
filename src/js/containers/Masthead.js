@@ -6,7 +6,7 @@ import css from '../../css/components/Masthead.css';
 import CareerItem from '../components/CareerItem';
 
 import { toggleSidebar } from '../actions/actionSidebar';
-import { toggleOverlayShow } from '../actions/actionOverlayShow';
+import { toggleOverlay } from '../actions/actionOverlay';
 
 class Masthead extends Component {
 
@@ -41,7 +41,7 @@ class Masthead extends Component {
 
   clickMastheadMobile(e) {
     e.preventDefault();
-    this.props.toggleOverlayShow(!this.props.overlayShow);
+    this.props.toggleOverlay(!this.props.overlay);
     this.props.toggleSidebar(!this.props.sidebar);
   }
 
@@ -164,12 +164,12 @@ class Masthead extends Component {
   }
 }
 
-function mapStateToProps({ careers, sidebar, overlayShow }) {
+function mapStateToProps({ careers, sidebar, overlay }) {
   return {
     careers,
     sidebar,
-    overlayShow
+    overlay
   };
 }
 
-export default connect(mapStateToProps, { toggleSidebar, toggleOverlayShow })(Masthead);
+export default connect(mapStateToProps, { toggleSidebar, toggleOverlay })(Masthead);
