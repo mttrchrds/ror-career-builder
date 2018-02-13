@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import css from '../../css/components/Overlay.css';
+
 import { toggleOverlayShow } from '../actions/actionOverlayShow';
 import { toggleSidebar } from '../actions/actionSidebar';
+import { closeModal } from '../actions/actionModal';
 
-// Overlay is used in a few places. Mainly as background when Sidebar is present, and behind PopoverAbility.
+// Overlay is used in a few places. Mainly as background when Sidebar is present, behind modal and behind PopoverAbility.
 // props.show = is the Overlay rendered at all
 // props.visible = is the Overlay rendered as visible or invisible (invisible is used for Popover background)
 
@@ -27,8 +29,13 @@ class Overlay extends Component {
 
   clickOverlay() {
     this.props.toggleOverlayShow(!this.props.overlayShow);
+    // Also close sidebar if it's open
     if (this.props.sidebar) {
       this.props.toggleSidebar(!this.props.sidebar);
+    }
+    // Also close modal if it's open
+    if (this.props.modal) {
+      this.props.closeModal();
     }
   }
 
@@ -44,11 +51,12 @@ class Overlay extends Component {
   }
 }
 
-function mapStateToProps({ overlayShow, sidebar }) {
+function mapStateToProps({ overlayShow, sidebar, modal }) {
   return {
+    modal,
     sidebar,
     overlayShow
   };
 }
 
-export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar })(Overlay);
+export default connect(mapStateToProps, { toggleOverlayShow, toggleSidebar, closeModal })(Overlay);

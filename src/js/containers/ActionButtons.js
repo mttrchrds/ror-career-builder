@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/ActionButtons.css';
 import { gaEvent, gaChangeCareer } from '../helpers/googleAnalytics';
+import { MODAL_SHARE } from '../helpers/modalTypes';
 
 import { toggleOverlayShow } from '../actions/actionOverlayShow';
 import { toggleSidebar } from '../actions/actionSidebar';
@@ -21,6 +22,7 @@ import { resetMasteryTactics } from '../actions/actionMasteryTactics';
 import { resetPathMeterA } from '../actions/actionPathMeterA';
 import { resetPathMeterB } from '../actions/actionPathMeterB';
 import { resetPathMeterC } from '../actions/actionPathMeterC';
+import { openModal } from '../actions/actionModal';
 
 class ActionButtons extends Component {
 
@@ -37,11 +39,12 @@ class ActionButtons extends Component {
   }
 
   clickShare() {
+    // Set share modal content
     //this.props.updateModalContent(buildModalTitle(), buildModalBody());
     this.props.toggleOverlayShow(!this.props.overlayShow);
-    //this.props.updateModalVisibility(true);
+    // Open share modal
+    this.props.openModal(MODAL_SHARE);
     const careerName = this.props.careers[this.props.slug].name;
-    console.log('NAME', careerName);
     // Send GA events
     if (this.props.selectedMorale1) {
       gaEvent(careerName, 'Selected Morale 1', this.props.abilitiesObject[this.props.selectedMorale1].name, this.props.selectedMorale1);
@@ -185,6 +188,7 @@ export default connect(mapStateToProps,
     resetMasteryTactics,
     resetPathMeterA,
     resetPathMeterB,
-    resetPathMeterC
+    resetPathMeterC,
+    openModal
   })
   (ActionButtons);

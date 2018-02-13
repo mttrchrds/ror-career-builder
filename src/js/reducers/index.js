@@ -27,6 +27,7 @@ import ReducerPathMeterC from './reducerPathMeterC';
 import ReducerMasteryAbilities from './reducerMasteryAbilities';
 import ReducerMasteryTactics from './reducerMasteryTactics';
 import ReducerMasteryMorales from './reducerMasteryMorales';
+import ReducerModal from './reducerModal';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
@@ -56,7 +57,8 @@ const rootReducer = combineReducers({
   pathMeterC: ReducerPathMeterC,
   masteryAbilities: ReducerMasteryAbilities,
   masteryTactics: ReducerMasteryTactics,
-  masteryMorales: ReducerMasteryMorales
+  masteryMorales: ReducerMasteryMorales,
+  modal: ReducerModal
 });
 
 export default rootReducer;
