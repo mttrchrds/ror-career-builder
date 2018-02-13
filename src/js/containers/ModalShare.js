@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
-import css from '../../css/components/Modal.css';
+import css from '../../css/components/ModalShare.css';
 
 import Modal from './Modal';
 
@@ -12,22 +12,31 @@ class ModalShare extends Component {
   }
 
   render() {
+    const url = `/images/icons/${this.props.slug}.png`;
+    const careerName = this.props.careers[this.props.slug].name;
     return (
       <Modal>
-         <div>
-          A title
+        <div className="row row--v-center">
+          <img src={url} className={css.modalTitleIcon} />
+          <h2 className={css.modalTitle}>
+            Share this {careerName} build
+          </h2>
         </div>
-        <div className={css.content}>
-          Some content
+        <div>
+          <p className={css.modalCopy}>To share this build simply copy the link below:</p>
+          <div className={css.modalSelectable} contentEditable>Something here</div>
+          <p className={css.modalCopy}>Alternatively, here is some BBCode to copy and paste into a forum post:</p>
+          <div className={css.modalSelectable} contentEditable>Something there</div>
         </div>
       </Modal>
     );
   }
 }
 
-function mapStateToProps({ modal }) {
+function mapStateToProps({ slug, careers }) {
   return {
-    modal
+    slug,
+    careers
   };
 }
 
