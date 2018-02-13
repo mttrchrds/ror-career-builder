@@ -194,7 +194,7 @@ class Career extends Component {
             </div>
 
             <div className="marginLeft@md-min">
-              <ActionButtons />
+              <ActionButtons history={this.props.history} />
             </div>
 
           </div>

@@ -33,7 +33,7 @@ class ActionButtons extends Component {
   }
 
   clickHome() {
-    console.log('home clicked');
+    this.props.history.push('/');
   }
 
   clickShare() {
