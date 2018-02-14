@@ -11,8 +11,8 @@ export default class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/career/:slug" component={Career} />
-          <Route path="/career/:slug(/:careerSaved)" component={Career} />
+          <Route path="/career/:slug/:careerSaved" component={Career} />
+          <Route path="/career/:slug" exact component={Career} />
           <Route path="/" component={Home} />
           <Route component={NotFound} />
         </Switch>

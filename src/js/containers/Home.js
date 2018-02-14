@@ -9,14 +9,7 @@ import { resetRenown } from '../actions/actionRenown';
 import { resetTacticLimit } from '../actions/actionTacticLimit';
 import { resetPoints } from '../actions/actionPoints';
 import { resetCurrentPoints } from '../actions/actionCurrentPoints';
-import { resetCoreAbilities } from '../actions/actionCoreAbilities';
-import { resetCoreMorale1 } from '../actions/actionCoreMorale1';
-import { resetCoreMorale2 } from '../actions/actionCoreMorale2';
-import { resetCoreMorale3 } from '../actions/actionCoreMorale3';
-import { resetCoreMorale4 } from '../actions/actionCoreMorale4';
-import { resetCoreTactics } from '../actions/actionCoreTactics';
 import { resetAbilities } from '../actions/actionAbilities';
-import { resetAbilitiesObject } from '../actions/actionAbilitiesObject';
 import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
 import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
 import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
@@ -49,14 +42,7 @@ class Home extends React.Component {
     this.props.resetTacticLimit();
     this.props.resetPoints();
     this.props.resetCurrentPoints();
-    this.props.resetCoreAbilities();
-    this.props.resetCoreMorale1();
-    this.props.resetCoreMorale2();
-    this.props.resetCoreMorale3();
-    this.props.resetCoreMorale4();
-    this.props.resetCoreTactics();
     this.props.resetAbilities();
-    this.props.resetAbilitiesObject();
     this.props.resetSelectedMorale1();
     this.props.resetSelectedMorale2();
     this.props.resetSelectedMorale3();
@@ -120,14 +106,7 @@ export default connect(null, {
   resetTacticLimit,
   resetPoints,
   resetCurrentPoints,
-  resetCoreAbilities,
-  resetCoreMorale1,
-  resetCoreMorale2,
-  resetCoreMorale3,
-  resetCoreMorale4,
-  resetCoreTactics,
   resetAbilities,
-  resetAbilitiesObject,
   resetSelectedMorale1,
   resetSelectedMorale2,
   resetSelectedMorale3,

@@ -6,30 +6,6 @@ import { gaCareerSelected } from '../helpers/googleAnalytics';
 
 import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
-import { resetLevel } from '../actions/actionLevel';
-import { resetRenown } from '../actions/actionRenown';
-import { resetTacticLimit } from '../actions/actionTacticLimit';
-import { resetPoints } from '../actions/actionPoints';
-import { resetCurrentPoints } from '../actions/actionCurrentPoints';
-import { resetCoreAbilities } from '../actions/actionCoreAbilities';
-import { resetCoreMorale1 } from '../actions/actionCoreMorale1';
-import { resetCoreMorale2 } from '../actions/actionCoreMorale2';
-import { resetCoreMorale3 } from '../actions/actionCoreMorale3';
-import { resetCoreMorale4 } from '../actions/actionCoreMorale4';
-import { resetCoreTactics } from '../actions/actionCoreTactics';
-import { resetAbilities } from '../actions/actionAbilities';
-import { resetAbilitiesObject } from '../actions/actionAbilitiesObject';
-import { resetSelectedMorale1 } from '../actions/actionSelectedMorale1';
-import { resetSelectedMorale2 } from '../actions/actionSelectedMorale2';
-import { resetSelectedMorale3 } from '../actions/actionSelectedMorale3';
-import { resetSelectedMorale4 } from '../actions/actionSelectedMorale4';
-import { resetSelectedTactics } from '../actions/actionSelectedTactics';
-import { resetMasteryAbilities } from '../actions/actionMasteryAbilities';
-import { resetMasteryMorales } from '../actions/actionMasteryMorales';
-import { resetMasteryTactics } from '../actions/actionMasteryTactics';
-import { resetPathMeterA } from '../actions/actionPathMeterA';
-import { resetPathMeterB } from '../actions/actionPathMeterB';
-import { resetPathMeterC } from '../actions/actionPathMeterC';
 
 class CareerItem extends Component {
   
@@ -44,31 +20,6 @@ class CareerItem extends Component {
     // Hide sidebar and overlay
     this.props.toggleSidebar(false);
     this.props.toggleOverlay(false);
-    // Reset career selections/attributes/abilities
-    this.props.resetLevel();
-    this.props.resetRenown();
-    this.props.resetTacticLimit();
-    this.props.resetPoints();
-    this.props.resetCurrentPoints();
-    this.props.resetCoreAbilities();
-    this.props.resetCoreMorale1();
-    this.props.resetCoreMorale2();
-    this.props.resetCoreMorale3();
-    this.props.resetCoreMorale4();
-    this.props.resetCoreTactics();
-    this.props.resetAbilities();
-    this.props.resetAbilitiesObject();
-    this.props.resetSelectedMorale1();
-    this.props.resetSelectedMorale2();
-    this.props.resetSelectedMorale3();
-    this.props.resetSelectedMorale4();
-    this.props.resetSelectedTactics();
-    this.props.resetMasteryAbilities();
-    this.props.resetMasteryMorales();
-    this.props.resetMasteryTactics();
-    this.props.resetPathMeterA();
-    this.props.resetPathMeterB();
-    this.props.resetPathMeterC();
   }
 
   render() {
@@ -96,31 +47,8 @@ function mapStateToProps({ sidebar, overlayShow }) {
 }
 
 export default connect(mapStateToProps,
-  { toggleOverlay, 
-    toggleSidebar, 
-    resetRenown,
-    resetLevel, 
-    resetTacticLimit,
-    resetPoints,
-    resetCurrentPoints,
-    resetCoreAbilities,
-    resetCoreMorale1,
-    resetCoreMorale2,
-    resetCoreMorale3,
-    resetCoreMorale4,
-    resetCoreTactics,
-    resetAbilities,
-    resetAbilitiesObject,
-    resetSelectedMorale1,
-    resetSelectedMorale2,
-    resetSelectedMorale3,
-    resetSelectedMorale4,
-    resetSelectedTactics,
-    resetMasteryAbilities,
-    resetMasteryMorales,
-    resetMasteryTactics,
-    resetPathMeterA,
-    resetPathMeterB,
-    resetPathMeterC
+  { 
+    toggleOverlay, 
+    toggleSidebar
   }
 )(CareerItem);

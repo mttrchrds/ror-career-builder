@@ -3,22 +3,34 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import css from '../../css/components/Career.css';
 import { getAbilityType } from '../helpers/abilities';
+import { calculateMasteryPoints } from '../helpers/points';
+const queryString = require('query-string');
 
-import { fetchAbilities } from '../actions/actionAbilities';
-import { setAbilitiesObject } from '../actions/actionAbilitiesObject';
+import { resetAbilities, fetchAbilities } from '../actions/actionAbilities';
 import { fetchCareers } from '../actions/actionCareers';
 import { setSlug } from '../actions/actionSlug';
-import { addCoreAbility } from '../actions/actionCoreAbilities';
-import { addCoreTactic } from '../actions/actionCoreTactics';
-import { addCoreMorale1 } from '../actions/actionCoreMorale1';
-import { addCoreMorale2 } from '../actions/actionCoreMorale2';
-import { addCoreMorale3 } from '../actions/actionCoreMorale3';
-import { addCoreMorale4 } from '../actions/actionCoreMorale4';
+import { resetLevel, setLevel } from '../actions/actionLevel';
+import { resetRenown, setRenown } from '../actions/actionRenown';
+import { resetTacticLimit, setTacticLimit } from '../actions/actionTacticLimit';
+import { resetCurrentPoints, setCurrentPoints } from '../actions/actionCurrentPoints';
+import { resetPathMeterA, setPathMeterA } from '../actions/actionPathMeterA';
+import { resetPathMeterB, setPathMeterB } from '../actions/actionPathMeterB';
+import { resetPathMeterC, setPathMeterC } from '../actions/actionPathMeterC';
+import { resetMasteryAbilities, setMasteryAbilities } from '../actions/actionMasteryAbilities';
+import { resetMasteryMorales, setMasteryMorales } from '../actions/actionMasteryMorales';
+import { resetMasteryTactics, setMasteryTactics } from '../actions/actionMasteryTactics';
+import { resetSelectedMorale1, selectMorale1 } from '../actions/actionSelectedMorale1';
+import { resetSelectedMorale2, selectMorale2 } from '../actions/actionSelectedMorale2';
+import { resetSelectedMorale3, selectMorale3 } from '../actions/actionSelectedMorale3';
+import { resetSelectedMorale4, selectMorale4 } from '../actions/actionSelectedMorale4';
+import { resetSelectedTactics, setSelectedTactics } from '../actions/actionSelectedTactics';
+import { resetPoints, setPoints } from '../actions/actionPoints';
 
 import Sidebar from './Sidebar';
 import Overlay from './Overlay';
 import Breadcrumb from './Breadcrumb';
 import Loading from './Loading';
+import ModalContainer from './ModalContainer';
 import BarXp from './BarXp';
 import BarRenown from './BarRenown';
 import CareerTitle from './CareerTitle';
@@ -29,7 +41,7 @@ import CoreMorales from './CoreMorales';
 import CoreTactics from './CoreTactics';
 import Mastery from './Mastery';
 import ActionButtons from './ActionButtons';
-import ModalContainer from './ModalContainer';
+
 
 class Career extends Component {
 
@@ -37,55 +49,83 @@ class Career extends Component {
     super(props);
   }
 
-  organiseAbilities(abilities) {
-    
-    // Extract the core abilities from the raw data (abilities.data)
-    // Each of the three set of abilities are an array of ability ids (coreAbilities, coreMorales (1-4) and coreTactics)
-    for (let i = 0; i < abilities.data.length; i++) {
-      let ability = abilities.data[i];
-      ability.abilityType = getAbilityType(ability.category);
-      if (ability.spec === 'Core Ability') {
-        switch (ability.abilityType) {
-          case 'standard':
-            this.props.addCoreAbility(ability);
-            break;
-          case 'morale':
-            switch (ability.cost) {
-              case 'Rank 1 morale':
-                this.props.addCoreMorale1(ability);
-                break;
-              case 'Rank 2 morale':
-                this.props.addCoreMorale2(ability);
-                break;
-              case 'Rank 3 morale':
-                this.props.addCoreMorale3(ability);
-                break;
-              case 'Rank 4 morale':
-                this.props.addCoreMorale4(ability);
-                break;
-              default :
-                break;
-            }
-            break;
-          case 'tactic':
-            this.props.addCoreTactic(ability);
-            break;
-          default :
-            break;
-        }
-      }
+  // Set state from query params if first path part is /s
+  setSavedCareer({ l, r, tl, mp, pA, pB, pC, ma, mm, mt, m1, m2, m3, m4, t}) {
+    this.props.setLevel(l);
+    this.props.setRenown(r);
+    this.props.setPoints(calculateMasteryPoints(l, r));
+    this.props.setTacticLimit(tl);
+    this.props.setCurrentPoints(mp);
+    if (pA) {
+      this.props.setPathMeterA(pA);
     }
+    if (pB) {
+      this.props.setPathMeterB(pB);
+    }
+    if (pC) {
+      this.props.setPathMeterC(pC);
+    }
+    if (ma) {
+      this.props.setMasteryAbilities(ma.split(','));
+    }
+    if (mm) {
+      this.props.setMasteryMorales(mm.split(','));
+    }
+    if (mt) {
+      this.props.setMasteryTactics(mt.split(','));
+    }
+    if (m1) {
+      this.props.selectMorale1(m1);
+    }
+    if (m2) {
+      this.props.selectMorale2(m2);
+    }
+    if (m3) {
+      this.props.selectMorale3(m3);
+    }
+    if (m4) {
+      this.props.selectMorale4(m4);
+    }
+    if (t) {
+      this.props.setSelectedTactics(t.split(','));
+    }
+  }
 
-    // Create new AbilitiesObject property in state
-    // This is an indexed object of all abilities
-    // Will make it easy to query an ability when we have only the ability id
-    this.props.setAbilitiesObject(abilities.data);
+  resetCareer() {
+
+    console.log('resetCareer');
+
+    this.props.resetLevel();
+    this.props.resetRenown();
+    this.props.resetTacticLimit();
+    this.props.resetPoints();
+    this.props.resetCurrentPoints();
+    this.props.resetAbilities();
+    this.props.resetSelectedMorale1();
+    this.props.resetSelectedMorale2();
+    this.props.resetSelectedMorale3();
+    this.props.resetSelectedMorale4();
+    this.props.resetSelectedTactics();
+    this.props.resetMasteryAbilities();
+    this.props.resetMasteryMorales();
+    this.props.resetMasteryTactics();
+    this.props.resetPathMeterA();
+    this.props.resetPathMeterB();
+    this.props.resetPathMeterC();
   }
 
   loadCareerData(slug) {
+
+    console.log('loadCareerData', slug);
+
     // Fetch careers and abilities
     this.props.fetchCareers();
     this.props.fetchAbilities(slug);
+
+    // Populate app state with saved details if they exist
+    if (this.props.match.params.careerSaved) {
+      this.setSavedCareer(queryString.parse(this.props.location.search));
+    }
 
     // Set career slug in app state
     this.props.setSlug(slug);
@@ -99,6 +139,11 @@ class Career extends Component {
       // Check if it's a valid career name
       if (this.props.careers.hasOwnProperty(nextProps.match.params.slug)) {
 
+        console.log('Career has changed. Resetting and loading data');
+
+        // Reset Career data
+        this.resetCareer();
+
         // Load new career/ability data from new career class
         this.loadCareerData(nextProps.match.params.slug);
 
@@ -107,16 +152,10 @@ class Career extends Component {
           console.warn("CAREER DOES NOT EXIST!")
       }
     }
-
-    // Detects when abilities have been updated then calls function to populate ability types
-    if (Object.keys(this.props.abilities).length == 0 && Object.keys(nextProps.abilities).length > 0) {
-      // Transform the abilities data and extract core abilities
-      // i.e. populate coreAbilities, coreMorales, coreTactics and abilitiesObject
-      this.organiseAbilities(nextProps.abilities);
-    }
   }
 
   componentDidMount() {
+    console.log('componentDidMount');
     // Load career data on initial load
     const { slug } = this.props.match.params;
     this.loadCareerData(slug);
@@ -124,17 +163,13 @@ class Career extends Component {
 
   renderContent() {
 
+    console.log('loading?', Object.keys(this.props.abilities).length);
+    console.log('loading2?', this.props.abilities);
+
     // Check that all the relative state properties are populated before rendering the Career UI
     let hasCareerLoaded = (Object.keys(this.props.careers).length > 0
                           && this.props.slug
-                          && Object.keys(this.props.abilities).length > 0)
-                          && Object.keys(this.props.abilitiesObject).length > 0
-                          && this.props.coreAbilities.length > 0
-                          && this.props.coreMorale1.length > 0
-                          && this.props.coreMorale2.length > 0
-                          && this.props.coreMorale3.length > 0
-                          && this.props.coreMorale4.length > 0
-                          && this.props.coreTactics.length > 0;
+                          && Object.keys(this.props.abilities).length > 0);
 
     if (!hasCareerLoaded) {
       return (
@@ -228,29 +263,17 @@ function mapStateToProps(
   {
     sidebar, 
     abilities, 
-    abilitiesObject, 
     careers, 
     slug, 
-    coreAbilities, 
-    coreMorale1,
-    coreMorale2,
-    coreMorale3,
-    coreMorale4,
-    coreTactics 
+    masteryAbilities
   }
 ){ 
   return {
     sidebar, 
     abilities, 
-    abilitiesObject, 
     careers, 
     slug, 
-    coreAbilities, 
-    coreMorale1,
-    coreMorale2,
-    coreMorale3,
-    coreMorale4,
-    coreTactics 
+    masteryAbilities
   };
 }
 
@@ -258,14 +281,40 @@ export default connect(
   mapStateToProps, 
   { 
     fetchAbilities,
-    setAbilitiesObject,
     fetchCareers, 
     setSlug,
-    addCoreAbility,
-    addCoreTactic,
-    addCoreMorale1,
-    addCoreMorale2,
-    addCoreMorale3,
-    addCoreMorale4
+    setLevel,
+    setRenown,
+    setTacticLimit,
+    setCurrentPoints,
+    setPathMeterA,
+    setPathMeterB,
+    setPathMeterC,
+    setMasteryAbilities,
+    setMasteryMorales,
+    setMasteryTactics,
+    selectMorale1,
+    selectMorale2,
+    selectMorale3,
+    selectMorale4,
+    setSelectedTactics,
+    setPoints,
+    resetRenown,
+    resetLevel, 
+    resetTacticLimit,
+    resetPoints,
+    resetCurrentPoints,
+    resetAbilities,
+    resetSelectedMorale1,
+    resetSelectedMorale2,
+    resetSelectedMorale3,
+    resetSelectedMorale4,
+    resetSelectedTactics,
+    resetMasteryAbilities,
+    resetMasteryMorales,
+    resetMasteryTactics,
+    resetPathMeterA,
+    resetPathMeterB,
+    resetPathMeterC
   }
 )(Career);

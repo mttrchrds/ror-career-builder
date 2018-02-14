@@ -15,7 +15,7 @@ class CoreMorales extends Component {
 
   renderMorale(abilityId) {
     return (
-      <AbilityMorale key={abilityId} rank="4" data={this.props.abilitiesObject[abilityId]} />
+      <AbilityMorale key={abilityId} rank="4" data={this.props.abilities.indexed[abilityId]} />
     )
   }
 
@@ -23,9 +23,9 @@ class CoreMorales extends Component {
     // Combine core and mastery tactics
     let combinedMorales = [];
     if (this.props.masteryMorales.length > 0) {
-      combinedMorales = [...this.props.coreMorale4, ...this.props.masteryMorales];
+      combinedMorales = [...this.props.abilities.structured.coreMorales4, ...this.props.masteryMorales];
     } else {
-      combinedMorales = this.props.coreMorale4;
+      combinedMorales = this.props.abilities.structured.coreMorales4;
     }
     return combinedMorales.map(this.renderMorale);
   }
@@ -36,24 +36,24 @@ class CoreMorales extends Component {
         <div className={css.moraleFirst}>
           <h3 className={css.moraleHeading}>Rank 1</h3>
           <div className="row">
-            {this.props.coreMorale1.map(
-              (key) => <AbilityMorale key={key} rank="1" data={this.props.abilitiesObject[key]} />
+            {this.props.abilities.structured.coreMorales1.map(
+              (key) => <AbilityMorale key={key} rank="1" data={this.props.abilities.indexed[key]} />
             )}
           </div>
         </div>
         <div className={css.morale}>
           <h3 className={css.moraleHeading}>Rank 2</h3>
           <div className="row">
-            {this.props.coreMorale2.map(
-              (key) => <AbilityMorale key={key} rank="2" data={this.props.abilitiesObject[key]} />
+            {this.props.abilities.structured.coreMorales2.map(
+              (key) => <AbilityMorale key={key} rank="2" data={this.props.abilities.indexed[key]} />
             )}
           </div>
         </div>
         <div className={css.morale}>
           <h3 className={css.moraleHeading}>Rank 3</h3>
           <div className="row">
-            {this.props.coreMorale3.map(
-              (key) => <AbilityMorale key={key} rank="3" data={this.props.abilitiesObject[key]} />
+            {this.props.abilities.structured.coreMorales3.map(
+              (key) => <AbilityMorale key={key} rank="3" data={this.props.abilities.indexed[key]} />
             )}
           </div>
         </div>
@@ -77,13 +77,9 @@ class CoreMorales extends Component {
   }
 }
 
-function mapStateToProps({ coreMorale1, coreMorale2, coreMorale3, coreMorale4, abilitiesObject, masteryMorales }) {
+function mapStateToProps({ abilities, masteryMorales }) {
   return {
-    abilitiesObject,
-    coreMorale1,
-    coreMorale2,
-    coreMorale3,
-    coreMorale4,
+    abilities,
     masteryMorales
   };
 }

@@ -1,4 +1,4 @@
-import { CALCULATE_TACTIC_LIMIT, RESET_TACTIC_LIMIT } from "../actions/actionTacticLimit";
+import { CALCULATE_TACTIC_LIMIT, RESET_TACTIC_LIMIT, SET_TACTIC_LIMIT } from "../actions/actionTacticLimit";
 
 const initialLimit = 0;
 
@@ -8,6 +8,8 @@ export default function(state = initialLimit, action) {
       return action.payload;
     case RESET_TACTIC_LIMIT:
       return initialLimit;
+    case SET_TACTIC_LIMIT:
+      return action.payload;
     default:
       return state;
   }

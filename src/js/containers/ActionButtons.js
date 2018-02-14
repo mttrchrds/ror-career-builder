@@ -75,7 +75,9 @@ class ActionButtons extends Component {
     saveLink += `&m2=${this.props.selectedMorale2}`;
     saveLink += `&m3=${this.props.selectedMorale3}`;
     saveLink += `&m4=${this.props.selectedMorale4}`;
-    saveLink += `&ma=${this.combineMasteries()}`;
+    saveLink += `&ma=${this.props.masteryAbilities}`;
+    saveLink += `&mm=${this.props.masteryMorales}`;
+    saveLink += `&mt=${this.props.masteryTactics}`;
     saveLink += `&t=${this.props.selectedTactics}`;
     return saveLink;
   };
@@ -89,26 +91,26 @@ class ActionButtons extends Component {
     const careerName = this.props.careers[this.props.slug].name;
     // Send GA events
     if (this.props.selectedMorale1) {
-      gaEvent(careerName, 'Selected Morale 1', this.props.abilitiesObject[this.props.selectedMorale1].name, this.props.selectedMorale1);
+      gaEvent(careerName, 'Selected Morale 1', this.props.abilities.indexed[this.props.selectedMorale1].name, this.props.selectedMorale1);
     }
     if (this.props.selectedMorale2) {
-      gaEvent(careerName, 'Selected Morale 2', this.props.abilitiesObject[this.props.selectedMorale2].name, this.props.selectedMorale2);
+      gaEvent(careerName, 'Selected Morale 2', this.props.abilities.indexed[this.props.selectedMorale2].name, this.props.selectedMorale2);
     }
     if (this.props.selectedMorale3) {
-      gaEvent(careerName, 'Selected Morale 3', this.props.abilitiesObject[this.props.selectedMorale3].name, this.props.selectedMorale3);
+      gaEvent(careerName, 'Selected Morale 3', this.props.abilities.indexed[this.props.selectedMorale3].name, this.props.selectedMorale3);
     }
     if (this.props.selectedMorale4) {
-      gaEvent(careerName, 'Selected Morale 4', this.props.abilitiesObject[this.props.selectedMorale4].name, this.props.selectedMorale4);
+      gaEvent(careerName, 'Selected Morale 4', this.props.abilities.indexed[this.props.selectedMorale4].name, this.props.selectedMorale4);
     }
     if (Number(this.props.selectedTactics.length) > 0) {
       for (const abilityId of this.props.selectedTactics) {
-        gaEvent(careerName, 'Selected Tactic', this.props.abilitiesObject[abilityId].name, abilityId);
+        gaEvent(careerName, 'Selected Tactic', this.props.abilities.indexed[abilityId].name, abilityId);
       }
     }
     const combinedMasteries = this.combineMasteries();
     if (Number(combinedMasteries.length) > 0) {
       for (const abilityId of combinedMasteries) {
-        gaEvent(careerName, 'Mastery ability', this.props.abilitiesObject[abilityId].name, abilityId);
+        gaEvent(careerName, 'Mastery ability', this.props.abilities.indexed[abilityId].name, abilityId);
       }
     }
   }
@@ -171,7 +173,7 @@ function mapStateToProps({
   selectedMorale3,
   selectedMorale4,
   selectedTactics,
-  abilitiesObject,
+  abilities,
   masteryAbilities,
   masteryTactics,
   masteryMorales,
@@ -193,7 +195,7 @@ function mapStateToProps({
     selectedMorale3,
     selectedMorale4,
     selectedTactics,
-    abilitiesObject,
+    abilities,
     masteryAbilities,
     masteryTactics,
     masteryMorales,

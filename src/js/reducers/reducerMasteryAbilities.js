@@ -1,4 +1,4 @@
-import { ADD_MASTERY_ABILITY, REMOVE_MASTERY_ABILITY, RESET_MASTERY_ABILITIES } from "../actions/actionMasteryAbilities";
+import { ADD_MASTERY_ABILITY, REMOVE_MASTERY_ABILITY, RESET_MASTERY_ABILITIES, SET_MASTERY_ABILITIES } from "../actions/actionMasteryAbilities";
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -10,6 +10,8 @@ export default function(state = [], action) {
         ...action.payload.abilitiesArray.slice(action.payload.abilityIndex + 1)
       ];
     case RESET_MASTERY_ABILITIES:
+      return action.payload;
+    case SET_MASTERY_ABILITIES:
       return action.payload;
     default:
       return state;

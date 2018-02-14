@@ -13,7 +13,7 @@ class CoreTactics extends Component {
 
   renderTactic(abilityId) {
     return (
-      <AbilityTactic key={abilityId} data={this.props.abilitiesObject[abilityId]} />
+      <AbilityTactic key={abilityId} data={this.props.abilities.indexed[abilityId]} />
     )
   }
 
@@ -21,9 +21,9 @@ class CoreTactics extends Component {
     // Combine core and mastery tactics
     let combinedTactics = [];
     if (this.props.masteryTactics.length > 0) {
-      combinedTactics = [...this.props.coreTactics, ...this.props.masteryTactics];
+      combinedTactics = [...this.props.abilities.structured.coreTactics, ...this.props.masteryTactics];
     } else {
-      combinedTactics = this.props.coreTactics;
+      combinedTactics = this.props.abilities.structured.coreTactics;
     }
     return combinedTactics.map(this.renderTactic);
   }
@@ -40,10 +40,9 @@ class CoreTactics extends Component {
   }
 }
 
-function mapStateToProps({ coreTactics, abilitiesObject, masteryTactics }) {
+function mapStateToProps({ abilities, masteryTactics }) {
   return {
-    abilitiesObject,
-    coreTactics,
+    abilities,
     masteryTactics
   };
 }

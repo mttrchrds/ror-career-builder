@@ -17,7 +17,7 @@ class PathMeterAbilities extends Component {
     const levelProp = `lvl${obj.level}`;
     const pathMeter = this.props[`pathMeter${this.props.path.toUpperCase()}`];
     const abilityKey = `oa${this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]}`;
-    const abilityData = this.props.abilitiesObject[this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]];
+    const abilityData = this.props.abilities.indexed[this.props.abilities.mastery[this.props.path].optionalAbilities[levelProp]];
     return (
       <div className={css.ability} key={abilityKey}>
         <AbilityMastery
@@ -74,9 +74,8 @@ class PathMeterAbilities extends Component {
   }
 }
 
-function mapStateToProps({ abilitiesObject, abilities, pathMeterA, pathMeterB, pathMeterC }) {
+function mapStateToProps({ abilities, pathMeterA, pathMeterB, pathMeterC }) {
   return {
-    abilitiesObject,
     abilities,
     pathMeterA,
     pathMeterB,

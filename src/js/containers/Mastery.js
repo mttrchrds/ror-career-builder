@@ -26,7 +26,7 @@ class Mastery extends Component {
 
   renderAbility(abilityId) {
     return (
-      <Ability key={abilityId} data={this.props.abilitiesObject[abilityId]} />
+      <Ability key={abilityId} data={this.props.abilities.indexed[abilityId]} />
     )
   }
 
@@ -132,12 +132,11 @@ class Mastery extends Component {
   }
 }
 
-function mapStateToProps({ points, currentPoints, abilities, abilitiesObject }) {
+function mapStateToProps({ points, currentPoints, abilities }) {
   return {
     points,
     currentPoints,
-    abilities,
-    abilitiesObject
+    abilities
   };
 }
 

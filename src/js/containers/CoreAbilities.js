@@ -4,7 +4,6 @@ import css from '../../css/components/CoreAbilities.css';
 
 import Ability from './Ability';
 
-
 class CoreAbilities extends Component {
 
   constructor(props) {
@@ -14,26 +13,26 @@ class CoreAbilities extends Component {
 
   renderAbility(abilityId) {
     return (
-      <Ability key={abilityId} data={this.props.abilitiesObject[abilityId]} />
+      <Ability key={abilityId} data={this.props.abilities.indexed[abilityId]} />
     )
   }
 
   render() {
+    console.log('CoreAbilities', this.props.abilities);
     return (
       <div className={css.container}>
         <h2 className={css.heading}>Core abilities</h2>
         <div className="row">
-          {this.props.coreAbilities.map(this.renderAbility)}
+          {this.props.abilities.structured.coreAbilities.map(this.renderAbility)}
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps({ coreAbilities, abilitiesObject }) {
+function mapStateToProps({ abilities }) {
   return {
-    abilitiesObject,
-    coreAbilities
+    abilities
   };
 }
 
