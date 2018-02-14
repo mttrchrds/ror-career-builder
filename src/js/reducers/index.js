@@ -28,6 +28,7 @@ import ReducerMasteryAbilities from './reducerMasteryAbilities';
 import ReducerMasteryTactics from './reducerMasteryTactics';
 import ReducerMasteryMorales from './reducerMasteryMorales';
 import ReducerModal from './reducerModal';
+import ReducerSharingLink from './reducerSharingLink';
 
 const rootReducer = combineReducers({
   careers: ReducerCareers,
@@ -58,7 +59,8 @@ const rootReducer = combineReducers({
   masteryAbilities: ReducerMasteryAbilities,
   masteryTactics: ReducerMasteryTactics,
   masteryMorales: ReducerMasteryMorales,
-  modal: ReducerModal
+  modal: ReducerModal,
+  sharingLink: ReducerSharingLink
 });
 
 export default rootReducer;

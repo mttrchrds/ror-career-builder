@@ -23,6 +23,7 @@ import { resetPathMeterA } from '../actions/actionPathMeterA';
 import { resetPathMeterB } from '../actions/actionPathMeterB';
 import { resetPathMeterC } from '../actions/actionPathMeterC';
 import { openModal } from '../actions/actionModal';
+import { setSharingLink } from '../actions/actionSharingLink';
 
 class ActionButtons extends Component {
 
@@ -38,10 +39,51 @@ class ActionButtons extends Component {
     this.props.history.push('/');
   }
 
+  combineMasteries() {
+    // Combine all selected masteries into single array
+    let combinedMasteries = [];
+    if (this.props.masteryAbilities.length > 0) {
+      combinedMasteries = this.props.masteryAbilities;
+    }
+    if (this.props.masteryMorales.length > 0) {
+      if (combinedMasteries.length > 0) {
+        combinedMasteries = [...combinedMasteries, ...this.props.masteryMorales];
+      } else {
+        combinedMasteries = this.props.masteryMorales;
+      }
+    }
+    if (this.props.masteryTactics.length > 0) {
+      if (combinedMasteries.length > 0) {
+        combinedMasteries = [...combinedMasteries, ...this.props.masteryTactics];
+      } else {
+        combinedMasteries = this.props.masteryTactics;
+      }
+    }
+    return combinedMasteries;
+  }
+
+  createShareLink() {
+    let saveLink = `${window.location.origin}/career/${this.props.slug}/s?`;
+    saveLink += `l=${this.props.level}`;
+    saveLink += `&r=${this.props.renown}`;
+    saveLink += `&tl=${this.props.tacticLimit}`;
+    saveLink += `&mp=${this.props.currentPoints}`;
+    saveLink += `&pA=${this.props.pathMeterA}`;
+    saveLink += `&pB=${this.props.pathMeterB}`;
+    saveLink += `&pC=${this.props.pathMeterC}`;
+    saveLink += `&m1=${this.props.selectedMorale1}`;
+    saveLink += `&m2=${this.props.selectedMorale2}`;
+    saveLink += `&m3=${this.props.selectedMorale3}`;
+    saveLink += `&m4=${this.props.selectedMorale4}`;
+    saveLink += `&ma=${this.combineMasteries()}`;
+    saveLink += `&t=${this.props.selectedTactics}`;
+    return saveLink;
+  };
+
   clickShare() {
-    // Set share modal content
-    //this.props.updateModalContent(buildModalTitle(), buildModalBody());
     this.props.toggleOverlay(!this.props.overlay);
+    // Set share modal content
+    this.props.setSharingLink(this.createShareLink())
     // Open share modal
     this.props.openModal(MODAL_SHARE);
     const careerName = this.props.careers[this.props.slug].name;
@@ -63,25 +105,7 @@ class ActionButtons extends Component {
         gaEvent(careerName, 'Selected Tactic', this.props.abilitiesObject[abilityId].name, abilityId);
       }
     }
-    // Combine all selected masteries into single array before sending
-    let combinedMasteries = [];
-    if (this.props.masteryAbilities.length > 0) {
-      combinedMasteries = this.props.masteryAbilities;
-    }
-    if (this.props.masteryMorales.length > 0) {
-      if (combinedMasteries.length > 0) {
-        combinedMasteries = [...combinedMasteries, ...this.props.masteryMorales];
-      } else {
-        combinedMasteries = this.props.masteryMorales;
-      }
-    }
-    if (this.props.masteryTactics.length > 0) {
-      if (combinedMasteries.length > 0) {
-        combinedMasteries = [...combinedMasteries, ...this.props.masteryTactics];
-      } else {
-        combinedMasteries = this.props.masteryTactics;
-      }
-    }
+    const combinedMasteries = this.combineMasteries();
     if (Number(combinedMasteries.length) > 0) {
       for (const abilityId of combinedMasteries) {
         gaEvent(careerName, 'Mastery ability', this.props.abilitiesObject[abilityId].name, abilityId);
@@ -150,7 +174,14 @@ function mapStateToProps({
   abilitiesObject,
   masteryAbilities,
   masteryTactics,
-  masteryMorales
+  masteryMorales,
+  pathMeterA,
+  pathMeterB,
+  pathMeterC,
+  currentPoints,
+  tacticLimit,
+  renown,
+  level
 }) {
   return {
     overlay,
@@ -165,7 +196,14 @@ function mapStateToProps({
     abilitiesObject,
     masteryAbilities,
     masteryTactics,
-    masteryMorales
+    masteryMorales,
+    pathMeterA,
+    pathMeterB,
+    pathMeterC,
+    currentPoints,
+    tacticLimit,
+    renown,
+    level
   };
 }
 
@@ -189,6 +227,7 @@ export default connect(mapStateToProps,
     resetPathMeterA,
     resetPathMeterB,
     resetPathMeterC,
-    openModal
+    openModal,
+    setSharingLink
   })
   (ActionButtons);
