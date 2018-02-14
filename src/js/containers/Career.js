@@ -93,8 +93,6 @@ class Career extends Component {
 
   resetCareer() {
 
-    console.log('resetCareer');
-
     this.props.resetLevel();
     this.props.resetRenown();
     this.props.resetTacticLimit();
@@ -115,8 +113,6 @@ class Career extends Component {
   }
 
   loadCareerData(slug) {
-
-    console.log('loadCareerData', slug);
 
     // Fetch careers and abilities
     this.props.fetchCareers();
@@ -139,8 +135,6 @@ class Career extends Component {
       // Check if it's a valid career name
       if (this.props.careers.hasOwnProperty(nextProps.match.params.slug)) {
 
-        console.log('Career has changed. Resetting and loading data');
-
         // Reset Career data
         this.resetCareer();
 
@@ -155,16 +149,12 @@ class Career extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
     // Load career data on initial load
     const { slug } = this.props.match.params;
     this.loadCareerData(slug);
   }
 
   renderContent() {
-
-    console.log('loading?', Object.keys(this.props.abilities).length);
-    console.log('loading2?', this.props.abilities);
 
     // Check that all the relative state properties are populated before rendering the Career UI
     let hasCareerLoaded = (Object.keys(this.props.careers).length > 0

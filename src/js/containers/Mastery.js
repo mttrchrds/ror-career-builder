@@ -57,6 +57,10 @@ class Mastery extends Component {
       [css.labelActive]: this.props.currentPoints > 0,
     });
 
+    if (this.props.abilities.length == 0) {
+      return null;
+    }
+
     return (
       <div className={css.container}>
         <h2 className={css.heading}>

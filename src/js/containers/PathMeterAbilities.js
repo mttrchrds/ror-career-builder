@@ -61,7 +61,10 @@ class PathMeterAbilities extends Component {
         level: 1,
         requirement: 3
       }
-    ]
+    ];
+    if (this.props.abilities.length == 0) {
+      return null;
+    }
     return (
       <div>
         <div className="column marginLeft--small">

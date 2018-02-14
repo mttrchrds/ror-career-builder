@@ -68,6 +68,9 @@ class CoreMorales extends Component {
   }
 
   render() {
+    if (this.props.abilities.length == 0) {
+      return null;
+    }
     return (
       <div className={css.container}>
         <h2 className={css.heading}>Morales</h2>

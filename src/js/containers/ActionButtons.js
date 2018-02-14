@@ -144,6 +144,9 @@ class ActionButtons extends Component {
   }
 
   render() {
+    if (this.props.abilities.length == 0) {
+      return null;
+    }
     return (
       <div className={css.container}>
         <button className={css.home} type="button" onClick={this.clickHome}>

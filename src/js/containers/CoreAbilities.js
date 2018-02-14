@@ -18,7 +18,9 @@ class CoreAbilities extends Component {
   }
 
   render() {
-    console.log('CoreAbilities', this.props.abilities);
+    if (this.props.abilities.length == 0) {
+      return null;
+    }
     return (
       <div className={css.container}>
         <h2 className={css.heading}>Core abilities</h2>
