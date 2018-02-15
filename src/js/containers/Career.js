@@ -112,14 +112,16 @@ class Career extends Component {
     this.props.resetPathMeterC();
   }
 
-  loadCareerData(slug) {
+  loadCareerData(match) {
+
+    const slug = match.params.slug;
 
     // Fetch careers and abilities
     this.props.fetchCareers();
     this.props.fetchAbilities(slug);
 
     // Populate app state with saved details if they exist
-    if (this.props.match.params.careerSaved) {
+    if (match.params.careerSaved) {
       this.setSavedCareer(queryString.parse(this.props.location.search));
     }
 
@@ -139,7 +141,7 @@ class Career extends Component {
         this.resetCareer();
 
         // Load new career/ability data from new career class
-        this.loadCareerData(nextProps.match.params.slug);
+        this.loadCareerData(nextProps.match);
 
       } else {
           // TODO redirect to not found page on else here
@@ -150,8 +152,7 @@ class Career extends Component {
 
   componentDidMount() {
     // Load career data on initial load
-    const { slug } = this.props.match.params;
-    this.loadCareerData(slug);
+    this.loadCareerData(this.props.match);
   }
 
   renderContent() {
