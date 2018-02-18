@@ -26,11 +26,13 @@
   width: calc(width-sidebar - width-sidebar-border);
 }
 .item {
-  display: block;
-  line-height: 2rem;
+  display: flex;
+  height: 3rem;
+  padding-left: 0.3rem;
+  align-items: center;
   transition: background .1s ease;
   color: color-text-secondary;
-  padding: 0.3rem;
+  
   text-decoration: none;
   font-size: font-size-1;
   border-bottom: 1px solid color-base-0;

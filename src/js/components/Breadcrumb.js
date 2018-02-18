@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import IconChevronRight from '../icons/IconChevronRight';
 import css from '../../css/components/Breadcrumb.css';
 
@@ -33,13 +33,6 @@ const Breadcrumb = (props) => {
       <span className={css.BreadcrumbActive}>{props.career.class}</span>
     </div>
   );
-};
-
-Breadcrumb.propTypes = {
-  gaChangeCareer: React.PropTypes.func,
-  updateOverlayVisibility: React.PropTypes.func,
-  updateSidebarVisibility: React.PropTypes.func,
-  career: React.PropTypes.object,
 };
 
 export default Breadcrumb;

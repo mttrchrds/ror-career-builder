@@ -157,11 +157,4 @@ class Masthead extends React.Component {
   }
 }
 
-Masthead.propTypes = {
-  careers: React.PropTypes.object,
-  gaCareerSelected: React.PropTypes.func,
-  updateSidebarVisibility: React.PropTypes.func,
-  updateOverlayVisibility: React.PropTypes.func,
-};
-
 export default Masthead;

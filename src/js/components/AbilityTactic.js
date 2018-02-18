@@ -172,14 +172,4 @@ class AbilityTactic extends React.Component {
   }
 }
 
-AbilityTactic.propTypes = {
-  details: React.PropTypes.object,
-  pathMeter: React.PropTypes.number,
-  currentLevel: React.PropTypes.number,
-  moraleRank: React.PropTypes.number,
-  currentTacticLimit: React.PropTypes.number,
-  selectedTactics: React.PropTypes.array,
-  updateSelectedTactics: React.PropTypes.func,
-};
-
 export default AbilityTactic;

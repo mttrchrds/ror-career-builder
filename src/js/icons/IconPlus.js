@@ -14,10 +14,4 @@ const IconPlus = (props) => {
   );
 };
 
-IconPlus.propTypes = {
-  classes: React.PropTypes.string,
-  name: React.PropTypes.string,
-  nameSlug: React.PropTypes.string,
-};
-
 export default IconPlus;

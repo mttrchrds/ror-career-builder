@@ -165,7 +165,6 @@ class Popover extends React.Component {
     this.setState({
       popoverActive: this.state.popoverActive,
     });
-    this.props.overlayClicked();
   }
 
   clickSelection() {
@@ -190,7 +189,7 @@ class Popover extends React.Component {
       'popover--active': this.state.popoverActive,
     });
     const selectionClass = classNames({
-      hidden: !this.props.abilityOptional || !this.props.abilityStatus || (!this.props.abilityOperational && !this.props.abilitySelected),
+      hidden: !this.props.abilityOptional || !this.props.status || (!this.props.abilityOperational && !this.props.abilitySelected),
       [css.actionRemove]: this.props.abilitySelected,
       [css.actionAdd]: !this.props.abilitySelected,
     });
@@ -210,17 +209,5 @@ class Popover extends React.Component {
     );
   }
 }
-
-Popover.propTypes = {
-  content: React.PropTypes.node,
-  alignment: React.PropTypes.string,
-  activate: React.PropTypes.bool,
-  overlayClicked: React.PropTypes.func,
-  abilityOptional: React.PropTypes.bool,
-  abilityClicked: React.PropTypes.func,
-  abilitySelected: React.PropTypes.bool,
-  abilityStatus: React.PropTypes.bool,
-  abilityOperational: React.PropTypes.bool,
-};
 
 export default Popover;

@@ -1,26 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import promise from "redux-promise";
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import '../css/entry.css';
+
 // For Google Analytics
 import 'autotrack';
 import '../../analytics.js';
-import '../css/entry.css';
 
-/*
-  Import Components
-*/
+import rootReducer from "./reducers";
+
+//  Import Components
 import App from './components/App';
-import Home from './components/Home';
-import Career from './components/Career';
-import NotFound from './components/NotFound';
 
-ReactDOM.render((
-	<Router history={browserHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home} />
-			<Route path="/career/:careerName" component={Career} />
-      <Route path="/career/:careerName(/:careerSaved)" component={Career} />
-			<Route path="*" component={NotFound} />
-		</Route>
-	</Router>
-), document.querySelector('#app'));
+// Create store, apply middlewares etc
+const store = createStore(
+	rootReducer,
+	composeWithDevTools(
+		applyMiddleware(promise)
+	)
+);
+
+// Create a function which will render a component to our DOM
+const render = (Component) => {
+	ReactDOM.render(
+		<Provider store={store}>
+			<Component />
+		</Provider>, 
+		document.querySelector('#app')
+	);
+};
+
+// Render the application
+render(App);
+
+// React HOT/HMR
+if (module.hot) {
+  module.hot.accept('./components/App', () => { 
+		render(App);
+	})
+}

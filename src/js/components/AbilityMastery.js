@@ -255,18 +255,4 @@ class AbilityMastery extends React.Component {
   }
 }
 
-AbilityMastery.propTypes = {
-  details: React.PropTypes.object,
-  pathMeter: React.PropTypes.number,
-  masteryPoints: React.PropTypes.number,
-  selectedMasteries: React.PropTypes.array,
-  updateSelectedMasteries: React.PropTypes.func,
-  updateCoreTactics: React.PropTypes.func,
-  updateSelectedTactics: React.PropTypes.func,
-  updateSelectedMorale: React.PropTypes.func,
-  updateCoreMorales: React.PropTypes.func,
-  incrementMasteryPoints: React.PropTypes.func,
-  decrementMasteryPoints: React.PropTypes.func,
-};
-
 export default AbilityMastery;

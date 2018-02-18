@@ -13,24 +13,6 @@
   composes: abilityMasterySelected from "./Ability.css";
   composes: abilityStandardMastery;
 }
-.abilityMorale {
-  composes: ability from "./AbilityMorale.css";
-}
-.abilityMoraleActive {
-  composes: abilityMasteryActive from "./AbilityMorale.css";
-}
-.abilityMoraleSelected {
-  composes: abilityMasterySelected from "./AbilityMorale.css";
-}
-.abilityTactic {
-  composes: ability from "./AbilityTactic.css";
-}
-.abilityTacticActive {
-  composes: abilityMasteryActive from "./AbilityTactic.css";
-}
-.abilityTacticSelected {
-  composes: abilityMasteryActive from "./AbilityTactic.css";
-}
 .imageSelected {
   opacity: 1;
 }
@@ -41,17 +23,9 @@
   composes: image from "./Ability.css";
   composes: imageSelected;
 }
-.imageMorale {
-  composes: imageInactive from "./AbilityMorale.css";
-}
 .imageMoraleSelected {
-  composes: image from "./AbilityMorale.css";
   composes: imageSelected;
 }
-.imageTactic {
-  composes: imageInactive from "./AbilityTactic.css";
-}
 .imageTacticSelected {
-  composes: image from "./AbilityTactic.css";
   composes: imageSelected;
 }

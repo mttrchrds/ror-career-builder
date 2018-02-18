@@ -32,10 +32,4 @@ class Overlay extends React.Component {
   }
 }
 
-Overlay.propTypes = {
-  clickOverlay: React.PropTypes.func,
-  overlay: React.PropTypes.object,
-  visible: React.PropTypes.bool,
-};
-
 export default Overlay;
