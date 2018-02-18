@@ -5,6 +5,7 @@ import css from '../../css/components/Mastery.css';
 
 import Ability from './Ability';
 import PathMeterContainer from './PathMeterContainer';
+import PathInfo from '../components/PathInfo';
 
 class Mastery extends Component {
 
@@ -18,8 +19,7 @@ class Mastery extends Component {
   renderPathPopover(pathName) {
     if (this.props.abilities.mastery[pathName].popover) {
       return (
-        <div>TODO popover</div>
-        // <PathInfo careerPath={props.career.paths[pathName]} />
+        <PathInfo pathPopover={this.props.abilities.mastery[pathName].popover} />
       );
     }
   }

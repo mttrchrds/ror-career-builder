@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import Popover from './Popover';
-import Overlay from './Overlay';
 import css from '../../css/components/PathInfo.css';
 
 class PathInfo extends React.Component {
@@ -11,64 +10,39 @@ class PathInfo extends React.Component {
   */
   constructor(props) {
     super(props);
-    this.infoHoverOver = this.infoHoverOver.bind(this);
-    this.infoHoverOut = this.infoHoverOut.bind(this);
-    // Touch event to replace mouseover/out on mobile size
-    this.infoTouchEnd = this.infoTouchEnd.bind(this);
-    this.setOverlay = this.setOverlay.bind(this);
-    this.overlayClicked = this.overlayClicked.bind(this);
+    this.hoverOver = this.hoverOver.bind(this);
+    this.hoverOut = this.hoverOut.bind(this);
 
     this.state = {
-      infoHovered: false,
-      overlay: {
-        visible: false,
-      },
+      hovered: false,
     };
   }
 
-  infoHoverOver() {
+  hoverOver() {
     this.setState({
-      infoHovered: true,
+      hovered: true,
     });
   }
 
-  infoHoverOut() {
+  hoverOut() {
     this.setState({
-      infoHovered: false,
+      hovered: false,
     });
-  }
-
-  infoTouchEnd(event) {
-    event.preventDefault();
-    this.setOverlay(true);
-    this.infoHoverOver();
-  }
-
-  setOverlay(status) {
-    this.state.overlay.visible = status;
-    this.setState({
-      overlay: this.state.overlay,
-    });
-  }
-
-  overlayClicked() {
-    this.setOverlay(false);
-    this.infoHoverOut();
   }
 
   renderPopoverPrimary() {
-    if (this.props.careerPath.popover.primary) {
+    if (this.props.pathPopover.primary) {
       return (
-        <div className={css.popoverPrimary}>{this.props.careerPath.popover.primary}</div>
+        <div className={css.popoverPrimary}>{this.props.pathPopover.primary}</div>
       );
     }
     return false;
   }
 
   renderPopoverSecondary() {
-    if (this.props.careerPath.popover.secondary) {
+    if (this.props.pathPopover.secondary) {
       return (
-        <div className={css.popoverSecondary}>{this.props.careerPath.popover.secondary}</div>
+        <div className={css.popoverSecondary}>{this.props.pathPopover.secondary}</div>
       );
     }
     return false;
@@ -85,29 +59,22 @@ class PathInfo extends React.Component {
 
   render() {
     const infoClass = classNames({
-      'is-hovered': this.state.infoHovered,
+      'is-hovered': this.state.hovered,
       popover__parent: true,
     });
     return (
       <div className={infoClass} ref="popoverParent">
-        <Overlay
-          overlay={this.state.overlay}
-          hideOverlay={this.overlayClicked}
-          visible={false}
-        />
         <div
           className={css.container}
-          onTouchEnd={this.infoTouchEnd}
-          onMouseOver={this.infoHoverOver}
-          onMouseOut={this.infoHoverOut}
+          onMouseOver={this.hoverOver}
+          onMouseOut={this.hoverOut}
         >
           <div className={css.icon}>?</div>
         </div>
         <Popover
           content={this.renderPopoverContent()}
           alignment="top"
-          activate={this.state.infoHovered}
-          overlayClicked={this.overlayClicked}
+          activate={this.state.hovered}
         />
       </div>
     );
