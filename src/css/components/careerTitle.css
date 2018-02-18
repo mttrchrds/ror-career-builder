@@ -5,3 +5,6 @@
 .icon {
   composes: careerIconBordered from "../shared/careerIcon.css";
 }
+.matt {
+  font-size: 2px;
+}
