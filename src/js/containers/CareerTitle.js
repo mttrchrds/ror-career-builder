@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/CareerTitle.css';
+import { staticPath } from '../../../config';
 
 class CareerTitle extends Component {
 
@@ -10,7 +11,7 @@ class CareerTitle extends Component {
 
   render() {
     const career = this.props.careers[this.props.slug];
-    const url = `/images/icons/${career.slug}.png`;
+    const url = `${staticPath}images/icons/${career.slug}.png`;
     return (
       <div className="row row--v-center">
         <img src={url} className={css.icon}></img>

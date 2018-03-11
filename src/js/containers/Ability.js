@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import css from '../../css/components/Ability.css';
 import classNames from 'classnames';
+import { staticPath } from '../../../config';
 
 import Popover from '../components/Popover';
 import PopoverAbility from '../components/PopoverAbility';
@@ -62,7 +63,7 @@ class Ability extends Component {
       [css.image]: this.state.status,
       [css.imageInactive]: !this.state.status,
     });
-    const imgSrc = `../../images/abilities/${this.props.data.image}.png`;
+    const imgSrc = `${staticPath}images/abilities/${this.props.data.image}.png`;
     const popoverContent = (
       <PopoverAbility data={this.props.data} imgSrc={imgSrc} />
     );

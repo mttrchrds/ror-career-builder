@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import classNames from 'classnames';
 import css from '../../css/components/Masthead.css';
+import { staticPath } from '../../../config';
 
 import CareerItem from '../containers/CareerItem';
 
@@ -76,6 +77,12 @@ class Masthead extends Component {
       [css.careersContainerRight]: !this.state.mastheadActive,
       [css.careersContainerRightActive]: this.state.mastheadActive,
     });
+    const iconEmpire = `${staticPath}images/icons/empire.png`;
+    const iconDwarf = `${staticPath}images/icons/dwarf.png`;
+    const iconElf = `${staticPath}images/icons/high-elf.png`;
+    const iconDarkElf = `${staticPath}images/icons/dark-elf.png`;
+    const iconGreenskin = `${staticPath}images/icons/greenskin.png`;
+    const iconChaos = `${staticPath}images/icons/chaos.png`;
     return (
       <div className={mastheadClass}>
         <div className={css.mastheadOverlay}>
@@ -98,7 +105,7 @@ class Masthead extends Component {
               <div className={css.careersFaction}>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/dwarf.png" className={css.careersRaceIcon} />
+                    <img src={iconDwarf} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>Dwarves</div>
                   </div>
                   {Object.keys(this.props.careers).map(
@@ -107,7 +114,7 @@ class Masthead extends Component {
                 </div>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/high-elf.png" className={css.careersRaceIcon} />
+                    <img src={iconElf} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>High Elves</div>
                   </div>
                   {Object.keys(this.props.careers).map(
@@ -116,7 +123,7 @@ class Masthead extends Component {
                 </div>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/empire.png" className={css.careersRaceIcon} />
+                    <img src={iconEmpire} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>Empire</div>
                   </div>
                   {Object.keys(this.props.careers).map(
@@ -130,7 +137,7 @@ class Masthead extends Component {
               <div className={css.careersFaction}>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/greenskin.png" className={css.careersRaceIcon} />
+                    <img src={iconGreenskin} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>Greenskins</div>
                   </div>
                   {Object.keys(this.props.careers).map(
@@ -139,7 +146,7 @@ class Masthead extends Component {
                 </div>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/dark-elf.png" className={css.careersRaceIcon} />
+                    <img src={iconDarkElf} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>Dark Elves</div>
                   </div>
                   {Object.keys(this.props.careers).map(
@@ -148,7 +155,7 @@ class Masthead extends Component {
                 </div>
                 <div className={css.careersRace}>
                   <div className="row row--v-center marginBottom">
-                    <img src="/images/icons/chaos.png" className={css.careersRaceIcon} />
+                    <img src={iconChaos} className={css.careersRaceIcon} />
                     <div className={css.careersRaceTitle}>Chaos</div>
                   </div>
                   {Object.keys(this.props.careers).map(

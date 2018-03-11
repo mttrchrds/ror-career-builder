@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import css from '../../css/components/ModalShare.css';
+import { staticPath } from '../../../config';
 
 import Modal from './Modal';
 
@@ -12,7 +13,7 @@ class ModalShare extends Component {
   }
 
   render() {
-    const url = `/images/icons/${this.props.slug}.png`;
+    const url = `${staticPath}images/icons/${this.props.slug}.png`;
     const careerName = this.props.careers[this.props.slug].name;
     const BBCode = `[url=${this.props.sharingLink}]RoR.builders - ${careerName}[/url]`;
     return (

@@ -1,13 +1,12 @@
 import axios from 'axios';
+import { staticPath } from '../../../config';
 
 export const FETCH_ABILITIES = "fetch_abilities";
 export const RESET_ABILITIES = "reset_abilities";
 
-const JSON_ROOT = '/json/';
-
 export function fetchAbilities(slug) {
 
-  const request = axios.get(`${JSON_ROOT}/abilities/${slug}.json`);
+  const request = axios.get(`${staticPath}json/abilities/${slug}.json`);
 
   return {
     type: FETCH_ABILITIES,

@@ -1,13 +1,12 @@
 
 import axios from 'axios';
+import { staticPath } from '../../../config';
 
 export const FETCH_CAREERS = "fetch_careers";
 
-const JSON_ROOT = '/json/';
-
 export function fetchCareers() {
 
-  const request = axios.get(`${JSON_ROOT}careers.json`);
+  const request = axios.get(`${staticPath}json/careers.json`);
 
   return {
     type: FETCH_CAREERS,
