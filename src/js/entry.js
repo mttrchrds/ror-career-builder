@@ -7,10 +7,6 @@ import promise from "redux-promise";
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import '../css/entry.css';
 
-// For Google Analytics
-import 'autotrack';
-import '../../analytics.js';
-
 import rootReducer from "./reducers";
 
 //  Import Components

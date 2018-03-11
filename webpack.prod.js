@@ -65,6 +65,7 @@ module.exports = {
     }),
     // Use our own Handlebars template for index.html, add hashes to the links, don't automatically inject links (we do it manually)
     new htmlWebpackPlugin({
+      ga: JSON.stringify(process.env.GOOGLE_ID || '1234'),
       hash: true,
       inject: false,
       template: config.pathSource + config.pathSourceTemplate + config.filenameTemplate,
