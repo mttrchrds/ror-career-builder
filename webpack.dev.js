@@ -75,7 +75,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // We want to write our own index.html file from a Handlebars template
     new htmlWebpackPlugin({
-      ga: JSON.stringify(process.env.GOOGLE_ID || '1234'),
+      ga: process.env.GOOGLE_ID || '1234',
       template: config.pathSource + config.pathSourceTemplate + config.filenameTemplate,
       filename: config.filenameHTML,
       inject: false
