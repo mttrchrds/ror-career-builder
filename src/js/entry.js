@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import promise from "redux-promise";
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import '../css/entry.css';
 
 // For Google Analytics
