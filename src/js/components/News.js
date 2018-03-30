@@ -20,7 +20,6 @@ class News extends React.Component {
     axios.get(`${staticPath}json/news.json`)
       .then((response) => {
         this.setState({ entries: response.data.entries });
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
