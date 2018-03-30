@@ -42,6 +42,10 @@
     }
   }
 }
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+}
 @media mq-md-min {
   .itemText {
     width: auto;
