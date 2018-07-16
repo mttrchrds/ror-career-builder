@@ -4,7 +4,6 @@ import css from '../../css/components/AbilityMastery.css';
 import cssTactic from '../../css/components/AbilityTactic.css';
 import cssMorale from '../../css/components/AbilityMorale.css';
 import classNames from 'classnames';
-import { staticPath } from '../../../config';
 
 import Popover from '../components/Popover';
 import PopoverAbility from '../components/PopoverAbility';
@@ -242,7 +241,7 @@ class AbilityMastery extends Component {
       [cssTactic.image]: this.state.selected && (this.props.data.abilityType === 'tactic'),
     });
 
-    const imgSrc = `${staticPath}images/abilities/${this.props.data.image}.png`;
+    const imgSrc = `/images/abilities/${this.props.data.image}.png`;
     const popoverContent = (
       <PopoverAbility data={this.props.data} imgSrc={imgSrc} />
     );

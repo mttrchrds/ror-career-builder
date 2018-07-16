@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import css from '../../css/components/CareerItem.css';
 import { gaCareerSelected } from '../helpers/googleAnalytics';
-import { staticPath } from '../../../config';
 
 import { toggleOverlay } from '../actions/actionOverlay';
 import { toggleSidebar } from '../actions/actionSidebar';
@@ -25,7 +24,7 @@ class CareerItem extends Component {
 
   render() {
     const url = `/career/${this.props.career.slug}`;
-    const imgUrl = `${staticPath}images/icons/${this.props.career.slug}.png`;
+    const imgUrl = `/images/icons/${this.props.career.slug}.png`;
     return (
       <div className={css.item}>
         <Link to={url} onClick={this.clickItem}>

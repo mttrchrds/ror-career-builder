@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import classNames from 'classnames';
 import css from '../../css/components/Masthead.css';
-import { staticPath } from '../../../config';
 
 import CareerItem from '../containers/CareerItem';
 
@@ -77,12 +76,12 @@ class Masthead extends Component {
       [css.careersContainerRight]: !this.state.mastheadActive,
       [css.careersContainerRightActive]: this.state.mastheadActive,
     });
-    const iconEmpire = `${staticPath}images/icons/empire.png`;
-    const iconDwarf = `${staticPath}images/icons/dwarf.png`;
-    const iconElf = `${staticPath}images/icons/high-elf.png`;
-    const iconDarkElf = `${staticPath}images/icons/dark-elf.png`;
-    const iconGreenskin = `${staticPath}images/icons/greenskin.png`;
-    const iconChaos = `${staticPath}images/icons/chaos.png`;
+    const iconEmpire = `/images/icons/empire.png`;
+    const iconDwarf = `/images/icons/dwarf.png`;
+    const iconElf = `/images/icons/high-elf.png`;
+    const iconDarkElf = `/images/icons/dark-elf.png`;
+    const iconGreenskin = `/images/icons/greenskin.png`;
+    const iconChaos = `/images/icons/chaos.png`;
     return (
       <div className={mastheadClass}>
         <div className={css.mastheadOverlay}>

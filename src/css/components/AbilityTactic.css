@@ -4,7 +4,7 @@
 
 .ability {
   composes: ability from "../shared/ability.css";
-  background: url('https://s3.eu-west-2.amazonaws.com/rorbuilder/images/tactic-background.svg') no-repeat 0 0;
+  background: url('/images/tactic-background.svg') no-repeat 0 0;
 	background-size: cover;
   cursor: pointer;
   padding: 0;
@@ -12,7 +12,7 @@
 }
 .abilityMasteryActive {
   composes: ability;
-  background: url('https://s3.eu-west-2.amazonaws.com/rorbuilder/images/optional-tactic-active.svg') no-repeat 0 0;
+  background: url('/images/optional-tactic-active.svg') no-repeat 0 0;
 	background-size: cover;
 }
 .abilityMasterySelected {
@@ -24,7 +24,7 @@
   composes: ability;
   margin: 0;
   padding: border-spacing;
-  background: url('https://s3.eu-west-2.amazonaws.com/rorbuilder/images/tactic-background-selected.svg') no-repeat 0 0;
+  background: url('/images/tactic-background-selected.svg') no-repeat 0 0;
   background-size: cover;
 }
 .image {
