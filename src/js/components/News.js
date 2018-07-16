@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import css from '../../css/components/News.css';
-import { staticPath } from '../../../config';
 
 import IconChevronRight from '../icons/IconChevronRight';
 import Loading from '../containers/Loading';
@@ -17,7 +16,7 @@ class News extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${staticPath}json/news.json`)
+    axios.get(`${process.env.STATIC_PATH}news.json`)
       .then((response) => {
         this.setState({ entries: response.data.entries });
       })
@@ -28,7 +27,7 @@ class News extends React.Component {
 
   renderEntry(entry) {
     return (
-      <div className={css.item}>
+      <div className={css.item} key={entry.text}>
         <span className={css.itemIcon}><IconChevronRight classes="icon--small" name="right chevron icon" nameSlug="right-chevron-icon" /></span>
         <div className={css.itemDate}>{moment(entry.date).format('D/MM/YYYY')}</div>
         <span className={css.itemText}>{entry.text}</span>

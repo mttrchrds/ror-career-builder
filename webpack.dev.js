@@ -70,6 +70,9 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
+    new webpack.EnvironmentPlugin({
+      'STATIC_PATH': process.env.STATIC_PATH || 'https://s3.eu-west-2.amazonaws.com/rorbuilder/'
+    }),
     // Prints more readable module names in the browser console on HMR updates
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),

@@ -59,6 +59,9 @@ module.exports = {
     new uglifyJSPlugin({
       sourceMap: true
     }),
+    new webpack.EnvironmentPlugin({
+      'STATIC_PATH': process.env.STATIC_PATH || 'https://s3.eu-west-2.amazonaws.com/rorbuilder/'
+    }),
     // Really helps to keep file size down
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')

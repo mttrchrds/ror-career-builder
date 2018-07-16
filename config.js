@@ -15,6 +15,5 @@ module.exports = {
 	filenameTemplate: 'index.hbs',
 	filenameHTML: 'index.html',
 	filenameCSS: 'style.css',
-	serverPort: 8080,
-	staticPath: 'https://s3.eu-west-2.amazonaws.com/rorbuilder/'
+	serverPort: 8080
 };
