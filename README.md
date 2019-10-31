@@ -6,7 +6,7 @@ The app is primarily built with [React](https://facebook.github.io/react/) using
 
 For styling, [CSS Modules](https://github.com/css-modules/css-modules) have been used in combination with regular [PostCSS](http://postcss.org) utility classes.
 
-You can see the the RoR Career Builder in action at: [http://ror.builders](http://ror.builders)
+You can see the the RoR Career Builder in action at: [https://builder.returnofreckoning.com](https://builder.returnofreckoning.com)
 
 ##Instructions
 
